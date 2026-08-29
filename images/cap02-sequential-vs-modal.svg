@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" width="100%" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="380" fill="#F9FAFB" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">O que muda na formulação do ProdOps</text>
+
+  <!-- Divider -->
+  <line x1="395" y1="50" x2="395" y2="360" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- ===== LEFT: Interpretação Sequencial ===== -->
+  <text x="197" y="65" text-anchor="middle" font-size="14" fill="#374151" font-weight="700">Interpretação Sequencial</text>
+
+  <!-- Discovery box -->
+  <rect x="50" y="85" width="130" height="44" fill="#E0F2FE" stroke="#3B82F6" stroke-width="1.5" rx="6"/>
+  <text x="115" y="105" text-anchor="middle" font-size="13" fill="#1D4ED8" font-weight="600">Discovery</text>
+  <text x="115" y="120" text-anchor="middle" font-size="11" fill="#374151">exploração livre</text>
+
+  <defs>
+    <marker id="arrBlue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3B82F6"/>
+    </marker>
+    <marker id="arrOrange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#F59E0B"/>
+    </marker>
+    <marker id="arrGray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#9CA3AF"/>
+    </marker>
+    <marker id="arrViolet" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#8B5CF6"/>
+    </marker>
+  </defs>
+
+  <line x1="180" y1="107" x2="218" y2="107" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrGray)"/>
+  <text x="199" y="100" text-anchor="middle" font-size="9" fill="#9CA3AF">termina</text>
+
+  <!-- Delivery box -->
+  <rect x="220" y="85" width="130" height="44" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="285" y="105" text-anchor="middle" font-size="13" fill="#D97706" font-weight="600">Delivery</text>
+  <text x="285" y="120" text-anchor="middle" font-size="11" fill="#374151">começa do zero</text>
+
+  <!-- Implicit assumptions below -->
+  <rect x="40" y="155" width="320" height="80" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="6"/>
+  <text x="200" y="172" text-anchor="middle" font-size="11" fill="#6B7280" font-weight="600">Pressupostos implícitos</text>
+  <text x="200" y="190" text-anchor="middle" font-size="11" fill="#9CA3AF">• Discovery sempre precede Delivery</text>
+  <text x="200" y="207" text-anchor="middle" font-size="11" fill="#9CA3AF">• Todo discovery é do mesmo tipo</text>
+  <text x="200" y="222" text-anchor="middle" font-size="11" fill="#9CA3AF">• Exploração termina com o compromisso</text>
+
+  <!-- Problems label -->
+  <rect x="40" y="252" width="320" height="60" fill="#FEE2E2" stroke="#EF4444" stroke-width="1" rx="6"/>
+  <text x="200" y="270" text-anchor="middle" font-size="11" fill="#EF4444" font-weight="600">Consequencias nao resolvidas</text>
+  <text x="200" y="288" text-anchor="middle" font-size="11" fill="#9CA3AF">Discovery dentro do compromisso</text>
+  <text x="200" y="304" text-anchor="middle" font-size="11" fill="#9CA3AF">nao tem custo diferente visivel</text>
+
+  <!-- ===== RIGHT: Interpretação Modal (ProdOps) ===== -->
+  <text x="603" y="65" text-anchor="middle" font-size="14" fill="#374151" font-weight="700">Interpretação Modal — ProdOps</text>
+
+  <!-- Upstream circle -->
+  <circle cx="490" cy="165" r="60" fill="#E0F2FE" stroke="#3B82F6" stroke-width="2"/>
+  <text x="490" y="158" text-anchor="middle" font-size="13" fill="#1D4ED8" font-weight="700">Upstream</text>
+  <text x="490" y="174" text-anchor="middle" font-size="10" fill="#374151">Rigor advisory</text>
+  <text x="490" y="188" text-anchor="middle" font-size="10" fill="#374151">sem compromisso</text>
+
+  <!-- Downstream circle -->
+  <circle cx="710" cy="165" r="60" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2"/>
+  <text x="710" y="158" text-anchor="middle" font-size="13" fill="#D97706" font-weight="700">Downstream</text>
+  <text x="710" y="174" text-anchor="middle" font-size="10" fill="#374151">Rigor bloqueante</text>
+  <text x="710" y="188" text-anchor="middle" font-size="10" fill="#374151">compromisso formal</text>
+
+  <!-- CommitmentGate between circles -->
+  <polygon points="600,150 620,165 600,180 580,165" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="600" y="161" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">CG</text>
+  <text x="600" y="173" text-anchor="middle" font-size="7" fill="#7C3AED">Gate</text>
+
+  <line x1="550" y1="165" x2="578" y2="165" stroke="#8B5CF6" stroke-width="1.5" marker-end="url(#arrViolet)"/>
+  <line x1="622" y1="165" x2="648" y2="165" stroke="#8B5CF6" stroke-width="1.5" marker-end="url(#arrViolet)"/>
+
+  <!-- Labels for circles (between circle bottom y=225 and rect top y=270) -->
+  <text x="490" y="237" text-anchor="middle" font-size="10" fill="#3B82F6">Discovery</text>
+  <text x="490" y="249" text-anchor="middle" font-size="10" fill="#3B82F6">Delivery</text>
+  <text x="490" y="261" text-anchor="middle" font-size="10" fill="#3B82F6">Operation...</text>
+
+  <text x="710" y="237" text-anchor="middle" font-size="10" fill="#F59E0B">Discovery</text>
+  <text x="710" y="249" text-anchor="middle" font-size="10" fill="#F59E0B">Delivery</text>
+  <text x="710" y="261" text-anchor="middle" font-size="10" fill="#F59E0B">Operation...</text>
+
+  <!-- Mode applies to both -->
+  <rect x="415" y="270" width="350" height="80" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1" rx="6"/>
+  <text x="590" y="287" text-anchor="middle" font-size="11" fill="#7C3AED" font-weight="600">Modos se aplicam sobre qualquer jornada</text>
+  <text x="590" y="305" text-anchor="middle" font-size="11" fill="#374151">As 5 jornadas existem em ambos os modos</text>
+  <text x="590" y="323" text-anchor="middle" font-size="11" fill="#374151">O que muda e o tipo de compromisso mantido</text>
+  <text x="590" y="341" text-anchor="middle" font-size="11" fill="#6B7280">Transicao mediada pelo CommitmentGate</text>
+</svg>

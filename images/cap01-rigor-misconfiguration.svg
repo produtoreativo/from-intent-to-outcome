@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#F9FAFB" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 1 — Configuração errada de rigor gera desperdício em ambos os sentidos</text>
+
+  <!-- Central divider label (above arrows) -->
+  <text x="400" y="192" text-anchor="middle" font-size="12" fill="#8B5CF6" font-weight="700">Custo de estar errado muda aqui</text>
+  <!-- Central bidirectional arrow -->
+  <line x1="180" y1="210" x2="620" y2="210" stroke="#8B5CF6" stroke-width="2" marker-end="url(#arrowPurple)" marker-start="url(#arrowPurpleLeft)"/>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#8B5CF6"/>
+    </marker>
+    <marker id="arrowPurpleLeft" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto-start-reverse">
+      <path d="M0,0 L0,6 L8,3 z" fill="#8B5CF6"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#EF4444"/>
+    </marker>
+  </defs>
+
+  <!-- Timeline A — Rigor de entrega durante exploração -->
+  <rect x="20" y="55" width="760" height="150" fill="#FEE2E2" rx="8" opacity="0.4"/>
+  <text x="32" y="78" font-size="12" fill="#EF4444" font-weight="700">LINHA A — Rigor de entrega durante exploração</text>
+
+  <!-- Gates blocking hypotheses -->
+  <rect x="50" y="88" width="130" height="44" fill="#FFFFFF" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <text x="115" y="108" text-anchor="middle" font-size="11" fill="#374151">Hipótese</text>
+  <text x="115" y="122" text-anchor="middle" font-size="11" fill="#374151">formada</text>
+
+  <line x1="180" y1="110" x2="218" y2="110" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+
+  <!-- Gate diamond -->
+  <polygon points="232,94 252,110 232,126 212,110" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="232" y="114" text-anchor="middle" font-size="9" fill="#EF4444" font-weight="700">Gate</text>
+
+  <line x1="252" y1="110" x2="290" y2="110" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+
+  <rect x="292" y="88" width="130" height="44" fill="#FFFFFF" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <text x="357" y="105" text-anchor="middle" font-size="11" fill="#374151">Artefatos exigidos</text>
+  <text x="357" y="119" text-anchor="middle" font-size="11" fill="#EF4444">antes de testar</text>
+
+  <line x1="422" y1="110" x2="460" y2="110" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+
+  <polygon points="474,94 494,110 474,126 454,110" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="474" y="114" text-anchor="middle" font-size="9" fill="#EF4444" font-weight="700">Gate</text>
+
+  <line x1="494" y1="110" x2="532" y2="110" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+
+  <rect x="534" y="88" width="140" height="44" fill="#FFFFFF" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <text x="604" y="105" text-anchor="middle" font-size="11" fill="#374151">Hipóteses bloqueadas</text>
+  <text x="604" y="119" text-anchor="middle" font-size="11" fill="#EF4444">por gates prematuros</text>
+
+  <text x="50" y="162" font-size="11" fill="#6B7280" font-style="italic">Aprendizado bloqueado antes de saber</text>
+  <text x="50" y="179" font-size="11" fill="#6B7280" font-style="italic">o que vale comprometer</text>
+
+  <!-- Timeline B — Rigor de exploração durante entrega -->
+  <rect x="20" y="225" width="760" height="150" fill="#FEE2E2" rx="8" opacity="0.4"/>
+  <text x="32" y="248" font-size="12" fill="#EF4444" font-weight="700">LINHA B — Rigor de exploração durante entrega</text>
+
+  <rect x="50" y="258" width="120" height="44" fill="#FFFFFF" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <text x="110" y="275" text-anchor="middle" font-size="11" fill="#374151">Compromisso</text>
+  <text x="110" y="289" text-anchor="middle" font-size="11" fill="#374151">assumido</text>
+
+  <line x1="170" y1="280" x2="208" y2="280" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+
+  <rect x="210" y="258" width="140" height="44" fill="#FFFFFF" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <text x="280" y="275" text-anchor="middle" font-size="11" fill="#374151">Premissas ainda</text>
+  <text x="280" y="289" text-anchor="middle" font-size="11" fill="#EF4444">abertas na entrega</text>
+
+  <line x1="350" y1="280" x2="388" y2="280" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+
+  <rect x="390" y="258" width="140" height="44" fill="#FFFFFF" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <text x="460" y="275" text-anchor="middle" font-size="11" fill="#374151">Premissa incorreta</text>
+  <text x="460" y="289" text-anchor="middle" font-size="11" fill="#EF4444">descoberta tarde</text>
+
+  <line x1="530" y1="280" x2="568" y2="280" stroke="#EF4444" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+
+  <rect x="570" y="258" width="120" height="44" fill="#FFFFFF" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <text x="630" y="275" text-anchor="middle" font-size="11" fill="#374151">Retrabalho</text>
+  <text x="630" y="289" text-anchor="middle" font-size="11" fill="#EF4444">obrigatório</text>
+
+  <text x="50" y="332" font-size="11" fill="#6B7280" font-style="italic">Compromisso honrado sem estrutura,</text>
+  <text x="50" y="349" font-size="11" fill="#6B7280" font-style="italic">descoberta tardia custa mais</text>
+
+  <!-- Result box — alinhado com as caixas brancas (y=88 e y=258) -->
+  <rect x="690" y="88" width="90" height="44" fill="#EF4444" rx="6"/>
+  <text x="735" y="108" text-anchor="middle" font-size="12" fill="#FFFFFF" font-weight="700">Desperdício</text>
+  <text x="735" y="123" text-anchor="middle" font-size="10" fill="#FFFFFF">de esforço</text>
+
+  <rect x="690" y="258" width="90" height="44" fill="#EF4444" rx="6"/>
+  <text x="735" y="278" text-anchor="middle" font-size="12" fill="#FFFFFF" font-weight="700">Desperdício</text>
+  <text x="735" y="293" text-anchor="middle" font-size="10" fill="#FFFFFF">de esforço</text>
+</svg>
