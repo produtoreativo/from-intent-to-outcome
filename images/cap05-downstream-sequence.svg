@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 280" width="100%" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="840" height="280" fill="#F9FAFB" rx="8"/>
+
+  <!-- Title -->
+  <text x="410" y="26" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 5 — Pipeline Downstream: sequencia obrigatoria com gates bloqueantes</text>
+
+  <!-- Mode label banner -->
+  <rect x="20" y="38" width="780" height="26" fill="#FEF3C7" rx="4"/>
+  <text x="410" y="55" text-anchor="middle" font-size="12" fill="#D97706" font-weight="700">Modo Downstream — Rigor Bloqueante — todos os gates sao obrigatorios</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="a5Orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#F59E0B"/>
+    </marker>
+    <marker id="a5Violet" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#8B5CF6"/>
+    </marker>
+    <marker id="a5Green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#10B981"/>
+    </marker>
+  </defs>
+
+  <!-- Entry point: Readiness Gate -->
+  <rect x="20" y="90" width="72" height="80" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5" rx="6"/>
+  <text x="56" y="123" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Readiness</text>
+  <text x="56" y="136" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Gate</text>
+  <text x="56" y="152" text-anchor="middle" font-size="9" fill="#6B7280">Momento 3</text>
+
+  <!-- Arrow from Readiness Gate -->
+  <line x1="92" y1="130" x2="108" y2="130" stroke="#F59E0B" stroke-width="2" marker-end="url(#a5Orange)"/>
+
+  <!-- Phase boxes with gates between them -->
+  <!-- Helper function: each box + gate after it -->
+
+  <!-- Bootstrap -->
+  <rect x="110" y="90" width="76" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="148" y="123" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Bootstrap</text>
+  <text x="148" y="140" text-anchor="middle" font-size="9" fill="#6B7280">Ambiente</text>
+  <text x="148" y="154" text-anchor="middle" font-size="9" fill="#6B7280">operacional</text>
+
+  <!-- Gate 1 -->
+  <polygon points="198,118 213,130 198,142 183,130" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="198" y="134" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
+  <line x1="213" y1="130" x2="225" y2="130" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#a5Orange)"/>
+
+  <!-- Hack -->
+  <rect x="227" y="90" width="66" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="260" y="127" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Hack</text>
+  <text x="260" y="143" text-anchor="middle" font-size="9" fill="#6B7280">TDD</text>
+  <text x="260" y="157" text-anchor="middle" font-size="9" fill="#6B7280">ProdOps</text>
+
+  <!-- Gate 2 -->
+  <polygon points="304,118 319,130 304,142 289,130" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="304" y="134" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
+  <line x1="319" y1="130" x2="331" y2="130" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#a5Orange)"/>
+
+  <!-- Sync -->
+  <rect x="333" y="90" width="66" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="366" y="127" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Sync</text>
+  <text x="366" y="143" text-anchor="middle" font-size="9" fill="#6B7280">Branch +</text>
+  <text x="366" y="157" text-anchor="middle" font-size="9" fill="#6B7280">Artefatos</text>
+
+  <!-- Gate 3 -->
+  <polygon points="410,118 425,130 410,142 395,130" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="410" y="134" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
+  <line x1="425" y1="130" x2="437" y2="130" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#a5Orange)"/>
+
+  <!-- Finish -->
+  <rect x="439" y="90" width="66" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="472" y="127" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Finish</text>
+  <text x="472" y="143" text-anchor="middle" font-size="9" fill="#6B7280">Quality</text>
+  <text x="472" y="157" text-anchor="middle" font-size="9" fill="#6B7280">Gates + PR</text>
+
+  <!-- Gate 4 -->
+  <polygon points="516,118 531,130 516,142 501,130" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="516" y="134" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
+  <line x1="531" y1="130" x2="543" y2="130" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#a5Orange)"/>
+
+  <!-- Ship -->
+  <rect x="545" y="90" width="60" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="575" y="127" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Ship</text>
+  <text x="575" y="143" text-anchor="middle" font-size="9" fill="#6B7280">Build +</text>
+  <text x="575" y="157" text-anchor="middle" font-size="9" fill="#6B7280">Deploy</text>
+
+  <!-- Gate 5 -->
+  <polygon points="616,118 631,130 616,142 601,130" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="616" y="134" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
+  <line x1="631" y1="130" x2="643" y2="130" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#a5Orange)"/>
+
+  <!-- Validate -->
+  <rect x="645" y="90" width="66" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="678" y="127" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Validate</text>
+  <text x="678" y="143" text-anchor="middle" font-size="9" fill="#6B7280">SLOs +</text>
+  <text x="678" y="157" text-anchor="middle" font-size="9" fill="#6B7280">Runtime</text>
+
+  <!-- Gate 6 -->
+  <polygon points="722,118 737,130 722,142 707,130" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="722" y="134" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
+  <line x1="737" y1="130" x2="749" y2="130" stroke="#10B981" stroke-width="1.5" marker-end="url(#a5Green)"/>
+
+  <!-- Promote -->
+  <rect x="751" y="90" width="64" height="80" fill="#D1FAE5" stroke="#10B981" stroke-width="1.5" rx="6"/>
+  <text x="783" y="127" text-anchor="middle" font-size="11" fill="#065F46" font-weight="700">Promote</text>
+  <text x="783" y="143" text-anchor="middle" font-size="9" fill="#374151">OBC -></text>
+  <text x="783" y="157" text-anchor="middle" font-size="9" fill="#374151">Operational</text>
+
+  <!-- Bottom labels -->
+  <!-- CI Sync bracket -->
+  <line x1="110" y1="182" x2="505" y2="182" stroke="#F59E0B" stroke-width="1.5"/>
+  <line x1="110" y1="178" x2="110" y2="186" stroke="#F59E0B" stroke-width="1.5"/>
+  <line x1="505" y1="178" x2="505" y2="186" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="307" y="196" text-anchor="middle" font-size="10" fill="#D97706" font-weight="600">CI Sync — Bootstrap, Hack, Sync, Finish</text>
+
+  <!-- CI Async bracket -->
+  <line x1="545" y1="182" x2="815" y2="182" stroke="#10B981" stroke-width="1.5"/>
+  <line x1="545" y1="178" x2="545" y2="186" stroke="#10B981" stroke-width="1.5"/>
+  <line x1="815" y1="178" x2="815" y2="186" stroke="#10B981" stroke-width="1.5"/>
+  <text x="674" y="196" text-anchor="middle" font-size="10" fill="#065F46" font-weight="600">CI Async — Ship, Validate, Promote</text>
+
+  <!-- Release Trail label -->
+  <rect x="20" y="210" width="780" height="28" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1" rx="4"/>
+  <text x="410" y="228" text-anchor="middle" font-size="11" fill="#6B7280">Release Trail atualizado em cada fase — evidencia append-only do compromisso honrado</text>
+
+  <!-- Legend -->
+  <polygon points="30,258 40,264 30,270 20,264" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="50" y="268" font-size="10" fill="#7C3AED">= Gate (Definition of Done) — bloqueante</text>
+</svg>

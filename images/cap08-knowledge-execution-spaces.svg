@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 392" width="100%" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="820" height="392" fill="#F9FAFB" rx="8"/>
+
+  <!-- Title -->
+  <text x="410" y="28" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 8 — Knowledge Space vs Execution Space: a divergencia que a Diligence previne</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="a8Gray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#9CA3AF"/>
+    </marker>
+    <marker id="a8GrayL" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto-start-reverse">
+      <path d="M0,0 L0,6 L8,3 z" fill="#9CA3AF"/>
+    </marker>
+  </defs>
+
+  <!-- Left Panel: Knowledge Space -->
+  <rect x="20" y="45" width="330" height="270" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2" rx="8"/>
+  <text x="185" y="74" text-anchor="middle" font-size="15" fill="#374151" font-weight="700">Knowledge Space</text>
+  <text x="185" y="92" text-anchor="middle" font-size="11" fill="#6B7280">O que sabemos / decidimos</text>
+
+  <!-- Knowledge items -->
+  <rect x="40" y="105" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
+  <text x="185" y="125" text-anchor="middle" font-size="11" fill="#374151">experiment.md — estrutura permanente</text>
+
+  <rect x="40" y="145" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
+  <text x="185" y="165" text-anchor="middle" font-size="11" fill="#374151">upstream-trail.md — registro cronologico</text>
+
+  <rect x="40" y="185" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
+  <text x="185" y="205" text-anchor="middle" font-size="11" fill="#374151">OBCs — contratos de negocio</text>
+
+  <rect x="40" y="225" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
+  <text x="185" y="245" text-anchor="middle" font-size="11" fill="#374151">BDD Features — comportamento acordado</text>
+
+  <rect x="40" y="265" width="290" height="34" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
+  <text x="185" y="283" text-anchor="middle" font-size="11" fill="#374151">Planos, evidencias, artefatos</text>
+  <text x="185" y="295" text-anchor="middle" font-size="10" fill="#6B7280">git — identidade permanente</text>
+
+  <!-- Right Panel: Execution Space -->
+  <rect x="470" y="45" width="330" height="270" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="2" rx="8"/>
+  <text x="635" y="74" text-anchor="middle" font-size="15" fill="#374151" font-weight="700">Execution Space</text>
+  <text x="635" y="92" text-anchor="middle" font-size="11" fill="#6B7280">O que esta sendo feito</text>
+
+  <!-- Execution items -->
+  <rect x="490" y="105" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
+  <text x="635" y="125" text-anchor="middle" font-size="11" fill="#374151">GitHub Issues — rastreamento de trabalho</text>
+
+  <rect x="490" y="145" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
+  <text x="635" y="165" text-anchor="middle" font-size="11" fill="#374151">GitHub Projects — estado do backlog</text>
+
+  <rect x="490" y="185" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
+  <text x="635" y="205" text-anchor="middle" font-size="11" fill="#374151">Pull Requests — codigo em revisao</text>
+
+  <rect x="490" y="225" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
+  <text x="635" y="245" text-anchor="middle" font-size="11" fill="#374151">Pipelines — execucao de CI/CD</text>
+
+  <rect x="490" y="265" width="290" height="34" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
+  <text x="635" y="283" text-anchor="middle" font-size="11" fill="#374151">Iteration Backlog — prioridade ativa</text>
+  <text x="635" y="295" text-anchor="middle" font-size="10" fill="#6B7280">natureza operacional — mutavel</text>
+
+  <!-- Bidirectional arrows in center (recuadas 8px para não sobrepor bordas com marcadores) -->
+  <line x1="358" y1="145" x2="462" y2="145" stroke="#9CA3AF" stroke-width="2" marker-end="url(#a8Gray)" marker-start="url(#a8GrayL)"/>
+  <line x1="358" y1="185" x2="462" y2="185" stroke="#9CA3AF" stroke-width="2" marker-end="url(#a8Gray)" marker-start="url(#a8GrayL)"/>
+  <line x1="358" y1="225" x2="462" y2="225" stroke="#9CA3AF" stroke-width="2" marker-end="url(#a8Gray)" marker-start="url(#a8GrayL)"/>
+
+  <!-- Divergence label in center -->
+  <rect x="352" y="245" width="116" height="50" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5" rx="6"/>
+  <text x="410" y="264" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Divergencia</text>
+  <text x="410" y="278" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">natural</text>
+  <text x="410" y="291" text-anchor="middle" font-size="9" fill="#6B7280">Diligence atua</text>
+
+  <!-- Bottom legend -->
+  <rect x="20" y="325" width="780" height="60" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="6"/>
+  <text x="410" y="341" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Upstream: divergencia toleravel — custo baixo, compromisso nao assumido</text>
+  <text x="410" y="357" text-anchor="middle" font-size="11" fill="#EF4444" font-weight="600">Downstream: divergencia = risco operacional — compromisso precisa ser verificavel</text>
+  <text x="410" y="373" text-anchor="middle" font-size="10" fill="#6B7280">Diligence opera nos dois modos para prevenir acumulo de inconsistencias</text>
+</svg>

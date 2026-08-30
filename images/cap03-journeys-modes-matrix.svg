@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 430" width="100%" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="430" fill="#F9FAFB" rx="8"/>
+
+  <!-- Title -->
+  <text x="400" y="32" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 3 — As 5 jornadas nos dois modos de execucao</text>
+
+  <!-- Header row -->
+  <rect x="20" y="50" width="210" height="48" fill="#374151" rx="6"/>
+  <text x="125" y="78" text-anchor="middle" font-size="14" fill="#F9FAFB" font-weight="700">Jornada</text>
+
+  <rect x="240" y="50" width="255" height="48" fill="#3B82F6" rx="6"/>
+  <text x="367" y="72" text-anchor="middle" font-size="14" fill="#FFFFFF" font-weight="700">Modo Upstream</text>
+  <text x="367" y="89" text-anchor="middle" font-size="11" fill="#E0F2FE">Rigor Advisory — sem gates obrigatorios</text>
+
+  <rect x="505" y="50" width="275" height="48" fill="#F59E0B" rx="6"/>
+  <text x="642" y="72" text-anchor="middle" font-size="14" fill="#FFFFFF" font-weight="700">Modo Downstream</text>
+  <text x="642" y="89" text-anchor="middle" font-size="11" fill="#FEF3C7">Rigor Bloqueante — gates obrigatorios</text>
+
+  <!-- Discovery row (highlighted) -->
+  <rect x="20" y="106" width="210" height="60" fill="#E0F2FE" stroke="#3B82F6" stroke-width="2" rx="4"/>
+  <text x="125" y="130" text-anchor="middle" font-size="13" fill="#1D4ED8" font-weight="700">Discovery</text>
+  <text x="125" y="148" text-anchor="middle" font-size="10" fill="#374151">Reduzir incerteza</text>
+  <text x="125" y="162" text-anchor="middle" font-size="10" fill="#374151">Preparar o trabalho</text>
+
+  <rect x="240" y="106" width="255" height="60" fill="#E0F2FE" stroke="#3B82F6" stroke-width="1.5" rx="4"/>
+  <text x="367" y="128" text-anchor="middle" font-size="12" fill="#1D4ED8" font-weight="600">Exploratorio</text>
+  <text x="367" y="145" text-anchor="middle" font-size="11" fill="#374151">Sem artefatos obrigatorios</text>
+  <text x="367" y="160" text-anchor="middle" font-size="11" fill="#374151">Experimento como unidade de trabalho</text>
+
+  <rect x="505" y="106" width="275" height="60" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="4"/>
+  <text x="642" y="128" text-anchor="middle" font-size="12" fill="#D97706" font-weight="600">Preparatorio</text>
+  <text x="642" y="145" text-anchor="middle" font-size="11" fill="#374151">OBC Draft -> Committed</text>
+  <text x="642" y="160" text-anchor="middle" font-size="11" fill="#374151">BDD Feature antes do Readiness Gate</text>
+
+  <!-- Delivery row (highlighted) -->
+  <rect x="20" y="174" width="210" height="60" fill="#E0F2FE" stroke="#3B82F6" stroke-width="2" rx="4"/>
+  <text x="125" y="198" text-anchor="middle" font-size="13" fill="#1D4ED8" font-weight="700">Delivery</text>
+  <text x="125" y="216" text-anchor="middle" font-size="10" fill="#374151">Construir, validar</text>
+  <text x="125" y="230" text-anchor="middle" font-size="10" fill="#374151">e promover</text>
+
+  <rect x="240" y="174" width="255" height="60" fill="#E0F2FE" stroke="#3B82F6" stroke-width="1.5" rx="4"/>
+  <text x="367" y="196" text-anchor="middle" font-size="12" fill="#1D4ED8" font-weight="600">Advisory</text>
+  <text x="367" y="213" text-anchor="middle" font-size="11" fill="#374151">Fases disponiveis sem obrigatoriedade</text>
+  <text x="367" y="228" text-anchor="middle" font-size="11" fill="#374151">Engenheiro decide profundidade</text>
+
+  <rect x="505" y="174" width="275" height="60" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="4"/>
+  <text x="642" y="196" text-anchor="middle" font-size="12" fill="#D97706" font-weight="600">Obrigatorio</text>
+  <text x="642" y="213" text-anchor="middle" font-size="11" fill="#374151">Bootstrap -> Hack -> Sync -> Finish</text>
+  <text x="642" y="228" text-anchor="middle" font-size="11" fill="#374151">-> Ship -> Validate -> Promote</text>
+
+  <!-- Operation row -->
+  <rect x="20" y="242" width="210" height="54" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
+  <text x="125" y="265" text-anchor="middle" font-size="13" fill="#374151" font-weight="600">Operation</text>
+  <text x="125" y="284" text-anchor="middle" font-size="10" fill="#6B7280">Operar e evoluir</text>
+
+  <rect x="240" y="242" width="255" height="54" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
+  <text x="367" y="265" text-anchor="middle" font-size="11" fill="#374151">Experimental — sandbox ou</text>
+  <text x="367" y="282" text-anchor="middle" font-size="11" fill="#374151">ambiente controlado, sem SLO formal</text>
+
+  <rect x="505" y="242" width="275" height="54" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
+  <text x="642" y="265" text-anchor="middle" font-size="11" fill="#374151">Producao real — SLOs definidos,</text>
+  <text x="642" y="282" text-anchor="middle" font-size="11" fill="#374151">runbooks, protocolo de incidentes</text>
+
+  <!-- Assessment row -->
+  <rect x="20" y="304" width="210" height="54" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
+  <text x="125" y="327" text-anchor="middle" font-size="13" fill="#374151" font-weight="600">Assessment</text>
+  <text x="125" y="346" text-anchor="middle" font-size="10" fill="#6B7280">Apoiar decisoes</text>
+
+  <rect x="240" y="304" width="255" height="54" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
+  <text x="367" y="327" text-anchor="middle" font-size="11" fill="#374151">Analise exploratoria — hipoteses</text>
+  <text x="367" y="344" text-anchor="middle" font-size="11" fill="#374151">sem conclusoes comprometidas</text>
+
+  <rect x="505" y="304" width="275" height="54" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
+  <text x="642" y="327" text-anchor="middle" font-size="11" fill="#374151">Analise orientada ao OBC —</text>
+  <text x="642" y="344" text-anchor="middle" font-size="11" fill="#374151">recomendacoes verificaveis</text>
+
+  <!-- Diligence row -->
+  <rect x="20" y="366" width="210" height="48" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
+  <text x="125" y="389" text-anchor="middle" font-size="13" fill="#374151" font-weight="600">Diligence</text>
+  <text x="125" y="407" text-anchor="middle" font-size="10" fill="#6B7280">Consistencia</text>
+
+  <rect x="240" y="366" width="255" height="48" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
+  <text x="367" y="389" text-anchor="middle" font-size="11" fill="#374151">Leve — alerta sem bloquear</text>
+  <text x="367" y="406" text-anchor="middle" font-size="11" fill="#374151">Divergencia tolerada</text>
+
+  <rect x="505" y="366" width="275" height="48" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
+  <text x="642" y="389" text-anchor="middle" font-size="11" fill="#374151">Bloqueante — Findings impedem avanco</text>
+  <text x="642" y="406" text-anchor="middle" font-size="11" fill="#374151">Consistencia obrigatoria</text>
+
+  <!-- Legend note -->
+  <text x="20" y="423" font-size="10" fill="#3B82F6">* Discovery e Delivery destacados — tratados em detalhe no livro</text>
+</svg>

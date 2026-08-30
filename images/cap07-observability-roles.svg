@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 410" width="100%" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="820" height="410" fill="#F9FAFB" rx="8"/>
+
+  <!-- Title -->
+  <text x="410" y="28" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 7 — Observabilidade como epistemologia: papéis distintos em cada modo</text>
+
+  <!-- Left Panel: Upstream -->
+  <rect x="20" y="45" width="340" height="320" fill="#E0F2FE" stroke="#3B82F6" stroke-width="2" rx="8"/>
+  <text x="190" y="72" text-anchor="middle" font-size="15" fill="#1D4ED8" font-weight="700">Modo Upstream</text>
+  <text x="190" y="90" text-anchor="middle" font-size="12" fill="#1D4ED8">Observabilidade torna a</text>
+  <text x="190" y="105" text-anchor="middle" font-size="12" fill="#1D4ED8">INCERTEZA explícita</text>
+
+  <!-- Upstream items -->
+  <rect x="40" y="120" width="300" height="40" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1" rx="6"/>
+  <text x="190" y="138" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">Evidence Package</text>
+  <text x="190" y="152" text-anchor="middle" font-size="10" fill="#6B7280">evidencia verificavel por terceiros</text>
+
+  <rect x="40" y="168" width="300" height="40" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1" rx="6"/>
+  <text x="190" y="186" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">upstream-trail.md</text>
+  <text x="190" y="200" text-anchor="middle" font-size="10" fill="#6B7280">progressao cronologica do experimento</text>
+
+  <rect x="40" y="216" width="300" height="40" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1" rx="6"/>
+  <text x="190" y="234" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">Decision Package</text>
+  <text x="190" y="248" text-anchor="middle" font-size="10" fill="#6B7280">sintese para o CommitmentGate</text>
+
+  <rect x="40" y="264" width="300" height="40" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1" rx="6"/>
+  <text x="190" y="282" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">TTE / Decision Latency</text>
+  <text x="190" y="296" text-anchor="middle" font-size="10" fill="#6B7280">metricas de flow do ciclo de vida</text>
+
+  <!-- Question Upstream -->
+  <rect x="40" y="316" width="300" height="36" fill="#3B82F6" rx="6"/>
+  <text x="190" y="332" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="600">O que sabemos? O que nao sabemos?</text>
+  <text x="190" y="346" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="600">Com que confiança?</text>
+
+  <!-- Center divider: CommitmentGate -->
+  <line x1="410" y1="45" x2="410" y2="365" stroke="#8B5CF6" stroke-width="2"/>
+  <rect x="372" y="195" width="76" height="55" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="2" rx="6"/>
+  <text x="410" y="216" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Commitment</text>
+  <text x="410" y="230" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Gate</text>
+  <text x="410" y="244" text-anchor="middle" font-size="9" fill="#6B7280">fronteira</text>
+
+  <!-- Right Panel: Downstream -->
+  <rect x="460" y="45" width="340" height="320" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" rx="8"/>
+  <text x="630" y="72" text-anchor="middle" font-size="15" fill="#D97706" font-weight="700">Modo Downstream</text>
+  <text x="630" y="90" text-anchor="middle" font-size="12" fill="#D97706">Observabilidade verifica o</text>
+  <text x="630" y="105" text-anchor="middle" font-size="12" fill="#D97706">COMPROMISSO</text>
+
+  <!-- Downstream items -->
+  <rect x="480" y="120" width="300" height="40" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1" rx="6"/>
+  <text x="630" y="138" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">OBC estado Operational</text>
+  <text x="630" y="152" text-anchor="middle" font-size="10" fill="#6B7280">contrato de negocio mensuravel em runtime</text>
+
+  <rect x="480" y="168" width="300" height="40" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1" rx="6"/>
+  <text x="630" y="186" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">Release Trail</text>
+  <text x="630" y="200" text-anchor="middle" font-size="10" fill="#6B7280">log append-only de cada fase da entrega</text>
+
+  <rect x="480" y="216" width="300" height="40" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1" rx="6"/>
+  <text x="630" y="234" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">SLOs / metricas DORA</text>
+  <text x="630" y="248" text-anchor="middle" font-size="10" fill="#6B7280">confiabilidade mensuravel em producao</text>
+
+  <rect x="480" y="264" width="300" height="40" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1" rx="6"/>
+  <text x="630" y="282" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">Observable Events (OBC)</text>
+  <text x="630" y="296" text-anchor="middle" font-size="10" fill="#6B7280">comportamento verificavel em producao</text>
+
+  <!-- Question Downstream -->
+  <rect x="480" y="316" width="300" height="36" fill="#F59E0B" rx="6"/>
+  <text x="630" y="332" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="600">O compromisso esta sendo honrado?</text>
+  <text x="630" y="346" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="600">A capability entregou o prometido?</text>
+
+  <!-- ODD label at bottom -->
+  <rect x="20" y="372" width="780" height="32" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
+  <text x="410" y="391" text-anchor="middle" font-size="10" fill="#6B7280">ODD — Observability Driven Design: o que nao pode ser observado nao pode ser governado — em nenhum dos dois modos</text>
+</svg>
