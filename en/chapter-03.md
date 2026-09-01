@@ -135,4 +135,32 @@ With this distinction established, the two following chapters can describe each 
 
 ---
 
+## The cycle in synthesis: OBC, CommitmentGate, and the regime transition
+
+The modal model describes two commitment regimes. What has not yet been said is which artifact carries that commitment across the lifecycle of a capability — and which mechanism makes the transition from one regime to the other.
+
+The artifact is the **OBC** (Observable Business Contract). The mechanism is the **CommitmentGate**.
+
+The OBC exists from the moment a business intent is registered. In Upstream, it is in **Draft** or **Refining** state: incomplete is acceptable, it can be changed freely, it does not block experiments. Upstream uses the OBC as memory of accumulated learning — what is already known about the capability, which hypotheses have been answered, which questions remain open.
+
+The CommitmentGate is the gate that evaluates whether the accumulated evidence justifies transitioning the OBC from Refining to **Committed**. The Decision Package — an artifact with answered hypotheses, identified risks, and a formal recommendation — is the gate's input. A trio executes the CommitmentGate: the product owner, the technical lead, and an independent evaluator. The framework defines six canonical outcomes: the Promote outcome transitions the OBC to Committed and opens Downstream; the remaining outcomes keep the item in Upstream, discard the capability, or suspend work until an external condition is resolved.
+
+In Downstream, the Committed OBC is the contract under which the commitment was assumed. The blocking gates that govern the Delivery journey verify what is in the OBC: the expected Observable Events, the measurable acceptance criteria, the Initial SLIs with numeric targets. Without a Committed OBC, no Delivery phase begins. With it, rigor shifts from advisory to blocking — not as a preference, but as an operational consequence of the commitment assumed.
+
+```mermaid
+graph LR
+    A["OBC Draft\n(Upstream)"] -->|"Decision Package"| B{"CommitmentGate\n6 outcomes"}
+    B -->|"Promote"| C["OBC Committed\n(Downstream Declared)"]
+    B -->|"other outcomes"| X["Upstream / Discard /\nWait"]
+    C --> D["Readiness Gate"]
+    D --> E["Iteration Plan"]
+    E --> F["Bootstrap"]
+```
+
+**Rigor is configurable, but its configuration is not a preference.** The ProdOps Framework prescribes the canonical CommitmentGate template — the required artifacts, the trio participants, the six outcomes. The Runtime is what the team installs and adapts to its operational context: which additional verifications apply to the type of work the team does, with what depth, under which conditions the Reliability Plan is required. This adaptation is legitimate and recommended. What is not adaptable is the principle: without a CommitmentGate with an evaluated Decision Package, the OBC transition from Draft to Committed does not happen. What varies between teams is how the gate is calibrated — not whether it exists.
+
+With the OBC as artifact and the CommitmentGate as mechanism, the two following chapters have a concrete reference: Upstream is the regime under which the OBC accumulates evidence before the gate; Downstream is the regime under which the Committed OBC is honored with blocking gates until the capability is promoted.
+
+---
+
 *Chapter 3 of 10 | Part II: The Modes*

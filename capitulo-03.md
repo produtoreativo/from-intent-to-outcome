@@ -135,4 +135,32 @@ Com essa distinção estabelecida, os dois capítulos seguintes podem descrever 
 
 ---
 
+## O ciclo em síntese: OBC, CommitmentGate e a transição de regime
+
+O modelo modal descreve dois regimes de compromisso. O que ainda não foi dito é qual artefato carrega esse compromisso ao longo do ciclo de vida de uma capability — e qual mecanismo faz a transição de um regime para o outro.
+
+O artefato é o **OBC** (Observable Business Contract). O mecanismo é o **CommitmentGate**.
+
+O OBC existe desde o momento em que uma intenção de negócio é registrada. No Upstream, ele está em estado **Draft** ou **Refining**: incompleto é aceitável, pode ser alterado livremente, não bloqueia experimentos. O Upstream usa o OBC como memória do aprendizado acumulado — o que já se sabe sobre a capability, quais hipóteses foram respondidas, quais questões permanecem abertas.
+
+O CommitmentGate é o gate que avalia se a evidência acumulada justifica transitar o OBC de Refining para **Committed**. O Decision Package — artefato com hipóteses respondidas, riscos identificados e recomendação formal — é o input do gate. Um trio executa o CommitmentGate: o responsável pelo produto, o responsável técnico e um avaliador independente. O framework define seis outcomes canônicos: o outcome Promover transita o OBC para Committed e abre o Downstream; os demais mantêm o item em Upstream, descartam a capability ou suspendem o trabalho até que uma condição externa seja resolvida.
+
+No Downstream, o OBC Committed é o contrato sob o qual o compromisso foi assumido. Os gates bloqueantes que governam a jornada Delivery verificam o que está no OBC: os Observable Events esperados, os critérios de aceite mensuráveis, os Initial SLIs com targets numéricos. Sem OBC Committed, nenhuma fase de Delivery começa. Com ele, o rigor passa de advisory para bloqueante — não como uma preferência, mas como consequência operacional do compromisso assumido.
+
+```mermaid
+graph LR
+    A["OBC Draft\n(Upstream)"] -->|"Decision Package"| B{"CommitmentGate\n6 outcomes"}
+    B -->|"Promover"| C["OBC Committed\n(Downstream Declared)"]
+    B -->|"outros outcomes"| X["Upstream / Descarte /\nAguardar"]
+    C --> D["Readiness Gate"]
+    D --> E["Iteration Plan"]
+    E --> F["Bootstrap"]
+```
+
+**O rigor é configurável, mas sua configuração não é uma preferência.** O Framework ProdOps prescreve o template canônico do CommitmentGate — os artefatos obrigatórios, os participantes do trio, os seis outcomes. O Runtime é o que o time instala e adapta ao seu contexto operacional: quais verificações adicionais se aplicam ao tipo de trabalho que o time faz, com qual profundidade, sob quais condições o Reliability Plan é exigido. Essa adaptação é legítima e recomendada. O que não é adaptável é o princípio: sem CommitmentGate com Decision Package avaliado, a transição do OBC de Draft para Committed não acontece. O que muda entre times é como o gate é calibrado — não se ele existe.
+
+Com o OBC como artefato e o CommitmentGate como mecanismo, os dois capítulos seguintes têm referência concreta: o Upstream é o regime sob o qual o OBC acumula evidência antes do gate; o Downstream é o regime sob o qual o OBC Committed é honrado com gates bloqueantes até a promoção da capability.
+
+---
+
 *Capítulo 3 de 10 | Parte II: Os Modos*
