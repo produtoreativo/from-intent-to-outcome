@@ -1,129 +1,174 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 280" width="100%" font-family="system-ui, -apple-system, sans-serif">
-  <!-- Background -->
-  <rect width="840" height="280" fill="#F9FAFB" rx="8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 580" width="100%" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="860" height="580" fill="#F9FAFB" rx="8"/>
 
   <!-- Title -->
-  <text x="410" y="26" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 5 — Pipeline Downstream: sequencia obrigatoria com gates bloqueantes</text>
+  <text x="430" y="26" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 5 — Pipeline Downstream: sequência obrigatória com gates bloqueantes e os 5 anti-padrões</text>
 
-  <!-- Mode label banner -->
-  <rect x="20" y="38" width="780" height="26" fill="#FEF3C7" rx="4"/>
-  <text x="410" y="55" text-anchor="middle" font-size="12" fill="#D97706" font-weight="700">Modo Downstream — Rigor Bloqueante — todos os gates sao obrigatorios</text>
+  <!-- Mode banner -->
+  <rect x="20" y="36" width="820" height="24" fill="#FEF3C7" rx="4"/>
+  <text x="430" y="52" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Modo Downstream — Rigor Bloqueante — todos os gates são obrigatórios</text>
 
-  <!-- Arrow markers -->
   <defs>
-    <marker id="a5Orange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#F59E0B"/>
-    </marker>
-    <marker id="a5Violet" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#8B5CF6"/>
-    </marker>
-    <marker id="a5Green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#10B981"/>
-    </marker>
+    <marker id="aOr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#F59E0B"/></marker>
+    <marker id="aGr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#10B981"/></marker>
+    <marker id="aRd" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#EF4444"/></marker>
+    <marker id="aBl" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#8B5CF6"/></marker>
   </defs>
 
-  <!-- Entry point: Readiness Gate -->
-  <rect x="20" y="90" width="72" height="80" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5" rx="6"/>
-  <text x="56" y="123" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Readiness</text>
-  <text x="56" y="136" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Gate</text>
-  <text x="56" y="152" text-anchor="middle" font-size="9" fill="#6B7280">Momento 3</text>
-
-  <!-- Arrow from Readiness Gate -->
-  <line x1="92" y1="130" x2="108" y2="130" stroke="#F59E0B" stroke-width="2" marker-end="url(#a5Orange)"/>
-
-  <!-- Phase boxes with gates between them -->
-  <!-- Helper function: each box + gate after it -->
+  <!-- Entry: Readiness Gate -->
+  <rect x="20" y="75" width="76" height="80" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5" rx="6"/>
+  <text x="58" y="108" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Readiness</text>
+  <text x="58" y="121" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Gate</text>
+  <text x="58" y="136" text-anchor="middle" font-size="9" fill="#6B7280">Momento 3</text>
+  <line x1="96" y1="115" x2="110" y2="115" stroke="#F59E0B" stroke-width="2" marker-end="url(#aOr)"/>
 
   <!-- Bootstrap -->
-  <rect x="110" y="90" width="76" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
-  <text x="148" y="123" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Bootstrap</text>
-  <text x="148" y="140" text-anchor="middle" font-size="9" fill="#6B7280">Ambiente</text>
-  <text x="148" y="154" text-anchor="middle" font-size="9" fill="#6B7280">operacional</text>
+  <rect x="112" y="75" width="76" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="150" y="108" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Bootstrap</text>
+  <text x="150" y="124" text-anchor="middle" font-size="9" fill="#6B7280">Ambiente</text>
+  <text x="150" y="137" text-anchor="middle" font-size="9" fill="#6B7280">operacional</text>
 
-  <!-- Gate 1 -->
-  <polygon points="198,118 213,130 198,142 183,130" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
-  <text x="198" y="134" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
-  <line x1="213" y1="130" x2="225" y2="130" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#a5Orange)"/>
+  <polygon points="200,104 214,115 200,126 186,115" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="200" y="119" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
+  <line x1="214" y1="115" x2="226" y2="115" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#aOr)"/>
 
   <!-- Hack -->
-  <rect x="227" y="90" width="66" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
-  <text x="260" y="127" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Hack</text>
-  <text x="260" y="143" text-anchor="middle" font-size="9" fill="#6B7280">TDD</text>
-  <text x="260" y="157" text-anchor="middle" font-size="9" fill="#6B7280">ProdOps</text>
+  <rect x="228" y="75" width="68" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="262" y="108" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Hack</text>
+  <text x="262" y="124" text-anchor="middle" font-size="9" fill="#6B7280">TDD</text>
+  <text x="262" y="137" text-anchor="middle" font-size="9" fill="#6B7280">ProdOps</text>
 
-  <!-- Gate 2 -->
-  <polygon points="304,118 319,130 304,142 289,130" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
-  <text x="304" y="134" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
-  <line x1="319" y1="130" x2="331" y2="130" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#a5Orange)"/>
+  <polygon points="308,104 322,115 308,126 294,115" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="308" y="119" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
+  <line x1="322" y1="115" x2="334" y2="115" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#aOr)"/>
 
   <!-- Sync -->
-  <rect x="333" y="90" width="66" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
-  <text x="366" y="127" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Sync</text>
-  <text x="366" y="143" text-anchor="middle" font-size="9" fill="#6B7280">Branch +</text>
-  <text x="366" y="157" text-anchor="middle" font-size="9" fill="#6B7280">Artefatos</text>
+  <rect x="336" y="75" width="68" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="370" y="108" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Sync</text>
+  <text x="370" y="124" text-anchor="middle" font-size="9" fill="#6B7280">Branch +</text>
+  <text x="370" y="137" text-anchor="middle" font-size="9" fill="#6B7280">Artefatos</text>
 
-  <!-- Gate 3 -->
-  <polygon points="410,118 425,130 410,142 395,130" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
-  <text x="410" y="134" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
-  <line x1="425" y1="130" x2="437" y2="130" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#a5Orange)"/>
+  <polygon points="416,104 430,115 416,126 402,115" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="416" y="119" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
+  <line x1="430" y1="115" x2="442" y2="115" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#aOr)"/>
 
   <!-- Finish -->
-  <rect x="439" y="90" width="66" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
-  <text x="472" y="127" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Finish</text>
-  <text x="472" y="143" text-anchor="middle" font-size="9" fill="#6B7280">Quality</text>
-  <text x="472" y="157" text-anchor="middle" font-size="9" fill="#6B7280">Gates + PR</text>
+  <rect x="444" y="75" width="68" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="478" y="108" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Finish</text>
+  <text x="478" y="124" text-anchor="middle" font-size="9" fill="#6B7280">Quality</text>
+  <text x="478" y="137" text-anchor="middle" font-size="9" fill="#6B7280">Gates + PR</text>
 
-  <!-- Gate 4 -->
-  <polygon points="516,118 531,130 516,142 501,130" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
-  <text x="516" y="134" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
-  <line x1="531" y1="130" x2="543" y2="130" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#a5Orange)"/>
+  <polygon points="524,104 538,115 524,126 510,115" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="524" y="119" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
+  <line x1="538" y1="115" x2="550" y2="115" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#aOr)"/>
 
   <!-- Ship -->
-  <rect x="545" y="90" width="60" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
-  <text x="575" y="127" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Ship</text>
-  <text x="575" y="143" text-anchor="middle" font-size="9" fill="#6B7280">Build +</text>
-  <text x="575" y="157" text-anchor="middle" font-size="9" fill="#6B7280">Deploy</text>
+  <rect x="552" y="75" width="64" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="584" y="108" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Ship</text>
+  <text x="584" y="124" text-anchor="middle" font-size="9" fill="#6B7280">Build +</text>
+  <text x="584" y="137" text-anchor="middle" font-size="9" fill="#6B7280">Deploy</text>
 
-  <!-- Gate 5 -->
-  <polygon points="616,118 631,130 616,142 601,130" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
-  <text x="616" y="134" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
-  <line x1="631" y1="130" x2="643" y2="130" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#a5Orange)"/>
+  <polygon points="628,104 642,115 628,126 614,115" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="628" y="119" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
+  <line x1="642" y1="115" x2="654" y2="115" stroke="#F59E0B" stroke-width="1.5" marker-end="url(#aOr)"/>
 
   <!-- Validate -->
-  <rect x="645" y="90" width="66" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
-  <text x="678" y="127" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Validate</text>
-  <text x="678" y="143" text-anchor="middle" font-size="9" fill="#6B7280">SLOs +</text>
-  <text x="678" y="157" text-anchor="middle" font-size="9" fill="#6B7280">Runtime</text>
+  <rect x="656" y="75" width="68" height="80" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="690" y="108" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Validate</text>
+  <text x="690" y="124" text-anchor="middle" font-size="9" fill="#6B7280">SLOs +</text>
+  <text x="690" y="137" text-anchor="middle" font-size="9" fill="#6B7280">Runtime</text>
 
-  <!-- Gate 6 -->
-  <polygon points="722,118 737,130 722,142 707,130" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
-  <text x="722" y="134" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
-  <line x1="737" y1="130" x2="749" y2="130" stroke="#10B981" stroke-width="1.5" marker-end="url(#a5Green)"/>
+  <polygon points="736,104 750,115 736,126 722,115" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="736" y="119" text-anchor="middle" font-size="8" fill="#7C3AED" font-weight="700">DoD</text>
+  <line x1="750" y1="115" x2="762" y2="115" stroke="#10B981" stroke-width="1.5" marker-end="url(#aGr)"/>
 
   <!-- Promote -->
-  <rect x="751" y="90" width="64" height="80" fill="#D1FAE5" stroke="#10B981" stroke-width="1.5" rx="6"/>
-  <text x="783" y="127" text-anchor="middle" font-size="11" fill="#065F46" font-weight="700">Promote</text>
-  <text x="783" y="143" text-anchor="middle" font-size="9" fill="#374151">OBC -></text>
-  <text x="783" y="157" text-anchor="middle" font-size="9" fill="#374151">Operational</text>
+  <rect x="764" y="75" width="72" height="80" fill="#D1FAE5" stroke="#10B981" stroke-width="2" rx="6"/>
+  <text x="800" y="108" text-anchor="middle" font-size="11" fill="#065F46" font-weight="700">Promote</text>
+  <text x="800" y="124" text-anchor="middle" font-size="9" fill="#374151">OBC →</text>
+  <text x="800" y="137" text-anchor="middle" font-size="9" fill="#374151">Operational</text>
 
-  <!-- Bottom labels -->
   <!-- CI Sync bracket -->
-  <line x1="110" y1="182" x2="505" y2="182" stroke="#F59E0B" stroke-width="1.5"/>
-  <line x1="110" y1="178" x2="110" y2="186" stroke="#F59E0B" stroke-width="1.5"/>
-  <line x1="505" y1="178" x2="505" y2="186" stroke="#F59E0B" stroke-width="1.5"/>
-  <text x="307" y="196" text-anchor="middle" font-size="10" fill="#D97706" font-weight="600">CI Sync — Bootstrap, Hack, Sync, Finish</text>
+  <line x1="112" y1="168" x2="512" y2="168" stroke="#F59E0B" stroke-width="1.5"/>
+  <line x1="112" y1="164" x2="112" y2="172" stroke="#F59E0B" stroke-width="1.5"/>
+  <line x1="512" y1="164" x2="512" y2="172" stroke="#F59E0B" stroke-width="1.5"/>
+  <text x="312" y="183" text-anchor="middle" font-size="10" fill="#D97706" font-weight="600">CI Sync — Bootstrap, Hack, Sync, Finish</text>
 
   <!-- CI Async bracket -->
-  <line x1="545" y1="182" x2="815" y2="182" stroke="#10B981" stroke-width="1.5"/>
-  <line x1="545" y1="178" x2="545" y2="186" stroke="#10B981" stroke-width="1.5"/>
-  <line x1="815" y1="178" x2="815" y2="186" stroke="#10B981" stroke-width="1.5"/>
-  <text x="674" y="196" text-anchor="middle" font-size="10" fill="#065F46" font-weight="600">CI Async — Ship, Validate, Promote</text>
+  <line x1="552" y1="168" x2="836" y2="168" stroke="#10B981" stroke-width="1.5"/>
+  <line x1="552" y1="164" x2="552" y2="172" stroke="#10B981" stroke-width="1.5"/>
+  <line x1="836" y1="164" x2="836" y2="172" stroke="#10B981" stroke-width="1.5"/>
+  <text x="692" y="183" text-anchor="middle" font-size="10" fill="#065F46" font-weight="600">CI Async — Ship, Validate, Promote</text>
 
-  <!-- Release Trail label -->
-  <rect x="20" y="210" width="780" height="28" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1" rx="4"/>
-  <text x="410" y="228" text-anchor="middle" font-size="11" fill="#6B7280">Release Trail atualizado em cada fase — evidencia append-only do compromisso honrado</text>
+  <!-- Release Trail -->
+  <rect x="20" y="192" width="820" height="24" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1" rx="4"/>
+  <text x="430" y="208" text-anchor="middle" font-size="10" fill="#6B7280">Release Trail — log append-only atualizado em cada fase: evidência do compromisso honrado, fase a fase</text>
+
+  <!-- ANTI-PATTERNS SECTION -->
+  <text x="430" y="240" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Os 5 anti-padrões do Downstream: forma sem substância</text>
+
+  <!-- AP-D1: Gate Theater -->
+  <rect x="20" y="250" width="240" height="140" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <text x="140" y="272" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="700">AP-D1: Gate Theater</text>
+  <rect x="30" y="280" width="220" height="20" fill="#FFFFFF" stroke="#FCA5A5" stroke-width="1" rx="3"/>
+  <text x="140" y="294" text-anchor="middle" font-size="9" fill="#374151">Gates executados sem critérios satisfeitos</text>
+  <text x="28" y="318" font-size="9" fill="#6B7280">Causa: pressão de prazo</text>
+  <text x="28" y="331" font-size="9" fill="#6B7280">Sinal: sem registro item a item</text>
+  <rect x="30" y="340" width="220" height="42" fill="#D1FAE5" stroke="#10B981" stroke-width="1" rx="3"/>
+  <text x="140" y="356" text-anchor="middle" font-size="9" fill="#065F46" font-weight="600">✓ Mag. Siará: RISK-SP-001</text>
+  <text x="140" y="369" text-anchor="middle" font-size="9" fill="#065F46">PM Eugenio fecha risco com decisão</text>
+  <text x="140" y="382" text-anchor="middle" font-size="9" fill="#065F46">nomeada e datada — não é teatro</text>
+
+  <!-- AP-D2: Proxy Commitment -->
+  <rect x="270" y="250" width="240" height="140" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <text x="390" y="272" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="700">AP-D2: Proxy Commitment</text>
+  <rect x="280" y="280" width="220" height="20" fill="#FFFFFF" stroke="#FCA5A5" stroke-width="1" rx="3"/>
+  <text x="390" y="294" text-anchor="middle" font-size="9" fill="#374151">OBC Committed sem métricas mensuráveis</text>
+  <text x="278" y="318" font-size="9" fill="#6B7280">Causa: pressão de formalizar</text>
+  <text x="278" y="331" font-size="9" fill="#6B7280">Sinal: outcome vago ou relativo</text>
+  <rect x="280" y="340" width="220" height="42" fill="#D1FAE5" stroke="#10B981" stroke-width="1" rx="3"/>
+  <text x="390" y="356" text-anchor="middle" font-size="9" fill="#065F46" font-weight="600">✓ OBC split-payment-pix-boleto</text>
+  <text x="390" y="369" text-anchor="middle" font-size="9" fill="#065F46">5 SLIs numéricos (100% e 99%)</text>
+  <text x="390" y="382" text-anchor="middle" font-size="9" fill="#065F46">6 Observable Events com dimensões</text>
+
+  <!-- AP-D3: Forced Readiness -->
+  <rect x="520" y="250" width="240" height="140" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <text x="640" y="272" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="700">AP-D3: Forced Readiness</text>
+  <rect x="530" y="280" width="220" height="20" fill="#FFFFFF" stroke="#FCA5A5" stroke-width="1" rx="3"/>
+  <text x="640" y="294" text-anchor="middle" font-size="9" fill="#374151">Readiness Gate com lacunas que bloqueiam</text>
+  <text x="528" y="318" font-size="9" fill="#6B7280">Causa: custo perc. de atraso &gt; lacuna</text>
+  <text x="528" y="331" font-size="9" fill="#6B7280">Sinal: findings abertos sem waiver</text>
+  <rect x="530" y="340" width="220" height="42" fill="#D1FAE5" stroke="#10B981" stroke-width="1" rx="3"/>
+  <text x="640" y="356" text-anchor="middle" font-size="9" fill="#065F46" font-weight="600">✓ PI-001: perguntas abertas</text>
+  <text x="640" y="369" text-anchor="middle" font-size="9" fill="#065F46">classificadas como "refinamento"</text>
+  <text x="640" y="382" text-anchor="middle" font-size="9" fill="#065F46">lacunas nomeadas, não ocultadas</text>
+
+  <!-- AP-D4: Phantom BDD -->
+  <rect x="20" y="400" width="360" height="130" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <text x="200" y="422" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="700">AP-D4: Phantom BDD</text>
+  <rect x="30" y="430" width="340" height="20" fill="#FFFFFF" stroke="#FCA5A5" stroke-width="1" rx="3"/>
+  <text x="200" y="444" text-anchor="middle" font-size="9" fill="#374151">BDD escrita após o código, descrevendo o implementado</text>
+  <text x="28" y="468" font-size="9" fill="#6B7280">Causa: BDD como documentação de conformidade</text>
+  <text x="28" y="481" font-size="9" fill="#6B7280">Sinal: timestamp do feature file após primeiro commit de Hack</text>
+  <rect x="30" y="492" width="340" height="30" fill="#D1FAE5" stroke="#10B981" stroke-width="1" rx="3"/>
+  <text x="200" y="508" text-anchor="middle" font-size="9" fill="#065F46" font-weight="600">✓ PI-001: "OBC e BDD devem ser escritos imediatamente" — antes de qualquer Hack</text>
+
+  <!-- AP-D5: Release Trail Vazio -->
+  <rect x="390" y="400" width="450" height="130" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <text x="615" y="422" text-anchor="middle" font-size="11" fill="#DC2626" font-weight="700">AP-D5: Release Trail Vazio</text>
+  <rect x="400" y="430" width="430" height="20" fill="#FFFFFF" stroke="#FCA5A5" stroke-width="1" rx="3"/>
+  <text x="615" y="444" text-anchor="middle" font-size="9" fill="#374151">Promote executado sem registro de decisões, artefatos e testes por fase</text>
+  <text x="398" y="468" font-size="9" fill="#6B7280">Causa: Release Trail tratado como formalidade opcional</text>
+  <text x="398" y="481" font-size="9" fill="#6B7280">Consequência: rastreabilidade do compromisso destruída</text>
+  <rect x="400" y="492" width="430" height="30" fill="#D1FAE5" stroke="#10B981" stroke-width="1" rx="3"/>
+  <text x="615" y="508" text-anchor="middle" font-size="9" fill="#065F46" font-weight="600">✓ EXP-014: 53/53 PASS — Diligence detecta Release Trail vazio no momento do evento</text>
 
   <!-- Legend -->
-  <polygon points="30,258 40,264 30,270 20,264" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
-  <text x="50" y="268" font-size="10" fill="#7C3AED">= Gate (Definition of Done) — bloqueante</text>
+  <rect x="20" y="540" width="820" height="32" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
+  <rect x="30" y="550" width="12" height="12" fill="#FEE2E2" stroke="#EF4444" stroke-width="1" rx="2"/>
+  <text x="48" y="560" font-size="10" fill="#374151">= Anti-padrão: forma sem substância</text>
+  <rect x="250" y="550" width="12" height="12" fill="#D1FAE5" stroke="#10B981" stroke-width="1" rx="2"/>
+  <text x="268" y="560" font-size="10" fill="#374151">= Contra-exemplo real (Magazine Siará corpus)</text>
+  <polygon points="520,550 530,556 520,562 510,556" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="538" y="560" font-size="10" fill="#374151">= Gate bloqueante (Definition of Done)</text>
 </svg>

@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 700" width="100%" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="920" height="700" fill="#F9FAFB" rx="8"/>
+  <text x="460" y="26" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 10 — Corpus Magazine Siará: 17 experimentos Upstream, 12+ OBCs Committed, 15+ iterações com Release Trail</text>
+
+  <defs>
+    <marker id="aGr10" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#10B981"/></marker>
+    <marker id="aBl10" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#3B82F6"/></marker>
+    <marker id="aOr10" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#F59E0B"/></marker>
+    <marker id="aGy10" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#9CA3AF"/></marker>
+    <marker id="aPu10" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#8B5CF6"/></marker>
+  </defs>
+
+  <!-- ── Left: Upstream experiments cluster ── -->
+  <rect x="10" y="42" width="290" height="420" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2" rx="8"/>
+  <text x="155" y="64" text-anchor="middle" font-size="13" fill="#1D4ED8" font-weight="700">Upstream Experiments</text>
+  <text x="155" y="80" text-anchor="middle" font-size="10" fill="#1D4ED8">17 experimentos — evidência de exploração disciplinada</text>
+
+  <!-- Group 1: Credit Card -->
+  <rect x="22" y="88" width="266" height="94" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1" rx="5"/>
+  <text x="155" y="104" text-anchor="middle" font-size="10" fill="#1D4ED8" font-weight="700">Cartão de Crédito (EXP-001 → 003)</text>
+  <text x="155" y="120" text-anchor="middle" font-size="9" fill="#374151">EXP-001: ciclo de vida + 6 fluxos observáveis</text>
+  <text x="155" y="134" text-anchor="middle" font-size="9" fill="#374151">EXP-002: sandbox Asaas — sem credencial de prod</text>
+  <text x="155" y="148" text-anchor="middle" font-size="9" fill="#374151">EXP-003: hosted vs tokenized vs transparent</text>
+  <rect x="30" y="157" width="250" height="18" fill="#3B82F6" rx="3"/>
+  <text x="155" y="169" text-anchor="middle" font-size="8.5" fill="#FFFFFF">→ Sem código de produção. Decision Package: hosted first.</text>
+
+  <!-- Group 2: Observability / Diligence / Events -->
+  <rect x="22" y="190" width="266" height="94" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1" rx="5"/>
+  <text x="155" y="206" text-anchor="middle" font-size="10" fill="#1D4ED8" font-weight="700">Observabilidade &amp; Diligence (EXP-010 → 014)</text>
+  <text x="155" y="222" text-anchor="middle" font-size="9" fill="#374151">EXP-010: Datadog APM + Trace ID em eventos</text>
+  <text x="155" y="236" text-anchor="middle" font-size="9" fill="#374151">EXP-012: Release Trail automático via CloudEvents</text>
+  <text x="155" y="250" text-anchor="middle" font-size="9" fill="#374151">EXP-014: Diligence em tempo real — 53/53 PASS</text>
+  <rect x="30" y="259" width="250" height="18" fill="#3B82F6" rx="3"/>
+  <text x="155" y="271" text-anchor="middle" font-size="8.5" fill="#FFFFFF">Diligence: verificação contínua orientada a eventos</text>
+
+  <!-- Group 3: Agents / Conformance -->
+  <rect x="22" y="292" width="266" height="68" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1" rx="5"/>
+  <text x="155" y="308" text-anchor="middle" font-size="10" fill="#1D4ED8" font-weight="700">Agentes como produtores (EXP-015)</text>
+  <text x="155" y="324" text-anchor="middle" font-size="9" fill="#374151">22 cenários × 3 players (claude/codex/copilot)</text>
+  <text x="155" y="338" text-anchor="middle" font-size="9" fill="#374151">100% conformance — zero divergências semânticas</text>
+  <rect x="30" y="347" width="250" height="12" fill="#3B82F6" rx="3"/>
+  <text x="155" y="356" text-anchor="middle" font-size="8" fill="#FFFFFF">Intercambiabilidade = propriedade do contrato</text>
+
+  <!-- Group 4: Framework extraction -->
+  <rect x="22" y="368" width="266" height="68" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1" rx="5"/>
+  <text x="155" y="384" text-anchor="middle" font-size="10" fill="#1D4ED8" font-weight="700">Framework extraction &amp; DynamoDB (outros)</text>
+  <text x="155" y="400" text-anchor="middle" font-size="9" fill="#374151">ProdOps Framework v1.0 → v1.14.0 extraído</text>
+  <text x="155" y="414" text-anchor="middle" font-size="9" fill="#374151">47-event catalog, install script, AGENTS.md gerado</text>
+  <rect x="30" y="423" width="250" height="12" fill="#3B82F6" rx="3"/>
+  <text x="155" y="432" text-anchor="middle" font-size="8" fill="#FFFFFF">status: self — repo é fonte canônica do framework</text>
+
+  <!-- Arrow from Upstream to CommitmentGate -->
+  <line x1="300" y1="252" x2="338" y2="252" stroke="#8B5CF6" stroke-width="2" marker-end="url(#aPu10)"/>
+
+  <!-- ── Center: CommitmentGate ── -->
+  <polygon points="380,210 440,252 380,294 320,252" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="3"/>
+  <text x="380" y="248" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Commitment</text>
+  <text x="380" y="262" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Gate</text>
+
+  <!-- BS-001 bypass arrow (direct) -->
+  <path d="M155,462 Q155,490 380,490 Q380,480 380,494" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#aOr10)"/>
+  <rect x="22" y="462" width="266" height="40" fill="#FEF9C3" stroke="#F59E0B" stroke-width="1.5" rx="5"/>
+  <text x="155" y="478" text-anchor="middle" font-size="9" fill="#D97706" font-weight="700">BS-001 → PI-001 — CommitmentGate no mesmo dia</text>
+  <text x="155" y="491" text-anchor="middle" font-size="9" fill="#374151">sem Upstream prévio | prazo: 15 dias</text>
+  <text x="155" y="504" text-anchor="middle" font-size="8" fill="#374151">Discovery in Downstream → Planning → Bootstrap</text>
+
+  <!-- Arrow from CommitmentGate to Downstream -->
+  <line x1="440" y1="252" x2="478" y2="252" stroke="#10B981" stroke-width="2" marker-end="url(#aGr10)"/>
+
+  <!-- ── Right: Downstream OBCs ── -->
+  <rect x="480" y="42" width="430" height="420" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2" rx="8"/>
+  <text x="695" y="64" text-anchor="middle" font-size="13" fill="#D97706" font-weight="700">Downstream — 12+ OBCs Committed</text>
+  <text x="695" y="80" text-anchor="middle" font-size="10" fill="#D97706">15+ iterações versioned com Release Trail (v0.2.0 → v0.15.0)</text>
+
+  <!-- OBC list: two columns -->
+  <!-- Column 1 -->
+  <rect x="492" y="90" width="195" height="28" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
+  <text x="589" y="109" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">create-invoice</text>
+
+  <rect x="492" y="124" width="195" height="28" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
+  <text x="589" y="143" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">payment-confirmation</text>
+
+  <rect x="492" y="158" width="195" height="28" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
+  <text x="589" y="177" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">split-payment-pix-boleto ★</text>
+
+  <rect x="492" y="192" width="195" height="28" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
+  <text x="589" y="211" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">cancel-invoice</text>
+
+  <rect x="492" y="226" width="195" height="28" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
+  <text x="589" y="245" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">credit-card-authorization</text>
+
+  <rect x="492" y="260" width="195" height="28" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
+  <text x="589" y="279" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">api-token-validation</text>
+
+  <!-- Column 2 -->
+  <rect x="700" y="90" width="196" height="28" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
+  <text x="798" y="109" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">webhook-configuration</text>
+
+  <rect x="700" y="124" width="196" height="28" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
+  <text x="798" y="143" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">chargeback-handling</text>
+
+  <rect x="700" y="158" width="196" height="28" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
+  <text x="798" y="177" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">boleto-auto-cancellation</text>
+
+  <rect x="700" y="192" width="196" height="28" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
+  <text x="798" y="211" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">observability-datadog</text>
+
+  <rect x="700" y="226" width="196" height="28" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
+  <text x="798" y="245" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">dynamodb-optimization</text>
+
+  <rect x="700" y="260" width="196" height="28" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="4"/>
+  <text x="798" y="279" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">production-cicd-pipeline</text>
+
+  <!-- OBC highlight: split-payment -->
+  <rect x="492" y="296" width="404" height="60" fill="#FFFFFF" stroke="#D97706" stroke-width="1.5" rx="5"/>
+  <text x="694" y="313" text-anchor="middle" font-size="9" fill="#D97706" font-weight="700">★ split-payment-pix-boleto — OBC mais rico do corpus</text>
+  <text x="694" y="328" text-anchor="middle" font-size="9" fill="#374151">6 Observable Events | 5 SLIs numéricos (3×100%, 2×99%) | 6 Reliability Rules</text>
+  <text x="694" y="343" text-anchor="middle" font-size="9" fill="#374151">4 decisões datadas | splitPaymentId rastreável em todos os logs | dados financeiros nunca expostos</text>
+
+  <!-- Iteration timeline -->
+  <rect x="492" y="366" width="404" height="84" fill="#FEF9C3" stroke="#F59E0B" stroke-width="1" rx="5"/>
+  <text x="694" y="384" text-anchor="middle" font-size="9" fill="#D97706" font-weight="700">15+ iterações versioned — v0.2.0 → v0.15.0</text>
+  <text x="694" y="399" text-anchor="middle" font-size="9" fill="#374151">Cada iteração: plano formal + OBC Committed + BDD Feature + Release Trail</text>
+  <!-- Mini timeline -->
+  <line x1="510" y1="425" x2="880" y2="425" stroke="#F59E0B" stroke-width="1.5"/>
+  <circle cx="530" cy="425" r="5" fill="#F59E0B"/>
+  <text x="530" y="440" text-anchor="middle" font-size="7" fill="#6B7280">v0.2.0</text>
+  <circle cx="600" cy="425" r="5" fill="#F59E0B"/>
+  <text x="600" y="440" text-anchor="middle" font-size="7" fill="#6B7280">v0.5.0</text>
+  <circle cx="680" cy="425" r="5" fill="#F59E0B"/>
+  <text x="680" y="440" text-anchor="middle" font-size="7" fill="#6B7280">v0.8.0</text>
+  <circle cx="770" cy="425" r="5" fill="#D97706" stroke="#B45309" stroke-width="1.5"/>
+  <text x="770" y="440" text-anchor="middle" font-size="7" fill="#6B7280">v0.14.0</text>
+  <text x="770" y="416" text-anchor="middle" font-size="7" fill="#D97706">DS-61</text>
+  <circle cx="860" cy="425" r="5" fill="#F59E0B"/>
+  <text x="860" y="440" text-anchor="middle" font-size="7" fill="#6B7280">v0.15.0</text>
+
+  <!-- ── Bottom: summary stats ── -->
+  <rect x="10" y="474" width="900" height="64" fill="#F0FDF4" stroke="#10B981" stroke-width="1.5" rx="8"/>
+  <text x="460" y="493" text-anchor="middle" font-size="11" fill="#065F46" font-weight="700">Corpus em números — tudo produzido durante o trabalho, não documentado depois</text>
+
+  <rect x="22" y="501" width="168" height="28" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="4"/>
+  <text x="106" y="519" text-anchor="middle" font-size="10" fill="#065F46" font-weight="700">17 experimentos</text>
+
+  <rect x="200" y="501" width="168" height="28" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="4"/>
+  <text x="284" y="519" text-anchor="middle" font-size="10" fill="#065F46" font-weight="700">12+ OBCs Committed</text>
+
+  <rect x="378" y="501" width="168" height="28" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="4"/>
+  <text x="462" y="519" text-anchor="middle" font-size="10" fill="#065F46" font-weight="700">15+ iterações v/Release Trail</text>
+
+  <rect x="556" y="501" width="168" height="28" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="4"/>
+  <text x="640" y="519" text-anchor="middle" font-size="10" fill="#065F46" font-weight="700">53/53 EXP-014</text>
+
+  <rect x="734" y="501" width="168" height="28" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="4"/>
+  <text x="818" y="519" text-anchor="middle" font-size="10" fill="#065F46" font-weight="700">22/22×3 EXP-015</text>
+
+  <!-- ── Bottom: honesty section ── -->
+  <rect x="10" y="548" width="900" height="140" fill="#FFF7ED" stroke="#F97316" stroke-width="1.5" rx="8"/>
+  <text x="460" y="568" text-anchor="middle" font-size="11" fill="#9A3412" font-weight="700">O que o corpus ainda não demonstrou — honestidade intelectual</text>
+
+  <rect x="22" y="578" width="275" height="98" fill="#FFFFFF" stroke="#FED7AA" stroke-width="1" rx="4"/>
+  <text x="159" y="596" text-anchor="middle" font-size="9" fill="#9A3412" font-weight="700">Trio humano pleno no CommitmentGate</text>
+  <text x="159" y="612" text-anchor="middle" font-size="9" fill="#374151">PM como decisor de negócio: registrado.</text>
+  <text x="159" y="626" text-anchor="middle" font-size="9" fill="#374151">Autor independente (engenheiro que não</text>
+  <text x="159" y="640" text-anchor="middle" font-size="9" fill="#374151">conduziu o experimento): não registrado</text>
+  <text x="159" y="654" text-anchor="middle" font-size="9" fill="#374151">com identidade distinta em caso real.</text>
+  <text x="159" y="668" text-anchor="middle" font-size="9" fill="#374151">Mecanismo funciona; composição plena: pendente.</text>
+
+  <rect x="309" y="578" width="275" height="98" fill="#FFFFFF" stroke="#FED7AA" stroke-width="1" rx="4"/>
+  <text x="446" y="596" text-anchor="middle" font-size="9" fill="#9A3412" font-weight="700">TTE e sinais S1-S4 prospectivos</text>
+  <text x="446" y="612" text-anchor="middle" font-size="9" fill="#374151">EXP-014: Diligence rastreia Execution Space.</text>
+  <text x="446" y="626" text-anchor="middle" font-size="9" fill="#374151">Instrumentação proativa de TTE, Decision</text>
+  <text x="446" y="640" text-anchor="middle" font-size="9" fill="#374151">Latency e Discovery WIP (sinais S1-S4)</text>
+  <text x="446" y="654" text-anchor="middle" font-size="9" fill="#374151">como coleta automática: proposta,</text>
+  <text x="446" y="668" text-anchor="middle" font-size="9" fill="#374151">não implementada.</text>
+
+  <rect x="596" y="578" width="302" height="98" fill="#FFFFFF" stroke="#FED7AA" stroke-width="1" rx="4"/>
+  <text x="747" y="596" text-anchor="middle" font-size="9" fill="#9A3412" font-weight="700">Regressão Downstream→Upstream em caso real</text>
+  <text x="747" y="612" text-anchor="middle" font-size="9" fill="#374151">Protocolo definido e presente no framework.</text>
+  <text x="747" y="626" text-anchor="middle" font-size="9" fill="#374151">15 iterações documentadas: nenhuma precisou</text>
+  <text x="747" y="640" text-anchor="middle" font-size="9" fill="#374151">regredir. Validade operacional do protocolo</text>
+  <text x="747" y="654" text-anchor="middle" font-size="9" fill="#374151">em caso real de divergência: aguarda</text>
+  <text x="747" y="668" text-anchor="middle" font-size="9" fill="#374151">evidência empírica.</text>
+</svg>

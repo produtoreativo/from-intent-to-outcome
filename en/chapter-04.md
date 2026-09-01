@@ -33,7 +33,7 @@ These conditions eliminate two frequent cases of inappropriate experiment use. T
 
 > **Note:** The distinction between informal research and formal experiment is operational, not canonical. The framework does not require that every investigation be a formal experiment, only that formal experiments satisfy these conditions.
 
-The procurement needs survey in Procurare is a concrete example. The central hypothesis: "the greatest pain of Procurement is not lack of technology, but lack of structured context — the business intent is never captured in a way that systems can act on it." The hypothesis is falsifiable: if procurement users report that the primary pain is something else (cost, approval time, lack of qualified suppliers), the hypothesis is refuted. The answer has decision value: it defines what the Procurare MVP needs to prioritize. And the cost of assuming the hypothesis without testing it would be to build an intent-capture system for a problem that is not the main one.
+EXP-001 of the Magazine Siará Payments API is a concrete example. The central hypothesis: "the complete credit card lifecycle can be supported without crossing the PCI boundary, provided only the hosted flow is exposed in the first iteration." The hypothesis is falsifiable: if the PCI scope analysis shows that hosted and tokenized have equivalent exposure, or if the Checkout team cannot integrate the hosted flow without breaking changes to the existing contract, the hypothesis is refuted. The answer has decision value: it defines which of the three integration models — hosted, tokenized, transparent — enters Downstream first. And the cost of assuming the hypothesis without testing it would be to build with the wrong model and need a second Downstream delivery to correct it.
 
 ---
 
@@ -121,15 +121,15 @@ The distinction between Controlled Production and Capability Promotion is precis
 
 ---
 
-## Upstream in operation: Procurare as exemplar
+## Upstream in operation: Magazine Siará as exemplar
 
-The Procurare procurement needs survey illustrates Upstream as an operational mode. The experiment opened with a falsifiable hypothesis about the central pain of Procurement, defined 10 structured investigation questions, and produced a complete needs map for Procurare covering process, data, integrations, agents, and observability.
+The first three experiments of the Magazine Siará Payments API (EXP-001, EXP-002, and EXP-003) illustrate Upstream as an operational mode in its most complete form, with the CommitmentGate executed at the end of the sequence.
 
-The resulting Decision Package includes a recommendation to "Move to Downstream" — the equivalent of the CommitmentGate's Promote outcome. The experiment is marked as Completed, indicating that the hypothesis was answered and the Decision Package was written with substance.
+EXP-001 opened with a high-risk question: how to support the complete credit card lifecycle without crossing the PCI boundary or coupling Checkout to the Asaas contract? Before writing a single line of production code, the experiment specified the mandatory BDD scenarios, the Observable Events expected for each flow (authorization, confirmation, risk analysis, refusal, cancellation, chargeback), and the dimensions that could never appear in logs (card number, CVV, provider token). EXP-002 mapped the Asaas sandbox capabilities and limitations for reproducing the credit card cycle, and confirmed the Validation Workbench as the simulation environment for scenarios the sandbox cannot reproduce deterministically — full provider scenario validation remains open, pending external evidence from Asaas. EXP-003 systematically compared the three possible integration models — hosted, tokenized, transparent — and produced the recommendation with justification: only hosted entry advances to Downstream, because it is the only option that does not require decisions external to the Payments team.
 
-What the Procurare procurement survey demonstrates is Upstream as serious exploration engineering: not a low-discipline phase, but a structured effort at uncertainty reduction that produced verifiable knowledge and a justified recommendation for the next step.
+The EXP-003 Decision Package recommends Promote with restriction (outcome ②): the hosted slice advances; the remaining options remain in Upstream awaiting third-party decisions (PCI scope, token model, Checkout UX). The CommitmentGate was executed with this Decision Package: the trio recorded the outcome, and Downstream began exclusively for hosted entry.
 
-What this survey has not yet demonstrated, in the current repository, is the CommitmentGate formally executed: with the trio convened, the Decision Package evaluated, and the outcome recorded in the upstream-trail. This is the boundary between what Upstream produces and where Downstream begins.
+Three sequential experiments. No production code during any of them. A recommendation verifiable by third parties. A CommitmentGate that decided the capability's fate with sufficient evidence — and with an explicit restriction on what the evidence did not support. This is Upstream as serious exploration engineering.
 
 ---
 
@@ -138,6 +138,8 @@ What this survey has not yet demonstrated, in the current repository, is the Com
 The definition of Upstream includes an explicit list of what is outside its scope. Implementing the committed capability with blocking gates: that is the Delivery journey in Downstream mode. The distinction is one of commitment, not physical activity: Upstream can produce functional code, proof of concept, implementation in sandbox or in controlled production, without that constituting the delivery of a formally promised capability. Defining how observability will be implemented technically: that is the responsibility of Downstream (the "how" of instrumentation, not the "what" that must be observable). Producing OBC Committed: that is Discovery in Downstream. Producing complete BDD in `prodops/artifacts/bdd/`: that happens before the Readiness Gate. Guaranteeing the absence of uncertainty: acceptable residual uncertainty is a valid CommitmentGate criterion.
 
 This last statement is counterintuitive enough to deserve emphasis: Upstream does not need to eliminate all uncertainty. It needs to reduce uncertainty to the point where the residual risk is acceptable for taking on the Downstream commitment. What is "acceptable" is the collective judgment of the trio at the CommitmentGate, not a zero-uncertainty criterion that no finite experiment can satisfy.
+
+Special attention is due to the item "Producing Committed OBC: that is Discovery in Downstream." It resolves a frequent misunderstanding: a Business Signal that enters directly into Downstream without prior Upstream does not skip discovery. The discovery happens in the Discovery journey executed in Downstream mode — with blocking rigor. The OBC transitions from Draft to Refining. The BDD Feature is written and refined. The Business Intent questions are resolved with dated decisions and identified responsible parties. The Readiness Gate blocks entry into the Delivery journey until these conditions are met. Only then — with the Iteration Plan generated in Planning — does Bootstrap, the first phase of Delivery, begin. What "without Upstream" describes is the absence of pre-CommitmentGate exploration. What happens after the CommitmentGate, in the Discovery journey in Downstream mode, is real discovery: with blocking gates that do not allow advancing until the conditions are satisfied.
 
 ---
 

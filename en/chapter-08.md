@@ -107,6 +107,8 @@ The relationship between them is bidirectional. Diligence produces Findings and 
 
 This bidirectionality means that Diligence is not subordinate to Assessment, nor is Assessment subordinate to Diligence. They are journeys with distinct responsibilities that feed each other.
 
+EXP-014 of the Payments API tested this property empirically: can the ProdOps Runtime automatically track the Delivery state of each Feature via CloudEvents, with Diligence capturing and attaching operational evidence to the same Work Item in real time? **53/53 PASS.** Synchronization between GitHub Project and Datadog was verified for every phase of the Bootstrap → Promote sequence. Diligence did not require human intervention to detect divergences: the event-driven cycle triggered verification at the moment of each phase transition. This result transforms Diligence from a periodic audit process into a continuous verification system — which is the only form of governance that does not create bureaucracy proportional to delivery volume.
+
 ---
 
 *Chapter 8 of 10 | Part IV: The Common Substrate*

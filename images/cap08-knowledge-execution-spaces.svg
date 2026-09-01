@@ -1,78 +1,117 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 392" width="100%" font-family="system-ui, -apple-system, sans-serif">
-  <!-- Background -->
-  <rect width="820" height="392" fill="#F9FAFB" rx="8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 640" width="100%" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="860" height="640" fill="#F9FAFB" rx="8"/>
+  <text x="430" y="26" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 8 — Knowledge Space vs Execution Space: Diligence como guardião da separação — EXP-014 em evidência</text>
 
-  <!-- Title -->
-  <text x="410" y="28" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 8 — Knowledge Space vs Execution Space: a divergencia que a Diligence previne</text>
-
-  <!-- Arrow markers -->
   <defs>
-    <marker id="a8Gray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#9CA3AF"/>
-    </marker>
-    <marker id="a8GrayL" markerWidth="8" markerHeight="8" refX="2" refY="3" orient="auto-start-reverse">
-      <path d="M0,0 L0,6 L8,3 z" fill="#9CA3AF"/>
-    </marker>
+    <marker id="aGr8" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#10B981"/></marker>
+    <marker id="aBl8" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#3B82F6"/></marker>
+    <marker id="aRd8" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#EF4444"/></marker>
+    <marker id="aPu8" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#8B5CF6"/></marker>
+    <marker id="aOr8" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#F59E0B"/></marker>
+    <marker id="aGy8" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#9CA3AF"/></marker>
   </defs>
 
-  <!-- Left Panel: Knowledge Space -->
-  <rect x="20" y="45" width="330" height="270" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2" rx="8"/>
-  <text x="185" y="74" text-anchor="middle" font-size="15" fill="#374151" font-weight="700">Knowledge Space</text>
-  <text x="185" y="92" text-anchor="middle" font-size="11" fill="#6B7280">O que sabemos / decidimos</text>
+  <!-- ── Top half: two-space model ── -->
 
-  <!-- Knowledge items -->
-  <rect x="40" y="105" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
-  <text x="185" y="125" text-anchor="middle" font-size="11" fill="#374151">experiment.md — estrutura permanente</text>
+  <!-- Knowledge Space -->
+  <rect x="20" y="42" width="370" height="260" fill="#E0F2FE" stroke="#3B82F6" stroke-width="2" rx="8"/>
+  <text x="205" y="66" text-anchor="middle" font-size="14" fill="#1D4ED8" font-weight="700">Knowledge Space</text>
+  <text x="205" y="83" text-anchor="middle" font-size="10" fill="#1D4ED8">O que o time diz que está acontecendo</text>
 
-  <rect x="40" y="145" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
-  <text x="185" y="165" text-anchor="middle" font-size="11" fill="#374151">upstream-trail.md — registro cronologico</text>
+  <rect x="38" y="96" width="334" height="30" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1" rx="5"/>
+  <text x="205" y="116" text-anchor="middle" font-size="10" fill="#374151" font-weight="600">OBC — Observable Business Contract</text>
 
-  <rect x="40" y="185" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
-  <text x="185" y="205" text-anchor="middle" font-size="11" fill="#374151">OBCs — contratos de negocio</text>
+  <rect x="38" y="133" width="334" height="30" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1" rx="5"/>
+  <text x="205" y="153" text-anchor="middle" font-size="10" fill="#374151" font-weight="600">upstream-trail.md / Release Trail</text>
 
-  <rect x="40" y="225" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
-  <text x="185" y="245" text-anchor="middle" font-size="11" fill="#374151">BDD Features — comportamento acordado</text>
+  <rect x="38" y="170" width="334" height="30" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1" rx="5"/>
+  <text x="205" y="190" text-anchor="middle" font-size="10" fill="#374151" font-weight="600">BDD Feature + GitHub Project Status</text>
 
-  <rect x="40" y="265" width="290" height="34" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
-  <text x="185" y="283" text-anchor="middle" font-size="11" fill="#374151">Planos, evidencias, artefatos</text>
-  <text x="185" y="295" text-anchor="middle" font-size="10" fill="#6B7280">git — identidade permanente</text>
+  <rect x="38" y="207" width="334" height="30" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1" rx="5"/>
+  <text x="205" y="227" text-anchor="middle" font-size="10" fill="#374151" font-weight="600">Declared Initial SLIs</text>
 
-  <!-- Right Panel: Execution Space -->
-  <rect x="470" y="45" width="330" height="270" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="2" rx="8"/>
-  <text x="635" y="74" text-anchor="middle" font-size="15" fill="#374151" font-weight="700">Execution Space</text>
-  <text x="635" y="92" text-anchor="middle" font-size="11" fill="#6B7280">O que esta sendo feito</text>
+  <rect x="38" y="244" width="334" height="44" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1" rx="5"/>
+  <text x="205" y="262" text-anchor="middle" font-size="10" fill="#1D4ED8" font-weight="700">Contém: promessas, decisões, hipóteses</text>
+  <text x="205" y="279" text-anchor="middle" font-size="9" fill="#374151">verificável sem acesso ao sistema em produção</text>
 
-  <!-- Execution items -->
-  <rect x="490" y="105" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
-  <text x="635" y="125" text-anchor="middle" font-size="11" fill="#374151">GitHub Issues — rastreamento de trabalho</text>
+  <!-- Execution Space -->
+  <rect x="470" y="42" width="370" height="260" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" rx="8"/>
+  <text x="655" y="66" text-anchor="middle" font-size="14" fill="#D97706" font-weight="700">Execution Space</text>
+  <text x="655" y="83" text-anchor="middle" font-size="10" fill="#D97706">O que realmente está acontecendo em runtime</text>
 
-  <rect x="490" y="145" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
-  <text x="635" y="165" text-anchor="middle" font-size="11" fill="#374151">GitHub Projects — estado do backlog</text>
+  <rect x="488" y="96" width="334" height="30" fill="#FFFFFF" stroke="#FCD34D" stroke-width="1" rx="5"/>
+  <text x="655" y="116" text-anchor="middle" font-size="10" fill="#374151" font-weight="600">CloudEvents emitidos pelo Runtime</text>
 
-  <rect x="490" y="185" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
-  <text x="635" y="205" text-anchor="middle" font-size="11" fill="#374151">Pull Requests — codigo em revisao</text>
+  <rect x="488" y="133" width="334" height="30" fill="#FFFFFF" stroke="#FCD34D" stroke-width="1" rx="5"/>
+  <text x="655" y="153" text-anchor="middle" font-size="10" fill="#374151" font-weight="600">Datadog APM / Traces / Metrics</text>
 
-  <rect x="490" y="225" width="290" height="32" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
-  <text x="635" y="245" text-anchor="middle" font-size="11" fill="#374151">Pipelines — execucao de CI/CD</text>
+  <rect x="488" y="170" width="334" height="30" fill="#FFFFFF" stroke="#FCD34D" stroke-width="1" rx="5"/>
+  <text x="655" y="190" text-anchor="middle" font-size="10" fill="#374151" font-weight="600">GitHub Project — status real do Work Item</text>
 
-  <rect x="490" y="265" width="290" height="34" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" rx="5"/>
-  <text x="635" y="283" text-anchor="middle" font-size="11" fill="#374151">Iteration Backlog — prioridade ativa</text>
-  <text x="635" y="295" text-anchor="middle" font-size="10" fill="#6B7280">natureza operacional — mutavel</text>
+  <rect x="488" y="207" width="334" height="30" fill="#FFFFFF" stroke="#FCD34D" stroke-width="1" rx="5"/>
+  <text x="655" y="227" text-anchor="middle" font-size="10" fill="#374151" font-weight="600">SLO medições em tempo real (DLT, TTE obs.)</text>
 
-  <!-- Bidirectional arrows in center (recuadas 8px para não sobrepor bordas com marcadores) -->
-  <line x1="358" y1="145" x2="462" y2="145" stroke="#9CA3AF" stroke-width="2" marker-end="url(#a8Gray)" marker-start="url(#a8GrayL)"/>
-  <line x1="358" y1="185" x2="462" y2="185" stroke="#9CA3AF" stroke-width="2" marker-end="url(#a8Gray)" marker-start="url(#a8GrayL)"/>
-  <line x1="358" y1="225" x2="462" y2="225" stroke="#9CA3AF" stroke-width="2" marker-end="url(#a8Gray)" marker-start="url(#a8GrayL)"/>
+  <rect x="488" y="244" width="334" height="44" fill="#FEF9C3" stroke="#F59E0B" stroke-width="1" rx="5"/>
+  <text x="655" y="262" text-anchor="middle" font-size="10" fill="#D97706" font-weight="700">Contém: comportamento verificável, estado real</text>
+  <text x="655" y="279" text-anchor="middle" font-size="9" fill="#374151">independente do que o time declara</text>
 
-  <!-- Divergence label in center -->
-  <rect x="352" y="245" width="116" height="50" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5" rx="6"/>
-  <text x="410" y="264" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Divergencia</text>
-  <text x="410" y="278" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">natural</text>
-  <text x="410" y="291" text-anchor="middle" font-size="9" fill="#6B7280">Diligence atua</text>
+  <!-- Diligence center bridge -->
+  <rect x="398" y="140" width="64" height="80" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="2" rx="8"/>
+  <text x="430" y="162" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Diligence</text>
+  <text x="430" y="178" text-anchor="middle" font-size="9" fill="#6B7280">Journey</text>
+  <text x="430" y="195" text-anchor="middle" font-size="9" fill="#374151">compara</text>
+  <text x="430" y="209" text-anchor="middle" font-size="9" fill="#374151">os dois</text>
+  <line x1="390" y1="180" x2="362" y2="180" stroke="#8B5CF6" stroke-width="1.5" marker-end="url(#aPu8)"/>
+  <line x1="462" y1="180" x2="488" y2="180" stroke="#8B5CF6" stroke-width="1.5" marker-end="url(#aPu8)"/>
 
-  <!-- Bottom legend -->
-  <rect x="20" y="325" width="780" height="60" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="6"/>
-  <text x="410" y="341" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Upstream: divergencia toleravel — custo baixo, compromisso nao assumido</text>
-  <text x="410" y="357" text-anchor="middle" font-size="11" fill="#EF4444" font-weight="600">Downstream: divergencia = risco operacional — compromisso precisa ser verificavel</text>
-  <text x="410" y="373" text-anchor="middle" font-size="10" fill="#6B7280">Diligence opera nos dois modos para prevenir acumulo de inconsistencias</text>
+  <!-- Divergence zone -->
+  <rect x="20" y="316" width="820" height="36" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" rx="6"/>
+  <text x="430" y="333" text-anchor="middle" font-size="10" fill="#DC2626" font-weight="700">Divergência: o que o Knowledge Space declara não corresponde ao que o Execution Space evidencia</text>
+  <text x="430" y="347" text-anchor="middle" font-size="9" fill="#DC2626">→ Finding gerado pela Diligence; equipe recebe notificação; waiver formal se não resolvível imediatamente</text>
+
+  <!-- ── EXP-014 evidence panel ── -->
+  <rect x="20" y="366" width="820" height="260" fill="#F0FDF4" stroke="#10B981" stroke-width="2" rx="8"/>
+  <text x="430" y="390" text-anchor="middle" font-size="13" fill="#065F46" font-weight="700">EXP-014 — Diligence em tempo real: 53/53 PASS (Magazine Siará, Payments API)</text>
+  <text x="430" y="408" text-anchor="middle" font-size="10" fill="#374151">Hipótese: o ProdOps Runtime consegue rastrear automaticamente o estado de Delivery via CloudEvents,</text>
+  <text x="430" y="422" text-anchor="middle" font-size="10" fill="#374151">com Diligence capturando e anexando evidências operacionais ao Work Item em tempo real?</text>
+
+  <!-- 53 checks table: 5 groups in two rows -->
+  <!-- Row 1: 3 groups -->
+  <rect x="30" y="434" width="245" height="70" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="5"/>
+  <text x="152" y="451" text-anchor="middle" font-size="9" fill="#065F46" font-weight="700">CloudEvents por fase</text>
+  <text x="152" y="466" text-anchor="middle" font-size="9" fill="#374151">Bootstrap.Started / Bootstrap.Completed</text>
+  <text x="152" y="479" text-anchor="middle" font-size="9" fill="#374151">Hack.Started / Hack.Completed</text>
+  <text x="152" y="492" text-anchor="middle" font-size="9" fill="#374151">Sync, Finish, Ship, Validate, Promote</text>
+  <text x="152" y="499" text-anchor="middle" font-size="8" fill="#10B981">✓ PASS</text>
+
+  <rect x="287" y="434" width="245" height="70" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="5"/>
+  <text x="409" y="451" text-anchor="middle" font-size="9" fill="#065F46" font-weight="700">GitHub Project sync</text>
+  <text x="409" y="466" text-anchor="middle" font-size="9" fill="#374151">Status Work Item atualizado no evento</text>
+  <text x="409" y="479" text-anchor="middle" font-size="9" fill="#374151">mesmo momento de cada CloudEvent</text>
+  <text x="409" y="492" text-anchor="middle" font-size="9" fill="#374151">Diligence detecta dessincronização</text>
+  <text x="409" y="499" text-anchor="middle" font-size="8" fill="#10B981">✓ PASS</text>
+
+  <rect x="544" y="434" width="296" height="70" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="5"/>
+  <text x="692" y="451" text-anchor="middle" font-size="9" fill="#065F46" font-weight="700">Datadog APM + divergência</text>
+  <text x="692" y="466" text-anchor="middle" font-size="9" fill="#374151">Métrica registrada por CloudEvent recebido</text>
+  <text x="692" y="479" text-anchor="middle" font-size="9" fill="#374151">Diligence detecta empty trail em tempo real</text>
+  <text x="692" y="492" text-anchor="middle" font-size="9" fill="#374151">Waiver formal para findings não-resolvíveis</text>
+  <text x="692" y="499" text-anchor="middle" font-size="8" fill="#10B981">✓ PASS</text>
+
+  <!-- Row 2: 2 groups + summary -->
+  <rect x="30" y="514" width="380" height="60" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="5"/>
+  <text x="220" y="531" text-anchor="middle" font-size="9" fill="#065F46" font-weight="700">Verificação de correlação e idempotência</text>
+  <text x="220" y="546" text-anchor="middle" font-size="9" fill="#374151">correlation-id consistente entre eventos da mesma fase</text>
+  <text x="220" y="559" text-anchor="middle" font-size="9" fill="#374151">segunda chamada com mesmo ID retorna status:skipped</text>
+  <text x="220" y="570" text-anchor="middle" font-size="8" fill="#10B981">✓ PASS</text>
+
+  <rect x="420" y="514" width="420" height="60" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="5"/>
+  <text x="630" y="531" text-anchor="middle" font-size="9" fill="#065F46" font-weight="700">Sanitização + rejeição de campos inválidos</text>
+  <text x="630" y="546" text-anchor="middle" font-size="9" fill="#374151">token/secret não aparece em output ou timeline</text>
+  <text x="630" y="559" text-anchor="middle" font-size="9" fill="#374151">campos catalog-owned rejeitados (exit 1, status:error)</text>
+  <text x="630" y="570" text-anchor="middle" font-size="8" fill="#10B981">✓ PASS</text>
+
+  <!-- Result summary -->
+  <rect x="30" y="584" width="800" height="30" fill="#059669" rx="6"/>
+  <text x="430" y="604" text-anchor="middle" font-size="12" fill="#FFFFFF" font-weight="700">Resultado: 53/53 PASS — Diligence não é auditoria periódica. É verificação contínua orientada a eventos.</text>
 </svg>

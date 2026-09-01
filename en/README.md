@@ -20,7 +20,7 @@ Upstream, Downstream, and the New Operating Model for Digital Products
 | 7 | Observability as epistemology, not infrastructure | [chapter-07.md](chapter-07.md) | Draft |
 | 8 | Diligence: guardian of consistency | [chapter-08.md](chapter-08.md) | Draft |
 | 9 | The mode problem for AI agents | chapter-09.md | Draft |
-| 10 | The Procurare as evidence | chapter-10.md | Draft |
+| 10 | Magazine Siará as evidence | chapter-10.md | Draft |
 | — | Conclusion | conclusao.md | Draft |
 | — | Appendix: Research Notes | apendice-pesquisa.md | Draft |
 

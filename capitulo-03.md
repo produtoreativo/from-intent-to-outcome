@@ -11,7 +11,7 @@ Os capítulos anteriores descreveram um problema: times de produto aplicam o tip
 
 A solução que o ProdOps propõe é estrutural: em vez de distinguir Upstream de Downstream pelo momento no tempo em que acontecem, distingui-los pelo *tipo de compromisso* que estão mantendo. Essa distinção é o que o framework chama de *modo de execução*.
 
-Introduzir dois termos (Upstream e Downstream) e dizer que um representa exploração e o outro representa entrega seria apenas renomear um problema sem resolvê-lo. O ponto do modelo modal não é o vocabulário. É o que o vocabulário carrega: uma distinção de compromisso que pode ser verificada em qualquer momento, aplicada a qualquer tipo de trabalho, e gerenciada com mecanismos explícitos.
+Introduzir dois termos (Upstream e Downstream) e dizer que um representa exploração e o outro representa compromisso de execução seria apenas renomear um problema sem resolvê-lo. O ponto do modelo modal não é o vocabulário. É o que o vocabulário carrega: uma distinção de compromisso que pode ser verificada em qualquer momento, aplicada a qualquer tipo de trabalho, e gerenciada com mecanismos explícitos.
 
 Este capítulo define o que é um modo de execução no sentido técnico que o ProdOps usa o termo. Sem essa definição precisa, os capítulos sobre Upstream e Downstream parecerão apenas descrições de processos, e o leitor perderá o que é genuinamente diferente nessa abordagem.
 

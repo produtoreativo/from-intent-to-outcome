@@ -95,6 +95,8 @@ A medida de saúde da Diligence não é o volume de Findings criados: é a ausê
 
 Quando a Diligence produz muitos Findings repetidamente sobre o mesmo tipo de problema, isso é um sinal de processo: o time está sistematicamente produzindo uma divergência que precisa ser endereçada na causa, não apenas corrigida cada vez que aparece.
 
+O EXP-014 da Payments API testou essa propriedade empiricamente: será que o ProdOps Runtime rastreia automaticamente o estado de Delivery de cada Feature via CloudEvents, e a Diligence captura e anexa evidência operacional ao mesmo Work Item em tempo real? **53/53 PASS.** A sincronização entre GitHub Project e Datadog foi verificada para cada fase da sequência Bootstrap → Promote. A Diligence não precisou de intervenção humana para detectar divergências: o ciclo event-driven acionou a verificação no momento de cada transição de fase. Esse resultado transforma a Diligence de um processo de auditoria periódica em um sistema de verificação contínua — que é a única forma de governança que não cria burocracia proporcional ao volume de entregas.
+
 ---
 
 ## A relação entre Diligence e Assessment

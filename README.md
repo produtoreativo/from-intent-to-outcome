@@ -20,7 +20,7 @@ Upstream, Downstream e o Novo Modelo Operacional para Produtos Digitais
 | 7 | Observabilidade como epistemologia, não como infraestrutura | [capitulo-07.md](capitulo-07.md) | Final |
 | 8 | Diligence: guardião da consistência | [capitulo-08.md](capitulo-08.md) | Final |
 | 9 | O problema de modo para agentes de IA | [capitulo-09.md](capitulo-09.md) | Final |
-| 10 | O Procurare como evidência | [capitulo-10.md](capitulo-10.md) | Final |
+| 10 | A Magazine Siará como evidência | [capitulo-10.md](capitulo-10.md) | Final |
 | — | Conclusão | [conclusao.md](conclusao.md) | Final |
 | — | Apêndice: Notas de pesquisa | [apendice-pesquisa.md](apendice-pesquisa.md) | Final |
 

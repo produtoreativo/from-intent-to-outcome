@@ -1,85 +1,119 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" font-family="system-ui, -apple-system, sans-serif">
-  <!-- Background -->
-  <rect width="800" height="500" fill="#F9FAFB" rx="8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 600" width="100%" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="860" height="600" fill="#F9FAFB" rx="8"/>
+  <text x="430" y="26" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 6 — CommitmentGate: a fronteira com nome, os 6 outcomes e o caso BS-001</text>
 
-  <!-- Title -->
-  <text x="400" y="28" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 6 — CommitmentGate: a fronteira com nome e os 6 outcomes canónicos</text>
-
-  <!-- Arrow markers -->
   <defs>
-    <marker id="a6Green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#10B981"/>
-    </marker>
-    <marker id="a6Blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#3B82F6"/>
-    </marker>
-    <marker id="a6Gray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#9CA3AF"/>
-    </marker>
-    <marker id="a6Red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#EF4444"/>
-    </marker>
-    <marker id="a6Yellow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#F59E0B"/>
-    </marker>
+    <marker id="aGr6" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#10B981"/></marker>
+    <marker id="aBl6" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#3B82F6"/></marker>
+    <marker id="aGy6" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#9CA3AF"/></marker>
+    <marker id="aRd6" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#EF4444"/></marker>
+    <marker id="aOr6" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#F59E0B"/></marker>
+    <marker id="aAm6" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#D97706"/></marker>
   </defs>
 
-  <!-- Central CommitmentGate diamond (large) -->
-  <polygon points="400,195 470,250 400,305 330,250" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="3"/>
-  <text x="400" y="243" text-anchor="middle" font-size="12" fill="#7C3AED" font-weight="700">Commitment</text>
-  <text x="400" y="259" text-anchor="middle" font-size="12" fill="#7C3AED" font-weight="700">Gate</text>
-  <!-- Participantes movidos para fora do losango: região estreita causava overflow -->
-  <line x1="400" y1="305" x2="312" y2="315" stroke="#C4B5FD" stroke-width="1" stroke-dasharray="3,3"/>
-  <rect x="185" y="310" width="168" height="32" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="1" rx="4"/>
-  <text x="269" y="325" text-anchor="middle" font-size="10" fill="#6B7280">PM + Tech Lead + Autor</text>
-  <text x="269" y="339" text-anchor="middle" font-size="10" fill="#6B7280">Decision Package</text>
+  <!-- Central CommitmentGate diamond -->
+  <polygon points="430,195 510,255 430,315 350,255" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="3"/>
+  <text x="430" y="245" text-anchor="middle" font-size="12" fill="#7C3AED" font-weight="700">Commitment</text>
+  <text x="430" y="261" text-anchor="middle" font-size="12" fill="#7C3AED" font-weight="700">Gate</text>
+  <!-- Label participants below diamond -->
+  <line x1="430" y1="315" x2="335" y2="330" stroke="#C4B5FD" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="195" y="326" width="178" height="34" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="1" rx="4"/>
+  <text x="284" y="340" text-anchor="middle" font-size="10" fill="#6B7280">PM + Tech Lead + Autor</text>
+  <text x="284" y="354" text-anchor="middle" font-size="10" fill="#6B7280">Decision Package como entrada</text>
 
-  <!-- ===== Outcome 1: Promover (down-center) ===== -->
-  <line x1="400" y1="305" x2="400" y2="358" stroke="#10B981" stroke-width="2.5" marker-end="url(#a6Green)"/>
-  <rect x="310" y="360" width="180" height="60" fill="#D1FAE5" stroke="#10B981" stroke-width="2" rx="8"/>
-  <text x="400" y="384" text-anchor="middle" font-size="13" fill="#065F46" font-weight="700">Promover</text>
-  <text x="400" y="400" text-anchor="middle" font-size="10" fill="#374151">=> Entra no Downstream</text>
-  <text x="400" y="413" text-anchor="middle" font-size="10" fill="#374151">Compromisso formalizado</text>
+  <!-- Entry arrow: Upstream -->
+  <rect x="20" y="235" width="90" height="40" fill="#E0F2FE" stroke="#3B82F6" stroke-width="1.5" rx="6"/>
+  <text x="65" y="252" text-anchor="middle" font-size="10" fill="#1D4ED8" font-weight="700">Upstream</text>
+  <text x="65" y="266" text-anchor="middle" font-size="9" fill="#1D4ED8">Exploração</text>
+  <line x1="110" y1="255" x2="342" y2="255" stroke="#8B5CF6" stroke-width="2" marker-end="url(#aGr6)"/>
 
-  <!-- ===== Outcome 2: Promover com restrição (bottom-right) ===== -->
-  <line x1="455" y1="290" x2="590" y2="360" stroke="#10B981" stroke-width="2" marker-end="url(#a6Green)"/>
-  <rect x="585" y="355" width="190" height="68" fill="#D1FAE5" stroke="#F59E0B" stroke-width="2" rx="8"/>
-  <text x="680" y="376" text-anchor="middle" font-size="12" fill="#065F46" font-weight="700">Promover</text>
-  <text x="680" y="390" text-anchor="middle" font-size="12" fill="#065F46" font-weight="700">com restricao *</text>
-  <text x="680" y="406" text-anchor="middle" font-size="9" fill="#374151">Subconjunto vai ao Downstream</text>
-  <text x="680" y="418" text-anchor="middle" font-size="9" fill="#374151">Resto continua em Upstream</text>
+  <!-- Outcome 1: Promover (bottom center) -->
+  <line x1="430" y1="315" x2="430" y2="365" stroke="#10B981" stroke-width="2.5" marker-end="url(#aGr6)"/>
+  <rect x="340" y="367" width="180" height="56" fill="#D1FAE5" stroke="#10B981" stroke-width="2" rx="8"/>
+  <text x="430" y="387" text-anchor="middle" font-size="12" fill="#065F46" font-weight="700">① Promover</text>
+  <text x="430" y="401" text-anchor="middle" font-size="9" fill="#374151">OBC: Draft → Refining</text>
+  <text x="430" y="415" text-anchor="middle" font-size="9" fill="#374151">Entra no Downstream</text>
 
-  <!-- ===== Outcome 3: Requer outro experimento (left) ===== -->
-  <line x1="330" y1="250" x2="180" y2="250" stroke="#3B82F6" stroke-width="2" marker-end="url(#a6Blue)"/>
-  <rect x="20" y="218" width="160" height="68" fill="#E0F2FE" stroke="#3B82F6" stroke-width="2" rx="8"/>
-  <text x="100" y="242" text-anchor="middle" font-size="12" fill="#1D4ED8" font-weight="700">Requer outro</text>
-  <text x="100" y="256" text-anchor="middle" font-size="12" fill="#1D4ED8" font-weight="700">experimento</text>
-  <text x="100" y="272" text-anchor="middle" font-size="9" fill="#374151">Volta ao Upstream</text>
-  <text x="100" y="284" text-anchor="middle" font-size="9" fill="#374151">Nova hipotese</text>
+  <!-- Outcome 2: Promover com restrição (bottom-right) -->
+  <line x1="498" y1="295" x2="636" y2="365" stroke="#10B981" stroke-width="2" marker-end="url(#aGr6)"/>
+  <rect x="630" y="355" width="188" height="60" fill="#D1FAE5" stroke="#F59E0B" stroke-width="2" rx="8"/>
+  <text x="724" y="374" text-anchor="middle" font-size="11" fill="#065F46" font-weight="700">② Promover c/ restrição</text>
+  <text x="724" y="389" text-anchor="middle" font-size="9" fill="#374151">Subconjunto → Downstream</text>
+  <text x="724" y="403" text-anchor="middle" font-size="9" fill="#374151">Resto → novo experimento</text>
 
-  <!-- ===== Outcome 4: Aguardar decisão de negócio (top-left) ===== -->
-  <line x1="355" y1="205" x2="220" y2="120" stroke="#9CA3AF" stroke-width="2" marker-end="url(#a6Gray)"/>
-  <rect x="20" y="72" width="200" height="60" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2" rx="8"/>
-  <text x="120" y="96" text-anchor="middle" font-size="12" fill="#374151" font-weight="700">Aguardar</text>
-  <text x="120" y="112" text-anchor="middle" font-size="11" fill="#374151">decisao de negocio</text>
-  <text x="120" y="126" text-anchor="middle" font-size="9" fill="#6B7280">Pausado — decisor identificado</text>
+  <!-- Outcome 3: Requer outro experimento (left) -->
+  <line x1="350" y1="255" x2="194" y2="255" stroke="#3B82F6" stroke-width="2" marker-end="url(#aBl6)"/>
+  <rect x="20" y="225" width="174" height="60" fill="#E0F2FE" stroke="#3B82F6" stroke-width="2" rx="8"/>
+  <text x="107" y="247" text-anchor="middle" font-size="11" fill="#1D4ED8" font-weight="700">③ Requer outro</text>
+  <text x="107" y="261" text-anchor="middle" font-size="11" fill="#1D4ED8" font-weight="700">experimento</text>
+  <text x="107" y="277" text-anchor="middle" font-size="9" fill="#374151">Nova hipótese — volta ao Upstream</text>
 
-  <!-- ===== Outcome 5: Aguardar dependência externa (top-right) ===== -->
-  <line x1="445" y1="205" x2="580" y2="120" stroke="#9CA3AF" stroke-width="2" marker-end="url(#a6Gray)"/>
-  <rect x="580" y="72" width="200" height="60" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2" rx="8"/>
-  <text x="680" y="96" text-anchor="middle" font-size="12" fill="#374151" font-weight="700">Aguardar</text>
-  <text x="680" y="112" text-anchor="middle" font-size="11" fill="#374151">dependencia externa</text>
-  <text x="680" y="126" text-anchor="middle" font-size="9" fill="#6B7280">Pausado — dependencia registrada</text>
+  <!-- Outcome 4: Aguardar decisão negócio (top-left) -->
+  <line x1="370" y1="205" x2="234" y2="126" stroke="#9CA3AF" stroke-width="2" marker-end="url(#aGy6)"/>
+  <rect x="20" y="75" width="212" height="58" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2" rx="8"/>
+  <text x="126" y="98" text-anchor="middle" font-size="11" fill="#374151" font-weight="700">④ Aguardar decisão</text>
+  <text x="126" y="112" text-anchor="middle" font-size="10" fill="#374151">de negócio</text>
+  <text x="126" y="126" text-anchor="middle" font-size="9" fill="#6B7280">Decisor identificado + data esperada</text>
 
-  <!-- ===== Outcome 6: Descartar (right) ===== -->
-  <line x1="470" y1="250" x2="618" y2="250" stroke="#EF4444" stroke-width="2" marker-end="url(#a6Red)"/>
-  <rect x="620" y="218" width="160" height="68" fill="#FEE2E2" stroke="#EF4444" stroke-width="2" rx="8"/>
-  <text x="700" y="246" text-anchor="middle" font-size="13" fill="#DC2626" font-weight="700">Descartar</text>
-  <text x="700" y="263" text-anchor="middle" font-size="10" fill="#374151">Hipótese refutada</text>
-  <text x="700" y="277" text-anchor="middle" font-size="10" fill="#374151">Aprendizado registrado</text>
+  <!-- Outcome 5: Aguardar dependência externa (top-right) -->
+  <line x1="490" y1="205" x2="626" y2="126" stroke="#9CA3AF" stroke-width="2" marker-end="url(#aGy6)"/>
+  <rect x="628" y="75" width="212" height="58" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2" rx="8"/>
+  <text x="734" y="98" text-anchor="middle" font-size="11" fill="#374151" font-weight="700">⑤ Aguardar dependência</text>
+  <text x="734" y="112" text-anchor="middle" font-size="10" fill="#374151">externa</text>
+  <text x="734" y="126" text-anchor="middle" font-size="9" fill="#6B7280">Dependência registrada — Assessment monitora</text>
 
-  <!-- Legend -->
-  <rect x="20" y="445" width="760" height="52" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="6"/>
-  <text x="30" y="463" font-size="11" fill="#374151" font-weight="600">6 outcomes cobrem toda a fenomenologia possivel da decisao</text>
-  <text x="30" y="481" font-size="10" fill="#6B7280">Nao e uma reuniao de aprovacao (sim/nao) — e uma decisao coletiva com criterios verificaveis e outcomes registrados</text>
+  <!-- Outcome 6: Descartar (right) -->
+  <line x1="510" y1="255" x2="658" y2="255" stroke="#EF4444" stroke-width="2" marker-end="url(#aRd6)"/>
+  <rect x="660" y="225" width="172" height="60" fill="#FEE2E2" stroke="#EF4444" stroke-width="2" rx="8"/>
+  <text x="746" y="250" text-anchor="middle" font-size="12" fill="#DC2626" font-weight="700">⑥ Descartar</text>
+  <text x="746" y="266" text-anchor="middle" font-size="10" fill="#374151">Hipótese refutada</text>
+  <text x="746" y="280" text-anchor="middle" font-size="9" fill="#6B7280">Aprendizado registrado em learnings.md</text>
+
+  <!-- Separator -->
+  <line x1="20" y1="440" x2="840" y2="440" stroke="#E5E7EB" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="430" y="460" text-anchor="middle" font-size="11" fill="#6B7280" font-weight="600">Caso real: BS-001 → CommitmentGate no mesmo dia (Magazine Siará, 2026-08-04)</text>
+
+  <!-- BS-001 Timeline -->
+  <line x1="40" y1="510" x2="820" y2="510" stroke="#9CA3AF" stroke-width="1.5"/>
+
+  <!-- Node: BS-001 -->
+  <circle cx="80" cy="510" r="10" fill="#3B82F6" stroke="#1D4ED8" stroke-width="2"/>
+  <text x="80" y="484" text-anchor="middle" font-size="9" fill="#1D4ED8" font-weight="700">BS-001</text>
+  <text x="80" y="497" text-anchor="middle" font-size="8" fill="#6B7280">2026-08-04</text>
+  <text x="80" y="530" text-anchor="middle" font-size="9" fill="#374151">Split Payment:</text>
+  <text x="80" y="543" text-anchor="middle" font-size="9" fill="#374151">clientes perdem</text>
+  <text x="80" y="556" text-anchor="middle" font-size="9" fill="#374151">conversão</text>
+
+  <!-- Node: PI-001 -->
+  <circle cx="260" cy="510" r="10" fill="#8B5CF6" stroke="#7C3AED" stroke-width="2"/>
+  <text x="260" y="484" text-anchor="middle" font-size="9" fill="#7C3AED" font-weight="700">PI-001</text>
+  <text x="260" y="497" text-anchor="middle" font-size="8" fill="#6B7280">mesmo dia</text>
+  <text x="260" y="530" text-anchor="middle" font-size="9" fill="#374151">"Downstream —</text>
+  <text x="260" y="543" text-anchor="middle" font-size="9" fill="#374151">sem Upstream</text>
+  <text x="260" y="556" text-anchor="middle" font-size="9" fill="#374151">15 dias"</text>
+
+  <!-- Node: OBC Committed -->
+  <circle cx="460" cy="510" r="10" fill="#10B981" stroke="#065F46" stroke-width="2"/>
+  <text x="460" y="484" text-anchor="middle" font-size="9" fill="#065F46" font-weight="700">OBC Committed</text>
+  <text x="460" y="497" text-anchor="middle" font-size="8" fill="#6B7280">mesmo dia</text>
+  <text x="460" y="530" text-anchor="middle" font-size="9" fill="#374151">RISK-SP-001</text>
+  <text x="460" y="543" text-anchor="middle" font-size="9" fill="#374151">fechado por decisão</text>
+  <text x="460" y="556" text-anchor="middle" font-size="9" fill="#374151">do PM</text>
+
+  <!-- Node: DS-61 delivered -->
+  <circle cx="680" cy="510" r="10" fill="#D97706" stroke="#B45309" stroke-width="2"/>
+  <text x="680" y="484" text-anchor="middle" font-size="9" fill="#B45309" font-weight="700">DS-61 entregue</text>
+  <text x="680" y="497" text-anchor="middle" font-size="8" fill="#6B7280">v0.14.0</text>
+  <text x="680" y="530" text-anchor="middle" font-size="9" fill="#374151">Split Payment</text>
+  <text x="680" y="543" text-anchor="middle" font-size="9" fill="#374151">Pix + Boleto</text>
+  <text x="680" y="556" text-anchor="middle" font-size="9" fill="#374151">em 15 dias</text>
+
+  <!-- Timeline arrows -->
+  <line x1="90" y1="510" x2="248" y2="510" stroke="#8B5CF6" stroke-width="1.5" marker-end="url(#aGy6)"/>
+  <line x1="270" y1="510" x2="448" y2="510" stroke="#8B5CF6" stroke-width="1.5" marker-end="url(#aGy6)"/>
+  <line x1="470" y1="510" x2="668" y2="510" stroke="#10B981" stroke-width="2" marker-end="url(#aGr6)"/>
+
+  <!-- "15 dias" label -->
+  <rect x="472" y="468" width="196" height="18" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="3"/>
+  <text x="570" y="481" text-anchor="middle" font-size="9" fill="#D97706" font-weight="700">15 dias — deadline não negociável</text>
 </svg>

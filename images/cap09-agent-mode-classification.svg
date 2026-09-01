@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 660" width="100%" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="860" height="660" fill="#F9FAFB" rx="8"/>
+  <text x="430" y="26" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 9 — O problema de modo para agentes: dois modos de falha, protocolo de classificação e EXP-015</text>
+
+  <defs>
+    <marker id="aRd9" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#EF4444"/></marker>
+    <marker id="aGr9" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#10B981"/></marker>
+    <marker id="aBl9" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#3B82F6"/></marker>
+    <marker id="aOr9" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#F59E0B"/></marker>
+    <marker id="aPu9" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#8B5CF6"/></marker>
+  </defs>
+
+  <!-- ── Section 1: Two failure modes ── -->
+  <text x="430" y="50" text-anchor="middle" font-size="11" fill="#6B7280" font-weight="600">Dois modos de falha — simétricos e igualmente problemáticos</text>
+
+  <!-- Failure 1: Indiscriminate rigor -->
+  <rect x="20" y="62" width="390" height="120" fill="#FEE2E2" stroke="#EF4444" stroke-width="2" rx="8"/>
+  <text x="215" y="83" text-anchor="middle" font-size="12" fill="#DC2626" font-weight="700">Falha 1 — Rigor Máximo Indiscriminado</text>
+  <text x="215" y="100" text-anchor="middle" font-size="10" fill="#374151">Agente trata tudo como Downstream</text>
+  <rect x="36" y="108" width="358" height="22" fill="#FFFFFF" stroke="#FCA5A5" stroke-width="1" rx="3"/>
+  <text x="215" y="122" text-anchor="middle" font-size="9" fill="#374151">→ Bloqueia exploração por falta de OBC Committed</text>
+  <rect x="36" y="136" width="358" height="22" fill="#FFFFFF" stroke="#FCA5A5" stroke-width="1" rx="3"/>
+  <text x="215" y="150" text-anchor="middle" font-size="9" fill="#374151">→ Exige artefatos que ainda não existem no Upstream</text>
+  <rect x="36" y="164" width="358" height="14" fill="#FCA5A5" rx="3"/>
+  <text x="215" y="174" text-anchor="middle" font-size="8" fill="#7F1D1D" font-weight="700">Consequência: bloqueia aprendizado — destrói o propósito do Upstream</text>
+
+  <!-- Failure 2: Total permissiveness -->
+  <rect x="450" y="62" width="390" height="120" fill="#FEE2E2" stroke="#EF4444" stroke-width="2" rx="8"/>
+  <text x="645" y="83" text-anchor="middle" font-size="12" fill="#DC2626" font-weight="700">Falha 2 — Permissividade Total</text>
+  <text x="645" y="100" text-anchor="middle" font-size="10" fill="#374151">Agente trata tudo como Upstream</text>
+  <rect x="466" y="108" width="358" height="22" fill="#FFFFFF" stroke="#FCA5A5" stroke-width="1" rx="3"/>
+  <text x="645" y="122" text-anchor="middle" font-size="9" fill="#374151">→ Avança sem verificar pré-condições no Downstream</text>
+  <rect x="466" y="136" width="358" height="22" fill="#FFFFFF" stroke="#FCA5A5" stroke-width="1" rx="3"/>
+  <text x="645" y="150" text-anchor="middle" font-size="9" fill="#374151">→ Implementa sem checar Readiness Gate ou OBC Committed</text>
+  <rect x="466" y="164" width="358" height="14" fill="#FCA5A5" rx="3"/>
+  <text x="645" y="174" text-anchor="middle" font-size="8" fill="#7F1D1D" font-weight="700">Consequência: destrói rastreabilidade do compromisso</text>
+
+  <!-- ── Section 2: Classification protocol ── -->
+  <text x="430" y="208" text-anchor="middle" font-size="11" fill="#6B7280" font-weight="600">Protocolo de classificação — AGENTS.md (Payments API)</text>
+
+  <!-- Protocol decision flow -->
+  <!-- Entry -->
+  <rect x="330" y="218" width="200" height="32" fill="#374151" rx="6"/>
+  <text x="430" y="238" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="600">Requisição recebida pelo agente</text>
+  <line x1="430" y1="250" x2="430" y2="268" stroke="#6B7280" stroke-width="1.5" marker-end="url(#aPu9)"/>
+
+  <!-- OBC exists? -->
+  <polygon points="430,268 510,298 430,328 350,298" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="430" y="296" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">OBC existe?</text>
+  <text x="430" y="310" text-anchor="middle" font-size="9" fill="#7C3AED">Committed</text>
+
+  <!-- Yes → Downstream -->
+  <line x1="510" y1="298" x2="650" y2="298" stroke="#F59E0B" stroke-width="2" marker-end="url(#aOr9)"/>
+  <text x="578" y="290" text-anchor="middle" font-size="9" fill="#D97706" font-weight="700">Sim</text>
+  <rect x="650" y="274" width="170" height="48" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" rx="6"/>
+  <text x="735" y="295" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Downstream</text>
+  <text x="735" y="310" text-anchor="middle" font-size="9" fill="#374151">/downstream — rigor bloqueante</text>
+
+  <!-- No → request type -->
+  <line x1="350" y1="298" x2="210" y2="298" stroke="#3B82F6" stroke-width="2" marker-end="url(#aBl9)"/>
+  <text x="278" y="290" text-anchor="middle" font-size="9" fill="#1D4ED8" font-weight="700">Não</text>
+  <rect x="40" y="274" width="170" height="48" fill="#E0F2FE" stroke="#3B82F6" stroke-width="2" rx="6"/>
+  <text x="125" y="295" text-anchor="middle" font-size="11" fill="#1D4ED8" font-weight="700">Upstream</text>
+  <text x="125" y="310" text-anchor="middle" font-size="9" fill="#374151">/upstream — rigor consultivo</text>
+
+  <!-- Table: request types -->
+  <rect x="20" y="338" width="820" height="116" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.5" rx="6"/>
+  <!-- header -->
+  <rect x="20" y="338" width="820" height="22" fill="#374151" rx="6"/>
+  <text x="250" y="353" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">Tipo de requisição</text>
+  <text x="530" y="353" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">Journey</text>
+  <text x="720" y="353" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">Entry skill</text>
+  <!-- rows -->
+  <line x1="20" y1="360" x2="840" y2="360" stroke="#E5E7EB" stroke-width="0.5"/>
+  <text x="250" y="376" text-anchor="middle" font-size="9" fill="#374151">Nova feature, endpoint, comportamento de negócio</text>
+  <text x="530" y="376" text-anchor="middle" font-size="9" fill="#374151">Delivery</text>
+  <text x="720" y="376" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">/downstream</text>
+  <line x1="20" y1="384" x2="840" y2="384" stroke="#E5E7EB" stroke-width="0.5"/>
+  <text x="250" y="400" text-anchor="middle" font-size="9" fill="#374151">Investigação, descoberta, análise técnica</text>
+  <text x="530" y="400" text-anchor="middle" font-size="9" fill="#374151">Discovery</text>
+  <text x="720" y="400" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">/upstream</text>
+  <line x1="20" y1="408" x2="840" y2="408" stroke="#E5E7EB" stroke-width="0.5"/>
+  <text x="250" y="424" text-anchor="middle" font-size="9" fill="#374151">Auditoria, risco, compliance, business signal</text>
+  <text x="530" y="424" text-anchor="middle" font-size="9" fill="#374151">Diligence</text>
+  <text x="720" y="424" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">/diligence</text>
+  <line x1="20" y1="432" x2="840" y2="432" stroke="#E5E7EB" stroke-width="0.5"/>
+  <text x="250" y="448" text-anchor="middle" font-size="9" fill="#374151">Pergunta, explicação, leitura de código</text>
+  <text x="530" y="448" text-anchor="middle" font-size="9" fill="#374151">—</text>
+  <text x="720" y="448" text-anchor="middle" font-size="9" fill="#374151">resposta direta (sem skill)</text>
+
+  <!-- ── Section 3: EXP-015 ── -->
+  <rect x="20" y="466" width="820" height="182" fill="#F0FDF4" stroke="#10B981" stroke-width="2" rx="8"/>
+  <text x="430" y="487" text-anchor="middle" font-size="12" fill="#065F46" font-weight="700">EXP-015 — Quando o contrato é explícito: 22/22 × 3 players, zero divergências semânticas</text>
+
+  <!-- three player columns -->
+  <rect x="30" y="498" width="250" height="110" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="5"/>
+  <text x="155" y="516" text-anchor="middle" font-size="10" fill="#374151" font-weight="700">claude</text>
+  <text x="155" y="532" text-anchor="middle" font-size="9" fill="#374151">22 cenários verificados</text>
+  <text x="155" y="547" text-anchor="middle" font-size="9" fill="#374151">Bootstrap.Started / Completed</text>
+  <text x="155" y="562" text-anchor="middle" font-size="9" fill="#374151">Correlação, idempotência</text>
+  <text x="155" y="577" text-anchor="middle" font-size="9" fill="#374151">Rejeição campos inválidos</text>
+  <text x="155" y="592" text-anchor="middle" font-size="9" fill="#374151">Sanitização de secrets</text>
+  <rect x="45" y="598" width="220" height="16" fill="#D1FAE5" rx="3"/>
+  <text x="155" y="610" text-anchor="middle" font-size="9" fill="#065F46" font-weight="700">22/22 PASS</text>
+
+  <rect x="304" y="498" width="250" height="110" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="5"/>
+  <text x="429" y="516" text-anchor="middle" font-size="10" fill="#374151" font-weight="700">codex</text>
+  <text x="429" y="532" text-anchor="middle" font-size="9" fill="#6B7280" font-style="italic">player ID fornecido ao tool</text>
+  <text x="429" y="547" text-anchor="middle" font-size="9" fill="#374151">Mesmo contrato: prodops_emit_event</text>
+  <text x="429" y="562" text-anchor="middle" font-size="9" fill="#374151">Mesmo catálogo de eventos</text>
+  <text x="429" y="577" text-anchor="middle" font-size="9" fill="#374151">Mesmas regras de emissão</text>
+  <text x="429" y="592" text-anchor="middle" font-size="9" fill="#374151">Mesmos resultados esperados</text>
+  <rect x="319" y="598" width="220" height="16" fill="#D1FAE5" rx="3"/>
+  <text x="429" y="610" text-anchor="middle" font-size="9" fill="#065F46" font-weight="700">22/22 PASS</text>
+
+  <rect x="578" y="498" width="250" height="110" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="5"/>
+  <text x="703" y="516" text-anchor="middle" font-size="10" fill="#374151" font-weight="700">copilot</text>
+  <text x="703" y="532" text-anchor="middle" font-size="9" fill="#6B7280" font-style="italic">player ID fornecido ao tool</text>
+  <text x="703" y="547" text-anchor="middle" font-size="9" fill="#374151">Intercambiabilidade não é</text>
+  <text x="703" y="562" text-anchor="middle" font-size="9" fill="#374151">propriedade do agente</text>
+  <text x="703" y="577" text-anchor="middle" font-size="9" fill="#374151">É propriedade do contrato</text>
+  <text x="703" y="592" text-anchor="middle" font-size="9" fill="#374151">explícito e verificável</text>
+  <rect x="593" y="598" width="220" height="16" fill="#D1FAE5" rx="3"/>
+  <text x="703" y="610" text-anchor="middle" font-size="9" fill="#065F46" font-weight="700">22/22 PASS</text>
+
+  <!-- EXP-015 conclusion bar -->
+  <rect x="30" y="618" width="800" height="22" fill="#059669" rx="4"/>
+  <text x="430" y="633" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">O problema de modo para agentes se resolve com contratos explícitos — não com treinamento de agentes</text>
+</svg>

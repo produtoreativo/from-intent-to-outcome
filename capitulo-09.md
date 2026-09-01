@@ -7,7 +7,7 @@
 ![Protocolo de classificação de modo para agentes de IA](images/cap09-agent-mode-classification.svg)
 *Figura 9. Fluxo de decisão para classificação de modo: OBC é o sinal primário. Na ausência de OBC, o tipo de pedido determina o modo.*
 
-Um engenheiro humano que trabalha com um framework de produto por tempo suficiente desenvolve algo que poderíamos chamar de sensibilidade de modo: a capacidade de perceber, a partir de sinais contextuais (a conversa na reunião, o estado do backlog, o tom das mensagens do PM), em que tipo de compromisso o trabalho está operando. Ele não precisa verificar formalmente se o OBC está Committed; percebe pela postura da equipe que algo foi decidido e o trabalho agora é de entrega.
+Um engenheiro humano que trabalha com um framework de produto por tempo suficiente desenvolve algo que poderíamos chamar de sensibilidade de modo: a capacidade de perceber, a partir de sinais contextuais (a conversa na reunião, o estado do backlog, o tom das mensagens do PM), em que tipo de compromisso o trabalho está operando. Ele não precisa verificar formalmente se o OBC está Committed; percebe pela postura da equipe que algo foi decidido e o trabalho está agora sob compromisso.
 
 Essa sensibilidade é valiosa. Ela permite que o rigor seja calibrado sem que cada decisão precise ser formalizada explicitamente. O problema é que ela é adquirida, não está presente no início, e não existe em agentes de IA.
 
@@ -31,7 +31,7 @@ Os dois modos de falha são simétricos e igualmente problemáticos. O rigor má
 
 ## O protocolo de recebimento de trabalho
 
-O AGENTS.md do repositório do Procurare define um protocolo de recebimento de trabalho que funciona como interface de modo implícita para agentes.
+O AGENTS.md do repositório da Payments API define um protocolo de recebimento de trabalho que funciona como interface de modo explícita para agentes.
 
 O protocolo começa com uma classificação do pedido por tipo:
 
@@ -86,13 +86,27 @@ O que ainda falta (e é a fronteira atual da implementação) é a documentaçã
 
 ---
 
+## O que acontece quando o contrato é explícito: o EXP-015
+
+O EXP-015 testou uma hipótese que este capítulo formula como teoria: quando o contrato de interface é explícito e verificável, agentes de diferentes origens produzem o mesmo output.
+
+A suite de conformidade do EXP-015 executou 22 cenários em 3 players (claude, codex, copilot). O resultado: **22/22 × 3 players — 100% de conformidade. Zero divergências semânticas entre players.**
+
+Os 22 checks cobriram: disponibilidade da tool e descoberta do skill, emissão correta do evento Bootstrap.Started (exit code, status JSON, event-type, presença no timeline, sincronização GitHub/Datadog), emissão correta do Bootstrap.Completed, correlação entre os dois eventos, idempotência (segunda chamada com mesmo correlation-id retorna status:skipped, exit 4), rejeição de inputs inválidos (campos catalog-owned → exit 1, status:error), e sanitização de segredos (token não aparece no output nem no timeline).
+
+O contrato em questão é a tool `prodops_emit_event` com o catálogo de eventos do ProdOps Framework. Essa tool é a interface entre o agente e o sistema operacional do framework. Quando o agente invoca a tool corretamente (com os campos obrigatórios, sem tentar sobrescrever campos catalog-owned), o output é idêntico independentemente de qual agente está executando. A intercambiabilidade não é uma propriedade dos agentes; é uma propriedade do contrato.
+
+Uma nota de honestidade registrada no próprio relatório do EXP-015: os agentes Codex e Copilot não foram invocados diretamente. A conformidade foi verificada executando a tool com os player IDs correspondentes. A suite valida o contrato da interface, não o comportamento direto dos agentes externos. Essa transparência é ela mesma um exemplo do que o Upstream bem conduzido produz: não apenas conclusões, mas conclusões com grau de confiança declarado.
+
+O que o EXP-015 demonstra, em linguagem do framework: quando o OBC define os Observable Events com dimensões obrigatórias (como no OBC `split-payment-pix-boleto`), e quando a tool canonicaliza a emissão desses eventos (como `prodops_emit_event`), um agente que segue o protocolo produz evidência verificável independentemente de sua origem. O problema de modo para agentes não é resolvido por treinamento dos agentes: é resolvido por contratos explícitos que os agentes leem e seguem.
+
 ## O protocolo como contexto carregado
 
-Existe uma hipótese subjacente a este livro que ainda não foi verificada: se um livro bem estruturado sobre a distinção de modos pode servir como context loading para agentes, reduzindo erros de classificação de modo.
+Existe uma hipótese subjacente a este livro que os resultados do EXP-015 endereçam parcialmente: se um livro bem estruturado sobre a distinção de modos pode servir como context loading para agentes, reduzindo erros de classificação de modo.
 
-A ideia é que um agente treinado com o conteúdo deste livro (ou que tenha acesso a ele como contexto de sessão) teria a sensibilidade de modo que não é adquirida por sessões: ele saberia distinguir, a partir da descrição do trabalho, se está operando em Upstream ou Downstream, e calibraria seu rigor correspondentemente.
+A ideia é que um agente com acesso ao conteúdo deste livro como contexto de sessão teria a sensibilidade de modo que não é adquirida por sessões: ele saberia distinguir, a partir da descrição do trabalho, se está operando em Upstream ou Downstream, e calibraria seu rigor correspondentemente.
 
-Isso permanece como hipótese. O que o repositório atual demonstra é o primeiro passo: um protocolo de recebimento de trabalho que torna a classificação de modo explícita e verificável. O segundo passo (instrumentar os skills de fase com comportamento por modo) está planejado. O terceiro passo (verificar se o conhecimento formal sobre modos transfere-se para melhor calibração de rigor por parte de agentes) ainda está por investigar.
+O EXP-015 responde um subconjunto dessa hipótese: quando o contrato de emissão de eventos é explícito e verificável, agentes convergem. O que ainda não foi testado é se a distinção conceitual entre modos (não apenas o protocolo de emissão, mas a calibração de rigor em trabalho de exploração versus trabalho de entrega) transfere-se para melhor julgamento por agentes que têm acesso ao framework como contexto. O primeiro passo está demonstrado: protocolo de recebimento de trabalho explícito e verificável, contrato de emissão de eventos com conformidade 22/22 × 3 players. O segundo passo (instrumentar os skills de fase com comportamento por modo) está planejado. O terceiro passo (verificar se o conhecimento formal sobre modos transfere-se para calibração de rigor fora do protocolo estruturado) ainda está por investigar.
 
 ---
 

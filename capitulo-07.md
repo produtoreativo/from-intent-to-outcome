@@ -29,6 +29,10 @@ A motivação epistemológica de ODD é que, sem evidência observável, não h�
 
 ODD aplica-se a ambos os modos, com formas diferentes. No Upstream, ODD significa documentar o que será observado para verificar a hipótese, antes de coletar a evidência. Um experimento bem conduzido define seus critérios de falsificação antes de executar, não depois. No Downstream, ODD significa definir os Observable Events e as métricas de sucesso do OBC antes de escrever código: o contrato do que será observável em produção precisa existir antes da implementação que o tornará observável.
 
+O OBC `split-payment-pix-boleto` da Magazine Siará demonstra ODD em operação: seis Observable Events com dimensões obrigatórias foram definidos antes de qualquer código de produção ser escrito. Entre eles, `split_payment.boleto.expired` com a dimensão `pixStatus` — um evento de falha com contexto suficiente para que a operação identifique imediatamente que o Pix foi pago mas o Boleto venceu, sem precisar consultar o banco de dados. O design do evento foi uma decisão de produto, não uma consequência da implementação.
+
+No Upstream, o EXP-001 demonstra o mesmo princípio aplicado ao modo exploratório: antes de qualquer linha de produção sobre cartão de crédito ser escrita, o experimento especificou os BDD scenarios obrigatórios, os Observable Events esperados para cada fluxo (autorização, confirmação, análise de risco, recusa, cancelamento, estorno), e as dimensões de observabilidade que nunca poderiam aparecer nos logs (número do cartão, CVV, token do provedor). ODD no Upstream define o que precisa ser observável para validar a hipótese; ODD no Downstream define o que precisa ser observável para verificar o compromisso.
+
 ---
 
 ## O OBC como contrato de observabilidade

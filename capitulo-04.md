@@ -7,7 +7,7 @@
 ![Ciclo de vida de um experimento Upstream](images/cap04-experiment-lifecycle.svg)
 *Figura 4. Ciclo de vida de um experimento Upstream: de HypothesisFormed ao CommitmentGate com seus 6 outcomes*
 
-O Upstream não é o modo onde o rigor é descartado. É o modo onde o rigor assume uma forma distinta: orientado à qualidade da evidência, não à verificação de um compromisso de entrega.
+O Upstream não é o modo onde o rigor é descartado. É o modo onde o rigor assume uma forma distinta: orientado à qualidade da evidência, não à verificação de um compromisso Downstream.
 
 O que define o Upstream não é a ausência de compromisso, mas o tipo de compromisso que está em vigor. Há três camadas nessa distinção que precisam ser mantidas separadas.
 
@@ -33,7 +33,7 @@ Essas condições eliminam dois casos frequentes de uso inadequado do experiment
 
 > **Nota:** A distinção entre pesquisa informal e experimento formal é operacional, não canônica. O framework não exige que toda investigação seja um experimento formal, apenas que experimentos formais satisfaçam essas condições.
 
-O levantamento de necessidades de procurement do Procurare é um exemplo concreto. A hipótese central: "a maior dor do Procurement não é falta de tecnologia, mas falta de contexto estruturado: a intenção de negócio nunca é capturada de forma que sistemas possam agir sobre ela." A hipótese é falsificável: se usuários de procurement relatarem que a dor primária é outra (custo, tempo de aprovação, falta de fornecedores qualificados), a hipótese é refutada. A resposta tem valor de decisão: ela define o que o MVP do Procurare precisa priorizar. E o custo de assumir a hipótese sem testá-la seria construir um sistema de captura de intenção para um problema que não é o principal.
+O EXP-001 da Payments API da Magazine Siará é um exemplo concreto. A hipótese central: "o ciclo completo de cartão de crédito pode ser suportado sem cruzar a fronteira PCI desde que apenas o fluxo hosted seja exposto na primeira iteração." A hipótese é falsificável: se a análise de escopo PCI mostrar que hosted e tokenizado têm exposição equivalente, ou se o time de Checkout não conseguir integrar o fluxo hosted sem breaking changes no contrato existente, a hipótese é refutada. A resposta tem valor de decisão: ela define qual dos três modelos de integração — hosted, tokenizado, transparente — entra primeiro no Downstream. E o custo de assumir a hipótese sem testá-la seria construir com o modelo errado e precisar de um segundo ciclo Downstream para corrigir.
 
 ---
 
@@ -121,15 +121,15 @@ A distinção entre Produção Controlada e Promoção de Capability é precisam
 
 ---
 
-## O Upstream em operação: o Procurare como exemplar
+## O Upstream em operação: a Magazine Siará como exemplar
 
-O levantamento de necessidades de procurement do Procurare ilustra o Upstream como modo operacional. O experimento abriu com uma hipótese falsificável sobre a dor central do Procurement, definiu 10 perguntas de investigação estruturadas, e produziu um mapa completo de necessidades do Procurare cobrindo processo, dados, integrações, agentes e observabilidade.
+Os três primeiros experimentos da Payments API da Magazine Siará (EXP-001, EXP-002 e EXP-003) ilustram o Upstream como modo operacional em sua forma mais completa, com CommitmentGate executado ao final da sequência.
 
-O Decision Package resultante inclui recomendação de "Mover para Downstream": o equivalente ao outcome Promover do CommitmentGate. O experimento está marcado como Completed, o que indica que a hipótese foi respondida e o Decision Package foi redigido com substância.
+O EXP-001 abriu com uma questão de alto risco: como suportar o ciclo completo de cartão de crédito sem cruzar a fronteira PCI nem acoplar o Checkout ao contrato do Asaas? Antes de escrever uma linha de código de produção, o experimento especificou os BDD scenarios obrigatórios, os Observable Events esperados para cada fluxo (autorização, confirmação, análise de risco, recusa, cancelamento, estorno) e as dimensões que nunca poderiam aparecer nos logs (número do cartão, CVV, token do provedor). O EXP-002 mapeou as capacidades e limitações do sandbox Asaas para reprodução do ciclo de cartão, e confirmou o Validation Workbench como ambiente de simulação para os cenários que o sandbox não consegue reproduzir deterministicamente — a validação completa dos cenários do provedor permanece em aberto, dependente de evidência externa do Asaas. O EXP-003 comparou sistematicamente os três modelos de integração possíveis — hosted, tokenizado, transparente — e produziu a recomendação com justificativa: apenas a entrada hosted avança para o Downstream, porque é a única opção que não exige decisões externas ao time de Payments.
 
-O que o levantamento de procurement do Procurare demonstra é o Upstream como engenharia séria de exploração: não uma fase de baixa disciplina, mas um esforço estruturado de redução de incerteza que produziu conhecimento verificável e uma recomendação justificada para o próximo passo.
+O Decision Package do EXP-003 recomenda Promover com restrição (outcome ②): o slice hosted avança; as demais opções permanecem em Upstream aguardando decisões de terceiros (escopo PCI, modelo de token, UX do Checkout). O CommitmentGate foi executado com esse Decision Package: o trio registrou o outcome, e o Downstream iniciou exclusivamente para a entrada hosted.
 
-O que esse levantamento ainda não demonstrou, no repositório atual, é o CommitmentGate executado formalmente: com o trio convocado, o Decision Package avaliado, e o outcome registrado no upstream-trail. Isso é a fronteira entre o que o Upstream produz e o que o Downstream começa.
+Três experimentos sequenciais. Nenhuma linha de código de produção durante os três. Uma recomendação verificável por terceiros. Um CommitmentGate que decidiu sobre o destino da capability com evidência suficiente — e com restrição explícita sobre o que a evidência não suportava. Esse é o Upstream como engenharia séria de exploração.
 
 ---
 
@@ -138,6 +138,8 @@ O que esse levantamento ainda não demonstrou, no repositório atual, é o Commi
 A definição do Upstream inclui uma lista explícita do que está fora de seu escopo. Implementar a capability comprometida com gates bloqueantes: isso é a jornada Delivery no modo Downstream. A distinção é de compromisso, não de atividade física: o Upstream pode produzir código funcional, prova de conceito, implementação em sandbox ou em produção controlada, sem que isso constitua a entrega de uma capability formalmente prometida. Definir como a observabilidade será implementada tecnicamente: isso é responsabilidade do Downstream (o "como" da instrumentação, não o "o que" deve ser observável). Produzir OBC Committed: isso é Discovery no Downstream. Produzir BDD completa em `artifacts/bdd/`: isso acontece antes do Readiness Gate. Garantir ausência de incerteza: incerteza residual aceitável é um critério válido de CommitmentGate.
 
 Essa última afirmação é contraintuitiva o suficiente para merecer ênfase: o Upstream não precisa eliminar toda a incerteza. Precisa reduzir a incerteza ao ponto em que o risco residual é aceitável para assumir o compromisso do Downstream. O que é "aceitável" é julgamento coletivo do trio no CommitmentGate, não um critério de zero incerteza que nenhum experimento finito pode satisfazer.
+
+Vale atenção especial ao item "Produzir OBC Committed: isso é Discovery no Downstream". Ele resolve um mal-entendido frequente: um Business Signal que entra diretamente em Downstream sem Upstream prévio não pula o discovery. O discovery acontece na jornada Discovery executada em modo Downstream — com rigor bloqueante. O OBC transita de Draft para Refining. A BDD Feature é escrita e refinada. As perguntas do Business Intent são resolvidas com decisões datadas e responsáveis identificados. O Readiness Gate bloqueia a entrada na jornada Delivery até que essas condições estejam satisfeitas. Somente depois — com o Iteration Plan gerado no Planning — é que o Bootstrap, primeira fase do Delivery, começa. O que "sem Upstream" descreve é a ausência de exploração pré-CommitmentGate. O que acontece após o CommitmentGate, na jornada Discovery em modo Downstream, é discovery real: com gates bloqueantes que não permitem avançar enquanto as condições não estiverem satisfeitas.
 
 ---
 

@@ -1,74 +1,156 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 410" width="100%" font-family="system-ui, -apple-system, sans-serif">
-  <!-- Background -->
-  <rect width="820" height="410" fill="#F9FAFB" rx="8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" width="100%" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="860" height="620" fill="#F9FAFB" rx="8"/>
+  <text x="430" y="26" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 7 — Observabilidade como epistemologia: papéis distintos por modo, OBC e ODD em prática</text>
 
-  <!-- Title -->
-  <text x="410" y="28" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Figura 7 — Observabilidade como epistemologia: papéis distintos em cada modo</text>
+  <!-- ── Top half: dual-mode panels ── -->
 
-  <!-- Left Panel: Upstream -->
-  <rect x="20" y="45" width="340" height="320" fill="#E0F2FE" stroke="#3B82F6" stroke-width="2" rx="8"/>
-  <text x="190" y="72" text-anchor="middle" font-size="15" fill="#1D4ED8" font-weight="700">Modo Upstream</text>
-  <text x="190" y="90" text-anchor="middle" font-size="12" fill="#1D4ED8">Observabilidade torna a</text>
-  <text x="190" y="105" text-anchor="middle" font-size="12" fill="#1D4ED8">INCERTEZA explícita</text>
+  <!-- Upstream panel -->
+  <rect x="20" y="42" width="350" height="290" fill="#E0F2FE" stroke="#3B82F6" stroke-width="2" rx="8"/>
+  <text x="195" y="68" text-anchor="middle" font-size="14" fill="#1D4ED8" font-weight="700">Modo Upstream</text>
+  <text x="195" y="85" text-anchor="middle" font-size="11" fill="#1D4ED8">Observabilidade torna a INCERTEZA explícita</text>
 
-  <!-- Upstream items -->
-  <rect x="40" y="120" width="300" height="40" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1" rx="6"/>
-  <text x="190" y="138" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">Evidence Package</text>
-  <text x="190" y="152" text-anchor="middle" font-size="10" fill="#6B7280">evidencia verificavel por terceiros</text>
+  <rect x="38" y="97" width="314" height="36" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1" rx="5"/>
+  <text x="195" y="113" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Evidence Package</text>
+  <text x="195" y="126" text-anchor="middle" font-size="9" fill="#6B7280">evidência verificável por terceiros sem contexto verbal</text>
 
-  <rect x="40" y="168" width="300" height="40" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1" rx="6"/>
-  <text x="190" y="186" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">upstream-trail.md</text>
-  <text x="190" y="200" text-anchor="middle" font-size="10" fill="#6B7280">progressao cronologica do experimento</text>
+  <rect x="38" y="140" width="314" height="36" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1" rx="5"/>
+  <text x="195" y="156" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">upstream-trail.md</text>
+  <text x="195" y="169" text-anchor="middle" font-size="9" fill="#6B7280">progressão cronológica — append-only</text>
 
-  <rect x="40" y="216" width="300" height="40" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1" rx="6"/>
-  <text x="190" y="234" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">Decision Package</text>
-  <text x="190" y="248" text-anchor="middle" font-size="10" fill="#6B7280">sintese para o CommitmentGate</text>
+  <rect x="38" y="183" width="314" height="36" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1" rx="5"/>
+  <text x="195" y="199" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">TTE / Decision Latency / Discovery WIP</text>
+  <text x="195" y="212" text-anchor="middle" font-size="9" fill="#6B7280">métricas de flow do Upstream</text>
 
-  <rect x="40" y="264" width="300" height="40" fill="#FFFFFF" stroke="#60A5FA" stroke-width="1" rx="6"/>
-  <text x="190" y="282" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">TTE / Decision Latency</text>
-  <text x="190" y="296" text-anchor="middle" font-size="10" fill="#6B7280">metricas de flow do ciclo de vida</text>
+  <!-- ODD box Upstream example -->
+  <rect x="38" y="226" width="314" height="56" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1" rx="5"/>
+  <text x="195" y="242" text-anchor="middle" font-size="9" fill="#1D4ED8" font-weight="700">ODD no Upstream — EXP-001 (Payments API)</text>
+  <text x="195" y="256" text-anchor="middle" font-size="9" fill="#374151">Antes de escrever código: define BDD scenarios,</text>
+  <text x="195" y="269" text-anchor="middle" font-size="9" fill="#374151">observable events esperados e dimensões proibidas</text>
+  <text x="195" y="282" text-anchor="middle" font-size="9" fill="#374151">(número do cartão, CVV, token do provedor)</text>
 
   <!-- Question Upstream -->
-  <rect x="40" y="316" width="300" height="36" fill="#3B82F6" rx="6"/>
-  <text x="190" y="332" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="600">O que sabemos? O que nao sabemos?</text>
-  <text x="190" y="346" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="600">Com que confiança?</text>
+  <rect x="38" y="294" width="314" height="30" fill="#3B82F6" rx="5"/>
+  <text x="195" y="313" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="600">O que sabemos? Com que grau de confiança?</text>
 
-  <!-- Center divider: CommitmentGate -->
-  <line x1="410" y1="45" x2="410" y2="365" stroke="#8B5CF6" stroke-width="2"/>
-  <rect x="372" y="195" width="76" height="55" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="2" rx="6"/>
-  <text x="410" y="216" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Commitment</text>
-  <text x="410" y="230" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Gate</text>
-  <text x="410" y="244" text-anchor="middle" font-size="9" fill="#6B7280">fronteira</text>
+  <!-- CommitmentGate center -->
+  <rect x="380" y="165" width="100" height="55" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="2" rx="6"/>
+  <text x="430" y="186" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Commitment</text>
+  <text x="430" y="200" text-anchor="middle" font-size="10" fill="#7C3AED" font-weight="700">Gate</text>
+  <text x="430" y="214" text-anchor="middle" font-size="9" fill="#6B7280">fronteira</text>
+  <line x1="430" y1="42" x2="430" y2="332" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="4,4"/>
 
-  <!-- Right Panel: Downstream -->
-  <rect x="460" y="45" width="340" height="320" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" rx="8"/>
-  <text x="630" y="72" text-anchor="middle" font-size="15" fill="#D97706" font-weight="700">Modo Downstream</text>
-  <text x="630" y="90" text-anchor="middle" font-size="12" fill="#D97706">Observabilidade verifica o</text>
-  <text x="630" y="105" text-anchor="middle" font-size="12" fill="#D97706">COMPROMISSO</text>
+  <!-- Downstream panel -->
+  <rect x="490" y="42" width="350" height="290" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2" rx="8"/>
+  <text x="665" y="68" text-anchor="middle" font-size="14" fill="#D97706" font-weight="700">Modo Downstream</text>
+  <text x="665" y="85" text-anchor="middle" font-size="11" fill="#D97706">Observabilidade verifica o COMPROMISSO</text>
 
-  <!-- Downstream items -->
-  <rect x="480" y="120" width="300" height="40" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1" rx="6"/>
-  <text x="630" y="138" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">OBC estado Operational</text>
-  <text x="630" y="152" text-anchor="middle" font-size="10" fill="#6B7280">contrato de negocio mensuravel em runtime</text>
+  <rect x="508" y="97" width="314" height="36" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1" rx="5"/>
+  <text x="665" y="113" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">OBC estado Operational</text>
+  <text x="665" y="126" text-anchor="middle" font-size="9" fill="#6B7280">contrato de negócio mensurável em runtime</text>
 
-  <rect x="480" y="168" width="300" height="40" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1" rx="6"/>
-  <text x="630" y="186" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">Release Trail</text>
-  <text x="630" y="200" text-anchor="middle" font-size="10" fill="#6B7280">log append-only de cada fase da entrega</text>
+  <rect x="508" y="140" width="314" height="36" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1" rx="5"/>
+  <text x="665" y="156" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">Release Trail — append-only</text>
+  <text x="665" y="169" text-anchor="middle" font-size="9" fill="#6B7280">log de evidências de cada fase Bootstrap → Promote</text>
 
-  <rect x="480" y="216" width="300" height="40" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1" rx="6"/>
-  <text x="630" y="234" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">SLOs / metricas DORA</text>
-  <text x="630" y="248" text-anchor="middle" font-size="10" fill="#6B7280">confiabilidade mensuravel em producao</text>
+  <rect x="508" y="183" width="314" height="36" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1" rx="5"/>
+  <text x="665" y="199" text-anchor="middle" font-size="11" fill="#374151" font-weight="600">SLOs / DORA Extended / Observable Events</text>
+  <text x="665" y="212" text-anchor="middle" font-size="9" fill="#6B7280">confiabilidade e comportamento verificáveis em produção</text>
 
-  <rect x="480" y="264" width="300" height="40" fill="#FFFFFF" stroke="#F59E0B" stroke-width="1" rx="6"/>
-  <text x="630" y="282" text-anchor="middle" font-size="12" fill="#374151" font-weight="600">Observable Events (OBC)</text>
-  <text x="630" y="296" text-anchor="middle" font-size="10" fill="#6B7280">comportamento verificavel em producao</text>
+  <!-- ODD box Downstream example -->
+  <rect x="508" y="226" width="314" height="56" fill="#FEF9C3" stroke="#F59E0B" stroke-width="1" rx="5"/>
+  <text x="665" y="242" text-anchor="middle" font-size="9" fill="#D97706" font-weight="700">ODD no Downstream — split_payment.boleto.expired</text>
+  <text x="665" y="256" text-anchor="middle" font-size="9" fill="#374151">Evento definido antes do código com dimensão pixStatus:</text>
+  <text x="665" y="269" text-anchor="middle" font-size="9" fill="#374151">operação identifica "Pix pago, Boleto vencido"</text>
+  <text x="665" y="282" text-anchor="middle" font-size="9" fill="#374151">sem consultar banco de dados</text>
 
   <!-- Question Downstream -->
-  <rect x="480" y="316" width="300" height="36" fill="#F59E0B" rx="6"/>
-  <text x="630" y="332" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="600">O compromisso esta sendo honrado?</text>
-  <text x="630" y="346" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="600">A capability entregou o prometido?</text>
+  <rect x="508" y="294" width="314" height="30" fill="#F59E0B" rx="5"/>
+  <text x="665" y="313" text-anchor="middle" font-size="11" fill="#FFFFFF" font-weight="600">O compromisso está sendo honrado?</text>
 
-  <!-- ODD label at bottom -->
-  <rect x="20" y="372" width="780" height="32" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
-  <text x="410" y="391" text-anchor="middle" font-size="10" fill="#6B7280">ODD — Observability Driven Design: o que nao pode ser observado nao pode ser governado — em nenhum dos dois modos</text>
+  <!-- ── OBC State Machine ── -->
+  <text x="430" y="356" text-anchor="middle" font-size="12" fill="#6B7280" font-weight="600">Ciclo de vida do OBC — estados e transições</text>
+
+  <defs>
+    <marker id="aOr7" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#F59E0B"/></marker>
+    <marker id="aGr7" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#10B981"/></marker>
+    <marker id="aRd7" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#EF4444"/></marker>
+    <marker id="aBl7" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#3B82F6"/></marker>
+    <marker id="aGy7" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#9CA3AF"/></marker>
+  </defs>
+
+  <!-- State boxes: horizontal flow -->
+  <!-- Draft -->
+  <rect x="20" y="368" width="108" height="52" fill="#E0F2FE" stroke="#3B82F6" stroke-width="1.5" rx="6"/>
+  <text x="74" y="390" text-anchor="middle" font-size="12" fill="#1D4ED8" font-weight="700">Draft</text>
+  <text x="74" y="405" text-anchor="middle" font-size="9" fill="#374151">Business Intent</text>
+  <text x="74" y="416" text-anchor="middle" font-size="9" fill="#374151">aceita</text>
+  <line x1="128" y1="394" x2="146" y2="394" stroke="#8B5CF6" stroke-width="1.5" marker-end="url(#aOr7)"/>
+  <text x="137" y="385" text-anchor="middle" font-size="8" fill="#7C3AED">CommGate</text>
+  <text x="137" y="374" text-anchor="middle" font-size="8" fill="#7C3AED">Promover</text>
+
+  <!-- Refining -->
+  <rect x="148" y="368" width="108" height="52" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="202" y="390" text-anchor="middle" font-size="12" fill="#D97706" font-weight="700">Refining</text>
+  <text x="202" y="405" text-anchor="middle" font-size="9" fill="#374151">OBC em</text>
+  <text x="202" y="416" text-anchor="middle" font-size="9" fill="#374151">refinamento</text>
+  <line x1="256" y1="394" x2="274" y2="394" stroke="#8B5CF6" stroke-width="1.5" marker-end="url(#aOr7)"/>
+  <text x="265" y="385" text-anchor="middle" font-size="8" fill="#7C3AED">Readiness</text>
+  <text x="265" y="374" text-anchor="middle" font-size="8" fill="#7C3AED">Gate</text>
+
+  <!-- Committed -->
+  <rect x="276" y="368" width="108" height="52" fill="#FEF3C7" stroke="#D97706" stroke-width="2" rx="6"/>
+  <text x="330" y="390" text-anchor="middle" font-size="12" fill="#B45309" font-weight="700">Committed</text>
+  <text x="330" y="405" text-anchor="middle" font-size="9" fill="#374151">Pronto para</text>
+  <text x="330" y="416" text-anchor="middle" font-size="9" fill="#374151">Delivery</text>
+  <line x1="384" y1="394" x2="402" y2="394" stroke="#8B5CF6" stroke-width="1.5" marker-end="url(#aOr7)"/>
+  <text x="393" y="385" text-anchor="middle" font-size="8" fill="#7C3AED">Bootstrap</text>
+  <text x="393" y="374" text-anchor="middle" font-size="8" fill="#7C3AED">Started</text>
+
+  <!-- In Delivery -->
+  <rect x="404" y="368" width="108" height="52" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="458" y="390" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">In Delivery</text>
+  <text x="458" y="405" text-anchor="middle" font-size="9" fill="#374151">Em execução</text>
+  <text x="458" y="416" text-anchor="middle" font-size="9" fill="#374151">no Iteration</text>
+  <line x1="512" y1="394" x2="530" y2="394" stroke="#10B981" stroke-width="1.5" marker-end="url(#aGr7)"/>
+  <text x="521" y="385" text-anchor="middle" font-size="8" fill="#065F46">Promote</text>
+  <text x="521" y="374" text-anchor="middle" font-size="8" fill="#065F46">concluído</text>
+
+  <!-- Operational -->
+  <rect x="532" y="368" width="108" height="52" fill="#D1FAE5" stroke="#10B981" stroke-width="2" rx="6"/>
+  <text x="586" y="390" text-anchor="middle" font-size="11" fill="#065F46" font-weight="700">Operational</text>
+  <text x="586" y="405" text-anchor="middle" font-size="9" fill="#374151">Verificável</text>
+  <text x="586" y="416" text-anchor="middle" font-size="9" fill="#374151">em runtime</text>
+  <line x1="640" y1="394" x2="658" y2="394" stroke="#9CA3AF" stroke-width="1.5" marker-end="url(#aGy7)"/>
+  <text x="649" y="385" text-anchor="middle" font-size="8" fill="#6B7280">Deprecação</text>
+
+  <!-- Archived -->
+  <rect x="660" y="368" width="108" height="52" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="1.5" rx="6"/>
+  <text x="714" y="390" text-anchor="middle" font-size="12" fill="#6B7280" font-weight="700">Archived</text>
+  <text x="714" y="405" text-anchor="middle" font-size="9" fill="#6B7280">Registro</text>
+  <text x="714" y="416" text-anchor="middle" font-size="9" fill="#6B7280">histórico</text>
+
+  <!-- Regression arrow: In Delivery → Refining -->
+  <path d="M458,420 Q458,460 202,460 Q202,440 202,420" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#aRd7)"/>
+  <text x="330" y="478" text-anchor="middle" font-size="9" fill="#DC2626">Regressão Downstream → Upstream: OBC Committed → Refining</text>
+
+  <!-- Discard arrow: Refining → Archived -->
+  <path d="M202,368 Q202,340 714,340 Q714,360 714,368" fill="none" stroke="#EF4444" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#aRd7)"/>
+  <text x="458" y="332" text-anchor="middle" font-size="9" fill="#DC2626">CommitmentGate Descartar</text>
+
+  <!-- ODD principle bar -->
+  <rect x="20" y="500" width="820" height="30" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
+  <text x="430" y="519" text-anchor="middle" font-size="10" fill="#6B7280" font-weight="600">ODD — Observability Driven Design: o que não pode ser observado não pode ser governado — em nenhum dos dois modos</text>
+
+  <!-- Magazine Siará evidence table -->
+  <rect x="20" y="538" width="820" height="70" fill="#F0FDF4" stroke="#10B981" stroke-width="1.5" rx="6"/>
+  <text x="430" y="557" text-anchor="middle" font-size="10" fill="#065F46" font-weight="700">Magazine Siará — evidência de ODD em produção</text>
+  <!-- Two columns -->
+  <rect x="30" y="563" width="392" height="36" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="4"/>
+  <text x="226" y="577" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">Upstream (EXP-001 — Credit Card)</text>
+  <text x="226" y="590" text-anchor="middle" font-size="9" fill="#374151">6 fluxos de pagamento especificados com observable events</text>
+  <text x="226" y="601" text-anchor="middle" font-size="9" fill="#374151">antes de uma linha de produção escrita</text>
+  <rect x="438" y="563" width="392" height="36" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1" rx="4"/>
+  <text x="634" y="577" text-anchor="middle" font-size="9" fill="#374151" font-weight="600">Downstream (OBC split-payment-pix-boleto)</text>
+  <text x="634" y="590" text-anchor="middle" font-size="9" fill="#374151">6 Observable Events com dimensões obrigatórias, 5 SLIs</text>
+  <text x="634" y="601" text-anchor="middle" font-size="9" fill="#374151">numéricos definidos antes do primeiro commit de Hack</text>
 </svg>

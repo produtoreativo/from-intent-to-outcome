@@ -111,7 +111,7 @@ O ponto cego tem um nome operacional no contexto do ProdOps: Discovery no Downst
 
 Discovery no Downstream é a exploração realizada depois que uma decisão passou a carregar um compromisso operacional, econômico ou temporal, fazendo com que a mesma incerteza que seria aceitável no Upstream passe a possuir custo de reversão, renegociação ou retrabalho. O problema não é descobrir depois do comprometimento. O problema é carregar incerteza para dentro de um compromisso sem reconhecer que o custo de estar errado mudou.
 
-Quando uma equipe assume um compromisso formal, com critérios de aceite, com prazo, com expectativa de stakeholder, e ainda carrega exploração não resolvida para dentro desse compromisso, o que está acontecendo não é discovery seguido de delivery. É delivery com discovery embutido, sem reconhecimento de que as duas coisas estão coexistindo sob regimes de custo diferentes.
+Quando uma equipe assume um compromisso formal, com critérios de aceite, com prazo, com expectativa de stakeholder, e ainda carrega exploração não resolvida para dentro desse compromisso, o que está acontecendo não é exploração seguida de compromisso. É um compromisso com exploração embutida, sem reconhecimento de que as duas coisas estão coexistindo sob regimes de custo diferentes.
 
 Isso importa por uma razão precisa: o custo de mudar de curso é radicalmente diferente nos dois casos.
 
@@ -125,15 +125,15 @@ O discovery no Downstream não é apenas ineficiente: é estruturalmente arrisca
 
 ## A distinção que falta: modo, não sequência
 
-O que a interpretação operacional mais comum da literatura de produto deixa implícito, o ProdOps torna explícito: a diferença entre exploração e entrega não é uma diferença de momento no tempo, mas de tipo de compromisso mantido.
+O que a interpretação operacional mais comum da literatura de produto deixa implícito, o ProdOps torna explícito: a diferença entre exploração e compromisso não é uma diferença de momento no tempo, mas de tipo de compromisso mantido.
 
 Upstream e Downstream não descrevem onde o trabalho está no tempo. Descrevem qual compromisso está governando o trabalho.
 
-Discovery não é necessariamente Upstream, e delivery não é necessariamente Downstream. Uma investigação pode ocorrer no Downstream quando existe um compromisso formal de entrega. Uma construção experimental pode ocorrer no Upstream quando ainda não existe compromisso de produção. O que determina o modo de execução é o compromisso vigente, não a natureza da atividade.
+Exploração não é necessariamente Upstream, e construção não é necessariamente Downstream. Uma investigação pode ocorrer no Downstream quando existe um compromisso formal assumido. Uma construção experimental pode ocorrer no Upstream quando ainda não existe esse compromisso. O que determina o modo de execução é o compromisso vigente, não a natureza da atividade.
 
 Exploração sem compromisso formal pode acontecer em qualquer momento: antes, durante ou em paralelo ao que outras equipes chamam de "delivery". O que a caracteriza não é sua posição na linha do tempo, mas o fato de que o custo de estar errado ainda é controlável: a hipótese pode ser refutada sem quebrar uma promessa.
 
-Entrega com compromisso formal pode também envolver exploração, mas essa exploração acontece sob condições radicalmente diferentes. O custo de estar errado é mais alto. Os gates que protegem o compromisso precisam ser mais rigorosos. A incerteza que pode ser tolerada durante a exploração livre não pode ser carregada indefinidamente dentro de um compromisso.
+Trabalho sob compromisso formal pode também envolver exploração, mas essa exploração acontece sob condições radicalmente diferentes. O custo de estar errado é mais alto. Os gates que protegem o compromisso precisam ser mais rigorosos. A incerteza que pode ser tolerada durante a exploração livre não pode ser carregada indefinidamente dentro de um compromisso.
 
 No Upstream, o rigor é predominantemente orientado à aprendizagem, experimentação e redução de incerteza. Upstream não significa ausência de rigor: significa que o rigor está a serviço da qualidade da evidência, não da honra de um compromisso. No Downstream, o rigor está relacionado à preservação do compromisso, verificação da execução, controle de mudança e realização do resultado esperado. Downstream não significa ausência de discovery: significa que qualquer discovery que ocorra ali carrega um custo diferente e exige um regime de controle diferente.
 

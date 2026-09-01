@@ -111,4 +111,16 @@ The two problems are symmetric: Perpetual Discovery is exploration without press
 
 ---
 
+## A CommitmentGate without Upstream: the BS-001 case
+
+The Magazine Siará corpus records a case that seems to contradict the protocol but in fact confirms it. Business Signal BS-001 (Split Payment, 2026-08-04) led to PI-001 with a CommitmentGate and Committed OBC on the same day — without any prior Upstream experiment.
+
+This is not Premature Promotion. It is the demonstration that the CommitmentGate decides the *destiny of the capability*, not the conclusion of an exploration phase. When demand is confirmed through two independent channels, the scope is bounded (Pix + Boleto for a partner launch), the deadline is non-negotiable (15 days), and the open questions are of the refinement type — not the central hypothesis — the Decision Package can be assembled without prior exploration: the evidence is in the business signal and the clarity of the scope.
+
+PI-001 documents the justification for the Downstream outcome: "there is sufficient clarity about what to build; the 15-day deadline does not allow for Upstream exploration." This statement is the Decision Package in its most compressed form. The trio assessed that the residual uncertainty is acceptable to move forward, recorded the open questions as refinement, and made the commitment. This is not theater: it is the correct calibration of rigor to the context.
+
+What "without Upstream" describes precisely is the absence of pre-CommitmentGate experiments — not the absence of discovery. After the CommitmentGate, the Split Payment traversed the Discovery journey in Downstream mode: the OBC transitioned to Refining, the six Observable Events with mandatory dimensions were defined, the BDD Feature was written, the open questions from PI-001 were resolved with dated decisions (including RISK-SP-001, closed by PM Eugenio with an explicit decision on the expired Boleto with Pix already paid policy). The Readiness Gate verified that these conditions were met before authorizing entry into Delivery. Planning generated the Iteration Plan. Only then did Bootstrap, the first phase of Delivery, begin. The difference from the EXP-001/002/003 trajectory is not the presence or absence of discovery: it is the regime under which discovery occurred — in Upstream mode (advisory rigor, pre-CommitmentGate) or in the Discovery journey in Downstream mode (blocking rigor, post-CommitmentGate, with Readiness Gate before Delivery).
+
+---
+
 *Chapter 6 of 10 | Part III: The Boundary*
