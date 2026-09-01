@@ -145,7 +145,7 @@ O próximo capítulo define o que é um modo de execução e por que essa defini
 
 ---
 
-*Capítulo 2 de 10 | Parte I: O Problema*
+*Capítulo 2 de 11 | Parte I: O Problema*
 
 ---
 

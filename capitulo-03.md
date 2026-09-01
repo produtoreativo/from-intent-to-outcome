@@ -101,7 +101,7 @@ Se Upstream e Downstream fossem fases (momentos específicos na linha do tempo d
 
 Como modos (configurações de compromisso que se aplicam sobre qualquer jornada), Upstream e Downstream podem coexistir em um mesmo time para itens diferentes. Um item pode estar em modo Downstream, com compromisso formal e gates ativos, enquanto um experimento paralelo opera em modo Upstream, sob regime não bloqueante e sem gates obrigatórios. A decisão de modo não é temporal; é de compromisso. E um item pode mudar de modo, mas apenas por uma decisão explícita, não por uma passagem de tempo.
 
-Isso também significa que não existe transição automática entre os modos. Um item em modo Upstream não transita para o Downstream simplesmente porque o time decidiu começar a implementar. A transição representa uma mudança explícita de compromisso, sustentada por condições verificáveis que confirmam que o comprometimento está justificado. O Capítulo 6 descreve como essa transição é estruturada no framework ProdOps.
+Isso também significa que não existe transição automática entre os modos. Um item em modo Upstream não transita para o Downstream simplesmente porque o time decidiu começar a implementar. A transição representa uma mudança explícita de compromisso, sustentada por condições verificáveis que confirmam que o comprometimento está justificado. O Capítulo 7 descreve como essa transição é estruturada no framework ProdOps.
 
 ---
 
@@ -162,8 +162,8 @@ graph LR
 
 **O rigor é configurável, mas sua configuração não é uma preferência.** O Framework ProdOps prescreve o template canônico do CommitmentGate — os artefatos obrigatórios, os participantes do trio, os seis outcomes. O Runtime é o que o time instala e adapta ao seu contexto operacional: quais verificações adicionais se aplicam ao tipo de trabalho que o time faz, com qual profundidade, sob quais condições o Reliability Plan é exigido. Essa adaptação é legítima e recomendada. O que não é adaptável é o princípio: sem CommitmentGate com Decision Package avaliado, a transição do OBC de Draft para Committed não acontece. O que muda entre times é como o gate é calibrado — não se ele existe.
 
-Com o OBC como artefato e o CommitmentGate como mecanismo, os dois capítulos seguintes têm referência concreta: o Upstream é o regime sob o qual o OBC acumula evidência antes do gate; o Downstream é o regime sob o qual o OBC Committed é honrado com gates bloqueantes até a promoção da capability.
+Com o OBC como artefato e o CommitmentGate como mecanismo, os três capítulos seguintes têm referência concreta: o Capítulo 4 descreve o Assessment — a jornada de governança informacional que acompanha todo o ciclo, do Business Signal à retroalimentação pós-Operation; o Capítulo 5 descreve o Upstream, o regime sob o qual o OBC acumula evidência antes do gate; e o Capítulo 6 descreve o Downstream, o regime sob o qual o OBC Committed é honrado com gates bloqueantes até a promoção da capability.
 
 ---
 
-*Capítulo 3 de 10 | Parte II: Os Modos*
+*Capítulo 3 de 11 | Parte II: Os Modos*

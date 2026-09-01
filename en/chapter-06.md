@@ -1,126 +1,128 @@
-# Chapter 6: The CommitmentGate: the boundary with a name
+# Chapter 6: Downstream: the commitment mode
 
 ---
 
-## The problem of implicit boundaries
+## Where Downstream begins
 
-![CommitmentGate: the boundary with a name and the 6 canonical outcomes](../images/cap06-commitmentgate-outcomes.svg)
-*Figure 6. The 6 canonical outcomes of the CommitmentGate: it is not an approval meeting — it is a collective decision with verifiable criteria*
+There is a common misconception about the starting point of Downstream. It does not begin when the team "finishes discovery." It does not begin when "the team feels ready." It does not begin when the Product Owner decides to prioritize an item.
 
-In the absence of an explicit boundary, the transition from exploration to delivery happens regardless. An item "passes" when someone decides it is ready — usually the Product Owner, in a sprint planning session, based on an assessment that no one has formalized with verifiable criteria. An item "passes" because the team wants to start building, or because a deadline is approaching, or because the item has been in the queue long enough to seem mature.
+Downstream begins when the CommitmentGate is executed with the Promote outcome, and not before. That is the moment when the mode is declared: the rigor regime shifts from non-blocking to blocking, and the item begins to carry a formal commitment.
 
-This kind of transition has two problems with a common origin. The first: what was evaluated is not recorded in an auditable way. If the item goes wrong — if the feature does not match what users needed, if the technical premise that underpinned the implementation proves incorrect — there is no way to verify what was considered at the transition, by whom, and with what criteria. Without a record, there is no way to distinguish a well-informed decision from a decision made out of convenience. The second: the absence of formality creates an incentive to keep the item in exploration indefinitely, because the transition has no explicit cost. Nobody calls for the decision because nobody is responsible for calling it. Perpetual Discovery, addressed in the previous chapter, is the direct consequence of a boundary without consequences.
+This precision is not merely procedural. It is the direct consequence of what Downstream represents: a shift in the commitment regime. And commitment regimes must have a verifiable moment of inception. "The team felt ready" is not verifiable. A CommitmentGate recorded in the upstream-trail, with a date, participants, and documented outcome, is.
 
-Both effects share the same cause: an implicit boundary produces either premature promotion (the decision happens before the evidence is sufficient) or exploration without decision (evidence accumulates, but the decision is never made). The CommitmentGate resolves both with a single mechanism: it makes the boundary explicit, verifiable, and consequential.
-
----
-
-## What the CommitmentGate is
-
-The CommitmentGate is the gate that mediates the Upstream → Downstream transition. It is called by the trio (PM + Tech Lead + Author) when the experiment's Decision Package is ready. Any member of the trio may call it.
-
-Three characteristics distinguish it from an ordinary planning meeting.
-
-The first: the CommitmentGate decides the *destiny of the capability* — whether it advances to Downstream, under what conditions, whether it returns for further exploration, or whether it is closed. It does not decide when to start building. An item may have production-quality code already written and still need to pass through the CommitmentGate before its capability commitment is formalized. The gate is not deciding whether the code exists; it is deciding what the organization will do with it.
-
-The second: the Decision Package is an entry contract, not retroactive documentation. It must exist and have substance before the meeting — not be produced during it. A Decision Package with generically filled fields ("will be validated in Downstream") is Gate Theater (AP-D1): the form without the function.
-
-The third: the 6 canonical outcomes cover the full possible phenomenology of the decision, not merely approval. The cultural expectation that a CommitmentGate results in "yes" or "no" underestimates what the gate resolves.
+What the CommitmentGate does not initiate is Delivery. The ProdOps framework distinguishes three states within Downstream mode: **Downstream Declared**: the commitment has been made, the item enters the Icebox for refinement; **Downstream Ready**: the pre-Delivery requirements have been satisfied and verified; **Delivery Started**: Bootstrap has been initiated. The CommitmentGate corresponds to Downstream Declared. Between it and Bootstrap.Started there is a readiness protocol that is part of Downstream, not an antechamber outside of it.
 
 ---
 
-## The six canonical outcomes
+## The three transition moments
 
-Each outcome is an operationally distinct decision with specific mandatory actions.
-
-**Promote**: the evidence justifies commitment. The capability enters Downstream: the BDD Feature and OBC are moved to the committed paths, the item enters the Iteration Plan with status `Entered`, and Downstream begins with Moment 2 of the transition protocol.
-
-**Promote with restriction**: part of the capability is ready for commitment; another part needs to continue in exploration. The approved subset transitions to Downstream. The restricted parts remain in Upstream for a new experiment with a more specific hypothesis. The restriction is recorded explicitly in the upstream-trail: it is not a silent gap.
-
-**Requires another experiment**: the evidence produced is not sufficient for commitment, but the hypothesis is still valid. A new experiment is created with a more specific hypothesis or a different evidence-collection route. The current experiment is marked with the Decision Package indicating this outcome. This is not failure: it is the recognition that exploration needs one more iteration.
-
-The three outcomes above resolve the capability's destiny at the moment of the gate. The next two suspend the decision while an external condition is not satisfied: they are the only case in which the gate does not decide the capability's destiny, but records what prevents that decision.
-
-**Awaiting business decision**: the trio cannot commit because there is a pending business decision (on budget, strategy, or from a stakeholder) that is outside the team's scope to resolve. The item is blocked in the Product Tracking List with the decision-maker identified and an expected resolution date. No new experiment is opened until the decision arrives. The gate was executed: the inability to decide the destiny is recorded with its cause.
-
-**Awaiting external dependency**: commitment is not viable due to a technical or third-party dependency outside the team's control. The dependency is recorded in the Reliability Plan and in the Product Tracking List. Continuous Assessment monitors its status. When the dependency is resolved, the trio is reconvened.
-
-**Discard**: the hypothesis was refuted or the context changed in a way that makes the investment unjustifiable. The learning is recorded in `prodops/framework/journeys/discovery/learnings.md`. The experiment is formally closed with justification in the upstream-trail. Discarding is not team failure: it is the most efficient possible result when exploration produces evidence that a direction is not worth the commitment.
-
-The existence of six outcomes is what makes the CommitmentGate different from an approval meeting. An approval meeting has two possible results: approved or not approved. The CommitmentGate has six, and four of them are neither approval nor rejection, but structured responses to situations that the approved/rejected dichotomy does not resolve.
-
----
-
-## The Decision Package: entry contract
+The detailed operationalization protocol for this transition (the steps between Downstream Declared and Delivery Started) is a proposal from the ProdOps framework canonization effort, robustly supported by the experiment artifacts, but still awaiting incorporation into the main framework.
 
 ```mermaid
 graph TD
-    DP["Decision Package"] --> H["Hypothesis answered\nEvidence Threshold met"]
-    DP --> ES["Executive Summary\nWhat was explored"]
-    DP --> REC["Recommended Decision\none of the 6 outcomes"]
-    DP --> RSK["Updated risks\nresidual uncertainty declared acceptable"]
-    DP --> OPP["Opportunities\nwhat the experiment revealed beyond the hypothesis"]
-    DP --> DS["Downstream Scope\nwhat the capability implies for Delivery"]
-    DS --> OBC_D["OBC Draft exists\nexistence only is mandatory"]
-    DS --> BDD_D["BDD Draft readable\nneed not be in artifacts/bdd/"]
+    UP["UPSTREAM: Exploration"] --> M1
+
+    M1["Moment 1: CommitmentGate\nPM + Tech Lead + Author\n[Downstream Declared]"]
+    M1 -->|"Promote"| M2
+    M1 -->|"Other outcomes"| UP2["Remains in Upstream\nor is closed"]
+
+    M2["Moment 2: Artifact Promotion\nOBC: Draft → Refining\nWork Item → Icebox\nBDD registered"]
+    M2 --> ICE["ICEBOX: Refinement\nOBC → Committed\nBDD → artifacts/bdd/"]
+
+    ICE --> M3["Moment 3: Readiness Gate\nDiligence Sync\nCriteria verified\n[Downstream Ready]"]
+    M3 -->|"Approved"| DEL["DELIVERY\nBootstrap.Started\n[Delivery Started]"]
+    M3 -->|"Open Finding"| BLOCK["Return to Icebox\nor formal Waiver"]
 ```
 
-The Decision Package is the set of artifacts the Author prepares to make the CommitmentGate possible. It is not documentation: it is an entry contract to the gate.
+**Moment 1: CommitmentGate** (Downstream Declared). The trio (PM + Tech Lead + Author) evaluates whether the evidence produced justifies the commitment. The criteria include: hypothesis answered with the Evidence Threshold satisfied (if declared), Decision Package with real substance, OBC Draft existing as a file, and BDD drafted and legible. The most consequential result is Promote, which triggers Moment 2. The CommitmentGate does not create the commitment: it makes verifiable the collective decision to assume a commitment that the trio has already formed.
 
-The canonical components:
+**Moment 2: Artifact Promotion + Icebox Entry**. Immediately after the CommitmentGate with the Promote outcome, the experiment artifacts transition into the Downstream space. The OBC changes from Draft to Refining. A Work Item is created in the Icebox referencing the experiment and the OBC. The upstream-trail is updated with the outcome and the reference to the Work Item. The experiment is not closed: it remains as a record of evidence and learnings. Only the status changes. Downstream is active, but Delivery has not started.
 
-**Hypothesis answered with evidence**: the experiment's central hypothesis has an answer supported by verifiable evidence, with the Evidence Threshold satisfied when declared. "Verifiable" means that a trio member who did not participate in the experiment can read the artifacts and reach the same conclusion without additional verbal context. If that is not possible, the evidence is not sufficient.
+**Moment 3: Readiness Gate** (Downstream Ready). The item leaves the Icebox and enters the Iteration Backlog when a set of requirements is satisfied. The OBC must have reached the Committed state. The BDD Feature must be in `prodops/artifacts/bdd/`. Risks must be documented. For items with financial movement, external integration, SLO changes, or high/critical risk: a Reliability Plan is required. The Readiness Gate is not optional: it is the point where Diligence verifies, in a blocking manner, that Downstream has the necessary substrate to be executed with integrity.
 
-**Executive Summary**: a synthesis of what was discovered, in language that PMs, Tech Leads, and stakeholders can read in 5 minutes. It is not the complete upstream-trail: it is the distillation of what matters for the decision.
-
-**Recommendation**: the Author's suggestion for the CommitmentGate outcome. The trio is not obligated to follow the recommendation, but the Author must hold a grounded position.
-
-**Risks and declared residual uncertainty**: what remains unknown, what level of residual risk the Downstream will take on, and the explicit declaration that this uncertainty is acceptable to proceed. Risks not declared at the CommitmentGate are risks managed without visibility — the worst-case scenario.
-
-**Opportunities**: what the experiment revealed beyond the central hypothesis that may inform future decisions. When present, it must not be omitted from the Decision Package: it is knowledge that Upstream produced and that belongs in the record.
-
-**Downstream Scope**: what the capability implies in terms of Delivery. Two artifacts must exist as preconditions for entry to the gate: the OBC Draft (even if incomplete) and a readable BDD sketch. Completeness is not required at the CommitmentGate; existence is. The Downstream Scope section of the Decision Package references these artifacts and describes what will need to be built.
-
-The substantive criterion that runs through all components is the same: verifiability by someone who did not participate in the experiment. If the trio member who was not in the experiment can read the Decision Package and reach the same conclusions, the package has substance. If additional verbal context is needed, it does not.
+The distinction between the three moments resolves frequent conflicts: "should BDD be in `artifacts/bdd/` at the CommitmentGate?" No: a legible draft is sufficient at Moment 1; it moves to the committed path during Moment 2 and before Moment 3. "Should the OBC be Committed at the CommitmentGate?" No: merely existing as a Draft is sufficient at Moment 1; Committed is mandatory at Moment 3.
 
 ---
 
-## Comparison with analogous mechanisms in the literature
+## The Delivery sequence in Downstream mode
 
-The CommitmentGate has superficial similarities with mechanisms from other frameworks, but resolves a different problem.
+![Materialization of blocking rigor: Bootstrap → Promote sequence with DoD gates between each phase](../images/cap05-downstream-sequence.svg)
+*Figure 5. Bootstrap → Promote sequence: materialization of blocking rigor in the Delivery journey, with Release Trail as append-only evidence*
 
-The *betting table* from Shape Up (Singer) is the moment in which the organization decides to commit a project to a six-week cycle. In the author's reading, that decision is about *when* to commit an already-shaped project: the betting table does not verify whether the shaping was sufficient to warrant commitment; the shaping process fulfills that role before the project reaches the table. The CommitmentGate, by contrast, explicitly verifies whether the evidence justifies commitment, regardless of the preparation process that preceded it.
+Once the item passes through the Readiness Gate and enters the Iteration Plan, the Delivery journey in Downstream mode executes a formal sequence:
 
-The Design Sprint results review — the synthesis moment in which the team evaluates whether user tests justify moving forward — is closer to the CommitmentGate in its orientation toward evidence. What distinguishes it is the absence of a formal record of the outcome: who participated, with what criteria, what the decision was, and what happens as a consequence. The traceability that the CommitmentGate requires is not present as a structural requirement in the Design Sprint.
+```
+Bootstrap → Hack → Sync → Finish → Ship → Validate → Promote
+```
 
-The IPDS Milestone Review (Integrated Product Development System) from the aerospace industry is formally more rigorous than the CommitmentGate in documentation and hierarchical approval. But it operates in contexts where uncertainty is lower and rework costs are existentially higher, which justifies a level of formality that would be counterproductive in the context of digital products with shorter feedback cycles.
+This sequence is the materialization of blocking rigor within the Delivery journey, not the definition of Downstream as such. What makes it mandatory is not the mode itself, but the combination of Downstream mode with the Delivery journey: any item in Delivery that carries a formal commitment requires verifiable conditions for advancement at each stage, and this sequence provides them.
 
-The CommitmentGate is calibrated to a specific balance: formal enough to be verifiable and auditable, agile enough not to make the transition more costly than the exploration that preceded it. What it resolves in a particular way is a combination that these analogous mechanisms address separately or do not address at all: a decision with a name, verifiable criteria, identified participants, and an outcome with a recorded consequence.
+The sequence is organized into two cycles. **CI Sync** (Bootstrap, Hack, Sync, Finish) is local and synchronous work: preparing the environment, implementing, synchronizing the branch, and passing the code quality gates. **CI Async** (Ship, Validate, Promote) is platform-driven work: building and publishing the artifact, deploying it, validating it at runtime, and promoting it with recorded evidence.
 
----
+Each phase has a specific purpose and a Definition of Done that, if not satisfied, blocks advancement. Bootstrap verifies that the local environment is operational and that the implementation preconditions are satisfied. Hack implements via ProdOps TDD: observable behavior defined before any production line is written. Sync ensures the branch is up to date and that ProdOps artifacts reflect what was implemented. Finish executes the code quality gates and produces the Pull Request with a complete narrative. Ship, Validate, and Promote transition the code to production with full traceability.
 
-## The CommitmentGate as an observability mechanism
-
-The CommitmentGate is designed specifically to make two opposite problems observable and treatable.
-
-Perpetual Discovery: without a formal gate with a stopping criterion and defined participants, an experiment can continue indefinitely because nobody calls the decision. The CommitmentGate not only creates pressure to decide: it names the problem. When an experiment displays the diagnostic signs of Perpetual Discovery (addressed in the previous chapter), calling the CommitmentGate is the specific operational response — not to approve, but to decide what to do. The gate makes the state "in exploration without a stopping criterion" visible and treatable with a known set of outcomes.
-
-Premature Promotion: committing a capability before having sufficient evidence, whether due to deadline pressure or unverified optimism. The Decision Package as an entry contract — with the rule that the trio member who did not participate in the experiment must be able to read the artifacts and reach the same conclusions — is the protective mechanism. But what the gate adds beyond the Decision Package is the record: the outcome is documented, the participants are identified, the conditions under which the decision was made remain in the upstream-trail. No process prevents intentional adversarial behavior, but that behavior ceases to be invisible, and recorded behaviors are treatable in ways that invisible behaviors are not.
-
-The two problems are symmetric: Perpetual Discovery is exploration without pressure to decide; Premature Promotion is a decision without sufficient evidence. The CommitmentGate is the boundary that, by having a name, criteria, participants, and outcomes, transforms both from implicit states into recorded — and therefore treatable — states.
+What blocking rigor means operationally: if Bootstrap fails the smoke gate, Hack does not begin. If Finish detects failing tests, Ship does not begin. If Validate identifies an SLO violation, Promote does not happen. There is no "we'll fix it later": each gate exists because the commitment must be honored with evidence, not with intention.
 
 ---
 
-## A CommitmentGate without Upstream: the BS-001 case
+## The five Downstream anti-patterns
 
-The Magazine Siará corpus records a case that seems to contradict the protocol but in fact confirms it. Business Signal BS-001 (Split Payment, 2026-08-04) led to PI-001 with a CommitmentGate and Committed OBC on the same day — without any prior Upstream experiment.
+Downstream has its own set of anti-patterns: behaviors that reproduce the form of rigor without its substance. They emerged from the development and review work of the ProdOps framework; they are not universal concepts from the literature, although analogous phenomena exist in other methodologies. What distinguishes them is their specific relationship with the modal model: each one represents the collapse of the blocking rigor function while maintaining its appearance.
 
-This is not Premature Promotion. It is the demonstration that the CommitmentGate decides the *destiny of the capability*, not the conclusion of an exploration phase. When demand is confirmed through two independent channels, the scope is bounded (Pix + Boleto for a partner launch), the deadline is non-negotiable (15 days), and the open questions are of the refinement type — not the central hypothesis — the Decision Package can be assembled without prior exploration: the evidence is in the business signal and the clarity of the scope.
+**AP-D1: Gate Theater:** executing gates formally without the submitted artifacts satisfying the criteria. Cause: deadline pressure or social convenience that makes it easier to declare the gate satisfied than to defend the interdiction. Examples: OBC marked as Committed without verifiable `acceptance_criteria`; Readiness Gate approved with open Diligence Findings and no formal waiver; CommitmentGate conducted in a meeting where the Decision Package was not read. Consequence: gates pass without the verification function having been exercised. Diagnostic criterion: audit whether the documented entry criteria were individually verified for each gate. If there is no record of item-by-item verification, the gate was theater. The counter-example in the Magazine Siará corpus: risk RISK-SP-001 (policy for expired Boleto with Pix already paid) was closed by PM Eugenio with a named, dated decision on the same day as the CommitmentGate — "maintains pending state, manual investigation by operations, no automatic cancellation or Pix reversal." Recorded. Verifiable. Not theater.
 
-PI-001 documents the justification for the Downstream outcome: "there is sufficient clarity about what to build; the 15-day deadline does not allow for Upstream exploration." This statement is the Decision Package in its most compressed form. The trio assessed that the residual uncertainty is acceptable to move forward, recorded the open questions as refinement, and made the commitment. This is not theater: it is the correct calibration of rigor to the context.
+**AP-D2: Proxy Commitment:** OBC marked as Committed without the success criteria being measurable. Cause: pressure to formalize the commitment before the OBC has verifiable substance. Examples: `expected_outcome` vague ("improve user experience"); `acceptance_criteria` describing what the system does, not when it is acceptable; `success_metrics` with relative targets without a baseline. Diagnostic criterion: "how will I know this item was successfully delivered 30 days after the Promote?" If the answer requires subjective interpretation, the OBC is not truly Committed. The Magazine Siará `split-payment-pix-boleto` OBC is the counter-example: five Initial SLIs with explicit numeric targets (three at 100%, two at 99%), six Observable Events with mandatory dimensions, and the rule "the order is never released with only one portion confirmed" as an acceptance criterion verifiable without any additional verbal context.
 
-What "without Upstream" describes precisely is the absence of pre-CommitmentGate experiments — not the absence of discovery. After the CommitmentGate, the Split Payment traversed the Discovery journey in Downstream mode: the OBC transitioned to Refining, the six Observable Events with mandatory dimensions were defined, the BDD Feature was written, the open questions from PI-001 were resolved with dated decisions (including RISK-SP-001, closed by PM Eugenio with an explicit decision on the expired Boleto with Pix already paid policy). The Readiness Gate verified that these conditions were met before authorizing entry into Delivery. Planning generated the Iteration Plan. Only then did Bootstrap, the first phase of Delivery, begin. The difference from the EXP-001/002/003 trajectory is not the presence or absence of discovery: it is the regime under which discovery occurred — in Upstream mode (advisory rigor, pre-CommitmentGate) or in the Discovery journey in Downstream mode (blocking rigor, post-CommitmentGate, with Readiness Gate before Delivery).
+**AP-D3: Forced Readiness:** Readiness Gate approved with known gaps (incomplete artifacts, open Findings, missing prerequisites) due to deadline or stakeholder pressure. Cause: the perceived cost of delaying Delivery exceeds the perceived cost of carrying the gaps. The distinction from Gate Theater is one of scope and specificity: Gate Theater covers any gate executed without substance; Forced Readiness is specifically the Readiness Gate approved with pre-Delivery artifact gaps that should have blocked it. Consequence: Downstream carries an invisible readiness debt that manifests as problems during implementation. Magazine Siará demonstrates the distinction: PI-001 for the Split Payment lists open questions (minimum amount per payment method, limit of payment methods per purchase), but PI-001 explicitly classifies them as "refinement questions — they do not block the start." This is a declaration of acceptable residual uncertainty, not Forced Readiness: the gap is named, justified, and recorded — not concealed.
+
+**AP-D4: Phantom BDD:** BDD Feature written after the code, describing what was implemented instead of the expected behavior before implementation. Cause: BDD treated as compliance documentation rather than behavioral specification. The BDD exists as a formal artifact, but has lost its function: specifying the agreed behavior *before* any line of code is written. Diagnostic criterion: verify the creation timestamp of the feature file versus the start of the Hack phase. If the feature file was created after the first implementation commit, the BDD is phantom. In PI-001 for the Split Payment, the instruction is explicit: "OBC and BDD must be written immediately" — on the same day as the Business Signal, before any Hack session.
+
+**AP-D5: Release Trail Vazio:** Promote executed without a filled Release Trail: no record of the decisions made, artifacts produced, tests executed, and the state in which the system was left after the release. Cause: Release Trail treated as an optional formality rather than a commitment record. Consequence: the traceability that Downstream promises — from the CommitmentGate to evidence in production — is destroyed. The Release Trail is not optional documentation; it is the record that allows the commitment to be audited after the Promote has happened. EXP-014 of the Payments API demonstrated empirically (53/53 PASS) that the ProdOps Runtime automatically tracks the Delivery state of each Feature via CloudEvents, making an empty Release Trail detectable by Diligence the moment it occurs — not only retrospectively.
+
+```mermaid
+graph LR
+    subgraph Forma["Execute form without substance"]
+        AP1["AP-D1 Gate Theater\nGates pass without criteria satisfied"]
+        AP2["AP-D2 Proxy Commitment\nOBC Committed without measurable metrics"]
+        AP3["AP-D3 Forced Readiness\nReadiness Gate with known gaps"]
+    end
+    subgraph Ordem["Produce artifacts out of order"]
+        AP4["AP-D4 Phantom BDD\nBDD written after the code"]
+        AP5["AP-D5 Release Trail Vazio\nPromote without evidence trail"]
+    end
+    Forma & Ordem --> RESULT["Framework exists in form\nnot in function"]
+```
+
+The underlying pattern is the same: the framework exists in form but not in function. The rituals are executed, the artifacts exist, the meetings happen, but without the substance that would make each one a real verification mechanism. Downstream with Gate Theater, Proxy Commitment, and Forced Readiness offers illusory safety — worse than having no gates at all, because it obscures the real problems.
 
 ---
 
-*Chapter 6 of 10 | Part III: The Boundary*
+## What happens when Downstream needs to go back
+
+There is a scenario that the transition protocol must accommodate: an item in Delivery reveals that the original hypothesis has been invalidated, the scope has materially changed, or a blocking dependency has made delivery infeasible in the committed form.
+
+In that case, there is a Downstream → Upstream regression protocol.
+
+Regression is the formal suspension of the commitment, not the return to a previous step in the work. It is convened by the trio, not an individual decision. The typical trigger is a central hypothesis invalidated during Delivery: a technical spike fails, a user rejects the approach, a business premise disappears, or a blocking dependency that did not exist at the CommitmentGate.
+
+When regression is decided, two records are made: in the Release Trail of the item in Delivery (with context, what was discovered, and the decision to suspend the commitment), and in a new Upstream experiment referencing the original experiment. The OBC transitions from Committed to Refining: the formal commitment is suspended, not abandoned. The item awaits a new Upstream investigation cycle before any new commitment can be assumed.
+
+Regression is not a failure of the CommitmentGate. It is the recognition that the context changed in a relevant way after the commitment, or that the residual uncertainty the gate considered acceptable proved unacceptable during implementation. The protocol exists so that this situation is managed with honesty, not concealed until the problem becomes too serious.
+
+What is *not* regression: adjusting an OBC parameter within the declared residual uncertainty range; a Diligence Finding resolved by formal waiver; an item reprioritized without a discovery that invalidates the hypothesis. These cases are ordinary Downstream management; they do not require the regression protocol and do not suspend the commitment.
+
+---
+
+## Downstream as structure, not as pressure
+
+The last point in this chapter is about what Downstream is not.
+
+Downstream is not the high-pressure mode. It is not where rigor increases because the team is being held accountable. It is not where delivery speed is the primary objective.
+
+Downstream is the mode where the commitment has been made and must be honored with evidence. The Bootstrap → Promote sequence exists to ensure that honoring the commitment does not turn into a rush without structure. The gates exist to protect the team from the cost of avoidable errors, not to create bureaucracy.
+
+The distinction between Downstream as structure and Downstream as pressure is operationally verifiable: when the anti-patterns are present (Gate Theater, Forced Readiness, Proxy Commitment), Downstream is being used as an instrument of pressure, not as a commitment structure. The form is there, but the function is inverted.
+
+---
+
+*Chapter 6 of 11 | Part II: The Modes*

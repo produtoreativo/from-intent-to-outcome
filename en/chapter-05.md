@@ -1,128 +1,146 @@
-# Chapter 5: Downstream: the commitment mode
+# Chapter 5: Upstream: the mode of explicit uncertainty
 
 ---
 
-## Where Downstream begins
+## The discipline of what is not a promise
 
-There is a common misconception about the starting point of Downstream. It does not begin when the team "finishes discovery." It does not begin when "the team feels ready." It does not begin when the Product Owner decides to prioritize an item.
+![Upstream experiment lifecycle](../images/cap04-experiment-lifecycle.svg)
+*Figure 5. Upstream experiment lifecycle: from HypothesisFormed to CommitmentGate with its 6 outcomes*
 
-Downstream begins when the CommitmentGate is executed with the Promote outcome, and not before. That is the moment when the mode is declared: the rigor regime shifts from non-blocking to blocking, and the item begins to carry a formal commitment.
+Upstream is not the mode where rigor is discarded. It is the mode where rigor takes a distinct form: oriented toward the quality of evidence, not toward verifying a delivery commitment.
 
-This precision is not merely procedural. It is the direct consequence of what Downstream represents: a shift in the commitment regime. And commitment regimes must have a verifiable moment of inception. "The team felt ready" is not verifiable. A CommitmentGate recorded in the upstream-trail, with a date, participants, and documented outcome, is.
+What defines Upstream is not the absence of commitment, but the type of commitment that is in effect. There are three layers in this distinction that must be kept separate.
 
-What the CommitmentGate does not initiate is Delivery. The ProdOps framework distinguishes three states within Downstream mode: **Downstream Declared**: the commitment has been made, the item enters the Icebox for refinement; **Downstream Ready**: the pre-Delivery requirements have been satisfied and verified; **Delivery Started**: Bootstrap has been initiated. The CommitmentGate corresponds to Downstream Declared. Between it and Bootstrap.Started there is a readiness protocol that is part of Downstream, not an antechamber outside of it.
+Work in progress carries a real commitment. The investigation has a hypothesis, responsible parties, and some stopping criterion, even if implicit. Conducting an experiment without rigor, without a formulated hypothesis, without verifiable progression, is not Upstream well executed; it is Upstream poorly conducted.
+
+There is, however, no formal commitment to a specific capability: no OBC Committed, no Release Trail, no promise that that behavior will be in production for those users, with those acceptance criteria.
+
+And there is no blocking commitment: changing direction, closing the experiment, or rejecting the hypothesis does not violate a contract that needs to be renegotiated. The cost of reversal remains controllable because the prevailing regime does not transform a change of course into a broken promise.
+
+Software produced in Upstream can have production quality: tested, documented, and deployable code. What distinguishes this work from Downstream is not the technical quality of the artifact, but the commitment regime under which it was produced.
+
+The discipline of Upstream is the discipline of keeping these three layers distinct. A team can work with all the technical rigor of a senior engineer in Upstream mode and the work still remains non-blocking, because the capability commitment has not been made.
 
 ---
 
-## The three transition moments
+## When to open an experiment
 
-The detailed operationalization protocol for this transition (the steps between Downstream Declared and Delivery Started) is a proposal from the ProdOps framework canonization effort, robustly supported by the experiment artifacts, but still awaiting incorporation into the main framework.
+When Upstream operates in the Discovery journey, the most structured working instrument is the experiment. An experiment is not just any informal investigation: it is a structured artifact with a defined purpose, a falsifiable hypothesis, and a stopping criterion.
+
+The ProdOps framework guides four conditions to justify opening a formal experiment. All must be true: there is a falsifiable hypothesis; the hypothesis has not yet been answered by existing evidence; the answer has decision value — it affects what will be built or how; and the cost of assuming the hypothesis as true without testing it exceeds the cost of the experiment.
+
+These conditions eliminate two frequent cases of inappropriate experiment use. The first: investigating what is already known. The hypothesis has already been answered by previous experiments or by the team's accumulated knowledge, and formalizing a new experiment is unnecessary work. The second: formalizing an untestable preference. The hypothesis is not falsifiable because it is a belief or a design orientation with no verification criterion.
+
+> **Note:** The distinction between informal research and formal experiment is operational, not canonical. The framework does not require that every investigation be a formal experiment, only that formal experiments satisfy these conditions.
+
+EXP-001 of the Magazine Siará Payments API is a concrete example. The central hypothesis: "the complete credit card lifecycle can be supported without crossing the PCI boundary, provided only the hosted flow is exposed in the first iteration." The hypothesis is falsifiable: if the PCI scope analysis shows that hosted and tokenized have equivalent exposure, or if the Checkout team cannot integrate the hosted flow without breaking changes to the existing contract, the hypothesis is refuted. The answer has decision value: it defines which of the three integration models — hosted, tokenized, transparent — enters Downstream first. And the cost of assuming the hypothesis without testing it would be to build with the wrong model and need a second Downstream delivery to correct it.
+
+---
+
+## The anatomy of the experiment
+
+Every Upstream experiment has two mandatory artifacts: `experiment.md` and `upstream-trail.md`.
+
+The `experiment.md` documents the permanent structure of the experiment: Business Goal, Questions to Answer, Hypothesis, Repository Scope Gate, Findings, and Decision Package.
 
 ```mermaid
 graph TD
-    UP["UPSTREAM: Exploration"] --> M1
+    EXP["experiment.md"] --> BG["Business Goal"]
+    EXP --> HYP["Hypothesis + Evidence Threshold"]
+    EXP --> QA["Questions to Answer"]
+    EXP --> SC["Scope"]
+    EXP --> DP["Decision Package"]
+    EXP --> EC["Exit Criteria"]
+    DP --> ES["Executive Summary"]
+    DP --> REC["Recommended Decision"]
+    DP --> RISK["Risks"]
+    DP --> OPP["Opportunities"]
+    DP --> DS["Downstream Scope"]
+``` It is not a bureaucracy template: it is the mechanism that keeps the experiment oriented toward its central hypothesis. The Decision Package section is what determines whether the experiment is mature enough for the CommitmentGate.
 
-    M1["Moment 1: CommitmentGate\nPM + Tech Lead + Author\n[Downstream Declared]"]
-    M1 -->|"Promote"| M2
-    M1 -->|"Other outcomes"| UP2["Remains in Upstream\nor is closed"]
+The `upstream-trail.md` is the chronological log of sessions: what was done, what was discovered, which artifacts were produced, which decisions were made and why. It serves two purposes. During the experiment, it is the mechanism that prevents context loss between sessions. At the CommitmentGate, it is the evidence that the experiment had real progression, not merely accumulated entries without advancing the hypothesis.
 
-    M2["Moment 2: Artifact Promotion\nOBC: Draft → Refining\nWork Item → Icebox\nBDD registered"]
-    M2 --> ICE["ICEBOX: Refinement\nOBC → Committed\nBDD → artifacts/bdd/"]
-
-    ICE --> M3["Moment 3: Readiness Gate\nDiligence Sync\nCriteria verified\n[Downstream Ready]"]
-    M3 -->|"Approved"| DEL["DELIVERY\nBootstrap.Started\n[Delivery Started]"]
-    M3 -->|"Open Finding"| BLOCK["Return to Icebox\nor formal Waiver"]
-```
-
-**Moment 1: CommitmentGate** (Downstream Declared). The trio (PM + Tech Lead + Author) evaluates whether the evidence produced justifies the commitment. The criteria include: hypothesis answered with the Evidence Threshold satisfied (if declared), Decision Package with real substance, OBC Draft existing as a file, and BDD drafted and legible. The most consequential result is Promote, which triggers Moment 2. The CommitmentGate does not create the commitment: it makes verifiable the collective decision to assume a commitment that the trio has already formed.
-
-**Moment 2: Artifact Promotion + Icebox Entry**. Immediately after the CommitmentGate with the Promote outcome, the experiment artifacts transition into the Downstream space. The OBC changes from Draft to Refining. A Work Item is created in the Icebox referencing the experiment and the OBC. The upstream-trail is updated with the outcome and the reference to the Work Item. The experiment is not closed: it remains as a record of evidence and learnings. Only the status changes. Downstream is active, but Delivery has not started.
-
-**Moment 3: Readiness Gate** (Downstream Ready). The item leaves the Icebox and enters the Iteration Backlog when a set of requirements is satisfied. The OBC must have reached the Committed state. The BDD Feature must be in `prodops/artifacts/bdd/`. Risks must be documented. For items with financial movement, external integration, SLO changes, or high/critical risk: a Reliability Plan is required. The Readiness Gate is not optional: it is the point where Diligence verifies, in a blocking manner, that Downstream has the necessary substrate to be executed with integrity.
-
-The distinction between the three moments resolves frequent conflicts: "should BDD be in `artifacts/bdd/` at the CommitmentGate?" No: a legible draft is sufficient at Moment 1; it moves to the committed path during Moment 2 and before Moment 3. "Should the OBC be Committed at the CommitmentGate?" No: merely existing as a Draft is sufficient at Moment 1; Committed is mandatory at Moment 3.
+Beyond the mandatory artifacts, experiments work on artifacts that already exist or can be enriched during the investigation: the OBC Draft — which is born with the Business Intent, pre-exists the experiment, and must be present as a file before the CommitmentGate —, the BDD Feature in draft, evidence files in `evidence/`, prototypes in `prototypes/`. The experiment does not create the OBC; it operates on it. The other optional artifacts are produced as the investigation needs them, not as an entry requirement.
 
 ---
 
-## The Delivery sequence in Downstream mode
+## Evidence Threshold: the criterion that Upstream may or may not declare
 
-![Materialization of blocking rigor: Bootstrap → Promote sequence with DoD gates between each phase](../images/cap05-downstream-sequence.svg)
-*Figure 5. Bootstrap → Promote sequence: materialization of blocking rigor in the Delivery journey, with Release Trail as append-only evidence*
+The Evidence Threshold is the explicit criterion that defines when the evidence produced is sufficient to make a commitment decision.
 
-Once the item passes through the Readiness Gate and enters the Iteration Plan, the Delivery journey in Downstream mode executes a formal sequence:
+In Upstream, the Evidence Threshold is *optional* (recommended, but not mandatory). If declared, revisions to the threshold must be recorded in the upstream-trail. If not declared, the stopping criterion is the author's judgment: the investigation questions have been answered, the Decision Package can be written with substance, and the residual uncertainty is declarable and acceptable.
 
-```
-Bootstrap → Hack → Sync → Finish → Ship → Validate → Promote
-```
-
-This sequence is the materialization of blocking rigor within the Delivery journey, not the definition of Downstream as such. What makes it mandatory is not the mode itself, but the combination of Downstream mode with the Delivery journey: any item in Delivery that carries a formal commitment requires verifiable conditions for advancement at each stage, and this sequence provides them.
-
-The sequence is organized into two cycles. **CI Sync** (Bootstrap, Hack, Sync, Finish) is local and synchronous work: preparing the environment, implementing, synchronizing the branch, and passing the code quality gates. **CI Async** (Ship, Validate, Promote) is platform-driven work: building and publishing the artifact, deploying it, validating it at runtime, and promoting it with recorded evidence.
-
-Each phase has a specific purpose and a Definition of Done that, if not satisfied, blocks advancement. Bootstrap verifies that the local environment is operational and that the implementation preconditions are satisfied. Hack implements via ProdOps TDD: observable behavior defined before any production line is written. Sync ensures the branch is up to date and that ProdOps artifacts reflect what was implemented. Finish executes the code quality gates and produces the Pull Request with a complete narrative. Ship, Validate, and Promote transition the code to production with full traceability.
-
-What blocking rigor means operationally: if Bootstrap fails the smoke gate, Hack does not begin. If Finish detects failing tests, Ship does not begin. If Validate identifies an SLO violation, Promote does not happen. There is no "we'll fix it later": each gate exists because the commitment must be honored with evidence, not with intention.
+What is not acceptable is the total absence of a stopping criterion — and it is precisely this absence that produces the main anti-pattern of Upstream.
 
 ---
 
-## The five Downstream anti-patterns
+## Perpetual Discovery: the central anti-pattern
 
-Downstream has its own set of anti-patterns: behaviors that reproduce the form of rigor without its substance. They emerged from the development and review work of the ProdOps framework; they are not universal concepts from the literature, although analogous phenomena exist in other methodologies. What distinguishes them is their specific relationship with the modal model: each one represents the collapse of the blocking rigor function while maintaining its appearance.
+Perpetual Discovery is the state of an experiment that continues accumulating evidence and sessions without the central hypothesis advancing toward a commitment decision. The experiment never reaches the CommitmentGate, not because the evidence is insufficient, but because there is no pressure or explicit criterion forcing the decision.
 
-**AP-D1: Gate Theater:** executing gates formally without the submitted artifacts satisfying the criteria. Cause: deadline pressure or social convenience that makes it easier to declare the gate satisfied than to defend the interdiction. Examples: OBC marked as Committed without verifiable `acceptance_criteria`; Readiness Gate approved with open Diligence Findings and no formal waiver; CommitmentGate conducted in a meeting where the Decision Package was not read. Consequence: gates pass without the verification function having been exercised. Diagnostic criterion: audit whether the documented entry criteria were individually verified for each gate. If there is no record of item-by-item verification, the gate was theater. The counter-example in the Magazine Siará corpus: risk RISK-SP-001 (policy for expired Boleto with Pix already paid) was closed by PM Eugenio with a named, dated decision on the same day as the CommitmentGate — "maintains pending state, manual investigation by operations, no automatic cancellation or Pix reversal." Recorded. Verifiable. Not theater.
+Three structural conditions produce Perpetual Discovery. The absence of a declared Evidence Threshold: without a stopping criterion, the experiment can always "need more evidence" — the implicit threshold is infinite. The central hypothesis never formalized: without something to falsify, there is never an answer — the experiment continues because the question remains open. And the CommitmentGate seen as an approval event rather than a commitment decision: if the gate is perceived as the moment when the ability to change course ends, there is a rational incentive to avoid it.
 
-**AP-D2: Proxy Commitment:** OBC marked as Committed without the success criteria being measurable. Cause: pressure to formalize the commitment before the OBC has verifiable substance. Examples: `expected_outcome` vague ("improve user experience"); `acceptance_criteria` describing what the system does, not when it is acceptable; `success_metrics` with relative targets without a baseline. Diagnostic criterion: "how will I know this item was successfully delivered 30 days after the Promote?" If the answer requires subjective interpretation, the OBC is not truly Committed. The Magazine Siará `split-payment-pix-boleto` OBC is the counter-example: five Initial SLIs with explicit numeric targets (three at 100%, two at 99%), six Observable Events with mandatory dimensions, and the rule "the order is never released with only one portion confirmed" as an acceptance criterion verifiable without any additional verbal context.
+The ProdOps framework identifies four diagnostic signals that make Perpetual Discovery recognizable without relying on subjective judgment. The numerical thresholds below are guiding heuristics, not canonized criteria. What is invariant is the structure of the diagnosis; what each team calibrates is the threshold:
 
-**AP-D3: Forced Readiness:** Readiness Gate approved with known gaps (incomplete artifacts, open Findings, missing prerequisites) due to deadline or stakeholder pressure. Cause: the perceived cost of delaying Delivery exceeds the perceived cost of carrying the gaps. The distinction from Gate Theater is one of scope and specificity: Gate Theater covers any gate executed without substance; Forced Readiness is specifically the Readiness Gate approved with pre-Delivery artifact gaps that should have blocked it. Consequence: Downstream carries an invisible readiness debt that manifests as problems during implementation. Magazine Siará demonstrates the distinction: PI-001 for the Split Payment lists open questions (minimum amount per payment method, limit of payment methods per purchase), but PI-001 explicitly classifies them as "refinement questions — they do not block the start." This is a declaration of acceptable residual uncertainty, not Forced Readiness: the gap is named, justified, and recorded — not concealed.
+**S1: No progression in the upstream-trail for 3+ sessions.** If the trail has entries but the Hypothesis section of experiment.md has not changed in more than 2 weeks and the Decision Package still has no substance, the experiment is stagnant.
 
-**AP-D4: Phantom BDD:** BDD Feature written after the code, describing what was implemented instead of the expected behavior before implementation. Cause: BDD treated as compliance documentation rather than behavioral specification. The BDD exists as a formal artifact, but has lost its function: specifying the agreed behavior *before* any line of code is written. Diagnostic criterion: verify the creation timestamp of the feature file versus the start of the Hack phase. If the feature file was created after the first implementation commit, the BDD is phantom. In PI-001 for the Split Payment, the instruction is explicit: "OBC and BDD must be written immediately" — on the same day as the Business Signal, before any Hack session.
+**S2: Questions to Answer with status "not answerable with available evidence".** If some question was marked as unanswerable without the central hypothesis having been answered by another route, and this state persists for more than 5 days without substitute evidence, the experiment is blocked.
 
-**AP-D5: Release Trail Vazio:** Promote executed without a filled Release Trail: no record of the decisions made, artifacts produced, tests executed, and the state in which the system was left after the release. Cause: Release Trail treated as an optional formality rather than a commitment record. Consequence: the traceability that Downstream promises — from the CommitmentGate to evidence in production — is destroyed. The Release Trail is not optional documentation; it is the record that allows the commitment to be audited after the Promote has happened. EXP-014 of the Payments API demonstrated empirically (53/53 PASS) that the ProdOps Runtime automatically tracks the Delivery state of each Feature via CloudEvents, making an empty Release Trail detectable by Diligence the moment it occurs — not only retrospectively.
+**S3: Evidence Threshold declared and not reachable without a new hypothesis.** If the threshold was declared and the accumulated evidence does not satisfy it after 3 or more collection sessions, without identification of new sources, the current route will not lead to the threshold.
+
+**S4: Stakeholder with a decision blocked for 10+ business days by this experiment.** The cost of waiting exceeds the value of continued exploration: the decision to advance or close must be made.
+
+When multiple signals are active simultaneously, the experiment is at critical risk of Perpetual Discovery and the CommitmentGate must be convened — not to approve, but to decide what to do.
 
 ```mermaid
-graph LR
-    subgraph Forma["Execute form without substance"]
-        AP1["AP-D1 Gate Theater\nGates pass without criteria satisfied"]
-        AP2["AP-D2 Proxy Commitment\nOBC Committed without measurable metrics"]
-        AP3["AP-D3 Forced Readiness\nReadiness Gate with known gaps"]
-    end
-    subgraph Ordem["Produce artifacts out of order"]
-        AP4["AP-D4 Phantom BDD\nBDD written after the code"]
-        AP5["AP-D5 Release Trail Vazio\nPromote without evidence trail"]
-    end
-    Forma & Ordem --> RESULT["Framework exists in form\nnot in function"]
+graph TD
+    S1["S1: upstream-trail with no progress for 3+ sessions"]
+    S2["S2: Questions to Answer unanswerable for 5+ days"]
+    S3["S3: Evidence Threshold declared but not reachable"]
+    S4["S4: Stakeholder blocked for 10+ business days"]
+    S1 & S2 & S3 & S4 --> PD["Perpetual Discovery diagnosed"]
+    PD --> |"correct outcome"| CG["Immediate CommitmentGate"]
+    CG --> D["Discard with learning\nor Requires another experiment"]
 ```
 
-The underlying pattern is the same: the framework exists in form but not in function. The rituals are executed, the artifacts exist, the meetings happen, but without the substance that would make each one a real verification mechanism. Downstream with Gate Theater, Proxy Commitment, and Forced Readiness offers illusory safety — worse than having no gates at all, because it obscures the real problems.
+---
+
+## The three acts of deployment
+
+A point that deserves explicit attention: Upstream does not prohibit code in production. The mode describes the type of commitment, not where code can be deployed.
+
+There are three distinct acts of deployment in Upstream, with different authorizations and consequences:
+
+**Sandbox Deploy**: code deployed in an ephemeral and isolated stack, without real client traffic. The engineer decides. The stack is destroyed at the end of the experiment. No Release Trail, no OBC Committed.
+
+**Controlled Production**: Upstream code deployed to real production, without CommitmentGate. Explicit authorization from the team and leadership. Immediate rollback available. No Release Trail required. This is not a violation of Upstream mode: it is an authorized act. What distinguishes it from promotion is that the *capability commitment* (OBC Committed, Downstream gates) has not been made. The code reaches production; the capability remains under exploration.
+
+**Capability Promotion**: CommitmentGate with Promote outcome. BDD Feature and OBC moved to committed paths. The item enters the Iteration Plan. Downstream begins.
+
+The distinction between Controlled Production and Capability Promotion is precisely the distinction the modal model resolves: in the first case, the code is in production but the capability is not committed; in the second, the commitment has been formally made with all its gates.
 
 ---
 
-## What happens when Downstream needs to go back
+## Upstream in operation: Magazine Siará as exemplar
 
-There is a scenario that the transition protocol must accommodate: an item in Delivery reveals that the original hypothesis has been invalidated, the scope has materially changed, or a blocking dependency has made delivery infeasible in the committed form.
+The first three experiments of the Magazine Siará Payments API (EXP-001, EXP-002, and EXP-003) illustrate Upstream as an operational mode in its most complete form, with the CommitmentGate executed at the end of the sequence.
 
-In that case, there is a Downstream → Upstream regression protocol.
+EXP-001 opened with a high-risk question: how to support the complete credit card lifecycle without crossing the PCI boundary or coupling Checkout to the Asaas contract? Before writing a single line of production code, the experiment specified the mandatory BDD scenarios, the Observable Events expected for each flow (authorization, confirmation, risk analysis, refusal, cancellation, chargeback), and the dimensions that could never appear in logs (card number, CVV, provider token). EXP-002 mapped the Asaas sandbox capabilities and limitations for reproducing the credit card cycle, and confirmed the Validation Workbench as the simulation environment for scenarios the sandbox cannot reproduce deterministically — full provider scenario validation remains open, pending external evidence from Asaas. EXP-003 systematically compared the three possible integration models — hosted, tokenized, transparent — and produced the recommendation with justification: only hosted entry advances to Downstream, because it is the only option that does not require decisions external to the Payments team.
 
-Regression is the formal suspension of the commitment, not the return to a previous step in the work. It is convened by the trio, not an individual decision. The typical trigger is a central hypothesis invalidated during Delivery: a technical spike fails, a user rejects the approach, a business premise disappears, or a blocking dependency that did not exist at the CommitmentGate.
+The EXP-003 Decision Package recommends Promote with restriction (outcome ②): the hosted slice advances; the remaining options remain in Upstream awaiting third-party decisions (PCI scope, token model, Checkout UX). The CommitmentGate was executed with this Decision Package: the trio recorded the outcome, and Downstream began exclusively for hosted entry.
 
-When regression is decided, two records are made: in the Release Trail of the item in Delivery (with context, what was discovered, and the decision to suspend the commitment), and in a new Upstream experiment referencing the original experiment. The OBC transitions from Committed to Refining: the formal commitment is suspended, not abandoned. The item awaits a new Upstream investigation cycle before any new commitment can be assumed.
-
-Regression is not a failure of the CommitmentGate. It is the recognition that the context changed in a relevant way after the commitment, or that the residual uncertainty the gate considered acceptable proved unacceptable during implementation. The protocol exists so that this situation is managed with honesty, not concealed until the problem becomes too serious.
-
-What is *not* regression: adjusting an OBC parameter within the declared residual uncertainty range; a Diligence Finding resolved by formal waiver; an item reprioritized without a discovery that invalidates the hypothesis. These cases are ordinary Downstream management; they do not require the regression protocol and do not suspend the commitment.
+Three sequential experiments. No production code during any of them. A recommendation verifiable by third parties. A CommitmentGate that decided the capability's fate with sufficient evidence — and with an explicit restriction on what the evidence did not support. This is Upstream as serious exploration engineering.
 
 ---
 
-## Downstream as structure, not as pressure
+## What Upstream is not responsible for doing
 
-The last point in this chapter is about what Downstream is not.
+The definition of Upstream includes an explicit list of what is outside its scope. Implementing the committed capability with blocking gates: that is the Delivery journey in Downstream mode. The distinction is one of commitment, not physical activity: Upstream can produce functional code, proof of concept, implementation in sandbox or in controlled production, without that constituting the delivery of a formally promised capability. Defining how observability will be implemented technically: that is the responsibility of Downstream (the "how" of instrumentation, not the "what" that must be observable). Producing OBC Committed: that is Discovery in Downstream. Producing complete BDD in `prodops/artifacts/bdd/`: that happens before the Readiness Gate. Guaranteeing the absence of uncertainty: acceptable residual uncertainty is a valid CommitmentGate criterion.
 
-Downstream is not the high-pressure mode. It is not where rigor increases because the team is being held accountable. It is not where delivery speed is the primary objective.
+This last statement is counterintuitive enough to deserve emphasis: Upstream does not need to eliminate all uncertainty. It needs to reduce uncertainty to the point where the residual risk is acceptable for taking on the Downstream commitment. What is "acceptable" is the collective judgment of the trio at the CommitmentGate, not a zero-uncertainty criterion that no finite experiment can satisfy.
 
-Downstream is the mode where the commitment has been made and must be honored with evidence. The Bootstrap → Promote sequence exists to ensure that honoring the commitment does not turn into a rush without structure. The gates exist to protect the team from the cost of avoidable errors, not to create bureaucracy.
-
-The distinction between Downstream as structure and Downstream as pressure is operationally verifiable: when the anti-patterns are present (Gate Theater, Forced Readiness, Proxy Commitment), Downstream is being used as an instrument of pressure, not as a commitment structure. The form is there, but the function is inverted.
+Special attention is due to the item "Producing Committed OBC: that is Discovery in Downstream." It resolves a frequent misunderstanding: a Business Signal that enters directly into Downstream without prior Upstream does not skip discovery. The discovery happens in the Discovery journey executed in Downstream mode — with blocking rigor. The OBC transitions from Draft to Refining. The BDD Feature is written and refined. The Business Intent questions are resolved with dated decisions and identified responsible parties. The Readiness Gate blocks entry into the Delivery journey until these conditions are met. Only then — with the Iteration Plan generated in Planning — does Bootstrap, the first phase of Delivery, begin. What "without Upstream" describes is the absence of pre-CommitmentGate exploration. What happens after the CommitmentGate, in the Discovery journey in Downstream mode, is real discovery: with blocking gates that do not allow advancing until the conditions are satisfied.
 
 ---
 
-*Chapter 5 of 10 | Part II: The Modes*
+*Chapter 5 of 11 | Part II: The Modes*

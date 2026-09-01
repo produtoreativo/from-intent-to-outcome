@@ -101,7 +101,7 @@ If Upstream and Downstream were phases (specific moments on the product timeline
 
 As modes (commitment configurations that apply over any journey), Upstream and Downstream can coexist within the same team for different items. An item can be in Downstream mode, with a formal commitment and active gates, while a parallel experiment operates in Upstream mode, under a non-blocking regime and without mandatory gates. The mode decision is not temporal; it is one of commitment. And an item can change mode, but only through an explicit decision — not through the passage of time.
 
-This also means that there is no automatic transition between modes. An item in Upstream mode does not transition to Downstream simply because the team decided to begin implementation. The transition represents an explicit change of commitment, supported by verifiable conditions that confirm the commitment is justified. Chapter 6 describes how this transition is structured in the ProdOps framework.
+This also means that there is no automatic transition between modes. An item in Upstream mode does not transition to Downstream simply because the team decided to begin implementation. The transition represents an explicit change of commitment, supported by verifiable conditions that confirm the commitment is justified. Chapter 7 describes how this transition is structured in the ProdOps framework.
 
 ---
 
@@ -162,8 +162,8 @@ graph LR
 
 **Rigor is configurable, but its configuration is not a preference.** The ProdOps Framework prescribes the canonical CommitmentGate template — the required artifacts, the trio participants, the six outcomes. The Runtime is what the team installs and adapts to its operational context: which additional verifications apply to the type of work the team does, with what depth, under which conditions the Reliability Plan is required. This adaptation is legitimate and recommended. What is not adaptable is the principle: without a CommitmentGate with an evaluated Decision Package, the OBC transition from Draft to Committed does not happen. What varies between teams is how the gate is calibrated — not whether it exists.
 
-With the OBC as artifact and the CommitmentGate as mechanism, the two following chapters have a concrete reference: Upstream is the regime under which the OBC accumulates evidence before the gate; Downstream is the regime under which the Committed OBC is honored with blocking gates until the capability is promoted.
+With the OBC as artifact and the CommitmentGate as mechanism, the three following chapters have a concrete reference: Chapter 4 describes Assessment — the informational governance journey that accompanies the full cycle, from Business Signal to post-Operation feedback; Chapter 5 describes Upstream, the regime under which the OBC accumulates evidence before the gate; and Chapter 6 describes Downstream, the regime under which the Committed OBC is honored with blocking gates until the capability is promoted.
 
 ---
 
-*Chapter 3 of 10 | Part II: The Modes*
+*Chapter 3 of 11 | Part II: The Modes*

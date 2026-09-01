@@ -1,146 +1,152 @@
-# Capítulo 4: Upstream: o modo da incerteza explícita
+# Capítulo 4: Assessment — a jornada que acompanha todas
 
 ---
 
-## A disciplina do que não é promessa
+## Antes das três jornadas clássicas
 
-![Ciclo de vida de um experimento Upstream](images/cap04-experiment-lifecycle.svg)
-*Figura 4. Ciclo de vida de um experimento Upstream: de HypothesisFormed ao CommitmentGate com seus 6 outcomes*
+![Assessment como camada de governança informacional](images/cap04-assessment-lifecycle.svg)
+*Figura 4. Assessment como governança informacional contínua: a jornada que antecede e acompanha Discovery, Delivery e Operation*
 
-O Upstream não é o modo onde o rigor é descartado. É o modo onde o rigor assume uma forma distinta: orientado à qualidade da evidência, não à verificação de um compromisso Downstream.
+Quando o framework ProdOps lista cinco jornadas, a tendência natural é lê-las como equivalentes: Discovery, Delivery, Operation, Assessment e Diligence como cinco responsabilidades do mesmo nível, cada uma com seu momento de entrada. Essa leitura é incorreta, e o erro importa.
 
-O que define o Upstream não é a ausência de compromisso, mas o tipo de compromisso que está em vigor. Há três camadas nessa distinção que precisam ser mantidas separadas.
+Assessment não é uma jornada que começa depois de Discovery e antes de Delivery. Não é uma fase de avaliação periódica que acontece em paralelo às três jornadas clássicas de produto. É a camada de governança informacional do framework — a jornada que antecede todas as outras, acompanha cada uma delas durante toda sua duração, e retroalimenta o ciclo com novos Business Intents após a Operation.
 
-O trabalho em andamento carrega um compromisso real. A investigação tem hipótese, responsáveis, e algum critério de parada, mesmo que implícito. Conduzir um experimento sem rigor, sem hipótese formulada, sem progressão verificável, não é Upstream bem executado; é Upstream mal conduzido.
+A distinção é mais do que posicional. Uma jornada que começa depois de Discovery está subordinada às três clássicas: ela depende de que o trabalho já tenha começado para ter o que avaliar. O Assessment, como definido pelo ProdOps, começa antes: no momento em que um Business Signal aparece no horizonte do produto, antes que qualquer decisão de iniciar Discovery tenha sido tomada.
 
-Não existe, no entanto, compromisso formal com uma capability específica: sem OBC Committed, sem Release Trail, sem promessa de que aquele comportamento estará em produção para aqueles usuários, com aqueles critérios de aceite.
-
-E não existe compromisso bloqueante: mudar de direção, encerrar o experimento, ou rejeitar a hipótese não viola um contrato que precise ser renegociado. O custo de reversão permanece controlável porque o regime vigente não transforma a mudança de curso em quebra de promessa.
-
-O software produzido no Upstream pode ter qualidade de produção: código testado, documentado e implantável. O que distingue esse trabalho do Downstream não é a qualidade técnica do artefato, mas o regime de compromisso sob o qual ele foi produzido.
-
-A disciplina do Upstream é a disciplina de manter essas três camadas distintas. Um time pode trabalhar com todo o rigor técnico de um engenheiro sênior em modo Upstream e ainda assim o trabalho permanece não bloqueante, porque o compromisso de capability não foi assumido.
+O que isso significa operacionalmente: toda decisão relevante do ciclo de vida de um capability — se transformar o Signal em Intent, se avançar para CommitmentGate, se o compromisso assumido está sendo honrado, o que o ciclo produziu de aprendizado para o próximo — tem uma contribuição da jornada Assessment. Não porque Assessment decide, mas porque Assessment produz o contexto informacional sem o qual as decisões seriam tomadas com base em percepção, não em evidência.
 
 ---
 
-## Quando abrir um experimento
+## A governança informacional começa com o Business Signal
 
-Quando o Upstream opera na jornada Discovery, o instrumento de trabalho mais estruturado é o experimento. Um experimento não é qualquer investigação informal: é um artefato estruturado com propósito definido, hipótese falsificável, e critério de parada.
+O Business Signal é o ponto de entrada do ciclo de vida de um capability: a observação, qualitativa ou quantitativa, que indica que pode existir uma oportunidade ou um problema que justifica atenção. Antes de qualquer experimento Upstream, antes de qualquer decisão de transformar o Signal em Business Intent, o Assessment já tem trabalho a fazer.
 
-O framework ProdOps orienta quatro condições para justificar a abertura de um experimento formal. Todas precisam ser verdadeiras: existe uma hipótese falsificável; a hipótese ainda não foi respondida por evidência existente; a resposta tem valor de decisão: ela afeta o que será construído ou como; e o custo de assumir a hipótese como verdadeira sem testá-la supera o custo do experimento.
+A pergunta que o Assessment responde nesse momento não é "o que vamos construir?" nem "como vamos construir?". É: **o ambiente informacional está suficientemente preparado para que a decisão de avançar — ou de não avançar — seja tomada com clareza sobre o que se sabe e o que não se sabe?**
 
-Essas condições eliminam dois casos frequentes de uso inadequado do experimento. O primeiro: investigar o que já é conhecido. A hipótese já foi respondida por experimentos anteriores ou pelo conhecimento acumulado do time, e formalizar um novo experimento é trabalho desnecessário. O segundo: formalizar uma preferência não testável. A hipótese não é falsificável porque é uma crença ou uma orientação de design sem critério de verificação.
+Isso implica três perguntas menores. O Signal tem contexto suficiente para ser distinguido de ruído: é uma observação fundamentada ou uma intuição sem dados? O Signal se conecta a outros Signals existentes no corpus — há padrão, há precedente, há convergência com o que o histórico de experimentos e ciclos anteriores já produziu? E quais riscos informativos estão associados ao avanço: o que ainda não se sabe que seria necessário saber para comprometer recursos de forma responsável?
 
-> **Nota:** A distinção entre pesquisa informal e experimento formal é operacional, não canônica. O framework não exige que toda investigação seja um experimento formal, apenas que experimentos formais satisfaçam essas condições.
-
-O EXP-001 da Payments API da Magazine Siará é um exemplo concreto. A hipótese central: "o ciclo completo de cartão de crédito pode ser suportado sem cruzar a fronteira PCI desde que apenas o fluxo hosted seja exposto na primeira iteração." A hipótese é falsificável: se a análise de escopo PCI mostrar que hosted e tokenizado têm exposição equivalente, ou se o time de Checkout não conseguir integrar o fluxo hosted sem breaking changes no contrato existente, a hipótese é refutada. A resposta tem valor de decisão: ela define qual dos três modelos de integração — hosted, tokenizado, transparente — entra primeiro no Downstream. E o custo de assumir a hipótese sem testá-la seria construir com o modelo errado e precisar de um segundo ciclo Downstream para corrigir.
-
----
-
-## A anatomia do experimento
-
-Todo experimento Upstream tem dois artefatos obrigatórios: o `experiment.md` e o `upstream-trail.md`.
-
-O `experiment.md` documenta a estrutura permanente do experimento: Business Goal, Questions to Answer, Hypothesis, Repository Scope Gate, Findings e Decision Package.
+Assessment não decide se o Signal se transforma em Business Intent. Essa decisão pertence ao Product Owner e ao time. O que Assessment faz é garantir que a decisão seja tomada com a entropia informacional controlada: sem lacunas invisíveis, sem dependências implícitas, sem riscos que só aparecerão depois que o compromisso estiver assumido.
 
 ```mermaid
 graph TD
-    EXP["experiment.md"] --> BG["Business Goal"]
-    EXP --> HYP["Hypothesis + Evidence Threshold"]
-    EXP --> QA["Questions to Answer"]
-    EXP --> SC["Scope"]
-    EXP --> DP["Decision Package"]
-    EXP --> EC["Exit Criteria"]
-    DP --> ES["Executive Summary"]
-    DP --> REC["Decisão Recomendada"]
-    DP --> RISK["Riscos"]
-    DP --> OPP["Oportunidades"]
-    DP --> DS["Escopo Downstream"]
-``` Não é um template de burocracia: é o mecanismo que mantém o experimento orientado à sua hipótese central. A seção Decision Package é a que determina se o experimento está maduro para o CommitmentGate.
-
-O `upstream-trail.md` é o registro cronológico das sessões: o que foi feito, o que foi descoberto, quais artefatos foram produzidos, quais decisões foram tomadas e por quê. Ele serve a dois propósitos. Durante o experimento, é o mecanismo que previne a perda de contexto entre sessões. No CommitmentGate, é a evidência de que o experimento teve progressão real, não apenas acumulou entradas sem avançar na hipótese.
-
-Além dos obrigatórios, experimentos trabalham sobre artefatos que já existem ou que podem ser enriquecidos durante a investigação: o OBC Draft — que nasce com o Business Intent, pré-existe ao experimento e precisa estar presente como arquivo antes do CommitmentGate —, a BDD Feature em rascunho, arquivos de evidência em `evidence/`, protótipos em `prototypes/`. O experimento não cria o OBC; opera sobre ele. Os demais artefatos opcionais são produzidos conforme a necessidade da investigação, não como requisito de entrada.
-
----
-
-## Evidence Threshold: o critério que o Upstream pode ou não declarar
-
-O Evidence Threshold é o critério explícito que define quando a evidência produzida é suficiente para tomar uma decisão de comprometimento.
-
-No Upstream, o Evidence Threshold é *opcional* (recomendado, mas não obrigatório). Se declarado, revisões ao threshold devem ser registradas no upstream-trail. Se não declarado, o critério de parada é o julgamento do autor: as perguntas de investigação foram respondidas, o Decision Package pode ser redigido com substância, a incerteza residual é declarável e aceitável.
-
-O que não é aceitável é a ausência total de critério de parada, e é exatamente essa ausência que produz o principal anti-padrão do Upstream.
-
----
-
-## Perpetual Discovery: o anti-padrão central
-
-Perpetual Discovery é o estado de um experimento que continua acumulando evidência e sessões sem que a hipótese central avance para uma decisão de comprometimento. O experimento nunca chega ao CommitmentGate, não porque a evidência seja insuficiente, mas porque não há pressão ou critério explícito que force a decisão.
-
-Três condições estruturais produzem Perpetual Discovery. A ausência de Evidence Threshold declarado: sem critério de parada, o experimento sempre pode "precisar de mais evidência": o threshold implícito é infinito. A hipótese central nunca formalizada: sem o que falsificar, nunca há uma resposta: o experimento continua porque a pergunta permanece aberta. E o CommitmentGate visto como evento de aprovação em vez de decisão de comprometimento: se o gate é percebido como o momento em que a capacidade de mudar de curso termina, há incentivo racional para evitá-lo.
-
-O framework ProdOps identifica quatro sinais diagnósticos que tornam o Perpetual Discovery reconhecível sem depender de julgamento subjetivo. Os limiares numéricos abaixo são heurísticas orientadoras, não critérios canonizados. O que é invariante é a estrutura do diagnóstico; o que cada time calibra é o threshold:
-
-**S1: Ausência de progressão no upstream-trail por 3+ sessões.** Se o trail tem entradas mas a seção Hypothesis do experiment.md não mudou há mais de 2 semanas e o Decision Package ainda não tem substance, o experimento está estagnado.
-
-**S2: Questions to Answer com status "não respondível com evidência disponível".** Se alguma pergunta foi marcada como não respondível sem que a hipótese central tenha sido respondida por outra via, e esse estado persiste há mais de 5 dias sem evidência substituta, o experimento está bloqueado.
-
-**S3: Evidence Threshold declarado e não atingível sem nova hipótese.** Se o threshold foi declarado e a evidência acumulada não o satisfaz após 3 ou mais sessões de coleta, sem identificação de novas fontes, a rota atual não levará ao threshold.
-
-**S4: Stakeholder com decisão bloqueada há 10+ dias úteis por esse experimento.** O custo de espera supera o valor de continuar explorando: a decisão de avançar ou encerrar precisa ser tomada.
-
-Quando múltiplos sinais estão ativos simultaneamente, o experimento está em risco crítico de Perpetual Discovery e o CommitmentGate deve ser convocado, não para aprovar, mas para decidir o que fazer.
-
-```mermaid
-graph TD
-    S1["S1: upstream-trail sem progressão por 3+ sessões"]
-    S2["S2: Questions to Answer não respondíveis por 5+ dias"]
-    S3["S3: Evidence Threshold declarado mas não atingível"]
-    S4["S4: Stakeholder bloqueado por 10+ dias úteis"]
-    S1 & S2 & S3 & S4 --> PD["Perpetual Discovery diagnosticado"]
-    PD --> |"outcome correto"| CG["CommitmentGate imediato"]
-    CG --> D["Descartar com aprendizado\nou Requer outro experimento"]
+    BS["Business Signal"] --> A["Assessment prospectivo\n(avaliação do Signal)"]
+    A --> |"contexto suficiente"| BI["Business Intent\n(OBC Draft criado)"]
+    A --> |"contexto insuficiente"| EV["Enriquecimento do Signal\n(mais evidência necessária)"]
+    BI --> UP["Upstream\n(Discovery + Assessment paralelos)"]
+    BI --> |"Signal direto para Downstream"| CG["CommitmentGate\n(Decision Package já existe)"]
+    UP --> DP["Decision Package\n(produto do Upstream)"]
+    DP --> CG
+    CG --> |"Promover"| DS["Downstream\n(Assessment acompanha)"]
+    DS --> OP["Operation\n(Assessment retrospectivo)"]
+    OP --> NBS["Novos Business Signals\n(retroalimentação do Assessment)"]
 ```
 
 ---
 
-## Os três atos de implantação
+## A dimensão prospectiva: preparando o ambiente para a decisão
 
-Um ponto que merece atenção explícita: o Upstream não proíbe código em produção. O modo descreve o tipo de compromisso, não onde o código pode ser implantado.
+A dimensão prospectiva do Assessment é a que opera antes do compromisso Downstream: desde o Signal, durante o Upstream (quando existe), e até o CommitmentGate.
 
-Existem três atos distintos de implantação no Upstream, com autorizações e consequências diferentes:
+O produto central da dimensão prospectiva é o **Decision Package**: o conjunto de evidências, hipóteses respondidas, riscos identificados e recomendação formal que o trio — Product Owner, Tech Lead e avaliador independente — usará no CommitmentGate para decidir o destino da capability.
 
-**Sandbox Deploy**: código implantado em stack efêmera e isolada, sem tráfego de cliente real. O engenheiro decide. A stack é destruída ao final do experimento. Sem Release Trail, sem OBC Committed.
+O que o Assessment prospectivo faz não é produzir o Decision Package por si mesmo — isso é responsabilidade da jornada Discovery em modo Upstream. O que Assessment faz é avaliar a qualidade do package: o Decision Package é legível por um membro do trio que não participou do experimento, sem contexto verbal adicional? As hipóteses foram respondidas com critérios de falsificação declarados, ou apenas afirmadas? Os riscos foram avaliados com base em evidência ou apenas listados? A incerteza residual está explicitamente declarada como aceitável, ou foi simplesmente omitida?
 
-**Produção Controlada**: código Upstream implantado em produção real, sem CommitmentGate. Autorização explícita do time e da liderança. Rollback imediato disponível. Sem Release Trail exigido. Isso não é violação do modo Upstream: é um ato autorizado. O que a diferencia da promoção é que o *compromisso de capability* (OBC Committed, gates do Downstream) não foi assumido. O código chega a produção; a capability permanece em exploração.
+Quando o Business Signal entra diretamente em Downstream — sem Upstream prévio, porque o contexto já é suficiente para o CommitmentGate —, o Assessment prospectivo avalia se a suficiência declarada é real: o que justifica dispensar a exploração? Quais são os riscos dessa decisão? Existe um **Reliability Plan** adequado ao perfil de risco do compromisso assumido?
 
-**Promoção de Capability**: CommitmentGate com outcome Promover. BDD Feature e OBC movidos para os paths comprometidos. O item entra no Iteration Plan. O Downstream começa.
-
-A distinção entre Produção Controlada e Promoção de Capability é precisamente a distinção que o modelo modal resolve: no primeiro caso, o código está em produção mas a capability não está comprometida; no segundo, o compromisso foi formalmente assumido com todos os seus gates.
+O Reliability Plan é o segundo produto relevante da dimensão prospectiva. Ele define, antes da entrada no Delivery, as condições de confiabilidade que o capability precisa satisfazer ao longo do ciclo: SLIs iniciais, Reliability Rules, critérios de alerta e escalação. Em capabilities de alto risco, o Reliability Plan pode ser exigido como condição de entrada no Readiness Gate — sem ele, o gate não é aberto. Em capabilities de risco controlado, o plan pode ser produzido durante o Downstream com menor formalidade. A calibração é responsabilidade do Runtime de cada time; o ProdOps Framework define que a avaliação de quais condições se aplicam pertence ao Assessment prospectivo.
 
 ---
 
-## O Upstream em operação: a Magazine Siará como exemplar
+## A dimensão retrospectiva: lendo o que o passado produziu
 
-Os três primeiros experimentos da Payments API da Magazine Siará (EXP-001, EXP-002 e EXP-003) ilustram o Upstream como modo operacional em sua forma mais completa, com CommitmentGate executado ao final da sequência.
+Se a dimensão prospectiva do Assessment prepara o ambiente para a decisão, a dimensão retrospectiva extrai aprendizado do ciclo encerrado — e alimenta o próximo.
 
-O EXP-001 abriu com uma questão de alto risco: como suportar o ciclo completo de cartão de crédito sem cruzar a fronteira PCI nem acoplar o Checkout ao contrato do Asaas? Antes de escrever uma linha de código de produção, o experimento especificou os BDD scenarios obrigatórios, os Observable Events esperados para cada fluxo (autorização, confirmação, análise de risco, recusa, cancelamento, estorno) e as dimensões que nunca poderiam aparecer nos logs (número do cartão, CVV, token do provedor). O EXP-002 mapeou as capacidades e limitações do sandbox Asaas para reprodução do ciclo de cartão, e confirmou o Validation Workbench como ambiente de simulação para os cenários que o sandbox não consegue reproduzir deterministicamente — a validação completa dos cenários do provedor permanece em aberto, dependente de evidência externa do Asaas. O EXP-003 comparou sistematicamente os três modelos de integração possíveis — hosted, tokenizado, transparente — e produziu a recomendação com justificativa: apenas a entrada hosted avança para o Downstream, porque é a única opção que não exige decisões externas ao time de Payments.
+O Assessment retrospectivo é ativado após a conclusão de um ciclo Downstream completo: capability entregue, em estado Operational, com Release Trail finalizado. Seu foco é o que o ciclo produziu de evidência sobre o funcionamento do framework, não sobre o funcionamento da capability em si. A capability funciona: os OBCs documentam isso. O que o Assessment retrospectivo pergunta é: como o ciclo funcionou? O que o histórico revela sobre a saúde do sistema de trabalho?
 
-O Decision Package do EXP-003 recomenda Promover com restrição (outcome ②): o slice hosted avança; as demais opções permanecem em Upstream aguardando decisões de terceiros (escopo PCI, modelo de token, UX do Checkout). O CommitmentGate foi executado com esse Decision Package: o trio registrou o outcome, e o Downstream iniciou exclusivamente para a entrada hosted.
+As fontes primárias do Assessment retrospectivo são os **Timelines** — os registros cronológicos de cada ciclo — e os artefatos de medição que o ciclo gerou: DORA Extended metrics, Gate Failure Rate (frequência com que os gates do Downstream foram bloqueados antes de serem satisfeitos), Decision Latency (tempo entre evidência disponível e convocação do CommitmentGate), Discovery WIP (experimentos simultâneos em andamento).
 
-Três experimentos sequenciais. Nenhuma linha de código de produção durante os três. Uma recomendação verificável por terceiros. Um CommitmentGate que decidiu sobre o destino da capability com evidência suficiente — e com restrição explícita sobre o que a evidência não suportava. Esse é o Upstream como engenharia séria de exploração.
+A partir dessas fontes, o Assessment retrospectivo produz dois outputs. O primeiro é o **relatório de ciclo**: uma síntese do que o ciclo revelou sobre a saúde do processo — anti-padrões detectados, signals diagnósticos ativados, recomendações para o próximo ciclo. O segundo, mais importante, é o conjunto de **novos Business Signals**: observações derivadas da Operation que indicam oportunidades ou problemas a investigar no próximo ciclo. É por esse mecanismo que a retroalimentação do ProdOps opera — não como um ritual de retrospectiva desconectado do fluxo de trabalho, mas como a produção estruturada de inputs para o início do próximo ciclo.
 
----
-
-## O que o Upstream não é responsável por fazer
-
-A definição do Upstream inclui uma lista explícita do que está fora de seu escopo. Implementar a capability comprometida com gates bloqueantes: isso é a jornada Delivery no modo Downstream. A distinção é de compromisso, não de atividade física: o Upstream pode produzir código funcional, prova de conceito, implementação em sandbox ou em produção controlada, sem que isso constitua a entrega de uma capability formalmente prometida. Definir como a observabilidade será implementada tecnicamente: isso é responsabilidade do Downstream (o "como" da instrumentação, não o "o que" deve ser observável). Produzir OBC Committed: isso é Discovery no Downstream. Produzir BDD completa em `artifacts/bdd/`: isso acontece antes do Readiness Gate. Garantir ausência de incerteza: incerteza residual aceitável é um critério válido de CommitmentGate.
-
-Essa última afirmação é contraintuitiva o suficiente para merecer ênfase: o Upstream não precisa eliminar toda a incerteza. Precisa reduzir a incerteza ao ponto em que o risco residual é aceitável para assumir o compromisso do Downstream. O que é "aceitável" é julgamento coletivo do trio no CommitmentGate, não um critério de zero incerteza que nenhum experimento finito pode satisfazer.
-
-Vale atenção especial ao item "Produzir OBC Committed: isso é Discovery no Downstream". Ele resolve um mal-entendido frequente: um Business Signal que entra diretamente em Downstream sem Upstream prévio não pula o discovery. O discovery acontece na jornada Discovery executada em modo Downstream — com rigor bloqueante. O OBC transita de Draft para Refining. A BDD Feature é escrita e refinada. As perguntas do Business Intent são resolvidas com decisões datadas e responsáveis identificados. O Readiness Gate bloqueia a entrada na jornada Delivery até que essas condições estejam satisfeitas. Somente depois — com o Iteration Plan gerado no Planning — é que o Bootstrap, primeira fase do Delivery, começa. O que "sem Upstream" descreve é a ausência de exploração pré-CommitmentGate. O que acontece após o CommitmentGate, na jornada Discovery em modo Downstream, é discovery real: com gates bloqueantes que não permitem avançar enquanto as condições não estiverem satisfeitas.
+| Fonte de dados | O que o Assessment retrospectivo lê |
+|---|---|
+| Release Trails | Como cada fase do Delivery foi executada; onde o fluxo travou |
+| Gate Failure Rate | Frequência de bloqueios por gates não satisfeitos; sinal de rigor inadequado |
+| Decision Latency | Tempo entre evidência e CommitmentGate; sinal de Perpetual Discovery |
+| Postmortems | Incidentes em Operation; o que o Reliability Plan não previu |
+| OBC Operational | Comportamento real vs. comportamento prometido; desvios de SLO |
 
 ---
 
-*Capítulo 4 de 10 | Parte II: Os Modos*
+## O ciclo do Assessment
+
+O Assessment opera em dois ciclos complementares: o ciclo Síncrono, estruturado e periódico, e o ciclo Assíncrono, contínuo e orientado a eventos.
+
+O ciclo **Síncrono** tem quatro fases: **Coletar** (agregar artefatos do ciclo: Timelines, OBCs, Release Trails, métricas, postmortems), **Analisar** (identificar padrões, signals diagnósticos, desvios entre o prometido e o entregue), **Sintetizar** (produzir conclusões e recomendações com grau de confiança declarado) e **Reportar** (comunicar ao trio e ao time as conclusões, com próximos passos acionáveis). O ciclo Síncrono é o momento em que o Assessment se torna visível para o time — é o relatório de ciclo, a retrospectiva com base em evidência, o input estruturado para o planejamento do próximo ciclo.
+
+O ciclo **Assíncrono** não tem início e fim definidos: é o monitoramento contínuo do estado do sistema de trabalho. Enquanto o ciclo Síncrono lê o passado para orientar o futuro, o ciclo Assíncrono observa o presente para detectar desvios antes que se tornem problemas. Ele opera em três fases: **Monitorar** (observar métricas de fluxo, sinais de Perpetual Discovery, divergências entre artefatos e estado real), **Alertar** (sinalizar desvios que requerem atenção imediata, antes que o ciclo Síncrono os detecte com atraso) e **Evoluir** (incorporar novos critérios de monitoramento a partir do que ciclos anteriores revelaram como pontos cegos).
+
+```mermaid
+graph LR
+    subgraph Sync["Ciclo Síncrono (periódico)"]
+        C1["Coletar"] --> C2["Analisar"]
+        C2 --> C3["Sintetizar"]
+        C3 --> C4["Reportar"]
+    end
+    subgraph Async["Ciclo Assíncrono (contínuo)"]
+        A1["Monitorar"] --> A2["Alertar"]
+        A2 --> A3["Evoluir"]
+        A3 --> A1
+    end
+    C4 --> NBS["Novos Business Signals"]
+    A2 --> |"desvio crítico"| Alert["Alerta imediato\n(fora do ciclo Síncrono)"]
+```
+
+A relação entre os dois ciclos é de complementaridade: o Assíncrono detecta desvios no tempo real; o Síncrono os contextualiza no histórico do ciclo. Um desvio detectado pelo Assíncrono pode ser endereçado imediatamente, sem esperar pelo relatório de ciclo. Um padrão que o Síncrono identifica pode tornar-se um novo critério de monitoramento do Assíncrono.
+
+---
+
+## O que o Assessment não faz
+
+A clareza sobre o que o Assessment não faz é tão importante quanto a clareza sobre o que ele faz.
+
+**Assessment não escreve em Timelines.** Os Timelines são registros append-only produzidos pelas jornadas clássicas — Discovery, Delivery e Operation. O Assessment lê os Timelines; nunca os modifica. Essa restrição não é técnica: é epistemológica. A integridade dos registros de cada jornada é a condição que torna o Assessment retrospectivo confiável. Se o Assessment pudesse modificar os registros que lê, seus outputs perderiam a base objetiva que os distingue de percepção e julgamento subjetivo.
+
+**Assessment não decide sobre o destino de um capability.** Ele não aprova nem rejeita a transformação de um Signal em Intent, não vota no CommitmentGate, não autoriza o início do Downstream. Essas decisões pertencem ao trio e ao Product Owner. O que Assessment faz é preparar e qualificar o contexto informacional para que as decisões sejam tomadas com clareza — mas a decisão em si não é do Assessment.
+
+**Assessment não define o que será construído.** Isso é responsabilidade de Discovery e Delivery. O Assessment avalia a qualidade do contexto informacional que informa essas decisões, não o mérito das decisões em si.
+
+**Assessment não é uma auditoria de conformidade.** Ele não verifica se os artefatos foram preenchidos segundo um template: isso é responsabilidade do Diligence. O que Assessment avalia é a qualidade epistêmica do trabalho — se as hipóteses foram formuladas com critérios de falsificação, se as evidências têm substância, se os riscos foram identificados com especificidade. A forma dos artefatos interessa ao Diligence; o conteúdo epistêmico dos artefatos interessa ao Assessment.
+
+---
+
+## Assessment no corpus: o ciclo de retroalimentação da Magazine Siará
+
+O corpus da Magazine Siará contém um caso que ilustra o mecanismo de retroalimentação do Assessment de forma concreta.
+
+O Business Signal BS-001 — o Signal que originou a feature Split Payment — não surgiu do nada. Ele é rastreável a observações de Operation: clientes abandonando carrinhos, contratos com fornecedores parceiros sendo perdidos por ausência de flexibilidade de pagamento. Essas observações são exatamente o tipo de output que o Assessment retrospectivo produz quando lê o estado Operational de capabilities existentes e identifica gaps entre o comportamento prometido e as necessidades reais do mercado.
+
+O PI-001 documenta por que BS-001 entrou diretamente em Downstream sem Upstream prévio: "demanda confirmada por dois canais independentes, escopo delimitado, deadline inegociável". Essa justificativa é Assessment prospectivo em operação — a avaliação de que o contexto informacional era suficiente para dispensar a exploração pré-CommitmentGate. A ausência de Upstream não significa ausência de avaliação: significa que a avaliação concluiu que a incerteza residual era aceitável para o compromisso.
+
+O EXP-007, aberto em paralelo ao Downstream do Split Payment, é o Assessment em ação durante a Operation. Enquanto DS-61 honrava o compromisso do Split Payment Pix+Boleto, o EXP-007 explorava as combinações prioritárias de métodos, o modelo de domínio adequado para a composição e a política de falha parcial. Quando DS-61 encerrou, o aprendizado do EXP-007 — incluindo o OBC Draft de `payment-composition` — estava pronto para alimentar o próximo ciclo. Esse é o mecanismo de retroalimentação funcionando: a Operation do ciclo corrente produz, via Assessment, os Signals que abrirão o ciclo seguinte.
+
+O que torna esse caso valioso não é sua excepcionalidade. É que ele representa o funcionamento normal do Assessment: acompanhar o ciclo corrente, extrair aprendizado do que está em Operation, e preparar o ambiente informacional para o próximo.
+
+---
+
+## Assessment como camada, não como fase
+
+A leitura mais comum de uma jornada nova em um framework é posicioná-la em uma sequência: antes de X, depois de Y. O Assessment resiste a essa leitura — não porque seja especial, mas porque sua responsabilidade é estruturalmente diferente das três jornadas clássicas.
+
+Discovery, Delivery e Operation são jornadas de execução: cada uma tem um input esperado, um output definido e um critério de conclusão. O Assessment é uma jornada de governança informacional: seu input é o estado corrente do sistema de trabalho, seu output é o contexto qualificado para as decisões do ciclo, e seu "critério de conclusão" é a entropia informacional controlada ao longo de todo o ciclo.
+
+Isso não torna o Assessment mais importante do que as três clássicas: torna-o diferente em natureza. Um time pode operar sem Assessment formal — usando julgamento, memória e intuição no lugar de avaliação sistemática. O custo não é imediato: manifesta-se gradualmente, como decisões tomadas com contexto incompleto, riscos identificados tarde, padrões de failure que se repetem porque não foram formalizados no relatório de ciclo anterior.
+
+O ProdOps não prescreve uma implementação única do Assessment. O que o Framework define é o que Assessment é responsável por produzir — Decision Package qualificado, Reliability Plan adequado ao risco, relatório de ciclo com base em evidência, novos Business Signals como retroalimentação — e o Runtime de cada time decide com que frequência, com que nível de formalidade e com que instrumentação o Assessment opera.
+
+Os capítulos seguintes descrevem os modos de execução (Upstream e Downstream) e as jornadas clássicas. Em cada um deles, o Assessment opera como pano de fundo: garantindo que a decisão que encerra uma fase tenha o contexto informacional que ela exige, e que o aprendizado que cada fase produz não se perca entre um ciclo e o próximo.
+
+---
+
+*Capítulo 4 de 11 | Parte II: Os Modos*
+
+---

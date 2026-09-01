@@ -1,123 +1,114 @@
-# Capítulo 9: O problema de modo para agentes de IA
+# Capítulo 9: Diligence: guardião da consistência
 
 ---
 
-## Por que agentes não têm sensibilidade de modo por padrão
+## O problema que a Diligence resolve
 
-![Protocolo de classificação de modo para agentes de IA](images/cap09-agent-mode-classification.svg)
-*Figura 9. Fluxo de decisão para classificação de modo: OBC é o sinal primário. Na ausência de OBC, o tipo de pedido determina o modo.*
+![Knowledge Space vs Execution Space: a divergência que a Diligence previne](images/cap08-knowledge-execution-spaces.svg)
+*Figura 8. Knowledge Space (artefatos Markdown) e Execution Space (Issues, Projects) divergem naturalmente. No Upstream, a inconsistência não é bloqueante porque o compromisso não foi assumido; no Downstream é risco operacional porque o compromisso precisa ser verificável.*
 
-Um engenheiro humano que trabalha com um framework de produto por tempo suficiente desenvolve algo que poderíamos chamar de sensibilidade de modo: a capacidade de perceber, a partir de sinais contextuais (a conversa na reunião, o estado do backlog, o tom das mensagens do PM), em que tipo de compromisso o trabalho está operando. Ele não precisa verificar formalmente se o OBC está Committed; percebe pela postura da equipe que algo foi decidido e o trabalho está agora sob compromisso.
+Em qualquer sistema de trabalho que opera em dois modos com características diferentes, existe um problema estrutural que não é de processo e não é de tecnologia: a divergência entre o que o sistema *sabe* e o que o sistema *faz*.
 
-Essa sensibilidade é valiosa. Ela permite que o rigor seja calibrado sem que cada decisão precise ser formalizada explicitamente. O problema é que ela é adquirida, não está presente no início, e não existe em agentes de IA.
+O ProdOps tem dois espaços que representam realidades diferentes sobre o mesmo trabalho.
 
-Um agente de IA não acumula sensibilidade de modo através de sessões. Cada sessão começa com o contexto que lhe é fornecido (documentação, artefatos, instruções) e nada mais. O histórico de conversas de sessões anteriores não existe a menos que seja explicitamente carregado. A pressão social de uma reunião, o tom de uma mensagem no canal de Slack, a urgência implícita de um deadline: nenhum desses sinais está disponível para um agente sem instrumentação específica.
+O **Knowledge Space** é onde o conhecimento vive: arquivos Markdown, OBCs, BDD Features, experimentos, trails, planos, evidências, todos no repositório git. Esses artefatos têm identidade permanente e estado canônico. Um OBC sobrevive a dezenas de releases. Um experimento preserva o conhecimento que produziu mesmo depois de encerrado. Quando há divergência entre o que está registrado num artefato Markdown e o que aparece nas ferramentas de execução, a divergência se resolve em favor do artefato: o Knowledge Space é a autoridade sobre o conteúdo e o estado dos artefatos.
 
-Isso não significa que agentes sejam incapazes de operar com sensibilidade de modo. Significa que a sensibilidade de modo precisa ser fornecida explicitamente: através de protocolos formalizados, interfaces de modo declaradas, e instruções que tornem verificável em que modo o trabalho está operando.
+O **Execution Space** é onde o trabalho acontece: GitHub Issues, Pull Requests, GitHub Projects, pipelines. Esses artefatos têm natureza operacional: rastreiam o trabalho em andamento, não acumulam permanência do conhecimento. A autoridade do Execution Space é sobre o estado operacional do trabalho em curso: quem está fazendo o quê, em qual estágio, com qual prioridade. Um GitHub Issue pode ser fechado, reaberto, deletado. Um campo de um GitHub Project pode ser editado sem rastreabilidade.
 
----
+O problema é que esses dois espaços divergem naturalmente. O Knowledge Space avança quando o time produz artefatos. O Execution Space avança quando o time executa operações. Quando as duas progressões não estão sincronizadas, o sistema de trabalho perde confiabilidade: os artefatos dizem uma coisa e as Issues dizem outra.
 
-## Os dois modos de falha de um agente sem modo explícito
+No Upstream, essa inconsistência não é bloqueante. O trabalho é exploratório: os artefatos evoluem de forma não-linear, a hipótese pode mudar entre sessões, o OBC permanece em Draft. A inconsistência temporária entre Knowledge Space e Execution Space é o preço da liberdade exploratória; o custo de aceitá-la é controlável porque o compromisso não foi assumido. Não existe um contrato que precise ser verificável para que o trabalho avance.
 
-Na ausência de interface de modo explícita, agentes de IA tendem a defaultar para um de dois extremos, e ambos produzem problemas reais.
+No Downstream, a divergência é risco operacional. O compromisso foi assumido. Um OBC que está Committed nos artefatos mas ainda aparece como Refining no Execution Space gera confusão sobre o que está pronto para Delivery. Um Finding de Diligence aberto que não tem representação no Execution Space pode passar despercebido até que cause um problema durante a implementação. A consistência não é conforto organizacional: é condição para que o compromisso possa ser honrado com confiança.
 
-**Rigor máximo indiscriminado**: o agente trata qualquer trabalho como se fosse Downstream: aplica gates onde não cabem, exige artefatos que não existem ainda, bloqueia exploração por ausência de critérios de aceite formais. Em modo Upstream, isso é destrutivo: a disciplina do Upstream é a liberdade de explorar com rigor na evidência, não na burocracia de artefatos. Um agente que para para exigir um OBC Committed durante a exploração de uma hipótese está aplicando o rigor errado no momento errado.
-
-**Permissividade total**: o agente trata qualquer trabalho como se fosse Upstream: executa sem verificar pré-condições, avança sem gates, implementa sem checar se o OBC está Committed ou se o BDD existe. Em modo Downstream, isso é arriscado: o compromisso foi assumido e os gates existem para protegê-lo. Um agente que implementa sem verificar o Readiness Gate está executando sem a estrutura que o compromisso exige.
-
-Os dois modos de falha são simétricos e igualmente problemáticos. O rigor máximo indiscriminado bloqueia o aprendizado. A permissividade total destrói a rastreabilidade do compromisso. Em ambos os casos, o agente está causando dano, mas não por incompetência técnica. Por ausência de contexto de modo.
+A Diligence existe para gerenciar essa divergência.
 
 ---
 
-## O protocolo de recebimento de trabalho
+## O que a Diligence faz e o que não faz
 
-O AGENTS.md do repositório da Payments API define um protocolo de recebimento de trabalho que funciona como interface de modo explícita para agentes.
+A Diligence é a jornada transversal do ProdOps responsável por manter o sistema de trabalho sincronizado e consistente. Ela opera em ambos os modos, com consequências diferentes em cada um.
 
-O protocolo começa com uma classificação do pedido por tipo:
+O que a Diligence **faz**: verifica se o estado dos artefatos do Knowledge Space está refletido corretamente no Execution Space. Captura Findings quando detecta divergências. Gerencia o ciclo de vida desses Findings até que sejam resolvidos ou recebam waiver formal. Garante que os pré-requisitos de cada gate (CommitmentGate, Readiness Gate, quality gates) estão satisfeitos antes que o gate seja executado.
 
-| Tipo de pedido | Jornada | Skill de entrada |
-|---|---|---|
-| Nova feature, endpoint, comportamento de negócio | Delivery | `/downstream` |
-| Investigação, descoberta, análise técnica | Discovery | `/upstream` |
-| Auditoria, risco, conformidade, sinal de negócio | Diligence | `/diligence` |
-| Pergunta, explicação, leitura de código | nenhuma jornada | responder diretamente |
+O que a Diligence **não faz**: implementa software. Cria Pull Requests de implementação. Modifica código do produto. Toma decisões de produto: ela informa e alerta, mas não decide. Prioriza o backlog: essa é responsabilidade do Product Owner.
 
-O AGENTS.md inclui uma nota explícita que é, ela mesma, evidência do problema que este capítulo descreve: "Nesta tabela, 'Discovery' é a jornada. O skill `/upstream` é o entry point da jornada Discovery executada em modo Upstream. Os modos não são jornadas: são o nível de rigor com que qualquer jornada é executada. A distinção completa está em `prodops/framework/execution-model/README.md`."
-
-Essa nota existe porque o próprio AGENTS.md cometia o erro de usar "Jornada: Upstream", tratando Upstream como jornada em vez de modo. A contradição foi identificada no trabalho de separação formal dos modos como "contaminação conceitual": o framework usando seus próprios termos de forma inconsistente com a definição canônica.
+Essa separação é necessária para que a Diligence mantenha sua função: se a Diligence implementasse ou priorizasse, deixaria de ser guardiã da consistência e passaria a ser um ator no processo de entrega, misturando as responsabilidades de verificação e execução.
 
 ---
 
-## A contradição que foi identificada e parcialmente resolvida
+## Dois ciclos, dois propósitos
 
-O trabalho de separação formal entre os modos de execução identificou três tipos de contaminação conceitual no repositório:
+A Diligence opera em dois ciclos com propósitos distintos.
 
-**Contaminação estrutural**: o AGENTS.md e o `prodops/README.md` usavam "Jornada: Upstream" e "Jornada: Discovery / Upstream", mapeando Upstream como jornada em vez de modo. Um agente que lê esses documentos sem também ler `execution-model/README.md` aprende uma definição incorreta.
+O **diligence-sync** é o ciclo event-driven: acionado por um evento específico (novo OBC criado, item transitando entre estados, CommitmentGate convocado). Seu propósito é verificar, no momento do evento, se o estado atual satisfaz os critérios necessários para avançar. No Downstream, se um OBC está Refining quando o Readiness Gate é chamado, o diligence-sync gera um Finding bloqueante, e o item não avança até que o Finding seja resolvido ou receba waiver formal. No Upstream, o mesmo ciclo opera, mas os Findings gerados têm caráter advisory: alertam sem bloquear, porque o compromisso não foi assumido.
 
-**Contaminação conceitual**: o `upstream/SKILL.md` mencionava "committed OBCs" e "committed BDD Features" como targets do Upstream: estados exclusivos do Downstream que o Upstream não está autorizado a exigir.
-
-**Contaminação por ausência**: os skills de fase (Bootstrap, Hack, Sync, Finish, Ship, Validate, Promote) descreviam apenas o comportamento Downstream, sem documentar como cada fase se comporta com rigor advisory no Upstream. Um agente Upstream que quer usar o skill `/hack` no modo advisory não tem orientação sobre como fazê-lo.
-
-A correção parcial já realizada foi a nota no AGENTS.md que esclarece a distinção entre modo e jornada. A correção completa (documentar o comportamento por modo em cada skill de fase) está planejada e ainda não concluída.
+O **diligence-async** é o ciclo proativo: executado periodicamente para varrer o estado do sistema e identificar divergências antes que causem problemas. Seu propósito é detectar drift: um OBC que deveria ter transitado de estado e não transitou, um BDD Feature em `prodops/artifacts/bdd/` sem OBC correspondente Committed, um experimento ativo sem entradas no upstream-trail há mais de duas semanas (sinal S1 do Perpetual Discovery). O diligence-async opera tanto no Upstream quanto no Downstream: no Upstream com rigor advisory, alertando sem bloquear; no Downstream com rigor bloqueante, gerando Findings que impedem o avanço.
 
 ---
 
-## Skills como interface de modo
+## O ciclo de vida de um Finding
+
+A unidade de trabalho da Diligence é o Finding: uma divergência identificada entre o que o sistema de trabalho deveria estar mostrando e o que está mostrando.
+
+Um Finding progride pelas quatro Phases do ciclo diligence-sync:
 
 ```mermaid
-graph TD
-    REQ["Pedido recebido pelo agente"] --> CLASS["Classificação de modo\nPasso 0.1 do AGENTS.md"]
-    CLASS -->|"OBC existe — Downstream"| DS["/downstream\nRigor bloqueante\nGates obrigatórios"]
-    CLASS -->|"Sem OBC — Upstream"| US["/upstream\nRigor advisory\nEngenheiro decide"]
-    DS --> SKILLS_DS["Bootstrap / Hack / Sync\nFinish / Ship / Validate / Promote"]
-    US --> SKILLS_US["Experiment / Evidence\nDecision Package / CommitmentGate"]
+graph LR
+    CAP["Capture\nFinding identificado"] --> ATT["Attach\nVinculado ao artefato"]
+    ATT --> PRO["Promote\nEm remediação"]
+    PRO --> CLO["Close\nResolvido ou Waiver"]
 
-    style DS fill:#FEF3C7,stroke:#F59E0B
-    style US fill:#E0F2FE,stroke:#3B82F6
+    CLO -->|"Waiver formal"| WVR["Finding aceito\nexplicitamente"]
+    CLO -->|"Remediação"| REM["Finding corrigido\ncom evidência"]
 ```
 
-A arquitetura de skills do ProdOps resolve parte do problema de modo para agentes de uma forma elegante: cada skill de entrada implicitamente carrega um modo.
+**Capture**: o Finding é identificado, seja pelo diligence-sync, seja pelo diligence-async, seja manualmente por um membro do time. O Finding é documentado com: o que foi detectado, onde (qual artefato, qual backlog, qual estado), quando, e qual é o impacto esperado se não for resolvido.
 
-`/upstream` ativa a jornada Discovery com rigor advisory: sem gates obrigatórios, sem sequência imposta, com liberdade para o agente usar as práticas que forem úteis para responder a hipótese. O agente que invoca `/upstream` está em modo de exploração.
+**Attach**: o Finding é associado ao item ou artefato afetado. No Execution Space, isso se traduz em um Work Item que referencia o Finding. O item afetado não avança em seu ciclo de vida enquanto o Finding estiver aberto e sem waiver; no Downstream, isso é bloqueante.
 
-`/downstream` ativa a jornada Delivery com rigor bloqueante: pré-condições verificadas, sequência obrigatória, gates que impedem avanço quando não satisfeitos. O agente que invoca `/downstream` está em modo de compromisso.
+**Promote**: o Finding está sendo endereçado. A equipe responsável está tomando a ação necessária: completando o OBC, atualizando o BDD, documentando o risco. Findings que não estiverem sendo endereçados dentro de prazo adequado podem ser escalados para o trio. Quando a resolução imediata não for viável, o processo de waiver pode ser iniciado durante esta fase; a decisão formal é registrada no Close.
 
-O que ainda falta (e é a fronteira atual da implementação) é a documentação explícita de como cada fase individual (Bootstrap, Hack, Sync, etc.) se comporta quando invocada em modo Upstream. Um agente Upstream pode querer usar `/hack tdd` com rigor completo (ciclo Red/Green/Refactor idêntico ao Downstream), sem que isso constitua uma obrigação de ter OBC Committed ou Release Trail. O skill não documenta essa distinção ainda.
+**Close**: o Finding foi resolvido (o artefato satisfaz o critério, com evidência) ou o waiver foi aprovado pelo trio com data de expiração. O Finding é fechado com registro do que foi feito.
 
----
-
-## O que acontece quando o contrato é explícito: o EXP-015
-
-O EXP-015 testou uma hipótese que este capítulo formula como teoria: quando o contrato de interface é explícito e verificável, agentes de diferentes origens produzem o mesmo output.
-
-A suite de conformidade do EXP-015 executou 22 cenários em 3 players (claude, codex, copilot). O resultado: **22/22 × 3 players — 100% de conformidade. Zero divergências semânticas entre players.**
-
-Os 22 checks cobriram: disponibilidade da tool e descoberta do skill, emissão correta do evento Bootstrap.Started (exit code, status JSON, event-type, presença no timeline, sincronização GitHub/Datadog), emissão correta do Bootstrap.Completed, correlação entre os dois eventos, idempotência (segunda chamada com mesmo correlation-id retorna status:skipped, exit 4), rejeição de inputs inválidos (campos catalog-owned → exit 1, status:error), e sanitização de segredos (token não aparece no output nem no timeline).
-
-O contrato em questão é a tool `prodops_emit_event` com o catálogo de eventos do ProdOps Framework. Essa tool é a interface entre o agente e o sistema operacional do framework. Quando o agente invoca a tool corretamente (com os campos obrigatórios, sem tentar sobrescrever campos catalog-owned), o output é idêntico independentemente de qual agente está executando. A intercambiabilidade não é uma propriedade dos agentes; é uma propriedade do contrato.
-
-Uma nota de honestidade registrada no próprio relatório do EXP-015: os agentes Codex e Copilot não foram invocados diretamente. A conformidade foi verificada executando a tool com os player IDs correspondentes. A suite valida o contrato da interface, não o comportamento direto dos agentes externos. Essa transparência é ela mesma um exemplo do que o Upstream bem conduzido produz: não apenas conclusões, mas conclusões com grau de confiança declarado.
-
-O que o EXP-015 demonstra, em linguagem do framework: quando o OBC define os Observable Events com dimensões obrigatórias (como no OBC `split-payment-pix-boleto`), e quando a tool canonicaliza a emissão desses eventos (como `prodops_emit_event`), um agente que segue o protocolo produz evidência verificável independentemente de sua origem. O problema de modo para agentes não é resolvido por treinamento dos agentes: é resolvido por contratos explícitos que os agentes leem e seguem.
-
-## O protocolo como contexto carregado
-
-Existe uma hipótese subjacente a este livro que os resultados do EXP-015 endereçam parcialmente: se um livro bem estruturado sobre a distinção de modos pode servir como context loading para agentes, reduzindo erros de classificação de modo.
-
-A ideia é que um agente com acesso ao conteúdo deste livro como contexto de sessão teria a sensibilidade de modo que não é adquirida por sessões: ele saberia distinguir, a partir da descrição do trabalho, se está operando em Upstream ou Downstream, e calibraria seu rigor correspondentemente.
-
-O EXP-015 responde um subconjunto dessa hipótese: quando o contrato de emissão de eventos é explícito e verificável, agentes convergem. O que ainda não foi testado é se a distinção conceitual entre modos (não apenas o protocolo de emissão, mas a calibração de rigor em trabalho de exploração versus trabalho de entrega) transfere-se para melhor julgamento por agentes que têm acesso ao framework como contexto. O primeiro passo está demonstrado: protocolo de recebimento de trabalho explícito e verificável, contrato de emissão de eventos com conformidade 22/22 × 3 players. O segundo passo (instrumentar os skills de fase com comportamento por modo) está planejado. O terceiro passo (verificar se o conhecimento formal sobre modos transfere-se para calibração de rigor fora do protocolo estruturado) ainda está por investigar.
+O waiver merece atenção especial. Um waiver é o reconhecimento explícito de que um critério não está satisfeito, a justificativa de por que o item avança assim mesmo, e um compromisso de resolver o problema dentro de um prazo definido. O waiver não é a aprovação de uma lacuna sem consequência: é o compromisso de gerenciar a lacuna de forma transparente. A diferença entre um waiver e o Forced Readiness (AP-D3) é precisamente essa: o waiver é explícito e registrado; o Forced Readiness é silencioso.
 
 ---
 
-## O que esse capítulo demonstra sobre o framework
+## A Diligence nos dois modos
 
-O fato de que o próprio repositório continha contradições terminológicas sobre Upstream e Downstream não é embaraçoso: é evidência da tese central do livro.
+No **Upstream**, a Diligence opera em modo advisory. Ela pode verificar se o experimento tem os artefatos mínimos obrigatórios (experiment.md e upstream-trail.md), se o upstream-trail está sendo atualizado regularmente, se os sinais de Perpetual Discovery (S1-S4) estão ativos. Quando encontra problemas, alerta, mas não bloqueia. No Upstream, o custo de bloquear exploração por inconsistência de artefatos seria maior do que o custo de aceitar a inconsistência temporariamente: não existe compromisso formal que exija que a consistência seja verificável agora.
 
-O problema de configuração de rigor não é um problema que afeta apenas times humanos. Afeta qualquer sistema de agência (humano ou artificial) que opera com orientação fornecida por artefatos. Quando os artefatos são inconsistentes (usando "jornada" onde deveria estar "modo"), o agente aprende a distinção errada. Quando os artefatos são consistentes, o agente tem a base para calibrar o rigor corretamente.
+No **Downstream**, a Diligence é bloqueante. Ela verifica se o OBC está Committed antes do Readiness Gate. Se a BDD Feature está em `prodops/artifacts/bdd/`. Se os Findings abertos têm waiver formal ou foram resolvidos. Se o Release Trail está sendo preenchido em cada fase da sequência Bootstrap → Promote. Quando encontra problemas, não apenas alerta: gera Findings que impedem o avanço até resolução.
 
-O ProdOps, ao identificar e nomear essa contradição, e ao criar um protocolo explícito de classificação de trabalho (AGENTS.md), está resolvendo o problema de modo para agentes da única forma que funciona: tornando a distinção verificável nos próprios artefatos que os agentes leem.
+Essa diferença não é de quantidade de rigor aplicado: é de natureza da consequência. No Upstream, a inconsistência não precisa ser resolvida imediatamente porque o compromisso não foi assumido. No Downstream, a consistência é necessária porque o compromisso precisa ser verificável, e verificabilidade exige que o estado dos artefatos e o estado operacional coincidam.
 
 ---
 
-*Capítulo 9 de 10 | Parte V: Agentes nos dois Modos*
+## Por que a Diligence não é governança burocrática
+
+A palavra "governança" frequentemente evoca burocracia: camadas de aprovação, documentação por documentação, processos que consomem mais tempo do que protegem.
+
+A Diligence do ProdOps é diferente por uma razão estrutural: ela opera em resposta a divergências reais, não a procedimentos genéricos. Um Finding é criado quando existe uma divergência específica: um OBC que deveria estar Committed e não está, um BDD que deveria existir e não existe. Não existe uma checklist de formulários que precisa ser preenchida por protocolo.
+
+A medida de saúde da Diligence não é o volume de Findings criados: é a ausência de divergências entre Knowledge Space e Execution Space. Uma Diligence saudável num produto saudável tende a ter poucos Findings abertos porque o time mantém os artefatos sincronizados em tempo real, como consequência do processo de trabalho. Mas essa relação não é invertível: poucos Findings podem também ser sinal de instrumentação insuficiente, não de produto saudável. A saúde real se verifica na ausência de divergências detectáveis, não apenas na ausência de Findings registrados.
+
+Quando a Diligence produz muitos Findings repetidamente sobre o mesmo tipo de problema, isso é um sinal de processo: o time está sistematicamente produzindo uma divergência que precisa ser endereçada na causa, não apenas corrigida cada vez que aparece.
+
+O EXP-014 da Payments API testou essa propriedade empiricamente: será que o ProdOps Runtime rastreia automaticamente o estado de Delivery de cada Feature via CloudEvents, e a Diligence captura e anexa evidência operacional ao mesmo Work Item em tempo real? **53/53 PASS.** A sincronização entre GitHub Project e Datadog foi verificada para cada fase da sequência Bootstrap → Promote. A Diligence não precisou de intervenção humana para detectar divergências: o ciclo event-driven acionou a verificação no momento de cada transição de fase. Esse resultado transforma a Diligence de um processo de auditoria periódica em um sistema de verificação contínua — que é a única forma de governança que não cria burocracia proporcional ao volume de entregas.
+
+---
+
+## A relação entre Diligence e Assessment
+
+A Diligence e o Assessment são as duas jornadas transversais do ProdOps: ambas operam sobre todas as jornadas de produto (Discovery, Delivery, Operation) sem serem uma delas.
+
+A diferença de propósito é precisa: a Diligence mantém a consistência do sistema de trabalho *agora*: ela opera no presente, verificando e corrigindo. O Assessment analisa a evolução do sistema de trabalho *ao longo do tempo*: ele opera no passado e projeta recomendações para o futuro.
+
+A relação entre elas é bidirecional. A Diligence produz Findings e evidências de execução que o Assessment consome para avaliar maturidade operacional: se o número de Findings de um tipo específico está crescendo, isso é um dado para o Assessment. O Assessment produz recomendações que podem se materializar como novos critérios de verificação no catálogo da Diligence. Uma recomendação de melhorar o processo de verificação de OBCs pode resultar em novos checks que a Diligence passa a executar.
+
+Essa bidirecionalidade significa que a Diligence não é subordinada ao Assessment, nem o Assessment é subordinado à Diligence. São jornadas com responsabilidades distintas que se alimentam mutuamente.
+
+---
+
+*Capítulo 9 de 11 | Parte IV: O Substrato Comum*

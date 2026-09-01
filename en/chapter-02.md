@@ -145,7 +145,7 @@ The next chapter defines what a mode of execution is and why that definition res
 
 ---
 
-*Chapter 2 of 10 | Part I: The Problem*
+*Chapter 2 of 11 | Part I: The Problem*
 
 ---
 

@@ -1,114 +1,143 @@
-# Chapter 8: Diligence: Guardian of Consistency
+# Chapter 8: Observability as Epistemology, Not Infrastructure
 
 ---
 
-## The problem Diligence solves
+## What observability does in each mode
 
-![Knowledge Space vs Execution Space: the divergence Diligence prevents](../images/cap08-knowledge-execution-spaces.svg)
-*Figure 8. Knowledge Space (Markdown artifacts) and Execution Space (Issues, Projects) naturally diverge. In Upstream, inconsistency is not blocking because the commitment has not been made; in Downstream it is operational risk because the commitment must be verifiable.*
+![Observability as epistemology: distinct roles in each mode](../images/cap07-observability-roles.svg)
+*Figure 7. In Upstream, observability makes uncertainty explicit. In Downstream, it verifies commitment. Without observable evidence, governance and decision-making become dependent on perception, not verification.*
 
-In any work system that operates in two modes with different characteristics, there is a structural problem that is neither process nor technology: the divergence between what the system *knows* and what the system *does*.
+There is a distinction that ProdOps introduces that is not about observability technology: logs, metrics, traces, dashboards. It is about the epistemic role that observability plays in each execution mode.
 
-ProdOps has two spaces that represent different realities about the same work.
+In Downstream, observability verifies commitment. SLOs, DORA metrics, Release Trail: all exist to answer one question: is the commitment made being honored? Was the capability delivered with the promised behavior? Are the reliability metrics within the agreed limits? The OBC in the Operational state represents precisely this: the business contract has transitioned to a state where its fulfillment can be verified at runtime.
 
-The **Knowledge Space** is where knowledge lives: Markdown files, OBCs, BDD Features, experiments, trails, plans, evidence — all in the git repository. These artifacts have permanent identity and canonical state. An OBC survives dozens of releases. An experiment preserves the knowledge it produced even after it has concluded. When there is a divergence between what is recorded in a Markdown artifact and what appears in the execution tools, the divergence is resolved in favor of the artifact: the Knowledge Space is the authority on the content and state of artifacts.
+In Upstream, observability makes uncertainty explicit. The experiment evidence artifacts (referred to in this chapter as Evidence Package), the Upstream Trail, the Decision Package exist to answer a different question: what do we know, what do we not know, and with what degree of confidence can we assert each thing? In Upstream, observability is not verifying a commitment: it is documenting the state of knowledge about a hypothesis.
 
-The **Execution Space** is where work happens: GitHub Issues, Pull Requests, GitHub Projects, pipelines. These artifacts have an operational nature: they track work in progress, they do not accumulate the permanence of knowledge. The authority of the Execution Space is over the operational state of work in progress: who is doing what, at what stage, with what priority. A GitHub Issue can be closed, reopened, deleted. A GitHub Projects field can be edited without traceability.
-
-The problem is that these two spaces naturally diverge. The Knowledge Space advances when the team produces artifacts. The Execution Space advances when the team executes operations. When the two progressions are not synchronized, the work system loses reliability: the artifacts say one thing and the Issues say another.
-
-In Upstream, this inconsistency is not blocking. The work is exploratory: artifacts evolve in a non-linear fashion, the hypothesis can change between sessions, the OBC remains in Draft. The temporary inconsistency between Knowledge Space and Execution Space is the price of exploratory freedom; the cost of accepting it is controllable because the commitment has not been made. There is no contract that needs to be verifiable for work to advance.
-
-In Downstream, the divergence is operational risk. The commitment has been made. An OBC that is Committed in the artifacts but still appears as Refining in the Execution Space creates confusion about what is ready for Delivery. An open Diligence Finding that has no representation in the Execution Space can go unnoticed until it causes a problem during implementation. Consistency is not organizational comfort: it is the condition for the commitment to be honored with confidence.
-
-Diligence exists to manage this divergence.
+This asymmetry is not accidental. It derives directly from what each mode requires. Downstream requires that commitment be verifiable at runtime: therefore, observability is the verification mechanism. Upstream requires that uncertainty be explicit and manageable: therefore, observability is the explicitness mechanism.
 
 ---
 
-## What Diligence does and does not do
+## ODD: the principle before implementation
 
-Diligence is the transversal journey of ProdOps responsible for keeping the work system synchronized and consistent. It operates in both modes, with different consequences in each.
+ODD (Observability Driven Design) is the ProdOps principle that states observability must be designed before implementation, not added afterward.
 
-What Diligence **does**: verifies whether the state of Knowledge Space artifacts is correctly reflected in the Execution Space. Captures Findings when it detects divergences. Manages the lifecycle of those Findings until they are resolved or receive a formal waiver. Ensures that the prerequisites of each gate (CommitmentGate, Readiness Gate, quality gates) are satisfied before the gate is executed.
+Principle 3 of the framework is explicit: "Observability, deployment strategy, and tests are defined before writing production code, in that order of priority." And Principle 7 complements: "Logs, errors, metrics, and traceability are part of the implementation, not complements added afterward. A feature is not done if its behavior cannot be observed in production."
 
-What Diligence **does not do**: implement software. Create implementation Pull Requests. Modify product code. Make product decisions: it informs and alerts, but does not decide. Prioritize the backlog: that is the Product Owner's responsibility.
+ODD is not a technical prescription of instrumentation before code. It is a design principle: what needs to be observable must be decided before any production line is written. This distinction matters because without the prior decision about what to observe, instrumentation that comes afterward tends to record what is easy to measure, not what is necessary to verify commitment or make uncertainty explicit.
 
-This separation is necessary for Diligence to maintain its function: if Diligence were to implement or prioritize, it would cease to be the guardian of consistency and would become an actor in the delivery process, mixing the responsibilities of verification and execution.
+The epistemological motivation of ODD is that without observable evidence there is no reliable verification: without verification, governance and decision-making become dependent on perception or verbal context. This is especially critical in the framework context because what cannot be observed cannot be audited by Diligence, cannot underpin a Decision Package, and cannot satisfy the criteria of a blocking gate.
 
----
+ODD applies to both modes, in different forms. In Upstream, ODD means documenting what will be observed to verify the hypothesis, before collecting evidence. A well-conducted experiment defines its falsification criteria before executing, not afterward. In Downstream, ODD means defining the Observable Events and OBC success metrics before writing code: the contract of what will be observable in production must exist before the implementation that will make it observable.
 
-## Two cycles, two purposes
+The `split-payment-pix-boleto` OBC from Magazine Siará demonstrates ODD in operation: six Observable Events with mandatory dimensions were defined before any production code was written. Among them, `split_payment.boleto.expired` with a `pixStatus` dimension — a failure event with enough context for operations to immediately identify that the Pix payment was made but the Boleto expired, without querying the database. The event design was a product decision, not a consequence of the implementation.
 
-Diligence operates in two cycles with distinct purposes.
-
-The **diligence-sync** is the event-driven cycle: triggered by a specific event (new OBC created, item transitioning between states, CommitmentGate convened). Its purpose is to verify, at the moment of the event, whether the current state satisfies the criteria necessary to advance. In Downstream, if an OBC is in Refining when the Readiness Gate is called, diligence-sync generates a blocking Finding, and the item does not advance until the Finding is resolved or receives a formal waiver. In Upstream, the same cycle operates, but the Findings generated have an advisory character: they alert without blocking, because the commitment has not been made.
-
-The **diligence-async** is the proactive cycle: executed periodically to sweep the state of the system and identify divergences before they cause problems. Its purpose is to detect drift: an OBC that should have transitioned state and has not, a BDD Feature in `prodops/artifacts/bdd/` without a corresponding Committed OBC, an active experiment without entries in the upstream-trail for more than two weeks (signal S1 of Perpetual Discovery). The diligence-async operates in both Upstream and Downstream: in Upstream with advisory rigor, alerting without blocking; in Downstream with blocking rigor, generating Findings that prevent advancement.
+In Upstream, EXP-001 demonstrates the same principle applied to exploratory mode: before any production line about credit card was written, the experiment specified the required BDD scenarios, the expected Observable Events for each flow (authorization, confirmation, risk analysis, refusal, cancellation, refund), and the observability dimensions that must never appear in logs (card number, CVV, provider token). ODD in Upstream defines what must be observable to validate the hypothesis; ODD in Downstream defines what must be observable to verify the commitment.
 
 ---
 
-## The lifecycle of a Finding
+## The OBC as an observability contract
 
-The unit of work of Diligence is the Finding: a divergence identified between what the work system should be showing and what it is showing.
+The Observable Business Contract is not a technical SLA: it is the declaration that the business contract has measurable dimensions that can be verified at runtime.
 
-A Finding progresses through the four Phases of the diligence-sync cycle:
+The ontological starting point is relevant: commitment is the causal variable. The OBC states do not determine the mode nor produce the commitment: they make the commitment observable. What causes an OBC to transition between states is the satisfaction of criteria that reflect the maturity degree of the current commitment, not a decision to change the mode of work. The mode is the cause; the states are the verifiable record of where the commitment is in its lifecycle.
+
+The OBC progresses through six states over the lifecycle of a capability:
 
 ```mermaid
-graph LR
-    CAP["Capture\nFinding identified"] --> ATT["Attach\nLinked to artifact"]
-    ATT --> PRO["Promote\nUnder remediation"]
-    PRO --> CLO["Close\nResolved or Waiver"]
-
-    CLO -->|"Formal waiver"| WVR["Finding accepted\nexplicitly"]
-    CLO -->|"Remediation"| REM["Finding corrected\nwith evidence"]
+stateDiagram-v2
+    [*] --> Draft : Business Signal → Business Intent
+    Draft --> Refining : CommitmentGate Promote (Moment 2)
+    Refining --> Committed : Readiness Gate approved (Moment 3)
+    Committed --> InDelivery : Bootstrap.Started
+    InDelivery --> Operational : Promote completed
+    Operational --> Archived : Deprecation / replacement
+    Refining --> Archived : CommitmentGate Discard
+    InDelivery --> Refining : Downstream regression to Upstream
 ```
 
-**Capture**: the Finding is identified, whether by diligence-sync, by diligence-async, or manually by a team member. The Finding is documented with: what was detected, where (which artifact, which backlog, which state), when, and what the expected impact is if not resolved.
+**Draft**: born at the transition from a Business Signal to a Business Intent. In Upstream, it is memory of learning: it can be updated continuously, it can remain incomplete, it does not block experiments. The absence of completed fields in Draft is expected, not a failure.
 
-**Attach**: the Finding is associated with the affected item or artifact. In the Execution Space, this translates into a Work Item that references the Finding. The affected item does not advance in its lifecycle while the Finding is open and without waiver; in Downstream, this is blocking.
+**Refining**: the state the OBC assumes at the start of Downstream (Moment 2 of the transition, after the CommitmentGate with outcome Promote). The fields begin to be refined with real substance: `expected_outcome` ceases to be vague, `success_metrics` gains baseline and target, `acceptance_criteria` becomes verifiable by third parties.
 
-**Promote**: the Finding is being addressed. The responsible team is taking the necessary action: completing the OBC, updating the BDD, documenting the risk. Findings that are not being addressed within an adequate timeframe can be escalated to the trio. When immediate resolution is not viable, the waiver process can be initiated during this phase; the formal decision is recorded at Close.
+**Committed**: the state required by the Readiness Gate. In this state, the contract is complete enough for Delivery to begin. Every acceptance criterion is verifiable without additional verbal context. Success metrics have baseline and target. Observable Events are defined. The Reliability Plan (when required by risk triggers) is present. An OBC that has not reached Committed does not pass through the Readiness Gate: this is the protection against Phantom BDD and Proxy Commitment.
 
-**Close**: the Finding has been resolved (the artifact satisfies the criterion, with evidence) or the waiver was approved by the trio with an expiration date. The Finding is closed with a record of what was done.
+**In Delivery**: the OBC is associated with an item in execution in the Iteration Plan. Parameter changes are permitted within the declared residual uncertainty range; structural changes require regression to Upstream.
 
-The waiver deserves special attention. A waiver is the explicit acknowledgment that a criterion is not satisfied, the justification for why the item advances anyway, and a commitment to resolve the problem within a defined timeframe. The waiver is not the approval of a gap without consequence: it is the commitment to manage the gap transparently. The difference between a waiver and Forced Readiness (AP-D3) is precisely this: the waiver is explicit and recorded; Forced Readiness is silent.
+**Operational**: the behavior promised in the OBC can be verified at runtime. The capability is in production with the Observable Events functioning and success metrics tracked. The OBC in Operational state is the record that the commitment was honored, and continues to be updated as new operational evidence (incidents, usage metrics, postmortems) refines the understanding of the capability.
 
----
+**Archived**: the capability was discontinued or replaced. The OBC remains as a historical record; it is not deleted.
 
-## Diligence in the two modes
-
-In **Upstream**, Diligence operates in advisory mode. It can verify whether the experiment has the minimum mandatory artifacts (experiment.md and upstream-trail.md), whether the upstream-trail is being updated regularly, whether the Perpetual Discovery signals (S1-S4) are active. When it finds problems, it alerts, but does not block. In Upstream, the cost of blocking exploration due to artifact inconsistency would be greater than the cost of temporarily accepting the inconsistency: there is no formal commitment that requires consistency to be verifiable now.
-
-In **Downstream**, Diligence is blocking. It verifies whether the OBC is Committed before the Readiness Gate. Whether the BDD Feature is in `prodops/artifacts/bdd/`. Whether open Findings have a formal waiver or have been resolved. Whether the Release Trail is being filled in at each phase of the Bootstrap → Promote sequence. When it finds problems, it does not merely alert: it generates Findings that prevent advancement until resolution.
-
-This difference is not one of quantity of rigor applied: it is one of the nature of the consequence. In Upstream, inconsistency does not need to be resolved immediately because the commitment has not been made. In Downstream, consistency is necessary because the commitment must be verifiable, and verifiability requires that the state of artifacts and operational state coincide.
+State progression is not linear by decree: it is verified. What causes an OBC to transition from Refining to Committed is not a subjective decision by the Product Owner; it is the satisfaction of verifiable criteria that Diligence can audit.
 
 ---
 
-## Why Diligence is not bureaucratic governance
+## Upstream flow metrics
 
-The word "governance" frequently evokes bureaucracy: layers of approval, documentation for documentation's sake, processes that consume more time than they protect.
+```mermaid
+gantt
+    title Upstream Experiment Lifecycle
+    dateFormat  YYYY-MM-DD
+    section Upstream
+    HypothesisFormed        :milestone, h1, 2026-08-01, 0d
+    Evidence Collection     :evidence, 2026-08-01, 15d
+    EvidenceThresholdReached :milestone, h2, after evidence, 0d
+    CommitmentGate          :gate, after h2, 3d
+    CommitmentGatePassed    :milestone, h3, after gate, 0d
+    section Metrics
+    TTE - Time-to-Evidence  :crit, 2026-08-01, 15d
+    Decision Latency        :crit, after evidence, 3d
+```
 
-ProdOps's Diligence is different for a structural reason: it operates in response to real divergences, not generic procedures. A Finding is created when a specific divergence exists: an OBC that should be Committed and is not, a BDD that should exist and does not. There is no checklist of forms that needs to be filled out as a matter of protocol.
+The ProdOps operational model fully instruments the Delivery journey: Lead Time, Cycle Time, and the Operational Event Model events allow automatic calculation of when each item passed through each phase.
 
-The health measure of Diligence is not the volume of Findings created: it is the absence of divergences between Knowledge Space and Execution Space. A healthy Diligence in a healthy product tends to have few open Findings because the team keeps artifacts synchronized in real time, as a consequence of the work process. But this relationship is not invertible: few Findings can also be a signal of insufficient instrumentation, not a healthy product. Real health is verified in the absence of detectable divergences, not just in the absence of recorded Findings.
+The Discovery journey, in Upstream, does not have equivalent instrumentation yet. The ProdOps event canonization work proposes a set of flow metrics specific to Upstream experiments. This specification is in the process of canonization, with no automatic collection implementation available yet:
 
-When Diligence repeatedly produces many Findings about the same type of problem, this is a process signal: the team is systematically producing a divergence that must be addressed at the root cause, not merely corrected each time it appears.
+**TTE (Time to Evidence)**: time between the start of an Upstream experiment (opening of `experiment.md`) and the production of the first executable evidence. Measures how quickly an experiment begins to produce real learning, not just documentation of intent.
+
+**Decision Latency**: time between the Evidence Threshold declared as reached and the convening of the CommitmentGate. A high Decision Latency is a signal of Perpetual Discovery: the team knows it has sufficient evidence but is not convening the decision.
+
+**Discovery WIP (Work in Progress)**: number of Upstream experiments active simultaneously. The name is by analogy with Kanban WIP and refers to experiments in progress, regardless of the journey (Discovery, Assessment, or other) in which they are enrolled; the criterion is the Upstream mode, not the journey. A high Discovery WIP indicates that the team is dispersing attention across multiple hypotheses, which tends to increase the TTE of all of them.
+
+These three metrics, when implemented, would allow identifying Perpetual Discovery before signals S1-S4 become critical, transforming a reactive diagnosis into proactive monitoring.
 
 ---
 
-## The relationship between Diligence and Assessment
+## DORA Extended metrics
 
-Diligence and Assessment are the two transversal journeys of ProdOps: both operate across all product journeys (Discovery, Delivery, Operation) without being one of them.
+For the Delivery journey in Downstream, ProdOps adopts an expanded model of 7 metrics that extends the 4 metrics of the DORA Research Program with 3 product- and operation-oriented extensions.
 
-The difference in purpose is precise: Diligence maintains the consistency of the work system *now*: it operates in the present, verifying and correcting. Assessment analyzes the evolution of the work system *over time*: it operates in the past and projects recommendations for the future.
+The four DORA Core metrics, with the names used by ProdOps: Lead Time for Change (time from commit to production), Release Frequency (adaptation of the original name "Deployment Frequency", measured as the frequency of successful deployments to production), Change Fail Rate (percentage of changes that cause failure in production), and Mean Time to Recovery (average recovery time after failure).
 
-The relationship between them is bidirectional. Diligence produces Findings and execution evidence that Assessment consumes to evaluate operational maturity: if the number of Findings of a specific type is growing, this is a data point for Assessment. Assessment produces recommendations that can materialize as new verification criteria in the Diligence catalog. A recommendation to improve the OBC verification process can result in new checks that Diligence then executes.
+The three ProdOps extensions: Reaction Time (time between an external signal — incident, user complaint, or regulatory change — and the first action processed on it), Rate of Return (escaped defects and rework: retries, reversals, post-Promote corrections), and Availability (operational uptime of the service).
 
-This bidirectionality means that Diligence is not subordinate to Assessment, nor is Assessment subordinate to Diligence. They are journeys with distinct responsibilities that feed each other.
+Reaction Time is particularly relevant for understanding the health of Downstream: it measures whether the team is responding to external signals with adequate speed, which is distinct from measuring the speed of planned deliveries. A team that delivers with low Lead Time but has high Reaction Time is operating well internally and poorly in response to the environment.
 
-EXP-014 of the Payments API tested this property empirically: can the ProdOps Runtime automatically track the Delivery state of each Feature via CloudEvents, with Diligence capturing and attaching operational evidence to the same Work Item in real time? **53/53 PASS.** Synchronization between GitHub Project and Datadog was verified for every phase of the Bootstrap → Promote sequence. Diligence did not require human intervention to detect divergences: the event-driven cycle triggered verification at the moment of each phase transition. This result transforms Diligence from a periodic audit process into a continuous verification system — which is the only form of governance that does not create bureaucracy proportional to delivery volume.
+The weights of these metrics vary by product stage, as per the model canonized in the framework. In early stages (PoC), Lead Time for Change and Reaction Time carry maximum weight: learning speed and responsiveness matter more than the reliability of a system that is still being discovered. In MVP, Lead Time maintains maximum weight while Reaction Time decreases, indicating that delivery speed still dominates but responsiveness begins to share attention with other dimensions. In advanced stages (MVT, MLP), Change Fail Rate, MTTR, and Availability dominate: reliability becomes the differentiating criterion.
 
 ---
 
-*Chapter 8 of 10 | Part IV: The Common Substrate*
+## Evidence Package vs. Release Trail: the records of each mode
+
+Upstream and Downstream have distinct record-keeping mechanisms that reflect their distinct purposes.
+
+In Upstream, the primary record-keeping mechanism is the set of evidence produced by the experiment (referred to here as Evidence Package) that underpins the Decision Package presented at the CommitmentGate. The central characteristic of the Evidence Package is verifiability: each piece of evidence must be readable by a trio member who did not participate in the experiment, without additional verbal context. If the evidence depends on context that is not documented, it does not constitute verifiable evidence: it is undocumented memory. The Evidence Package answers the question "what did we discover?".
+
+In Downstream, the primary record-keeping mechanism is the Release Trail: the append-only log of evidence from each phase of the Bootstrap → Promote sequence. The Release Trail answers a different question: not "what did we discover?" but "how did we honor the commitment, step by step, with what evidence?". Each phase of the Delivery cycle produces its records in the trail; nothing is replaced or rewritten, only appended. Promote without a filled Release Trail is the anti-pattern AP-D5: the traceability promised by Downstream is destroyed.
+
+The distinction between the two record-keeping mechanisms is a direct consequence of the distinction between the modes. Upstream records what was learned. Downstream records how the commitment was executed. Mixing the functions — using the Release Trail to document learnings or the Evidence Package to verify execution — is a symptom of modal confusion, not pragmatism.
+
+---
+
+## Why observability is epistemology
+
+The word epistemology (the study of knowledge and how we know it) may seem out of place in a chapter about engineering practices. But this is precisely what observability does in the ProdOps model: it is the mechanism by which the team knows what it knows, and can assert that in a verifiable way.
+
+In Upstream, without observability of evidence (without verifiable artifacts, without documented falsification criteria, without a declared Evidence Threshold), the team does not know what it knows. It has convictions, it has intuitions, it has memory of conversations. But it does not have verifiable knowledge. The CommitmentGate, without an Evidence Package with substance, is Gate Theater: the form without the function.
+
+In Downstream, without observability of behavior in production (without SLOs, without reliability metrics, without Observable Events in the OBC), the team does not know whether the commitment is being honored. It has the feeling that things are working. But it does not have verifiable evidence. Promote, without a filled Release Trail, is an Empty Release Trail.
+
+In both cases, the absence of observability is not a technical instrumentation problem: it is an epistemological problem of not knowing what one knows, and consequently of being unable to distinguish perception from evidence. This is why the framework treats observability as a design priority, not as an implementation complement. What the system can assert about itself is precisely what was designed to be observable.
+
+---
+
+*Chapter 8 of 11 | Part IV: The Common Substrate*

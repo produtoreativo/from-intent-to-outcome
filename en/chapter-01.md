@@ -119,7 +119,19 @@ A recurring interpretation in product literature and practice, by separating Dis
 
 ---
 
-*Chapter 1 of 10 | Part I: The Problem*
+## The journey that begins before the first
+
+The ProdOps framework defines five journeys, but four of them — Discovery, Delivery, Operation, and Diligence — have a clear entry point: a capability that needs to be explored, built, operated, or verified. The fifth journey, **Assessment**, has no fixed entry point: it is present from the moment a Business Signal appears on the product horizon.
+
+Assessment is the framework's informational governance layer. It evaluates whether the informational environment is prepared for the decisions the cycle requires: the transformation of a Signal into a Business Intent, the sufficiency of evidence for the CommitmentGate, the correspondence between the commitment assumed and the commitment honored, and what the completed cycle reveals about the cycle to come. It is not a periodic evaluation phase; it is a continuous responsibility that ProdOps names and structures so that it does not depend on the informal judgment of whoever happens to be paying attention at the moment.
+
+The connection to the problem described in this chapter is direct. The cost of being wrong increases with the level of commitment assumed because the confusion between exploration rigor and commitment rigor is rarely visible at the moment it happens: it becomes visible afterward, when the cost of correction has already risen. Assessment is the mechanism that makes this confusion detectable before the cost reaches its maximum — not because Assessment decides, but because Assessment prepares and qualifies the informational context so that the right decision is more likely.
+
+Chapter 4 describes Assessment in depth: what it evaluates, what it produces, and what it explicitly does not do. What is worth registering here, at the end of the chapter that describes the central problem, is that the solution does not begin with the modes framework: it begins with the responsibility to maintain the informational environment controlled throughout the full cycle.
+
+---
+
+*Chapter 1 of 11 | Part I: The Problem*
 
 ---
 

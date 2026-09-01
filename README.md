@@ -14,13 +14,14 @@ Upstream, Downstream e o Novo Modelo Operacional para Produtos Digitais
 | 1 | A confusão não é de processo; é de compromisso | [capitulo-01.md](capitulo-01.md) | Final |
 | 2 | Por que a leitura de mercado não resolve | [capitulo-02.md](capitulo-02.md) | Final |
 | 3 | O que é um modo de execução | [capitulo-03.md](capitulo-03.md) | Final |
-| 4 | Upstream: o modo da incerteza explícita | [capitulo-04.md](capitulo-04.md) | Final |
-| 5 | Downstream: o modo do compromisso | [capitulo-05.md](capitulo-05.md) | Final |
-| 6 | O CommitmentGate: a fronteira com nome | [capitulo-06.md](capitulo-06.md) | Final |
-| 7 | Observabilidade como epistemologia, não como infraestrutura | [capitulo-07.md](capitulo-07.md) | Final |
-| 8 | Diligence: guardião da consistência | [capitulo-08.md](capitulo-08.md) | Final |
-| 9 | O problema de modo para agentes de IA | [capitulo-09.md](capitulo-09.md) | Final |
-| 10 | A Magazine Siará como evidência | [capitulo-10.md](capitulo-10.md) | Final |
+| 4 | Assessment: a jornada que acompanha todas | [capitulo-04.md](capitulo-04.md) | Final |
+| 5 | Upstream: o modo da incerteza explícita | [capitulo-05.md](capitulo-05.md) | Final |
+| 6 | Downstream: o modo do compromisso | [capitulo-06.md](capitulo-06.md) | Final |
+| 7 | O CommitmentGate: a fronteira com nome | [capitulo-07.md](capitulo-07.md) | Final |
+| 8 | Observabilidade como epistemologia, não como infraestrutura | [capitulo-08.md](capitulo-08.md) | Final |
+| 9 | Diligence: guardião da consistência | [capitulo-09.md](capitulo-09.md) | Final |
+| 10 | O problema de modo para agentes de IA | [capitulo-10.md](capitulo-10.md) | Final |
+| 11 | A Magazine Siará como evidência | [capitulo-11.md](capitulo-11.md) | Final |
 | — | Conclusão | [conclusao.md](conclusao.md) | Final |
 | — | Apêndice: Notas de pesquisa | [apendice-pesquisa.md](apendice-pesquisa.md) | Final |
 

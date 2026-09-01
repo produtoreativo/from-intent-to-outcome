@@ -119,7 +119,19 @@ Uma interpretação recorrente da literatura e da prática de produto, ao separa
 
 ---
 
-*Capítulo 1 de 10 | Parte I: O Problema*
+## A jornada que começa antes da primeira
+
+O framework ProdOps define cinco jornadas, mas quatro delas — Discovery, Delivery, Operation e Diligence — têm um ponto de entrada claro: uma capability que precisa ser explorada, construída, operada ou verificada. A quinta jornada, **Assessment**, não tem ponto de entrada fixo: ela está presente desde o momento em que um Business Signal aparece no horizonte do produto.
+
+Assessment é a camada de governança informacional do framework. Ela avalia se o ambiente informacional está preparado para as decisões que o ciclo exige: a transformação de um Signal em Business Intent, a suficiência de evidências para o CommitmentGate, a correspondência entre o compromisso assumido e o compromisso honrado, e o que o ciclo encerrado revela sobre o ciclo que virá. Não é uma fase de avaliação periódica; é uma responsabilidade contínua que o ProdOps nomeia e estrutura para que não fique dependente do julgamento informal de quem está mais atento no momento.
+
+A conexão com o problema descrito neste capítulo é direta. O custo de estar errado aumenta com o nível de compromisso assumido porque a confusão entre rigor de exploração e rigor de compromisso raramente é visível no momento em que acontece: fica visível depois, quando o custo de corrigir já subiu. Assessment é o mecanismo que torna essa confusão detectável antes que o custo seja máximo — não porque Assessment decide, mas porque Assessment prepara e qualifica o contexto informacional para que a decisão correta seja mais provável.
+
+O Capítulo 4 descreve o Assessment em profundidade: o que ele avalia, o que ele produz e o que ele explicitamente não faz. O que vale registrar aqui, ao fim do capítulo que descreve o problema central, é que a solução não começa no framework de modos: começa na responsabilidade de manter o ambiente informacional controlado ao longo de todo o ciclo.
+
+---
+
+*Capítulo 1 de 11 | Parte I: O Problema*
 
 ---
 
