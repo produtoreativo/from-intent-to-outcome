@@ -132,23 +132,3 @@ O Capítulo 4 descreve o Assessment em profundidade: o que ele avalia, o que ele
 ---
 
 *Capítulo 1 de 11 | Parte I: O Problema*
-
----
-
-## Notas de revisão
-
-**Abertura:** "O problema não está no que o time fez" → "O problema não está apenas no que o time fez". Preserva a força da tese sem eliminar a dimensão de processo presente no próprio exemplo.
-
-**Generalizações históricas:** "Por décadas, a conversa…" → "Ao longo das últimas décadas, boa parte da literatura e da prática…". "cada geração de framework resolve… e ignora" → "diversas gerações de frameworks resolveram… e deixaram o restante implícito". Reduz a amplitude das afirmações históricas.
-
-**Upstream/Downstream como genealogia:** "O Upstream e o Downstream, como frameworks e como prática, tentaram endereçar…" → "Os conceitos de Upstream e Downstream aparecem, em diferentes contextos de produto e desenvolvimento, como tentativas de organizar parte dessas tensões…". Evita atribuir uma genealogia histórica específica sem evidência.
-
-**IA generativa:** removido "de forma irreversível"; removido "Pela primeira vez". Formulação passa a ser "A inteligência artificial generativa começou a demolir esse mito de maneira significativa". Evita generalização empírica absoluta.
-
-**Custo de estar errado:** reformulado para distinguir custo de exploração (que pode ser alto) do custo de reversão (que tende a ser menor antes de um compromisso formal). Coerente com a formulação do Capítulo 2.
-
-**Diagrama Mermaid:** rótulos "custo baixo" e "custo alto" → "custo de reversão menor" e "custo de reversão alto". Alinha com a distinção conceitual adotada.
-
-**Definição de rigor:** substituída a definição operacional específica ("rigor é a qualidade da evidência" / "rigor é a satisfação dos critérios de aceite") pela formulação: "Rigor é o grau de exigência aplicado para reduzir a incerteza relevante, sustentar uma decisão ou verificar a realização de um compromisso." Seguida da descrição dos dois regimes como emergentes do tipo de compromisso, não como tipos fechados e universais. O parágrafo de "confusão" foi ajustado para usar "regime" em vez de rótulos fixos com parênteses descritivos.
-
-**Fechamento sobre a literatura:** "A resposta mais comum na literatura (separar discovery de delivery sequencialmente)" → "Uma interpretação recorrente da literatura e da prática de produto, ao separar discovery e delivery como fases distintas". Reconhece o mérito genuíno da interpretação sequencial antes de identificar sua limitação. Consistente com a revisão já realizada no Capítulo 2.

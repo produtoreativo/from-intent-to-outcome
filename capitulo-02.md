@@ -146,27 +146,3 @@ O próximo capítulo define o que é um modo de execução e por que essa defini
 ---
 
 *Capítulo 2 de 11 | Parte I: O Problema*
-
----
-
-## Notas de revisão
-
-### Rodada 1: revisão conceitual profunda
-
-**Cagan (*Inspired*):** removida a afirmação "delivery começa do zero". A crítica foi reformulada para reconhecer que Cagan oferece mecanismos poderosos de redução de risco antes da construção, operando nas quatro dimensões de valor, usabilidade, viabilidade e factibilidade.
-
-**Torres (*Continuous Discovery Habits*):** removida a sugestão de que Torres não percebe sobreposição entre discovery e delivery. A crítica foi reformulada: Torres resolve o problema da continuidade, mas o framework não é apresentado primariamente como um operating model onde o tipo de compromisso vigente altera explicitamente o regime de rigor.
-
-**Singer (*Shape Up*):** removida a afirmação factualmente incorreta de que Shape Up "não tem protocolo" para descobertas tardias. O diagrama "sem protocolo → Descoberta tardia" foi substituído por representação fiel ao framework.
-
-**18 obras:** quantidade específica removida da narrativa principal; referência mantida como "conjunto amplo de obras", com documentação remetida ao apêndice metodológico.
-
-**Diagramas:** revisados para não atribuir ausências ou limitações que os autores não possuem.
-
-### Rodada 3: três ajustes pontuais
-
-**Cagan (comprometimento):** "antes de qualquer comprometimento de engenharia em larga escala" → "antes de comprometer recursos significativos de engenharia com a construção de uma solução". Esclarece que a questão é evitar comprometer recursos de construção prematuramente, sem sugerir que nenhum compromisso exista durante o discovery.
-
-**Consenso discovery/delivery:** "O consenso do discovery antes do delivery" → "A orientação de realizar discovery antes de comprometer recursos significativos de construção". Evita tratar uma sequência temporal como posição uniforme dos três autores, coerente com o fato de que Torres trabalha com discovery contínua e Singer reconhece incerteza durante a execução.
-
-**APRENDER → COMPROMETER → REALIZAR:** adicionada frase explicitando que a seta não representa sequência temporal, mas transformação progressiva do tipo de compromisso que governa o trabalho. Alinha a síntese com a tese central do capítulo.
