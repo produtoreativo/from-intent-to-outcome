@@ -72,6 +72,8 @@ No Upstream, o Evidence Threshold é *opcional* (recomendado, mas não obrigató
 
 O que não é aceitável é a ausência total de critério de parada, e é exatamente essa ausência que produz o principal anti-padrão do Upstream.
 
+Quatro conceitos que operam em sequência no Upstream, mas que não são sinônimos: o **Evidence Threshold** é o critério explícito declarado antes ou durante o experimento; a **evidência suficiente** é o julgamento epistemológico sobre se o conhecimento produzido permite uma decisão — existe mesmo quando nenhum threshold foi formalmente declarado; o **critério de parada** é a condição que indica que o experimento deve encerrar: pode ser o threshold atingido, o julgamento do autor, ou um dos sinais S1–S4; o **CommitmentGate** é o mecanismo coletivo que decide o destino da capability com base na evidência produzida. Usar "Evidence Threshold" como sinônimo de "evidência suficiente" ou de "CommitmentGate" é o erro que alimenta o Perpetual Discovery.
+
 ---
 
 ## Perpetual Discovery: o anti-padrão central
@@ -113,7 +115,7 @@ Existem três atos distintos de implantação no Upstream, com autorizações e 
 
 **Sandbox Deploy**: código implantado em stack efêmera e isolada, sem tráfego de cliente real. O engenheiro decide. A stack é destruída ao final do experimento. Sem Release Trail, sem OBC Committed.
 
-**Produção Controlada**: código Upstream implantado em produção real, sem CommitmentGate. Autorização explícita do time e da liderança. Rollback imediato disponível. Sem Release Trail exigido. Isso não é violação do modo Upstream: é um ato autorizado. O que a diferencia da promoção é que o *compromisso de capability* (OBC Committed, gates do Downstream) não foi assumido. O código chega a produção; a capability permanece em exploração.
+**Produção Controlada**: código Upstream implantado em produção real, sem CommitmentGate. Autorização explícita do time e da liderança. Rollback imediato disponível. Sem Release Trail exigido — o que não significa sem evidência: o que foi observado em Produção Controlada deve ser registrado no upstream-trail do experimento. Isso não é violação do modo Upstream: é um ato autorizado. O que a diferencia da promoção é que o *compromisso de capability* (OBC Committed, gates do Downstream) não foi assumido. O código chega a produção; a capability permanece em exploração.
 
 **Promoção de Capability**: CommitmentGate com outcome Promover. BDD Feature e OBC movidos para os paths comprometidos. O item entra no Iteration Plan. O Downstream começa.
 

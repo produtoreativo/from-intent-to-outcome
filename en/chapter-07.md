@@ -27,6 +27,8 @@ The second: the Decision Package is an entry contract, not retroactive documenta
 
 The third: the 6 canonical outcomes cover the full possible phenomenology of the decision, not merely approval. The cultural expectation that a CommitmentGate results in "yes" or "no" underestimates what the gate resolves.
 
+In summary: **the CommitmentGate decides the commitment. The Readiness Gate verifies the readiness to execute it. The OBC makes the commitment observable and auditable.**
+
 ---
 
 ## The six canonical outcomes

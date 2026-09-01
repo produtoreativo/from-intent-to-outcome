@@ -72,6 +72,8 @@ In Upstream, the Evidence Threshold is *optional* (recommended, but not mandator
 
 What is not acceptable is the total absence of a stopping criterion — and it is precisely this absence that produces the main anti-pattern of Upstream.
 
+Four concepts that operate in sequence in Upstream, but are not synonymous: the **Evidence Threshold** is the explicit criterion declared before or during the experiment; **evidence sufficiency** is the epistemological judgment about whether the knowledge produced allows a decision — it exists even when no threshold has been formally declared; the **stopping criterion** is the condition that indicates the experiment should end: it may be the threshold reached, the author's judgment, or one of signals S1–S4; the **CommitmentGate** is the collective mechanism that decides the capability's fate based on the evidence produced. Using "Evidence Threshold" as a synonym for "evidence sufficiency" or for "CommitmentGate" is the error that feeds Perpetual Discovery.
+
 ---
 
 ## Perpetual Discovery: the central anti-pattern
@@ -113,7 +115,7 @@ There are three distinct acts of deployment in Upstream, with different authoriz
 
 **Sandbox Deploy**: code deployed in an ephemeral and isolated stack, without real client traffic. The engineer decides. The stack is destroyed at the end of the experiment. No Release Trail, no OBC Committed.
 
-**Controlled Production**: Upstream code deployed to real production, without CommitmentGate. Explicit authorization from the team and leadership. Immediate rollback available. No Release Trail required. This is not a violation of Upstream mode: it is an authorized act. What distinguishes it from promotion is that the *capability commitment* (OBC Committed, Downstream gates) has not been made. The code reaches production; the capability remains under exploration.
+**Controlled Production**: Upstream code deployed to real production, without CommitmentGate. Explicit authorization from the team and leadership. Immediate rollback available. No Release Trail required — which does not mean without evidence: what was observed in Controlled Production must be recorded in the experiment's upstream-trail. This is not a violation of Upstream mode: it is an authorized act. What distinguishes it from promotion is that the *capability commitment* (OBC Committed, Downstream gates) has not been made. The code reaches production; the capability remains under exploration.
 
 **Capability Promotion**: CommitmentGate with Promote outcome. BDD Feature and OBC moved to committed paths. The item enters the Iteration Plan. Downstream begins.
 

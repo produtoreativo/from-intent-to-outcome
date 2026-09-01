@@ -27,6 +27,8 @@ A segunda: o Decision Package é um contrato de entrada, não documentação ret
 
 A terceira: os 6 outcomes canônicos cobrem toda a fenomenologia possível da decisão, não apenas a aprovação. A expectativa cultural de que um CommitmentGate resulta em "sim" ou "não" subestima o que o gate resolve.
 
+Em síntese: **o CommitmentGate decide o compromisso. O Readiness Gate verifica a prontidão para executá-lo. O OBC torna o compromisso observável e auditável.**
+
 ---
 
 ## Os seis outcomes canônicos
