@@ -59,11 +59,11 @@ stateDiagram-v2
 
 **Refining**: the state the OBC assumes at the start of Downstream (Moment 2 of the transition, after the CommitmentGate with outcome Promote). The fields begin to be refined with real substance: `expected_outcome` ceases to be vague, `success_metrics` gains baseline and target, `acceptance_criteria` becomes verifiable by third parties.
 
-**Committed**: the state required by the Readiness Gate. In this state, the contract is complete enough for Delivery to begin. Every acceptance criterion is verifiable without additional verbal context. Success metrics have baseline and target. Observable Events are defined. The Reliability Plan (when required by risk triggers) is present. An OBC that has not reached Committed does not pass through the Readiness Gate: this is the protection against Phantom BDD and Proxy Commitment.
+**Committed**: records that the formal commitment has been made and that the contract is complete enough for Delivery to begin. The Committed state does not create the commitment — it is the artifact that makes the commitment observable and auditable. Every acceptance criterion is verifiable without additional verbal context. Success metrics have baseline and target. Observable Events are defined. The Reliability Plan (when required by risk triggers) is present. An OBC that has not reached Committed does not pass through the Readiness Gate: this is the protection against Phantom BDD and Proxy Commitment.
 
 **In Delivery**: the OBC is associated with an item in execution in the Iteration Plan. Parameter changes are permitted within the declared residual uncertainty range; structural changes require regression to Upstream.
 
-**Operational**: the behavior promised in the OBC can be verified at runtime. The capability is in production with the Observable Events functioning and success metrics tracked. The OBC in Operational state is the record that the commitment was honored, and continues to be updated as new operational evidence (incidents, usage metrics, postmortems) refines the understanding of the capability.
+**Operational**: the committed behavior in the OBC can be verified at runtime. The capability is in production with the Observable Events functioning and success metrics tracked. The OBC in Operational state records that the committed behavior is verifiable at runtime — not that the business outcome has necessarily been achieved, but that the capability is operating with its observable criteria active. It continues to be updated as new operational evidence (incidents, usage metrics, postmortems) refines the understanding of the capability.
 
 **Archived**: the capability was discontinued or replaced. The OBC remains as a historical record; it is not deleted.
 
@@ -104,11 +104,11 @@ These three metrics, when implemented, would allow identifying Perpetual Discove
 
 ## DORA Extended metrics
 
-For the Delivery journey in Downstream, ProdOps adopts an expanded model of 7 metrics that extends the 4 metrics of the DORA Research Program with 3 product- and operation-oriented extensions.
+For the Delivery journey in Downstream, ProdOps adopts a model of metrics that builds on the four historical metrics of the DORA Research Program and complements them with product- and operation-oriented extensions. The DORA model has evolved over time: the 2024–2026 formulation introduced Deployment Rework Rate as a fifth delivery performance metric and adopted Failed Deployment Recovery Time as the updated name for what was originally MTTR.
 
-The four DORA Core metrics, with the names used by ProdOps: Lead Time for Change (time from commit to production), Release Frequency (adaptation of the original name "Deployment Frequency", measured as the frequency of successful deployments to production), Change Fail Rate (percentage of changes that cause failure in production), and Mean Time to Recovery (average recovery time after failure).
+The four metrics rooted in historical DORA, with the names used by ProdOps: Lead Time for Change (time from commit to production), Release Frequency (adaptation of the original Deployment Frequency, measured as the frequency of successful deployments to production), Change Fail Rate (percentage of changes that cause failure in production), and Mean Time to Recovery (average recovery time after failure; equivalent to Failed Deployment Recovery Time in the current DORA formulation).
 
-The three ProdOps extensions: Reaction Time (time between an external signal — incident, user complaint, or regulatory change — and the first action processed on it), Rate of Return (escaped defects and rework: retries, reversals, post-Promote corrections), and Availability (operational uptime of the service).
+The ProdOps extensions: Reaction Time (time between an external signal — incident, user complaint, or regulatory change — and the first action processed on it), Rate of Return (escaped defects and rework: retries, reversals, post-Promote corrections), and Availability (operational uptime of the service; a dimension that DORA also considered in iterations of its operational performance model, incorporated here explicitly).
 
 Reaction Time is particularly relevant for understanding the health of Downstream: it measures whether the team is responding to external signals with adequate speed, which is distinct from measuring the speed of planned deliveries. A team that delivers with low Lead Time but has high Reaction Time is operating well internally and poorly in response to the environment.
 

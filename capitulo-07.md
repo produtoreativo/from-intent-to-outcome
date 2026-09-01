@@ -17,7 +17,7 @@ Os dois efeitos têm a mesma causa: fronteira implícita produz ou promoção pr
 
 ## O que o CommitmentGate é
 
-O CommitmentGate é o gate que medeia a transição Upstream → Downstream. É convocado pelo trio (PM + Tech Lead + Autor) quando o Decision Package do experimento estiver pronto. Qualquer membro do trio pode convocar.
+O CommitmentGate é o gate que medeia a transição Upstream → Downstream. É convocado pelo trio (PM + Tech Lead + Autor) quando o Decision Package do experimento estiver pronto. Qualquer membro do trio pode convocar. O CommitmentGate não cria o compromisso: ele torna verificável e rastreável a decisão que o trio tomou sobre o destino da capability.
 
 Três características o distinguem de uma reunião de planejamento ordinária.
 
@@ -35,7 +35,7 @@ Cada outcome é uma decisão operacionalmente distinta, com ações obrigatória
 
 **Promover**: a evidência justifica o comprometimento. O OBC transita de Draft para **Refining** (Momento 2), a BDD Feature é movida para os paths comprometidos, e o item entra no **Icebox** com o Downstream declarado. O Downstream inicia: a jornada Discovery roda em modo bloqueante, as perguntas abertas do Decision Package são resolvidas com decisões datadas, e o **Readiness Gate** (Momento 3) verifica que o OBC atingiu o estado **Committed** antes de autorizar o Planning e o Bootstrap.
 
-**Promover com restrição**: parte da capability está pronta para o compromisso; outra parte precisa continuar em exploração. O subconjunto aprovado transita para o Downstream. As partes restritas permanecem em Upstream para um novo experimento com hipótese mais específica. A restrição é registrada explicitamente no upstream-trail: ela não é uma lacuna silenciosa.
+**Promover com restrição**: parte da capability está pronta para o compromisso; outra parte precisa continuar em exploração. O compromisso formal é assumido **exclusivamente** sobre o subconjunto aprovado — a capability original, em sua totalidade, não está comprometida. O subconjunto aprovado transita para o Downstream. As partes restritas permanecem em Upstream para um novo experimento com hipótese mais específica. A restrição é registrada explicitamente no upstream-trail: ela não é uma lacuna silenciosa.
 
 **Requer outro experimento**: a evidência produzida não é suficiente para o comprometimento, mas a hipótese ainda é válida. Um novo experimento é criado com hipótese mais específica ou com rota de coleta de evidência diferente. O experimento atual é marcado com o Decision Package indicando esse outcome. Não é fracasso: é o reconhecimento de que a exploração precisa de mais uma iteração.
 

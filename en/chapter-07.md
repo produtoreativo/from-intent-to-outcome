@@ -17,7 +17,7 @@ Both effects share the same cause: an implicit boundary produces either prematur
 
 ## What the CommitmentGate is
 
-The CommitmentGate is the gate that mediates the Upstream → Downstream transition. It is called by the trio (PM + Tech Lead + Author) when the experiment's Decision Package is ready. Any member of the trio may call it.
+The CommitmentGate is the gate that mediates the Upstream → Downstream transition. It is called by the trio (PM + Tech Lead + Author) when the experiment's Decision Package is ready. Any member of the trio may call it. The CommitmentGate does not create the commitment: it makes the trio's decision about the capability's fate verifiable and traceable.
 
 Three characteristics distinguish it from an ordinary planning meeting.
 
@@ -35,7 +35,7 @@ Each outcome is an operationally distinct decision with specific mandatory actio
 
 **Promote**: the evidence justifies commitment. The OBC transitions from Draft to **Refining** (Moment 2), the BDD Feature is moved to the committed paths, and the item enters the **Icebox** with Downstream declared. Downstream begins: the Discovery journey runs in blocking mode, open questions from the Decision Package are resolved with dated decisions, and the **Readiness Gate** (Moment 3) verifies that the OBC has reached the **Committed** state before authorizing Planning and Bootstrap.
 
-**Promote with restriction**: part of the capability is ready for commitment; another part needs to continue in exploration. The approved subset transitions to Downstream. The restricted parts remain in Upstream for a new experiment with a more specific hypothesis. The restriction is recorded explicitly in the upstream-trail: it is not a silent gap.
+**Promote with restriction**: part of the capability is ready for commitment; another part needs to continue in exploration. The formal commitment is assumed **exclusively** on the approved subset — the original capability, in its entirety, is not committed. The approved subset transitions to Downstream. The restricted parts remain in Upstream for a new experiment with a more specific hypothesis. The restriction is recorded explicitly in the upstream-trail: it is not a silent gap.
 
 **Requires another experiment**: the evidence produced is not sufficient for commitment, but the hypothesis is still valid. A new experiment is created with a more specific hypothesis or a different evidence-collection route. The current experiment is marked with the Decision Package indicating this outcome. This is not failure: it is the recognition that exploration needs one more iteration.
 
