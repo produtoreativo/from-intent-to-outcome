@@ -81,7 +81,7 @@ In **Upstream**, Diligence operates in advisory mode. It can verify whether the 
 
 In **Downstream**, Diligence is blocking. It verifies whether the OBC is Committed before the Readiness Gate. Whether the BDD Feature is in `prodops/artifacts/bdd/`. Whether open Findings have a formal waiver or have been resolved. Whether the Release Trail is being filled in at each phase of the Bootstrap → Promote sequence. When it finds problems, it does not merely alert: it generates Findings that prevent advancement until resolution.
 
-This difference is not one of quantity of rigor applied: it is one of the nature of the consequence. In Upstream, inconsistency does not need to be resolved immediately because the commitment has not been made. In Downstream, consistency is necessary because the commitment must be verifiable, and verifiability requires that the state of artifacts and operational state coincide.
+This difference is not one of quantity of rigor applied: it is one of the nature of the consequence. In Upstream, inconsistency does not need to be resolved immediately because the commitment has not been made. In Downstream, consistency is necessary because the commitment must be verifiable, and verifiability requires that the state of artifacts and operational state be consistent.
 
 ---
 
@@ -101,7 +101,7 @@ When Diligence repeatedly produces many Findings about the same type of problem,
 
 Diligence and Assessment are the two transversal journeys of ProdOps: both operate across all product journeys (Discovery, Delivery, Operation) without being one of them.
 
-The difference in purpose is precise: Diligence maintains the consistency of the work system *now*: it operates in the present, verifying and correcting. Assessment analyzes the evolution of the work system *over time*: it operates in the past and projects recommendations for the future.
+The difference in purpose is precise: Diligence maintains the consistency of the work system *now*: it operates in the present, verifying and tracking the resolution of divergences. Assessment analyzes the evolution of the work system *over time*: it operates in the past and projects recommendations for the future.
 
 The relationship between them is bidirectional. Diligence produces Findings and execution evidence that Assessment consumes to evaluate operational maturity: if the number of Findings of a specific type is growing, this is a data point for Assessment. Assessment produces recommendations that can materialize as new verification criteria in the Diligence catalog. A recommendation to improve the OBC verification process can result in new checks that Diligence then executes.
 

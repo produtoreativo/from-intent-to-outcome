@@ -57,7 +57,7 @@ The existence of six outcomes is what makes the CommitmentGate different from an
 
 ```mermaid
 graph TD
-    DP["Decision Package"] --> H["Hypothesis answered\nEvidence Threshold met"]
+    DP["Decision Package"] --> H["Hypothesis answered\nEvidence Threshold met, when declared"]
     DP --> ES["Executive Summary\nWhat was explored"]
     DP --> REC["Recommended Decision\none of the 6 outcomes"]
     DP --> RSK["Updated risks\nresidual uncertainty declared acceptable"]

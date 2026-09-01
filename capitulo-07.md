@@ -17,7 +17,7 @@ Os dois efeitos têm a mesma causa: fronteira implícita produz ou promoção pr
 
 ## O que o CommitmentGate é
 
-O CommitmentGate é o gate que medeia a transição Upstream → Downstream. É convocado pelo trio (PM + Tech Lead + Autor) quando o Decision Package do experimento estiver pronto. Qualquer membro do trio pode convocar. O CommitmentGate não cria o compromisso: ele torna verificável e rastreável a decisão que o trio tomou sobre o destino da capability.
+O CommitmentGate é o gate que medeia a transição Upstream → Downstream. É convocado pelo trio (PM + Tech Lead + Autor) quando o Decision Package do experimento estiver pronto. Qualquer membro do trio pode convocar. O CommitmentGate não cria o compromisso: ele torna verificável e rastreável a decisão que o trio toma sobre o destino da capability.
 
 Três características o distinguem de uma reunião de planejamento ordinária.
 
@@ -57,7 +57,7 @@ A existência dos seis outcomes é o que torna o CommitmentGate diferente de uma
 
 ```mermaid
 graph TD
-    DP["Decision Package"] --> H["Hipótese respondida\nEvidence Threshold atingido"]
+    DP["Decision Package"] --> H["Hipótese respondida\nEvidence Threshold satisfeito, quando declarado"]
     DP --> ES["Executive Summary\nO que foi explorado"]
     DP --> REC["Decisão Recomendada\num dos 6 outcomes"]
     DP --> RSK["Riscos atualizados\nincerteza residual declarada aceitável"]

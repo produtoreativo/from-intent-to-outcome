@@ -81,7 +81,7 @@ No **Upstream**, a Diligence opera em modo advisory. Ela pode verificar se o exp
 
 No **Downstream**, a Diligence é bloqueante. Ela verifica se o OBC está Committed antes do Readiness Gate. Se a BDD Feature está em `prodops/artifacts/bdd/`. Se os Findings abertos têm waiver formal ou foram resolvidos. Se o Release Trail está sendo preenchido em cada fase da sequência Bootstrap → Promote. Quando encontra problemas, não apenas alerta: gera Findings que impedem o avanço até resolução.
 
-Essa diferença não é de quantidade de rigor aplicado: é de natureza da consequência. No Upstream, a inconsistência não precisa ser resolvida imediatamente porque o compromisso não foi assumido. No Downstream, a consistência é necessária porque o compromisso precisa ser verificável, e verificabilidade exige que o estado dos artefatos e o estado operacional coincidam.
+Essa diferença não é de quantidade de rigor aplicado: é de natureza da consequência. No Upstream, a inconsistência não precisa ser resolvida imediatamente porque o compromisso não foi assumido. No Downstream, a consistência é necessária porque o compromisso precisa ser verificável, e verificabilidade exige que o estado dos artefatos e o estado operacional sejam consistentes.
 
 ---
 
@@ -103,7 +103,7 @@ O EXP-014 da Payments API testou essa propriedade empiricamente: será que o Pro
 
 A Diligence e o Assessment são as duas jornadas transversais do ProdOps: ambas operam sobre todas as jornadas de produto (Discovery, Delivery, Operation) sem serem uma delas.
 
-A diferença de propósito é precisa: a Diligence mantém a consistência do sistema de trabalho *agora*: ela opera no presente, verificando e corrigindo. O Assessment analisa a evolução do sistema de trabalho *ao longo do tempo*: ele opera no passado e projeta recomendações para o futuro.
+A diferença de propósito é precisa: a Diligence mantém a consistência do sistema de trabalho *agora*: ela opera no presente, verificando e acompanhando a correção das divergências. O Assessment analisa a evolução do sistema de trabalho *ao longo do tempo*: ele opera no passado e projeta recomendações para o futuro.
 
 A relação entre elas é bidirecional. A Diligence produz Findings e evidências de execução que o Assessment consome para avaliar maturidade operacional: se o número de Findings de um tipo específico está crescendo, isso é um dado para o Assessment. O Assessment produz recomendações que podem se materializar como novos critérios de verificação no catálogo da Diligence. Uma recomendação de melhorar o processo de verificação de OBCs pode resultar em novos checks que a Diligence passa a executar.
 
