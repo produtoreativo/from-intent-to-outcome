@@ -45,7 +45,7 @@ O OBC percorre seis estados ao longo do ciclo de vida de uma capability:
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Draft : Business Intent aceita
+    [*] --> Draft : Business Signal → Business Intent
     Draft --> Refining : CommitmentGate Promover (Momento 2)
     Refining --> Committed : Readiness Gate aprovado (Momento 3)
     Committed --> InDelivery : Bootstrap.Started
@@ -55,7 +55,7 @@ stateDiagram-v2
     InDelivery --> Refining : Regressão Downstream para Upstream
 ```
 
-**Draft**: nasce quando uma Business Intent é aceita. No Upstream, é memória do aprendizado: pode ser atualizado continuamente, pode permanecer incompleto, não bloqueia experimentos. A ausência de campos completos no Draft é esperada, não uma falha.
+**Draft**: nasce na transição de um Business Signal para um Business Intent. No Upstream, é memória do aprendizado: pode ser atualizado continuamente, pode permanecer incompleto, não bloqueia experimentos. A ausência de campos completos no Draft é esperada, não uma falha.
 
 **Refining**: o estado que o OBC assume no início do Downstream (Momento 2 da transição, após o CommitmentGate com outcome Promover). Os campos começam a ser refinados com substância real: `expected_outcome` deixa de ser vago, `success_metrics` ganha baseline e target, `acceptance_criteria` torna-se verificável por terceiros.
 

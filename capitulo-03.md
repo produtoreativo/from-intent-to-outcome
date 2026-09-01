@@ -141,7 +141,7 @@ O modelo modal descreve dois regimes de compromisso. O que ainda não foi dito �
 
 O artefato é o **OBC** (Observable Business Contract). O mecanismo é o **CommitmentGate**.
 
-O OBC existe desde o momento em que uma intenção de negócio é registrada. No Upstream, ele está em estado **Draft** ou **Refining**: incompleto é aceitável, pode ser alterado livremente, não bloqueia experimentos. O Upstream usa o OBC como memória do aprendizado acumulado — o que já se sabe sobre a capability, quais hipóteses foram respondidas, quais questões permanecem abertas.
+O OBC nasce na transição de um Business Signal para um Business Intent: a partir desse momento, ele sempre existe. O modo determina sob qual regime o OBC opera — não quando ele nasce. No Upstream, o OBC está em estado **Draft**: incompleto é aceitável, pode ser alterado livremente, não bloqueia experimentos. O Upstream usa o OBC como memória do aprendizado acumulado — o que já se sabe sobre a capability, quais hipóteses foram respondidas, quais questões permanecem abertas.
 
 O CommitmentGate é o gate que avalia se a evidência acumulada justifica transitar o OBC de Refining para **Committed**. O Decision Package — artefato com hipóteses respondidas, riscos identificados e recomendação formal — é o input do gate. Um trio executa o CommitmentGate: o responsável pelo produto, o responsável técnico e um avaliador independente. O framework define seis outcomes canônicos: o outcome Promover transita o OBC para Committed e abre o Downstream; os demais mantêm o item em Upstream, descartam a capability ou suspendem o trabalho até que uma condição externa seja resolvida.
 
@@ -149,9 +149,12 @@ No Downstream, o OBC Committed é o contrato sob o qual o compromisso foi assumi
 
 ```mermaid
 graph LR
-    A["OBC Draft\n(Upstream)"] -->|"Decision Package"| B{"CommitmentGate\n6 outcomes"}
-    B -->|"Promover"| C["OBC Committed\n(Downstream Declared)"]
-    B -->|"outros outcomes"| X["Upstream / Descarte /\nAguardar"]
+    BS["Business Signal\n→ Business Intent"] --> A["OBC Draft"]
+    A --> UP["Upstream\n(rigor advisory)"]
+    A -->|"Signal suficiente"| CG{"CommitmentGate\n6 outcomes"}
+    UP -->|"Decision Package"| CG
+    CG -->|"Promover"| C["OBC Committed\n(Downstream Declared)"]
+    CG -->|"outros outcomes"| X["Upstream / Descarte /\nAguardar"]
     C --> D["Readiness Gate"]
     D --> E["Iteration Plan"]
     E --> F["Bootstrap"]

@@ -60,7 +60,7 @@ graph TD
 
 The `upstream-trail.md` is the chronological log of sessions: what was done, what was discovered, which artifacts were produced, which decisions were made and why. It serves two purposes. During the experiment, it is the mechanism that prevents context loss between sessions. At the CommitmentGate, it is the evidence that the experiment had real progression, not merely accumulated entries without advancing the hypothesis.
 
-Beyond the mandatory artifacts, experiments can have optional artifacts: OBC Draft (mandatory before the CommitmentGate, not before), BDD Feature in draft, evidence files in `evidence/`, prototypes in `prototypes/`. The key is that these artifacts are created as the experiment needs them, not as an entry requirement.
+Beyond the mandatory artifacts, experiments work on artifacts that already exist or can be enriched during the investigation: the OBC Draft — which is born with the Business Intent, pre-exists the experiment, and must be present as a file before the CommitmentGate —, the BDD Feature in draft, evidence files in `evidence/`, prototypes in `prototypes/`. The experiment does not create the OBC; it operates on it. The other optional artifacts are produced as the investigation needs them, not as an entry requirement.
 
 ---
 

@@ -45,7 +45,7 @@ The OBC progresses through six states over the lifecycle of a capability:
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Draft : Business Intent accepted
+    [*] --> Draft : Business Signal → Business Intent
     Draft --> Refining : CommitmentGate Promote (Moment 2)
     Refining --> Committed : Readiness Gate approved (Moment 3)
     Committed --> InDelivery : Bootstrap.Started
@@ -55,7 +55,7 @@ stateDiagram-v2
     InDelivery --> Refining : Downstream regression to Upstream
 ```
 
-**Draft**: born when a Business Intent is accepted. In Upstream, it is memory of learning: it can be updated continuously, it can remain incomplete, it does not block experiments. The absence of completed fields in Draft is expected, not a failure.
+**Draft**: born at the transition from a Business Signal to a Business Intent. In Upstream, it is memory of learning: it can be updated continuously, it can remain incomplete, it does not block experiments. The absence of completed fields in Draft is expected, not a failure.
 
 **Refining**: the state the OBC assumes at the start of Downstream (Moment 2 of the transition, after the CommitmentGate with outcome Promote). The fields begin to be refined with real substance: `expected_outcome` ceases to be vague, `success_metrics` gains baseline and target, `acceptance_criteria` becomes verifiable by third parties.
 

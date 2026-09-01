@@ -141,7 +141,7 @@ O corpus da Magazine Siará suporta essa tese de quatro formas distintas.
 
 ## O próximo território
 
-O que o corpus da Magazine Siará ainda não documentou é o ciclo de vida completo de um OBC que nasce como Business Signal, percorre o Upstream, atravessa o CommitmentGate com trio humano pleno, entra no Downstream com OBC Committed e BDD Feature formalizada, é entregue com Release Trail completo, e chega ao estado Operational com SLOs medidos e postmortem documentado.
+O que o corpus da Magazine Siará ainda não documentou é o ciclo de vida completo de um OBC que nasce com o Business Intent (a partir do Business Signal), percorre o Upstream, atravessa o CommitmentGate com trio humano pleno, entra no Downstream com OBC Committed e BDD Feature formalizada, é entregue com Release Trail completo, e chega ao estado Operational com SLOs medidos e postmortem documentado.
 
 Esse ciclo existe em partes — alguns OBCs já estão Operational; o CommitmentGate existe mas sem o trio completo registrado; os Release Trails existem mas sem o ciclo desde o Business Signal original. A composição completa num único caso rastreável de ponta a ponta é o território que está à frente.
 
