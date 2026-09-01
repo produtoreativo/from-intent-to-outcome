@@ -131,7 +131,7 @@ O framework ProdOps usa uma frase específica para verificar se o modelo modal f
 
 Qualquer compressão que mapeie Upstream para uma jornada específica ("Upstream é onde se faz discovery", "Upstream é a fase de exploração") está errada. Essas frases reproduzem a interpretação de mercado que o Capítulo 2 examinou. Elas são intuitivamente atraentes porque capturam algo verdadeiro (exploração tende a ocorrer com maior frequência no Upstream), mas ocultam o que é distintivo no modelo: que a mesma jornada pode ser executada em qualquer modo, e que o que muda entre eles não é o conteúdo do trabalho, mas o regime de compromisso que o governa.
 
-Com essa distinção estabelecida, os dois capítulos seguintes podem descrever cada modo em profundidade, não como fases com diferentes conteúdos, mas como configurações de compromisso com diferentes disciplinas.
+Com essa distinção estabelecida, os Capítulos 5 e 6 descrevem cada modo em profundidade — não como fases com diferentes conteúdos, mas como configurações de compromisso com diferentes disciplinas.
 
 ---
 
@@ -143,7 +143,7 @@ O artefato é o **OBC** (Observable Business Contract). O mecanismo é o **Commi
 
 O OBC nasce na transição de um Business Signal para um Business Intent: a partir desse momento, ele sempre existe. O modo determina sob qual regime o OBC opera — não quando ele nasce. No Upstream, o OBC está em estado **Draft**: incompleto é aceitável, pode ser alterado livremente, não bloqueia experimentos. O Upstream usa o OBC como memória do aprendizado acumulado — o que já se sabe sobre a capability, quais hipóteses foram respondidas, quais questões permanecem abertas.
 
-O CommitmentGate é o gate que avalia se a evidência acumulada justifica transitar o OBC de Refining para **Committed**. O Decision Package — artefato com hipóteses respondidas, riscos identificados e recomendação formal — é o input do gate. Um trio executa o CommitmentGate: o responsável pelo produto, o responsável técnico e um avaliador independente. O framework define seis outcomes canônicos: o outcome Promover transita o OBC para Committed e abre o Downstream; os demais mantêm o item em Upstream, descartam a capability ou suspendem o trabalho até que uma condição externa seja resolvida.
+O CommitmentGate é o gate que avalia se a evidência acumulada justifica transitar o OBC de **Draft** para **Refining** (Momento 2). O Decision Package — artefato com hipóteses respondidas, riscos identificados e recomendação formal — é o input do gate. Um trio executa o CommitmentGate: o **PM**, o **Tech Lead** e o **Autor** (quem conduziu o experimento e preparou o package; o PM e o Tech Lead funcionam como leitores independentes). O framework define seis outcomes canônicos: o outcome Promover transita o OBC de Draft para Refining, declara o Downstream e abre a jornada Discovery em modo bloqueante — o OBC alcança o estado Committed somente no Readiness Gate (Momento 3). Os demais outcomes mantêm o item em Upstream, descartam a capability ou suspendem o trabalho até que uma condição externa seja resolvida.
 
 No Downstream, o OBC Committed é o contrato sob o qual o compromisso foi assumido. Os gates bloqueantes que governam a jornada Delivery verificam o que está no OBC: os Observable Events esperados, os critérios de aceite mensuráveis, os Initial SLIs com targets numéricos. Sem OBC Committed, nenhuma fase de Delivery começa. Com ele, o rigor passa de advisory para bloqueante — não como uma preferência, mas como consequência operacional do compromisso assumido.
 
@@ -153,10 +153,10 @@ graph LR
     A --> UP["Upstream\n(rigor advisory)"]
     A -->|"Signal suficiente"| CG{"CommitmentGate\n6 outcomes"}
     UP -->|"Decision Package"| CG
-    CG -->|"Promover"| C["OBC Committed\n(Downstream Declared)"]
+    CG -->|"Promover"| C["OBC Refining\n(Downstream Declarado / Momento 2)"]
     CG -->|"outros outcomes"| X["Upstream / Descarte /\nAguardar"]
-    C --> D["Readiness Gate"]
-    D --> E["Iteration Plan"]
+    C --> D["Readiness Gate\n(Momento 3)"]
+    D --> E["OBC Committed\n→ Iteration Plan"]
     E --> F["Bootstrap"]
 ```
 

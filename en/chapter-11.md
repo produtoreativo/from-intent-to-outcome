@@ -11,7 +11,7 @@ This coincidence is not accidental. ProdOps, as a framework, needs to be tested 
 What makes the Magazine Siará laboratory different from a retrospective case study is that the artifact corpus was produced *during* the work, not documented afterward. The upstream-trails record what was discovered session by session. The OBCs show the real state of commitment at each date. The Release Trails document how each phase was honored. What this chapter examines is what this corpus demonstrates about the framework — and what it has not yet demonstrated.
 
 ![Magazine Siará corpus: dependency graph between experiments, committed OBCs, and Downstream iterations](../images/cap10-experiments-corpus.svg)
-*Figure 10. The Magazine Siará corpus as a dependency graph: 17 Upstream experiments, 12+ Committed OBCs, 15+ Downstream iterations with Release Trail.*
+*Figure 11. The Magazine Siará corpus as a dependency graph: 17 Upstream experiments, 12+ Committed OBCs, 15+ Downstream iterations with Release Trail.*
 
 ---
 

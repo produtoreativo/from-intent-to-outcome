@@ -5,7 +5,7 @@
 ## Why agents don't have mode sensitivity by default
 
 ![Mode classification protocol for AI agents](../images/cap09-agent-mode-classification.svg)
-*Figure 9. Decision flow for mode classification: OBC is the primary signal. In the absence of an OBC, the type of request determines the mode.*
+*Figure 10. Decision flow for mode classification: OBC state is the primary signal. OBC Committed (CommitmentGate registered) = Downstream; OBC in Draft or absent = Upstream.*
 
 A human engineer who works with a product framework long enough develops something we might call mode sensitivity: the ability to perceive, from contextual signals (the conversation in the meeting, the state of the backlog, the tone of the PM's messages), in what kind of commitment the work is operating. They don't need to formally check whether the OBC is Committed; they perceive from the team's posture that something has been decided and the work is now about delivery.
 
@@ -67,8 +67,8 @@ The partial correction already made was the note in AGENTS.md that clarifies the
 ```mermaid
 graph TD
     REQ["Request received by agent"] --> CLASS["Mode classification\nStep 0.1 of AGENTS.md"]
-    CLASS -->|"OBC exists — Downstream"| DS["/downstream\nBlocking rigor\nMandatory gates"]
-    CLASS -->|"No OBC — Upstream"| US["/upstream\nAdvisory rigor\nEngineer decides"]
+    CLASS -->|"OBC Committed (gate registered)"| DS["/downstream\nBlocking rigor\nMandatory gates"]
+    CLASS -->|"OBC Draft / no gate registered"| US["/upstream\nAdvisory rigor\nEngineer decides"]
     DS --> SKILLS_DS["Bootstrap / Hack / Sync\nFinish / Ship / Validate / Promote"]
     US --> SKILLS_US["Experiment / Evidence\nDecision Package / CommitmentGate"]
 

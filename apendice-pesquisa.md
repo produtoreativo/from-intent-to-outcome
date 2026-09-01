@@ -134,6 +134,8 @@ Quarto: rigor como variável primária de distinção entre os modos. A literatu
 
 Quinto: um gate de transição com múltiplos outcomes canônicos. A literatura tende ao modelo binário (go ou no-go, commit ou não-commit). O CommitmentGate do ProdOps define seis outcomes possíveis: Comprometer, Requer outro experimento, Reduzir escopo e comprometer, Transferir responsabilidade, Descartar e registrar, e Pausar com revisão agendada. Cada outcome tem protocolo de registro distinto.
 
+> **Nota:** os nomes dos outcomes acima refletem a formulação em uso durante o desenvolvimento inicial do framework no contexto do projeto Procurare. A nomenclatura foi revisada no framework atual; a lista canônica vigente — com nomes e definições operacionais atualizadas — está no **Capítulo 7**. A convergência conceitual é total; o que mudou foi a precisão dos nomes.
+
 ---
 
 ## 6. Referências

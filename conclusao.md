@@ -9,7 +9,7 @@
 
 Upstream e Downstream não são fases de um processo: são modos de execução que configuram o tipo de compromisso que um time está mantendo, e portanto o tipo de rigor que deve ser aplicado a qualquer trabalho.
 
-Essa é a tese que o livro sustentou ao longo de dez capítulos, com suporte em artefatos verificáveis do corpus da Magazine Siará. O leitor que chegou até aqui tem as ferramentas para reconhecer o problema que a tese resolve, e para distinguir quando a vê sendo resolvida de quando está sendo apenas renomeada.
+Essa é a tese que o livro sustentou ao longo de onze capítulos, com suporte em artefatos verificáveis do corpus da Magazine Siará. O leitor que chegou até aqui tem as ferramentas para reconhecer o problema que a tese resolve, e para distinguir quando a vê sendo resolvida de quando está sendo apenas renomeada.
 
 ---
 

@@ -5,7 +5,7 @@
 ## O que a observabilidade faz em cada modo
 
 ![Observabilidade como epistemologia: papéis distintos em cada modo](images/cap07-observability-roles.svg)
-*Figura 7. No Upstream, observabilidade torna a incerteza explícita. No Downstream, verifica o compromisso. Sem evidência observável, governança e decisão tornam-se dependentes de percepção, não de verificação.*
+*Figura 8. No Upstream, observabilidade torna a incerteza explícita. No Downstream, verifica o compromisso. Sem evidência observável, governança e decisão tornam-se dependentes de percepção, não de verificação.*
 
 Há uma distinção que o ProdOps introduz que não é sobre tecnologia de observabilidade: logs, métricas, traces, dashboards. É sobre o papel epistêmico que a observabilidade desempenha em cada modo de execução.
 

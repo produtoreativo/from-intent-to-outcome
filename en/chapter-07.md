@@ -5,11 +5,11 @@
 ## The problem of implicit boundaries
 
 ![CommitmentGate: the boundary with a name and the 6 canonical outcomes](../images/cap06-commitmentgate-outcomes.svg)
-*Figure 6. The 6 canonical outcomes of the CommitmentGate: it is not an approval meeting — it is a collective decision with verifiable criteria*
+*Figure 7. The 6 canonical outcomes of the CommitmentGate: it is not an approval meeting — it is a collective decision with verifiable criteria*
 
 In the absence of an explicit boundary, the transition from exploration to delivery happens regardless. An item "passes" when someone decides it is ready — usually the Product Owner, in a sprint planning session, based on an assessment that no one has formalized with verifiable criteria. An item "passes" because the team wants to start building, or because a deadline is approaching, or because the item has been in the queue long enough to seem mature.
 
-This kind of transition has two problems with a common origin. The first: what was evaluated is not recorded in an auditable way. If the item goes wrong — if the feature does not match what users needed, if the technical premise that underpinned the implementation proves incorrect — there is no way to verify what was considered at the transition, by whom, and with what criteria. Without a record, there is no way to distinguish a well-informed decision from a decision made out of convenience. The second: the absence of formality creates an incentive to keep the item in exploration indefinitely, because the transition has no explicit cost. Nobody calls for the decision because nobody is responsible for calling it. Perpetual Discovery, addressed in the previous chapter, is the direct consequence of a boundary without consequences.
+This kind of transition has two problems with a common origin. The first: what was evaluated is not recorded in an auditable way. If the item goes wrong — if the feature does not match what users needed, if the technical premise that underpinned the implementation proves incorrect — there is no way to verify what was considered at the transition, by whom, and with what criteria. Without a record, there is no way to distinguish a well-informed decision from a decision made out of convenience. The second: the absence of formality creates an incentive to keep the item in exploration indefinitely, because the transition has no explicit cost. Nobody calls for the decision because nobody is responsible for calling it. Perpetual Discovery, addressed in Chapter 5, is the direct consequence of a boundary without consequences.
 
 Both effects share the same cause: an implicit boundary produces either premature promotion (the decision happens before the evidence is sufficient) or exploration without decision (evidence accumulates, but the decision is never made). The CommitmentGate resolves both with a single mechanism: it makes the boundary explicit, verifiable, and consequential.
 
@@ -33,7 +33,7 @@ The third: the 6 canonical outcomes cover the full possible phenomenology of the
 
 Each outcome is an operationally distinct decision with specific mandatory actions.
 
-**Promote**: the evidence justifies commitment. The capability enters Downstream: the BDD Feature and OBC are moved to the committed paths, the item enters the Iteration Plan with status `Entered`, and Downstream begins with Moment 2 of the transition protocol.
+**Promote**: the evidence justifies commitment. The OBC transitions from Draft to **Refining** (Moment 2), the BDD Feature is moved to the committed paths, and the item enters the **Icebox** with Downstream declared. Downstream begins: the Discovery journey runs in blocking mode, open questions from the Decision Package are resolved with dated decisions, and the **Readiness Gate** (Moment 3) verifies that the OBC has reached the **Committed** state before authorizing Planning and Bootstrap.
 
 **Promote with restriction**: part of the capability is ready for commitment; another part needs to continue in exploration. The approved subset transitions to Downstream. The restricted parts remain in Upstream for a new experiment with a more specific hypothesis. The restriction is recorded explicitly in the upstream-trail: it is not a silent gap.
 
@@ -103,7 +103,7 @@ The CommitmentGate is calibrated to a specific balance: formal enough to be veri
 
 The CommitmentGate is designed specifically to make two opposite problems observable and treatable.
 
-Perpetual Discovery: without a formal gate with a stopping criterion and defined participants, an experiment can continue indefinitely because nobody calls the decision. The CommitmentGate not only creates pressure to decide: it names the problem. When an experiment displays the diagnostic signs of Perpetual Discovery (addressed in the previous chapter), calling the CommitmentGate is the specific operational response — not to approve, but to decide what to do. The gate makes the state "in exploration without a stopping criterion" visible and treatable with a known set of outcomes.
+Perpetual Discovery: without a formal gate with a stopping criterion and defined participants, an experiment can continue indefinitely because nobody calls the decision. The CommitmentGate not only creates pressure to decide: it names the problem. When an experiment displays the diagnostic signs of Perpetual Discovery (addressed in Chapter 5), calling the CommitmentGate is the specific operational response — not to approve, but to decide what to do. The gate makes the state "in exploration without a stopping criterion" visible and treatable with a known set of outcomes.
 
 Premature Promotion: committing a capability before having sufficient evidence, whether due to deadline pressure or unverified optimism. The Decision Package as an entry contract — with the rule that the trio member who did not participate in the experiment must be able to read the artifacts and reach the same conclusions — is the protective mechanism. But what the gate adds beyond the Decision Package is the record: the outcome is documented, the participants are identified, the conditions under which the decision was made remain in the upstream-trail. No process prevents intentional adversarial behavior, but that behavior ceases to be invisible, and recorded behaviors are treatable in ways that invisible behaviors are not.
 

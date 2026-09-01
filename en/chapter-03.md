@@ -131,7 +131,7 @@ The ProdOps framework uses a specific sentence to verify whether the modal model
 
 Any compression that maps Upstream to a specific journey ("Upstream is where discovery happens," "Upstream is the exploration phase") is wrong. These phrases reproduce the market interpretation that Chapter 2 examined. They are intuitively attractive because they capture something true (exploration tends to occur with greater frequency in Upstream), but they obscure what is distinctive about the model: that the same journey can be executed in either mode, and that what changes between them is not the content of the work, but the commitment regime that governs it.
 
-With this distinction established, the two following chapters can describe each mode in depth — not as phases with different content, but as commitment configurations with different disciplines.
+With this distinction established, Chapters 5 and 6 describe each mode in depth — not as phases with different content, but as commitment configurations with different disciplines.
 
 ---
 
@@ -143,7 +143,7 @@ The artifact is the **OBC** (Observable Business Contract). The mechanism is the
 
 The OBC is born at the transition from a Business Signal to a Business Intent: from that moment, it always exists. The mode determines under which regime the OBC operates — not when it is born. In Upstream, the OBC is in **Draft** state: incomplete is acceptable, it can be changed freely, it does not block experiments. Upstream uses the OBC as memory of accumulated learning — what is already known about the capability, which hypotheses have been answered, which questions remain open.
 
-The CommitmentGate is the gate that evaluates whether the accumulated evidence justifies transitioning the OBC from Refining to **Committed**. The Decision Package — an artifact with answered hypotheses, identified risks, and a formal recommendation — is the gate's input. A trio executes the CommitmentGate: the product owner, the technical lead, and an independent evaluator. The framework defines six canonical outcomes: the Promote outcome transitions the OBC to Committed and opens Downstream; the remaining outcomes keep the item in Upstream, discard the capability, or suspend work until an external condition is resolved.
+The CommitmentGate is the gate that evaluates whether the accumulated evidence justifies transitioning the OBC from **Draft** to **Refining** (Moment 2). The Decision Package — an artifact with answered hypotheses, identified risks, and a formal recommendation — is the gate's input. A trio executes the CommitmentGate: the **PM**, the **Tech Lead**, and the **Author** (who conducted the experiment and prepared the package; the PM and Tech Lead function as independent readers). The framework defines six canonical outcomes: the Promote outcome transitions the OBC from Draft to Refining, declares Downstream, and opens the Discovery journey in blocking mode — the OBC only reaches the Committed state at the Readiness Gate (Moment 3). The remaining outcomes keep the item in Upstream, discard the capability, or suspend work until an external condition is resolved.
 
 In Downstream, the Committed OBC is the contract under which the commitment was assumed. The blocking gates that govern the Delivery journey verify what is in the OBC: the expected Observable Events, the measurable acceptance criteria, the Initial SLIs with numeric targets. Without a Committed OBC, no Delivery phase begins. With it, rigor shifts from advisory to blocking — not as a preference, but as an operational consequence of the commitment assumed.
 
@@ -153,10 +153,10 @@ graph LR
     A --> UP["Upstream\n(advisory rigor)"]
     A -->|"Signal sufficient"| CG{"CommitmentGate\n6 outcomes"}
     UP -->|"Decision Package"| CG
-    CG -->|"Promote"| C["OBC Committed\n(Downstream Declared)"]
+    CG -->|"Promote"| C["OBC Refining\n(Downstream Declared / Moment 2)"]
     CG -->|"other outcomes"| X["Upstream / Discard /\nWait"]
-    C --> D["Readiness Gate"]
-    D --> E["Iteration Plan"]
+    C --> D["Readiness Gate\n(Moment 3)"]
+    D --> E["OBC Committed\n→ Iteration Plan"]
     E --> F["Bootstrap"]
 ```
 

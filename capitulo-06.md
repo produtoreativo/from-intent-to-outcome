@@ -47,7 +47,7 @@ A distinção entre os três momentos resolve conflitos frequentes: "o BDD deve 
 ## A sequência de Delivery no modo Downstream
 
 ![Materialização do rigor bloqueante: sequência Bootstrap → Promote com gates DoD entre cada fase](images/cap05-downstream-sequence.svg)
-*Figura 5. Sequência Bootstrap → Promote: materialização do rigor bloqueante na jornada Delivery, com Release Trail como evidência append-only*
+*Figura 6. Sequência Bootstrap → Promote: materialização do rigor bloqueante na jornada Delivery, com Release Trail como evidência append-only*
 
 Uma vez que o item passa pelo Readiness Gate e entra no Iteration Plan, a jornada Delivery em modo Downstream executa uma sequência formal:
 

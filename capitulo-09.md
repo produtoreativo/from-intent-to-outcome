@@ -5,7 +5,7 @@
 ## O problema que a Diligence resolve
 
 ![Knowledge Space vs Execution Space: a divergência que a Diligence previne](images/cap08-knowledge-execution-spaces.svg)
-*Figura 8. Knowledge Space (artefatos Markdown) e Execution Space (Issues, Projects) divergem naturalmente. No Upstream, a inconsistência não é bloqueante porque o compromisso não foi assumido; no Downstream é risco operacional porque o compromisso precisa ser verificável.*
+*Figura 9. Knowledge Space (artefatos Markdown) e Execution Space (Issues, Projects) divergem naturalmente. No Upstream, a inconsistência não é bloqueante porque o compromisso não foi assumido; no Downstream é risco operacional porque o compromisso precisa ser verificável.*
 
 Em qualquer sistema de trabalho que opera em dois modos com características diferentes, existe um problema estrutural que não é de processo e não é de tecnologia: a divergência entre o que o sistema *sabe* e o que o sistema *faz*.
 

@@ -4,22 +4,19 @@
 
 ## Antes das três jornadas clássicas
 
-![Assessment como camada de governança informacional](images/cap04-assessment-lifecycle.svg)
-*Figura 4. Assessment como governança informacional contínua: a jornada que antecede e acompanha Discovery, Delivery e Operation*
-
 Quando o framework ProdOps lista cinco jornadas, a tendência natural é lê-las como equivalentes: Discovery, Delivery, Operation, Assessment e Diligence como cinco responsabilidades do mesmo nível, cada uma com seu momento de entrada. Essa leitura é incorreta, e o erro importa.
 
 Assessment não é uma jornada que começa depois de Discovery e antes de Delivery. Não é uma fase de avaliação periódica que acontece em paralelo às três jornadas clássicas de produto. É a camada de governança informacional do framework — a jornada que antecede todas as outras, acompanha cada uma delas durante toda sua duração, e retroalimenta o ciclo com novos Business Intents após a Operation.
 
 A distinção é mais do que posicional. Uma jornada que começa depois de Discovery está subordinada às três clássicas: ela depende de que o trabalho já tenha começado para ter o que avaliar. O Assessment, como definido pelo ProdOps, começa antes: no momento em que um Business Signal aparece no horizonte do produto, antes que qualquer decisão de iniciar Discovery tenha sido tomada.
 
-O que isso significa operacionalmente: toda decisão relevante do ciclo de vida de um capability — se transformar o Signal em Intent, se avançar para CommitmentGate, se o compromisso assumido está sendo honrado, o que o ciclo produziu de aprendizado para o próximo — tem uma contribuição da jornada Assessment. Não porque Assessment decide, mas porque Assessment produz o contexto informacional sem o qual as decisões seriam tomadas com base em percepção, não em evidência.
+O que isso significa operacionalmente: toda decisão relevante do ciclo de vida de uma capability — se transformar o Signal em Intent, se avançar para CommitmentGate, se o compromisso assumido está sendo honrado, o que o ciclo produziu de aprendizado para o próximo — tem uma contribuição da jornada Assessment. Não porque Assessment decide, mas porque Assessment produz o contexto informacional sem o qual as decisões seriam tomadas com base em percepção, não em evidência.
 
 ---
 
 ## A governança informacional começa com o Business Signal
 
-O Business Signal é o ponto de entrada do ciclo de vida de um capability: a observação, qualitativa ou quantitativa, que indica que pode existir uma oportunidade ou um problema que justifica atenção. Antes de qualquer experimento Upstream, antes de qualquer decisão de transformar o Signal em Business Intent, o Assessment já tem trabalho a fazer.
+O Business Signal é o ponto de entrada do ciclo de vida de uma capability: a observação, qualitativa ou quantitativa, que indica que pode existir uma oportunidade ou um problema que justifica atenção. Antes de qualquer experimento Upstream, antes de qualquer decisão de transformar o Signal em Business Intent, o Assessment já tem trabalho a fazer.
 
 A pergunta que o Assessment responde nesse momento não é "o que vamos construir?" nem "como vamos construir?". É: **o ambiente informacional está suficientemente preparado para que a decisão de avançar — ou de não avançar — seja tomada com clareza sobre o que se sabe e o que não se sabe?**
 
@@ -47,7 +44,7 @@ graph TD
 
 A dimensão prospectiva do Assessment é a que opera antes do compromisso Downstream: desde o Signal, durante o Upstream (quando existe), e até o CommitmentGate.
 
-O produto central da dimensão prospectiva é o **Decision Package**: o conjunto de evidências, hipóteses respondidas, riscos identificados e recomendação formal que o trio — Product Owner, Tech Lead e avaliador independente — usará no CommitmentGate para decidir o destino da capability.
+O artefato central que o Assessment prospectivo **avalia** é o **Decision Package**: o conjunto de evidências, hipóteses respondidas, riscos identificados e recomendação formal que o trio — PM, Tech Lead e Autor — usará no CommitmentGate para decidir o destino da capability.
 
 O que o Assessment prospectivo faz não é produzir o Decision Package por si mesmo — isso é responsabilidade da jornada Discovery em modo Upstream. O que Assessment faz é avaliar a qualidade do package: o Decision Package é legível por um membro do trio que não participou do experimento, sem contexto verbal adicional? As hipóteses foram respondidas com critérios de falsificação declarados, ou apenas afirmadas? Os riscos foram avaliados com base em evidência ou apenas listados? A incerteza residual está explicitamente declarada como aceitável, ou foi simplesmente omitida?
 
@@ -111,7 +108,7 @@ A clareza sobre o que o Assessment não faz é tão importante quanto a clareza 
 
 **Assessment não escreve em Timelines.** Os Timelines são registros append-only produzidos pelas jornadas clássicas — Discovery, Delivery e Operation. O Assessment lê os Timelines; nunca os modifica. Essa restrição não é técnica: é epistemológica. A integridade dos registros de cada jornada é a condição que torna o Assessment retrospectivo confiável. Se o Assessment pudesse modificar os registros que lê, seus outputs perderiam a base objetiva que os distingue de percepção e julgamento subjetivo.
 
-**Assessment não decide sobre o destino de um capability.** Ele não aprova nem rejeita a transformação de um Signal em Intent, não vota no CommitmentGate, não autoriza o início do Downstream. Essas decisões pertencem ao trio e ao Product Owner. O que Assessment faz é preparar e qualificar o contexto informacional para que as decisões sejam tomadas com clareza — mas a decisão em si não é do Assessment.
+**Assessment não decide sobre o destino de uma capability.** Ele não aprova nem rejeita a transformação de um Signal em Intent, não vota no CommitmentGate, não autoriza o início do Downstream. Essas decisões pertencem ao trio — PM, Tech Lead e Autor. O que Assessment faz é preparar e qualificar o contexto informacional para que as decisões sejam tomadas com clareza — mas a decisão em si não é do Assessment.
 
 **Assessment não define o que será construído.** Isso é responsabilidade de Discovery e Delivery. O Assessment avalia a qualidade do contexto informacional que informa essas decisões, não o mérito das decisões em si.
 
@@ -127,7 +124,7 @@ O Business Signal BS-001 — o Signal que originou a feature Split Payment — n
 
 O PI-001 documenta por que BS-001 entrou diretamente em Downstream sem Upstream prévio: "demanda confirmada por dois canais independentes, escopo delimitado, deadline inegociável". Essa justificativa é Assessment prospectivo em operação — a avaliação de que o contexto informacional era suficiente para dispensar a exploração pré-CommitmentGate. A ausência de Upstream não significa ausência de avaliação: significa que a avaliação concluiu que a incerteza residual era aceitável para o compromisso.
 
-O EXP-007, aberto em paralelo ao Downstream do Split Payment, é o Assessment em ação durante a Operation. Enquanto DS-61 honrava o compromisso do Split Payment Pix+Boleto, o EXP-007 explorava as combinações prioritárias de métodos, o modelo de domínio adequado para a composição e a política de falha parcial. Quando DS-61 encerrou, o aprendizado do EXP-007 — incluindo o OBC Draft de `payment-composition` — estava pronto para alimentar o próximo ciclo. Esse é o mecanismo de retroalimentação funcionando: a Operation do ciclo corrente produz, via Assessment, os Signals que abrirão o ciclo seguinte.
+O EXP-007, aberto em paralelo ao Downstream do Split Payment, é um experimento Upstream — não a jornada Assessment em si, mas o resultado do Assessment funcionando: a avaliação retrospectiva das lacunas do ciclo em andamento gerou o Signal que motivou abrir o experimento. Enquanto DS-61 honrava o compromisso do Split Payment Pix+Boleto, o EXP-007 explorava as combinações prioritárias de métodos, o modelo de domínio adequado para a composição e a política de falha parcial. Quando DS-61 encerrou, o aprendizado do EXP-007 — incluindo o OBC Draft de `payment-composition` — estava pronto para alimentar o próximo ciclo. Esse é o mecanismo de retroalimentação funcionando: o Assessment leu o ciclo em curso e produziu o Signal; o experimento Upstream respondeu à hipótese.
 
 O que torna esse caso valioso não é sua excepcionalidade. É que ele representa o funcionamento normal do Assessment: acompanhar o ciclo corrente, extrair aprendizado do que está em Operation, e preparar o ambiente informacional para o próximo.
 
@@ -141,12 +138,12 @@ Discovery, Delivery e Operation são jornadas de execução: cada uma tem um inp
 
 Isso não torna o Assessment mais importante do que as três clássicas: torna-o diferente em natureza. Um time pode operar sem Assessment formal — usando julgamento, memória e intuição no lugar de avaliação sistemática. O custo não é imediato: manifesta-se gradualmente, como decisões tomadas com contexto incompleto, riscos identificados tarde, padrões de failure que se repetem porque não foram formalizados no relatório de ciclo anterior.
 
-O ProdOps não prescreve uma implementação única do Assessment. O que o Framework define é o que Assessment é responsável por produzir — Decision Package qualificado, Reliability Plan adequado ao risco, relatório de ciclo com base em evidência, novos Business Signals como retroalimentação — e o Runtime de cada time decide com que frequência, com que nível de formalidade e com que instrumentação o Assessment opera.
+O ProdOps não prescreve uma implementação única do Assessment. O que o Framework define é o que Assessment é responsável por **avaliar e qualificar** — o Decision Package gerado pela Discovery, o Reliability Plan adequado ao risco do compromisso, a saúde do ciclo com base em evidência, os novos Business Signals como retroalimentação — e o Runtime de cada time decide com que frequência, com que nível de formalidade e com que instrumentação o Assessment opera.
 
 Os capítulos seguintes descrevem os modos de execução (Upstream e Downstream) e as jornadas clássicas. Em cada um deles, o Assessment opera como pano de fundo: garantindo que a decisão que encerra uma fase tenha o contexto informacional que ela exige, e que o aprendizado que cada fase produz não se perca entre um ciclo e o próximo.
 
 ---
 
-*Capítulo 4 de 11 | Parte II: Os Modos*
+*Capítulo 4 de 11 | Parte I: O Problema*
 
 ---

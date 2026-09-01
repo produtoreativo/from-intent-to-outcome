@@ -5,11 +5,11 @@
 ## O problema das fronteiras implícitas
 
 ![CommitmentGate: a fronteira com nome e os 6 outcomes canônicos](images/cap06-commitmentgate-outcomes.svg)
-*Figura 6. Os 6 outcomes canônicos do CommitmentGate: não é uma reunião de aprovação, é uma decisão coletiva com critérios verificáveis*
+*Figura 7. Os 6 outcomes canônicos do CommitmentGate: não é uma reunião de aprovação, é uma decisão coletiva com critérios verificáveis*
 
 Na ausência de uma fronteira explícita, a transição de exploração para entrega acontece de qualquer maneira. O item "passa" quando alguém decide que está pronto, geralmente o Product Owner, em uma sessão de planejamento de sprint, baseado em uma avaliação que ninguém formalizou com critérios verificáveis. O item "passa" porque o time quer começar a construir, ou porque o prazo está se aproximando, ou porque o item já está na fila há tempo suficiente para parecer maduro.
 
-Esse tipo de transição tem dois problemas com origem comum. O primeiro: o que foi avaliado não está registrado de forma auditável. Se o item sair errado (se a funcionalidade não corresponder ao que os usuários precisavam, se a premissa técnica que fundamentou a implementação mostrar-se incorreta), não há como verificar o que foi considerado na transição, por quem, com que critérios. Sem registro, não há como distinguir uma decisão bem-informada de uma decisão por conveniência. O segundo: a ausência de formalidade cria incentivo para manter o item em exploração indefinidamente, porque a transição não tem custo explícito. Ninguém convoca a decisão porque ninguém é responsável por convocá-la. O Perpetual Discovery, tratado no capítulo anterior, é a consequência direta de uma fronteira sem consequências.
+Esse tipo de transição tem dois problemas com origem comum. O primeiro: o que foi avaliado não está registrado de forma auditável. Se o item sair errado (se a funcionalidade não corresponder ao que os usuários precisavam, se a premissa técnica que fundamentou a implementação mostrar-se incorreta), não há como verificar o que foi considerado na transição, por quem, com que critérios. Sem registro, não há como distinguir uma decisão bem-informada de uma decisão por conveniência. O segundo: a ausência de formalidade cria incentivo para manter o item em exploração indefinidamente, porque a transição não tem custo explícito. Ninguém convoca a decisão porque ninguém é responsável por convocá-la. O Perpetual Discovery, tratado no Capítulo 5, é a consequência direta de uma fronteira sem consequências.
 
 Os dois efeitos têm a mesma causa: fronteira implícita produz ou promoção prematura (a decisão acontece antes de a evidência ser suficiente) ou exploração sem decisão (a evidência acumula, mas a decisão nunca é tomada). O CommitmentGate resolve ambos com um único mecanismo: torna a fronteira explícita, verificável e com consequências.
 
@@ -33,7 +33,7 @@ A terceira: os 6 outcomes canônicos cobrem toda a fenomenologia possível da de
 
 Cada outcome é uma decisão operacionalmente distinta, com ações obrigatórias específicas.
 
-**Promover**: a evidência justifica o comprometimento. A capability entra no Downstream: BDD Feature e OBC são movidos para os paths comprometidos, o item entra no Iteration Plan com status `Entrou`, e o Downstream inicia com o Momento 2 do protocolo de transição.
+**Promover**: a evidência justifica o comprometimento. O OBC transita de Draft para **Refining** (Momento 2), a BDD Feature é movida para os paths comprometidos, e o item entra no **Icebox** com o Downstream declarado. O Downstream inicia: a jornada Discovery roda em modo bloqueante, as perguntas abertas do Decision Package são resolvidas com decisões datadas, e o **Readiness Gate** (Momento 3) verifica que o OBC atingiu o estado **Committed** antes de autorizar o Planning e o Bootstrap.
 
 **Promover com restrição**: parte da capability está pronta para o compromisso; outra parte precisa continuar em exploração. O subconjunto aprovado transita para o Downstream. As partes restritas permanecem em Upstream para um novo experimento com hipótese mais específica. A restrição é registrada explicitamente no upstream-trail: ela não é uma lacuna silenciosa.
 

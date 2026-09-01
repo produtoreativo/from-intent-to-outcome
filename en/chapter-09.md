@@ -5,7 +5,7 @@
 ## The problem Diligence solves
 
 ![Knowledge Space vs Execution Space: the divergence Diligence prevents](../images/cap08-knowledge-execution-spaces.svg)
-*Figure 8. Knowledge Space (Markdown artifacts) and Execution Space (Issues, Projects) naturally diverge. In Upstream, inconsistency is not blocking because the commitment has not been made; in Downstream it is operational risk because the commitment must be verifiable.*
+*Figure 9. Knowledge Space (Markdown artifacts) and Execution Space (Issues, Projects) naturally diverge. In Upstream, inconsistency is not blocking because the commitment has not been made; in Downstream it is operational risk because the commitment must be verifiable.*
 
 In any work system that operates in two modes with different characteristics, there is a structural problem that is neither process nor technology: the divergence between what the system *knows* and what the system *does*.
 

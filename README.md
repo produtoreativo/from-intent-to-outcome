@@ -23,6 +23,7 @@ Upstream, Downstream e o Novo Modelo Operacional para Produtos Digitais
 | 10 | O problema de modo para agentes de IA | [capitulo-10.md](capitulo-10.md) | Final |
 | 11 | A Magazine Siará como evidência | [capitulo-11.md](capitulo-11.md) | Final |
 | — | Conclusão | [conclusao.md](conclusao.md) | Final |
+| — | Apêndice: Corpus de experimentos | [apendice-experimentos.md](apendice-experimentos.md) | Final |
 | — | Apêndice: Notas de pesquisa | [apendice-pesquisa.md](apendice-pesquisa.md) | Final |
 
 ---

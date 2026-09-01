@@ -164,7 +164,7 @@ Isso é possível e recomendado. Um time que adota o ProdOps em condições reai
 | 016 | Operational Flow Validation | Jornada Delivery completa end-to-end com Feature Restart Protocol |
 | 017 | ProdOps Addon Model | Em planejamento |
 
-Os resultados de EXP-014 (53/53 PASS) e EXP-015 (22/22 × 3 players) são detalhados nos Capítulos 8 e 9, respectivamente, por serem as evidências empíricas mais robustas do corpus sobre Diligence contínua e o problema de modo para agentes.
+Os resultados de EXP-014 (53/53 PASS) e EXP-015 (22/22 × 3 players) são detalhados nos Capítulos 9 e 10, respectivamente, por serem as evidências empíricas mais robustas do corpus sobre Diligence contínua e o problema de modo para agentes.
 
 ---
 

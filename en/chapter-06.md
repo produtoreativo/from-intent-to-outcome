@@ -47,7 +47,7 @@ The distinction between the three moments resolves frequent conflicts: "should B
 ## The Delivery sequence in Downstream mode
 
 ![Materialization of blocking rigor: Bootstrap → Promote sequence with DoD gates between each phase](../images/cap05-downstream-sequence.svg)
-*Figure 5. Bootstrap → Promote sequence: materialization of blocking rigor in the Delivery journey, with Release Trail as append-only evidence*
+*Figure 6. Bootstrap → Promote sequence: materialization of blocking rigor in the Delivery journey, with Release Trail as append-only evidence*
 
 Once the item passes through the Readiness Gate and enters the Iteration Plan, the Delivery journey in Downstream mode executes a formal sequence:
 

@@ -5,7 +5,7 @@
 ## What observability does in each mode
 
 ![Observability as epistemology: distinct roles in each mode](../images/cap07-observability-roles.svg)
-*Figure 7. In Upstream, observability makes uncertainty explicit. In Downstream, it verifies commitment. Without observable evidence, governance and decision-making become dependent on perception, not verification.*
+*Figure 8. In Upstream, observability makes uncertainty explicit. In Downstream, it verifies commitment. Without observable evidence, governance and decision-making become dependent on perception, not verification.*
 
 There is a distinction that ProdOps introduces that is not about observability technology: logs, metrics, traces, dashboards. It is about the epistemic role that observability plays in each execution mode.
 
