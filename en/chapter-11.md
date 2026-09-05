@@ -15,7 +15,7 @@ What makes the Magazine Siará laboratory different from a retrospective case st
 
 ---
 
-## Upstream as disciplined exploration
+## Upstream mode in operation
 
 The Payments API's exploratory work began with a high-risk question: how should the API support the complete credit card lifecycle without crossing the PCI boundary or coupling Checkout to Asaas's contract?
 
@@ -25,7 +25,7 @@ EXP-001 was the first experiment. It produced no production code. It produced a 
 
 Three sequential experiments. No production code written during any of them. The credit card feature entered Downstream only when there was sufficient evidence to commit the capability safely — and only the fraction that evidence supported.
 
-This is Upstream as serious exploration engineering. Not a low-discipline phase before the "real" engineering. A structured effort of uncertainty reduction that produced verifiable knowledge — and a Decision Package that made the CommitmentGate possible.
+This is Upstream mode operated with full engineering rigor: not a low-discipline phase before the "real" engineering. A non-blocking commitment regime that produced verifiable knowledge — and a Decision Package that made the CommitmentGate possible.
 
 ---
 
@@ -57,7 +57,7 @@ The Magazine Siará corpus records a pattern that the linear Upstream → Downst
 
 EXP-007 investigated questions that the speed of the BS-001 CommitmentGate had not resolved in depth: the priority combinations of payment methods (Pix + Boleto, Pix + Card), the adequate domain model for composition, the business events needed to track each combination, and the partial failure policy — what happens when one payment method fails while the other has already been confirmed. The Draft OBC for `payment-composition` was produced during the experiment.
 
-What makes this case rich as evidence is not the exception it represents: it is the operational normality it demonstrates. Downstream and Upstream coexisting for the same product at the same time. The Downstream maintained the delivery commitment (DS-61 within the deadline). The Upstream enriched the model with exploration rigor. When EXP-007 concluded, the learning — including code produced during exploration — was promoted and integrated into the ongoing Downstream.
+What makes this case rich as evidence is not the exception it represents: it is the operational normality it demonstrates. Downstream and Upstream coexisting for the same product at the same time. The Downstream maintained the delivery commitment (DS-61 within the deadline). The Upstream enriched the model operating under its own form of rigor — non-blocking, evidence-oriented. When EXP-007 concluded, the learning — including code produced during exploration — was promoted and integrated into the ongoing Downstream.
 
 This is what ProdOps names as mode coexistence: two commitment regimes operating in parallel for distinct work objects. Not sequence. Not alternation. Coexistence.
 
@@ -107,7 +107,7 @@ The Magazine Siará corpus records an unusual situation: the repository operates
 
 ProdOps Framework v1.14.0 was extracted from the repository as a distributable installable via a one-liner bash command in any repo. The extraction was not planned before development began: it emerged from real delivery practice. Framework version 1.0.0 was the first version without product-specific artifact leakage. Versions 1.1.0 through 1.14.0 document the maturation: a 47-event catalog, installation script, setup scripts, automatic generation of AGENTS.md and CLAUDE.md for consumers, Datadog dashboard templates, framework governance files.
 
-This result inverts the conventional order: the framework did not precede the product. It emerged from the product. This is the most direct demonstration of what the book argues about Upstream: disciplined exploration is not a low-seriousness phase. When conducted with evidence rigor, it can produce artifacts that become infrastructure for other products.
+This result inverts the conventional order: the framework did not precede the product. It emerged from the product. This is the most direct demonstration of what the book argues about Upstream: non-blocking rigor is not a low-seriousness regime. When operated with evidence commitment, it can produce artifacts that become infrastructure for other products.
 
 ---
 

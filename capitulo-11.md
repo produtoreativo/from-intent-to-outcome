@@ -15,7 +15,7 @@ O que torna o laboratório da Magazine Siará diferente de um estudo de caso ret
 
 ---
 
-## O Upstream como exploração disciplinada
+## O modo Upstream em operação
 
 O trabalho exploratório da Payments API começou com uma questão de alto risco: como a API deve suportar o ciclo completo de cartão de crédito sem cruzar a fronteira PCI nem acoplar o Checkout ao contrato do Asaas?
 
@@ -25,7 +25,7 @@ O EXP-001 foi o primeiro experimento. Ele não produziu código de produção. P
 
 Três experimentos sequenciais. Nenhuma linha de código de produção escrita durante os três. A feature de cartão de crédito entrou no Downstream apenas quando havia evidência suficiente para comprometer a capability com segurança — e apenas a fração que a evidência suportava.
 
-Esse é o Upstream como engenharia séria de exploração. Não uma fase de baixa disciplina antes da "verdadeira" engenharia. Um esforço estruturado de redução de incerteza que produziu conhecimento verificável — e um Decision Package que tornou o CommitmentGate possível.
+Esse é o modo Upstream operado com rigor de engenharia: não uma fase de baixa disciplina antes da "verdadeira" engenharia. Um regime de compromisso não bloqueante que produziu conhecimento verificável — e um Decision Package que tornou o CommitmentGate possível.
 
 ---
 
@@ -57,7 +57,7 @@ O corpus da Magazine Siará registra um padrão que a narrativa linear Upstream 
 
 O EXP-007 investigou questões que a velocidade do CommitmentGate de BS-001 não havia resolvido em profundidade: as combinações prioritárias de meios de pagamento (Pix + Boleto, Pix + Cartão), o modelo de domínio adequado para composição, os eventos de negócio necessários para rastrear cada combinação e a política de falha parcial — o que acontece quando um dos meios falha enquanto o outro já foi confirmado. O OBC Draft de `payment-composition` foi produzido durante o experimento.
 
-O que torna esse caso rico como evidência não é a exceção que ele representa: é a normalidade operacional que ele demonstra. Downstream e Upstream coexistindo para o mesmo produto ao mesmo tempo. O Downstream manteve o compromisso de entrega (DS-61 dentro do prazo). O Upstream enriqueceu o modelo com rigor de exploração. Quando o EXP-007 concluiu, o aprendizado — incluindo código produzido durante a exploração — foi promovido e integrado ao Downstream em andamento.
+O que torna esse caso rico como evidência não é a exceção que ele representa: é a normalidade operacional que ele demonstra. Downstream e Upstream coexistindo para o mesmo produto ao mesmo tempo. O Downstream manteve o compromisso de entrega (DS-61 dentro do prazo). O Upstream enriqueceu o modelo operando sob seu regime de rigor próprio — não bloqueante, orientado à evidência. Quando o EXP-007 concluiu, o aprendizado — incluindo código produzido durante a exploração — foi promovido e integrado ao Downstream em andamento.
 
 Isso é o que o ProdOps nomeia como coexistência de modos: dois regimes de compromisso operando em paralelo para objetos de trabalho distintos. Não sequência. Não alternância. Coexistência.
 
@@ -107,7 +107,7 @@ O corpus da Payments API registra uma situação incomum: o repositório opera s
 
 O ProdOps Framework v1.14.0 foi extraído do repositório como distributable instalável por one-liner bash em qualquer repo. A extração não foi planejada antes do desenvolvimento começar: emergiu da prática real de delivery. O framework versão 1.0.0 foi a primeira versão sem leakage de artefatos específicos do produto. As versões 1.1.0 a 1.14.0 documentam a maturação: catálogo de 47 eventos, script de instalação, scripts de setup, geração automática de AGENTS.md e CLAUDE.md para consumidores, templates de dashboard do Datadog, arquivos de governança do framework.
 
-Esse resultado inverte a ordem convencional: o framework não precedeu o produto. Emergiu do produto. Isso é a demonstração mais direta do que o livro argumenta sobre o Upstream: exploração disciplinada não é uma fase de baixa seriedade. Quando conduzida com rigor de evidência, ela pode produzir artefatos que se tornam infraestrutura de outros produtos.
+Esse resultado inverte a ordem convencional: o framework não precedeu o produto. Emergiu do produto. Isso é a demonstração mais direta do que o livro argumenta sobre o Upstream: rigor não bloqueante não é uma fase de baixa seriedade. Quando operado com compromisso de evidência, ele pode produzir artefatos que se tornam infraestrutura de outros produtos.
 
 ---
 

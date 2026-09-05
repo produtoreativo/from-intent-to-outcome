@@ -29,7 +29,7 @@ graph TD
     BS["Business Signal"] --> A["Assessment prospectivo\n(avaliação do Signal)"]
     A --> |"contexto suficiente"| BI["Business Intent\n(OBC Draft criado)"]
     A --> |"contexto insuficiente"| EV["Enriquecimento do Signal\n(mais evidência necessária)"]
-    BI --> UP["Upstream\n(Discovery + Assessment paralelos)"]
+    BI --> UP["Upstream\n(rigor advisory)"]
     BI --> |"Signal direto para Downstream"| CG["CommitmentGate\n(Decision Package já existe)"]
     UP --> DP["Decision Package\n(produto do Upstream)"]
     DP --> CG
