@@ -170,3 +170,7 @@ The next chapter defines what a mode of execution is and why that definition res
 **Discovery/delivery consensus:** "The discovery-before-delivery consensus" → "The guidance to perform discovery before committing significant construction resources." Avoids treating a temporal sequence as the uniform position of all three authors, consistent with the fact that Torres works with continuous discovery and Singer acknowledges uncertainty during execution.
 
 **LEARN → COMMIT → REALIZE:** a sentence was added explicitly stating that the arrow does not represent a temporal sequence, but a progressive transformation of the type of commitment governing the work. Aligns the synthesis with the central thesis of the chapter.
+
+---
+
+[→ Chapter 3 — What an execution mode is](chapter-03.md)

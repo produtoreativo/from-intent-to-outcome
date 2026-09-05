@@ -141,3 +141,7 @@ In both cases, the absence of observability is not a technical instrumentation p
 ---
 
 *Chapter 8 of 11 | Part IV: The Common Substrate*
+
+---
+
+[→ Chapter 9 — Diligence: guardian of consistency](chapter-09.md)

@@ -169,3 +169,7 @@ Os resultados de EXP-014 (53/53 PASS) e EXP-015 (22/22 × 3 players) são detalh
 ---
 
 *Apêndice | From Intent To Outcome: Upstream, Downstream e o Novo Modelo Operacional para Produtos Digitais*
+
+---
+
+[→ Apêndice: Notas de Pesquisa](apendice-pesquisa.md)

@@ -112,3 +112,7 @@ Essa bidirecionalidade significa que a Diligence não é subordinada ao Assessme
 ---
 
 *Capítulo 9 de 11 | Parte IV: O Substrato Comum*
+
+---
+
+[→ Capítulo 10 — O problema de modo para agentes de IA](capitulo-10.md)

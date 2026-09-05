@@ -141,3 +141,7 @@ Em ambos os casos, a ausência de observabilidade não é um problema técnico d
 ---
 
 *Capítulo 8 de 11 | Parte IV: O Substrato Comum*
+
+---
+
+[→ Capítulo 9 — Diligence: guardião da consistência](capitulo-09.md)

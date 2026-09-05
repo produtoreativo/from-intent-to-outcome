@@ -147,3 +147,7 @@ Os capítulos seguintes descrevem os modos de execução (Upstream e Downstream)
 *Capítulo 4 de 11 | Parte II: Os Modos*
 
 ---
+
+---
+
+[→ Capítulo 5 — Upstream: o modo da incerteza explícita](capitulo-05.md)

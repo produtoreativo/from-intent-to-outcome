@@ -146,3 +146,7 @@ Vale atenção especial ao item "Produzir OBC Committed: isso é Discovery no Do
 ---
 
 *Capítulo 5 de 11 | Parte II: Os Modos*
+
+---
+
+[→ Capítulo 6 — Downstream: o modo do compromisso](capitulo-06.md)

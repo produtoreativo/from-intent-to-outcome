@@ -72,3 +72,7 @@ Guardar a palavra não é suficiente. Usá-la com precisão é o que transforma 
 ---
 
 *Conclusão | Upstream e Downstream sob a ótica do ProdOps*
+
+---
+
+[→ Apêndice: Corpus de Experimentos](apendice-experimentos.md)

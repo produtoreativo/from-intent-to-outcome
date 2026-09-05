@@ -112,3 +112,7 @@ EXP-014 of the Payments API tested this property empirically: can the ProdOps Ru
 ---
 
 *Chapter 9 of 11 | Part IV: The Common Substrate*
+
+---
+
+[→ Chapter 10 — The mode problem for AI agents](chapter-10.md)

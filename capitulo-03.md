@@ -167,3 +167,7 @@ Com o OBC como artefato e o CommitmentGate como mecanismo, os três capítulos s
 ---
 
 *Capítulo 3 de 11 | Parte II: Os Modos*
+
+---
+
+[→ Capítulo 4 — Assessment: a jornada que acompanha todas](capitulo-04.md)

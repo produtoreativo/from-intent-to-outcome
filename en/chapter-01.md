@@ -152,3 +152,7 @@ Chapter 4 describes Assessment in depth: what it evaluates, what it produces, an
 **Definition of rigor:** replaced the specific operational definition ("rigor is the quality of evidence" / "rigor is the satisfaction of acceptance criteria") with the formulation: "Rigor is the degree of demands applied to reduce relevant uncertainty, sustain a decision, or verify the fulfillment of a commitment." Followed by the description of the two regimes as emerging from the type of commitment, not as closed and universal types. The "confusion" paragraph was adjusted to use "regime" instead of fixed labels with descriptive parentheses.
 
 **Closing about the literature:** "The most common answer in the literature (separating discovery from delivery sequentially)" → "A recurring interpretation in product literature and practice, by separating Discovery and delivery as distinct phases." Acknowledges the genuine merit of the sequential interpretation before identifying its limitation. Consistent with the revision already made in Chapter 2.
+
+---
+
+[→ Chapter 2 — Why the market interpretation does not solve it](chapter-02.md)

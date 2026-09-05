@@ -121,3 +121,7 @@ O ProdOps, ao identificar e nomear essa contradição, e ao criar um protocolo e
 ---
 
 *Capítulo 10 de 11 | Parte V: Agentes nos dois Modos*
+
+---
+
+[→ Capítulo 11 — A Magazine Siará como evidência](capitulo-11.md)

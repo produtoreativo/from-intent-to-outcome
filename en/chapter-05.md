@@ -146,3 +146,7 @@ Special attention is due to the item "Producing Committed OBC: that is Discovery
 ---
 
 *Chapter 5 of 11 | Part II: The Modes*
+
+---
+
+[→ Chapter 6 — Downstream: the mode of commitment](chapter-06.md)

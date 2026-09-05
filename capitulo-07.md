@@ -126,3 +126,7 @@ O que "sem Upstream" descreve com precisão é a ausência de experimentos pré-
 ---
 
 *Capítulo 7 de 11 | Parte III: A Fronteira*
+
+---
+
+[→ Capítulo 8 — Observabilidade como epistemologia, não como infraestrutura](capitulo-08.md)

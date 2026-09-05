@@ -31,3 +31,7 @@ It is the central spring of the Framework I began building that year, and which 
 ---
 
 *Prologue | From Intent to Outcome: Upstream, Downstream, and the New Operating Model for Digital Products*
+
+---
+
+[→ Chapter 1 — The confusion is not about process; it is about commitment](chapter-01.md)

@@ -121,3 +121,7 @@ ProdOps, by identifying and naming this contradiction, and by creating an explic
 ---
 
 *Chapter 10 of 11 | Part V: Agents in Both Modes*
+
+---
+
+[→ Chapter 11 — Magazine Siará as evidence](chapter-11.md)

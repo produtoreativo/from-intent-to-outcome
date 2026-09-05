@@ -126,3 +126,7 @@ A distinção entre Downstream como estrutura e Downstream como pressão é oper
 ---
 
 *Capítulo 6 de 11 | Parte II: Os Modos*
+
+---
+
+[→ Capítulo 7 — O CommitmentGate: a fronteira com nome](capitulo-07.md)

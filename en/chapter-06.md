@@ -126,3 +126,7 @@ The distinction between Downstream as structure and Downstream as pressure is op
 ---
 
 *Chapter 6 of 11 | Part II: The Modes*
+
+---
+
+[→ Chapter 7 — The CommitmentGate: the boundary with a name](chapter-07.md)
