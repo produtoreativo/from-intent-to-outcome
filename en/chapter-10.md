@@ -125,3 +125,4 @@ ProdOps, by identifying and naming this contradiction, and by creating an explic
 ---
 
 [→ Chapter 11 — Magazine Siará as evidence](chapter-11.md)
+[← Chapter 9 — Diligence: guardian of consistency](chapter-09.md)

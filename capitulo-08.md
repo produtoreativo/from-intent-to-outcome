@@ -145,3 +145,4 @@ Em ambos os casos, a ausência de observabilidade não é um problema técnico d
 ---
 
 [→ Capítulo 9 — Diligence: guardião da consistência](capitulo-09.md)
+[← Capítulo 7 — O CommitmentGate: a fronteira com nome](capitulo-07.md)

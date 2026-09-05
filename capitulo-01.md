@@ -136,3 +136,4 @@ O Capítulo 4 descreve o Assessment em profundidade: o que ele avalia, o que ele
 ---
 
 [→ Capítulo 2 — Por que a leitura de mercado não resolve](capitulo-02.md)
+[← Prólogo](prologo.md)

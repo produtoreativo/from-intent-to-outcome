@@ -125,3 +125,4 @@ O ProdOps, ao identificar e nomear essa contradição, e ao criar um protocolo e
 ---
 
 [→ Capítulo 11 — A Magazine Siará como evidência](capitulo-11.md)
+[← Capítulo 9 — Diligence: guardião da consistência](capitulo-09.md)

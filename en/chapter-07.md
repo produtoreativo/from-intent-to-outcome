@@ -130,3 +130,4 @@ What "without Upstream" describes precisely is the absence of pre-CommitmentGate
 ---
 
 [→ Chapter 8 — Observability as epistemology, not infrastructure](chapter-08.md)
+[← Chapter 6 — Downstream: the mode of commitment](chapter-06.md)

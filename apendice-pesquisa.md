@@ -196,3 +196,4 @@ WNUK, Krzysztof; REGNELL, Björn; KARLSSON, Lena. "Investigating Upstream versus
 - Snowden, David J. "Cynefin Framework" (definição canônica). Disponível em: cynefin.io
 - Singer, Ryan. "Shape Up" (edição online completa). Disponível em: basecamp.com/shapeup
 - Torres, Teresa. "Continuous Discovery Habits" (blog de referência). Disponível em: producttalk.org
+[← Apêndice: Corpus de Experimentos](apendice-experimentos.md)

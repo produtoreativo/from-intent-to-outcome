@@ -171,3 +171,4 @@ With the OBC as artifact and the CommitmentGate as mechanism, the three followin
 ---
 
 [→ Chapter 4 — Assessment: the journey that accompanies all others](chapter-04.md)
+[← Chapter 2 — Why the market interpretation does not solve it](chapter-02.md)

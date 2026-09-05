@@ -152,3 +152,4 @@ The following chapters describe the execution modes (Upstream and Downstream) an
 ---
 
 [→ Chapter 5 — Upstream: the mode of explicit uncertainty](chapter-05.md)
+[← Chapter 3 — What an execution mode is](chapter-03.md)

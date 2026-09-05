@@ -130,3 +130,4 @@ A distinção entre Downstream como estrutura e Downstream como pressão é oper
 ---
 
 [→ Capítulo 7 — O CommitmentGate: a fronteira com nome](capitulo-07.md)
+[← Capítulo 5 — Upstream: o modo da incerteza explícita](capitulo-05.md)

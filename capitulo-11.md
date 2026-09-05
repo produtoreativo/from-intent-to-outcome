@@ -154,3 +154,4 @@ Quando esse ciclo for documentado com o mesmo nível de rigor com que os 17 expe
 ---
 
 [→ Conclusão](conclusao.md)
+[← Capítulo 10 — O problema de modo para agentes de IA](capitulo-10.md)

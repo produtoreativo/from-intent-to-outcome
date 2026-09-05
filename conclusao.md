@@ -76,3 +76,4 @@ Guardar a palavra não é suficiente. Usá-la com precisão é o que transforma 
 ---
 
 [→ Apêndice: Corpus de Experimentos](apendice-experimentos.md)
+[← Capítulo 11 — A Magazine Siará como evidência](capitulo-11.md)

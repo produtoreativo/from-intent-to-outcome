@@ -171,3 +171,4 @@ Com o OBC como artefato e o CommitmentGate como mecanismo, os três capítulos s
 ---
 
 [→ Capítulo 4 — Assessment: a jornada que acompanha todas](capitulo-04.md)
+[← Capítulo 2 — Por que a leitura de mercado não resolve](capitulo-02.md)

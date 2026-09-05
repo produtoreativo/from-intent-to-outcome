@@ -116,3 +116,4 @@ EXP-014 of the Payments API tested this property empirically: can the ProdOps Ru
 ---
 
 [→ Chapter 10 — The mode problem for AI agents](chapter-10.md)
+[← Chapter 8 — Observability as epistemology, not infrastructure](chapter-08.md)
