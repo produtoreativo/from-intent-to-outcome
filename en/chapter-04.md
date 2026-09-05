@@ -145,6 +145,6 @@ The following chapters describe the execution modes (Upstream and Downstream) an
 
 ---
 
-*Chapter 4 of 11 | Part I: The Problem*
+*Chapter 4 of 11 | Part II: The Modes*
 
 ---

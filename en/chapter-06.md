@@ -34,7 +34,7 @@ graph TD
     M3 -->|"Open Finding"| BLOCK["Return to Icebox\nor formal Waiver"]
 ```
 
-**Moment 1: CommitmentGate** (Downstream Declared). The trio (PM + Tech Lead + Author) evaluates whether the evidence produced justifies the commitment. The criteria include: hypothesis answered with the Evidence Threshold satisfied (if declared), Decision Package with real substance, OBC Draft existing as a file, and BDD drafted and legible. The most consequential result is Promote, which triggers Moment 2. The CommitmentGate does not create the commitment: it makes verifiable the collective decision to assume a commitment that the trio has already formed.
+**Moment 1: CommitmentGate** (Downstream Declared). The trio (PM + Tech Lead + Author) evaluates whether the evidence produced justifies the commitment. The criteria include: hypothesis answered with the Evidence Threshold satisfied (if declared), Decision Package with real substance, OBC Draft existing as a file, and BDD drafted and legible. The most consequential result is Promote, which triggers Moment 2. The CommitmentGate does not create the commitment: it makes the trio's decision about the capability's fate verifiable and traceable.
 
 **Moment 2: Artifact Promotion + Icebox Entry**. Immediately after the CommitmentGate with the Promote outcome, the experiment artifacts transition into the Downstream space. The OBC changes from Draft to Refining. A Work Item is created in the Icebox referencing the experiment and the OBC. The upstream-trail is updated with the outcome and the reference to the Work Item. The experiment is not closed: it remains as a record of evidence and learnings. Only the status changes. Downstream is active, but Delivery has not started.
 

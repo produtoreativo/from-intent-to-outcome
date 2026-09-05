@@ -144,6 +144,6 @@ Os capítulos seguintes descrevem os modos de execução (Upstream e Downstream)
 
 ---
 
-*Capítulo 4 de 11 | Parte I: O Problema*
+*Capítulo 4 de 11 | Parte II: Os Modos*
 
 ---
