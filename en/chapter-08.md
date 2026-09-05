@@ -144,5 +144,5 @@ In both cases, the absence of observability is not a technical instrumentation p
 
 ---
 
-[→ Chapter 9 — Diligence: guardian of consistency](chapter-09.md)
 [← Chapter 7 — The CommitmentGate: the boundary with a name](chapter-07.md)
+[→ Chapter 9 — Diligence: guardian of consistency](chapter-09.md)

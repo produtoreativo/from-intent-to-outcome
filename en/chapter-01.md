@@ -155,5 +155,5 @@ Chapter 4 describes Assessment in depth: what it evaluates, what it produces, an
 
 ---
 
-[→ Chapter 2 — Why the market interpretation does not solve it](chapter-02.md)
 [← Prologue](prologue.md)
+[→ Chapter 2 — Why the market interpretation does not solve it](chapter-02.md)

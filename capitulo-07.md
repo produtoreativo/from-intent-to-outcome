@@ -129,5 +129,5 @@ O que "sem Upstream" descreve com precisão é a ausência de experimentos pré-
 
 ---
 
-[→ Capítulo 8 — Observabilidade como epistemologia, não como infraestrutura](capitulo-08.md)
 [← Capítulo 6 — Downstream: o modo do compromisso](capitulo-06.md)
+[→ Capítulo 8 — Observabilidade como epistemologia, não como infraestrutura](capitulo-08.md)

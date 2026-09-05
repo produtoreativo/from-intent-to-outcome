@@ -115,5 +115,5 @@ Essa bidirecionalidade significa que a Diligence não é subordinada ao Assessme
 
 ---
 
-[→ Capítulo 10 — O problema de modo para agentes de IA](capitulo-10.md)
 [← Capítulo 8 — Observabilidade como epistemologia, não como infraestrutura](capitulo-08.md)
+[→ Capítulo 10 — O problema de modo para agentes de IA](capitulo-10.md)

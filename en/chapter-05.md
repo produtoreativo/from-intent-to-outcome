@@ -149,5 +149,5 @@ Special attention is due to the item "Producing Committed OBC: that is Discovery
 
 ---
 
-[→ Chapter 6 — Downstream: the mode of commitment](chapter-06.md)
 [← Chapter 4 — Assessment: the journey that accompanies all others](chapter-04.md)
+[→ Chapter 6 — Downstream: the mode of commitment](chapter-06.md)

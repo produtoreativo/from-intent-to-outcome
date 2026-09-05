@@ -172,5 +172,5 @@ Os resultados de EXP-014 (53/53 PASS) e EXP-015 (22/22 × 3 players) são detalh
 
 ---
 
-[→ Apêndice: Notas de Pesquisa](apendice-pesquisa.md)
 [← Conclusão](conclusao.md)
+[→ Apêndice: Notas de Pesquisa](apendice-pesquisa.md)

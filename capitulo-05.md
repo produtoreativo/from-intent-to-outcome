@@ -149,5 +149,5 @@ Vale atenção especial ao item "Produzir OBC Committed: isso é Discovery no Do
 
 ---
 
-[→ Capítulo 6 — Downstream: o modo do compromisso](capitulo-06.md)
 [← Capítulo 4 — Assessment: a jornada que acompanha todas](capitulo-04.md)
+[→ Capítulo 6 — Downstream: o modo do compromisso](capitulo-06.md)

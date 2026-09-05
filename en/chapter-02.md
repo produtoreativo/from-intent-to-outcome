@@ -173,5 +173,5 @@ The next chapter defines what a mode of execution is and why that definition res
 
 ---
 
-[→ Chapter 3 — What an execution mode is](chapter-03.md)
 [← Chapter 1 — The confusion is not about process; it is about commitment](chapter-01.md)
+[→ Chapter 3 — What an execution mode is](chapter-03.md)

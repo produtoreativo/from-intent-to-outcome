@@ -129,5 +129,5 @@ The distinction between Downstream as structure and Downstream as pressure is op
 
 ---
 
-[→ Chapter 7 — The CommitmentGate: the boundary with a name](chapter-07.md)
 [← Chapter 5 — Upstream: the mode of explicit uncertainty](chapter-05.md)
+[→ Chapter 7 — The CommitmentGate: the boundary with a name](chapter-07.md)
