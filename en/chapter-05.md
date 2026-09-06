@@ -131,7 +131,7 @@ EXP-001 opened with a high-risk question: how to support the complete credit car
 
 The EXP-003 Decision Package recommends Promote with restriction (outcome ②): the hosted slice advances; the remaining options remain in Upstream awaiting third-party decisions (PCI scope, token model, Checkout UX). The CommitmentGate was executed with this Decision Package: the trio recorded the outcome, and Downstream began exclusively for hosted entry.
 
-Three sequential experiments. No production code during any of them. A recommendation verifiable by third parties. A CommitmentGate that decided the capability's fate with sufficient evidence — and with an explicit restriction on what the evidence did not support. This is Upstream as serious exploration engineering.
+Three sequential experiments. No production code during any of them. A recommendation verifiable by third parties. A CommitmentGate that decided the capability's fate with sufficient evidence — and with an explicit restriction on what the evidence did not support. This is Upstream mode operated with full engineering rigor: not a low-discipline phase before the "real" engineering. A non-blocking commitment regime that produced verifiable knowledge — and a Decision Package that made the CommitmentGate possible.
 
 ---
 

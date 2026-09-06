@@ -131,7 +131,7 @@ O EXP-001 abriu com uma questão de alto risco: como suportar o ciclo completo d
 
 O Decision Package do EXP-003 recomenda Promover com restrição (outcome ②): o slice hosted avança; as demais opções permanecem em Upstream aguardando decisões de terceiros (escopo PCI, modelo de token, UX do Checkout). O CommitmentGate foi executado com esse Decision Package: o trio registrou o outcome, e o Downstream iniciou exclusivamente para a entrada hosted.
 
-Três experimentos sequenciais. Nenhuma linha de código de produção durante os três. Uma recomendação verificável por terceiros. Um CommitmentGate que decidiu sobre o destino da capability com evidência suficiente — e com restrição explícita sobre o que a evidência não suportava. Esse é o Upstream como engenharia séria de exploração.
+Três experimentos sequenciais. Nenhuma linha de código de produção durante os três. Uma recomendação verificável por terceiros. Um CommitmentGate que decidiu sobre o destino da capability com evidência suficiente — e com restrição explícita sobre o que a evidência não suportava. Esse é o modo Upstream operado com rigor de engenharia: não uma fase de baixa disciplina antes da "engenharia real". Um regime de compromisso não bloqueante que produziu conhecimento verificável — e um Decision Package que tornou o CommitmentGate possível.
 
 ---
 
