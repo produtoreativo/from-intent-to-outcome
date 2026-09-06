@@ -23,7 +23,7 @@ Os experimentos a seguir investigaram diretamente as capabilities da Payments AP
 
 **O que fez:** Antes de escrever uma linha de código de produção, especificou os seis fluxos do ciclo (autorização, confirmação, análise de risco, recusa, cancelamento, estorno) com BDD scenarios e Observable Events obrigatórios para cada um. Definiu também as dimensões que nunca poderiam aparecer nos logs: número do cartão, CVV, token do provedor.
 
-**Resultado:** Decision Package recomendando hosted checkout como único slice autorizado para o primeiro Downstream. As demais opções (tokenizado, transparente) permanecem em Upstream aguardando decisões externas de Security e Checkout.
+**Resultado:** Hipótese formulada e contrato de observabilidade definido: seis fluxos do ciclo de crédito com BDD scenarios e Observable Events obrigatórios; dimensões proibidas nos logs (número do cartão, CVV, token do provedor). Insumo para EXP-002 (validação do sandbox) e EXP-003 (comparação dos modelos de integração).
 
 **Conexão com o framework:** Demonstra ODD (Observability Driven Design) no modo Upstream — o que precisa ser observável é decidido antes do código.
 
@@ -49,7 +49,7 @@ Os experimentos a seguir investigaram diretamente as capabilities da Payments AP
 
 **O que fez:** Comparou os três modelos em oito dimensões: complexidade de API, PCI scope, segurança, idempotência, observabilidade, retry, experiência do usuário e complexidade operacional.
 
-**Resultado:** Hosted checkout é o primeiro slice — menor PCI, menor risco operacional, menor mudança na arquitetura existente. Tokenizado é a segunda evolução futura. Direct Capture (raw) fora do escopo até aprovação explícita de Security.
+**Resultado:** Decision Package canônico da sequência EXP-001/002/003. Hosted checkout é o primeiro slice — menor PCI, menor risco operacional, menor mudança na arquitetura existente. Tokenizado é a segunda evolução futura. Direct Capture (raw) fora do escopo até aprovação explícita de Security.
 
 **Conexão com o framework:** Demonstra CommitmentGate com restrição (outcome ②): apenas o slice confirmado avança; o restante permanece em Upstream.
 

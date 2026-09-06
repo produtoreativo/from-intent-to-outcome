@@ -84,7 +84,7 @@ Três condições estruturais produzem Perpetual Discovery. A ausência de Evide
 
 O framework ProdOps identifica quatro sinais diagnósticos que tornam o Perpetual Discovery reconhecível sem depender de julgamento subjetivo. Os limiares numéricos abaixo são heurísticas orientadoras, não critérios canonizados. O que é invariante é a estrutura do diagnóstico; o que cada time calibra é o threshold:
 
-**S1: Ausência de progressão no upstream-trail por 3+ sessões.** Se o trail tem entradas mas a seção Hypothesis do experiment.md não mudou há mais de 2 semanas e o Decision Package ainda não tem substance, o experimento está estagnado.
+**S1: Ausência de progressão no upstream-trail por 3+ sessões.** Se o trail tem entradas mas a seção Hypothesis do experiment.md não mudou há mais de 2 semanas e o Decision Package ainda não tem substância, o experimento está estagnado.
 
 **S2: Questions to Answer com status "não respondível com evidência disponível".** Se alguma pergunta foi marcada como não respondível sem que a hipótese central tenha sido respondida por outra via, e esse estado persiste há mais de 5 dias sem evidência substituta, o experimento está bloqueado.
 
@@ -117,7 +117,7 @@ Existem três atos distintos de implantação no Upstream, com autorizações e 
 
 **Produção Controlada**: código Upstream implantado em produção real, sem CommitmentGate. Autorização explícita do time e da liderança. Rollback imediato disponível. Sem Release Trail exigido — o que não significa sem evidência: o que foi observado em Produção Controlada deve ser registrado no upstream-trail do experimento. Isso não é violação do modo Upstream: é um ato autorizado. O que a diferencia da promoção é que o *compromisso de capability* (OBC Committed, gates do Downstream) não foi assumido. O código chega a produção; a capability permanece em exploração.
 
-**Promoção de Capability**: CommitmentGate com outcome Promover. BDD Feature e OBC movidos para os paths comprometidos. O item entra no Iteration Plan. O Downstream começa.
+**Promoção de Capability**: CommitmentGate com outcome Promover. BDD Feature e OBC movidos para os paths comprometidos. O item entra no Icebox. O Downstream está declarado; a Delivery começa apenas após o Readiness Gate e o Planning.
 
 A distinção entre Produção Controlada e Promoção de Capability é precisamente a distinção que o modelo modal resolve: no primeiro caso, o código está em produção mas a capability não está comprometida; no segundo, o compromisso foi formalmente assumido com todos os seus gates.
 
