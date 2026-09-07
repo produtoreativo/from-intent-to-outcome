@@ -103,16 +103,18 @@ O **Reliability Plan** é o segundo produto relevante da dimensão prospectiva. 
 
 ## A dimensão retrospectiva: lendo o que o passado produziu
 
-Se a dimensão prospectiva do Assessment prepara o ambiente para a decisão, a dimensão retrospectiva extrai aprendizado do ciclo encerrado e alimenta o próximo.
+Se a dimensão prospectiva do Assessment prepara o ambiente para a decisão, a dimensão retrospectiva extrai aprendizado de qualquer ciclo encerrado e alimenta o próximo.
 
-O Assessment retrospectivo é ativado após a conclusão de um ciclo Downstream completo: Product Capability entregue, em estado Released, com Release Trail finalizado. Seu foco é o que o ciclo produziu de evidência sobre o funcionamento do framework, não sobre o funcionamento da Product Capability em si. A Product Capability funciona: os OBCs documentam isso. O que o Assessment retrospectivo pergunta é: como o ciclo funcionou? O que o histórico revela sobre a saúde do sistema de trabalho?
+O Assessment retrospectivo é ativado ao final de qualquer ciclo com registro formal: ao término de um experimento Upstream (independentemente do outcome do Commitment Gate), ou após a conclusão de um ciclo Downstream completo, com Product Capability em estado Released e Release Trail finalizado. Em ambos os casos, seu foco é o que o ciclo produziu de evidência sobre o funcionamento do sistema de trabalho. A pergunta que o Assessment retrospectivo faz é sempre a mesma: o que foi aprendido? Como o ciclo funcionou? O que o histórico revela sobre a saúde do processo?
 
-As fontes primárias do Assessment retrospectivo são os **Timelines** (os registros cronológicos de cada ciclo) e os artefatos de medição que o ciclo gerou: DORA Extended metrics, Gate Failure Rate (frequência com que os Gates do Downstream foram bloqueados antes de serem satisfeitos), Decision Latency (tempo entre evidência disponível e convocação do Commitment Gate), Discovery WIP (experimentos simultâneos em andamento).
+As fontes variam conforme o tipo de ciclo encerrado. Em ciclos **Upstream**: o experiment trail (o registro cronológico da investigação), o Decision Package produzido, o outcome do Commitment Gate e o estado das hipóteses respondidas ou refutadas. Em ciclos **Downstream**: os Timelines e os artefatos de medição gerados, entre eles DORA Extended metrics, Gate Failure Rate (frequência com que os Gates foram bloqueados antes de serem satisfeitos), Decision Latency (tempo entre evidência disponível e convocação do Commitment Gate), Discovery WIP (experimentos simultâneos em andamento), Postmortems e OBCs em estado Released.
 
-A partir dessas fontes, o Assessment retrospectivo produz dois outputs. O primeiro é o **relatório de ciclo**: uma síntese do que o ciclo revelou sobre a saúde do processo: anti-padrões detectados, signals diagnósticos ativados, recomendações para o próximo ciclo. O segundo, mais importante, é o conjunto de **novos Business Signals**: observações derivadas da Operation que indicam oportunidades ou problemas a investigar no próximo ciclo. É por esse mecanismo que a retroalimentação do ProdOps opera, não como um ritual de retrospectiva desconectado do fluxo de trabalho, mas como a produção estruturada de inputs para o início do próximo ciclo.
+A partir dessas fontes, o Assessment retrospectivo produz dois outputs. O primeiro é o **relatório de ciclo**: uma síntese do que o ciclo revelou sobre a saúde do processo: anti-padrões detectados, signals diagnósticos ativados, recomendações para o próximo ciclo. O segundo, mais importante, é o conjunto de **novos Business Signals**: observações derivadas da Operation ou dos resultados de experimentos Upstream que indicam oportunidades ou problemas a investigar no próximo ciclo. É por esse mecanismo que a retroalimentação do ProdOps opera, não como um ritual de retrospectiva desconectado do fluxo de trabalho, mas como a produção estruturada de inputs para o início do próximo ciclo.
 
 | Fonte de dados | O que o Assessment retrospectivo lê |
 |---|---|
+| Experiment Trails | Como o experimento Upstream foi conduzido; hipóteses respondidas ou refutadas |
+| Decision Packages | Qualidade da evidência produzida; recomendação e outcome do Commitment Gate |
 | Release Trails | Como cada fase do Delivery foi executada; onde o fluxo travou |
 | Gate Failure Rate | Frequência de bloqueios por Gates não satisfeitos; sinal de rigor inadequado |
 | Decision Latency | Tempo entre evidência e Commitment Gate; sinal de Perpetual Discovery |

@@ -103,16 +103,18 @@ The **Reliability Plan** is the second relevant output of the prospective dimens
 
 ## The retrospective dimension: reading what the past produced
 
-If the prospective dimension of Assessment prepares the environment for the decision, the retrospective dimension extracts learning from the completed cycle and feeds it into the next.
+If the prospective dimension of Assessment prepares the environment for the decision, the retrospective dimension extracts learning from any concluded cycle and feeds it into the next.
 
-Retrospective Assessment is activated after the completion of a full Downstream cycle: Product Capability delivered, in Released state, with Release Trail finalized. Its focus is what the cycle produced as evidence about how the framework functioned, not about how the Product Capability itself functioned. The Product Capability works: the OBCs document that. What retrospective Assessment asks is: how did the cycle work? What does the history reveal about the health of the work system?
+Retrospective Assessment is activated at the end of any cycle with a formal record: at the conclusion of an Upstream experiment (regardless of the Commitment Gate outcome), or after the completion of a full Downstream cycle, with the Product Capability in Released state and the Release Trail finalized. In both cases, its focus is what the cycle produced as evidence about how the work system functioned. The question retrospective Assessment always asks is the same: what was learned? How did the cycle work? What does the history reveal about the health of the process?
 
-The primary sources for retrospective Assessment are the **Timelines** (the chronological records of each cycle) and the measurement artifacts the cycle generated: DORA Extended metrics, Gate Failure Rate (frequency with which Downstream Gates were blocked before being satisfied), Decision Latency (time between available evidence and Commitment Gate convening), Discovery WIP (simultaneous experiments in progress).
+The sources vary according to the type of concluded cycle. For **Upstream** cycles: the experiment trail (the chronological record of the investigation), the Decision Package produced, the Commitment Gate outcome, and the state of answered or refuted hypotheses. For **Downstream** cycles: the Timelines and the measurement artifacts generated, including DORA Extended metrics, Gate Failure Rate (frequency with which Gates were blocked before being satisfied), Decision Latency (time between available evidence and Commitment Gate convening), Discovery WIP (simultaneous experiments in progress), Postmortems, and OBCs in Released state.
 
-From these sources, retrospective Assessment produces two outputs. The first is the **cycle report**: a synthesis of what the cycle revealed about process health: detected anti-patterns, activated diagnostic signals, recommendations for the next cycle. The second, more important, is the set of **new Business Signals**: observations derived from Operation that indicate opportunities or problems to investigate in the next cycle. This is the mechanism through which ProdOps feedback operates, not as a disconnected retrospective ritual, but as the structured production of inputs for the start of the next cycle.
+From these sources, retrospective Assessment produces two outputs. The first is the **cycle report**: a synthesis of what the cycle revealed about process health: detected anti-patterns, activated diagnostic signals, recommendations for the next cycle. The second, more important, is the set of **new Business Signals**: observations derived from Operation or from Upstream experiment results that indicate opportunities or problems to investigate in the next cycle. This is the mechanism through which ProdOps feedback operates, not as a disconnected retrospective ritual, but as the structured production of inputs for the start of the next cycle.
 
 | Data source | What retrospective Assessment reads |
 |---|---|
+| Experiment Trails | How the Upstream experiment was conducted; hypotheses answered or refuted |
+| Decision Packages | Quality of the evidence produced; recommendation and Commitment Gate outcome |
 | Release Trails | How each Delivery phase was executed; where flow stalled |
 | Gate Failure Rate | Frequency of Gate blocks not yet satisfied; signal of inadequate rigor |
 | Decision Latency | Time between evidence and Commitment Gate; signal of Perpetual Discovery |
