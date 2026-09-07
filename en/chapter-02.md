@@ -93,7 +93,7 @@ The difference lies not in sophistication, but in the scope of generalization. T
 ```mermaid
 graph LR
     subgraph ProdOps
-        P1[Upstream] -->|CommitmentGate: shift in commitment type| P2[Downstream]
+        P1[Upstream] -->|Commitment Gate: shift in commitment type| P2[Downstream]
         P1 -.->|learning-oriented rigor| P1
         P2 -.->|commitment-oriented rigor| P2
     end

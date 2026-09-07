@@ -110,13 +110,13 @@ O que mudou recentemente é a forma como Cagan conecta essa distinção à AI: q
 
 O ProdOps leva essa intuição a uma estrutura operacional diferente.
 
-Um High-Integrity Commitment descreve uma condição de negócio e de gestão na qual uma promessa precisa ser confiável. O **CommitmentGate** descreve o mecanismo pelo qual uma organização decide formalmente o destino de uma Product Capability a partir da evidência disponível.
+Um High-Integrity Commitment descreve uma condição de negócio e de gestão na qual uma promessa precisa ser confiável. O **Commitment Gate** descreve o mecanismo pelo qual uma organização decide formalmente o destino de uma Product Capability a partir da evidência disponível.
 
 A diferença pode ser resumida assim:
 
-> **High-Integrity Commitment explica por que determinados compromissos exigem confiança especial. CommitmentGate define como a decisão de assumir esse compromisso se torna observável e operacional.**
+> **High-Integrity Commitment explica por que determinados compromissos exigem confiança especial. Commitment Gate define como a decisão de assumir esse compromisso se torna observável e operacional.**
 
-O CommitmentGate também não é uma simples aprovação. Seus outcomes canônicos incluem Promover, Promover com restrição, Requerer outro experimento, Aguardar decisão de negócio, Aguardar dependência externa e Descartar. O objetivo é registrar o destino da Product Capability, inclusive quando esse destino não é a promoção.
+O Commitment Gate também não é uma simples aprovação. Seus outcomes canônicos incluem Promover, Promover com restrição, Requerer outro experimento, Aguardar decisão de negócio, Aguardar dependência externa e Descartar. O objetivo é registrar o destino da Product Capability, inclusive quando esse destino não é a promoção.
 
 A convergência é forte. A estrutura operacional é diferente.
 
@@ -140,7 +140,7 @@ Em setembro de 2026, Torres publicou *AI Evals: A Hands-On Guide for Product Tea
 
 A convergência com o ProdOps é igualmente forte.
 
-O ProdOps também trata evidência como elemento estrutural da tomada de decisão. O Upstream possui hipótese, evidência, critérios de parada, Decision Package e CommitmentGate. O Downstream utiliza evidência para verificar que as condições de um compromisso foram satisfeitas. O Runtime continua produzindo evidência depois da promoção.
+O ProdOps também trata evidência como elemento estrutural da tomada de decisão. O Upstream possui hipótese, evidência, critérios de parada, Decision Package e Commitment Gate. O Downstream utiliza evidência para verificar que as condições de um compromisso foram satisfeitas. O Runtime continua produzindo evidência depois da promoção.
 
 Mas novamente não existe equivalência ontológica.
 
@@ -251,7 +251,7 @@ O ProdOps procura responder a uma pergunta operacional que permanece entre essas
 Essa pergunta produz os mecanismos que aparecem ao longo deste livro:
 
 - modo de execução;
-- CommitmentGate;
+- Commitment Gate;
 - Readiness Gate;
 - OBC;
 - Decision Package;
@@ -303,7 +303,7 @@ O confronto com as publicações de 2026 produz quatro conclusões.
 
 **Primeira:** Cagan avançou sua formulação sobre a diferença entre aprender construindo e construir para entregar produto comercial. Essa formulação reforça o problema que o ProdOps procura resolver, mas não redefine Upstream e Downstream como modos transversais.
 
-**Segunda:** Cagan continua tratando compromissos de alta integridade como exceções que exigem investigação suficiente e confiança elevada. O ProdOps transforma a passagem para esse regime de compromisso em um mecanismo explícito, o CommitmentGate, sem reduzir o Gate a uma aprovação binária.
+**Segunda:** Cagan continua tratando compromissos de alta integridade como exceções que exigem investigação suficiente e confiança elevada. O ProdOps transforma a passagem para esse regime de compromisso em um mecanismo explícito, o Commitment Gate, sem reduzir o Gate a uma aprovação binária.
 
 **Terceira:** Torres avançou a aplicação de evidência e avaliação para produtos AI, tratando evals como uma prática relevante de discovery e de controle de qualidade. Isso reforça a tese de que evidência atravessa o ciclo de vida do produto. Não transforma eval em sinônimo de Upstream nem Discovery em definição de Upstream.
 

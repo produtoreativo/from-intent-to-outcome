@@ -4,7 +4,7 @@
 
 ## 1. Por que um apêndice de pesquisa
 
-Este livro parte de uma investigação conduzida durante o desenvolvimento do framework ProdOps no contexto do desenvolvimento da Payments API da Magazine Siará. Ao longo da escrita, diversas afirmações sobre a originalidade de conceitos como CommitmentGate, modos de execução transversais e a distinção entre Upstream e Downstream precisaram ser confrontadas com a literatura existente. Este apêndice documenta essa investigação: o que foi buscado, quais fontes foram consultadas e o que foi encontrado.
+Este livro parte de uma investigação conduzida durante o desenvolvimento do framework ProdOps no contexto do desenvolvimento da Payments API da Magazine Siará. Ao longo da escrita, diversas afirmações sobre a originalidade de conceitos como Commitment Gate, modos de execução transversais e a distinção entre Upstream e Downstream precisaram ser confrontadas com a literatura existente. Este apêndice documenta essa investigação: o que foi buscado, quais fontes foram consultadas e o que foi encontrado.
 
 O propósito não é argumentar. O leitor que chegou até aqui já leu os argumentos dos capítulos anteriores. O propósito é transparência metodológica. Quando este livro afirma que o ProdOps é a primeira formalização dos termos upstream e downstream como modos de execução transversais, essa afirmação tem uma base investigativa. Este apêndice torna essa base visível.
 
@@ -55,7 +55,7 @@ Quatro fontes exerceram influência direta e verificável sobre a estrutura conc
 
 ### David J. Anderson e o Upstream Kanban
 
-Anderson desenvolveu, ao longo dos anos 2010, o conceito de Upstream Kanban como sistema de gerenciamento de opções antes do compromisso de entrega. O commitment point foi definido de forma precisa: "Once a work item has moved through the commitment point, it is no longer considered optional" e "Anything to the left of that line is still an option." Essa formulação é a precursora direta do CommitmentGate do ProdOps: a fronteira nomeada que separa os dois modos, com registro formal e protocolo de transição. A teoria de Real Options (finanças), aplicada por Anderson ao gerenciamento de backlog, também influenciou o tratamento dos experimentos Upstream como opções com prazo de validade próprio.
+Anderson desenvolveu, ao longo dos anos 2010, o conceito de Upstream Kanban como sistema de gerenciamento de opções antes do compromisso de entrega. O commitment point foi definido de forma precisa: "Once a work item has moved through the commitment point, it is no longer considered optional" e "Anything to the left of that line is still an option." Essa formulação é a precursora direta do Commitment Gate do ProdOps: a fronteira nomeada que separa os dois modos, com registro formal e protocolo de transição. A teoria de Real Options (finanças), aplicada por Anderson ao gerenciamento de backlog, também influenciou o tratamento dos experimentos Upstream como opções com prazo de validade próprio.
 
 A divergência é estrutural. No Kanban, Upstream e Downstream continuam sendo fases sequenciais. O output do Upstream é sempre um item de backlog: uma opção, nunca código de produção. No ProdOps, o modo Upstream pode produzir código de produção, desde que o compromisso formal de entrega não esteja formalizado. A distinção não é sobre o tipo de artefato produzido, mas sobre a configuração de rigor e compromisso sob a qual o trabalho é conduzido.
 
@@ -63,13 +63,13 @@ A divergência é estrutural. No Kanban, Upstream e Downstream continuam sendo f
 
 Heath, em "Upstream" (2020), propôs a distinção conceitualmente mais próxima do ProdOps entre todos os predecessores: "Downstream work is demanded of us. Upstream work is often optional" e "Organizations have a natural tendency toward downstream thinking because it's more tangible and is often rewarded." O diagnóstico de que organizações têm um viés estrutural em direção ao downstream, por conta de visibilidade e urgência, é incorporado diretamente nos anti-padrões do Downstream e nos princípios de calibração de modo do ProdOps.
 
-A divergência também é estrutural. Heath não operacionaliza a distinção. Não há artefatos, jornadas, CommitmentGate, outcomes de Gate nem rastreabilidade. A obra é diagnóstica e prescritiva em termos de orientação organizacional, não um framework de execução. Além disso, Heath não equaciona Upstream com ausência de compromisso de entrega: upstream, para ele, é prevenção causal, não modo de execução.
+A divergência também é estrutural. Heath não operacionaliza a distinção. Não há artefatos, jornadas, Commitment Gate, outcomes de Gate nem rastreabilidade. A obra é diagnóstica e prescritiva em termos de orientação organizacional, não um framework de execução. Além disso, Heath não equaciona Upstream com ausência de compromisso de entrega: upstream, para ele, é prevenção causal, não modo de execução.
 
 ### Dave Snowden e o Cynefin
 
 O Cynefin Framework (Snowden, 2007) não usa os termos upstream e downstream. Mas é o predecessor conceitual mais próximo da ideia central do ProdOps: a mesma atividade pode requerer abordagens fundamentalmente diferentes dependendo de um atributo transversal, e não de sua posição numa linha do tempo. No Cynefin, o atributo é o domínio ontológico do problema (Claro, Complicado, Complexo, Caótico). No ProdOps, o atributo é o modo de execução, determinado pelo tipo de compromisso assumido. Em ambos os casos, a natureza do trabalho não determina a abordagem: o contexto determina.
 
-A divergência é de fundamento. No Cynefin, o domínio é determinado pela natureza do problema, algo que existe independentemente de decisões humanas. No ProdOps, o modo é determinado por uma decisão explícita: há ou não um CommitmentGate formalizado, e quais compromissos foram assumidos nele. O modo é uma escolha de governança, não uma propriedade ontológica do trabalho.
+A divergência é de fundamento. No Cynefin, o domínio é determinado pela natureza do problema, algo que existe independentemente de decisões humanas. No ProdOps, o modo é determinado por uma decisão explícita: há ou não um Commitment Gate formalizado, e quais compromissos foram assumidos nele. O modo é uma escolha de governança, não uma propriedade ontológica do trabalho.
 
 ### Wnuk et al. e a evidência empírica
 
@@ -83,17 +83,17 @@ A revisão de literatura cobriu dezoito obras, organizadas em cinco clusters por
 
 ### Cluster 1: A metáfora
 
-As obras deste cluster fornecem o pano de fundo conceitual para o uso dos termos como orientação de trabalho. Dan Heath (2020) é o exemplo principal. Eliyahu Goldratt e Jeff Cox, em "The Goal" (1984), contribuíram com a Teoria das Restrições: o ponto de contenção upstream, o modelo pull e o conceito de buffer gerenciado. O **Plano de Experimento** do ProdOps — VIEW sobre os experimentos Upstream ativos — é estruturalmente análogo a um buffer lean antes de um ponto de restrição (o CommitmentGate). O Icebox, por sua vez, é o holding pós-CommitmentGate: representa itens com Downstream já declarado e OBC em refinamento (estado ≠ Committed), aguardando o Readiness Gate.
+As obras deste cluster fornecem o pano de fundo conceitual para o uso dos termos como orientação de trabalho. Dan Heath (2020) é o exemplo principal. Eliyahu Goldratt e Jeff Cox, em "The Goal" (1984), contribuíram com a Teoria das Restrições: o ponto de contenção upstream, o modelo pull e o conceito de buffer gerenciado. O **Plano de Experimento** do ProdOps — VIEW sobre os experimentos Upstream ativos — é estruturalmente análogo a um buffer lean antes de um ponto de restrição (o Commitment Gate). O Icebox, por sua vez, é o holding pós-Commitment Gate: representa itens com Downstream já declarado e OBC em refinamento (estado ≠ Committed), aguardando o Readiness Gate.
 
 ### Cluster 2: Discovery de produto
 
-Este cluster concentra as obras com maior densidade de convergência com o ProdOps. Marty Cagan, em "Inspired" (2017), formalizou os quatro riscos que precisam ser mitigados antes do compromisso de entrega: valor, usabilidade, viabilidade e factibilidade. O CommitmentGate do ProdOps opera como o momento em que o Decision Package demonstra que esses quatro riscos estão suficientemente mitigados para justificar o compromisso. Em "Empowered" (2020), Cagan e Jones propuseram que times de produto devem receber problemas, não features: Upstream é o espaço de exploração do problema; Downstream, o espaço de implementação da solução. O ProdOps parte dessa distinção, mas a redefine: Upstream e Downstream não descrevem o tipo de trabalho (exploração vs. implementação), mas o regime de compromisso que governa o trabalho. A mesma jornada de Discovery pode ocorrer em qualquer um dos dois modos.
+Este cluster concentra as obras com maior densidade de convergência com o ProdOps. Marty Cagan, em "Inspired" (2017), formalizou os quatro riscos que precisam ser mitigados antes do compromisso de entrega: valor, usabilidade, viabilidade e factibilidade. O Commitment Gate do ProdOps opera como o momento em que o Decision Package demonstra que esses quatro riscos estão suficientemente mitigados para justificar o compromisso. Em "Empowered" (2020), Cagan e Jones propuseram que times de produto devem receber problemas, não features: Upstream é o espaço de exploração do problema; Downstream, o espaço de implementação da solução. O ProdOps parte dessa distinção, mas a redefine: Upstream e Downstream não descrevem o tipo de trabalho (exploração vs. implementação), mas o regime de compromisso que governa o trabalho. A mesma jornada de Discovery pode ocorrer em qualquer um dos dois modos.
 
 Teresa Torres, em "Continuous Discovery Habits" (2021), contribuiu com a Opportunity Solution Tree e o conceito de assumption testing contínuo. O Evidence Threshold do ProdOps, que determina quando a evidência acumulada num experimento Upstream é suficiente para formalizar ou descartar uma hipótese, é a formalização desse assumption testing. Ryan Singer, em "Shape Up" (2019), nomeou a distinção como Shaping (Upstream) e Building (Downstream), e introduziu o conceito de pitch que expira: experimentos Upstream têm ciclo de vida próprio e não transferem automaticamente para o Downstream.
 
 ### Cluster 3: Lean e Value Streams
 
-Womack e Jones, em "Lean Thinking" (1996), formalizaram o conceito de value stream e a distinção entre pull e push. O Plano de Experimento como buffer lean (pré-Gate) e o CommitmentGate como puxada para o Downstream derivam diretamente dessa tradição. Rother e Shook, em "Learning to See" (1998), desenvolveram o Value Stream Mapping: as métricas TTE (Time to Evidence), TTC (Time to CommitmentGate) e TTD (Time to Deploy) do ProdOps são aplicações do VSM ao contexto de produto digital. Kim, DeBois, Willis e Humble, em "The DevOps Handbook" (2016), articularam as três dimensões do DevOps e o princípio de shift left, que o ProdOps incorpora como princípio de anteposição de validação no Upstream.
+Womack e Jones, em "Lean Thinking" (1996), formalizaram o conceito de value stream e a distinção entre pull e push. O Plano de Experimento como buffer lean (pré-Gate) e o Commitment Gate como puxada para o Downstream derivam diretamente dessa tradição. Rother e Shook, em "Learning to See" (1998), desenvolveram o Value Stream Mapping: as métricas TTE (Time to Evidence), TTC (Time to Commitment Gate) e TTD (Time to Deploy) do ProdOps são aplicações do VSM ao contexto de produto digital. Kim, DeBois, Willis e Humble, em "The DevOps Handbook" (2016), articularam as três dimensões do DevOps e o princípio de shift left, que o ProdOps incorpora como princípio de anteposição de validação no Upstream.
 
 ### Cluster 4: Entrega de software
 
@@ -101,16 +101,16 @@ Forsgren, Humble e Kim, em "Accelerate" (2018), publicaram as quatro métricas D
 
 ### Cluster 5: Arquitetura e DDD
 
-Eric Evans, em "Domain-Driven Design" (2003), foi o primeiro a formalizar upstream e downstream como termos técnicos precisos em software, no contexto do Context Map. Uma relação Customer/Supplier é uma relação upstream/downstream entre bounded contexts. Vaughn Vernon, em "Implementing Domain-Driven Design" (2013), popularizou o Event Storming como ferramenta de discovery, adotado pelo ProdOps como técnica de mapeamento no Upstream. Skelton e Pais, em "Team Topologies" (2019), propuseram que times Enabling têm uma função organizacional análoga ao modo Upstream: geram capacidade exploratória que outros times consomem. O Design Council UK, com o Double Diamond (2005, revisado em 2019), produziu o modelo gráfico mais próximo da sequência Upstream-CommitmentGate-Downstream: dois diamantes (divergir e convergir no espaço do problema) seguidos de dois diamantes (divergir e convergir no espaço da solução).
+Eric Evans, em "Domain-Driven Design" (2003), foi o primeiro a formalizar upstream e downstream como termos técnicos precisos em software, no contexto do Context Map. Uma relação Customer/Supplier é uma relação upstream/downstream entre bounded contexts. Vaughn Vernon, em "Implementing Domain-Driven Design" (2013), popularizou o Event Storming como ferramenta de discovery, adotado pelo ProdOps como técnica de mapeamento no Upstream. Skelton e Pais, em "Team Topologies" (2019), propuseram que times Enabling têm uma função organizacional análoga ao modo Upstream: geram capacidade exploratória que outros times consomem. O Design Council UK, com o Double Diamond (2005, revisado em 2019), produziu o modelo gráfico mais próximo da sequência Upstream-Commitment Gate-Downstream: dois diamantes (divergir e convergir no espaço do problema) seguidos de dois diamantes (divergir e convergir no espaço da solução).
 
 ### Tabela de convergências
 
 | Conceito do ProdOps | Origem na literatura |
 |---|---|
-| CommitmentGate | Commitment point (Anderson) / Betting table (Singer) / Double Diamond (Design Council) |
+| Commitment Gate | Commitment point (Anderson) / Betting table (Singer) / Double Diamond (Design Council) |
 | Modos de execução transversais | Domínios do Cynefin (Snowden) |
 | Evidence Threshold | Assumption testing (Torres) |
-| Plano de Experimento como buffer lean (pré-CommitmentGate) | Theory of Constraints (Goldratt) / Lean Thinking (Womack) |
+| Plano de Experimento como buffer lean (pré-Commitment Gate) | Theory of Constraints (Goldratt) / Lean Thinking (Womack) |
 | Decision Package | 4 riscos antes do compromisso (Cagan) |
 | Métricas TTE, TTC, TTD | Value Stream Mapping (Rother e Shook) |
 | Experimento Upstream | Build-Measure-Learn (Ries) / Pitch com expiração (Singer) |
@@ -128,11 +128,11 @@ Primeiro: Upstream e Downstream como modos transversais, aplicáveis a qualquer 
 
 Segundo: a possibilidade de conduzir a jornada de Discovery no modo Downstream. A literatura trata Discovery como atividade intrinsecamente upstream. No ProdOps, Discovery pode ocorrer no modo Downstream quando a hipótese já está comprometida e o trabalho é de confirmação formal, não de exploração.
 
-Terceiro: Upstream como produtor legítimo de código de produção. A literatura, sem exceção, trata o output do Upstream como descartável ou como opção de backlog. No ProdOps, código produzido em modo Upstream pode ser promovido a produção se o CommitmentGate for ativado posteriormente.
+Terceiro: Upstream como produtor legítimo de código de produção. A literatura, sem exceção, trata o output do Upstream como descartável ou como opção de backlog. No ProdOps, código produzido em modo Upstream pode ser promovido a produção se o Commitment Gate for ativado posteriormente.
 
 Quarto: rigor como variável primária de distinção entre os modos. A literatura usa quatro variáveis para distinguir upstream de downstream: compromisso ou opção (Anderson), fase ou estágio (Cagan, Singer), orientação de intervenção (Heath) ou posição na cadeia de dependência (Evans). Nenhuma fonte usa rigor como variável primária.
 
-Quinto: um Gate de transição com múltiplos outcomes canônicos. A literatura tende ao modelo binário (go ou no-go, commit ou não-commit). O CommitmentGate do ProdOps define seis outcomes possíveis: Promover, Promover com restrição, Requer outro experimento, Aguardar decisão de negócio, Aguardar dependência externa, e Descartar. Cada outcome tem protocolo de registro distinto (detalhes no Capítulo 7).
+Quinto: um Gate de transição com múltiplos outcomes canônicos. A literatura tende ao modelo binário (go ou no-go, commit ou não-commit). O Commitment Gate do ProdOps define seis outcomes possíveis: Promover, Promover com restrição, Requer outro experimento, Aguardar decisão de negócio, Aguardar dependência externa, e Descartar. Cada outcome tem protocolo de registro distinto (detalhes no Capítulo 7).
 
 > **Nota histórica:** a nomenclatura anterior do framework, durante o desenvolvimento inicial no contexto do payments-api / Magazine Siará, usava nomes distintos: Comprometer, Requer outro experimento, Reduzir escopo e comprometer, Transferir responsabilidade, Descartar e registrar, e Pausar com revisão agendada. Os conceitos de "Transferir responsabilidade" e "Pausar com revisão agendada" não têm equivalentes diretos na lista atual; o primeiro foi absorvido em "Aguardar dependência externa", o segundo em "Aguardar decisão de negócio".
 

@@ -47,12 +47,12 @@ O OBC percorre seis estados ao longo do ciclo de vida de uma Product Capability:
 stateDiagram-v2
     direction LR
     [*] --> Draft : Business Signal → Business Intent
-    Draft --> Refining : CommitmentGate Promover (Momento 2)
+    Draft --> Refining : Commitment Gate Promover (Momento 2)
     Refining --> Committed : Readiness Gate aprovado (Momento 3)
     Committed --> InDelivery : Bootstrap.Started
     InDelivery --> Released : Promote concluído
     Released --> Archived : Depreciação / substituição
-    Refining --> Archived : CommitmentGate Descartar
+    Refining --> Archived : Commitment Gate Descartar
     InDelivery --> Refining : Regressão Downstream → Upstream
 
     note right of Draft
@@ -77,7 +77,7 @@ stateDiagram-v2
 
 **Draft**: nasce na transição de um Business Signal para um Business Intent. No Upstream, é memória do aprendizado: pode ser atualizado continuamente, pode permanecer incompleto, não bloqueia experimentos. A ausência de campos completos no Draft é esperada, não uma falha.
 
-**Refining**: o estado que o OBC assume no início do Downstream (Momento 2 da transição, após o CommitmentGate com outcome Promover). Os campos começam a ser refinados com substância real: `expected_outcome` deixa de ser vago, `success_metrics` ganha baseline e target, `acceptance_criteria` torna-se verificável por terceiros.
+**Refining**: o estado que o OBC assume no início do Downstream (Momento 2 da transição, após o Commitment Gate com outcome Promover). Os campos começam a ser refinados com substância real: `expected_outcome` deixa de ser vago, `success_metrics` ganha baseline e target, `acceptance_criteria` torna-se verificável por terceiros.
 
 **Committed**: registra que o compromisso formal foi assumido e que o contrato está completo o suficiente para que a Delivery comece. O estado Committed não cria o compromisso — é o artefato que o torna observável e auditável. Todo critério de aceite é verificável sem contexto verbal adicional. As métricas de sucesso têm baseline e target. Os Observable Events estão definidos. O Reliability Plan (quando necessário pelos gatilhos de risco) está presente. Um OBC que não atingiu Committed não passa pelo Readiness Gate: essa é a proteção contra o Phantom BDD e o Proxy Commitment.
 
@@ -98,11 +98,11 @@ gantt
     title Ciclo de Vida de um Experimento Upstream
     dateFormat  YYYY-MM-DD
     section Upstream
-    HypothesisFormed        :milestone, h1, 2026-08-01, 0d
-    Coleta de Evidência     :evidence, 2026-08-01, 15d
-    EvidenceThresholdReached :milestone, h2, after evidence, 0d
-    CommitmentGate          :Gate, after h2, 3d
-    CommitmentGatePassed    :milestone, h3, after Gate, 0d
+    Hypothesis Formed           :milestone, h1, 2026-08-01, 0d
+    Coleta de Evidência         :evidence, 2026-08-01, 15d
+    Evidence Threshold Reached  :milestone, h2, after evidence, 0d
+    Commitment Gate             :Gate, after h2, 3d
+    Commitment Gate Passed      :milestone, h3, after Gate, 0d
     section Métricas
     TTE - Time-to-Evidence  :crit, 2026-08-01, 15d
     Decision Latency        :crit, after evidence, 3d
@@ -114,7 +114,7 @@ A jornada de Discovery, no Upstream, não tem instrumentação equivalente ainda
 
 **TTE (Time to Evidence)**: tempo entre o início de um experimento Upstream (abertura do `experiment.md`) e a produção da primeira evidência executável. Mede a velocidade com que um experimento começa a produzir aprendizado real, não apenas documentação de intenção.
 
-**Decision Latency**: tempo entre o Evidence Threshold declarado como atingido e a convocação do CommitmentGate. Uma Decision Latency alta é um sinal do Perpetual Discovery: o time sabe que tem evidência suficiente mas não está convocando a decisão.
+**Decision Latency**: tempo entre o Evidence Threshold declarado como atingido e a convocação do Commitment Gate. Uma Decision Latency alta é um sinal do Perpetual Discovery: o time sabe que tem evidência suficiente mas não está convocando a decisão.
 
 **Discovery WIP (Work in Progress)**: número de experimentos Upstream ativos simultaneamente. O nome é por analogia com o WIP do Kanban e refere-se a experimentos em curso, independentemente da jornada (Discovery, Assessment ou outra) em que estão inscritos; o critério é o modo Upstream, não a jornada. Um Discovery WIP alto indica que o time está dispersando atenção entre múltiplas hipóteses, o que tende a aumentar o TTE de todas elas.
 
@@ -140,7 +140,7 @@ Os pesos dessas métricas variam por estágio de produto, conforme o modelo cano
 
 O Upstream e o Downstream têm mecanismos de registro distintos que refletem seus propósitos distintos.
 
-No Upstream, o mecanismo primário de registro é o conjunto de evidências produzidas pelo experimento (denominado aqui Evidence Package) que fundamenta o Decision Package apresentado no CommitmentGate. A característica central do Evidence Package é a verificabilidade: cada evidência deve ser legível por um membro do trio que não participou do experimento, sem contexto verbal adicional. Se a evidência depende de contexto que não está documentado, não constitui evidência verificável: é memória não documentada. O Evidence Package responde à pergunta "o que descobrimos?".
+No Upstream, o mecanismo primário de registro é o conjunto de evidências produzidas pelo experimento (denominado aqui Evidence Package) que fundamenta o Decision Package apresentado no Commitment Gate. A característica central do Evidence Package é a verificabilidade: cada evidência deve ser legível por um membro do trio que não participou do experimento, sem contexto verbal adicional. Se a evidência depende de contexto que não está documentado, não constitui evidência verificável: é memória não documentada. O Evidence Package responde à pergunta "o que descobrimos?".
 
 No Downstream, o mecanismo primário de registro é o Release Trail: o log append-only de evidências de cada fase da sequência Bootstrap → Promote. O Release Trail responde a uma pergunta diferente: não "o que descobrimos?" mas "como honramos o compromisso, passo a passo, com que evidências?". Cada fase do ciclo de Delivery produz seus registros no trail; nada é substituído ou reescrito, apenas acrescido. O Promote sem Release Trail preenchido é o anti-padrão AP-D5: a rastreabilidade prometida pelo Downstream é destruída.
 
@@ -152,7 +152,7 @@ A distinção entre os dois mecanismos de registro é uma consequência direta d
 
 A palavra epistemologia (o estudo do conhecimento e de como o conhecemos) pode parecer fora de lugar em um capítulo sobre práticas de engineering. Mas é precisamente o que observabilidade faz no modelo ProdOps: ela é o mecanismo pelo qual o time sabe o que sabe, e pode afirmar isso de forma verificável.
 
-No Upstream, sem observabilidade da evidência (sem artefatos verificáveis, sem critérios de falsificação documentados, sem Evidence Threshold declarado), o time não sabe o que sabe. Tem convicções, tem intuições, tem memória de conversas. Mas não tem conhecimento verificável. O CommitmentGate, sem Evidence Package com substância, é Gate Theater: a forma sem a função.
+No Upstream, sem observabilidade da evidência (sem artefatos verificáveis, sem critérios de falsificação documentados, sem Evidence Threshold declarado), o time não sabe o que sabe. Tem convicções, tem intuições, tem memória de conversas. Mas não tem conhecimento verificável. O Commitment Gate, sem Evidence Package com substância, é Gate Theater: a forma sem a função.
 
 No Downstream, sem observabilidade do comportamento em produção (sem SLOs, sem métricas de confiabilidade, sem Observable Events no OBC), o time não sabe se o compromisso está sendo honrado. Tem a sensação de que as coisas estão funcionando. Mas não tem evidência verificável. O Promote, sem Release Trail preenchido, é Release Trail Vazio.
 
@@ -164,5 +164,5 @@ Em ambos os casos, a ausência de observabilidade não é um problema técnico d
 
 ---
 
-[← Capítulo 7 — O CommitmentGate: a fronteira com nome](capitulo-07.md)
+[← Capítulo 7 — O Commitment Gate: a fronteira com nome](capitulo-07.md)
 [→ Capítulo 9 — Diligence: guardião da consistência](capitulo-09.md)

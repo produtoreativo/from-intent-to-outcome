@@ -25,11 +25,11 @@ EXP-001 was the first experiment. It produced no production code. It produced th
 
 Three sequential experiments. No production code written during any of them. The credit card feature entered Downstream only when there was sufficient evidence to commit the Product Capability safely — and only the fraction that evidence supported.
 
-This is Upstream mode operated with full engineering rigor: not a low-discipline phase before the "real" engineering. A non-blocking commitment regime that produced verifiable knowledge — and a Decision Package that made the CommitmentGate possible.
+This is Upstream mode operated with full engineering rigor: not a low-discipline phase before the "real" engineering. A non-blocking commitment regime that produced verifiable knowledge — and a Decision Package that made the Commitment Gate possible.
 
 ---
 
-## Direct Downstream: when the Signal is sufficient for the CommitmentGate
+## Direct Downstream: when the Signal is sufficient for the Commitment Gate
 
 The Payments API corpus records a different case. Business Signal BS-001, registered on 2026-08-04, describes a problem with immediate pressure: Magazine Siará customers cannot split a single purchase across multiple payment methods, generating cart abandonment and lost contracts. The deadline: a partner supplier launch in up to 15 days, non-negotiable.
 
@@ -39,11 +39,11 @@ PM Eugenio assessed the situation and made a decision that is documented in PI-0
 
 The justification is also documented: demand confirmed through two independent channels (end customers and sales team), scope bounded (Pix + Boleto), product owner identified, non-negotiable deadline, open questions are of the refinement type — they do not block the start.
 
-The Split Payment OBC was committed on the same day. The open questions in PI-001 — minimum and maximum amount per payment method, limit of payment methods per purchase, policy for expired Boleto with Pix already paid — were treated as refinement, not as uncertainty that would block the CommitmentGate. Risk RISK-SP-001 (Boleto expiry policy) was closed by PM Eugenio on the same day with an explicit decision: maintain pending state, manual investigation by operations, no automatic cancellation or Pix reversal.
+The Split Payment OBC was committed on the same day. The open questions in PI-001 — minimum and maximum amount per payment method, limit of payment methods per purchase, policy for expired Boleto with Pix already paid — were treated as refinement, not as uncertainty that would block the Commitment Gate. Risk RISK-SP-001 (Boleto expiry policy) was closed by PM Eugenio on the same day with an explicit decision: maintain pending state, manual investigation by operations, no automatic cancellation or Pix reversal.
 
-This case demonstrates something that EXP-001/002/003 did not: the CommitmentGate is not a ritual concluding exploration. It is a decision about the destiny of the Product Capability. When demand is confirmed, the scope is bounded, and the deadline is non-negotiable, the CommitmentGate can be executed on the same day as the Business Signal — and this is not a shortcut. It is the correct calibration of rigor to the type of commitment being assumed.
+This case demonstrates something that EXP-001/002/003 did not: the Commitment Gate is not a ritual concluding exploration. It is a decision about the destiny of the Product Capability. When demand is confirmed, the scope is bounded, and the deadline is non-negotiable, the Commitment Gate can be executed on the same day as the Business Signal — and this is not a shortcut. It is the correct calibration of rigor to the type of commitment being assumed.
 
-What PI-001 names as "without Upstream" is precise: there were no pre-CommitmentGate experiments. But there was no absence of discovery. After the CommitmentGate, the Split Payment traversed the Discovery journey in Downstream mode: the OBC transitioned to Refining, the six Observable Events with mandatory dimensions were defined, the BDD Feature was written before any production code, the open questions from PI-001 were resolved with dated decisions (RISK-SP-001 closed by PM Eugenio with an explicit decision on the expired Boleto policy). The Readiness Gate verified that these conditions were met before authorizing entry into Delivery. Planning generated the Iteration Plan. Only then did Bootstrap, the first phase of Delivery, begin.
+What PI-001 names as "without Upstream" is precise: there were no pre-Commitment Gate experiments. But there was no absence of discovery. After the Commitment Gate, the Split Payment traversed the Discovery journey in Downstream mode: the OBC transitioned to Refining, the six Observable Events with mandatory dimensions were defined, the BDD Feature was written before any production code, the open questions from PI-001 were resolved with dated decisions (RISK-SP-001 closed by PM Eugenio with an explicit decision on the expired Boleto policy). The Readiness Gate verified that these conditions were met before authorizing entry into Delivery. Planning generated the Iteration Plan. Only then did Bootstrap, the first phase of Delivery, begin.
 
 "Direct Downstream" does not mean discovery absent. It means discovery under commitment — in the Discovery journey executed in Downstream mode, with blocking rigor and Readiness Gate — rather than discovery before commitment, in Upstream mode.
 
@@ -53,9 +53,9 @@ The feature was delivered in iteration v0.14.0 (DS-61), within the deadline.
 
 ## Upstream parallel to Downstream: the EXP-007 case
 
-The Magazine Siará corpus records a pattern that the linear Upstream → Downstream narrative does not capture. During the Downstream execution for Split Payment — post-CommitmentGate of BS-001, with DS-61 in progress — the team opened a parallel Upstream experiment: EXP-007.
+The Magazine Siará corpus records a pattern that the linear Upstream → Downstream narrative does not capture. During the Downstream execution for Split Payment — post-Commitment Gate of BS-001, with DS-61 in progress — the team opened a parallel Upstream experiment: EXP-007.
 
-EXP-007 investigated questions that the speed of the BS-001 CommitmentGate had not resolved in depth: the priority combinations of payment methods (Pix + Boleto, Pix + Card), the adequate domain model for composition, the business events needed to track each combination, and the partial failure policy — what happens when one payment method fails while the other has already been confirmed. The Draft OBC for `payment-composition` was produced during the experiment.
+EXP-007 investigated questions that the speed of the BS-001 Commitment Gate had not resolved in depth: the priority combinations of payment methods (Pix + Boleto, Pix + Card), the adequate domain model for composition, the business events needed to track each combination, and the partial failure policy — what happens when one payment method fails while the other has already been confirmed. The Draft OBC for `payment-composition` was produced during the experiment.
 
 What makes this case rich as evidence is not the exception it represents: it is the operational normality it demonstrates. Downstream and Upstream coexisting for the same product at the same time. The Downstream maintained the delivery commitment (DS-61 within the deadline). The Upstream enriched the model operating under its own form of rigor — non-blocking, evidence-oriented. When EXP-007 concluded, the learning — including code produced during exploration — was promoted and integrated into the ongoing Downstream.
 
@@ -115,7 +115,7 @@ This result inverts the conventional order: the framework did not precede the pr
 
 Intellectual honesty requires specifying what the current repository does not demonstrate.
 
-**The CommitmentGate with a complete human trio.** The CommitmentGates documented in the corpus have the PM as the named business decision-maker, but the explicit distinction between the Author — the conductor of the experiment and author of the Decision Package — and the Tech Lead as an independent judge does not appear recorded with distinct identities. The mechanism works; the explicit separation of the three roles (Author as conductor, PM and Tech Lead as independent judges) as three distinct physical persons still needs to be documented in a real case.
+**The Commitment Gate with a complete human trio.** The Commitment Gates documented in the corpus have the PM as the named business decision-maker, but the explicit distinction between the Author — the conductor of the experiment and author of the Decision Package — and the Tech Lead as an independent judge does not appear recorded with distinct identities. The mechanism works; the explicit separation of the three roles (Author as conductor, PM and Tech Lead as independent judges) as three distinct physical persons still needs to be documented in a real case.
 
 **The Perpetual Discovery diagnostic signals (S1-S4) applied prospectively.** The signals were defined as detectable without subjective judgment. EXP-014 demonstrated that Diligence can track the Execution Space in real time. But the instrumentation that would proactively detect Perpetual Discovery — monitoring TTE, Decision Latency, and Discovery WIP — is still a proposal, not implemented as automatic collection.
 
@@ -131,7 +131,7 @@ The Magazine Siará corpus supports this thesis in four distinct ways.
 
 **First:** EXP-001/002/003 demonstrates that the same type of work — high-rigor technical analysis, contract mapping, integration model exploration — can be executed in Upstream mode without producing a delivery commitment, even when the work has technical quality that could go to production. This proves that the mode distinction is not a quality distinction. It is a commitment distinction.
 
-**Second:** BS-001/PI-001/Split Payment demonstrates that the CommitmentGate does not require prior exploration. When demand is confirmed and scope is bounded, the CommitmentGate is executed on the same day — and this is correct. The framework does not impose exploration where exploration is not necessary. It requires that the mode decision be explicit and justified.
+**Second:** BS-001/PI-001/Split Payment demonstrates that the Commitment Gate does not require prior exploration. When demand is confirmed and scope is bounded, the Commitment Gate is executed on the same day — and this is correct. The framework does not impose exploration where exploration is not necessary. It requires that the mode decision be explicit and justified.
 
 **Third:** the 53/53 from EXP-014 and the 22/22 × 3 players from EXP-015 demonstrate that the mode problem affects not only human teams, but any agency system operating with artifact-provided guidance. When the contract is explicit (OBC with Observable Events, tool with canonical catalog), agents converge. When the contract is absent or inconsistent, agents diverge. The solution is to make the contract verifiable in the artifacts themselves — not to enumerate it.
 
@@ -141,9 +141,9 @@ The Magazine Siará corpus supports this thesis in four distinct ways.
 
 ## The next territory
 
-What the Magazine Siará corpus has not yet documented is the complete lifecycle of an OBC that is born with the Business Intent (from the Business Signal), traverses Upstream, crosses the CommitmentGate with a full human trio, enters Downstream with a Committed OBC and formalized BDD Feature, is delivered with a complete Release Trail, and reaches the Released state with measured SLOs and a documented postmortem.
+What the Magazine Siará corpus has not yet documented is the complete lifecycle of an OBC that is born with the Business Intent (from the Business Signal), traverses Upstream, crosses the Commitment Gate with a full human trio, enters Downstream with a Committed OBC and formalized BDD Feature, is delivered with a complete Release Trail, and reaches the Released state with measured SLOs and a documented postmortem.
 
-This cycle exists in parts — some OBCs are already Released; CommitmentGates have been executed but without the fully recorded trio; Release Trails exist but without the cycle traced all the way back to the original Business Signal. The complete composition in a single case traceable end-to-end is the territory that lies ahead.
+This cycle exists in parts — some OBCs are already Released; Commitment Gates have been executed but without the fully recorded trio; Release Trails exist but without the cycle traced all the way back to the original Business Signal. The complete composition in a single case traceable end-to-end is the territory that lies ahead.
 
 When that cycle is documented with the same level of rigor with which the 17 experiments documented Upstream, the framework will have taken the step that transforms a coherent theory with extensive evidence into a method with complete traceability from intent to outcome.
 

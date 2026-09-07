@@ -29,7 +29,7 @@ Diligence exists to manage this divergence.
 
 Diligence is the transversal journey of ProdOps responsible for keeping the work system synchronized and consistent. It operates in both modes, with different consequences in each.
 
-What Diligence **does**: verifies whether the state of Knowledge Space artifacts is correctly reflected in the Execution Space. Captures Findings when it detects divergences. Manages the lifecycle of those Findings until they are resolved or receive a formal waiver. Ensures that the prerequisites of each Gate (CommitmentGate, Readiness Gate, quality Gates) are satisfied before the Gate is executed.
+What Diligence **does**: verifies whether the state of Knowledge Space artifacts is correctly reflected in the Execution Space. Captures Findings when it detects divergences. Manages the lifecycle of those Findings until they are resolved or receive a formal waiver. Ensures that the prerequisites of each Gate (Commitment Gate, Readiness Gate, quality Gates) are satisfied before the Gate is executed.
 
 What Diligence **does not do**: implement software. Create implementation Pull Requests. Modify product code. Make product decisions: it informs and alerts, but does not decide. Prioritize the backlog: that is the Product Manager's responsibility.
 
@@ -41,7 +41,7 @@ This separation is necessary for Diligence to maintain its function: if Diligenc
 
 Diligence operates in two cycles with distinct purposes.
 
-The **diligence-sync** is the event-driven cycle: triggered by a specific event (new OBC created, item transitioning between states, CommitmentGate convened). Its purpose is to verify, at the moment of the event, whether the current state satisfies the criteria necessary to advance. In Downstream, if an OBC is in Refining when the Readiness Gate is called, diligence-sync generates a blocking Finding, and the item does not advance until the Finding is resolved or receives a formal waiver. In Upstream, the same cycle operates, but the Findings generated have an advisory character: they alert without blocking, because the commitment has not been made.
+The **diligence-sync** is the event-driven cycle: triggered by a specific event (new OBC created, item transitioning between states, Commitment Gate convened). Its purpose is to verify, at the moment of the event, whether the current state satisfies the criteria necessary to advance. In Downstream, if an OBC is in Refining when the Readiness Gate is called, diligence-sync generates a blocking Finding, and the item does not advance until the Finding is resolved or receives a formal waiver. In Upstream, the same cycle operates, but the Findings generated have an advisory character: they alert without blocking, because the commitment has not been made.
 
 The **diligence-async** is the proactive cycle: executed periodically to sweep the state of the system and identify divergences before they cause problems. Its purpose is to detect drift: an OBC that should have transitioned state and has not, a BDD Feature in `prodops/artifacts/bdd/` without a corresponding Committed OBC, an active experiment without entries in the upstream-trail for more than two weeks (signal S1 of Perpetual Discovery). The diligence-async operates in both Upstream and Downstream: in Upstream with advisory rigor, alerting without blocking; in Downstream with blocking rigor, generating Findings that prevent advancement.
 

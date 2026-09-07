@@ -17,7 +17,7 @@ Upstream, Downstream e o Novo Modelo Operacional para Produtos Digitais
 | 4 | Assessment: a jornada que acompanha todas | [capitulo-04.md](capitulo-04.md) | Revisão |
 | 5 | Upstream: o modo da incerteza explícita | [capitulo-05.md](capitulo-05.md) | Rascunho |
 | 6 | Downstream: o modo do compromisso | [capitulo-06.md](capitulo-06.md) | Rascunho |
-| 7 | O CommitmentGate: a fronteira com nome | [capitulo-07.md](capitulo-07.md) | Rascunho |
+| 7 | O Commitment Gate: a fronteira com nome | [capitulo-07.md](capitulo-07.md) | Rascunho |
 | 8 | Observabilidade como epistemologia, não como infraestrutura | [capitulo-08.md](capitulo-08.md) | Rascunho |
 | 9 | Diligence: guardião da consistência | [capitulo-09.md](capitulo-09.md) | Rascunho |
 | 10 | O problema de modo para agentes de IA | [capitulo-10.md](capitulo-10.md) | Rascunho |

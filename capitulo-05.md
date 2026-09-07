@@ -5,7 +5,7 @@
 ## A disciplina do que não é promessa
 
 ![Ciclo de vida de um experimento Upstream](images/cap04-experiment-lifecycle.svg)
-*Figura 5. Ciclo de vida de um experimento Upstream: de HypothesisFormed ao CommitmentGate com seus 6 outcomes*
+*Figura 5. Ciclo de vida de um experimento Upstream: de Hypothesis Formed ao Commitment Gate com seus 6 outcomes*
 
 O Upstream não é o modo onde o rigor é descartado. É o modo onde o rigor assume uma forma distinta: orientado à qualidade da evidência, não à verificação de um compromisso Downstream.
 
@@ -58,11 +58,11 @@ graph TD
     DP --> DS["Escopo Downstream"]
 ```
 
-Não é um template de burocracia: é o mecanismo que mantém o experimento orientado à sua hipótese central. A seção Decision Package é a que determina se o experimento está maduro para o CommitmentGate.
+Não é um template de burocracia: é o mecanismo que mantém o experimento orientado à sua hipótese central. A seção Decision Package é a que determina se o experimento está maduro para o Commitment Gate.
 
-O `upstream-trail.md` é o registro cronológico das sessões: o que foi feito, o que foi descoberto, quais artefatos foram produzidos, quais decisões foram tomadas e por quê. Ele serve a dois propósitos. Durante o experimento, é o mecanismo que previne a perda de contexto entre sessões. No CommitmentGate, é a evidência de que o experimento teve progressão real, não apenas acumulou entradas sem avançar na hipótese.
+O `upstream-trail.md` é o registro cronológico das sessões: o que foi feito, o que foi descoberto, quais artefatos foram produzidos, quais decisões foram tomadas e por quê. Ele serve a dois propósitos. Durante o experimento, é o mecanismo que previne a perda de contexto entre sessões. No Commitment Gate, é a evidência de que o experimento teve progressão real, não apenas acumulou entradas sem avançar na hipótese.
 
-Além dos obrigatórios, experimentos trabalham sobre artefatos que já existem ou que podem ser enriquecidos durante a investigação: o OBC Draft — que nasce com o Business Intent, pré-existe ao experimento e precisa estar presente como arquivo antes do CommitmentGate —, a BDD Feature em rascunho, arquivos de evidência em `evidence/`, protótipos em `prototypes/`. O experimento não cria o OBC; opera sobre ele. Os demais artefatos opcionais são produzidos conforme a necessidade da investigação, não como requisito de entrada.
+Além dos obrigatórios, experimentos trabalham sobre artefatos que já existem ou que podem ser enriquecidos durante a investigação: o OBC Draft — que nasce com o Business Intent, pré-existe ao experimento e precisa estar presente como arquivo antes do Commitment Gate —, a BDD Feature em rascunho, arquivos de evidência em `evidence/`, protótipos em `prototypes/`. O experimento não cria o OBC; opera sobre ele. Os demais artefatos opcionais são produzidos conforme a necessidade da investigação, não como requisito de entrada.
 
 ---
 
@@ -74,15 +74,15 @@ No Upstream, o Evidence Threshold é *opcional* (recomendado, mas não obrigató
 
 O que não é aceitável é a ausência total de critério de parada, e é exatamente essa ausência que produz o principal anti-padrão do Upstream.
 
-Quatro conceitos que operam em sequência no Upstream, mas que não são sinônimos: o **Evidence Threshold** é o critério explícito declarado antes ou durante o experimento; a **evidência suficiente** é o julgamento epistemológico sobre se o conhecimento produzido permite uma decisão — existe mesmo quando nenhum threshold foi formalmente declarado; o **critério de parada** é a condição que indica que o experimento deve encerrar: pode ser o threshold atingido, o julgamento do autor, ou um dos sinais S1–S4; o **CommitmentGate** é o mecanismo coletivo que decide o destino da Product Capability com base na evidência produzida. Usar "Evidence Threshold" como sinônimo de "evidência suficiente" ou de "CommitmentGate" é o erro que alimenta o Perpetual Discovery.
+Quatro conceitos que operam em sequência no Upstream, mas que não são sinônimos: o **Evidence Threshold** é o critério explícito declarado antes ou durante o experimento; a **evidência suficiente** é o julgamento epistemológico sobre se o conhecimento produzido permite uma decisão — existe mesmo quando nenhum threshold foi formalmente declarado; o **critério de parada** é a condição que indica que o experimento deve encerrar: pode ser o threshold atingido, o julgamento do autor, ou um dos sinais S1–S4; o **Commitment Gate** é o mecanismo coletivo que decide o destino da Product Capability com base na evidência produzida. Usar "Evidence Threshold" como sinônimo de "evidência suficiente" ou de "Commitment Gate" é o erro que alimenta o Perpetual Discovery.
 
 ---
 
 ## Perpetual Discovery: o anti-padrão central
 
-Perpetual Discovery é o estado de um experimento que continua acumulando evidência e sessões sem que a hipótese central avance para uma decisão de comprometimento. O experimento nunca chega ao CommitmentGate, não porque a evidência seja insuficiente, mas porque não há pressão ou critério explícito que force a decisão.
+Perpetual Discovery é o estado de um experimento que continua acumulando evidência e sessões sem que a hipótese central avance para uma decisão de comprometimento. O experimento nunca chega ao Commitment Gate, não porque a evidência seja insuficiente, mas porque não há pressão ou critério explícito que force a decisão.
 
-Três condições estruturais produzem Perpetual Discovery. A ausência de Evidence Threshold declarado: sem critério de parada, o experimento sempre pode "precisar de mais evidência": o threshold implícito é infinito. A hipótese central nunca formalizada: sem o que falsificar, nunca há uma resposta: o experimento continua porque a pergunta permanece aberta. E o CommitmentGate visto como evento de aprovação em vez de decisão de comprometimento: se o Gate é percebido como o momento em que a capacidade de mudar de curso termina, há incentivo racional para evitá-lo.
+Três condições estruturais produzem Perpetual Discovery. A ausência de Evidence Threshold declarado: sem critério de parada, o experimento sempre pode "precisar de mais evidência": o threshold implícito é infinito. A hipótese central nunca formalizada: sem o que falsificar, nunca há uma resposta: o experimento continua porque a pergunta permanece aberta. E o Commitment Gate visto como evento de aprovação em vez de decisão de comprometimento: se o Gate é percebido como o momento em que a capacidade de mudar de curso termina, há incentivo racional para evitá-lo.
 
 O framework ProdOps identifica quatro sinais diagnósticos que tornam o Perpetual Discovery reconhecível sem depender de julgamento subjetivo. Os limiares numéricos abaixo são heurísticas orientadoras, não critérios canonizados. O que é invariante é a estrutura do diagnóstico; o que cada time calibra é o threshold:
 
@@ -94,7 +94,7 @@ O framework ProdOps identifica quatro sinais diagnósticos que tornam o Perpetua
 
 **S4: Stakeholder com decisão bloqueada há 10+ dias úteis por esse experimento.** O custo de espera supera o valor de continuar explorando: a decisão de avançar ou encerrar precisa ser tomada.
 
-Quando múltiplos sinais estão ativos simultaneamente, o experimento está em risco crítico de Perpetual Discovery e o CommitmentGate deve ser convocado, não para aprovar, mas para decidir o que fazer.
+Quando múltiplos sinais estão ativos simultaneamente, o experimento está em risco crítico de Perpetual Discovery e o Commitment Gate deve ser convocado, não para aprovar, mas para decidir o que fazer.
 
 ```mermaid
 graph TD
@@ -103,7 +103,7 @@ graph TD
     S3["S3: Evidence Threshold declarado mas não atingível"]
     S4["S4: Stakeholder bloqueado por 10+ dias úteis"]
     S1 & S2 & S3 & S4 --> PD["Perpetual Discovery diagnosticado"]
-    PD --> |"outcome correto"| CG["CommitmentGate imediato"]
+    PD --> |"outcome correto"| CG["Commitment Gate imediato"]
     CG --> D["Descartar com aprendizado\nou Requer outro experimento"]
 ```
 
@@ -117,9 +117,9 @@ Existem três atos distintos de implantação no Upstream, com autorizações e 
 
 **Sandbox Deploy**: código implantado em stack efêmera e isolada, sem tráfego de cliente real. O engenheiro decide. A stack é destruída ao final do experimento. Sem Release Trail, sem OBC Committed.
 
-**Produção Controlada**: código Upstream implantado em produção real, sem CommitmentGate. Autorização explícita do time e da liderança. Rollback imediato disponível. Sem Release Trail exigido — o que não significa sem evidência: o que foi observado em Produção Controlada deve ser registrado no upstream-trail do experimento. Isso não é violação do modo Upstream: é um ato autorizado. O que a diferencia da promoção é que o *compromisso de Product Capability* (OBC Committed, Gates do Downstream) não foi assumido. O código chega a produção; a Product Capability permanece em exploração.
+**Produção Controlada**: código Upstream implantado em produção real, sem Commitment Gate. Autorização explícita do time e da liderança. Rollback imediato disponível. Sem Release Trail exigido — o que não significa sem evidência: o que foi observado em Produção Controlada deve ser registrado no upstream-trail do experimento. Isso não é violação do modo Upstream: é um ato autorizado. O que a diferencia da promoção é que o *compromisso de Product Capability* (OBC Committed, Gates do Downstream) não foi assumido. O código chega a produção; a Product Capability permanece em exploração.
 
-**Promoção de Product Capability**: CommitmentGate com outcome Promover. BDD Feature e OBC movidos para os paths comprometidos. O item entra no Icebox. O Downstream está declarado; a Delivery começa apenas após o Readiness Gate e o Planning.
+**Promoção de Product Capability**: Commitment Gate com outcome Promover. BDD Feature e OBC movidos para os paths comprometidos. O item entra no Icebox. O Downstream está declarado; a Delivery começa apenas após o Readiness Gate e o Planning.
 
 A distinção entre Produção Controlada e Promoção de Product Capability é precisamente a distinção que o modelo modal resolve: no primeiro caso, o código está em produção mas a Product Capability não está comprometida; no segundo, o compromisso foi formalmente assumido com todos os seus Gates.
 
@@ -127,13 +127,13 @@ A distinção entre Produção Controlada e Promoção de Product Capability é 
 
 ## O Upstream em operação: a Magazine Siará como exemplar
 
-Os três primeiros experimentos da Payments API da Magazine Siará (EXP-001, EXP-002 e EXP-003) ilustram o Upstream como modo operacional em sua forma mais completa, com CommitmentGate executado ao final da sequência.
+Os três primeiros experimentos da Payments API da Magazine Siará (EXP-001, EXP-002 e EXP-003) ilustram o Upstream como modo operacional em sua forma mais completa, com Commitment Gate executado ao final da sequência.
 
 O EXP-001 abriu com uma questão de alto risco: como suportar o ciclo completo de cartão de crédito sem cruzar a fronteira PCI nem acoplar o Checkout ao contrato do Asaas? Antes de escrever uma linha de código de produção, o experimento especificou os BDD scenarios obrigatórios, os Observable Events esperados para cada fluxo (autorização, confirmação, análise de risco, recusa, cancelamento, estorno) e as dimensões que nunca poderiam aparecer nos logs (número do cartão, CVV, token do provedor). O EXP-002 mapeou as capacidades e limitações do sandbox Asaas para reprodução do ciclo de cartão, e confirmou o Validation Workbench como ambiente de simulação para os cenários que o sandbox não consegue reproduzir deterministicamente — a validação completa dos cenários do provedor permanece em aberto, dependente de evidência externa do Asaas. O EXP-003 comparou sistematicamente os três modelos de integração possíveis — hosted, tokenizado, transparente — e produziu a recomendação com justificativa: apenas a entrada hosted avança para o Downstream, porque é a única opção que não exige decisões externas ao time de Payments.
 
-O Decision Package do EXP-003 recomenda Promover com restrição (outcome ②): o slice hosted avança; as demais opções permanecem em Upstream aguardando decisões de terceiros (escopo PCI, modelo de token, UX do Checkout). O CommitmentGate foi executado com esse Decision Package: o trio registrou o outcome, e o Downstream iniciou exclusivamente para a entrada hosted.
+O Decision Package do EXP-003 recomenda Promover com restrição (outcome ②): o slice hosted avança; as demais opções permanecem em Upstream aguardando decisões de terceiros (escopo PCI, modelo de token, UX do Checkout). O Commitment Gate foi executado com esse Decision Package: o trio registrou o outcome, e o Downstream iniciou exclusivamente para a entrada hosted.
 
-Três experimentos sequenciais. Nenhuma linha de código de produção durante os três. Uma recomendação verificável por terceiros. Um CommitmentGate que decidiu sobre o destino da Product Capability com evidência suficiente — e com restrição explícita sobre o que a evidência não suportava. Esse é o modo Upstream operado com rigor de engenharia: não uma fase de baixa disciplina antes da "engenharia real". Um regime de compromisso não bloqueante que produziu conhecimento verificável — e um Decision Package que tornou o CommitmentGate possível.
+Três experimentos sequenciais. Nenhuma linha de código de produção durante os três. Uma recomendação verificável por terceiros. Um Commitment Gate que decidiu sobre o destino da Product Capability com evidência suficiente — e com restrição explícita sobre o que a evidência não suportava. Esse é o modo Upstream operado com rigor de engenharia: não uma fase de baixa disciplina antes da "engenharia real". Um regime de compromisso não bloqueante que produziu conhecimento verificável — e um Decision Package que tornou o Commitment Gate possível.
 
 ---
 
@@ -155,7 +155,7 @@ flowchart TD
         DS["Downstream Declared\nOBC: Refining\nDiscovery em modo bloqueante"]
     end
 
-    CG{"CommitmentGate\n6 outcomes\nPM + Tech Lead + Autor"}
+    CG{"Commitment Gate\n6 outcomes\nPM + Tech Lead + Autor"}
     RG{"Readiness Gate\nOBC Committed?\nBDD + Riscos ok?"}
     ITB["VIEW: Iteration Backlog\nOBC: Committed"]
     IP["Iteration Plan\nDelivery inicia — Bootstrap"]
@@ -176,21 +176,21 @@ flowchart TD
 
     ITB -->|"PO seleciona"| IP
 ```
-*Figura 5a. Jornada de um item dentro do PIB: o Plano de Experimento como VIEW dos experimentos Upstream ativos dentro do Icebox, o CommitmentGate como fronteira modal, e o Iteration Plan como destino final após o Readiness Gate.*
+*Figura 5a. Jornada de um item dentro do PIB: o Plano de Experimento como VIEW dos experimentos Upstream ativos dentro do Icebox, o Commitment Gate como fronteira modal, e o Iteration Plan como destino final após o Readiness Gate.*
 
 Um item do Icebox pode existir sem aparecer no Plano de Experimento — por exemplo, quando aguarda uma decisão de negócio externa antes de abrir a investigação. O Plano de Experimento lista apenas os experimentos que estão ativos neste momento.
 
-Os três experimentos da Magazine Siará (EXP-001, EXP-002, EXP-003) seriam representados no Plano de Experimento durante suas respectivas janelas de investigação — e removidos quando o CommitmentGate registrou o outcome *Promover com restrição* e o item entrou no Icebox como Downstream Declared.
+Os três experimentos da Magazine Siará (EXP-001, EXP-002, EXP-003) seriam representados no Plano de Experimento durante suas respectivas janelas de investigação — e removidos quando o Commitment Gate registrou o outcome *Promover com restrição* e o item entrou no Icebox como Downstream Declared.
 
 ---
 
 ## O que o Upstream não é responsável por fazer
 
-A definição do Upstream inclui uma lista explícita do que está fora de seu escopo. Implementar a Product Capability comprometida com Gates bloqueantes: isso é a jornada Delivery no modo Downstream. A distinção é de compromisso, não de atividade física: o Upstream pode produzir código funcional, prova de conceito, implementação em sandbox ou em produção controlada, sem que isso constitua a entrega de uma Product Capability formalmente prometida. Comprometer e implementar tecnicamente a observabilidade da Product Capability (SLOs, Observable Events, instrumentação em produção): isso é responsabilidade do Downstream. No Upstream, ODD orienta documentar o que precisa ser observável para testar a hipótese — sem que isso constitua compromisso de implementação. Produzir OBC Committed: isso é Discovery no Downstream. Produzir BDD completa em `artifacts/bdd/`: isso acontece antes do Readiness Gate. Garantir ausência de incerteza: incerteza residual aceitável é um critério válido de CommitmentGate.
+A definição do Upstream inclui uma lista explícita do que está fora de seu escopo. Implementar a Product Capability comprometida com Gates bloqueantes: isso é a jornada Delivery no modo Downstream. A distinção é de compromisso, não de atividade física: o Upstream pode produzir código funcional, prova de conceito, implementação em sandbox ou em produção controlada, sem que isso constitua a entrega de uma Product Capability formalmente prometida. Comprometer e implementar tecnicamente a observabilidade da Product Capability (SLOs, Observable Events, instrumentação em produção): isso é responsabilidade do Downstream. No Upstream, ODD orienta documentar o que precisa ser observável para testar a hipótese — sem que isso constitua compromisso de implementação. Produzir OBC Committed: isso é Discovery no Downstream. Produzir BDD completa em `artifacts/bdd/`: isso acontece antes do Readiness Gate. Garantir ausência de incerteza: incerteza residual aceitável é um critério válido de Commitment Gate.
 
-Essa última afirmação é contraintuitiva o suficiente para merecer ênfase: o Upstream não precisa eliminar toda a incerteza. Precisa reduzir a incerteza ao ponto em que o risco residual é aceitável para assumir o compromisso do Downstream. O que é "aceitável" é julgamento coletivo do trio no CommitmentGate, não um critério de zero incerteza que nenhum experimento finito pode satisfazer.
+Essa última afirmação é contraintuitiva o suficiente para merecer ênfase: o Upstream não precisa eliminar toda a incerteza. Precisa reduzir a incerteza ao ponto em que o risco residual é aceitável para assumir o compromisso do Downstream. O que é "aceitável" é julgamento coletivo do trio no Commitment Gate, não um critério de zero incerteza que nenhum experimento finito pode satisfazer.
 
-Vale atenção especial ao item "Produzir OBC Committed: isso é Discovery no Downstream". Ele resolve um mal-entendido frequente: um Business Signal que entra diretamente em Downstream sem Upstream prévio não pula o discovery. O discovery acontece na jornada Discovery executada em modo Downstream — com rigor bloqueante. O OBC transita de Draft para Refining. A BDD Feature é escrita e refinada. As perguntas do Business Intent são resolvidas com decisões datadas e responsáveis identificados. O Readiness Gate bloqueia a entrada na jornada Delivery até que essas condições estejam satisfeitas. Somente depois — com o Iteration Plan gerado no Planning — é que o Bootstrap, primeira fase do Delivery, começa. O que "sem Upstream" descreve é a ausência de exploração pré-CommitmentGate. O que acontece após o CommitmentGate, na jornada Discovery em modo Downstream, é discovery real: com Gates bloqueantes que não permitem avançar enquanto as condições não estiverem satisfeitas.
+Vale atenção especial ao item "Produzir OBC Committed: isso é Discovery no Downstream". Ele resolve um mal-entendido frequente: um Business Signal que entra diretamente em Downstream sem Upstream prévio não pula o discovery. O discovery acontece na jornada Discovery executada em modo Downstream — com rigor bloqueante. O OBC transita de Draft para Refining. A BDD Feature é escrita e refinada. As perguntas do Business Intent são resolvidas com decisões datadas e responsáveis identificados. O Readiness Gate bloqueia a entrada na jornada Delivery até que essas condições estejam satisfeitas. Somente depois — com o Iteration Plan gerado no Planning — é que o Bootstrap, primeira fase do Delivery, começa. O que "sem Upstream" descreve é a ausência de exploração pré-Commitment Gate. O que acontece após o Commitment Gate, na jornada Discovery em modo Downstream, é discovery real: com Gates bloqueantes que não permitem avançar enquanto as condições não estiverem satisfeitas.
 
 ---
 

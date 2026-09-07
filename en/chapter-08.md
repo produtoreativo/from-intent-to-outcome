@@ -47,12 +47,12 @@ The OBC progresses through six states over the lifecycle of a Product Capability
 stateDiagram-v2
     direction LR
     [*] --> Draft : Business Signal → Business Intent
-    Draft --> Refining : CommitmentGate Promote (Moment 2)
+    Draft --> Refining : Commitment Gate Promote (Moment 2)
     Refining --> Committed : Readiness Gate approved (Moment 3)
     Committed --> InDelivery : Bootstrap.Started
     InDelivery --> Released : Promote completed
     Released --> Archived : Deprecation / replacement
-    Refining --> Archived : CommitmentGate Discard
+    Refining --> Archived : Commitment Gate Discard
     InDelivery --> Refining : Downstream regression → Upstream
 
     note right of Draft
@@ -77,7 +77,7 @@ stateDiagram-v2
 
 **Draft**: born at the transition from a Business Signal to a Business Intent. In Upstream, it is memory of learning: it can be updated continuously, it can remain incomplete, it does not block experiments. The absence of completed fields in Draft is expected, not a failure.
 
-**Refining**: the state the OBC assumes at the start of Downstream (Moment 2 of the transition, after the CommitmentGate with outcome Promote). The fields begin to be refined with real substance: `expected_outcome` ceases to be vague, `success_metrics` gains baseline and target, `acceptance_criteria` becomes verifiable by third parties.
+**Refining**: the state the OBC assumes at the start of Downstream (Moment 2 of the transition, after the Commitment Gate with outcome Promote). The fields begin to be refined with real substance: `expected_outcome` ceases to be vague, `success_metrics` gains baseline and target, `acceptance_criteria` becomes verifiable by third parties.
 
 **Committed**: records that the formal commitment has been made and that the contract is complete enough for Delivery to begin. The Committed state does not create the commitment — it is the artifact that makes the commitment observable and auditable. Every acceptance criterion is verifiable without additional verbal context. Success metrics have baseline and target. Observable Events are defined. The Reliability Plan (when required by risk triggers) is present. An OBC that has not reached Committed does not pass through the Readiness Gate: this is the protection against Phantom BDD and Proxy Commitment.
 
@@ -98,11 +98,11 @@ gantt
     title Upstream Experiment Lifecycle
     dateFormat  YYYY-MM-DD
     section Upstream
-    HypothesisFormed        :milestone, h1, 2026-08-01, 0d
-    Evidence Collection     :evidence, 2026-08-01, 15d
-    EvidenceThresholdReached :milestone, h2, after evidence, 0d
-    CommitmentGate          :Gate, after h2, 3d
-    CommitmentGatePassed    :milestone, h3, after Gate, 0d
+    Hypothesis Formed           :milestone, h1, 2026-08-01, 0d
+    Evidence Collection         :evidence, 2026-08-01, 15d
+    Evidence Threshold Reached  :milestone, h2, after evidence, 0d
+    Commitment Gate             :Gate, after h2, 3d
+    Commitment Gate Passed      :milestone, h3, after Gate, 0d
     section Metrics
     TTE - Time-to-Evidence  :crit, 2026-08-01, 15d
     Decision Latency        :crit, after evidence, 3d
@@ -114,7 +114,7 @@ The Discovery journey, in Upstream, does not have equivalent instrumentation yet
 
 **TTE (Time to Evidence)**: time between the start of an Upstream experiment (opening of `experiment.md`) and the production of the first executable evidence. Measures how quickly an experiment begins to produce real learning, not just documentation of intent.
 
-**Decision Latency**: time between the Evidence Threshold declared as reached and the convening of the CommitmentGate. A high Decision Latency is a signal of Perpetual Discovery: the team knows it has sufficient evidence but is not convening the decision.
+**Decision Latency**: time between the Evidence Threshold declared as reached and the convening of the Commitment Gate. A high Decision Latency is a signal of Perpetual Discovery: the team knows it has sufficient evidence but is not convening the decision.
 
 **Discovery WIP (Work in Progress)**: number of Upstream experiments active simultaneously. The name is by analogy with Kanban WIP and refers to experiments in progress, regardless of the journey (Discovery, Assessment, or other) in which they are enrolled; the criterion is the Upstream mode, not the journey. A high Discovery WIP indicates that the team is dispersing attention across multiple hypotheses, which tends to increase the TTE of all of them.
 
@@ -140,7 +140,7 @@ The weights of these metrics vary by product stage, as per the model canonized i
 
 Upstream and Downstream have distinct record-keeping mechanisms that reflect their distinct purposes.
 
-In Upstream, the primary record-keeping mechanism is the set of evidence produced by the experiment (referred to here as Evidence Package) that underpins the Decision Package presented at the CommitmentGate. The central characteristic of the Evidence Package is verifiability: each piece of evidence must be readable by a trio member who did not participate in the experiment, without additional verbal context. If the evidence depends on context that is not documented, it does not constitute verifiable evidence: it is undocumented memory. The Evidence Package answers the question "what did we discover?".
+In Upstream, the primary record-keeping mechanism is the set of evidence produced by the experiment (referred to here as Evidence Package) that underpins the Decision Package presented at the Commitment Gate. The central characteristic of the Evidence Package is verifiability: each piece of evidence must be readable by a trio member who did not participate in the experiment, without additional verbal context. If the evidence depends on context that is not documented, it does not constitute verifiable evidence: it is undocumented memory. The Evidence Package answers the question "what did we discover?".
 
 In Downstream, the primary record-keeping mechanism is the Release Trail: the append-only log of evidence from each phase of the Bootstrap → Promote sequence. The Release Trail answers a different question: not "what did we discover?" but "how did we honor the commitment, step by step, with what evidence?". Each phase of the Delivery cycle produces its records in the trail; nothing is replaced or rewritten, only appended. Promote without a filled Release Trail is the anti-pattern AP-D5: the traceability promised by Downstream is destroyed.
 
@@ -152,7 +152,7 @@ The distinction between the two record-keeping mechanisms is a direct consequenc
 
 The word epistemology (the study of knowledge and how we know it) may seem out of place in a chapter about engineering practices. But this is precisely what observability does in the ProdOps model: it is the mechanism by which the team knows what it knows, and can assert that in a verifiable way.
 
-In Upstream, without observability of evidence (without verifiable artifacts, without documented falsification criteria, without a declared Evidence Threshold), the team does not know what it knows. It has convictions, it has intuitions, it has memory of conversations. But it does not have verifiable knowledge. The CommitmentGate, without an Evidence Package with substance, is Gate Theater: the form without the function.
+In Upstream, without observability of evidence (without verifiable artifacts, without documented falsification criteria, without a declared Evidence Threshold), the team does not know what it knows. It has convictions, it has intuitions, it has memory of conversations. But it does not have verifiable knowledge. The Commitment Gate, without an Evidence Package with substance, is Gate Theater: the form without the function.
 
 In Downstream, without observability of behavior in production (without SLOs, without reliability metrics, without Observable Events in the OBC), the team does not know whether the commitment is being honored. It has the feeling that things are working. But it does not have verifiable evidence. Promote, without a filled Release Trail, is an Empty Release Trail.
 
@@ -164,5 +164,5 @@ In both cases, the absence of observability is not a technical instrumentation p
 
 ---
 
-[← Chapter 7 — The CommitmentGate: the boundary with a name](chapter-07.md)
+[← Chapter 7 — The Commitment Gate: the boundary with a name](chapter-07.md)
 [→ Chapter 9 — Diligence: guardian of consistency](chapter-09.md)

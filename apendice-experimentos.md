@@ -6,7 +6,7 @@
 
 No ProdOps, um experimento é a unidade estruturada de trabalho da jornada Discovery em modo Upstream. Ele não é uma reunião de brainstorming nem uma prova de conceito informal: é um artefato com hipótese falsificável, critério de parada, upstream-trail cronológico e Decision Package ao final.
 
-Cada experimento responde a uma pergunta específica antes que qualquer compromisso Downstream seja assumido. O resultado pode ser um Decision Package que recomenda Promover (avançar para Downstream), Descartar, Aguardar decisão, ou Rodar outro experimento. O que não existe é um experimento que "passa para produção" sem CommitmentGate: o Gate é a fronteira entre a exploração e o compromisso.
+Cada experimento responde a uma pergunta específica antes que qualquer compromisso Downstream seja assumido. O resultado pode ser um Decision Package que recomenda Promover (avançar para Downstream), Descartar, Aguardar decisão, ou Rodar outro experimento. O que não existe é um experimento que "passa para produção" sem Commitment Gate: o Gate é a fronteira entre a exploração e o compromisso.
 
 A Payments API da Magazine Siará acumulou 17 experimentos desde o início do desenvolvimento. Este apêndice documenta cada um deles em linguagem acessível ao leitor que não tem acesso ao repositório.
 
@@ -51,7 +51,7 @@ Os experimentos a seguir investigaram diretamente as Product Capabilities da Pay
 
 **Resultado:** Decision Package canônico da sequência EXP-001/002/003. Hosted checkout é o primeiro slice — menor PCI, menor risco operacional, menor mudança na arquitetura existente. Tokenizado é a segunda evolução futura. Direct Capture (raw) fora do escopo até aprovação explícita de Security.
 
-**Conexão com o framework:** Demonstra CommitmentGate com restrição (outcome ②): apenas o slice confirmado avança; o restante permanece em Upstream.
+**Conexão com o framework:** Demonstra Commitment Gate com restrição (outcome ②): apenas o slice confirmado avança; o restante permanece em Upstream.
 
 ---
 
@@ -86,7 +86,7 @@ Os experimentos a seguir investigaram diretamente as Product Capabilities da Pay
 
 **Resultado:** Modelo de composição definido; política de falha parcial estabelecida; OBC Draft de `payment-composition` produzido. O aprendizado, incluindo código da exploração, foi promovido e integrado ao Downstream em andamento.
 
-**Por que este caso importa:** É o exemplo mais claro de coexistência de modos no corpus. Downstream e Upstream operando em paralelo para o mesmo produto ao mesmo tempo — não em sequência, não em alternância. O Downstream manteve o compromisso assumido no CommitmentGate; o Upstream enriqueceu o modelo sem bloqueá-lo.
+**Por que este caso importa:** É o exemplo mais claro de coexistência de modos no corpus. Downstream e Upstream operando em paralelo para o mesmo produto ao mesmo tempo — não em sequência, não em alternância. O Downstream manteve o compromisso assumido no Commitment Gate; o Upstream enriqueceu o modelo sem bloqueá-lo.
 
 ---
 
@@ -140,7 +140,7 @@ Os experimentos a seguir investigaram diretamente as Product Capabilities da Pay
 
 O EXP-007 merece atenção especial porque demonstra algo que a maioria dos frameworks não modela: dois regimes de compromisso diferentes operando para o mesmo produto ao mesmo tempo.
 
-Quando BS-001 entrou em Downstream com prazo de 15 dias, o time tinha um compromisso Downstream claro e uma implementação em andamento. Mas havia questões sobre o modelo de composição de pagamento que a velocidade do CommitmentGate não havia resolvido em profundidade. Em vez de travar o Downstream ou ignorar as questões, o time abriu o EXP-007 em Upstream — com liberdade de exploração, sem Gate bloqueante, sem compromisso Downstream bloqueante.
+Quando BS-001 entrou em Downstream com prazo de 15 dias, o time tinha um compromisso Downstream claro e uma implementação em andamento. Mas havia questões sobre o modelo de composição de pagamento que a velocidade do Commitment Gate não havia resolvido em profundidade. Em vez de travar o Downstream ou ignorar as questões, o time abriu o EXP-007 em Upstream — com liberdade de exploração, sem Gate bloqueante, sem compromisso Downstream bloqueante.
 
 Quando o EXP-007 concluiu, o aprendizado não foi descartado: foi integrado ao Downstream. O código exploratório que havia sido produzido foi promovido e incorporado à implementação em andamento.
 
