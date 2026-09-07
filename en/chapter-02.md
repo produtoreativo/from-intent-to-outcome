@@ -145,6 +145,16 @@ The next chapter defines what a mode of execution is and why that definition res
 
 ---
 
+## From the literature, not despite it
+
+This book will not detail how to conduct Discovery or how to execute Delivery. That literature already exists — and it is good. Cagan, Torres, Singer, Patton, Humble, Forsgren: what they produced in terms of techniques, artifacts, and practices does not need to be rewritten. It remains valid.
+
+What ProdOps proposes is a layer above those methodologies: making explicit the commitment regime that governs any execution of Discovery or Delivery. This diverges from the most common interpretation of the literature — which tends to treat the two journeys as sequential phases — but does not contradict what each work proposes within its own scope. What changes is what governs the relationship between the journeys, not their content.
+
+In that sense, ProdOps undoes nothing. It readjusts. Those already operating with Torres's continuous discovery practices, Singer's shaping, Cagan's four risk dimensions, will continue operating — with the additional clarity that what distinguishes those contexts is not the activity itself, but the commitment regime governing it. From the literature. Not despite it.
+
+---
+
 *Chapter 2 of 11 | Part I: The Problem*
 
 ---

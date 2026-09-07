@@ -145,6 +145,16 @@ O próximo capítulo define o que é um modo de execução e por que essa defini
 
 ---
 
+## A partir da literatura, não apesar dela
+
+Este livro não vai detalhar como conduzir Discovery nem como executar Delivery. Essa literatura já existe — e é boa. Cagan, Torres, Singer, Patton, Humble, Forsgren: o que produziram em termos de técnicas, artefatos e práticas não precisa ser reescrito. Permanece válido.
+
+O que o ProdOps propõe é uma camada acima dessas metodologias: a explicitação do regime de compromisso que governa qualquer execução de Discovery ou Delivery. Isso diverge da interpretação mais comum da literatura — que tende a tratar as duas jornadas como fases sequenciais — mas não contradiz o que cada obra propõe dentro do seu escopo. O que muda é o que governa a relação entre as jornadas, não o conteúdo delas.
+
+Nesse sentido, o ProdOps não desfaz nada. Reajusta. Quem já opera com as práticas de discovery contínuo de Torres, com o shaping de Singer, com as quatro dimensões de risco de Cagan, continuará operando — com a clareza adicional de que o que distingue esses contextos não é a atividade em si, mas o regime de compromisso que a governa. A partir da literatura. Não apesar dela.
+
+---
+
 *Capítulo 2 de 11 | Parte I: O Problema*
 
 ---
