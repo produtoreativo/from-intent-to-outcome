@@ -191,6 +191,50 @@ O ProdOps não prescreve uma implementação única do Assessment. O que o Frame
 
 Os capítulos seguintes descrevem os modos de execução (Upstream e Downstream) e as jornadas clássicas. Em cada um deles, o Assessment opera como pano de fundo: garantindo que a decisão que encerra uma fase tenha o contexto informacional que ela exige, e que o aprendizado que cada fase produz não se perca entre um ciclo e o próximo.
 
+```mermaid
+graph TD
+    BS(["Business Signal\n— Concepção ativada —"])
+
+    subgraph ASSESSMENT["Assessment — governança informacional transversal"]
+
+        subgraph PROSP["Dimensão Prospectiva"]
+            C1["Lê corpus existente\nOBCs Released · Experiment Trails anteriores"]
+            C2["Mapeia lacunas informacionais\no que ainda precisa ser levantado"]
+            C3{{"Compromisso\nverificável?"}}
+            DPEVAL["Avalia Decision Package\nlegibilidade · falsificação declarada\nriscos · incerteza residual"]
+            RP["Produz Reliability Plan\nSLIs · Reliability Rules · critérios de alerta"]
+        end
+
+        subgraph EXEC["Jornadas clássicas de execução"]
+            UP["Discovery — modo Upstream\nartefatos: experiment trail · Decision Package"]
+            CG(["Commitment Gate\ntrio: PM · Tech Lead · Autor\n6 outcomes canônicos"])
+            DWN["Discovery → Delivery → Operation\nmodo Downstream\nartefatos: OBCs · Release Trails · Timelines · Postmortems"]
+        end
+
+        subgraph RETRO["Dimensão Retrospectiva"]
+            R1["Lê ciclo encerrado\nUpstream: experiment trail · Decision Package · outcome do CG\nDownstream: DORA · Gate Failure Rate · OBC Released · Postmortems"]
+            R2["Relatório de ciclo\nanti-padrões · sinais diagnósticos · recomendações"]
+            R3(["Novos Business Signals\nretroalimentação estruturada"])
+        end
+
+    end
+
+    BS --> C1
+    C1 --> C2
+    C2 --> C3
+    C3 -->|"contexto suficiente"| CG
+    C3 -->|"amadurecer compromisso"| UP
+    UP -->|"Decision Package"| DPEVAL
+    DPEVAL --> CG
+    CG -->|"Promover"| RP
+    RP --> DWN
+    CG -.->|"qualquer outro outcome\n(encerra ciclo Upstream)"| R1
+    DWN --> R1
+    R1 --> R2
+    R2 --> R3
+    R3 -.->|"retroalimenta Concepção"| BS
+```
+
 ---
 
 *Capítulo 4 de 11 | Parte II: Os Modos*

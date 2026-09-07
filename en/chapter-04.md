@@ -191,6 +191,50 @@ ProdOps does not prescribe a single Assessment implementation. What the Framewor
 
 The following chapters describe the execution modes (Upstream and Downstream) and the classic journeys. In each of them, Assessment operates in the background: ensuring that the decision that closes a phase has the informational context it requires, and that the learning each phase produces is not lost between one cycle and the next.
 
+```mermaid
+graph TD
+    BS(["Business Signal\n— Conception activated —"])
+
+    subgraph ASSESSMENT["Assessment — transversal informational governance"]
+
+        subgraph PROSP["Prospective Dimension"]
+            C1["Reads existing corpus\nOBCs Released · prior Experiment Trails"]
+            C2["Maps informational gaps\nwhat still needs to be gathered"]
+            C3{{"Verifiable\ncommitment?"}}
+            DPEVAL["Evaluates Decision Package\nreadability · declared falsification\nrisks · residual uncertainty"]
+            RP["Produces Reliability Plan\nSLIs · Reliability Rules · alert criteria"]
+        end
+
+        subgraph EXEC["Classic execution journeys"]
+            UP["Discovery — Upstream mode\nartifacts: experiment trail · Decision Package"]
+            CG(["Commitment Gate\ntrio: PM · Tech Lead · Author\n6 canonical outcomes"])
+            DWN["Discovery → Delivery → Operation\nDownstream mode\nartifacts: OBCs · Release Trails · Timelines · Postmortems"]
+        end
+
+        subgraph RETRO["Retrospective Dimension"]
+            R1["Reads concluded cycle\nUpstream: experiment trail · Decision Package · CG outcome\nDownstream: DORA · Gate Failure Rate · OBC Released · Postmortems"]
+            R2["Cycle report\nanti-patterns · diagnostic signals · recommendations"]
+            R3(["New Business Signals\nstructured feedback"])
+        end
+
+    end
+
+    BS --> C1
+    C1 --> C2
+    C2 --> C3
+    C3 -->|"sufficient context"| CG
+    C3 -->|"mature commitment"| UP
+    UP -->|"Decision Package"| DPEVAL
+    DPEVAL --> CG
+    CG -->|"Promote"| RP
+    RP --> DWN
+    CG -.->|"any other outcome\n(closes Upstream cycle)"| R1
+    DWN --> R1
+    R1 --> R2
+    R2 --> R3
+    R3 -.->|"feeds back into Conception"| BS
+```
+
 ---
 
 *Chapter 4 of 11 | Part II: The Modes*
