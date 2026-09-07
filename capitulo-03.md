@@ -211,7 +211,7 @@ No Downstream, o OBC Committed é o contrato sob o qual o compromisso foi assumi
 graph LR
     BS["Business Signal\n→ Business Intent"] --> A["OBC Draft"]
     A --> UP["Upstream\n(rigor advisory)"]
-    A -->|"Signal suficiente"| CG{"CommitmentGate\n6 outcomes"}
+    A -->|"contexto suficiente"| CG{"CommitmentGate\n6 outcomes"}
     UP -->|"Decision Package"| CG
     CG -->|"Promover"| C["OBC Refining\n(Downstream Declarado / Momento 2)"]
     CG -->|"outros outcomes"| X["Upstream / Descarte /\nAguardar"]
