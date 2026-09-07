@@ -143,6 +143,39 @@ The Experiment Plan is not a sprint. It has no deadline or mandatory sequence. I
 
 The Experiment Plan is the Upstream equivalent of the Iteration Plan. The Iteration Plan governs the Downstream in execution (committed capabilities, in Delivery). The Experiment Plan governs the Upstream in exploration (active hypotheses, no commitment). The two are symmetrical: one does not replace the other; they coexist when the team operates in both modes simultaneously.
 
+```mermaid
+flowchart TD
+    PIB["PIB — item enters with OBC: Draft"]
+
+    subgraph ICE["VIEW: Icebox  —  OBC ≠ Committed"]
+        PE["VIEW: Experiment Plan\nOBC: Draft · active experiment\nDiscovery WIP controlled"]
+        WAIT["Icebox without active experiment\nwaiting for external decision\nor direct Business Signal"]
+        DS["Downstream Declared\nOBC: Refining\nDiscovery in blocking mode"]
+    end
+
+    CG{"CommitmentGate\n6 outcomes\nPM + Tech Lead + Author"}
+    RG{"Readiness Gate\nOBC Committed?\nBDD + Risks ok?"}
+    ITB["VIEW: Iteration Backlog\nOBC: Committed"]
+    IP["Iteration Plan\nDelivery begins — Bootstrap"]
+    OUT["Closed / Waiting\nDiscard · Requires new EXP\nAwait decision · External dep."]
+
+    PIB -->|"experiment opened"| PE
+    PIB -->|"no experiment\nor direct Business Signal"| WAIT
+
+    PE -->|"Decision Package ready"| CG
+    WAIT -->|"context matured"| CG
+
+    CG -->|"Promote\nDraft → Refining"| DS
+    CG -->|"other outcomes"| OUT
+
+    DS -->|"OBC reaches Committed"| RG
+    RG -->|"approved"| ITB
+    RG -->|"Finding open"| DS
+
+    ITB -->|"PO selects"| IP
+```
+*Figure 5a. Journey of an item within the PIB: the Experiment Plan as a VIEW of active Upstream experiments inside the Icebox, the CommitmentGate as the modal boundary, and the Iteration Plan as the final destination after the Readiness Gate.*
+
 An item in the Icebox can exist without appearing in the Experiment Plan — for example, when it is waiting for an external business decision before opening an investigation. The Experiment Plan lists only the experiments that are active at this moment.
 
 The three Magazine Siará experiments (EXP-001, EXP-002, EXP-003) would be represented in the Experiment Plan during their respective investigation windows — and removed when the CommitmentGate recorded the *Promote with restriction* outcome and the item entered the Icebox as Downstream Declared.

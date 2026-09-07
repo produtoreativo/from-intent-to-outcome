@@ -135,6 +135,42 @@ Com essa distinção estabelecida, os Capítulos 5 e 6 descrevem cada modo em pr
 
 ---
 
+## De onde vem um item: os dois caminhos para o PIB
+
+Um item que chega ao Product Intent Backlog (PIB) percorreu um de dois caminhos distintos antes de entrar.
+
+**Fluxo global:** o Business Signal tem escopo amplo — envolve múltiplos produtos ou a plataforma inteira. Ele entra no Portfolio Tracking List, gera uma Business Intent no Business Intent Backlog (BIB), onde um Global OBC Draft nasce. Após Discovery no BIB e OBC Partitioning, o Global OBC é decomposto em Local OBCs — um por produto envolvido — e cada produto recebe seu item no PIB.
+
+**Fluxo local:** o Business Signal tem destino definido — este produto, este time. Ele entra na Product Tracking List, passa por Premortem e Owner Approval, e gera uma Business Intent com Local OBC Draft direto no PIB, sem passar pelo Portfolio.
+
+```mermaid
+flowchart TD
+    subgraph PLAT["PLATAFORMA"]
+        BS_P["Business Signal\n(escopo amplo / multi-produto)"]
+        PTL["Portfolio Tracking List"]
+        BIB["Business Intent Backlog — BIB\nGlobal OBC: Draft"]
+        OBC_P["OBC Partitioning\nGlobal OBC → Local OBCs\num por produto envolvido"]
+        BS_P -->|gera| PTL
+        PTL -->|"Signal estratégico\n→ Business Intent"| BIB
+        BIB -->|"Discovery no BIB"| OBC_P
+    end
+    subgraph PROD["PRODUTO"]
+        BS_L["Business Signal\n(escopo definido / produto único)"]
+        PTRL["Product Tracking List"]
+        OWN["Premortem + Owner Approval\n→ Business Intent + Local OBC Draft"]
+        BS_L -->|gera| PTRL
+        PTRL --> OWN
+    end
+    PIB["Product Intent Backlog — PIB\nLocal OBC: Draft"]
+    OBC_P --> PIB
+    OWN --> PIB
+```
+*Figura 3a. Os dois caminhos de entrada no PIB: o fluxo global (plataforma → BIB → Partitioning → PIB) e o fluxo local (produto → Owner Approval → PIB). Após a entrada no PIB, a origem deixa de importar — todos os itens seguem a mesma jornada.*
+
+Após a entrada no PIB, a distinção entre os dois caminhos se apaga. O item evolui pelo mesmo ciclo de estados do Local OBC — do Draft ao Released — independentemente de ter vindo do Portfolio ou do fluxo local.
+
+---
+
 ## O ciclo em síntese: OBC, CommitmentGate e a transição de regime
 
 O modelo modal descreve dois regimes de compromisso. O que ainda não foi dito é qual artefato carrega esse compromisso ao longo do ciclo de vida de uma capability — e qual mecanismo faz a transição de um regime para o outro.

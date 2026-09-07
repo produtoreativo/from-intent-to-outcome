@@ -45,6 +45,7 @@ The OBC progresses through six states over the lifecycle of a capability:
 
 ```mermaid
 stateDiagram-v2
+    direction LR
     [*] --> Draft : Business Signal → Business Intent
     Draft --> Refining : CommitmentGate Promote (Moment 2)
     Refining --> Committed : Readiness Gate approved (Moment 3)
@@ -52,7 +53,26 @@ stateDiagram-v2
     InDelivery --> Released : Promote completed
     Released --> Archived : Deprecation / replacement
     Refining --> Archived : CommitmentGate Discard
-    InDelivery --> Refining : Downstream regression to Upstream
+    InDelivery --> Refining : Downstream regression → Upstream
+
+    note right of Draft
+        VIEW Icebox
+        + Experiment Plan
+        (if active experiment)
+    end note
+    note right of Refining
+        VIEW Icebox
+        Downstream Declared
+    end note
+    note right of Committed
+        VIEW Iteration Backlog
+    end note
+    note right of InDelivery
+        Iteration Plan
+    end note
+    note right of Released
+        Operation
+    end note
 ```
 
 **Draft**: born at the transition from a Business Signal to a Business Intent. In Upstream, it is memory of learning: it can be updated continuously, it can remain incomplete, it does not block experiments. The absence of completed fields in Draft is expected, not a failure.

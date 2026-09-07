@@ -143,6 +143,39 @@ O Plano de Experimento não é um sprint. Não tem data de término nem sequênc
 
 O Plano de Experimento é o equivalente Upstream do Iteration Plan. O Iteration Plan governa o Downstream em execução (capabilities comprometidas, em Delivery). O Plano de Experimento governa o Upstream em exploração (hipóteses ativas, sem compromisso). Os dois são simétricos: um não substitui o outro; coexistem quando o time opera nos dois modos.
 
+```mermaid
+flowchart TD
+    PIB["PIB — item entra com OBC: Draft"]
+
+    subgraph ICE["VIEW: Icebox  —  OBC ≠ Committed"]
+        PE["VIEW: Plano de Experimento\nOBC: Draft · experimento ativo\nDiscovery WIP controlado"]
+        WAIT["Icebox sem experimento ativo\naguardando decisão externa\nou Business Signal direto"]
+        DS["Downstream Declared\nOBC: Refining\nDiscovery em modo bloqueante"]
+    end
+
+    CG{"CommitmentGate\n6 outcomes\nPM + Tech Lead + Autor"}
+    RG{"Readiness Gate\nOBC Committed?\nBDD + Riscos ok?"}
+    ITB["VIEW: Iteration Backlog\nOBC: Committed"]
+    IP["Iteration Plan\nDelivery inicia — Bootstrap"]
+    OUT["Encerrado / Aguardando\nDescartar · Requer outro EXP\nAguardar decisão · Dep. externa"]
+
+    PIB -->|"experimento aberto"| PE
+    PIB -->|"sem experimento\nou Business Signal direto"| WAIT
+
+    PE -->|"Decision Package pronto"| CG
+    WAIT -->|"contexto amadureceu"| CG
+
+    CG -->|"Promover\nDraft → Refining"| DS
+    CG -->|"outros outcomes"| OUT
+
+    DS -->|"OBC atinge Committed"| RG
+    RG -->|"aprovado"| ITB
+    RG -->|"Finding aberto"| DS
+
+    ITB -->|"PO seleciona"| IP
+```
+*Figura 5a. Jornada de um item dentro do PIB: o Plano de Experimento como VIEW dos experimentos Upstream ativos dentro do Icebox, o CommitmentGate como fronteira modal, e o Iteration Plan como destino final após o Readiness Gate.*
+
 Um item do Icebox pode existir sem aparecer no Plano de Experimento — por exemplo, quando aguarda uma decisão de negócio externa antes de abrir a investigação. O Plano de Experimento lista apenas os experimentos que estão ativos neste momento.
 
 Os três experimentos da Magazine Siará (EXP-001, EXP-002, EXP-003) seriam representados no Plano de Experimento durante suas respectivas janelas de investigação — e removidos quando o CommitmentGate registrou o outcome *Promover com restrição* e o item entrou no Icebox como Downstream Declared.

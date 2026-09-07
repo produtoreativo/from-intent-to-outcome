@@ -135,6 +135,42 @@ With this distinction established, Chapters 5 and 6 describe each mode in depth 
 
 ---
 
+## Where an item comes from: the two paths to the PIB
+
+An item that arrives in the Product Intent Backlog (PIB) has traveled one of two distinct paths before entering.
+
+**Global flow:** the Business Signal has broad scope — it involves multiple products or the entire platform. It enters the Portfolio Tracking List, generates a Business Intent in the Business Intent Backlog (BIB), where a Global OBC Draft is born. After Discovery in the BIB and OBC Partitioning, the Global OBC is decomposed into Local OBCs — one per involved product — and each product receives its item in the PIB.
+
+**Local flow:** the Business Signal has a defined destination — this product, this team. It enters the Product Tracking List, goes through Premortem and Owner Approval, and generates a Business Intent with a Local OBC Draft directly in the PIB, without going through the Portfolio.
+
+```mermaid
+flowchart TD
+    subgraph PLAT["PLATFORM"]
+        BS_P["Business Signal\n(broad scope / multi-product)"]
+        PTL["Portfolio Tracking List"]
+        BIB["Business Intent Backlog — BIB\nGlobal OBC: Draft"]
+        OBC_P["OBC Partitioning\nGlobal OBC → Local OBCs\none per involved product"]
+        BS_P -->|generates| PTL
+        PTL -->|"Strategic signal\n→ Business Intent"| BIB
+        BIB -->|"Discovery in BIB"| OBC_P
+    end
+    subgraph PROD["PRODUCT"]
+        BS_L["Business Signal\n(defined scope / single product)"]
+        PTRL["Product Tracking List"]
+        OWN["Premortem + Owner Approval\n→ Business Intent + Local OBC Draft"]
+        BS_L -->|generates| PTRL
+        PTRL --> OWN
+    end
+    PIB["Product Intent Backlog — PIB\nLocal OBC: Draft"]
+    OBC_P --> PIB
+    OWN --> PIB
+```
+*Figure 3a. The two paths into the PIB: the global flow (platform → BIB → Partitioning → PIB) and the local flow (product → Owner Approval → PIB). After entering the PIB, the item's origin no longer matters — all items follow the same journey.*
+
+After entering the PIB, the distinction between the two paths disappears. The item evolves through the same Local OBC state cycle — from Draft to Released — regardless of whether it came from the Portfolio or the local flow.
+
+---
+
 ## The cycle in synthesis: OBC, CommitmentGate, and the regime transition
 
 The modal model describes two commitment regimes. What has not yet been said is which artifact carries that commitment across the lifecycle of a capability — and which mechanism makes the transition from one regime to the other.
