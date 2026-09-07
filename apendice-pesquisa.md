@@ -63,7 +63,7 @@ A divergência é estrutural. No Kanban, Upstream e Downstream continuam sendo f
 
 Heath, em "Upstream" (2020), propôs a distinção conceitualmente mais próxima do ProdOps entre todos os predecessores: "Downstream work is demanded of us. Upstream work is often optional" e "Organizations have a natural tendency toward downstream thinking because it's more tangible and is often rewarded." O diagnóstico de que organizações têm um viés estrutural em direção ao downstream, por conta de visibilidade e urgência, é incorporado diretamente nos anti-padrões do Downstream e nos princípios de calibração de modo do ProdOps.
 
-A divergência também é estrutural. Heath não operacionaliza a distinção. Não há artefatos, jornadas, CommitmentGate, outcomes de gate nem rastreabilidade. A obra é diagnóstica e prescritiva em termos de orientação organizacional, não um framework de execução. Além disso, Heath não equaciona Upstream com ausência de compromisso de entrega: upstream, para ele, é prevenção causal, não modo de execução.
+A divergência também é estrutural. Heath não operacionaliza a distinção. Não há artefatos, jornadas, CommitmentGate, outcomes de Gate nem rastreabilidade. A obra é diagnóstica e prescritiva em termos de orientação organizacional, não um framework de execução. Além disso, Heath não equaciona Upstream com ausência de compromisso de entrega: upstream, para ele, é prevenção causal, não modo de execução.
 
 ### Dave Snowden e o Cynefin
 
@@ -93,7 +93,7 @@ Teresa Torres, em "Continuous Discovery Habits" (2021), contribuiu com a Opportu
 
 ### Cluster 3: Lean e Value Streams
 
-Womack e Jones, em "Lean Thinking" (1996), formalizaram o conceito de value stream e a distinção entre pull e push. O Plano de Experimento como buffer lean (pré-gate) e o CommitmentGate como puxada para o Downstream derivam diretamente dessa tradição. Rother e Shook, em "Learning to See" (1998), desenvolveram o Value Stream Mapping: as métricas TTE (Time to Evidence), TTC (Time to CommitmentGate) e TTD (Time to Deploy) do ProdOps são aplicações do VSM ao contexto de produto digital. Kim, DeBois, Willis e Humble, em "The DevOps Handbook" (2016), articularam as três dimensões do DevOps e o princípio de shift left, que o ProdOps incorpora como princípio de anteposição de validação no Upstream.
+Womack e Jones, em "Lean Thinking" (1996), formalizaram o conceito de value stream e a distinção entre pull e push. O Plano de Experimento como buffer lean (pré-Gate) e o CommitmentGate como puxada para o Downstream derivam diretamente dessa tradição. Rother e Shook, em "Learning to See" (1998), desenvolveram o Value Stream Mapping: as métricas TTE (Time to Evidence), TTC (Time to CommitmentGate) e TTD (Time to Deploy) do ProdOps são aplicações do VSM ao contexto de produto digital. Kim, DeBois, Willis e Humble, em "The DevOps Handbook" (2016), articularam as três dimensões do DevOps e o princípio de shift left, que o ProdOps incorpora como princípio de anteposição de validação no Upstream.
 
 ### Cluster 4: Entrega de software
 
@@ -132,7 +132,7 @@ Terceiro: Upstream como produtor legítimo de código de produção. A literatur
 
 Quarto: rigor como variável primária de distinção entre os modos. A literatura usa quatro variáveis para distinguir upstream de downstream: compromisso ou opção (Anderson), fase ou estágio (Cagan, Singer), orientação de intervenção (Heath) ou posição na cadeia de dependência (Evans). Nenhuma fonte usa rigor como variável primária.
 
-Quinto: um gate de transição com múltiplos outcomes canônicos. A literatura tende ao modelo binário (go ou no-go, commit ou não-commit). O CommitmentGate do ProdOps define seis outcomes possíveis: Promover, Promover com restrição, Requer outro experimento, Aguardar decisão de negócio, Aguardar dependência externa, e Descartar. Cada outcome tem protocolo de registro distinto (detalhes no Capítulo 7).
+Quinto: um Gate de transição com múltiplos outcomes canônicos. A literatura tende ao modelo binário (go ou no-go, commit ou não-commit). O CommitmentGate do ProdOps define seis outcomes possíveis: Promover, Promover com restrição, Requer outro experimento, Aguardar decisão de negócio, Aguardar dependência externa, e Descartar. Cada outcome tem protocolo de registro distinto (detalhes no Capítulo 7).
 
 > **Nota histórica:** a nomenclatura anterior do framework, durante o desenvolvimento inicial no contexto do payments-api / Magazine Siará, usava nomes distintos: Comprometer, Requer outro experimento, Reduzir escopo e comprometer, Transferir responsabilidade, Descartar e registrar, e Pausar com revisão agendada. Os conceitos de "Transferir responsabilidade" e "Pausar com revisão agendada" não têm equivalentes diretos na lista atual; o primeiro foi absorvido em "Aguardar dependência externa", o segundo em "Aguardar decisão de negócio".
 

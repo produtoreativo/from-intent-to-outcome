@@ -25,7 +25,7 @@ O Princípio 3 do framework é explícito: "Observabilidade, estratégia de depl
 
 ODD não é uma prescrição técnica de instrumentação antes do código. É um princípio de design: o que precisa ser observável deve ser decidido antes de qualquer linha de produção ser escrita. Essa distinção importa porque sem a decisão prévia sobre o que observar, a instrumentação que vem depois tende a registrar o que é fácil de medir, não o que é necessário para verificar o compromisso ou explicitar a incerteza.
 
-A motivação epistemológica de ODD é que, sem evidência observável, não há verificação confiável: sem verificação, governança e decisão tornam-se dependentes de percepção ou contexto verbal. Isso é especialmente crítico no contexto do framework porque o que não pode ser observado não pode ser auditado pela Diligence, não pode fundamentar um Decision Package, e não pode satisfazer os critérios de um gate bloqueante.
+A motivação epistemológica de ODD é que, sem evidência observável, não há verificação confiável: sem verificação, governança e decisão tornam-se dependentes de percepção ou contexto verbal. Isso é especialmente crítico no contexto do framework porque o que não pode ser observado não pode ser auditado pela Diligence, não pode fundamentar um Decision Package, e não pode satisfazer os critérios de um Gate bloqueante.
 
 ODD aplica-se a ambos os modos, com formas diferentes. No Upstream, ODD significa documentar o que será observado para verificar a hipótese, antes de coletar a evidência. Um experimento bem conduzido define seus critérios de falsificação antes de executar, não depois. No Downstream, ODD significa definir os Observable Events e as métricas de sucesso do OBC antes de escrever código: o contrato do que será observável em produção precisa existir antes da implementação que o tornará observável.
 
@@ -101,8 +101,8 @@ gantt
     HypothesisFormed        :milestone, h1, 2026-08-01, 0d
     Coleta de Evidência     :evidence, 2026-08-01, 15d
     EvidenceThresholdReached :milestone, h2, after evidence, 0d
-    CommitmentGate          :gate, after h2, 3d
-    CommitmentGatePassed    :milestone, h3, after gate, 0d
+    CommitmentGate          :Gate, after h2, 3d
+    CommitmentGatePassed    :milestone, h3, after Gate, 0d
     section Métricas
     TTE - Time-to-Evidence  :crit, 2026-08-01, 15d
     Decision Latency        :crit, after evidence, 3d

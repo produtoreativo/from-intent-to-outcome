@@ -90,7 +90,7 @@ O que o Assessment prospectivo faz não é produzir o Decision Package por si me
 
 Quando o Business Signal entra diretamente em Downstream (sem Upstream prévio, porque o contexto já é suficiente para o CommitmentGate), o Assessment prospectivo avalia se a suficiência declarada é real: o que justifica dispensar a exploração? Quais são os riscos dessa decisão? Existe um **Reliability Plan** adequado ao perfil de risco do compromisso assumido?
 
-O Reliability Plan é o segundo produto relevante da dimensão prospectiva. Ele define, antes da entrada no Delivery, as condições de confiabilidade que a Product Capability precisa satisfazer ao longo do ciclo: SLIs iniciais, Reliability Rules, critérios de alerta e escalação. Em Product Capabilities de alto risco, o Reliability Plan pode ser exigido como condição de entrada no Readiness Gate; sem ele, o gate não é aberto. Em Product Capabilities de risco controlado, o plan pode ser produzido durante o Downstream com menor formalidade. A calibração é responsabilidade do Runtime de cada time; o ProdOps Framework define que a avaliação de quais condições se aplicam pertence ao Assessment prospectivo.
+O Reliability Plan é o segundo produto relevante da dimensão prospectiva. Ele define, antes da entrada no Delivery, as condições de confiabilidade que a Product Capability precisa satisfazer ao longo do ciclo: SLIs iniciais, Reliability Rules, critérios de alerta e escalação. Em Product Capabilities de alto risco, o Reliability Plan pode ser exigido como condição de entrada no Readiness Gate; sem ele, o Gate não é aberto. Em Product Capabilities de risco controlado, o plan pode ser produzido durante o Downstream com menor formalidade. A calibração é responsabilidade do Runtime de cada time; o ProdOps Framework define que a avaliação de quais condições se aplicam pertence ao Assessment prospectivo.
 
 ---
 
@@ -100,14 +100,14 @@ Se a dimensão prospectiva do Assessment prepara o ambiente para a decisão, a d
 
 O Assessment retrospectivo é ativado após a conclusão de um ciclo Downstream completo: Product Capability entregue, em estado Released, com Release Trail finalizado. Seu foco é o que o ciclo produziu de evidência sobre o funcionamento do framework, não sobre o funcionamento da Product Capability em si. A Product Capability funciona: os OBCs documentam isso. O que o Assessment retrospectivo pergunta é: como o ciclo funcionou? O que o histórico revela sobre a saúde do sistema de trabalho?
 
-As fontes primárias do Assessment retrospectivo são os **Timelines** (os registros cronológicos de cada ciclo) e os artefatos de medição que o ciclo gerou: DORA Extended metrics, Gate Failure Rate (frequência com que os gates do Downstream foram bloqueados antes de serem satisfeitos), Decision Latency (tempo entre evidência disponível e convocação do CommitmentGate), Discovery WIP (experimentos simultâneos em andamento).
+As fontes primárias do Assessment retrospectivo são os **Timelines** (os registros cronológicos de cada ciclo) e os artefatos de medição que o ciclo gerou: DORA Extended metrics, Gate Failure Rate (frequência com que os Gates do Downstream foram bloqueados antes de serem satisfeitos), Decision Latency (tempo entre evidência disponível e convocação do CommitmentGate), Discovery WIP (experimentos simultâneos em andamento).
 
 A partir dessas fontes, o Assessment retrospectivo produz dois outputs. O primeiro é o **relatório de ciclo**: uma síntese do que o ciclo revelou sobre a saúde do processo: anti-padrões detectados, signals diagnósticos ativados, recomendações para o próximo ciclo. O segundo, mais importante, é o conjunto de **novos Business Signals**: observações derivadas da Operation que indicam oportunidades ou problemas a investigar no próximo ciclo. É por esse mecanismo que a retroalimentação do ProdOps opera, não como um ritual de retrospectiva desconectado do fluxo de trabalho, mas como a produção estruturada de inputs para o início do próximo ciclo.
 
 | Fonte de dados | O que o Assessment retrospectivo lê |
 |---|---|
 | Release Trails | Como cada fase do Delivery foi executada; onde o fluxo travou |
-| Gate Failure Rate | Frequência de bloqueios por gates não satisfeitos; sinal de rigor inadequado |
+| Gate Failure Rate | Frequência de bloqueios por Gates não satisfeitos; sinal de rigor inadequado |
 | Decision Latency | Tempo entre evidência e CommitmentGate; sinal de Perpetual Discovery |
 | Postmortems | Incidentes em Operation; o que o Reliability Plan não previu |
 | OBC Released | Comportamento real vs. comportamento prometido; desvios de SLO |

@@ -94,7 +94,7 @@ A diferença não está no artefato produzido.
 
 Está na obrigação que o sistema de trabalho assumiu sobre ele.
 
-É precisamente por isso que o Capítulo 3 define o modo como uma configuração de compromisso, e não como uma classificação do tipo de trabalho. A jornada define o trabalho; o modo define o compromisso; o gate define a condição de avanço.
+É precisamente por isso que o Capítulo 3 define o modo como uma configuração de compromisso, e não como uma classificação do tipo de trabalho. A jornada define o trabalho; o modo define o compromisso; o Gate define a condição de avanço.
 
 ---
 
@@ -303,7 +303,7 @@ O confronto com as publicações de 2026 produz quatro conclusões.
 
 **Primeira:** Cagan avançou sua formulação sobre a diferença entre aprender construindo e construir para entregar produto comercial. Essa formulação reforça o problema que o ProdOps procura resolver, mas não redefine Upstream e Downstream como modos transversais.
 
-**Segunda:** Cagan continua tratando compromissos de alta integridade como exceções que exigem investigação suficiente e confiança elevada. O ProdOps transforma a passagem para esse regime de compromisso em um mecanismo explícito, o CommitmentGate, sem reduzir o gate a uma aprovação binária.
+**Segunda:** Cagan continua tratando compromissos de alta integridade como exceções que exigem investigação suficiente e confiança elevada. O ProdOps transforma a passagem para esse regime de compromisso em um mecanismo explícito, o CommitmentGate, sem reduzir o Gate a uma aprovação binária.
 
 **Terceira:** Torres avançou a aplicação de evidência e avaliação para produtos AI, tratando evals como uma prática relevante de discovery e de controle de qualidade. Isso reforça a tese de que evidência atravessa o ciclo de vida do produto. Não transforma eval em sinônimo de Upstream nem Discovery em definição de Upstream.
 

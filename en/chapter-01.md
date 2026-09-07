@@ -105,7 +105,7 @@ A team can apply very high rigor during exploration: interviews with complete tr
 
 A team can apply different rigor during delivery: measurable acceptance criteria, decision traceability, evidence at each stage, without that being bureaucracy. The rigor is in service of honoring the commitment, not of the appearance of process.
 
-Confusion occurs when the rigor regime does not correspond to the type of commitment. When a delivery-oriented regime is applied to work that is still exploratory, learning is blocked by premature gates. When an exploratory regime is applied to work that already carries a commitment, execution loses the structure needed to honor it.
+Confusion occurs when the rigor regime does not correspond to the type of commitment. When a delivery-oriented regime is applied to work that is still exploratory, learning is blocked by premature Gates. When an exploratory regime is applied to work that already carries a commitment, execution loses the structure needed to honor it.
 
 ---
 

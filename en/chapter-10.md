@@ -21,9 +21,9 @@ This does not mean agents are incapable of operating with mode sensitivity. It m
 
 In the absence of an explicit mode interface, AI agents tend to default to one of two extremes, and both produce real problems.
 
-**Indiscriminate maximum rigor**: the agent treats all work as if it were Downstream — applying gates where they don't belong, requiring artifacts that don't yet exist, blocking exploration for lack of formal acceptance criteria. In Upstream mode, this is destructive: the discipline of Upstream is the freedom to explore with rigor in the evidence, not in artifact bureaucracy. An agent that stops to require a Committed OBC during hypothesis exploration is applying the wrong rigor at the wrong time.
+**Indiscriminate maximum rigor**: the agent treats all work as if it were Downstream — applying Gates where they don't belong, requiring artifacts that don't yet exist, blocking exploration for lack of formal acceptance criteria. In Upstream mode, this is destructive: the discipline of Upstream is the freedom to explore with rigor in the evidence, not in artifact bureaucracy. An agent that stops to require a Committed OBC during hypothesis exploration is applying the wrong rigor at the wrong time.
 
-**Total permissiveness**: the agent treats all work as if it were Upstream — executing without verifying preconditions, advancing without gates, implementing without checking whether the OBC is Committed or whether the BDD exists. In Downstream mode, this is risky: the commitment has been made and the gates exist to protect it. An agent that implements without verifying the Readiness Gate is executing without the structure the commitment requires.
+**Total permissiveness**: the agent treats all work as if it were Upstream — executing without verifying preconditions, advancing without Gates, implementing without checking whether the OBC is Committed or whether the BDD exists. In Downstream mode, this is risky: the commitment has been made and the Gates exist to protect it. An agent that implements without verifying the Readiness Gate is executing without the structure the commitment requires.
 
 The two failure modes are symmetric and equally problematic. Indiscriminate maximum rigor blocks learning. Total permissiveness destroys the traceability of commitment. In both cases, the agent is causing damage — not from technical incompetence, but from absence of mode context.
 
@@ -67,8 +67,8 @@ The partial correction already made was the note in AGENTS.md that clarifies the
 ```mermaid
 graph TD
     REQ["Request received by agent"] --> CLASS["Mode classification\nStep 0.1 of AGENTS.md"]
-    CLASS -->|"OBC Committed (gate registered)"| DS["/downstream\nBlocking rigor\nMandatory gates"]
-    CLASS -->|"OBC Draft / no gate registered"| US["/upstream\nAdvisory rigor\nEngineer decides"]
+    CLASS -->|"OBC Committed (Gate registered)"| DS["/downstream\nBlocking rigor\nMandatory Gates"]
+    CLASS -->|"OBC Draft / no Gate registered"| US["/upstream\nAdvisory rigor\nEngineer decides"]
     DS --> SKILLS_DS["Bootstrap / Hack / Sync\nFinish / Ship / Validate / Promote"]
     US --> SKILLS_US["Experiment / Evidence\nDecision Package / CommitmentGate"]
 
@@ -78,9 +78,9 @@ graph TD
 
 The ProdOps skill architecture resolves part of the mode problem for agents in an elegant way: each entry skill implicitly carries a mode.
 
-`/upstream` activates the Discovery journey with advisory rigor: no mandatory gates, no imposed sequence, with freedom for the agent to use whatever practices are useful to answer the hypothesis. The agent invoking `/upstream` is in exploration mode.
+`/upstream` activates the Discovery journey with advisory rigor: no mandatory Gates, no imposed sequence, with freedom for the agent to use whatever practices are useful to answer the hypothesis. The agent invoking `/upstream` is in exploration mode.
 
-`/downstream` activates the Delivery journey with blocking rigor: preconditions verified, mandatory sequence, gates that prevent advancement when not satisfied. The agent invoking `/downstream` is in commitment mode.
+`/downstream` activates the Delivery journey with blocking rigor: preconditions verified, mandatory sequence, Gates that prevent advancement when not satisfied. The agent invoking `/downstream` is in commitment mode.
 
 What is still missing (and is the current boundary of the implementation) is the explicit documentation of how each individual phase (Bootstrap, Hack, Sync, etc.) behaves when invoked in Upstream mode. An Upstream agent may want to use `/hack tdd` with full rigor (identical Red/Green/Refactor cycle to Downstream), without that constituting an obligation to have a Committed OBC or Release Trail. The skill does not yet document this distinction.
 

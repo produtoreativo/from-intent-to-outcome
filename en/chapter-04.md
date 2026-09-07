@@ -90,7 +90,7 @@ What prospective Assessment does is not produce the Decision Package itself: tha
 
 When a Business Signal enters Downstream directly (without prior Upstream, because the context is already sufficient for the CommitmentGate), prospective Assessment evaluates whether the declared sufficiency is real: what justifies dispensing with exploration? What are the risks of that decision? Is there a **Reliability Plan** adequate to the risk profile of the assumed commitment?
 
-The Reliability Plan is the second relevant output of the prospective dimension. It defines, before entry into Delivery, the reliability conditions the Product Capability needs to satisfy throughout the cycle: Initial SLIs, Reliability Rules, alert and escalation criteria. For high-risk Product Capabilities, the Reliability Plan may be required as a condition for entering the Readiness Gate; without it, the gate is not opened. For lower-risk Product Capabilities, the plan may be produced during Downstream with less formality. The calibration is the responsibility of each team's Runtime; the ProdOps Framework defines that the evaluation of which conditions apply belongs to prospective Assessment.
+The Reliability Plan is the second relevant output of the prospective dimension. It defines, before entry into Delivery, the reliability conditions the Product Capability needs to satisfy throughout the cycle: Initial SLIs, Reliability Rules, alert and escalation criteria. For high-risk Product Capabilities, the Reliability Plan may be required as a condition for entering the Readiness Gate; without it, the Gate is not opened. For lower-risk Product Capabilities, the plan may be produced during Downstream with less formality. The calibration is the responsibility of each team's Runtime; the ProdOps Framework defines that the evaluation of which conditions apply belongs to prospective Assessment.
 
 ---
 
@@ -100,14 +100,14 @@ If the prospective dimension of Assessment prepares the environment for the deci
 
 Retrospective Assessment is activated after the completion of a full Downstream cycle: Product Capability delivered, in Released state, with Release Trail finalized. Its focus is what the cycle produced as evidence about how the framework functioned, not about how the Product Capability itself functioned. The Product Capability works: the OBCs document that. What retrospective Assessment asks is: how did the cycle work? What does the history reveal about the health of the work system?
 
-The primary sources for retrospective Assessment are the **Timelines** (the chronological records of each cycle) and the measurement artifacts the cycle generated: DORA Extended metrics, Gate Failure Rate (frequency with which Downstream gates were blocked before being satisfied), Decision Latency (time between available evidence and CommitmentGate convening), Discovery WIP (simultaneous experiments in progress).
+The primary sources for retrospective Assessment are the **Timelines** (the chronological records of each cycle) and the measurement artifacts the cycle generated: DORA Extended metrics, Gate Failure Rate (frequency with which Downstream Gates were blocked before being satisfied), Decision Latency (time between available evidence and CommitmentGate convening), Discovery WIP (simultaneous experiments in progress).
 
 From these sources, retrospective Assessment produces two outputs. The first is the **cycle report**: a synthesis of what the cycle revealed about process health: detected anti-patterns, activated diagnostic signals, recommendations for the next cycle. The second, more important, is the set of **new Business Signals**: observations derived from Operation that indicate opportunities or problems to investigate in the next cycle. This is the mechanism through which ProdOps feedback operates, not as a disconnected retrospective ritual, but as the structured production of inputs for the start of the next cycle.
 
 | Data source | What retrospective Assessment reads |
 |---|---|
 | Release Trails | How each Delivery phase was executed; where flow stalled |
-| Gate Failure Rate | Frequency of gate blocks not yet satisfied; signal of inadequate rigor |
+| Gate Failure Rate | Frequency of Gate blocks not yet satisfied; signal of inadequate rigor |
 | Decision Latency | Time between evidence and CommitmentGate; signal of Perpetual Discovery |
 | Postmortems | Operation incidents; what the Reliability Plan did not anticipate |
 | OBC Released | Actual behavior vs. promised behavior; SLO deviations |

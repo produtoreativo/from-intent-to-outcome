@@ -105,7 +105,7 @@ Um time pode aplicar rigor altíssimo durante a exploração: entrevistas com tr
 
 Um time pode aplicar rigor diferente durante a entrega: critérios de aceite mensuráveis, rastreabilidade de decisões, evidência de cada etapa, sem que isso seja burocracia. O rigor está a serviço da honra do compromisso, não da aparência de processo.
 
-A confusão ocorre quando o regime de rigor não corresponde ao tipo de compromisso. Quando se aplica um regime orientado à entrega em trabalho que ainda é exploratório, o aprendizado é bloqueado por gates prematuros. Quando se aplica um regime exploratório em trabalho que já carrega um compromisso, a execução perde a estrutura necessária para honrá-lo.
+A confusão ocorre quando o regime de rigor não corresponde ao tipo de compromisso. Quando se aplica um regime orientado à entrega em trabalho que ainda é exploratório, o aprendizado é bloqueado por Gates prematuros. Quando se aplica um regime exploratório em trabalho que já carrega um compromisso, a execução perde a estrutura necessária para honrá-lo.
 
 ---
 
