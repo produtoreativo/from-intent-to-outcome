@@ -42,7 +42,19 @@ graph TD
 
 ## A governança informacional começa com o Business Signal
 
-O Business Signal é o ponto de entrada do ciclo de vida de uma capability: a observação, qualitativa ou quantitativa, que indica que pode existir uma oportunidade ou um problema que justifica atenção. Antes de qualquer experimento Upstream, antes de qualquer decisão de transformar o Signal em Business Intent, o Assessment já tem trabalho a fazer.
+O Business Signal é o ponto de entrada do ciclo de vida de uma **Product Capability**: a observação, qualitativa ou quantitativa, que indica que pode existir uma oportunidade ou problema que justifica atenção. Product Capability é qualquer feature, comportamento ou serviço que o time explorará, construirá e operará — um novo método de pagamento, um relatório de auditoria fiscal, uma automação de processo de engenharia, uma migração de infraestrutura. Antes de qualquer experimento Upstream, antes de qualquer decisão de transformar o Signal em Business Intent, o Assessment já tem trabalho a fazer.
+
+Todo Business Signal carrega exatamente um **Origin Stream**: a classificação de onde a necessidade nasceu. O Origin Stream não determina como o trabalho será executado, mas informa o contexto e os critérios de sucesso que o Signal carrega. O framework define quatro:
+
+- **Business**: necessidades geradas pelo mercado ou pelo cliente. Propósito: aumentar valor entregue ao mercado — novos canais, conversão, retenção, redução de churn. Exemplo: suporte a Pix no checkout para reduzir abandono de carrinho. O OBC resultante define comportamento observável de produto, verificável via BDD Feature.
+
+- **Enterprise**: necessidades impostas por exigência legal, regulatória, contratual ou de governança corporativa. Propósito: garantir conformidade, atender auditoria, integrar sistemas internos. Exemplo: adequação da API à regulação do Banco Central sobre Open Finance. O OBC define comportamento auditável e rastreável.
+
+- **Team**: necessidades geradas pelo próprio time para evoluir a forma de trabalhar — ferramentas, automações, onboarding, fluxo de engenharia. Propósito: melhorar produtividade, qualidade e experiência do engenheiro. Exemplo: skill de Bootstrap automatizado para reduzir setup manual. O OBC define comportamento verificável no processo do time.
+
+- **Technology**: necessidades técnicas de plataforma — segurança, infraestrutura, confiabilidade, débito técnico. Propósito: evoluir arquitetura, observabilidade, escalabilidade e resiliência do sistema. Exemplo: adoção de OpenTelemetry para rastreabilidade distribuída. O OBC define critérios técnicos mensuráveis: SLOs, métricas de segurança, benchmarks de performance.
+
+Um Business Signal tem exatamente um Origin Stream. Quando parece pertencer a dois, o critério de desempate é o beneficiário primário da mudança: cliente ou mercado → Business; organização ou compliance → Enterprise; time de engenharia → Team; sistema ou plataforma → Technology.
 
 A pergunta que o Assessment responde nesse momento não é "o que vamos construir?" nem "como vamos construir?". É: **o ambiente informacional está suficientemente preparado para que a decisão de avançar (ou de não avançar) seja tomada com clareza sobre o que se sabe e o que não se sabe?**
 
