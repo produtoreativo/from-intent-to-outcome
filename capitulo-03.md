@@ -68,7 +68,7 @@ graph LR
 | Dimensão | Upstream | Downstream |
 |---|---|---|
 | Gates | Orientadores; não bloqueantes | Bloqueantes e obrigatórios |
-| Regime de rigor | Rigor não bloqueante; praticante decide a profundidade | Rigor bloqueante; sequência e gates obrigatórios |
+| Regime de rigor | Rigor não bloqueante (advisory); praticante decide a profundidade | Rigor bloqueante; sequência e gates obrigatórios |
 | Custo de reversão | Tendencialmente menor; mudar de direção não viola um compromisso bloqueante | Potencialmente alto; mudança pode afetar um compromisso formal e exige decisão explícita sobre ele |
 | Artefatos | Tornam o compromisso vigente observável; estados refletem o regime | Condições verificáveis de avanço; estados confirmam a realização |
 | Critério de qualidade | Qualidade da evidência para informar a decisão de comprometer | Verificabilidade da correspondência entre o prometido e o entregue |

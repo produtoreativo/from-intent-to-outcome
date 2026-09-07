@@ -115,7 +115,7 @@ This result inverts the conventional order: the framework did not precede the pr
 
 Intellectual honesty requires specifying what the current repository does not demonstrate.
 
-**The CommitmentGate with a fully independent human trio.** The CommitmentGates documented in the corpus have the PM as the named business decision-maker, but the figure of the independent "Author" — the engineer who did not conduct the experiment and verifies whether the Decision Package is legible without additional verbal context — does not appear recorded with a distinct identity. The mechanism works; the full separation of three roles as three independent physical persons still needs to be documented in a real case.
+**The CommitmentGate with a complete human trio.** The CommitmentGates documented in the corpus have the PM as the named business decision-maker, but the explicit distinction between the Author — the conductor of the experiment and author of the Decision Package — and the Tech Lead as an independent judge does not appear recorded with distinct identities. The mechanism works; the explicit separation of the three roles (Author as conductor, PM and Tech Lead as independent judges) as three distinct physical persons still needs to be documented in a real case.
 
 **The Perpetual Discovery diagnostic signals (S1-S4) applied prospectively.** The signals were defined as detectable without subjective judgment. EXP-014 demonstrated that Diligence can track the Execution Space in real time. But the instrumentation that would proactively detect Perpetual Discovery — monitoring TTE, Decision Latency, and Discovery WIP — is still a proposal, not implemented as automatic collection.
 

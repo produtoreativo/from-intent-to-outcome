@@ -68,7 +68,7 @@ graph LR
 | Dimension | Upstream | Downstream |
 |---|---|---|
 | Gates | Guiding; non-blocking | Blocking and mandatory |
-| Rigor regime | Non-blocking rigor; practitioner decides the depth | Blocking rigor; mandatory sequence and gates |
+| Rigor regime | Non-blocking rigor (advisory); practitioner decides the depth | Blocking rigor; mandatory sequence and gates |
 | Reversal cost | Tends to be lower; changing direction does not violate a blocking commitment | Potentially high; a change may affect a formal commitment and requires an explicit decision about it |
 | Artifacts | Make the active commitment observable; states reflect the regime | Verifiable conditions for advancement; states confirm delivery |
 | Quality criterion | Quality of the evidence to inform the commitment decision | Verifiability of the correspondence between what was promised and what was delivered |

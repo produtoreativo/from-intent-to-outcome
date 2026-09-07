@@ -4,7 +4,7 @@
 
 ## 1. Por que um apêndice de pesquisa
 
-Este livro parte de uma investigação conduzida durante o desenvolvimento do framework ProdOps no contexto do projeto Procurare, uma plataforma de agentic procurement. Ao longo da escrita, diversas afirmações sobre a originalidade de conceitos como CommitmentGate, modos de execução transversais e a distinção entre Upstream e Downstream precisaram ser confrontadas com a literatura existente. Este apêndice documenta essa investigação: o que foi buscado, quais fontes foram consultadas e o que foi encontrado.
+Este livro parte de uma investigação conduzida durante o desenvolvimento do framework ProdOps no contexto do desenvolvimento da Payments API da Magazine Siará. Ao longo da escrita, diversas afirmações sobre a originalidade de conceitos como CommitmentGate, modos de execução transversais e a distinção entre Upstream e Downstream precisaram ser confrontadas com a literatura existente. Este apêndice documenta essa investigação: o que foi buscado, quais fontes foram consultadas e o que foi encontrado.
 
 O propósito não é argumentar. O leitor que chegou até aqui já leu os argumentos dos capítulos anteriores. O propósito é transparência metodológica. Quando este livro afirma que o ProdOps é a primeira formalização dos termos upstream e downstream como modos de execução transversais, essa afirmação tem uma base investigativa. Este apêndice torna essa base visível.
 
@@ -32,7 +32,7 @@ David J. Anderson, no desenvolvimento do método Kanban para gestão de produtos
 
 Em 2020, Dan Heath publicou "Upstream: The Quest to Solve Problems Before They Happen", deslocando os termos do campo da gestão de processos para o campo da teoria causal. Upstream e downstream passaram a descrever onde numa cadeia causal uma organização intervém: upstream significa intervir na causa, antes do problema; downstream significa reagir ao sintoma, depois que o problema ocorreu. Heath foi o primeiro a romper com a ideia de que os termos descrevem quando algo acontece, propondo que descrevem onde no sistema uma ação ocorre. A sequencialidade foi preservada na cadeia causal, mas não como fase de trabalho.
 
-O ProdOps, desenvolvido no contexto do projeto Procurare a partir de 2026, é a oitava camada. Upstream e Downstream deixam de ser posições numa cadeia, fases num processo ou orientações de intervenção causal. Passam a designar modos de execução transversais: configurações de rigor que determinam como qualquer jornada de produto é conduzida, independentemente do tipo de trabalho envolvido. A mesma jornada de Discovery, por exemplo, pode ser conduzida no modo Upstream, com rigor exploratório e compromissos mínimos, ou no modo Downstream, com rigor de entrega e compromissos formais de prazo e escopo. Essa é a primeira vez que os termos são usados dessa forma na literatura disponível.
+O ProdOps, desenvolvido no contexto do payments-api da Magazine Siará a partir de 2026, é a oitava camada. Upstream e Downstream deixam de ser posições numa cadeia, fases num processo ou orientações de intervenção causal. Passam a designar modos de execução transversais: configurações de rigor que determinam como qualquer jornada de produto é conduzida, independentemente do tipo de trabalho envolvido. A mesma jornada de Discovery, por exemplo, pode ser conduzida no modo Upstream, com rigor exploratório e compromissos mínimos, ou no modo Downstream, com rigor de entrega e compromissos formais de prazo e escopo. Essa é a primeira vez que os termos são usados dessa forma na literatura disponível.
 
 | Camada | Domínio | Criador | Ano aprox. | Natureza da distinção | Sequencial? |
 |---|---|---|---|---|---|
@@ -43,7 +43,7 @@ O ProdOps, desenvolvido no contexto do projeto Procurare a partir de 2026, é a 
 | 5 | Open source | (convenção) | ~1990-2000 | Relação de origem entre projetos | Parcialmente |
 | 6 | Kanban/Produto digital | David J. Anderson | ~2010s | Dois sistemas separados por commitment point | Sim |
 | 7 | Systems Thinking | Dan Heath | 2020 | Orientação de intervenção causal | Não |
-| 8 | ProdOps | Framework do Procurare | 2026 | Modos de execução transversais com rigor como variável | Não |
+| 8 | ProdOps | payments-api / Magazine Siará | 2026 | Modos de execução transversais com rigor como variável | Não |
 
 O ProdOps é a primeira camada que formaliza os termos como modos de execução transversais, rompendo com a sequencialidade que todas as camadas anteriores mantêm.
 
@@ -132,9 +132,9 @@ Terceiro: Upstream como produtor legítimo de código de produção. A literatur
 
 Quarto: rigor como variável primária de distinção entre os modos. A literatura usa quatro variáveis para distinguir upstream de downstream: compromisso ou opção (Anderson), fase ou estágio (Cagan, Singer), orientação de intervenção (Heath) ou posição na cadeia de dependência (Evans). Nenhuma fonte usa rigor como variável primária.
 
-Quinto: um gate de transição com múltiplos outcomes canônicos. A literatura tende ao modelo binário (go ou no-go, commit ou não-commit). O CommitmentGate do ProdOps define seis outcomes possíveis: Comprometer, Requer outro experimento, Reduzir escopo e comprometer, Transferir responsabilidade, Descartar e registrar, e Pausar com revisão agendada. Cada outcome tem protocolo de registro distinto.
+Quinto: um gate de transição com múltiplos outcomes canônicos. A literatura tende ao modelo binário (go ou no-go, commit ou não-commit). O CommitmentGate do ProdOps define seis outcomes possíveis: Promover, Promover com restrição, Requer outro experimento, Aguardar decisão de negócio, Aguardar dependência externa, e Descartar. Cada outcome tem protocolo de registro distinto (detalhes no Capítulo 7).
 
-> **Nota:** os nomes dos outcomes acima refletem a formulação em uso durante o desenvolvimento inicial do framework no contexto do projeto Procurare. A nomenclatura foi revisada no framework atual; a lista canônica vigente — com nomes e definições operacionais atualizadas — está no **Capítulo 7**. A convergência conceitual é total; o que mudou foi a precisão dos nomes.
+> **Nota histórica:** a nomenclatura anterior do framework, durante o desenvolvimento inicial no contexto do payments-api / Magazine Siará, usava nomes distintos: Comprometer, Requer outro experimento, Reduzir escopo e comprometer, Transferir responsabilidade, Descartar e registrar, e Pausar com revisão agendada. Os conceitos de "Transferir responsabilidade" e "Pausar com revisão agendada" não têm equivalentes diretos na lista atual; o primeiro foi absorvido em "Aguardar dependência externa", o segundo em "Aguardar decisão de negócio".
 
 ---
 

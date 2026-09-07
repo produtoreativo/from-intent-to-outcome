@@ -115,7 +115,7 @@ Esse resultado inverte a ordem convencional: o framework não precedeu o produto
 
 A honestidade intelectual exige especificar o que o repositório atual não demonstra.
 
-**O CommitmentGate com trio humano independente.** Os CommitmentGates documentados no corpus foram executados com o PM como decisor de negócio, mas a figura do "Autor" independente (o engenheiro que não conduziu o experimento e verifica se o Decision Package é legível sem contexto verbal adicional) não aparece registrada com identidade distinta. O mecanismo funciona; a separação plena de papéis entre Autor, PM e Tech Lead como três pessoas físicas independentes ainda está por ser documentada em um caso real.
+**O CommitmentGate com trio humano completo.** Os CommitmentGates documentados no corpus foram executados com o PM como decisor de negócio, mas a distinção explícita entre o Autor — o condutor do experimento e redator do Decision Package — e o Tech Lead como juiz independente não aparece registrada com identidades distintas. O mecanismo funciona; a separação explícita dos três papéis (Autor como condutor, PM e Tech Lead como juízes independentes) como três pessoas físicas distintas ainda está por ser documentada em um caso real.
 
 **Os sinais diagnósticos de Perpetual Discovery (S1-S4) aplicados prospectivamente.** Os sinais foram definidos como detectáveis sem julgamento subjetivo. O EXP-014 demonstrou que a Diligence pode rastrear o Execution Space em tempo real. Mas a instrumentação que detectaria Perpetual Discovery proativamente — monitorando TTE, Decision Latency e Discovery WIP — ainda é proposta, não implementada como coleta automática.
 
