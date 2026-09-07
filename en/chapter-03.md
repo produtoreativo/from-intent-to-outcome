@@ -187,6 +187,8 @@ These three actors form the **trio**: the minimum decision unit of the Commitmen
 
 What does not change across contexts is the minimum structure: Author, PM, and Tech Lead. What varies is who fills each role (the same person may hold two roles in smaller teams, as long as independence in the CommitmentGate evaluation is preserved) and which additional profiles join depending on the nature of the Signal.
 
+One distinction matters here: ProdOps always speaks of **roles**, not of positions or people. Author, PM, and Tech Lead are functional responsibilities within the cycle, not hiring titles or org chart entries. How those roles map to positions or to people depends on the culture, beliefs, and legal and organizational constraints of each company. A company may have a single person holding all three trio roles simultaneously. This is not a violation of the framework: it is a decision made by whoever implements it, not a canonical ProdOps definition. What the framework defines is what each role represents in the decision, not how many people need to be in the room.
+
 ---
 
 ## The cycle in synthesis: OBC, CommitmentGate, and the regime transition
