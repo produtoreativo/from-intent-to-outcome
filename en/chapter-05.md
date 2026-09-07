@@ -113,11 +113,13 @@ graph TD
 
 A point that deserves explicit attention: Upstream does not prohibit code in production. The mode describes the type of commitment, not where code can be deployed.
 
-There are three distinct acts of deployment in Upstream, with different authorizations and consequences:
+There are two distinct acts of deployment in Upstream, with different authorizations and consequences:
 
 **Sandbox Deploy**: code deployed in an ephemeral and isolated stack, without real client traffic. The engineer decides. The stack is destroyed at the end of the experiment. No Release Trail, no OBC Committed.
 
 **Controlled Production**: Upstream code deployed to real production, without Commitment Gate. Explicit authorization from the team and leadership. Immediate rollback available. No Release Trail required — which does not mean without evidence: what was observed in Controlled Production must be recorded in the experiment's upstream-trail. This is not a violation of Upstream mode: it is an authorized act. What distinguishes it from promotion is that the *Product Capability commitment* (OBC Committed, Downstream Gates) has not been made. The code reaches production; the Product Capability remains under exploration.
+
+The third act is the exit from Upstream, not a deployment within it:
 
 **Product Capability Promotion**: Commitment Gate with Promote outcome. The OBC transitions from Draft to Refining; the BDD Feature exists as a draft in the Downstream paths. The item enters the Icebox, where Downstream Discovery elaborates the scope, completes the BDD, and satisfies the Readiness Gate conditions. After the Readiness Gate, the OBC reaches Committed state; the Iteration Plan is created and Delivery begins with Bootstrap.
 

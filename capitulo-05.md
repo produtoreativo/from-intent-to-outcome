@@ -113,11 +113,13 @@ graph TD
 
 Um ponto que merece atenção explícita: o Upstream não proíbe código em produção. O modo descreve o tipo de compromisso, não onde o código pode ser implantado.
 
-Existem três atos distintos de implantação no Upstream, com autorizações e consequências diferentes:
+Existem dois atos distintos de implantação no Upstream, com autorizações e consequências diferentes:
 
 **Sandbox Deploy**: código implantado em stack efêmera e isolada, sem tráfego de cliente real. O engenheiro decide. A stack é destruída ao final do experimento. Sem Release Trail, sem OBC Committed.
 
 **Produção Controlada**: código Upstream implantado em produção real, sem Commitment Gate. Autorização explícita do time e da liderança. Rollback imediato disponível. Sem Release Trail exigido — o que não significa sem evidência: o que foi observado em Produção Controlada deve ser registrado no upstream-trail do experimento. Isso não é violação do modo Upstream: é um ato autorizado. O que a diferencia da promoção é que o *compromisso de Product Capability* (OBC Committed, Gates do Downstream) não foi assumido. O código chega a produção; a Product Capability permanece em exploração.
+
+O terceiro ato é a saída do Upstream, não uma implantação dentro dele:
 
 **Promoção de Product Capability**: Commitment Gate com outcome Promover. O OBC transita de Draft para Refining; a BDD Feature existe como rascunho nos paths do Downstream. O item entra no Icebox, onde a Discovery Downstream elabora o escopo, completa a BDD e satisfaz as condições do Readiness Gate. Após o Readiness Gate, o OBC alcança o estado Committed; o Iteration Plan é criado e a Delivery começa com o Bootstrap.
 
