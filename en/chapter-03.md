@@ -7,7 +7,7 @@
 ![The 5 journeys across the two execution modes](../images/cap03-journeys-modes-matrix.svg)
 *Figure 3. Journeys and modes matrix: the same 5 journeys exist in both modes, under different commitment regimes*
 
-The previous chapters described a problem: product teams apply the wrong kind of rigor to the work they are doing — not because they lack processes, but because no mechanism makes explicit the type of commitment the work carries at any given moment.
+The previous chapters described a problem: product teams apply the wrong kind of rigor to the work they are doing, not because they lack processes, but because no mechanism makes explicit the type of commitment the work carries at any given moment.
 
 The solution ProdOps proposes is structural: instead of distinguishing Upstream from Downstream by the point in time at which they occur, it distinguishes them by the *type of commitment* they are maintaining. This distinction is what the framework calls an *execution mode*.
 
@@ -43,7 +43,7 @@ The triad that organizes this distinction is simple: *the journey defines the wo
 
 Saying that the mode determines the rigor is not sufficient without specifying what "rigor" means operationally in the ProdOps context.
 
-In **Upstream** mode, rigor is *non-blocking*: practices, artifacts, and evidence are available and recommended, but do not constitute mandatory conditions for advancing. Checkpoints and guiding criteria may exist, but not gates whose satisfaction is mandatory in order to proceed. The practitioner decides which practices to apply, to what depth, and when. This does not mean an absence of discipline or an absence of commitment: it means that the commitment regime is non-blocking. The team can commit to an investigation, to an analysis, to the production of specific evidence; what does not exist is a blocking commitment — one in which the failure to satisfy a condition prevents advancement. Work poorly conducted in Upstream is a problem; the difference is that the cost of correcting course remains manageable because the prevailing regime does not make changing direction a violation of a blocking commitment.
+In **Upstream** mode, rigor is *non-blocking*: practices, artifacts, and evidence are available and recommended, but do not constitute mandatory conditions for advancing. Checkpoints and guiding criteria may exist, but not gates whose satisfaction is mandatory in order to proceed. The practitioner decides which practices to apply, to what depth, and when. This does not mean an absence of discipline or an absence of commitment: it means that the commitment regime is non-blocking. The team can commit to an investigation, to an analysis, to the production of specific evidence; what does not exist is a blocking commitment: one in which the failure to satisfy a condition prevents advancement. Work poorly conducted in Upstream is a problem; the difference is that the cost of correcting course remains manageable because the prevailing regime does not make changing direction a violation of a blocking commitment.
 
 In **Downstream** mode, rigor is *blocking*: gates are verifiable and must be satisfied before advancing, artifacts must be in defined states, the sequence of steps is enforced. An item in Downstream mode does not proceed with gaps to be resolved later; the work stops until the mandatory conditions are met. In the Delivery journey, this structure materializes in the ProdOps framework as the sequence Bootstrap → Hack → Sync → Finish → Ship → Validate → Promote, with gates between each step. This sequence is a materialization of blocking rigor within the Delivery journey, not the definition of Downstream as such. The reason for this structure is not bureaucracy: it is that a formal commitment has been made, and honoring it requires verifiable evidence at each point of advancement.
 
@@ -99,7 +99,7 @@ The distinction between mode and phase is not terminological pedantry. It resolv
 
 If Upstream and Downstream were phases (specific moments on the product timeline), then an item would need to pass through Upstream mode before entering Downstream. Every capability would first need to be treated under the non-blocking regime before receiving the blocking regime. This exactly reproduces the problem of Chapter 2: it treats all exploration as the same type, and all delivery as beginning after exploration ends.
 
-As modes (commitment configurations that apply over any journey), Upstream and Downstream can coexist within the same team for different items. An item can be in Downstream mode, with a formal commitment and active gates, while a parallel experiment operates in Upstream mode, under a non-blocking regime and without mandatory gates. The mode decision is not temporal; it is one of commitment. And an item can change mode, but only through an explicit decision — not through the passage of time.
+As modes (commitment configurations that apply over any journey), Upstream and Downstream can coexist within the same team for different items. An item can be in Downstream mode, with a formal commitment and active gates, while a parallel experiment operates in Upstream mode, under a non-blocking regime and without mandatory gates. The mode decision is not temporal; it is one of commitment. And an item can change mode, but only through an explicit decision, not through the passage of time.
 
 This also means that there is no automatic transition between modes. An item in Upstream mode does not transition to Downstream simply because the team decided to begin implementation. The transition represents an explicit change of commitment, supported by verifiable conditions that confirm the commitment is justified. Chapter 7 describes how this transition is structured in the ProdOps framework.
 
@@ -109,7 +109,7 @@ This also means that there is no automatic transition between modes. An item in 
 
 Defining what the modal model is also requires defining what it is not.
 
-An execution mode is not a classification of team maturity. A team operating in Upstream mode is not in a state of lesser discipline than a team in Downstream mode. The discipline of Upstream has a different form, oriented toward the quality of evidence and the explicit maintenance of uncertainty, but it is not lesser. Work poorly conducted in Upstream — without a falsifiable hypothesis, without a stopping criterion, without verifiable evidence — is just as problematic as an item poorly executed in Downstream.
+An execution mode is not a classification of team maturity. A team operating in Upstream mode is not in a state of lesser discipline than a team in Downstream mode. The discipline of Upstream has a different form, oriented toward the quality of evidence and the explicit maintenance of uncertainty, but it is not lesser. Work poorly conducted in Upstream (without a falsifiable hypothesis, without a stopping criterion, without verifiable evidence) is just as problematic as an item poorly executed in Downstream.
 
 An execution mode is not a classification of the type of work. There is no work that is "by nature" Upstream or "by nature" Downstream. A technical component can be treated under a non-blocking regime and later implemented under a blocking regime. A product feature can equally traverse both modes, or enter Downstream directly if the evidence already exists and the commitment is justified.
 
@@ -131,7 +131,7 @@ The ProdOps framework uses a specific sentence to verify whether the modal model
 
 Any compression that maps Upstream to a specific journey ("Upstream is where discovery happens," "Upstream is the exploration phase") is wrong. These phrases reproduce the market interpretation that Chapter 2 examined. They are intuitively attractive because they capture something true (exploration tends to occur with greater frequency in Upstream), but they obscure what is distinctive about the model: that the same journey can be executed in either mode, and that what changes between them is not the content of the work, but the commitment regime that governs it.
 
-With this distinction established, Chapters 5 and 6 describe each mode in depth — not as phases with different content, but as commitment configurations with different disciplines.
+With this distinction established, Chapters 5 and 6 describe each mode in depth: not as phases with different content, but as commitment configurations with different disciplines.
 
 ---
 
@@ -139,9 +139,9 @@ With this distinction established, Chapters 5 and 6 describe each mode in depth 
 
 An item that arrives in the Product Intent Backlog (PIB) has traveled one of two distinct paths before entering.
 
-**Global flow:** the Business Signal has broad scope — it involves multiple products or the entire platform. It enters the Portfolio Tracking List, generates a Business Intent in the Business Intent Backlog (BIB), where a Global OBC Draft is born. After Discovery in the BIB and OBC Partitioning, the Global OBC is decomposed into Local OBCs — one per involved product — and each product receives its item in the PIB.
+**Global flow:** the Business Signal has broad scope: it involves multiple products or the entire platform. It enters the Portfolio Tracking List, generates a Business Intent in the Business Intent Backlog (BIB), where a Global OBC Draft is born. After Discovery in the BIB and OBC Partitioning, the Global OBC is decomposed into Local OBCs (one per involved product), and each product receives its item in the PIB.
 
-**Local flow:** the Business Signal has a defined destination — this product, this team. It enters the Product Tracking List, goes through Premortem and Owner Approval, and generates a Business Intent with a Local OBC Draft directly in the PIB, without going through the Portfolio.
+**Local flow:** the Business Signal has a defined destination: this product, this team. It enters the Product Tracking List, goes through Premortem and Owner Approval, and generates a Business Intent with a Local OBC Draft directly in the PIB, without going through the Portfolio.
 
 ```mermaid
 flowchart TD
@@ -165,25 +165,25 @@ flowchart TD
     OBC_P --> PIB
     OWN --> PIB
 ```
-*Figure 3a. The two paths into the PIB: the global flow (platform → BIB → Partitioning → PIB) and the local flow (product → Owner Approval → PIB). After entering the PIB, the item's origin no longer matters — all items follow the same journey.*
+*Figure 3a. The two paths into the PIB: the global flow (platform → BIB → Partitioning → PIB) and the local flow (product → Owner Approval → PIB). After entering the PIB, the item's origin no longer matters: all items follow the same journey.*
 
-After entering the PIB, the distinction between the two paths disappears. The item evolves through the same Local OBC state cycle — from Draft to Released — regardless of whether it came from the Portfolio or the local flow.
+After entering the PIB, the distinction between the two paths disappears. The item evolves through the same Local OBC state cycle (from Draft to Released), regardless of whether it came from the Portfolio or the local flow.
 
 ---
 
 ## The cycle in synthesis: OBC, CommitmentGate, and the regime transition
 
-The modal model describes two commitment regimes. What has not yet been said is which artifact carries that commitment across the lifecycle of a capability — and which mechanism makes the transition from one regime to the other.
+The modal model describes two commitment regimes. What has not yet been said is which artifact carries that commitment across the lifecycle of a capability, and which mechanism makes the transition from one regime to the other.
 
 The artifact is the **OBC** (Observable Business Contract). The mechanism is the **CommitmentGate**.
 
-The OBC is born at the transition from a Business Signal to a Business Intent: from that moment, it always exists. The mode determines under which regime the OBC operates — not when it is born. In Upstream, the OBC is in **Draft** state: incomplete is acceptable, it can be changed freely, it does not block experiments. Upstream uses the OBC as memory of accumulated learning — what is already known about the capability, which hypotheses have been answered, which questions remain open.
+The OBC is born at the transition from a Business Signal to a Business Intent: from that moment, it always exists. The mode determines under which regime the OBC operates, not when it is born. In Upstream, the OBC is in **Draft** state: incomplete is acceptable, it can be changed freely, it does not block experiments. Upstream uses the OBC as memory of accumulated learning: what is already known about the capability, which hypotheses have been answered, which questions remain open.
 
-The CommitmentGate is the gate that evaluates whether the accumulated evidence justifies transitioning the OBC from **Draft** to **Refining** (Moment 2). The Decision Package — an artifact with answered hypotheses, identified risks, and a formal recommendation — is the gate's input. A trio executes the CommitmentGate: the **PM**, the **Tech Lead**, and the **Author** (who conducted the experiment and prepared the package; the PM and Tech Lead function as independent readers). The framework defines six canonical outcomes: the Promote outcome transitions the OBC from Draft to Refining, declares Downstream, and opens the Discovery journey in blocking mode — the OBC only reaches the Committed state at the Readiness Gate (Moment 3). The remaining outcomes keep the item in Upstream, discard the capability, or suspend work until an external condition is resolved.
+The CommitmentGate is the gate that evaluates whether the accumulated evidence justifies transitioning the OBC from **Draft** to **Refining** (Moment 2). The Decision Package (an artifact with answered hypotheses, identified risks, and a formal recommendation) is the gate's input. A trio executes the CommitmentGate: the **PM**, the **Tech Lead**, and the **Author** (who conducted the experiment and prepared the package; the PM and Tech Lead function as independent readers). The framework defines six canonical outcomes: the Promote outcome transitions the OBC from Draft to Refining, declares Downstream, and opens the Discovery journey in blocking mode; the OBC only reaches the Committed state at the Readiness Gate (Moment 3). The remaining outcomes keep the item in Upstream, discard the capability, or suspend work until an external condition is resolved.
 
-The CommitmentGate is a **universal mechanism** — it is not restricted to the end of an Upstream experiment. It can occur at any moment: shortly after opening an investigation (if the trio judges the hypothesis is clear enough to commit before exploring further), during an experiment (when partial evidence already satisfies the Evidence Threshold), or at the end (when the Decision Package is complete). It can also occur **at PIB entry directly from a Business Signal** — when the business context is sufficiently clear and no Upstream experiment is required. In that case, the Business Signal reaches the trio with enough substance for the gate: the trio evaluates, the OBC transitions from Draft to Refining, and the item enters the Icebox with Downstream already declared. The diagram below represents both paths.
+The CommitmentGate is a **universal mechanism**: it is not restricted to the end of an Upstream experiment. It can occur at any moment: shortly after opening an investigation (if the trio judges the hypothesis is clear enough to commit before exploring further), during an experiment (when partial evidence already satisfies the Evidence Threshold), or at the end (when the Decision Package is complete). It can also occur **at PIB entry directly from a Business Signal**, when the business context is sufficiently clear and no Upstream experiment is required. In that case, the Business Signal reaches the trio with enough substance for the gate: the trio evaluates, the OBC transitions from Draft to Refining, and the item enters the Icebox with Downstream already declared. The diagram below represents both paths.
 
-In Downstream, the Committed OBC is the contract under which the commitment was assumed. The blocking gates that govern the Delivery journey verify what is in the OBC: the expected Observable Events, the measurable acceptance criteria, the Initial SLIs with numeric targets. Without a Committed OBC, no Delivery phase begins. With it, rigor shifts from advisory to blocking — not as a preference, but as an operational consequence of the commitment assumed.
+In Downstream, the Committed OBC is the contract under which the commitment was assumed. The blocking gates that govern the Delivery journey verify what is in the OBC: the expected Observable Events, the measurable acceptance criteria, the Initial SLIs with numeric targets. Without a Committed OBC, no Delivery phase begins. With it, rigor shifts from advisory to blocking, not as a preference, but as an operational consequence of the commitment assumed.
 
 ```mermaid
 graph LR
@@ -198,9 +198,9 @@ graph LR
     E --> F["Bootstrap"]
 ```
 
-**Rigor is configurable, but its configuration is not a preference.** The ProdOps Framework prescribes the canonical CommitmentGate template — the required artifacts, the trio participants, the six outcomes. The Runtime is what the team installs and adapts to its operational context: which additional verifications apply to the type of work the team does, with what depth, under which conditions the Reliability Plan is required. This adaptation is legitimate and recommended. What is not adaptable is the principle: without a CommitmentGate with an evaluated Decision Package, the OBC transition from Draft to Refining (and, consequently, to Committed at the Readiness Gate) does not happen. What varies between teams is how the gate is calibrated — not whether it exists.
+**Rigor is configurable, but its configuration is not a preference.** The ProdOps Framework prescribes the canonical CommitmentGate template: the required artifacts, the trio participants, the six outcomes. The Runtime is what the team installs and adapts to its operational context: which additional verifications apply to the type of work the team does, with what depth, under which conditions the Reliability Plan is required. This adaptation is legitimate and recommended. What is not adaptable is the principle: without a CommitmentGate with an evaluated Decision Package, the OBC transition from Draft to Refining (and, consequently, to Committed at the Readiness Gate) does not happen. What varies between teams is how the gate is calibrated, not whether it exists.
 
-With the OBC as artifact and the CommitmentGate as mechanism, the three following chapters have a concrete reference: Chapter 4 describes Assessment — the informational governance journey that accompanies the full cycle, from Business Signal to post-Operation feedback; Chapter 5 describes Upstream, the regime under which the OBC accumulates evidence before the gate; and Chapter 6 describes Downstream, the regime under which the Committed OBC is honored with blocking gates until the capability is promoted.
+With the OBC as artifact and the CommitmentGate as mechanism, the three following chapters have a concrete reference: Chapter 4 describes Assessment, the informational governance journey that accompanies the full cycle, from Business Signal to post-Operation feedback; Chapter 5 describes Upstream, the regime under which the OBC accumulates evidence before the gate; and Chapter 6 describes Downstream, the regime under which the Committed OBC is honored with blocking gates until the capability is promoted.
 
 ---
 

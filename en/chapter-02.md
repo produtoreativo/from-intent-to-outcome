@@ -111,7 +111,7 @@ The blind spot has an operational name in the ProdOps context: Discovery in the 
 
 Discovery in the Downstream is the exploration carried out after a decision has come to carry an operational, economic, or temporal commitment, causing the same uncertainty that would be acceptable in the Upstream to now carry a cost of reversal, renegotiation, or rework. The problem is not discovering after commitment. The problem is carrying uncertainty into a commitment without recognizing that the cost of being wrong has changed.
 
-When a team assumes a formal commitment—with acceptance criteria, with a deadline, with stakeholder expectations—and still carries unresolved exploration into that commitment, what is happening is not discovery followed by delivery. It is delivery with embedded discovery, without recognition that the two things are coexisting under different cost regimes.
+When a team assumes a formal commitment (with acceptance criteria, with a deadline, with stakeholder expectations) and still carries unresolved exploration into that commitment, what is happening is not discovery followed by delivery. It is delivery with embedded discovery, without recognition that the two things are coexisting under different cost regimes.
 
 This matters for a precise reason: the cost of changing course is radically different in the two cases.
 
@@ -147,11 +147,11 @@ The next chapter defines what a mode of execution is and why that definition res
 
 ## From the literature, not despite it
 
-This book will not detail how to conduct Discovery or how to execute Delivery. That literature already exists — and it is good. Cagan, Torres, Singer, Patton, Humble, Forsgren: what they produced in terms of techniques, artifacts, and practices does not need to be rewritten. It remains valid.
+This book will not detail how to conduct Discovery or how to execute Delivery. That literature already exists, and it is good. Cagan, Torres, Singer, Patton, Humble, Forsgren: what they produced in terms of techniques, artifacts, and practices does not need to be rewritten. It remains valid.
 
-What ProdOps proposes is a layer above those methodologies: making explicit the commitment regime that governs any execution of Discovery or Delivery. This diverges from the most common interpretation of the literature — which tends to treat the two journeys as sequential phases — but does not contradict what each work proposes within its own scope. What changes is what governs the relationship between the journeys, not their content.
+What ProdOps proposes is a layer above those methodologies: making explicit the commitment regime that governs any execution of Discovery or Delivery. This diverges from the most common interpretation of the literature (which tends to treat the two journeys as sequential phases), but does not contradict what each work proposes within its own scope. What changes is what governs the relationship between the journeys, not their content.
 
-In that sense, ProdOps undoes nothing. It readjusts. Those already operating with Torres's continuous discovery practices, Singer's shaping, Cagan's four risk dimensions, will continue operating — with the additional clarity that what distinguishes those contexts is not the activity itself, but the commitment regime governing it. From the literature. Not despite it.
+In that sense, ProdOps undoes nothing. It readjusts. Those already operating with Torres's continuous discovery practices, Singer's shaping, Cagan's four risk dimensions, will continue operating, with the additional clarity that what distinguishes those contexts is not the activity itself, but the commitment regime governing it. From the literature. Not despite it.
 
 ---
 

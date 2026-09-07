@@ -131,7 +131,7 @@ O framework ProdOps usa uma frase específica para verificar se o modelo modal f
 
 Qualquer compressão que mapeie Upstream para uma jornada específica ("Upstream é onde se faz discovery", "Upstream é a fase de exploração") está errada. Essas frases reproduzem a interpretação de mercado que o Capítulo 2 examinou. Elas são intuitivamente atraentes porque capturam algo verdadeiro (exploração tende a ocorrer com maior frequência no Upstream), mas ocultam o que é distintivo no modelo: que a mesma jornada pode ser executada em qualquer modo, e que o que muda entre eles não é o conteúdo do trabalho, mas o regime de compromisso que o governa.
 
-Com essa distinção estabelecida, os Capítulos 5 e 6 descrevem cada modo em profundidade — não como fases com diferentes conteúdos, mas como configurações de compromisso com diferentes disciplinas.
+Com essa distinção estabelecida, os Capítulos 5 e 6 descrevem cada modo em profundidade: não como fases com diferentes conteúdos, mas como configurações de compromisso com diferentes disciplinas.
 
 ---
 
@@ -139,9 +139,9 @@ Com essa distinção estabelecida, os Capítulos 5 e 6 descrevem cada modo em pr
 
 Um item que chega ao Product Intent Backlog (PIB) percorreu um de dois caminhos distintos antes de entrar.
 
-**Fluxo global:** o Business Signal tem escopo amplo — envolve múltiplos produtos ou a plataforma inteira. Ele entra no Portfolio Tracking List, gera uma Business Intent no Business Intent Backlog (BIB), onde um Global OBC Draft nasce. Após Discovery no BIB e OBC Partitioning, o Global OBC é decomposto em Local OBCs — um por produto envolvido — e cada produto recebe seu item no PIB.
+**Fluxo global:** o Business Signal tem escopo amplo: envolve múltiplos produtos ou a plataforma inteira. Ele entra no Portfolio Tracking List, gera uma Business Intent no Business Intent Backlog (BIB), onde um Global OBC Draft nasce. Após Discovery no BIB e OBC Partitioning, o Global OBC é decomposto em Local OBCs (um por produto envolvido) e cada produto recebe seu item no PIB.
 
-**Fluxo local:** o Business Signal tem destino definido — este produto, este time. Ele entra na Product Tracking List, passa por Premortem e Owner Approval, e gera uma Business Intent com Local OBC Draft direto no PIB, sem passar pelo Portfolio.
+**Fluxo local:** o Business Signal tem destino definido: este produto, este time. Ele entra na Product Tracking List, passa por Premortem e Owner Approval, e gera uma Business Intent com Local OBC Draft direto no PIB, sem passar pelo Portfolio.
 
 ```mermaid
 flowchart TD
@@ -165,25 +165,25 @@ flowchart TD
     OBC_P --> PIB
     OWN --> PIB
 ```
-*Figura 3a. Os dois caminhos de entrada no PIB: o fluxo global (plataforma → BIB → Partitioning → PIB) e o fluxo local (produto → Owner Approval → PIB). Após a entrada no PIB, a origem deixa de importar — todos os itens seguem a mesma jornada.*
+*Figura 3a. Os dois caminhos de entrada no PIB: o fluxo global (plataforma → BIB → Partitioning → PIB) e o fluxo local (produto → Owner Approval → PIB). Após a entrada no PIB, a origem deixa de importar: todos os itens seguem a mesma jornada.*
 
-Após a entrada no PIB, a distinção entre os dois caminhos se apaga. O item evolui pelo mesmo ciclo de estados do Local OBC — do Draft ao Released — independentemente de ter vindo do Portfolio ou do fluxo local.
+Após a entrada no PIB, a distinção entre os dois caminhos se apaga. O item evolui pelo mesmo ciclo de estados do Local OBC (do Draft ao Released), independentemente de ter vindo do Portfolio ou do fluxo local.
 
 ---
 
 ## O ciclo em síntese: OBC, CommitmentGate e a transição de regime
 
-O modelo modal descreve dois regimes de compromisso. O que ainda não foi dito é qual artefato carrega esse compromisso ao longo do ciclo de vida de uma capability — e qual mecanismo faz a transição de um regime para o outro.
+O modelo modal descreve dois regimes de compromisso. O que ainda não foi dito é qual artefato carrega esse compromisso ao longo do ciclo de vida de uma capability, e qual mecanismo faz a transição de um regime para o outro.
 
 O artefato é o **OBC** (Observable Business Contract). O mecanismo é o **CommitmentGate**.
 
-O OBC nasce na transição de um Business Signal para um Business Intent: a partir desse momento, ele sempre existe. O modo determina sob qual regime o OBC opera — não quando ele nasce. No Upstream, o OBC está em estado **Draft**: incompleto é aceitável, pode ser alterado livremente, não bloqueia experimentos. O Upstream usa o OBC como memória do aprendizado acumulado — o que já se sabe sobre a capability, quais hipóteses foram respondidas, quais questões permanecem abertas.
+O OBC nasce na transição de um Business Signal para um Business Intent: a partir desse momento, ele sempre existe. O modo determina sob qual regime o OBC opera, não quando ele nasce. No Upstream, o OBC está em estado **Draft**: incompleto é aceitável, pode ser alterado livremente, não bloqueia experimentos. O Upstream usa o OBC como memória do aprendizado acumulado: o que já se sabe sobre a capability, quais hipóteses foram respondidas, quais questões permanecem abertas.
 
-O CommitmentGate é o gate que avalia se a evidência acumulada justifica transitar o OBC de **Draft** para **Refining** (Momento 2). O Decision Package — artefato com hipóteses respondidas, riscos identificados e recomendação formal — é o input do gate. Um trio executa o CommitmentGate: o **PM**, o **Tech Lead** e o **Autor** (quem conduziu o experimento e preparou o package; o PM e o Tech Lead funcionam como leitores independentes). O framework define seis outcomes canônicos: o outcome Promover transita o OBC de Draft para Refining, declara o Downstream e abre a jornada Discovery em modo bloqueante — o OBC alcança o estado Committed somente no Readiness Gate (Momento 3). Os demais outcomes mantêm o item em Upstream, descartam a capability ou suspendem o trabalho até que uma condição externa seja resolvida.
+O CommitmentGate é o gate que avalia se a evidência acumulada justifica transitar o OBC de **Draft** para **Refining** (Momento 2). O Decision Package (artefato com hipóteses respondidas, riscos identificados e recomendação formal) é o input do gate. Um trio executa o CommitmentGate: o **PM**, o **Tech Lead** e o **Autor** (quem conduziu o experimento e preparou o package; o PM e o Tech Lead funcionam como leitores independentes). O framework define seis outcomes canônicos: o outcome Promover transita o OBC de Draft para Refining, declara o Downstream e abre a jornada Discovery em modo bloqueante; o OBC alcança o estado Committed somente no Readiness Gate (Momento 3). Os demais outcomes mantêm o item em Upstream, descartam a capability ou suspendem o trabalho até que uma condição externa seja resolvida.
 
-O CommitmentGate é um **mecanismo universal** — não está restrito ao final de um experimento Upstream. Pode ocorrer em qualquer momento: logo após a abertura de uma investigação (se o trio julgar que a hipótese é clara o suficiente para comprometer antes de explorar mais), durante um experimento (quando evidências parciais já satisfazem o Evidence Threshold), ou ao final (quando o Decision Package está completo). Pode também ocorrer **na entrada do PIB diretamente a partir de um Business Signal** — quando o contexto de negócio é suficientemente claro e nenhum experimento Upstream é necessário. Nesse caso, o Business Signal chega ao trio com substrato suficiente para o gate: o trio avalia, o OBC transita de Draft para Refining, e o item entra no Icebox com o Downstream já declarado. O diagrama abaixo representa os dois caminhos.
+O CommitmentGate é um **mecanismo universal**: não está restrito ao final de um experimento Upstream. Pode ocorrer em qualquer momento: logo após a abertura de uma investigação (se o trio julgar que a hipótese é clara o suficiente para comprometer antes de explorar mais), durante um experimento (quando evidências parciais já satisfazem o Evidence Threshold), ou ao final (quando o Decision Package está completo). Pode também ocorrer **na entrada do PIB diretamente a partir de um Business Signal**, quando o contexto de negócio é suficientemente claro e nenhum experimento Upstream é necessário. Nesse caso, o Business Signal chega ao trio com substrato suficiente para o gate: o trio avalia, o OBC transita de Draft para Refining, e o item entra no Icebox com o Downstream já declarado. O diagrama abaixo representa os dois caminhos.
 
-No Downstream, o OBC Committed é o contrato sob o qual o compromisso foi assumido. Os gates bloqueantes que governam a jornada Delivery verificam o que está no OBC: os Observable Events esperados, os critérios de aceite mensuráveis, os Initial SLIs com targets numéricos. Sem OBC Committed, nenhuma fase de Delivery começa. Com ele, o rigor passa de advisory para bloqueante — não como uma preferência, mas como consequência operacional do compromisso assumido.
+No Downstream, o OBC Committed é o contrato sob o qual o compromisso foi assumido. Os gates bloqueantes que governam a jornada Delivery verificam o que está no OBC: os Observable Events esperados, os critérios de aceite mensuráveis, os Initial SLIs com targets numéricos. Sem OBC Committed, nenhuma fase de Delivery começa. Com ele, o rigor passa de advisory para bloqueante, não como uma preferência, mas como consequência operacional do compromisso assumido.
 
 ```mermaid
 graph LR
@@ -198,9 +198,9 @@ graph LR
     E --> F["Bootstrap"]
 ```
 
-**O rigor é configurável, mas sua configuração não é uma preferência.** O Framework ProdOps prescreve o template canônico do CommitmentGate — os artefatos obrigatórios, os participantes do trio, os seis outcomes. O Runtime é o que o time instala e adapta ao seu contexto operacional: quais verificações adicionais se aplicam ao tipo de trabalho que o time faz, com qual profundidade, sob quais condições o Reliability Plan é exigido. Essa adaptação é legítima e recomendada. O que não é adaptável é o princípio: sem CommitmentGate com Decision Package avaliado, a transição do OBC de Draft para Refining (e, consequentemente, para Committed no Readiness Gate) não acontece. O que muda entre times é como o gate é calibrado — não se ele existe.
+**O rigor é configurável, mas sua configuração não é uma preferência.** O Framework ProdOps prescreve o template canônico do CommitmentGate: os artefatos obrigatórios, os participantes do trio, os seis outcomes. O Runtime é o que o time instala e adapta ao seu contexto operacional: quais verificações adicionais se aplicam ao tipo de trabalho que o time faz, com qual profundidade, sob quais condições o Reliability Plan é exigido. Essa adaptação é legítima e recomendada. O que não é adaptável é o princípio: sem CommitmentGate com Decision Package avaliado, a transição do OBC de Draft para Refining (e, consequentemente, para Committed no Readiness Gate) não acontece. O que muda entre times é como o gate é calibrado, não se ele existe.
 
-Com o OBC como artefato e o CommitmentGate como mecanismo, os três capítulos seguintes têm referência concreta: o Capítulo 4 descreve o Assessment — a jornada de governança informacional que acompanha todo o ciclo, do Business Signal à retroalimentação pós-Operation; o Capítulo 5 descreve o Upstream, o regime sob o qual o OBC acumula evidência antes do gate; e o Capítulo 6 descreve o Downstream, o regime sob o qual o OBC Committed é honrado com gates bloqueantes até a promoção da capability.
+Com o OBC como artefato e o CommitmentGate como mecanismo, os três capítulos seguintes têm referência concreta: o Capítulo 4 descreve o Assessment, a jornada de governança informacional que acompanha todo o ciclo, do Business Signal à retroalimentação pós-Operation; o Capítulo 5 descreve o Upstream, o regime sob o qual o OBC acumula evidência antes do gate; e o Capítulo 6 descreve o Downstream, o regime sob o qual o OBC Committed é honrado com gates bloqueantes até a promoção da capability.
 
 ---
 
