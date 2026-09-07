@@ -83,7 +83,7 @@ A revisão de literatura cobriu dezoito obras, organizadas em cinco clusters por
 
 ### Cluster 1: A metáfora
 
-As obras deste cluster fornecem o pano de fundo conceitual para o uso dos termos como orientação de trabalho. Dan Heath (2020) é o exemplo principal. Eliyahu Goldratt e Jeff Cox, em "The Goal" (1984), contribuíram com a Teoria das Restrições: o ponto de contenção upstream, o modelo pull e o conceito de buffer gerenciado. O **Plano de Experimento** do ProdOps — VIEW sobre os experimentos Upstream ativos — é estruturalmente análogo a um buffer lean antes de um ponto de restrição (o Commitment Gate). O Icebox, por sua vez, é o holding pós-Commitment Gate: representa itens com Downstream já declarado e OBC em refinamento (estado ≠ Committed), aguardando o Readiness Gate.
+As obras deste cluster fornecem o pano de fundo conceitual para o uso dos termos como orientação de trabalho. Dan Heath (2020) é o exemplo principal. Eliyahu Goldratt e Jeff Cox, em "The Goal" (1984), contribuíram com a Teoria das Restrições: o ponto de contenção upstream, o modelo pull e o conceito de buffer gerenciado. O **Experiment Plan** do ProdOps — VIEW sobre os experimentos Upstream ativos — é estruturalmente análogo a um buffer lean antes de um ponto de restrição (o Commitment Gate). O Icebox, por sua vez, é o holding pós-Commitment Gate: representa itens com Downstream já declarado e OBC em refinamento (estado ≠ Committed), aguardando o Readiness Gate.
 
 ### Cluster 2: Discovery de produto
 
@@ -93,7 +93,7 @@ Teresa Torres, em "Continuous Discovery Habits" (2021), contribuiu com a Opportu
 
 ### Cluster 3: Lean e Value Streams
 
-Womack e Jones, em "Lean Thinking" (1996), formalizaram o conceito de value stream e a distinção entre pull e push. O Plano de Experimento como buffer lean (pré-Gate) e o Commitment Gate como puxada para o Downstream derivam diretamente dessa tradição. Rother e Shook, em "Learning to See" (1998), desenvolveram o Value Stream Mapping: as métricas TTE (Time to Evidence), TTC (Time to Commitment Gate) e TTD (Time to Deploy) do ProdOps são aplicações do VSM ao contexto de produto digital. Kim, DeBois, Willis e Humble, em "The DevOps Handbook" (2016), articularam as três dimensões do DevOps e o princípio de shift left, que o ProdOps incorpora como princípio de anteposição de validação no Upstream.
+Womack e Jones, em "Lean Thinking" (1996), formalizaram o conceito de value stream e a distinção entre pull e push. O Experiment Plan como buffer lean (pré-Gate) e o Commitment Gate como puxada para o Downstream derivam diretamente dessa tradição. Rother e Shook, em "Learning to See" (1998), desenvolveram o Value Stream Mapping: as métricas TTE (Time to Evidence), TTC (Time to Commitment Gate) e TTD (Time to Deploy) do ProdOps são aplicações do VSM ao contexto de produto digital. Kim, DeBois, Willis e Humble, em "The DevOps Handbook" (2016), articularam as três dimensões do DevOps e o princípio de shift left, que o ProdOps incorpora como princípio de anteposição de validação no Upstream.
 
 ### Cluster 4: Entrega de software
 
@@ -110,7 +110,7 @@ Eric Evans, em "Domain-Driven Design" (2003), foi o primeiro a formalizar upstre
 | Commitment Gate | Commitment point (Anderson) / Betting table (Singer) / Double Diamond (Design Council) |
 | Modos de execução transversais | Domínios do Cynefin (Snowden) |
 | Evidence Threshold | Assumption testing (Torres) |
-| Plano de Experimento como buffer lean (pré-Commitment Gate) | Theory of Constraints (Goldratt) / Lean Thinking (Womack) |
+| Experiment Plan como buffer lean (pré-Commitment Gate) | Theory of Constraints (Goldratt) / Lean Thinking (Womack) |
 | Decision Package | 4 riscos antes do compromisso (Cagan) |
 | Métricas TTE, TTC, TTD | Value Stream Mapping (Rother e Shook) |
 | Experimento Upstream | Build-Measure-Learn (Ries) / Pitch com expiração (Singer) |

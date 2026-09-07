@@ -185,12 +185,6 @@ A leitura mais comum de uma jornada nova em um framework é posicioná-la em uma
 
 Discovery, Delivery e Operation são jornadas de execução: cada uma tem um input esperado, um output definido e um critério de conclusão. O Assessment é uma jornada de governança informacional: seu input é o estado corrente do sistema de trabalho, seu output é o contexto qualificado para as decisões do ciclo, e seu "critério de conclusão" é a entropia informacional controlada ao longo de todo o ciclo.
 
-Isso não torna o Assessment mais importante do que as três clássicas: torna-o diferente em natureza. Um time pode operar sem Assessment formal, usando julgamento, memória e intuição no lugar de avaliação sistemática. O custo não é imediato: manifesta-se gradualmente, como decisões tomadas com contexto incompleto, riscos identificados tarde, padrões de failure que se repetem porque não foram formalizados no relatório de ciclo anterior.
-
-O ProdOps não prescreve uma implementação única do Assessment. O que o Framework define é o que Assessment é responsável por **avaliar e qualificar** (o Decision Package gerado pela Discovery, o Reliability Plan adequado ao risco do compromisso, a saúde do ciclo com base em evidência, os novos Business Signals como retroalimentação) e o Runtime de cada time decide com que frequência, com que nível de formalidade e com que instrumentação o Assessment opera.
-
-Os capítulos seguintes descrevem os modos de execução (Upstream e Downstream) e as jornadas clássicas. Em cada um deles, o Assessment opera como pano de fundo: garantindo que a decisão que encerra uma fase tenha o contexto informacional que ela exige, e que o aprendizado que cada fase produz não se perca entre um ciclo e o próximo.
-
 ```mermaid
 graph TD
     BS(["Business Signal\n— Concepção ativada —"])
@@ -234,6 +228,12 @@ graph TD
     R2 --> R3
     R3 -.->|"retroalimenta Concepção"| BS
 ```
+
+Isso não torna o Assessment mais importante do que as três clássicas: torna-o diferente em natureza. Um time pode operar sem Assessment formal, usando julgamento, memória e intuição no lugar de avaliação sistemática. O custo não é imediato: manifesta-se gradualmente, como decisões tomadas com contexto incompleto, riscos identificados tarde, padrões de failure que se repetem porque não foram formalizados no relatório de ciclo anterior.
+
+O ProdOps não prescreve uma implementação única do Assessment. O que o Framework define é o que Assessment é responsável por **avaliar e qualificar** (o Decision Package gerado pela Discovery, o Reliability Plan adequado ao risco do compromisso, a saúde do ciclo com base em evidência, os novos Business Signals como retroalimentação) e o Runtime de cada time decide com que frequência, com que nível de formalidade e com que instrumentação o Assessment opera.
+
+Os capítulos seguintes descrevem os modos de execução (Upstream e Downstream) e as jornadas clássicas. Em cada um deles, o Assessment opera como pano de fundo: garantindo que a decisão que encerra uma fase tenha o contexto informacional que ela exige, e que o aprendizado que cada fase produz não se perca entre um ciclo e o próximo.
 
 ---
 

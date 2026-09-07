@@ -57,7 +57,7 @@ stateDiagram-v2
 
     note right of Draft
         VIEW Icebox
-        + Plano de Experimento
+        + Experiment Plan
         (se experimento ativo)
     end note
     note right of Refining

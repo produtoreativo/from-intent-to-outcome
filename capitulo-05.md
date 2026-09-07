@@ -139,20 +139,20 @@ Três experimentos sequenciais. Nenhuma linha de código de produção durante o
 
 ---
 
-## Coordenação do Upstream: o Plano de Experimento
+## Coordenação do Upstream: o Experiment Plan
 
-Quando um time opera múltiplos experimentos Upstream em paralelo, surge a necessidade de um artefato de coordenação. Esse é o **Plano de Experimento**: uma VIEW sobre os itens do Icebox que possuem um experimento ativo — hipótese formulada, `experiment.md` aberto, investigação em andamento.
+Quando um time opera múltiplos experimentos Upstream em paralelo, surge a necessidade de um artefato de coordenação. Esse é o **Experiment Plan**: uma VIEW sobre os itens do Icebox que possuem um experimento ativo — hipótese formulada, `experiment.md` aberto, investigação em andamento.
 
-O Plano de Experimento não é um sprint. Não tem data de término nem sequência obrigatória. É um instrumento de visibilidade: responde à pergunta *"quais hipóteses estamos investigando agora?"* e torna visível o **Discovery WIP** — o número de experimentos Upstream ativos simultaneamente.
+O Experiment Plan não é um sprint. Não tem data de término nem sequência obrigatória. É um instrumento de visibilidade: responde à pergunta *"quais hipóteses estamos investigando agora?"* e torna visível o **Discovery WIP** — o número de experimentos Upstream ativos simultaneamente.
 
-O Plano de Experimento é o equivalente Upstream do Iteration Plan. O Iteration Plan governa o Downstream em execução (Product Capabilities comprometidas, em Delivery). O Plano de Experimento governa o Upstream em exploração (hipóteses ativas, sem compromisso). Os dois são simétricos: um não substitui o outro; coexistem quando o time opera nos dois modos.
+O Experiment Plan é o equivalente Upstream do Iteration Plan. O Iteration Plan governa o Downstream em execução (Product Capabilities comprometidas, em Delivery). O Experiment Plan governa o Upstream em exploração (hipóteses ativas, sem compromisso). Os dois são simétricos: um não substitui o outro; coexistem quando o time opera nos dois modos.
 
 ```mermaid
 flowchart TD
     PIB["PIB — item entra com OBC: Draft"]
 
     subgraph ICE["VIEW: Icebox  —  OBC ≠ Committed"]
-        PE["VIEW: Plano de Experimento\nOBC: Draft · experimento ativo\nDiscovery WIP controlado"]
+        PE["VIEW: Experiment Plan\nOBC: Draft · experimento ativo\nDiscovery WIP controlado"]
         WAIT["Icebox sem experimento ativo\naguardando decisão externa\nou Business Signal direto"]
         DS["Downstream Declared\nOBC: Refining\nDiscovery em modo bloqueante"]
     end
@@ -178,11 +178,11 @@ flowchart TD
 
     ITB -->|"PO seleciona"| IP
 ```
-*Figura 5a. Jornada de um item dentro do PIB: o Plano de Experimento como VIEW dos experimentos Upstream ativos dentro do Icebox, o Commitment Gate como fronteira modal, e o Iteration Plan como destino final após o Readiness Gate.*
+*Figura 5a. Jornada de um item dentro do PIB: o Experiment Plan como VIEW dos experimentos Upstream ativos dentro do Icebox, o Commitment Gate como fronteira modal, e o Iteration Plan como destino final após o Readiness Gate.*
 
-Um item do Icebox pode existir sem aparecer no Plano de Experimento — por exemplo, quando aguarda uma decisão de negócio externa antes de abrir a investigação. O Plano de Experimento lista apenas os experimentos que estão ativos neste momento.
+Um item do Icebox pode existir sem aparecer no Experiment Plan — por exemplo, quando aguarda uma decisão de negócio externa antes de abrir a investigação. O Experiment Plan lista apenas os experimentos que estão ativos neste momento.
 
-Os três experimentos da Magazine Siará (EXP-001, EXP-002, EXP-003) seriam representados no Plano de Experimento durante suas respectivas janelas de investigação — e removidos quando o Commitment Gate registrou o outcome *Promover com restrição* e o item entrou no Icebox como Downstream Declared.
+Os três experimentos da Magazine Siará (EXP-001, EXP-002, EXP-003) seriam representados no Experiment Plan durante suas respectivas janelas de investigação — e removidos quando o Commitment Gate registrou o outcome *Promover com restrição* e o item entrou no Icebox como Downstream Declared.
 
 ---
 
