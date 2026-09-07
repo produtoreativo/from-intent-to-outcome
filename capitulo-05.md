@@ -119,7 +119,7 @@ Existem três atos distintos de implantação no Upstream, com autorizações e 
 
 **Produção Controlada**: código Upstream implantado em produção real, sem Commitment Gate. Autorização explícita do time e da liderança. Rollback imediato disponível. Sem Release Trail exigido — o que não significa sem evidência: o que foi observado em Produção Controlada deve ser registrado no upstream-trail do experimento. Isso não é violação do modo Upstream: é um ato autorizado. O que a diferencia da promoção é que o *compromisso de Product Capability* (OBC Committed, Gates do Downstream) não foi assumido. O código chega a produção; a Product Capability permanece em exploração.
 
-**Promoção de Product Capability**: Commitment Gate com outcome Promover. BDD Feature e OBC movidos para os paths comprometidos. O item entra no Icebox. O Downstream está declarado; a Delivery começa apenas após o Readiness Gate e o Planning.
+**Promoção de Product Capability**: Commitment Gate com outcome Promover. O OBC transita de Draft para Refining; a BDD Feature existe como rascunho nos paths do Downstream. O item entra no Icebox, onde a Discovery Downstream elabora o escopo, completa a BDD e satisfaz as condições do Readiness Gate. Após o Readiness Gate, o OBC alcança o estado Committed; o Iteration Plan é criado e a Delivery começa com o Bootstrap.
 
 A distinção entre Produção Controlada e Promoção de Product Capability é precisamente a distinção que o modelo modal resolve: no primeiro caso, o código está em produção mas a Product Capability não está comprometida; no segundo, o compromisso foi formalmente assumido com todos os seus Gates.
 

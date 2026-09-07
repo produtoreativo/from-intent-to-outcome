@@ -119,7 +119,7 @@ There are three distinct acts of deployment in Upstream, with different authoriz
 
 **Controlled Production**: Upstream code deployed to real production, without Commitment Gate. Explicit authorization from the team and leadership. Immediate rollback available. No Release Trail required — which does not mean without evidence: what was observed in Controlled Production must be recorded in the experiment's upstream-trail. This is not a violation of Upstream mode: it is an authorized act. What distinguishes it from promotion is that the *Product Capability commitment* (OBC Committed, Downstream Gates) has not been made. The code reaches production; the Product Capability remains under exploration.
 
-**Product Capability Promotion**: Commitment Gate with Promote outcome. BDD Feature and OBC moved to committed paths. The item enters the Icebox. Downstream is declared; Delivery begins only after the Readiness Gate and Planning.
+**Product Capability Promotion**: Commitment Gate with Promote outcome. The OBC transitions from Draft to Refining; the BDD Feature exists as a draft in the Downstream paths. The item enters the Icebox, where Downstream Discovery elaborates the scope, completes the BDD, and satisfies the Readiness Gate conditions. After the Readiness Gate, the OBC reaches Committed state; the Iteration Plan is created and Delivery begins with Bootstrap.
 
 The distinction between Controlled Production and Product Capability Promotion is precisely the distinction the modal model resolves: in the first case, the code is in production but the Product Capability is not committed; in the second, the commitment has been formally made with all its Gates.
 
