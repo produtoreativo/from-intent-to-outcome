@@ -4,7 +4,7 @@
 
 ## Where Downstream begins
 
-There is a common misconception about the starting point of Downstream. It does not begin when the team "finishes discovery." It does not begin when "the team feels ready." It does not begin when the Product Owner decides to prioritize an item.
+There is a common misconception about the starting point of Downstream. It does not begin when the team "finishes discovery." It does not begin when "the team feels ready." It does not begin when the Product Manager decides to prioritize an item.
 
 Downstream begins when the CommitmentGate is executed with the Promote outcome, and not before. That is the moment when the mode is declared: the rigor regime shifts from non-blocking to blocking, and the item begins to carry a formal commitment.
 

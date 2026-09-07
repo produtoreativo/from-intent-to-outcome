@@ -31,7 +31,7 @@ Diligence is the transversal journey of ProdOps responsible for keeping the work
 
 What Diligence **does**: verifies whether the state of Knowledge Space artifacts is correctly reflected in the Execution Space. Captures Findings when it detects divergences. Manages the lifecycle of those Findings until they are resolved or receive a formal waiver. Ensures that the prerequisites of each gate (CommitmentGate, Readiness Gate, quality gates) are satisfied before the gate is executed.
 
-What Diligence **does not do**: implement software. Create implementation Pull Requests. Modify product code. Make product decisions: it informs and alerts, but does not decide. Prioritize the backlog: that is the Product Owner's responsibility.
+What Diligence **does not do**: implement software. Create implementation Pull Requests. Modify product code. Make product decisions: it informs and alerts, but does not decide. Prioritize the backlog: that is the Product Manager's responsibility.
 
 This separation is necessary for Diligence to maintain its function: if Diligence were to implement or prioritize, it would cease to be the guardian of consistency and would become an actor in the delivery process, mixing the responsibilities of verification and execution.
 

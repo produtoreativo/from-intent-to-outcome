@@ -62,7 +62,7 @@ The question Assessment answers at this moment is not "what will we build?" or "
 
 This implies three smaller questions. Does the Signal have enough context to be distinguished from noise: is it a grounded observation or an intuition without data? Does the Signal connect to other existing Signals in the corpus: is there a pattern, a precedent, a convergence with what the history of prior experiments and cycles has already produced? And what informational risks are associated with advancing: what is still unknown that would need to be known to commit resources responsibly?
 
-Assessment does not decide whether the Signal becomes a Business Intent. That decision belongs to the Product Owner and the team. What Assessment does is ensure the decision is made with controlled informational entropy: without invisible gaps, without implicit dependencies, without risks that will only surface after the commitment has been assumed.
+Assessment does not decide whether the Signal becomes a Business Intent. That decision belongs to the Product Manager and the team. What Assessment does is ensure the decision is made with controlled informational entropy: without invisible gaps, without implicit dependencies, without risks that will only surface after the commitment has been assumed.
 
 ```mermaid
 graph TD

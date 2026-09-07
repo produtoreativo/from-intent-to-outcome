@@ -87,7 +87,7 @@ stateDiagram-v2
 
 **Archived**: the capability was discontinued or replaced. The OBC remains as a historical record; it is not deleted.
 
-State progression is not linear by decree: it is verified. What causes an OBC to transition from Refining to Committed is not a subjective decision by the Product Owner; it is the satisfaction of verifiable criteria that Diligence can audit.
+State progression is not linear by decree: it is verified. What causes an OBC to transition from Refining to Committed is not a subjective decision by the Product Manager; it is the satisfaction of verifiable criteria that Diligence can audit.
 
 ---
 

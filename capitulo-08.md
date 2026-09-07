@@ -87,7 +87,7 @@ stateDiagram-v2
 
 **Archived**: a capability foi descontinuada ou substituída. O OBC permanece como registro histórico, não é deletado.
 
-A progressão de estados não é linear por decreto: é verificada. O que faz um OBC transitar de Refining para Committed não é uma decisão subjetiva do Product Owner; é a satisfação de critérios verificáveis que a Diligence pode auditar.
+A progressão de estados não é linear por decreto: é verificada. O que faz um OBC transitar de Refining para Committed não é uma decisão subjetiva do Product Manager; é a satisfação de critérios verificáveis que a Diligence pode auditar.
 
 ---
 

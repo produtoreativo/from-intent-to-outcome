@@ -31,7 +31,7 @@ A Diligence é a jornada transversal do ProdOps responsável por manter o sistem
 
 O que a Diligence **faz**: verifica se o estado dos artefatos do Knowledge Space está refletido corretamente no Execution Space. Captura Findings quando detecta divergências. Gerencia o ciclo de vida desses Findings até que sejam resolvidos ou recebam waiver formal. Garante que os pré-requisitos de cada gate (CommitmentGate, Readiness Gate, quality gates) estão satisfeitos antes que o gate seja executado.
 
-O que a Diligence **não faz**: implementa software. Cria Pull Requests de implementação. Modifica código do produto. Toma decisões de produto: ela informa e alerta, mas não decide. Prioriza o backlog: essa é responsabilidade do Product Owner.
+O que a Diligence **não faz**: implementa software. Cria Pull Requests de implementação. Modifica código do produto. Toma decisões de produto: ela informa e alerta, mas não decide. Prioriza o backlog: essa é responsabilidade do Product Manager.
 
 Essa separação é necessária para que a Diligence mantenha sua função: se a Diligence implementasse ou priorizasse, deixaria de ser guardiã da consistência e passaria a ser um ator no processo de entrega, misturando as responsabilidades de verificação e execução.
 

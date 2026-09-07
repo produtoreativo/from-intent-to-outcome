@@ -62,7 +62,7 @@ A pergunta que o Assessment responde nesse momento não é "o que vamos construi
 
 Isso implica três perguntas menores. O Signal tem contexto suficiente para ser distinguido de ruído: é uma observação fundamentada ou uma intuição sem dados? O Signal se conecta a outros Signals existentes no corpus: há padrão, há precedente, há convergência com o que o histórico de experimentos e ciclos anteriores já produziu? E quais riscos informativos estão associados ao avanço: o que ainda não se sabe que seria necessário saber para comprometer recursos de forma responsável?
 
-Assessment não decide se o Signal se transforma em Business Intent. Essa decisão pertence ao Product Owner e ao time. O que Assessment faz é garantir que a decisão seja tomada com a entropia informacional controlada: sem lacunas invisíveis, sem dependências implícitas, sem riscos que só aparecerão depois que o compromisso estiver assumido.
+Assessment não decide se o Signal se transforma em Business Intent. Essa decisão pertence ao Product Manager e ao time. O que Assessment faz é garantir que a decisão seja tomada com a entropia informacional controlada: sem lacunas invisíveis, sem dependências implícitas, sem riscos que só aparecerão depois que o compromisso estiver assumido.
 
 ```mermaid
 graph TD
