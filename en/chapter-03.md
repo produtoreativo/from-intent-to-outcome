@@ -171,6 +171,24 @@ After entering the PIB, the distinction between the two paths disappears. The it
 
 ---
 
+## The actors: the minimum composition of a ProdOps team
+
+The framework operates through people with distinct roles. The minimum composition of any team operating ProdOps involves three mandatory actors and a variable set of supporting profiles.
+
+**Author** is the person who identifies and registers the Business Signal. The Author knows the context that originated the Signal, conducts or accompanies the Upstream experiments, prepares the Decision Package, and presents it at the CommitmentGate. The Author is not necessarily the person who will build the capability: they are the person with epistemic responsibility over the investigation. In a product team, the Author may be the PM, the Tech Lead, an engineer, or an analyst, depending on where the Signal emerged.
+
+**Product Manager (PM)** is responsible for the business context and the strategic alignment of the capability. At the CommitmentGate, the PM acts as an independent reader of the Decision Package: evaluating whether the answered hypotheses justify the commitment, whether the scope is coherent with strategy, and whether the identified risks are at an acceptable level to advance. The PM does not conduct the investigation; they evaluate its outcome.
+
+**Tech Lead** is responsible for technical feasibility and architectural integrity. At the CommitmentGate, the Tech Lead evaluates whether the Decision Package reflects real technical risks, whether the Reliability Plan is adequate to the capability's risk profile, and whether the Downstream effort estimate is grounded. Like the PM, the Tech Lead acts as an independent reader.
+
+These three actors form the **trio**: the minimum decision unit of the CommitmentGate. The presence of all three is not a governance protocol; it is an epistemic condition. The Author has depth on the investigation but may carry confirmation bias. The PM has business context but may underestimate technical complexity. The Tech Lead has technical vision but may lack visibility into strategic urgency. The trio exists so that none of these perspectives is the sole filter of the decision.
+
+**Other profiles** enter the team composition according to the context of the capability: UX designers and researchers when the Signal involves user experience; data engineers or analysts when the hypotheses depend on quantitative analysis; security or compliance specialists when the Origin Stream is Enterprise or Technology with regulatory requirements. These profiles participate in Upstream investigation and Downstream execution, but do not compose the CommitmentGate trio by default.
+
+What does not change across contexts is the minimum structure: Author, PM, and Tech Lead. What varies is who fills each role (the same person may hold two roles in smaller teams, as long as independence in the CommitmentGate evaluation is preserved) and which additional profiles join depending on the nature of the Signal.
+
+---
+
 ## The cycle in synthesis: OBC, CommitmentGate, and the regime transition
 
 The modal model describes two commitment regimes. What has not yet been said is which artifact carries that commitment across the lifecycle of a capability, and which mechanism makes the transition from one regime to the other.

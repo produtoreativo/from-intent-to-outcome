@@ -171,6 +171,24 @@ Após a entrada no PIB, a distinção entre os dois caminhos se apaga. O item ev
 
 ---
 
+## Os atores: a composição mínima de um time ProdOps
+
+O framework opera por meio de pessoas com papéis distintos. A composição mínima de qualquer time que opera o ProdOps envolve três atores obrigatórios e um conjunto variável de perfis de suporte.
+
+**Autor** é quem identifica e registra o Business Signal. O Autor conhece o contexto que originou o Signal, conduz ou acompanha os experimentos Upstream, prepara o Decision Package e o apresenta no CommitmentGate. O Autor não é necessariamente quem vai construir a capability: é quem tem responsabilidade epistêmica sobre a investigação. Em um time de produto, pode ser o PM, o Tech Lead, um engenheiro ou um analista, dependendo de onde o Signal emergiu.
+
+**Product Manager (PM)** é o responsável pelo contexto de negócio e pelo alinhamento estratégico da capability. No CommitmentGate, o PM atua como leitor independente do Decision Package: avalia se as hipóteses respondidas justificam o compromisso, se o escopo é coerente com a estratégia, e se os riscos identificados estão em nível aceitável para avançar. O PM não conduz a investigação; avalia o resultado dela.
+
+**Tech Lead** é o responsável pela viabilidade técnica e pela integridade da arquitetura. No CommitmentGate, o Tech Lead avalia se o Decision Package reflete os riscos técnicos reais, se o Reliability Plan é adequado ao perfil de risco da capability, e se a estimativa de esforço Downstream é fundamentada. Assim como o PM, o Tech Lead atua como leitor independente.
+
+Esses três atores formam o **trio**: a unidade mínima de decisão do CommitmentGate. A presença dos três não é protocolo de governança; é condição epistêmica. O Autor tem profundidade sobre a investigação mas pode ter viés de confirmação. O PM tem contexto de negócio mas pode subestimar complexidade técnica. O Tech Lead tem visão técnica mas pode não ter visibilidade da urgência estratégica. O trio existe para que nenhuma dessas perspectivas seja o único filtro da decisão.
+
+**Demais perfis** entram na composição do time conforme o contexto da capability: designers e pesquisadores de UX quando o Signal envolve experiência do usuário; engenheiros de dados ou analistas quando as hipóteses dependem de análise quantitativa; especialistas de segurança ou compliance quando o Origin Stream é Enterprise ou Technology com requisitos regulatórios. Esses perfis participam da investigação Upstream e da execução Downstream, mas não compõem o trio do CommitmentGate por padrão.
+
+O que não muda entre contextos é a estrutura mínima: Autor, PM e Tech Lead. O que varia é quem ocupa cada papel (a mesma pessoa pode acumular dois em times menores, desde que a independência na avaliação do CommitmentGate seja preservada) e quais perfis adicionais entram dependendo da natureza do Signal.
+
+---
+
 ## O ciclo em síntese: OBC, CommitmentGate e a transição de regime
 
 O modelo modal descreve dois regimes de compromisso. O que ainda não foi dito é qual artefato carrega esse compromisso ao longo do ciclo de vida de uma capability, e qual mecanismo faz a transição de um regime para o outro.
