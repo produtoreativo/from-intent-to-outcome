@@ -189,6 +189,8 @@ O que não muda entre contextos é a estrutura mínima: Autor, PM e Tech Lead. O
 
 Uma distinção importante: o ProdOps fala sempre em **papéis**, não em cargos nem em pessoas. Autor, PM e Tech Lead são responsabilidades funcionais dentro do ciclo, não títulos de contratação nem organogramas. Como esses papéis são mapeados para cargos ou para pessoas depende da cultura, das crenças e das restrições legais e organizacionais de cada empresa. Uma empresa pode ter uma única pessoa ocupando os três papéis do trio ao mesmo tempo. Isso não é uma violação do framework: é uma decisão de quem o implanta, não uma definição canônica do ProdOps. O que o framework define é o que cada papel representa na decisão, não quantas pessoas precisam estar na sala.
 
+Dito isso, o ProdOps recomenda perfis distintos para cada papel do trio como boa prática de revisão por pares. A independência entre Autor, PM e Tech Lead no CommitmentGate existe justamente para reduzir o viés de confirmação e o ruído que afetam qualquer decisão tomada por uma única perspectiva. Quando a empresa decide unificar papéis em uma ou poucas pessoas, ela precisa ter esse fato em mente: não porque o framework proíba, mas porque a proteção epistêmica que o trio oferece diminui na mesma proporção em que os papéis se concentram.
+
 ---
 
 ## O ciclo em síntese: OBC, CommitmentGate e a transição de regime

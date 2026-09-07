@@ -189,6 +189,8 @@ What does not change across contexts is the minimum structure: Author, PM, and T
 
 One distinction matters here: ProdOps always speaks of **roles**, not of positions or people. Author, PM, and Tech Lead are functional responsibilities within the cycle, not hiring titles or org chart entries. How those roles map to positions or to people depends on the culture, beliefs, and legal and organizational constraints of each company. A company may have a single person holding all three trio roles simultaneously. This is not a violation of the framework: it is a decision made by whoever implements it, not a canonical ProdOps definition. What the framework defines is what each role represents in the decision, not how many people need to be in the room.
 
+That said, ProdOps recommends distinct profiles for each trio role as a peer review best practice. The independence between Author, PM, and Tech Lead at the CommitmentGate exists precisely to reduce the confirmation bias and noise that affect any decision made from a single perspective. When a company decides to consolidate roles into one or a few people, it simply needs to keep that fact in mind: not because the framework prohibits it, but because the epistemic protection the trio provides decreases in proportion to how much the roles are concentrated.
+
 ---
 
 ## The cycle in synthesis: OBC, CommitmentGate, and the regime transition
