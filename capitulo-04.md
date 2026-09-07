@@ -62,7 +62,7 @@ A pergunta que o Assessment responde nesse momento não é "o que vamos construi
 
 Isso implica três perguntas menores. O Signal tem contexto suficiente para ser distinguido de ruído: é uma observação fundamentada ou uma intuição sem dados? O Signal se conecta a outros Signals existentes no corpus: há padrão, há precedente, há convergência com o que o histórico de experimentos e ciclos anteriores já produziu? E quais riscos informativos estão associados ao avanço: o que ainda não se sabe que seria necessário saber para comprometer recursos de forma responsável?
 
-Assessment não decide se o Signal se transforma em Business Intent. Essa decisão pertence ao Product Manager e ao time. O que Assessment faz é garantir que a decisão seja tomada com a entropia informacional controlada: sem lacunas invisíveis, sem dependências implícitas, sem riscos que só aparecerão depois que o compromisso estiver assumido.
+Assessment não decide se o Signal se transforma em Business Intent. Essa decisão pertence ao time. O que Assessment faz é garantir que a decisão seja tomada com a entropia informacional controlada: sem lacunas invisíveis, sem dependências implícitas, sem riscos que só aparecerão depois que o compromisso estiver assumido.
 
 ```mermaid
 graph TD
@@ -70,7 +70,7 @@ graph TD
     A --> |"contexto suficiente"| BI["Business Intent\n(OBC Draft criado)"]
     A --> |"contexto insuficiente"| EV["Enriquecimento do Signal\n(mais evidência necessária)"]
     BI --> UP["Upstream\n(rigor advisory)"]
-    BI --> |"Signal direto para Downstream"| CG["Commitment Gate\n(Decision Package já existe)"]
+    BI --> |"Intent direto para Downstream"| CG["Commitment Gate\n(Decision Package já existe)"]
     UP --> DP["Decision Package\n(produto do Upstream)"]
     DP --> CG
     CG --> |"Promover"| DS["Downstream\n(Assessment acompanha)"]
@@ -82,15 +82,22 @@ graph TD
 
 ## A dimensão prospectiva: preparando o ambiente para a decisão
 
-A dimensão prospectiva do Assessment é a que opera antes do compromisso Downstream: desde o Signal, durante o Upstream (quando existe), e até o Commitment Gate.
+A dimensão prospectiva do Assessment começa no próprio Business Signal, durante a fase de **Concepção**: o período entre o registro do Signal e sua entrada no Business Intent Backlog (fluxo global) ou no Product Backlog (fluxo local). Nenhuma jornada de execução foi ativada ainda. Nenhum compromisso foi assumido. O Assessment já tem trabalho a fazer.
 
-O artefato central que o Assessment prospectivo **avalia** é o **Decision Package**: o conjunto de evidências, hipóteses respondidas, riscos identificados e recomendação formal que o trio (PM, Tech Lead e Autor) usará no Commitment Gate para decidir o destino da Product Capability.
+A pergunta central não é "o que vamos construir?" nem "como vamos construir?". É: **o ambiente informacional tem entropia suficientemente controlada para que a decisão de seguir adiante seja tomada com clareza sobre o que se sabe e o que não se sabe?**
 
-O que o Assessment prospectivo faz não é produzir o Decision Package por si mesmo: isso é responsabilidade da jornada Discovery em modo Upstream. O que Assessment faz é avaliar a qualidade do package: o Decision Package é legível por um membro do trio que não participou do experimento, sem contexto verbal adicional? As hipóteses foram respondidas com critérios de falsificação declarados, ou apenas afirmadas? Os riscos foram avaliados com base em evidência ou apenas listados? A incerteza residual está explicitamente declarada como aceitável, ou foi simplesmente omitida?
+O Assessment prospectivo responde a essa pergunta a partir de duas fontes. A primeira é o **corpus existente**: o que ciclos anteriores já produziram sobre necessidades similares? Há Signals relacionados registrados? Há experimentos encerrados com evidência relevante? Há OBCs em estado Released que documentam comportamento já entregue com implicações para esse novo Signal? O corpus é lido antes que qualquer nova investigação comece.
 
-Quando o Business Signal entra diretamente em Downstream (sem Upstream prévio, porque o contexto já é suficiente para o Commitment Gate), o Assessment prospectivo avalia se a suficiência declarada é real: o que justifica dispensar a exploração? Quais são os riscos dessa decisão? Existe um **Reliability Plan** adequado ao perfil de risco do compromisso assumido?
+A segunda fonte é o **mapa do que ainda falta**: se o corpus existente não é suficiente para uma decisão com entropia controlada, o Assessment prospectivo identifica quais informações precisam ser levantadas e de qual forma. É a partir dessa avaliação que o caminho do Signal se define:
 
-O Reliability Plan é o segundo produto relevante da dimensão prospectiva. Ele define, antes da entrada no Delivery, as condições de confiabilidade que a Product Capability precisa satisfazer ao longo do ciclo: SLIs iniciais, Reliability Rules, critérios de alerta e escalação. Em Product Capabilities de alto risco, o Reliability Plan pode ser exigido como condição de entrada no Readiness Gate; sem ele, o Gate não é aberto. Em Product Capabilities de risco controlado, o plan pode ser produzido durante o Downstream com menor formalidade. A calibração é responsabilidade do Runtime de cada time; o ProdOps Framework define que a avaliação de quais condições se aplicam pertence ao Assessment prospectivo.
+- Se o ambiente informacional já é suficiente para estabelecer um compromisso verificável, o caminho recomendado é o **Downstream direto**: o Business Intent tem substrato para o Commitment Gate sem exploração prévia.
+- Se o compromisso verificável precisa ser amadurecido, o caminho recomendado é uma **jornada Upstream**: um ou mais experimentos da jornada Discovery, em modo não bloqueante, para acumular a evidência necessária.
+
+A jornada que produz o **Decision Package** é a Discovery em modo Upstream. O Assessment prospectivo não produz o Decision Package: avalia sua qualidade epistêmica. O Decision Package está legível por um membro do trio que não participou do experimento, sem contexto verbal adicional? As hipóteses foram respondidas com critérios de falsificação declarados, ou apenas afirmadas? Os riscos foram avaliados com base em evidência ou apenas listados? A incerteza residual está explicitamente declarada como aceitável, ou foi simplesmente omitida?
+
+Quando o Business Intent segue diretamente para o Downstream sem jornada Upstream, o que substitui o Decision Package de um experimento é a documentação do Signal com o contexto que justificou dispensar a exploração: quais canais independentes confirmaram a demanda, qual o perfil de risco do compromisso assumido, por que a incerteza residual é aceitável para o comprometimento de recursos. O Assessment prospectivo avalia se esse substrato é real ou apenas declarado.
+
+O **Reliability Plan** é o segundo produto relevante da dimensão prospectiva. Ele define, antes da entrada no Delivery, as condições de confiabilidade que a Product Capability precisa satisfazer ao longo do ciclo: SLIs iniciais, Reliability Rules, critérios de alerta e escalação. Em Product Capabilities de alto risco, o Reliability Plan pode ser exigido como condição de entrada no Readiness Gate; sem ele, o Gate não é aberto. Em Product Capabilities de risco controlado, o plan pode ser produzido durante o Downstream com menor formalidade. A calibração é responsabilidade do Runtime de cada time; o ProdOps Framework define que a avaliação de quais condições se aplicam pertence ao Assessment prospectivo.
 
 ---
 
