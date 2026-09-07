@@ -19,10 +19,10 @@ Upstream, Downstream e o Novo Modelo Operacional para Produtos Digitais
 | 6 | Downstream: o modo do compromisso | [capitulo-06.md](capitulo-06.md) | Revisão |
 | 7 | O CommitmentGate: a fronteira com nome | [capitulo-07.md](capitulo-07.md) | Revisão |
 | 8 | Observabilidade como epistemologia, não como infraestrutura | [capitulo-08.md](capitulo-08.md) | Revisão |
-| 9 | Diligence: guardião da consistência | [capitulo-09.md](capitulo-09.md) | Revisão |
-| 10 | O problema de modo para agentes de IA | [capitulo-10.md](capitulo-10.md) | Revisão |
-| 11 | A Magazine Siará como evidência | [capitulo-11.md](capitulo-11.md) | Revisão |
-| — | Conclusão | [conclusao.md](conclusao.md) | Revisão |
+| 9 | Diligence: guardião da consistência | [capitulo-09.md](capitulo-09.md) | Rascunho |
+| 10 | O problema de modo para agentes de IA | [capitulo-10.md](capitulo-10.md) | Rascunho |
+| 11 | A Magazine Siará como evidência | [capitulo-11.md](capitulo-11.md) | Rascunho |
+| — | Conclusão | [conclusao.md](conclusao.md) | Rascunho |
 | — | Apêndice: Corpus de experimentos | [apendice-experimentos.md](apendice-experimentos.md) | Revisão |
 | — | Apêndice: Notas de pesquisa | [apendice-pesquisa.md](apendice-pesquisa.md) | Revisão |
 
