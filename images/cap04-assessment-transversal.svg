@@ -1,96 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 345" width="100%" font-family="system-ui, -apple-system, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="100%" font-family="system-ui, -apple-system, sans-serif">
   <defs>
-    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#374151"/>
+    <marker id="arr-b" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#1D4ED8"/>
     </marker>
-    <marker id="arrG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#9CA3AF"/>
+    <marker id="arr-a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#D97706"/>
     </marker>
   </defs>
 
   <!-- Background -->
-  <rect width="860" height="345" fill="#F9FAFB" rx="8"/>
+  <rect width="800" height="420" fill="#F9FAFB" rx="8"/>
 
   <!-- Title -->
-  <text x="430" y="24" text-anchor="middle" font-size="12" fill="#6B7280" font-weight="500">Figura 4 — Assessment como camada transversal sobre o ciclo de vida</text>
+  <text x="400" y="24" text-anchor="middle" font-size="12" fill="#6B7280" font-weight="500">Figura 4 — Assessment como jornada paralela às três jornadas clássicas, nos dois modos</text>
 
-  <!-- ─── Assessment Band ─── -->
-  <rect x="18" y="32" width="824" height="92" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5" rx="6"/>
+  <!-- ═══════════════════════════════════════════
+       ROW 1 — MODO UPSTREAM
+       ══════════════════════════════════════════ -->
 
-  <!-- Prospectiva sub-box -->
-  <rect x="24" y="50" width="400" height="66" fill="#DDD6FE" stroke="#7C3AED" stroke-width="1" rx="4"/>
-  <text x="224" y="68" text-anchor="middle" font-size="10" fill="#5B21B6" font-weight="700">Dimensão Prospectiva</text>
-  <text x="224" y="82" text-anchor="middle" font-size="9" fill="#5B21B6">Signal → CommitmentGate</text>
-  <text x="224" y="96" text-anchor="middle" font-size="9" fill="#5B21B6">avalia Decision Package e Reliability Plan</text>
-  <text x="224" y="109" text-anchor="middle" font-size="8" fill="#7C3AED">opera antes do compromisso Downstream</text>
+  <!-- Outer frame -->
+  <rect x="20" y="36" width="760" height="152" fill="#EFF6FF" stroke="#3B82F6" stroke-width="1.5" rx="6"/>
 
-  <!-- Retrospectiva sub-box -->
-  <rect x="432" y="50" width="404" height="66" fill="#DDD6FE" stroke="#7C3AED" stroke-width="1" rx="4"/>
-  <text x="634" y="68" text-anchor="middle" font-size="10" fill="#5B21B6" font-weight="700">Dimensão Retrospectiva</text>
-  <text x="634" y="82" text-anchor="middle" font-size="9" fill="#5B21B6">Operation → novos Business Signals</text>
-  <text x="634" y="96" text-anchor="middle" font-size="9" fill="#5B21B6">lê Timelines, Gate Failure Rate, Decision Latency</text>
-  <text x="634" y="109" text-anchor="middle" font-size="8" fill="#7C3AED">extrai aprendizado do ciclo encerrado</text>
+  <!-- Mode header band (rounded top corners only) -->
+  <path d="M 26,36 Q 20,36 20,42 L 20,64 L 780,64 L 780,42 Q 780,36 774,36 Z" fill="#3B82F6"/>
+  <text x="400" y="54" text-anchor="middle" font-size="12" fill="#FFFFFF" font-weight="700">MODO UPSTREAM — rigor advisory · sem gates obrigatórios</text>
 
-  <!-- ─── Lifecycle Row ─── y=142 to y=198 -->
+  <!-- Assessment band -->
+  <rect x="32" y="72" width="736" height="48" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5" rx="4"/>
+  <text x="400" y="91" text-anchor="middle" font-size="11" fill="#5B21B6" font-weight="700">Assessment</text>
+  <text x="400" y="107" text-anchor="middle" font-size="9" fill="#5B21B6">Dimensão Prospectiva ativa: avalia contexto para o CommitmentGate · ciclo Assíncrono em monitoramento contínuo</text>
 
-  <!-- Business Signal -->
-  <rect x="20" y="142" width="130" height="56" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5" rx="4"/>
-  <text x="85" y="163" text-anchor="middle" font-size="10" fill="#1D4ED8" font-weight="600">Business</text>
-  <text x="85" y="177" text-anchor="middle" font-size="10" fill="#1D4ED8" font-weight="600">Signal</text>
-  <text x="85" y="191" text-anchor="middle" font-size="8" fill="#6B7280">observação qualificada</text>
+  <!-- Journey boxes: y=128, h=52 -->
 
-  <!-- Arrow BS → Upstream -->
-  <line x1="150" y1="170" x2="176" y2="170" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- Discovery -->
+  <rect x="38" y="128" width="215" height="52" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5" rx="4"/>
+  <text x="145" y="148" text-anchor="middle" font-size="11" fill="#1D4ED8" font-weight="700">Discovery</text>
+  <text x="145" y="163" text-anchor="middle" font-size="9" fill="#374151">Exploratório · advisory</text>
+  <text x="145" y="175" text-anchor="middle" font-size="9" fill="#374151">Experimento como unidade</text>
 
-  <!-- Upstream -->
-  <rect x="176" y="142" width="130" height="56" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5" rx="4"/>
-  <text x="241" y="163" text-anchor="middle" font-size="10" fill="#1D4ED8" font-weight="600">Upstream</text>
-  <text x="241" y="177" text-anchor="middle" font-size="9" fill="#374151">rigor advisory</text>
-  <text x="241" y="191" text-anchor="middle" font-size="8" fill="#6B7280">reduz incerteza</text>
+  <line x1="253" y1="154" x2="279" y2="154" stroke="#1D4ED8" stroke-width="1.5" marker-end="url(#arr-b)"/>
 
-  <!-- Arrow Upstream → CommitmentGate -->
-  <line x1="306" y1="170" x2="332" y2="170" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- Delivery -->
+  <rect x="279" y="128" width="215" height="52" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5" rx="4"/>
+  <text x="386" y="148" text-anchor="middle" font-size="11" fill="#1D4ED8" font-weight="700">Delivery</text>
+  <text x="386" y="163" text-anchor="middle" font-size="9" fill="#374151">Advisory · fases opcionais</text>
+  <text x="386" y="175" text-anchor="middle" font-size="9" fill="#374151">Engenheiro decide profundidade</text>
 
-  <!-- CommitmentGate -->
-  <rect x="332" y="142" width="148" height="56" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="4"/>
-  <text x="406" y="161" text-anchor="middle" font-size="10" fill="#D97706" font-weight="600">Commitment</text>
-  <text x="406" y="175" text-anchor="middle" font-size="10" fill="#D97706" font-weight="600">Gate</text>
-  <text x="406" y="191" text-anchor="middle" font-size="8" fill="#6B7280">6 outcomes · trio</text>
-
-  <!-- Arrow CG → Downstream -->
-  <line x1="480" y1="170" x2="506" y2="170" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
-
-  <!-- Downstream -->
-  <rect x="506" y="142" width="130" height="56" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5" rx="4"/>
-  <text x="571" y="163" text-anchor="middle" font-size="10" fill="#1D4ED8" font-weight="600">Downstream</text>
-  <text x="571" y="177" text-anchor="middle" font-size="9" fill="#374151">rigor bloqueante</text>
-  <text x="571" y="191" text-anchor="middle" font-size="8" fill="#6B7280">gates obrigatórios</text>
-
-  <!-- Arrow Downstream → Operation -->
-  <line x1="636" y1="170" x2="662" y2="170" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="494" y1="154" x2="520" y2="154" stroke="#1D4ED8" stroke-width="1.5" marker-end="url(#arr-b)"/>
 
   <!-- Operation -->
-  <rect x="662" y="142" width="178" height="56" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5" rx="4"/>
-  <text x="751" y="163" text-anchor="middle" font-size="10" fill="#1D4ED8" font-weight="600">Operation</text>
-  <text x="751" y="177" text-anchor="middle" font-size="9" fill="#374151">Released · SLOs ativos</text>
-  <text x="751" y="191" text-anchor="middle" font-size="8" fill="#6B7280">capability em produção</text>
+  <rect x="520" y="128" width="215" height="52" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1.5" rx="4"/>
+  <text x="627" y="148" text-anchor="middle" font-size="11" fill="#1D4ED8" font-weight="700">Operation</text>
+  <text x="627" y="163" text-anchor="middle" font-size="9" fill="#374151">Experimental</text>
+  <text x="627" y="175" text-anchor="middle" font-size="9" fill="#374151">Sandbox · sem SLO formal</text>
 
-  <!-- Skip path: BS → CommitmentGate (dashed) -->
-  <path d="M 85 198 C 85 232 406 232 406 198" fill="none" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrG)"/>
-  <text x="246" y="246" text-anchor="middle" font-size="9" fill="#6B7280">entrada direta sem Upstream (contexto já suficiente para o CommitmentGate)</text>
+  <!-- ═══════════════════════════════════════════
+       CommitmentGate separator
+       ══════════════════════════════════════════ -->
 
-  <!-- ─── Cycle Boxes ─── y=262 to y=312 -->
+  <rect x="210" y="196" width="380" height="32" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="4"/>
+  <text x="400" y="209" text-anchor="middle" font-size="10" fill="#D97706" font-weight="700">CommitmentGate</text>
+  <text x="400" y="222" text-anchor="middle" font-size="9" fill="#D97706">Decision Package · 6 outcomes · trio PM + Tech Lead + Autor</text>
 
-  <!-- Ciclo Síncrono -->
-  <rect x="148" y="262" width="238" height="52" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5" rx="4"/>
-  <text x="267" y="280" text-anchor="middle" font-size="10" fill="#5B21B6" font-weight="600">Ciclo Síncrono (periódico)</text>
-  <text x="267" y="295" text-anchor="middle" font-size="9" fill="#5B21B6">Coletar → Analisar → Sintetizar → Reportar</text>
+  <!-- ═══════════════════════════════════════════
+       ROW 2 — MODO DOWNSTREAM
+       ══════════════════════════════════════════ -->
 
-  <!-- Ciclo Assíncrono -->
-  <rect x="400" y="262" width="238" height="52" fill="#D1FAE5" stroke="#059669" stroke-width="1.5" rx="4"/>
-  <text x="519" y="280" text-anchor="middle" font-size="10" fill="#065F46" font-weight="600">Ciclo Assíncrono (contínuo)</text>
-  <text x="519" y="295" text-anchor="middle" font-size="9" fill="#065F46">Monitorar → Alertar → Evoluir</text>
+  <!-- Outer frame -->
+  <rect x="20" y="236" width="760" height="152" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+
+  <!-- Mode header band -->
+  <path d="M 26,236 Q 20,236 20,242 L 20,264 L 780,264 L 780,242 Q 780,236 774,236 Z" fill="#F59E0B"/>
+  <text x="400" y="254" text-anchor="middle" font-size="12" fill="#FFFFFF" font-weight="700">MODO DOWNSTREAM — rigor bloqueante · gates obrigatórios</text>
+
+  <!-- Assessment band -->
+  <rect x="32" y="272" width="736" height="48" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1.5" rx="4"/>
+  <text x="400" y="291" text-anchor="middle" font-size="11" fill="#5B21B6" font-weight="700">Assessment</text>
+  <text x="400" y="307" text-anchor="middle" font-size="9" fill="#5B21B6">Ciclo Assíncrono: monitora fluxo e gates · Dimensão Retrospectiva: lê Timelines e gera novos Business Signals</text>
+
+  <!-- Journey boxes: y=328, h=52 -->
+
+  <!-- Discovery -->
+  <rect x="38" y="328" width="215" height="52" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="4"/>
+  <text x="145" y="348" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Discovery</text>
+  <text x="145" y="363" text-anchor="middle" font-size="9" fill="#374151">Preparatório · OBC → Committed</text>
+  <text x="145" y="375" text-anchor="middle" font-size="9" fill="#374151">BDD Feature · Readiness Gate</text>
+
+  <line x1="253" y1="354" x2="279" y2="354" stroke="#D97706" stroke-width="1.5" marker-end="url(#arr-a)"/>
+
+  <!-- Delivery -->
+  <rect x="279" y="328" width="215" height="52" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="4"/>
+  <text x="386" y="348" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Delivery</text>
+  <text x="386" y="363" text-anchor="middle" font-size="9" fill="#374151">Obrigatório · gates bloqueantes</text>
+  <text x="386" y="375" text-anchor="middle" font-size="9" fill="#374151">Bootstrap→Hack→Sync→Ship→Promote</text>
+
+  <line x1="494" y1="354" x2="520" y2="354" stroke="#D97706" stroke-width="1.5" marker-end="url(#arr-a)"/>
+
+  <!-- Operation -->
+  <rect x="520" y="328" width="215" height="52" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1.5" rx="4"/>
+  <text x="627" y="348" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Operation</text>
+  <text x="627" y="363" text-anchor="middle" font-size="9" fill="#374151">Produção real · SLOs ativos</text>
+  <text x="627" y="375" text-anchor="middle" font-size="9" fill="#374151">Runbooks · protocolo de incidentes</text>
 
   <!-- Footer note -->
-  <text x="430" y="335" text-anchor="middle" font-size="9" fill="#6B7280">Assessment retroalimenta o ciclo: Operation produz novos Business Signals que iniciam o próximo ciclo</text>
+  <text x="400" y="408" text-anchor="middle" font-size="9" fill="#6B7280">Assessment não é uma fase — é uma camada de governança informacional paralela a todas as jornadas, em ambos os modos</text>
 </svg>
