@@ -11,7 +11,7 @@
   </defs>
 
   <!-- ── Section 1: Two failure modes ── -->
-  <text x="430" y="50" text-anchor="middle" font-size="11" fill="#6B7280" font-weight="600">Dois modos de falha — simétricos e igualmente problemáticos</text>
+  <text x="430" y="50" text-anchor="middle" font-size="11" fill="#6B7280" font-weight="600">Dois modos de falha: simétricos e igualmente problemáticos</text>
 
   <!-- Failure 1: Indiscriminate rigor -->
   <rect x="20" y="62" width="390" height="120" fill="#FEE2E2" stroke="#EF4444" stroke-width="2" rx="8"/>
@@ -22,7 +22,7 @@
   <rect x="36" y="136" width="358" height="22" fill="#FFFFFF" stroke="#FCA5A5" stroke-width="1" rx="3"/>
   <text x="215" y="150" text-anchor="middle" font-size="9" fill="#374151">→ Exige artefatos que ainda não existem no Upstream</text>
   <rect x="36" y="164" width="358" height="14" fill="#FCA5A5" rx="3"/>
-  <text x="215" y="174" text-anchor="middle" font-size="8" fill="#7F1D1D" font-weight="700">Consequência: bloqueia aprendizado — destrói o propósito do Upstream</text>
+  <text x="215" y="174" text-anchor="middle" font-size="8" fill="#7F1D1D" font-weight="700">Consequência: bloqueia aprendizado, destrói o propósito do Upstream</text>
 
   <!-- Failure 2: Total permissiveness -->
   <rect x="450" y="62" width="390" height="120" fill="#FEE2E2" stroke="#EF4444" stroke-width="2" rx="8"/>
@@ -36,7 +36,7 @@
   <text x="645" y="174" text-anchor="middle" font-size="8" fill="#7F1D1D" font-weight="700">Consequência: destrói rastreabilidade do compromisso</text>
 
   <!-- ── Section 2: Classification protocol ── -->
-  <text x="430" y="208" text-anchor="middle" font-size="11" fill="#6B7280" font-weight="600">Protocolo de classificação — AGENTS.md (Payments API)</text>
+  <text x="430" y="208" text-anchor="middle" font-size="11" fill="#6B7280" font-weight="600">Protocolo de classificação: AGENTS.md (Payments API)</text>
 
   <!-- Protocol decision flow -->
   <!-- Entry -->
@@ -125,5 +125,5 @@
 
   <!-- EXP-015 conclusion bar -->
   <rect x="30" y="618" width="800" height="22" fill="#059669" rx="4"/>
-  <text x="430" y="633" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">O problema de modo para agentes se resolve com contratos explícitos — não com treinamento de agentes</text>
+  <text x="430" y="633" text-anchor="middle" font-size="10" fill="#FFFFFF" font-weight="700">O problema de modo para agentes se resolve com contratos explícitos, não com treinamento de agentes</text>
 </svg>

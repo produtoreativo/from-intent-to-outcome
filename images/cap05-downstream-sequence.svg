@@ -6,7 +6,7 @@
 
   <!-- Mode banner -->
   <rect x="20" y="36" width="820" height="24" fill="#FEF3C7" rx="4"/>
-  <text x="430" y="52" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Modo Downstream — Rigor Bloqueante — todos os gates são obrigatórios</text>
+  <text x="430" y="52" text-anchor="middle" font-size="11" fill="#D97706" font-weight="700">Modo Downstream — Rigor Bloqueante, todos os gates são obrigatórios</text>
 
   <defs>
     <marker id="aOr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#F59E0B"/></marker>
@@ -102,7 +102,7 @@
 
   <!-- Release Trail -->
   <rect x="20" y="192" width="820" height="24" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="1" rx="4"/>
-  <text x="430" y="208" text-anchor="middle" font-size="10" fill="#6B7280">Release Trail — log append-only atualizado em cada fase: evidência do compromisso honrado, fase a fase</text>
+  <text x="430" y="208" text-anchor="middle" font-size="10" fill="#6B7280">Release Trail: log append-only atualizado em cada fase, evidência do compromisso honrado, fase a fase</text>
 
   <!-- ANTI-PATTERNS SECTION -->
   <text x="430" y="240" text-anchor="middle" font-size="13" fill="#6B7280" font-weight="500">Os 5 anti-padrões do Downstream: forma sem substância</text>
@@ -117,7 +117,7 @@
   <rect x="30" y="340" width="220" height="42" fill="#D1FAE5" stroke="#10B981" stroke-width="1" rx="3"/>
   <text x="140" y="356" text-anchor="middle" font-size="9" fill="#065F46" font-weight="600">✓ Mag. Siará: RISK-SP-001</text>
   <text x="140" y="369" text-anchor="middle" font-size="9" fill="#065F46">PM Eugenio fecha risco com decisão</text>
-  <text x="140" y="382" text-anchor="middle" font-size="9" fill="#065F46">nomeada e datada — não é teatro</text>
+  <text x="140" y="382" text-anchor="middle" font-size="9" fill="#065F46">nomeada e datada, não é teatro</text>
 
   <!-- AP-D2: Proxy Commitment -->
   <rect x="270" y="250" width="240" height="140" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" rx="6"/>
@@ -151,7 +151,7 @@
   <text x="28" y="468" font-size="9" fill="#6B7280">Causa: BDD como documentação de conformidade</text>
   <text x="28" y="481" font-size="9" fill="#6B7280">Sinal: timestamp do feature file após primeiro commit de Hack</text>
   <rect x="30" y="492" width="340" height="30" fill="#D1FAE5" stroke="#10B981" stroke-width="1" rx="3"/>
-  <text x="200" y="508" text-anchor="middle" font-size="9" fill="#065F46" font-weight="600">✓ PI-001: "OBC e BDD devem ser escritos imediatamente" — antes de qualquer Hack</text>
+  <text x="200" y="508" text-anchor="middle" font-size="9" fill="#065F46" font-weight="600">✓ PI-001: "OBC e BDD devem ser escritos imediatamente", antes de qualquer Hack</text>
 
   <!-- AP-D5: Release Trail Vazio -->
   <rect x="390" y="400" width="450" height="130" fill="#FEE2E2" stroke="#EF4444" stroke-width="1.5" rx="6"/>
@@ -161,7 +161,7 @@
   <text x="398" y="468" font-size="9" fill="#6B7280">Causa: Release Trail tratado como formalidade opcional</text>
   <text x="398" y="481" font-size="9" fill="#6B7280">Consequência: rastreabilidade do compromisso destruída</text>
   <rect x="400" y="492" width="430" height="30" fill="#D1FAE5" stroke="#10B981" stroke-width="1" rx="3"/>
-  <text x="615" y="508" text-anchor="middle" font-size="9" fill="#065F46" font-weight="600">✓ EXP-014: 53/53 PASS — Diligence detecta Release Trail vazio no momento do evento</text>
+  <text x="615" y="508" text-anchor="middle" font-size="9" fill="#065F46" font-weight="600">✓ EXP-014: 53/53 PASS, Diligence detecta Release Trail vazio no momento do evento</text>
 
   <!-- Legend -->
   <rect x="20" y="540" width="820" height="32" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>

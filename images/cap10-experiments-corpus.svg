@@ -13,13 +13,13 @@
   <!-- ── Left: Upstream experiments cluster ── -->
   <rect x="10" y="42" width="290" height="420" fill="#EFF6FF" stroke="#3B82F6" stroke-width="2" rx="8"/>
   <text x="155" y="64" text-anchor="middle" font-size="13" fill="#1D4ED8" font-weight="700">Upstream Experiments</text>
-  <text x="155" y="80" text-anchor="middle" font-size="10" fill="#1D4ED8">17 experimentos — evidência de exploração disciplinada</text>
+  <text x="155" y="80" text-anchor="middle" font-size="10" fill="#1D4ED8">17 experimentos: evidência de exploração disciplinada</text>
 
   <!-- Group 1: Credit Card -->
   <rect x="22" y="88" width="266" height="94" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1" rx="5"/>
   <text x="155" y="104" text-anchor="middle" font-size="10" fill="#1D4ED8" font-weight="700">Cartão de Crédito (EXP-001 → 003)</text>
   <text x="155" y="120" text-anchor="middle" font-size="9" fill="#374151">EXP-001: ciclo de vida + 6 fluxos observáveis</text>
-  <text x="155" y="134" text-anchor="middle" font-size="9" fill="#374151">EXP-002: sandbox Asaas — sem credencial de prod</text>
+  <text x="155" y="134" text-anchor="middle" font-size="9" fill="#374151">EXP-002: sandbox Asaas, sem credencial de prod</text>
   <text x="155" y="148" text-anchor="middle" font-size="9" fill="#374151">EXP-003: hosted vs tokenized vs transparent</text>
   <rect x="30" y="157" width="250" height="18" fill="#3B82F6" rx="3"/>
   <text x="155" y="169" text-anchor="middle" font-size="8.5" fill="#FFFFFF">→ Sem código de produção. Decision Package: hosted first.</text>
@@ -29,7 +29,7 @@
   <text x="155" y="206" text-anchor="middle" font-size="10" fill="#1D4ED8" font-weight="700">Observabilidade &amp; Diligence (EXP-010 → 014)</text>
   <text x="155" y="222" text-anchor="middle" font-size="9" fill="#374151">EXP-010: Datadog APM + Trace ID em eventos</text>
   <text x="155" y="236" text-anchor="middle" font-size="9" fill="#374151">EXP-012: Release Trail automático via CloudEvents</text>
-  <text x="155" y="250" text-anchor="middle" font-size="9" fill="#374151">EXP-014: Diligence em tempo real — 53/53 PASS</text>
+  <text x="155" y="250" text-anchor="middle" font-size="9" fill="#374151">EXP-014: Diligence em tempo real, 53/53 PASS</text>
   <rect x="30" y="259" width="250" height="18" fill="#3B82F6" rx="3"/>
   <text x="155" y="271" text-anchor="middle" font-size="8.5" fill="#FFFFFF">Diligence: verificação contínua orientada a eventos</text>
 
@@ -37,7 +37,7 @@
   <rect x="22" y="292" width="266" height="68" fill="#DBEAFE" stroke="#3B82F6" stroke-width="1" rx="5"/>
   <text x="155" y="308" text-anchor="middle" font-size="10" fill="#1D4ED8" font-weight="700">Agentes como produtores (EXP-015)</text>
   <text x="155" y="324" text-anchor="middle" font-size="9" fill="#374151">22 cenários × 3 players (claude/codex/copilot)</text>
-  <text x="155" y="338" text-anchor="middle" font-size="9" fill="#374151">100% conformance — zero divergências semânticas</text>
+  <text x="155" y="338" text-anchor="middle" font-size="9" fill="#374151">100% conformance, zero divergências semânticas</text>
   <rect x="30" y="347" width="250" height="12" fill="#3B82F6" rx="3"/>
   <text x="155" y="356" text-anchor="middle" font-size="8" fill="#FFFFFF">Intercambiabilidade = propriedade do contrato</text>
 
@@ -47,7 +47,7 @@
   <text x="155" y="400" text-anchor="middle" font-size="9" fill="#374151">ProdOps Framework v1.0 → v1.14.0 extraído</text>
   <text x="155" y="414" text-anchor="middle" font-size="9" fill="#374151">47-event catalog, install script, AGENTS.md gerado</text>
   <rect x="30" y="423" width="250" height="12" fill="#3B82F6" rx="3"/>
-  <text x="155" y="432" text-anchor="middle" font-size="8" fill="#FFFFFF">status: self — repo é fonte canônica do framework</text>
+  <text x="155" y="432" text-anchor="middle" font-size="8" fill="#FFFFFF">status: self, repo é fonte canônica do framework</text>
 
   <!-- Arrow from Upstream to CommitmentGate -->
   <line x1="300" y1="252" x2="338" y2="252" stroke="#8B5CF6" stroke-width="2" marker-end="url(#aPu10)"/>
@@ -60,7 +60,7 @@
   <!-- BS-001 bypass arrow (direct) -->
   <path d="M155,462 Q155,490 380,490 Q380,480 380,494" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#aOr10)"/>
   <rect x="22" y="462" width="266" height="40" fill="#FEF9C3" stroke="#F59E0B" stroke-width="1.5" rx="5"/>
-  <text x="155" y="478" text-anchor="middle" font-size="9" fill="#D97706" font-weight="700">BS-001 → PI-001 — CommitmentGate no mesmo dia</text>
+  <text x="155" y="478" text-anchor="middle" font-size="9" fill="#D97706" font-weight="700">BS-001 → PI-001, CommitmentGate no mesmo dia</text>
   <text x="155" y="491" text-anchor="middle" font-size="9" fill="#374151">sem Upstream prévio | prazo: 15 dias</text>
   <text x="155" y="504" text-anchor="middle" font-size="8" fill="#374151">Discovery in Downstream → Planning → Bootstrap</text>
 
@@ -113,13 +113,13 @@
 
   <!-- OBC highlight: split-payment -->
   <rect x="492" y="296" width="404" height="60" fill="#FFFFFF" stroke="#D97706" stroke-width="1.5" rx="5"/>
-  <text x="694" y="313" text-anchor="middle" font-size="9" fill="#D97706" font-weight="700">★ split-payment-pix-boleto — OBC mais rico do corpus</text>
+  <text x="694" y="313" text-anchor="middle" font-size="9" fill="#D97706" font-weight="700">★ split-payment-pix-boleto: OBC mais rico do corpus</text>
   <text x="694" y="328" text-anchor="middle" font-size="9" fill="#374151">6 Observable Events | 5 SLIs numéricos (3×100%, 2×99%) | 6 Reliability Rules</text>
   <text x="694" y="343" text-anchor="middle" font-size="9" fill="#374151">4 decisões datadas | splitPaymentId rastreável em todos os logs | dados financeiros nunca expostos</text>
 
   <!-- Iteration timeline -->
   <rect x="492" y="366" width="404" height="84" fill="#FEF9C3" stroke="#F59E0B" stroke-width="1" rx="5"/>
-  <text x="694" y="384" text-anchor="middle" font-size="9" fill="#D97706" font-weight="700">15+ iterações versioned — v0.2.0 → v0.15.0</text>
+  <text x="694" y="384" text-anchor="middle" font-size="9" fill="#D97706" font-weight="700">15+ iterações versioned: v0.2.0 → v0.15.0</text>
   <text x="694" y="399" text-anchor="middle" font-size="9" fill="#374151">Cada iteração: plano formal + OBC Committed + BDD Feature + Release Trail</text>
   <!-- Mini timeline -->
   <line x1="510" y1="425" x2="880" y2="425" stroke="#F59E0B" stroke-width="1.5"/>
@@ -137,7 +137,7 @@
 
   <!-- ── Bottom: summary stats ── -->
   <rect x="10" y="474" width="900" height="64" fill="#F0FDF4" stroke="#10B981" stroke-width="1.5" rx="8"/>
-  <text x="460" y="493" text-anchor="middle" font-size="11" fill="#065F46" font-weight="700">Corpus em números — tudo produzido durante o trabalho, não documentado depois</text>
+  <text x="460" y="493" text-anchor="middle" font-size="11" fill="#065F46" font-weight="700">Corpus em números: tudo produzido durante o trabalho, não documentado depois</text>
 
   <rect x="22" y="501" width="168" height="28" fill="#FFFFFF" stroke="#A7F3D0" stroke-width="1" rx="4"/>
   <text x="106" y="519" text-anchor="middle" font-size="10" fill="#065F46" font-weight="700">17 experimentos</text>
@@ -156,7 +156,7 @@
 
   <!-- ── Bottom: honesty section ── -->
   <rect x="10" y="548" width="900" height="140" fill="#FFF7ED" stroke="#F97316" stroke-width="1.5" rx="8"/>
-  <text x="460" y="568" text-anchor="middle" font-size="11" fill="#9A3412" font-weight="700">O que o corpus ainda não demonstrou — honestidade intelectual</text>
+  <text x="460" y="568" text-anchor="middle" font-size="11" fill="#9A3412" font-weight="700">O que o corpus ainda não demonstrou (honestidade intelectual)</text>
 
   <rect x="22" y="578" width="275" height="98" fill="#FFFFFF" stroke="#FED7AA" stroke-width="1" rx="4"/>
   <text x="159" y="596" text-anchor="middle" font-size="9" fill="#9A3412" font-weight="700">Trio humano pleno no CommitmentGate</text>

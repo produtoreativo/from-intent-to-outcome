@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 720" width="100%" font-family="system-ui, -apple-system, sans-serif">
   <rect width="920" height="720" fill="#F9FAFB" rx="8"/>
   <text x="460" y="26" text-anchor="middle" font-size="14" fill="#374151" font-weight="700">Síntese do Framework ProdOps — do problema ao compromisso com evidência</text>
-  <text x="460" y="44" text-anchor="middle" font-size="11" fill="#6B7280">Conclusão: de "guarde essa palavra" à operacionalização — Magazine Siará como encerramento do arco</text>
+  <text x="460" y="44" text-anchor="middle" font-size="11" fill="#6B7280">Conclusão: de "guarde essa palavra" à operacionalização. Magazine Siará como encerramento do arco</text>
 
   <defs>
     <marker id="aGrC" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#10B981"/></marker>
@@ -134,7 +134,7 @@
   <rect x="10" y="470" width="900" height="68" fill="#EDE9FE" stroke="#8B5CF6" stroke-width="1.5" rx="8"/>
   <text x="460" y="491" text-anchor="middle" font-size="11" fill="#7C3AED" font-weight="700">Fechamento do arco: do prólogo à conclusão</text>
   <text x="460" y="508" text-anchor="middle" font-size="9" fill="#374151">Prólogo: "Há uma palavra que o framework inteiro tenta operacionalizar. Guarde essa palavra: compromisso."</text>
-  <text x="460" y="524" text-anchor="middle" font-size="9" fill="#374151">Conclusão: PM Eugenio fecha RISK-SP-001 no mesmo dia do BS-001. A palavra foi operacionalizada — com nome, data e evidência verificável.</text>
+  <text x="460" y="524" text-anchor="middle" font-size="9" fill="#374151">Conclusão: PM Eugenio fecha RISK-SP-001 no mesmo dia do BS-001. A palavra foi operacionalizada, com nome, data e evidência verificável.</text>
 
   <!-- ── Bottom: knowledge space vs. framework output ── -->
   <rect x="10" y="548" width="900" height="160" fill="#F8FAFC" stroke="#E5E7EB" stroke-width="1.5" rx="8"/>
@@ -146,8 +146,8 @@
   <text x="232" y="612" text-anchor="middle" font-size="9" fill="#374151">✓ Upstream como exploração de alta qualidade sem compromisso</text>
   <text x="232" y="626" text-anchor="middle" font-size="9" fill="#374151">✓ CommitmentGate calibrado ao tipo de decisão (BS-001 mesmo dia)</text>
   <text x="232" y="640" text-anchor="middle" font-size="9" fill="#374151">✓ Downstream em 15+ iterações com Release Trail completo</text>
-  <text x="232" y="654" text-anchor="middle" font-size="9" fill="#374151">✓ Diligence contínua orientada a eventos — 53/53 PASS</text>
-  <text x="232" y="668" text-anchor="middle" font-size="9" fill="#374151">✓ Contratos explícitos convergem agentes heterogêneos — 22/22×3</text>
+  <text x="232" y="654" text-anchor="middle" font-size="9" fill="#374151">✓ Diligence contínua orientada a eventos, 53/53 PASS</text>
+  <text x="232" y="668" text-anchor="middle" font-size="9" fill="#374151">✓ Contratos explícitos convergem agentes heterogêneos, 22/22×3</text>
 
   <!-- Still pending -->
   <rect x="456" y="578" width="442" height="118" fill="#FFF7ED" stroke="#F97316" stroke-width="1" rx="5"/>

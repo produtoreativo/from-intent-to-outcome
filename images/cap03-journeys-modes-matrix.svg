@@ -11,11 +11,11 @@
 
   <rect x="240" y="50" width="255" height="48" fill="#3B82F6" rx="6"/>
   <text x="367" y="72" text-anchor="middle" font-size="14" fill="#FFFFFF" font-weight="700">Modo Upstream</text>
-  <text x="367" y="89" text-anchor="middle" font-size="11" fill="#E0F2FE">Rigor Advisory — sem gates obrigatorios</text>
+  <text x="367" y="89" text-anchor="middle" font-size="11" fill="#E0F2FE">Rigor Advisory: sem gates obrigatorios</text>
 
   <rect x="505" y="50" width="275" height="48" fill="#F59E0B" rx="6"/>
   <text x="642" y="72" text-anchor="middle" font-size="14" fill="#FFFFFF" font-weight="700">Modo Downstream</text>
-  <text x="642" y="89" text-anchor="middle" font-size="11" fill="#FEF3C7">Rigor Bloqueante — gates obrigatorios</text>
+  <text x="642" y="89" text-anchor="middle" font-size="11" fill="#FEF3C7">Rigor Bloqueante: gates obrigatorios</text>
 
   <!-- Discovery row (highlighted) -->
   <rect x="20" y="106" width="210" height="60" fill="#E0F2FE" stroke="#3B82F6" stroke-width="2" rx="4"/>
@@ -55,11 +55,11 @@
   <text x="125" y="284" text-anchor="middle" font-size="10" fill="#6B7280">Operar e evoluir</text>
 
   <rect x="240" y="242" width="255" height="54" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
-  <text x="367" y="265" text-anchor="middle" font-size="11" fill="#374151">Experimental — sandbox ou</text>
+  <text x="367" y="265" text-anchor="middle" font-size="11" fill="#374151">Experimental: sandbox ou</text>
   <text x="367" y="282" text-anchor="middle" font-size="11" fill="#374151">ambiente controlado, sem SLO formal</text>
 
   <rect x="505" y="242" width="275" height="54" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
-  <text x="642" y="265" text-anchor="middle" font-size="11" fill="#374151">Producao real — SLOs definidos,</text>
+  <text x="642" y="265" text-anchor="middle" font-size="11" fill="#374151">Producao real: SLOs definidos,</text>
   <text x="642" y="282" text-anchor="middle" font-size="11" fill="#374151">runbooks, protocolo de incidentes</text>
 
   <!-- Assessment row -->
@@ -68,11 +68,11 @@
   <text x="125" y="346" text-anchor="middle" font-size="10" fill="#6B7280">Apoiar decisoes</text>
 
   <rect x="240" y="304" width="255" height="54" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
-  <text x="367" y="327" text-anchor="middle" font-size="11" fill="#374151">Analise exploratoria — hipoteses</text>
+  <text x="367" y="327" text-anchor="middle" font-size="11" fill="#374151">Analise exploratoria: hipoteses</text>
   <text x="367" y="344" text-anchor="middle" font-size="11" fill="#374151">sem conclusoes comprometidas</text>
 
   <rect x="505" y="304" width="275" height="54" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
-  <text x="642" y="327" text-anchor="middle" font-size="11" fill="#374151">Analise orientada ao OBC —</text>
+  <text x="642" y="327" text-anchor="middle" font-size="11" fill="#374151">Analise orientada ao OBC:</text>
   <text x="642" y="344" text-anchor="middle" font-size="11" fill="#374151">recomendacoes verificaveis</text>
 
   <!-- Diligence row -->
@@ -81,13 +81,13 @@
   <text x="125" y="407" text-anchor="middle" font-size="10" fill="#6B7280">Consistencia</text>
 
   <rect x="240" y="366" width="255" height="48" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
-  <text x="367" y="389" text-anchor="middle" font-size="11" fill="#374151">Leve — alerta sem bloquear</text>
+  <text x="367" y="389" text-anchor="middle" font-size="11" fill="#374151">Leve: alerta sem bloquear</text>
   <text x="367" y="406" text-anchor="middle" font-size="11" fill="#374151">Divergencia tolerada</text>
 
   <rect x="505" y="366" width="275" height="48" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" rx="4"/>
-  <text x="642" y="389" text-anchor="middle" font-size="11" fill="#374151">Bloqueante — Findings impedem avanco</text>
+  <text x="642" y="389" text-anchor="middle" font-size="11" fill="#374151">Bloqueante: Findings impedem avanco</text>
   <text x="642" y="406" text-anchor="middle" font-size="11" fill="#374151">Consistencia obrigatoria</text>
 
   <!-- Legend note -->
-  <text x="20" y="423" font-size="10" fill="#3B82F6">* Discovery e Delivery destacados — tratados em detalhe no livro</text>
+  <text x="20" y="423" font-size="10" fill="#3B82F6">* Discovery e Delivery destacados, tratados em detalhe no livro</text>
 </svg>

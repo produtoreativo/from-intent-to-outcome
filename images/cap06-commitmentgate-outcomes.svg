@@ -46,7 +46,7 @@
   <rect x="20" y="225" width="174" height="60" fill="#E0F2FE" stroke="#3B82F6" stroke-width="2" rx="8"/>
   <text x="107" y="247" text-anchor="middle" font-size="11" fill="#1D4ED8" font-weight="700">③ Requer outro</text>
   <text x="107" y="261" text-anchor="middle" font-size="11" fill="#1D4ED8" font-weight="700">experimento</text>
-  <text x="107" y="277" text-anchor="middle" font-size="9" fill="#374151">Nova hipótese — volta ao Upstream</text>
+  <text x="107" y="277" text-anchor="middle" font-size="9" fill="#374151">Nova hipótese, volta ao Upstream</text>
 
   <!-- Outcome 4: Aguardar decisão negócio (top-left) -->
   <line x1="370" y1="205" x2="234" y2="126" stroke="#9CA3AF" stroke-width="2" marker-end="url(#aGy6)"/>
@@ -60,7 +60,7 @@
   <rect x="628" y="75" width="212" height="58" fill="#F3F4F6" stroke="#9CA3AF" stroke-width="2" rx="8"/>
   <text x="734" y="98" text-anchor="middle" font-size="11" fill="#374151" font-weight="700">⑤ Aguardar dependência</text>
   <text x="734" y="112" text-anchor="middle" font-size="10" fill="#374151">externa</text>
-  <text x="734" y="126" text-anchor="middle" font-size="9" fill="#6B7280">Dependência registrada — Assessment monitora</text>
+  <text x="734" y="126" text-anchor="middle" font-size="9" fill="#6B7280">Dependência registrada, Assessment monitora</text>
 
   <!-- Outcome 6: Descartar (right) -->
   <line x1="510" y1="255" x2="658" y2="255" stroke="#EF4444" stroke-width="2" marker-end="url(#aRd6)"/>
@@ -115,5 +115,5 @@
 
   <!-- "15 dias" label -->
   <rect x="472" y="468" width="196" height="18" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1" rx="3"/>
-  <text x="570" y="481" text-anchor="middle" font-size="9" fill="#D97706" font-weight="700">15 dias — deadline não negociável</text>
+  <text x="570" y="481" text-anchor="middle" font-size="9" fill="#D97706" font-weight="700">15 dias: deadline não negociável</text>
 </svg>
