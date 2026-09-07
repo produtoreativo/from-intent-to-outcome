@@ -1,16 +1,42 @@
-# Capítulo 4: Assessment — a jornada que acompanha todas
+# Capítulo 4: Assessment, a jornada que acompanha todas
 
 ---
 
 ## Antes das três jornadas clássicas
 
+![Assessment: governança informacional transversal sobre todo o ciclo de vida](images/cap04-assessment-transversal.svg)
+*Figura 4. Assessment como camada transversal: ativo desde o Business Signal, acompanhando cada jornada clássica, retroalimentando o próximo ciclo com novos Business Signals*
+
 Quando o framework ProdOps lista cinco jornadas, a tendência natural é lê-las como equivalentes: Discovery, Delivery, Operation, Assessment e Diligence como cinco responsabilidades do mesmo nível, cada uma com seu momento de entrada. Essa leitura é incorreta, e o erro importa.
 
-Assessment não é uma jornada que começa depois de Discovery e antes de Delivery. Não é uma fase de avaliação periódica que acontece em paralelo às três jornadas clássicas de produto. É a camada de governança informacional do framework — a jornada com alcance transversal sobre todo o ciclo: atua desde o Business Signal, acompanha cada jornada durante toda sua duração, e retroalimenta o ciclo com novos Business Intents após a Operation.
+Assessment não é uma jornada que começa depois de Discovery e antes de Delivery. Não é uma fase de avaliação periódica que acontece em paralelo às três jornadas clássicas de produto. É a camada de governança informacional do framework, a jornada com alcance transversal sobre todo o ciclo: atua desde o Business Signal, acompanha cada jornada durante toda sua duração, e retroalimenta o ciclo com novos Business Intents após a Operation.
 
 A distinção é mais do que posicional. Uma jornada que começa depois de Discovery está subordinada às três clássicas: ela depende de que o trabalho já tenha começado para ter o que avaliar. O Assessment, como definido pelo ProdOps, tem alcance que se estende ao momento em que um Business Signal aparece no horizonte do produto — antes que qualquer decisão de iniciar Discovery tenha sido tomada.
 
-O que isso significa operacionalmente: toda decisão relevante do ciclo de vida de uma capability — se transformar o Signal em Intent, se avançar para CommitmentGate, se o compromisso assumido está sendo honrado, o que o ciclo produziu de aprendizado para o próximo — tem uma contribuição da jornada Assessment. Não porque Assessment decide, mas porque Assessment produz o contexto informacional sem o qual as decisões seriam tomadas com base em percepção, não em evidência.
+O que isso significa operacionalmente: toda decisão relevante do ciclo de vida de uma capability (se transformar o Signal em Intent, se avançar para CommitmentGate, se o compromisso assumido está sendo honrado, o que o ciclo produziu de aprendizado para o próximo) tem uma contribuição da jornada Assessment. Não porque Assessment decide, mas porque Assessment produz o contexto informacional sem o qual as decisões seriam tomadas com base em percepção, não em evidência.
+
+```mermaid
+graph TD
+    BS(["Business Signal"])
+
+    subgraph CAMADA["Assessment — governança informacional transversal"]
+        direction LR
+        AP["Dimensão Prospectiva\n(Signal → CommitmentGate)"]
+        AR["Dimensão Retrospectiva\n(Operation → novos Signals)"]
+    end
+
+    subgraph EXEC["Jornadas clássicas de execução"]
+        direction LR
+        D["Discovery"] --> DEL["Delivery"] --> OP["Operation"]
+    end
+
+    BS --> D
+    BS -.->|"Assessment\ninicia antes de Discovery"| AP
+    AP -.->|"qualifica\ncontexto"| D
+    AP -.->|"qualifica\ncontexto"| DEL
+    AR -.->|"lê o ciclo\nencerrado"| OP
+    OP -->|"retroalimenta\ncom novos Signals"| BS
+```
 
 ---
 
@@ -18,7 +44,7 @@ O que isso significa operacionalmente: toda decisão relevante do ciclo de vida 
 
 O Business Signal é o ponto de entrada do ciclo de vida de uma capability: a observação, qualitativa ou quantitativa, que indica que pode existir uma oportunidade ou um problema que justifica atenção. Antes de qualquer experimento Upstream, antes de qualquer decisão de transformar o Signal em Business Intent, o Assessment já tem trabalho a fazer.
 
-A pergunta que o Assessment responde nesse momento não é "o que vamos construir?" nem "como vamos construir?". É: **o ambiente informacional está suficientemente preparado para que a decisão de avançar — ou de não avançar — seja tomada com clareza sobre o que se sabe e o que não se sabe?**
+A pergunta que o Assessment responde nesse momento não é "o que vamos construir?" nem "como vamos construir?". É: **o ambiente informacional está suficientemente preparado para que a decisão de avançar (ou de não avançar) seja tomada com clareza sobre o que se sabe e o que não se sabe?**
 
 Isso implica três perguntas menores. O Signal tem contexto suficiente para ser distinguido de ruído: é uma observação fundamentada ou uma intuição sem dados? O Signal se conecta a outros Signals existentes no corpus — há padrão, há precedente, há convergência com o que o histórico de experimentos e ciclos anteriores já produziu? E quais riscos informativos estão associados ao avanço: o que ainda não se sabe que seria necessário saber para comprometer recursos de forma responsável?
 
@@ -44,11 +70,11 @@ graph TD
 
 A dimensão prospectiva do Assessment é a que opera antes do compromisso Downstream: desde o Signal, durante o Upstream (quando existe), e até o CommitmentGate.
 
-O artefato central que o Assessment prospectivo **avalia** é o **Decision Package**: o conjunto de evidências, hipóteses respondidas, riscos identificados e recomendação formal que o trio — PM, Tech Lead e Autor — usará no CommitmentGate para decidir o destino da capability.
+O artefato central que o Assessment prospectivo **avalia** é o **Decision Package**: o conjunto de evidências, hipóteses respondidas, riscos identificados e recomendação formal que o trio (PM, Tech Lead e Autor) usará no CommitmentGate para decidir o destino da capability.
 
 O que o Assessment prospectivo faz não é produzir o Decision Package por si mesmo — isso é responsabilidade da jornada Discovery em modo Upstream. O que Assessment faz é avaliar a qualidade do package: o Decision Package é legível por um membro do trio que não participou do experimento, sem contexto verbal adicional? As hipóteses foram respondidas com critérios de falsificação declarados, ou apenas afirmadas? Os riscos foram avaliados com base em evidência ou apenas listados? A incerteza residual está explicitamente declarada como aceitável, ou foi simplesmente omitida?
 
-Quando o Business Signal entra diretamente em Downstream — sem Upstream prévio, porque o contexto já é suficiente para o CommitmentGate —, o Assessment prospectivo avalia se a suficiência declarada é real: o que justifica dispensar a exploração? Quais são os riscos dessa decisão? Existe um **Reliability Plan** adequado ao perfil de risco do compromisso assumido?
+Quando o Business Signal entra diretamente em Downstream (sem Upstream prévio, porque o contexto já é suficiente para o CommitmentGate), o Assessment prospectivo avalia se a suficiência declarada é real: o que justifica dispensar a exploração? Quais são os riscos dessa decisão? Existe um **Reliability Plan** adequado ao perfil de risco do compromisso assumido?
 
 O Reliability Plan é o segundo produto relevante da dimensão prospectiva. Ele define, antes da entrada no Delivery, as condições de confiabilidade que o capability precisa satisfazer ao longo do ciclo: SLIs iniciais, Reliability Rules, critérios de alerta e escalação. Em capabilities de alto risco, o Reliability Plan pode ser exigido como condição de entrada no Readiness Gate — sem ele, o gate não é aberto. Em capabilities de risco controlado, o plan pode ser produzido durante o Downstream com menor formalidade. A calibração é responsabilidade do Runtime de cada time; o ProdOps Framework define que a avaliação de quais condições se aplicam pertence ao Assessment prospectivo.
 
@@ -60,7 +86,7 @@ Se a dimensão prospectiva do Assessment prepara o ambiente para a decisão, a d
 
 O Assessment retrospectivo é ativado após a conclusão de um ciclo Downstream completo: capability entregue, em estado Released, com Release Trail finalizado. Seu foco é o que o ciclo produziu de evidência sobre o funcionamento do framework, não sobre o funcionamento da capability em si. A capability funciona: os OBCs documentam isso. O que o Assessment retrospectivo pergunta é: como o ciclo funcionou? O que o histórico revela sobre a saúde do sistema de trabalho?
 
-As fontes primárias do Assessment retrospectivo são os **Timelines** — os registros cronológicos de cada ciclo — e os artefatos de medição que o ciclo gerou: DORA Extended metrics, Gate Failure Rate (frequência com que os gates do Downstream foram bloqueados antes de serem satisfeitos), Decision Latency (tempo entre evidência disponível e convocação do CommitmentGate), Discovery WIP (experimentos simultâneos em andamento).
+As fontes primárias do Assessment retrospectivo são os **Timelines** (os registros cronológicos de cada ciclo) e os artefatos de medição que o ciclo gerou: DORA Extended metrics, Gate Failure Rate (frequência com que os gates do Downstream foram bloqueados antes de serem satisfeitos), Decision Latency (tempo entre evidência disponível e convocação do CommitmentGate), Discovery WIP (experimentos simultâneos em andamento).
 
 A partir dessas fontes, o Assessment retrospectivo produz dois outputs. O primeiro é o **relatório de ciclo**: uma síntese do que o ciclo revelou sobre a saúde do processo — anti-padrões detectados, signals diagnósticos ativados, recomendações para o próximo ciclo. O segundo, mais importante, é o conjunto de **novos Business Signals**: observações derivadas da Operation que indicam oportunidades ou problemas a investigar no próximo ciclo. É por esse mecanismo que a retroalimentação do ProdOps opera — não como um ritual de retrospectiva desconectado do fluxo de trabalho, mas como a produção estruturada de inputs para o início do próximo ciclo.
 
@@ -108,7 +134,7 @@ A clareza sobre o que o Assessment não faz é tão importante quanto a clareza 
 
 **Assessment não escreve em Timelines.** Os Timelines são registros append-only produzidos pelas jornadas clássicas — Discovery, Delivery e Operation. O Assessment lê os Timelines; nunca os modifica. Essa restrição não é técnica: é epistemológica. A integridade dos registros de cada jornada é a condição que torna o Assessment retrospectivo confiável. Se o Assessment pudesse modificar os registros que lê, seus outputs perderiam a base objetiva que os distingue de percepção e julgamento subjetivo.
 
-**Assessment não decide sobre o destino de uma capability.** Ele não aprova nem rejeita a transformação de um Signal em Intent, não vota no CommitmentGate, não autoriza o início do Downstream. Essas decisões pertencem ao trio — PM, Tech Lead e Autor. O que Assessment faz é preparar e qualificar o contexto informacional para que as decisões sejam tomadas com clareza — mas a decisão em si não é do Assessment.
+**Assessment não decide sobre o destino de uma capability.** Ele não aprova nem rejeita a transformação de um Signal em Intent, não vota no CommitmentGate, não autoriza o início do Downstream. Essas decisões pertencem ao trio (PM, Tech Lead e Autor). O que Assessment faz é preparar e qualificar o contexto informacional para que as decisões sejam tomadas com clareza, mas a decisão em si não é do Assessment.
 
 **Assessment não define o que será construído.** Isso é responsabilidade de Discovery e Delivery. O Assessment avalia a qualidade do contexto informacional que informa essas decisões, não o mérito das decisões em si.
 
@@ -120,7 +146,7 @@ A clareza sobre o que o Assessment não faz é tão importante quanto a clareza 
 
 O corpus da Magazine Siará contém um caso que ilustra o mecanismo de retroalimentação do Assessment de forma concreta.
 
-O Business Signal BS-001 — o Signal que originou a feature Split Payment — não surgiu do nada. Ele é rastreável a observações de Operation: clientes abandonando carrinhos, contratos com fornecedores parceiros sendo perdidos por ausência de flexibilidade de pagamento. Essas observações são exatamente o tipo de output que o Assessment retrospectivo produz quando lê o estado Released de capabilities existentes e identifica gaps entre o comportamento prometido e as necessidades reais do mercado.
+O Business Signal BS-001 (o Signal que originou a feature Split Payment) não surgiu do nada. Ele é rastreável a observações de Operation: clientes abandonando carrinhos, contratos com fornecedores parceiros sendo perdidos por ausência de flexibilidade de pagamento. Essas observações são exatamente o tipo de output que o Assessment retrospectivo produz quando lê o estado Released de capabilities existentes e identifica gaps entre o comportamento prometido e as necessidades reais do mercado.
 
 O PI-001 documenta por que BS-001 entrou diretamente em Downstream sem Upstream prévio: "demanda confirmada por dois canais independentes, escopo delimitado, deadline inegociável". Essa justificativa é Assessment prospectivo em operação — a avaliação de que o contexto informacional era suficiente para dispensar a exploração pré-CommitmentGate. A ausência de Upstream não significa ausência de avaliação: significa que a avaliação concluiu que a incerteza residual era aceitável para o compromisso.
 
