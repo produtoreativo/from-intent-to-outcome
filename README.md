@@ -11,10 +11,10 @@ Upstream, Downstream e o Novo Modelo Operacional para Produtos Digitais
 | # | Título | Arquivo | Status |
 |---|---|---|---|
 | — | Prólogo | [prologo.md](prologo.md) | Final |
-| 1 | A confusão não é de processo; é de compromisso | [capitulo-01.md](capitulo-01.md) | Revisão |
-| 2 | Por que a leitura de mercado não resolve | [capitulo-02.md](capitulo-02.md) | Revisão |
-| 3 | O que é um modo de execução | [capitulo-03.md](capitulo-03.md) | Revisão |
-| 4 | Assessment: a jornada que acompanha todas | [capitulo-04.md](capitulo-04.md) | Revisão |
+| 1 | A confusão não é de processo; é de compromisso | [capitulo-01.md](capitulo-01.md) | Final |
+| 2 | Por que a leitura de mercado não resolve | [capitulo-02.md](capitulo-02.md) | Final |
+| 3 | O que é um modo de execução | [capitulo-03.md](capitulo-03.md) | Final |
+| 4 | Assessment: a jornada que acompanha todas | [capitulo-04.md](capitulo-04.md) | Final |
 | 5 | Upstream: o modo da incerteza explícita | [capitulo-05.md](capitulo-05.md) | Rascunho |
 | 6 | Downstream: o modo do compromisso | [capitulo-06.md](capitulo-06.md) | Rascunho |
 | 7 | O Commitment Gate: a fronteira com nome | [capitulo-07.md](capitulo-07.md) | Rascunho |

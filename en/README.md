@@ -13,8 +13,8 @@ Upstream, Downstream, and the New Operating Model for Digital Products
 | — | Prologue | [prologue.md](prologue.md) | Final |
 | 1 | The confusion is not about process; it is about commitment | [chapter-01.md](chapter-01.md) | Final |
 | 2 | Why market reading does not solve it | [chapter-02.md](chapter-02.md) | Final |
-| 3 | What is an execution mode | [chapter-03.md](chapter-03.md) | Draft |
-| 4 | Assessment: the journey that accompanies all others | [chapter-04.md](chapter-04.md) | Draft |
+| 3 | What is an execution mode | [chapter-03.md](chapter-03.md) | Final |
+| 4 | Assessment: the journey that accompanies all others | [chapter-04.md](chapter-04.md) | Final |
 | 5 | Upstream: the mode of explicit uncertainty | [chapter-05.md](chapter-05.md) | Draft |
 | 6 | Downstream: the mode of commitment | [chapter-06.md](chapter-06.md) | Draft |
 | 7 | The Commitment Gate: the named boundary | [chapter-07.md](chapter-07.md) | Draft |
