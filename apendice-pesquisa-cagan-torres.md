@@ -58,7 +58,7 @@ Mas a definição não é a mesma.
 
 Essa diferença impede uma equivalência direta.
 
-Um trabalho realizado em Upstream pode conter construção. Pode conter código de qualidade de produção. Pode inclusive resultar em uma implantação controlada. O que permanece ausente é o compromisso formal de que aquela capability, com aquele comportamento, será sustentada como entrega comprometida.
+Um trabalho realizado em Upstream pode conter construção. Pode conter código de qualidade de produção. Pode inclusive resultar em uma implantação controlada. O que permanece ausente é o compromisso formal de que aquela Product Capability, com aquele comportamento, será sustentada como entrega comprometida.
 
 Da mesma forma, Discovery não é ontologicamente Upstream. A Discovery pode continuar depois que um compromisso foi assumido, quando seu propósito é resolver incertezas residuais dentro de um regime bloqueante. Delivery também não é ontologicamente Downstream. Uma equipe pode construir para aprender sem que a construção constitua ainda um compromisso de entrega.
 
@@ -102,7 +102,7 @@ Está na obrigação que o sistema de trabalho assumiu sobre ele.
 
 A aproximação mais antiga entre Cagan e a tese do ProdOps está na ideia de **High-Integrity Commitment**.
 
-Cagan já havia estabelecido que a maior parte dos objetivos de uma equipe de produto deve permanecer orientada a resultados e sujeita à incerteza. Existem, entretanto, situações nas quais a organização precisa de um compromisso específico sobre uma capability e uma data. Nesses casos, o compromisso deve ser assumido somente depois de investigação suficiente para produzir confiança sobre valor, usabilidade, viabilidade e factibilidade.
+Cagan já havia estabelecido que a maior parte dos objetivos de uma equipe de produto deve permanecer orientada a resultados e sujeita à incerteza. Existem, entretanto, situações nas quais a organização precisa de um compromisso específico sobre uma Product Capability e uma data. Nesses casos, o compromisso deve ser assumido somente depois de investigação suficiente para produzir confiança sobre valor, usabilidade, viabilidade e factibilidade.
 
 Essa formulação é anterior a este livro e não deve ser apresentada como uma descoberta recente de 2026.
 
@@ -110,13 +110,13 @@ O que mudou recentemente é a forma como Cagan conecta essa distinção à AI: q
 
 O ProdOps leva essa intuição a uma estrutura operacional diferente.
 
-Um High-Integrity Commitment descreve uma condição de negócio e de gestão na qual uma promessa precisa ser confiável. O **CommitmentGate** descreve o mecanismo pelo qual uma organização decide formalmente o destino de uma capability a partir da evidência disponível.
+Um High-Integrity Commitment descreve uma condição de negócio e de gestão na qual uma promessa precisa ser confiável. O **CommitmentGate** descreve o mecanismo pelo qual uma organização decide formalmente o destino de uma Product Capability a partir da evidência disponível.
 
 A diferença pode ser resumida assim:
 
 > **High-Integrity Commitment explica por que determinados compromissos exigem confiança especial. CommitmentGate define como a decisão de assumir esse compromisso se torna observável e operacional.**
 
-O CommitmentGate também não é uma simples aprovação. Seus outcomes canônicos incluem Promover, Promover com restrição, Requerer outro experimento, Aguardar decisão de negócio, Aguardar dependência externa e Descartar. O objetivo é registrar o destino da capability, inclusive quando esse destino não é a promoção.
+O CommitmentGate também não é uma simples aprovação. Seus outcomes canônicos incluem Promover, Promover com restrição, Requerer outro experimento, Aguardar decisão de negócio, Aguardar dependência externa e Descartar. O objetivo é registrar o destino da Product Capability, inclusive quando esse destino não é a promoção.
 
 A convergência é forte. A estrutura operacional é diferente.
 
@@ -146,13 +146,13 @@ Mas novamente não existe equivalência ontológica.
 
 **Um eval não é necessariamente Upstream.**
 
-Ele pode ser usado para investigar uma hipótese antes do compromisso. Pode ser usado para verificar uma condição de uma capability comprometida. Pode ser utilizado em operação para detectar regressões. Pode fazer parte de Assessment ou Diligence.
+Ele pode ser usado para investigar uma hipótese antes do compromisso. Pode ser usado para verificar uma condição de uma Product Capability comprometida. Pode ser utilizado em operação para detectar regressões. Pode fazer parte de Assessment ou Diligence.
 
 O que determina sua função não é o fato de ser um eval.
 
 É o compromisso ao qual a evidência está relacionada.
 
-Essa distinção é particularmente importante para produtos AI porque os mesmos mecanismos de avaliação podem atravessar todo o ciclo de vida. Uma avaliação que inicialmente serviu para reduzir incerteza pode tornar-se parte do mecanismo de verificação de uma capability comprometida. A ferramenta é a mesma. A função epistemológica e operacional mudou.
+Essa distinção é particularmente importante para produtos AI porque os mesmos mecanismos de avaliação podem atravessar todo o ciclo de vida. Uma avaliação que inicialmente serviu para reduzir incerteza pode tornar-se parte do mecanismo de verificação de uma Product Capability comprometida. A ferramenta é a mesma. A função epistemológica e operacional mudou.
 
 Fonte: [Teresa Torres — AI Evals: A Hands-On Guide for Product Teams](https://www.producttalk.org/ai-evals/).
 

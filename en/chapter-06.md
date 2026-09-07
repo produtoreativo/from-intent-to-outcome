@@ -34,7 +34,7 @@ graph TD
     M3 -->|"Open Finding"| BLOCK["Return to Icebox\nor formal Waiver"]
 ```
 
-**Moment 1: CommitmentGate** (Downstream Declared). The trio (PM + Tech Lead + Author) evaluates whether the evidence produced justifies the commitment. The criteria include: hypothesis answered with the Evidence Threshold satisfied (if declared), Decision Package with real substance, OBC Draft existing as a file, and BDD drafted and legible. The most consequential result is Promote, which triggers Moment 2. The CommitmentGate does not create the commitment: it makes the trio's decision about the capability's fate verifiable and traceable.
+**Moment 1: CommitmentGate** (Downstream Declared). The trio (PM + Tech Lead + Author) evaluates whether the evidence produced justifies the commitment. The criteria include: hypothesis answered with the Evidence Threshold satisfied (if declared), Decision Package with real substance, OBC Draft existing as a file, and BDD drafted and legible. The most consequential result is Promote, which triggers Moment 2. The CommitmentGate does not create the commitment: it makes the trio's decision about the Product Capability's fate verifiable and traceable.
 
 > **Note:** The CommitmentGate does not presuppose prior Upstream exploration. When a Business Signal arrives at the PIB with sufficiently clear business context — without needing experimental exploration — the CommitmentGate can be executed immediately at PIB entry. In that case, the trio evaluates the available substrate (Business Signal, OBC Draft, initial BDD) and, if the outcome is Promote, the item enters the Icebox directly as Downstream Declared. What Upstream mode represents is *optional prior exploration* — not a mandatory antechamber.
 

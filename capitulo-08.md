@@ -9,7 +9,7 @@
 
 Há uma distinção que o ProdOps introduz que não é sobre tecnologia de observabilidade: logs, métricas, traces, dashboards. É sobre o papel epistêmico que a observabilidade desempenha em cada modo de execução.
 
-No Downstream, observabilidade verifica o compromisso. SLOs, métricas DORA, Release Trail: todos existem para responder uma pergunta: o compromisso assumido está sendo honrado? A capability foi entregue com o comportamento prometido? As métricas de confiabilidade estão dentro dos limites acordados? O OBC em estado Released representa precisamente isso: o contrato de negócio transitou para um estado em que seu cumprimento pode ser verificado em runtime.
+No Downstream, observabilidade verifica o compromisso. SLOs, métricas DORA, Release Trail: todos existem para responder uma pergunta: o compromisso assumido está sendo honrado? A Product Capability foi entregue com o comportamento prometido? As métricas de confiabilidade estão dentro dos limites acordados? O OBC em estado Released representa precisamente isso: o contrato de negócio transitou para um estado em que seu cumprimento pode ser verificado em runtime.
 
 No Upstream, observabilidade torna a incerteza explícita. Os artefatos de evidência do experimento (denominados neste capítulo como Evidence Package), o Upstream Trail, o Decision Package existem para responder uma pergunta diferente: o que sabemos, o que não sabemos, e com que grau de confiança podemos afirmar cada coisa? No Upstream, a observabilidade não está verificando um compromisso: está documentando o estado do conhecimento sobre uma hipótese.
 
@@ -41,7 +41,7 @@ O Observable Business Contract não é um SLA técnico: é a declaração de que
 
 O ponto de partida ontológico é relevante: o compromisso é a variável causal. Os estados do OBC não determinam o modo nem produzem o compromisso: eles tornam o compromisso observável. O que faz um OBC transitar entre estados é a satisfação de critérios que refletem o grau de maturidade do compromisso vigente, não uma decisão de mudar o modo de trabalho. O modo é a causa; os estados são o registro verificável de onde o compromisso está em seu ciclo de vida.
 
-O OBC percorre seis estados ao longo do ciclo de vida de uma capability:
+O OBC percorre seis estados ao longo do ciclo de vida de uma Product Capability:
 
 ```mermaid
 stateDiagram-v2
@@ -83,9 +83,9 @@ stateDiagram-v2
 
 **In Delivery**: o OBC está associado a um item em execução no Iteration Plan. Mudanças de parâmetro são permitidas dentro da faixa de incerteza residual declarada; mudanças estruturais exigem regressão ao Upstream.
 
-**Released**: o comportamento comprometido no OBC pode ser verificado em runtime. A capability está em produção com os Observable Events funcionando e as métricas de sucesso acompanhadas. O OBC em estado Released registra que o comportamento comprometido está verificável em runtime — não que o outcome de negócio foi necessariamente alcançado, mas que a capability está operando com seus critérios observáveis ativos. Continua sendo atualizado conforme novas evidências operacionais (incidentes, métricas de uso, postmortems) refinam o entendimento sobre a capability.
+**Released**: o comportamento comprometido no OBC pode ser verificado em runtime. A Product Capability está em produção com os Observable Events funcionando e as métricas de sucesso acompanhadas. O OBC em estado Released registra que o comportamento comprometido está verificável em runtime — não que o outcome de negócio foi necessariamente alcançado, mas que a Product Capability está operando com seus critérios observáveis ativos. Continua sendo atualizado conforme novas evidências operacionais (incidentes, métricas de uso, postmortems) refinam o entendimento sobre a Product Capability.
 
-**Archived**: a capability foi descontinuada ou substituída. O OBC permanece como registro histórico, não é deletado.
+**Archived**: a Product Capability foi descontinuada ou substituída. O OBC permanece como registro histórico, não é deletado.
 
 A progressão de estados não é linear por decreto: é verificada. O que faz um OBC transitar de Refining para Committed não é uma decisão subjetiva do Product Manager; é a satisfação de critérios verificáveis que a Diligence pode auditar.
 

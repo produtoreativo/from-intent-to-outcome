@@ -121,7 +121,7 @@ Uma interpretação recorrente da literatura e da prática de produto, ao separa
 
 ## A jornada que começa antes da primeira
 
-O framework ProdOps define cinco jornadas, mas quatro delas (Discovery, Delivery, Operation e Diligence) têm um ponto de entrada claro: uma capability que precisa ser explorada, construída, operada ou verificada. A quinta jornada, **Assessment**, não tem ponto de entrada fixo: ela está presente desde o momento em que um Business Signal aparece no horizonte do produto.
+O framework ProdOps define cinco jornadas, mas quatro delas (Discovery, Delivery, Operation e Diligence) têm um ponto de entrada claro: uma Product Capability que precisa ser explorada, construída, operada ou verificada. A quinta jornada, **Assessment**, não tem ponto de entrada fixo: ela está presente desde o momento em que um Business Signal aparece no horizonte do produto.
 
 Assessment é a camada de governança informacional do framework. Ela avalia se o ambiente informacional está preparado para as decisões que o ciclo exige: a transformação de um Signal em Business Intent, a suficiência de evidências para o CommitmentGate, a correspondência entre o compromisso assumido e o compromisso honrado, e o que o ciclo encerrado revela sobre o ciclo que virá. Não é uma fase de avaliação periódica; é uma responsabilidade contínua que o ProdOps nomeia e estrutura para que não fique dependente do julgamento informal de quem está mais atento no momento.
 

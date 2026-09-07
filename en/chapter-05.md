@@ -13,13 +13,13 @@ What defines Upstream is not the absence of commitment, but the type of commitme
 
 Work in progress carries a real commitment. The investigation has a hypothesis, responsible parties, and some stopping criterion, even if implicit. Conducting an experiment without rigor, without a formulated hypothesis, without verifiable progression, is not Upstream well executed; it is Upstream poorly conducted.
 
-There is, however, no formal commitment to a specific capability: no OBC Committed, no Release Trail, no promise that that behavior will be in production for those users, with those acceptance criteria.
+There is, however, no formal commitment to a specific Product Capability: no OBC Committed, no Release Trail, no promise that that behavior will be in production for those users, with those acceptance criteria.
 
 And there is no blocking commitment: changing direction, closing the experiment, or rejecting the hypothesis does not violate a contract that needs to be renegotiated. The cost of reversal remains controllable because the prevailing regime does not transform a change of course into a broken promise.
 
 Software produced in Upstream can have production quality: tested, documented, and deployable code. What distinguishes this work from Downstream is not the technical quality of the artifact, but the commitment regime under which it was produced.
 
-The discipline of Upstream is the discipline of keeping these three layers distinct. A team can work with all the technical rigor of a senior engineer in Upstream mode and the work still remains non-blocking, because the capability commitment has not been made.
+The discipline of Upstream is the discipline of keeping these three layers distinct. A team can work with all the technical rigor of a senior engineer in Upstream mode and the work still remains non-blocking, because the Product Capability commitment has not been made.
 
 ---
 
@@ -74,7 +74,7 @@ In Upstream, the Evidence Threshold is *optional* (recommended, but not mandator
 
 What is not acceptable is the total absence of a stopping criterion — and it is precisely this absence that produces the main anti-pattern of Upstream.
 
-Four concepts that operate in sequence in Upstream, but are not synonymous: the **Evidence Threshold** is the explicit criterion declared before or during the experiment; **evidence sufficiency** is the epistemological judgment about whether the knowledge produced allows a decision — it exists even when no threshold has been formally declared; the **stopping criterion** is the condition that indicates the experiment should end: it may be the threshold reached, the author's judgment, or one of signals S1–S4; the **CommitmentGate** is the collective mechanism that decides the capability's fate based on the evidence produced. Using "Evidence Threshold" as a synonym for "evidence sufficiency" or for "CommitmentGate" is the error that feeds Perpetual Discovery.
+Four concepts that operate in sequence in Upstream, but are not synonymous: the **Evidence Threshold** is the explicit criterion declared before or during the experiment; **evidence sufficiency** is the epistemological judgment about whether the knowledge produced allows a decision — it exists even when no threshold has been formally declared; the **stopping criterion** is the condition that indicates the experiment should end: it may be the threshold reached, the author's judgment, or one of signals S1–S4; the **CommitmentGate** is the collective mechanism that decides the Product Capability's fate based on the evidence produced. Using "Evidence Threshold" as a synonym for "evidence sufficiency" or for "CommitmentGate" is the error that feeds Perpetual Discovery.
 
 ---
 
@@ -117,11 +117,11 @@ There are three distinct acts of deployment in Upstream, with different authoriz
 
 **Sandbox Deploy**: code deployed in an ephemeral and isolated stack, without real client traffic. The engineer decides. The stack is destroyed at the end of the experiment. No Release Trail, no OBC Committed.
 
-**Controlled Production**: Upstream code deployed to real production, without CommitmentGate. Explicit authorization from the team and leadership. Immediate rollback available. No Release Trail required — which does not mean without evidence: what was observed in Controlled Production must be recorded in the experiment's upstream-trail. This is not a violation of Upstream mode: it is an authorized act. What distinguishes it from promotion is that the *capability commitment* (OBC Committed, Downstream gates) has not been made. The code reaches production; the capability remains under exploration.
+**Controlled Production**: Upstream code deployed to real production, without CommitmentGate. Explicit authorization from the team and leadership. Immediate rollback available. No Release Trail required — which does not mean without evidence: what was observed in Controlled Production must be recorded in the experiment's upstream-trail. This is not a violation of Upstream mode: it is an authorized act. What distinguishes it from promotion is that the *Product Capability commitment* (OBC Committed, Downstream gates) has not been made. The code reaches production; the Product Capability remains under exploration.
 
-**Capability Promotion**: CommitmentGate with Promote outcome. BDD Feature and OBC moved to committed paths. The item enters the Icebox. Downstream is declared; Delivery begins only after the Readiness Gate and Planning.
+**Product Capability Promotion**: CommitmentGate with Promote outcome. BDD Feature and OBC moved to committed paths. The item enters the Icebox. Downstream is declared; Delivery begins only after the Readiness Gate and Planning.
 
-The distinction between Controlled Production and Capability Promotion is precisely the distinction the modal model resolves: in the first case, the code is in production but the capability is not committed; in the second, the commitment has been formally made with all its gates.
+The distinction between Controlled Production and Product Capability Promotion is precisely the distinction the modal model resolves: in the first case, the code is in production but the Product Capability is not committed; in the second, the commitment has been formally made with all its gates.
 
 ---
 
@@ -129,11 +129,11 @@ The distinction between Controlled Production and Capability Promotion is precis
 
 The first three experiments of the Magazine Siará Payments API (EXP-001, EXP-002, and EXP-003) illustrate Upstream as an operational mode in its most complete form, with the CommitmentGate executed at the end of the sequence.
 
-EXP-001 opened with a high-risk question: how to support the complete credit card lifecycle without crossing the PCI boundary or coupling Checkout to the Asaas contract? Before writing a single line of production code, the experiment specified the mandatory BDD scenarios, the Observable Events expected for each flow (authorization, confirmation, risk analysis, refusal, cancellation, chargeback), and the dimensions that could never appear in logs (card number, CVV, provider token). EXP-002 mapped the Asaas sandbox capabilities and limitations for reproducing the credit card cycle, and confirmed the Validation Workbench as the simulation environment for scenarios the sandbox cannot reproduce deterministically — full provider scenario validation remains open, pending external evidence from Asaas. EXP-003 systematically compared the three possible integration models — hosted, tokenized, transparent — and produced the recommendation with justification: only hosted entry advances to Downstream, because it is the only option that does not require decisions external to the Payments team.
+EXP-001 opened with a high-risk question: how to support the complete credit card lifecycle without crossing the PCI boundary or coupling Checkout to the Asaas contract? Before writing a single line of production code, the experiment specified the mandatory BDD scenarios, the Observable Events expected for each flow (authorization, confirmation, risk analysis, refusal, cancellation, chargeback), and the dimensions that could never appear in logs (card number, CVV, provider token). EXP-002 mapped the Asaas sandbox Product Capabilities and limitations for reproducing the credit card cycle, and confirmed the Validation Workbench as the simulation environment for scenarios the sandbox cannot reproduce deterministically — full provider scenario validation remains open, pending external evidence from Asaas. EXP-003 systematically compared the three possible integration models — hosted, tokenized, transparent — and produced the recommendation with justification: only hosted entry advances to Downstream, because it is the only option that does not require decisions external to the Payments team.
 
 The EXP-003 Decision Package recommends Promote with restriction (outcome ②): the hosted slice advances; the remaining options remain in Upstream awaiting third-party decisions (PCI scope, token model, Checkout UX). The CommitmentGate was executed with this Decision Package: the trio recorded the outcome, and Downstream began exclusively for hosted entry.
 
-Three sequential experiments. No production code during any of them. A recommendation verifiable by third parties. A CommitmentGate that decided the capability's fate with sufficient evidence — and with an explicit restriction on what the evidence did not support. This is Upstream mode operated with full engineering rigor: not a low-discipline phase before the "real" engineering. A non-blocking commitment regime that produced verifiable knowledge — and a Decision Package that made the CommitmentGate possible.
+Three sequential experiments. No production code during any of them. A recommendation verifiable by third parties. A CommitmentGate that decided the Product Capability's fate with sufficient evidence — and with an explicit restriction on what the evidence did not support. This is Upstream mode operated with full engineering rigor: not a low-discipline phase before the "real" engineering. A non-blocking commitment regime that produced verifiable knowledge — and a Decision Package that made the CommitmentGate possible.
 
 ---
 
@@ -143,7 +143,7 @@ When a team runs multiple Upstream experiments in parallel, a coordination artif
 
 The Experiment Plan is not a sprint. It has no deadline or mandatory sequence. It is a visibility instrument: it answers the question *"which hypotheses are we investigating right now?"* and makes **Discovery WIP** visible — the number of simultaneously active Upstream experiments.
 
-The Experiment Plan is the Upstream equivalent of the Iteration Plan. The Iteration Plan governs the Downstream in execution (committed capabilities, in Delivery). The Experiment Plan governs the Upstream in exploration (active hypotheses, no commitment). The two are symmetrical: one does not replace the other; they coexist when the team operates in both modes simultaneously.
+The Experiment Plan is the Upstream equivalent of the Iteration Plan. The Iteration Plan governs the Downstream in execution (committed Product Capabilities, in Delivery). The Experiment Plan governs the Upstream in exploration (active hypotheses, no commitment). The two are symmetrical: one does not replace the other; they coexist when the team operates in both modes simultaneously.
 
 ```mermaid
 flowchart TD
@@ -186,7 +186,7 @@ The three Magazine Siará experiments (EXP-001, EXP-002, EXP-003) would be repre
 
 ## What Upstream is not responsible for doing
 
-The definition of Upstream includes an explicit list of what is outside its scope. Implementing the committed capability with blocking gates: that is the Delivery journey in Downstream mode. The distinction is one of commitment, not physical activity: Upstream can produce functional code, proof of concept, implementation in sandbox or in controlled production, without that constituting the delivery of a formally promised capability. Committing and technically implementing the observability of the capability (SLOs, Observable Events, production instrumentation): that is the responsibility of Downstream. In Upstream, ODD means documenting what needs to be observable to test the hypothesis — without that constituting a commitment of implementation. Producing OBC Committed: that is Discovery in Downstream. Producing complete BDD in `prodops/artifacts/bdd/`: that happens before the Readiness Gate. Guaranteeing the absence of uncertainty: acceptable residual uncertainty is a valid CommitmentGate criterion.
+The definition of Upstream includes an explicit list of what is outside its scope. Implementing the committed Product Capability with blocking gates: that is the Delivery journey in Downstream mode. The distinction is one of commitment, not physical activity: Upstream can produce functional code, proof of concept, implementation in sandbox or in controlled production, without that constituting the delivery of a formally promised Product Capability. Committing and technically implementing the observability of the Product Capability (SLOs, Observable Events, production instrumentation): that is the responsibility of Downstream. In Upstream, ODD means documenting what needs to be observable to test the hypothesis — without that constituting a commitment of implementation. Producing OBC Committed: that is Discovery in Downstream. Producing complete BDD in `prodops/artifacts/bdd/`: that happens before the Readiness Gate. Guaranteeing the absence of uncertainty: acceptable residual uncertainty is a valid CommitmentGate criterion.
 
 This last statement is counterintuitive enough to deserve emphasis: Upstream does not need to eliminate all uncertainty. It needs to reduce uncertainty to the point where the residual risk is acceptable for taking on the Downstream commitment. What is "acceptable" is the collective judgment of the trio at the CommitmentGate, not a zero-uncertainty criterion that no finite experiment can satisfy.
 

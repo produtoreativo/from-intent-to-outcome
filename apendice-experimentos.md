@@ -14,7 +14,7 @@ A Payments API da Magazine Siará acumulou 17 experimentos desde o início do de
 
 ## Experimentos de produto
 
-Os experimentos a seguir investigaram diretamente as capabilities da Payments API — o produto que serve os clientes da Magazine Siará.
+Os experimentos a seguir investigaram diretamente as Product Capabilities da Payments API — o produto que serve os clientes da Magazine Siará.
 
 ### EXP-001 — Credit Card Lifecycle
 **Status:** Concluído
@@ -150,7 +150,7 @@ Isso é coexistência de modos. Não é uma exceção ao framework: é um dos se
 
 ## Adaptações do Framework e do Runtime
 
-Sete experimentos do corpus não foram sobre capabilities da Payments API para os clientes da Magazine Siará. Foram sobre o próprio framework ProdOps — ajustes, validações e evoluções do modelo operacional adotado por este time.
+Sete experimentos do corpus não foram sobre Product Capabilities da Payments API para os clientes da Magazine Siará. Foram sobre o próprio framework ProdOps — ajustes, validações e evoluções do modelo operacional adotado por este time.
 
 Isso é possível e recomendado. Um time que adota o ProdOps em condições reais vai inevitavelmente encontrar lacunas, ambiguidades e oportunidades de melhoria no framework. A forma correta de tratá-las é como experimentos Upstream — com hipótese, evidência e Decision Package — não como mudanças informais.
 

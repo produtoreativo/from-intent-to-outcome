@@ -121,7 +121,7 @@ A recurring interpretation in product literature and practice, by separating Dis
 
 ## The journey that begins before the first
 
-The ProdOps framework defines five journeys, but four of them (Discovery, Delivery, Operation, and Diligence) have a clear entry point: a capability that needs to be explored, built, operated, or verified. The fifth journey, **Assessment**, has no fixed entry point: it is present from the moment a Business Signal appears on the product horizon.
+The ProdOps framework defines five journeys, but four of them (Discovery, Delivery, Operation, and Diligence) have a clear entry point: a Product Capability that needs to be explored, built, operated, or verified. The fifth journey, **Assessment**, has no fixed entry point: it is present from the moment a Business Signal appears on the product horizon.
 
 Assessment is the framework's informational governance layer. It evaluates whether the informational environment is prepared for the decisions the cycle requires: the transformation of a Signal into a Business Intent, the sufficiency of evidence for the CommitmentGate, the correspondence between the commitment assumed and the commitment honored, and what the completed cycle reveals about the cycle to come. It is not a periodic evaluation phase; it is a continuous responsibility that ProdOps names and structures so that it does not depend on the informal judgment of whoever happens to be paying attention at the moment.
 

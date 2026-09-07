@@ -9,7 +9,7 @@
 
 There is a distinction that ProdOps introduces that is not about observability technology: logs, metrics, traces, dashboards. It is about the epistemic role that observability plays in each execution mode.
 
-In Downstream, observability verifies commitment. SLOs, DORA metrics, Release Trail: all exist to answer one question: is the commitment made being honored? Was the capability delivered with the promised behavior? Are the reliability metrics within the agreed limits? The OBC in the Released state represents precisely this: the business contract has transitioned to a state where its fulfillment can be verified at runtime.
+In Downstream, observability verifies commitment. SLOs, DORA metrics, Release Trail: all exist to answer one question: is the commitment made being honored? Was the Product Capability delivered with the promised behavior? Are the reliability metrics within the agreed limits? The OBC in the Released state represents precisely this: the business contract has transitioned to a state where its fulfillment can be verified at runtime.
 
 In Upstream, observability makes uncertainty explicit. The experiment evidence artifacts (referred to in this chapter as Evidence Package), the Upstream Trail, the Decision Package exist to answer a different question: what do we know, what do we not know, and with what degree of confidence can we assert each thing? In Upstream, observability is not verifying a commitment: it is documenting the state of knowledge about a hypothesis.
 
@@ -41,7 +41,7 @@ The Observable Business Contract is not a technical SLA: it is the declaration t
 
 The ontological starting point is relevant: commitment is the causal variable. The OBC states do not determine the mode nor produce the commitment: they make the commitment observable. What causes an OBC to transition between states is the satisfaction of criteria that reflect the maturity degree of the current commitment, not a decision to change the mode of work. The mode is the cause; the states are the verifiable record of where the commitment is in its lifecycle.
 
-The OBC progresses through six states over the lifecycle of a capability:
+The OBC progresses through six states over the lifecycle of a Product Capability:
 
 ```mermaid
 stateDiagram-v2
@@ -83,9 +83,9 @@ stateDiagram-v2
 
 **In Delivery**: the OBC is associated with an item in execution in the Iteration Plan. Parameter changes are permitted within the declared residual uncertainty range; structural changes require regression to Upstream.
 
-**Released**: the committed behavior in the OBC can be verified at runtime. The capability is in production with the Observable Events functioning and success metrics tracked. The OBC in Released state records that the committed behavior is verifiable at runtime — not that the business outcome has necessarily been achieved, but that the capability is operating with its observable criteria active. It continues to be updated as new operational evidence (incidents, usage metrics, postmortems) refines the understanding of the capability.
+**Released**: the committed behavior in the OBC can be verified at runtime. The Product Capability is in production with the Observable Events functioning and success metrics tracked. The OBC in Released state records that the committed behavior is verifiable at runtime — not that the business outcome has necessarily been achieved, but that the Product Capability is operating with its observable criteria active. It continues to be updated as new operational evidence (incidents, usage metrics, postmortems) refines the understanding of the Product Capability.
 
-**Archived**: the capability was discontinued or replaced. The OBC remains as a historical record; it is not deleted.
+**Archived**: the Product Capability was discontinued or replaced. The OBC remains as a historical record; it is not deleted.
 
 State progression is not linear by decree: it is verified. What causes an OBC to transition from Refining to Committed is not a subjective decision by the Product Manager; it is the satisfaction of verifiable criteria that Diligence can audit.
 

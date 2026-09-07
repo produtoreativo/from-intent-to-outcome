@@ -13,7 +13,7 @@ Assessment is not a journey that begins after Discovery and before Delivery. It 
 
 The distinction is more than positional. A journey that begins after Discovery is subordinate to the three classics: it depends on work having already started to have something to evaluate. Assessment, as defined by ProdOps, has reach that extends to the moment a Business Signal appears on the product horizon, before any decision to initiate Discovery has been made.
 
-What this means operationally: every relevant decision in the lifecycle of a capability (whether to transform the Signal into Intent, whether to advance to the CommitmentGate, whether the assumed commitment is being honored, what the cycle produced as learning for the next) has a contribution from the Assessment journey. Not because Assessment decides, but because Assessment produces the informational context without which decisions would be made based on perception, not evidence.
+What this means operationally: every relevant decision in the lifecycle of a Product Capability (whether to transform the Signal into Intent, whether to advance to the CommitmentGate, whether the assumed commitment is being honored, what the cycle produced as learning for the next) has a contribution from the Assessment journey. Not because Assessment decides, but because Assessment produces the informational context without which decisions would be made based on perception, not evidence.
 
 ```mermaid
 graph TD
@@ -84,13 +84,13 @@ graph TD
 
 The prospective dimension of Assessment is the one that operates before the Downstream commitment: from the Signal, during Upstream (when it exists), and up to the CommitmentGate.
 
-The central artifact that prospective Assessment **evaluates** is the **Decision Package**: the set of evidence, answered hypotheses, identified risks, and formal recommendation that the trio (PM, Tech Lead, and Author) will use at the CommitmentGate to decide the capability's fate.
+The central artifact that prospective Assessment **evaluates** is the **Decision Package**: the set of evidence, answered hypotheses, identified risks, and formal recommendation that the trio (PM, Tech Lead, and Author) will use at the CommitmentGate to decide the Product Capability's fate.
 
 What prospective Assessment does is not produce the Decision Package itself: that is the responsibility of the Discovery journey in Upstream mode. What Assessment does is evaluate the package's quality: is the Decision Package readable by a trio member who did not participate in the experiment, without additional verbal context? Were hypotheses answered with declared falsification criteria, or merely asserted? Were risks evaluated based on evidence or simply listed? Is the residual uncertainty explicitly declared as acceptable, or was it simply omitted?
 
 When a Business Signal enters Downstream directly (without prior Upstream, because the context is already sufficient for the CommitmentGate), prospective Assessment evaluates whether the declared sufficiency is real: what justifies dispensing with exploration? What are the risks of that decision? Is there a **Reliability Plan** adequate to the risk profile of the assumed commitment?
 
-The Reliability Plan is the second relevant output of the prospective dimension. It defines, before entry into Delivery, the reliability conditions the capability needs to satisfy throughout the cycle: Initial SLIs, Reliability Rules, alert and escalation criteria. For high-risk capabilities, the Reliability Plan may be required as a condition for entering the Readiness Gate; without it, the gate is not opened. For lower-risk capabilities, the plan may be produced during Downstream with less formality. The calibration is the responsibility of each team's Runtime; the ProdOps Framework defines that the evaluation of which conditions apply belongs to prospective Assessment.
+The Reliability Plan is the second relevant output of the prospective dimension. It defines, before entry into Delivery, the reliability conditions the Product Capability needs to satisfy throughout the cycle: Initial SLIs, Reliability Rules, alert and escalation criteria. For high-risk Product Capabilities, the Reliability Plan may be required as a condition for entering the Readiness Gate; without it, the gate is not opened. For lower-risk Product Capabilities, the plan may be produced during Downstream with less formality. The calibration is the responsibility of each team's Runtime; the ProdOps Framework defines that the evaluation of which conditions apply belongs to prospective Assessment.
 
 ---
 
@@ -98,7 +98,7 @@ The Reliability Plan is the second relevant output of the prospective dimension.
 
 If the prospective dimension of Assessment prepares the environment for the decision, the retrospective dimension extracts learning from the completed cycle and feeds it into the next.
 
-Retrospective Assessment is activated after the completion of a full Downstream cycle: capability delivered, in Released state, with Release Trail finalized. Its focus is what the cycle produced as evidence about how the framework functioned, not about how the capability itself functioned. The capability works: the OBCs document that. What retrospective Assessment asks is: how did the cycle work? What does the history reveal about the health of the work system?
+Retrospective Assessment is activated after the completion of a full Downstream cycle: Product Capability delivered, in Released state, with Release Trail finalized. Its focus is what the cycle produced as evidence about how the framework functioned, not about how the Product Capability itself functioned. The Product Capability works: the OBCs document that. What retrospective Assessment asks is: how did the cycle work? What does the history reveal about the health of the work system?
 
 The primary sources for retrospective Assessment are the **Timelines** (the chronological records of each cycle) and the measurement artifacts the cycle generated: DORA Extended metrics, Gate Failure Rate (frequency with which Downstream gates were blocked before being satisfied), Decision Latency (time between available evidence and CommitmentGate convening), Discovery WIP (simultaneous experiments in progress).
 
@@ -148,7 +148,7 @@ Clarity about what Assessment does not do is as important as clarity about what 
 
 **Assessment does not write to Timelines.** Timelines are append-only records produced by the classic journeys: Discovery, Delivery, and Operation. Assessment reads Timelines; it never modifies them. This restriction is not technical: it is epistemological. The integrity of each journey's records is the condition that makes retrospective Assessment reliable. If Assessment could modify the records it reads, its outputs would lose the objective basis that distinguishes them from perception and subjective judgment.
 
-**Assessment does not decide a capability's fate.** It does not approve or reject the transformation of a Signal into Intent, does not vote at the CommitmentGate, does not authorize the start of Downstream. Those decisions belong to the trio (PM, Tech Lead, and Author). What Assessment does is prepare and qualify the informational context so that decisions are made with clarity, but the decision itself does not belong to Assessment.
+**Assessment does not decide a Product Capability's fate.** It does not approve or reject the transformation of a Signal into Intent, does not vote at the CommitmentGate, does not authorize the start of Downstream. Those decisions belong to the trio (PM, Tech Lead, and Author). What Assessment does is prepare and qualify the informational context so that decisions are made with clarity, but the decision itself does not belong to Assessment.
 
 **Assessment does not define what will be built.** That is the responsibility of Discovery and Delivery. Assessment evaluates the quality of the informational context that informs those decisions, not the merit of the decisions themselves.
 
@@ -160,7 +160,7 @@ Clarity about what Assessment does not do is as important as clarity about what 
 
 The Magazine Siará corpus contains a case that concretely illustrates Assessment's feedback mechanism.
 
-Business Signal BS-001 (the Signal that originated the Split Payment feature) did not emerge from nothing. It is traceable to observations from Operation: customers abandoning carts, contracts with partner suppliers being lost due to lack of payment flexibility. These observations are exactly the type of output that retrospective Assessment produces when it reads the Released state of existing capabilities and identifies gaps between promised behavior and actual market needs.
+Business Signal BS-001 (the Signal that originated the Split Payment feature) did not emerge from nothing. It is traceable to observations from Operation: customers abandoning carts, contracts with partner suppliers being lost due to lack of payment flexibility. These observations are exactly the type of output that retrospective Assessment produces when it reads the Released state of existing Product Capabilities and identifies gaps between promised behavior and actual market needs.
 
 PI-001 documents why BS-001 entered Downstream directly without prior Upstream: "demand confirmed through two independent channels, bounded scope, non-negotiable deadline." This justification is prospective Assessment in operation: the evaluation that the informational context was sufficient to dispense with pre-CommitmentGate exploration. The absence of Upstream does not mean the absence of evaluation: it means the evaluation concluded that residual uncertainty was acceptable for the commitment.
 

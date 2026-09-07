@@ -17,13 +17,13 @@ Both effects share the same cause: an implicit boundary produces either prematur
 
 ## What the CommitmentGate is
 
-The CommitmentGate is the gate that mediates the Upstream → Downstream transition. It is called by the trio (PM + Tech Lead + Author) when the substrate is sufficient to make the commitment decision. Any member of the trio may call it. The CommitmentGate does not create the commitment: it makes the trio's decision about the capability's fate verifiable and traceable.
+The CommitmentGate is the gate that mediates the Upstream → Downstream transition. It is called by the trio (PM + Tech Lead + Author) when the substrate is sufficient to make the commitment decision. Any member of the trio may call it. The CommitmentGate does not create the commitment: it makes the trio's decision about the Product Capability's fate verifiable and traceable.
 
 The CommitmentGate is a **universal mechanism**. It can occur at the end of an Upstream experiment cycle (when the Decision Package is complete), at any moment within Upstream (when the trio judges that partial evidence is already sufficient), or **at PIB entry directly from a Business Signal** — when the business context makes prior exploration unnecessary and the trio can decide to commit with the available substrate. What varies is the substrate the trio evaluates; the decision mechanism is identical in all cases.
 
 Three characteristics distinguish it from an ordinary planning meeting.
 
-The first: the CommitmentGate decides the *destiny of the capability* — whether it advances to Downstream, under what conditions, whether it returns for further exploration, or whether it is closed. It does not decide when to start building. An item may have production-quality code already written and still need to pass through the CommitmentGate before its capability commitment is formalized. The gate is not deciding whether the code exists; it is deciding what the organization will do with it.
+The first: the CommitmentGate decides the *destiny of the Product Capability* — whether it advances to Downstream, under what conditions, whether it returns for further exploration, or whether it is closed. It does not decide when to start building. An item may have production-quality code already written and still need to pass through the CommitmentGate before its Product Capability commitment is formalized. The gate is not deciding whether the code exists; it is deciding what the organization will do with it.
 
 The second: the Decision Package is an entry contract, not retroactive documentation. It must exist and have substance before the meeting — not be produced during it. A Decision Package with generically filled fields ("will be validated in Downstream") is Gate Theater (AP-D1): the form without the function.
 
@@ -39,11 +39,11 @@ Each outcome is an operationally distinct decision with specific mandatory actio
 
 **Promote**: the evidence justifies commitment. The OBC transitions from Draft to **Refining** (Moment 2), the BDD Feature is moved to the committed paths, and the item enters the **Icebox** with Downstream declared. Downstream begins: the Discovery journey runs in blocking mode, open questions from the Decision Package are resolved with dated decisions, and the **Readiness Gate** (Moment 3) verifies that the OBC has reached the **Committed** state before authorizing Planning and Bootstrap.
 
-**Promote with restriction**: part of the capability is ready for commitment; another part needs to continue in exploration. The formal commitment is assumed **exclusively** on the approved subset — the original capability, in its entirety, is not committed. The approved subset transitions to Downstream. The restricted parts remain in Upstream for a new experiment with a more specific hypothesis. The restriction is recorded explicitly in the upstream-trail: it is not a silent gap.
+**Promote with restriction**: part of the Product Capability is ready for commitment; another part needs to continue in exploration. The formal commitment is assumed **exclusively** on the approved subset — the original Product Capability, in its entirety, is not committed. The approved subset transitions to Downstream. The restricted parts remain in Upstream for a new experiment with a more specific hypothesis. The restriction is recorded explicitly in the upstream-trail: it is not a silent gap.
 
 **Requires another experiment**: the evidence produced is not sufficient for commitment, but the hypothesis is still valid. A new experiment is created with a more specific hypothesis or a different evidence-collection route. The current experiment is marked with the Decision Package indicating this outcome. This is not failure: it is the recognition that exploration needs one more iteration.
 
-The three outcomes above resolve the capability's destiny at the moment of the gate. The next two suspend the decision while an external condition is not satisfied: they are the only case in which the gate does not decide the capability's destiny, but records what prevents that decision.
+The three outcomes above resolve the Product Capability's destiny at the moment of the gate. The next two suspend the decision while an external condition is not satisfied: they are the only case in which the gate does not decide the Product Capability's destiny, but records what prevents that decision.
 
 **Awaiting business decision**: the trio cannot commit because there is a pending business decision (on budget, strategy, or from a stakeholder) that is outside the team's scope to resolve. The item is blocked in the Product Tracking List with the decision-maker identified and an expected resolution date. No new experiment is opened until the decision arrives. The gate was executed: the inability to decide the destiny is recorded with its cause.
 
@@ -64,7 +64,7 @@ graph TD
     DP --> REC["Recommended Decision\none of the 6 outcomes"]
     DP --> RSK["Updated risks\nresidual uncertainty declared acceptable"]
     DP --> OPP["Opportunities\nwhat the experiment revealed beyond the hypothesis"]
-    DP --> DS["Downstream Scope\nwhat the capability implies for Delivery"]
+    DP --> DS["Downstream Scope\nwhat the Product Capability implies for Delivery"]
     DS --> OBC_D["OBC Draft exists\nexistence only is mandatory"]
     DS --> BDD_D["BDD Draft readable\nneed not be in artifacts/bdd/"]
 ```
@@ -83,7 +83,7 @@ The canonical components:
 
 **Opportunities**: what the experiment revealed beyond the central hypothesis that may inform future decisions. When present, it must not be omitted from the Decision Package: it is knowledge that Upstream produced and that belongs in the record.
 
-**Downstream Scope**: what the capability implies in terms of Delivery. Two artifacts must exist as preconditions for entry to the gate: the OBC Draft (even if incomplete) and a readable BDD sketch. Completeness is not required at the CommitmentGate; existence is. The Downstream Scope section of the Decision Package references these artifacts and describes what will need to be built.
+**Downstream Scope**: what the Product Capability implies in terms of Delivery. Two artifacts must exist as preconditions for entry to the gate: the OBC Draft (even if incomplete) and a readable BDD sketch. Completeness is not required at the CommitmentGate; existence is. The Downstream Scope section of the Decision Package references these artifacts and describes what will need to be built.
 
 The substantive criterion that runs through all components is the same: verifiability by someone who did not participate in the experiment. If the trio member who was not in the experiment can read the Decision Package and reach the same conclusions, the package has substance. If additional verbal context is needed, it does not.
 
@@ -109,7 +109,7 @@ The CommitmentGate is designed specifically to make two opposite problems observ
 
 Perpetual Discovery: without a formal gate with a stopping criterion and defined participants, an experiment can continue indefinitely because nobody calls the decision. The CommitmentGate not only creates pressure to decide: it names the problem. When an experiment displays the diagnostic signs of Perpetual Discovery (addressed in Chapter 5), calling the CommitmentGate is the specific operational response — not to approve, but to decide what to do. The gate makes the state "in exploration without a stopping criterion" visible and treatable with a known set of outcomes.
 
-Premature Promotion: committing a capability before having sufficient evidence, whether due to deadline pressure or unverified optimism. The Decision Package as an entry contract — with the rule that the trio member who did not participate in the experiment must be able to read the artifacts and reach the same conclusions — is the protective mechanism. But what the gate adds beyond the Decision Package is the record: the outcome is documented, the participants are identified, the conditions under which the decision was made remain in the upstream-trail. No process prevents intentional adversarial behavior, but that behavior ceases to be invisible, and recorded behaviors are treatable in ways that invisible behaviors are not.
+Premature Promotion: committing a Product Capability before having sufficient evidence, whether due to deadline pressure or unverified optimism. The Decision Package as an entry contract — with the rule that the trio member who did not participate in the experiment must be able to read the artifacts and reach the same conclusions — is the protective mechanism. But what the gate adds beyond the Decision Package is the record: the outcome is documented, the participants are identified, the conditions under which the decision was made remain in the upstream-trail. No process prevents intentional adversarial behavior, but that behavior ceases to be invisible, and recorded behaviors are treatable in ways that invisible behaviors are not.
 
 The two problems are symmetric: Perpetual Discovery is exploration without pressure to decide; Premature Promotion is a decision without sufficient evidence. The CommitmentGate is the boundary that, by having a name, criteria, participants, and outcomes, transforms both from implicit states into recorded — and therefore treatable — states.
 
@@ -119,7 +119,7 @@ The two problems are symmetric: Perpetual Discovery is exploration without press
 
 The Magazine Siará corpus records a case that seems to contradict the protocol but in fact confirms it. Business Signal BS-001 (Split Payment, 2026-08-04) led to PI-001 with a CommitmentGate and Committed OBC on the same day — without any prior Upstream experiment.
 
-This is not Premature Promotion. It is the demonstration that the CommitmentGate decides the *destiny of the capability*, not the conclusion of an exploration phase. When demand is confirmed through two independent channels, the scope is bounded (Pix + Boleto for a partner launch), the deadline is non-negotiable (15 days), and the open questions are of the refinement type — not the central hypothesis — the Decision Package can be assembled without prior exploration: the evidence is in the business signal and the clarity of the scope.
+This is not Premature Promotion. It is the demonstration that the CommitmentGate decides the *destiny of the Product Capability*, not the conclusion of an exploration phase. When demand is confirmed through two independent channels, the scope is bounded (Pix + Boleto for a partner launch), the deadline is non-negotiable (15 days), and the open questions are of the refinement type — not the central hypothesis — the Decision Package can be assembled without prior exploration: the evidence is in the business signal and the clarity of the scope.
 
 PI-001 documents the justification for the Downstream outcome: "there is sufficient clarity about what to build; the 15-day deadline does not allow for Upstream exploration." This statement is the Decision Package in its most compressed form. The trio assessed that the residual uncertainty is acceptable to move forward, recorded the open questions as refinement, and made the commitment. This is not theater: it is the correct calibration of rigor to the context.
 
