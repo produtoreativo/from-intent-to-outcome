@@ -9,7 +9,7 @@
 
 Há uma distinção que o ProdOps introduz que não é sobre tecnologia de observabilidade: logs, métricas, traces, dashboards. É sobre o papel epistêmico que a observabilidade desempenha em cada modo de execução.
 
-No Downstream, observabilidade verifica o compromisso. SLOs, métricas DORA, Release Trail: todos existem para responder uma pergunta: o compromisso assumido está sendo honrado? A capability foi entregue com o comportamento prometido? As métricas de confiabilidade estão dentro dos limites acordados? O OBC em estado Operational representa precisamente isso: o contrato de negócio transitou para um estado em que seu cumprimento pode ser verificado em runtime.
+No Downstream, observabilidade verifica o compromisso. SLOs, métricas DORA, Release Trail: todos existem para responder uma pergunta: o compromisso assumido está sendo honrado? A capability foi entregue com o comportamento prometido? As métricas de confiabilidade estão dentro dos limites acordados? O OBC em estado Released representa precisamente isso: o contrato de negócio transitou para um estado em que seu cumprimento pode ser verificado em runtime.
 
 No Upstream, observabilidade torna a incerteza explícita. Os artefatos de evidência do experimento (denominados neste capítulo como Evidence Package), o Upstream Trail, o Decision Package existem para responder uma pergunta diferente: o que sabemos, o que não sabemos, e com que grau de confiança podemos afirmar cada coisa? No Upstream, a observabilidade não está verificando um compromisso: está documentando o estado do conhecimento sobre uma hipótese.
 
@@ -49,8 +49,8 @@ stateDiagram-v2
     Draft --> Refining : CommitmentGate Promover (Momento 2)
     Refining --> Committed : Readiness Gate aprovado (Momento 3)
     Committed --> InDelivery : Bootstrap.Started
-    InDelivery --> Operational : Promote concluído
-    Operational --> Archived : Depreciação / substituição
+    InDelivery --> Released : Promote concluído
+    Released --> Archived : Depreciação / substituição
     Refining --> Archived : CommitmentGate Descartar
     InDelivery --> Refining : Regressão Downstream para Upstream
 ```
@@ -63,7 +63,7 @@ stateDiagram-v2
 
 **In Delivery**: o OBC está associado a um item em execução no Iteration Plan. Mudanças de parâmetro são permitidas dentro da faixa de incerteza residual declarada; mudanças estruturais exigem regressão ao Upstream.
 
-**Operational**: o comportamento comprometido no OBC pode ser verificado em runtime. A capability está em produção com os Observable Events funcionando e as métricas de sucesso acompanhadas. O OBC em estado Operational registra que o comportamento comprometido está verificável em runtime — não que o outcome de negócio foi necessariamente alcançado, mas que a capability está operando com seus critérios observáveis ativos. Continua sendo atualizado conforme novas evidências operacionais (incidentes, métricas de uso, postmortems) refinam o entendimento sobre a capability.
+**Released**: o comportamento comprometido no OBC pode ser verificado em runtime. A capability está em produção com os Observable Events funcionando e as métricas de sucesso acompanhadas. O OBC em estado Released registra que o comportamento comprometido está verificável em runtime — não que o outcome de negócio foi necessariamente alcançado, mas que a capability está operando com seus critérios observáveis ativos. Continua sendo atualizado conforme novas evidências operacionais (incidentes, métricas de uso, postmortems) refinam o entendimento sobre a capability.
 
 **Archived**: a capability foi descontinuada ou substituída. O OBC permanece como registro histórico, não é deletado.
 

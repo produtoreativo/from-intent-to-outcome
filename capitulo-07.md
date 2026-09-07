@@ -17,7 +17,9 @@ Os dois efeitos têm a mesma causa: fronteira implícita produz ou promoção pr
 
 ## O que o CommitmentGate é
 
-O CommitmentGate é o gate que medeia a transição Upstream → Downstream. É convocado pelo trio (PM + Tech Lead + Autor) quando o Decision Package do experimento estiver pronto. Qualquer membro do trio pode convocar. O CommitmentGate não cria o compromisso: ele torna verificável e rastreável a decisão que o trio toma sobre o destino da capability.
+O CommitmentGate é o gate que medeia a transição Upstream → Downstream. É convocado pelo trio (PM + Tech Lead + Autor) quando o substrato é suficiente para tomar a decisão de compromisso. Qualquer membro do trio pode convocar. O CommitmentGate não cria o compromisso: ele torna verificável e rastreável a decisão que o trio toma sobre o destino da capability.
+
+O CommitmentGate é um **mecanismo universal**. Pode ocorrer ao final de um ciclo de experimentos Upstream (quando o Decision Package está completo), em qualquer momento dentro do Upstream (quando o trio julga que a evidência parcial já é suficiente), ou **na entrada do PIB diretamente a partir de um Business Signal** — quando o contexto de negócio dispensa exploração prévia e o trio pode decidir comprometer com o substrato disponível. O que varia é o substrato que o trio avalia; o mecanismo de decisão é idêntico em todos os casos.
 
 Três características o distinguem de uma reunião de planejamento ordinária.
 

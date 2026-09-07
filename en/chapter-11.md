@@ -141,9 +141,9 @@ The Magazine Siará corpus supports this thesis in four distinct ways.
 
 ## The next territory
 
-What the Magazine Siará corpus has not yet documented is the complete lifecycle of an OBC that is born with the Business Intent (from the Business Signal), traverses Upstream, crosses the CommitmentGate with a full human trio, enters Downstream with a Committed OBC and formalized BDD Feature, is delivered with a complete Release Trail, and reaches the Operational state with measured SLOs and a documented postmortem.
+What the Magazine Siará corpus has not yet documented is the complete lifecycle of an OBC that is born with the Business Intent (from the Business Signal), traverses Upstream, crosses the CommitmentGate with a full human trio, enters Downstream with a Committed OBC and formalized BDD Feature, is delivered with a complete Release Trail, and reaches the Released state with measured SLOs and a documented postmortem.
 
-This cycle exists in parts — some OBCs are already Operational; CommitmentGates have been executed but without the fully recorded trio; Release Trails exist but without the cycle traced all the way back to the original Business Signal. The complete composition in a single case traceable end-to-end is the territory that lies ahead.
+This cycle exists in parts — some OBCs are already Released; CommitmentGates have been executed but without the fully recorded trio; Release Trails exist but without the cycle traced all the way back to the original Business Signal. The complete composition in a single case traceable end-to-end is the territory that lies ahead.
 
 When that cycle is documented with the same level of rigor with which the 17 experiments documented Upstream, the framework will have taken the step that transforms a coherent theory with extensive evidence into a method with complete traceability from intent to outcome.
 

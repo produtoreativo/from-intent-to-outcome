@@ -135,6 +135,20 @@ Três experimentos sequenciais. Nenhuma linha de código de produção durante o
 
 ---
 
+## Coordenação do Upstream: o Plano de Experimento
+
+Quando um time opera múltiplos experimentos Upstream em paralelo, surge a necessidade de um artefato de coordenação. Esse é o **Plano de Experimento**: uma VIEW sobre os itens do Icebox que possuem um experimento ativo — hipótese formulada, `experiment.md` aberto, investigação em andamento.
+
+O Plano de Experimento não é um sprint. Não tem data de término nem sequência obrigatória. É um instrumento de visibilidade: responde à pergunta *"quais hipóteses estamos investigando agora?"* e torna visível o **Discovery WIP** — o número de experimentos Upstream ativos simultaneamente.
+
+O Plano de Experimento é o equivalente Upstream do Iteration Plan. O Iteration Plan governa o Downstream em execução (capabilities comprometidas, em Delivery). O Plano de Experimento governa o Upstream em exploração (hipóteses ativas, sem compromisso). Os dois são simétricos: um não substitui o outro; coexistem quando o time opera nos dois modos.
+
+Um item do Icebox pode existir sem aparecer no Plano de Experimento — por exemplo, quando aguarda uma decisão de negócio externa antes de abrir a investigação. O Plano de Experimento lista apenas os experimentos que estão ativos neste momento.
+
+Os três experimentos da Magazine Siará (EXP-001, EXP-002, EXP-003) seriam representados no Plano de Experimento durante suas respectivas janelas de investigação — e removidos quando o CommitmentGate registrou o outcome *Promover com restrição* e o item entrou no Icebox como Downstream Declared.
+
+---
+
 ## O que o Upstream não é responsável por fazer
 
 A definição do Upstream inclui uma lista explícita do que está fora de seu escopo. Implementar a capability comprometida com gates bloqueantes: isso é a jornada Delivery no modo Downstream. A distinção é de compromisso, não de atividade física: o Upstream pode produzir código funcional, prova de conceito, implementação em sandbox ou em produção controlada, sem que isso constitua a entrega de uma capability formalmente prometida. Comprometer e implementar tecnicamente a observabilidade da capability (SLOs, Observable Events, instrumentação em produção): isso é responsabilidade do Downstream. No Upstream, ODD orienta documentar o que precisa ser observável para testar a hipótese — sem que isso constitua compromisso de implementação. Produzir OBC Committed: isso é Discovery no Downstream. Produzir BDD completa em `artifacts/bdd/`: isso acontece antes do Readiness Gate. Garantir ausência de incerteza: incerteza residual aceitável é um critério válido de CommitmentGate.

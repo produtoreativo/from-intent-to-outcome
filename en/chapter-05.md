@@ -135,6 +135,20 @@ Three sequential experiments. No production code during any of them. A recommend
 
 ---
 
+## Coordinating Upstream: the Experiment Plan
+
+When a team runs multiple Upstream experiments in parallel, a coordination artifact becomes necessary. That is the **Experiment Plan**: a VIEW over the Icebox items that have an active experiment — a formulated hypothesis, an open `experiment.md`, an investigation in progress.
+
+The Experiment Plan is not a sprint. It has no deadline or mandatory sequence. It is a visibility instrument: it answers the question *"which hypotheses are we investigating right now?"* and makes **Discovery WIP** visible — the number of simultaneously active Upstream experiments.
+
+The Experiment Plan is the Upstream equivalent of the Iteration Plan. The Iteration Plan governs the Downstream in execution (committed capabilities, in Delivery). The Experiment Plan governs the Upstream in exploration (active hypotheses, no commitment). The two are symmetrical: one does not replace the other; they coexist when the team operates in both modes simultaneously.
+
+An item in the Icebox can exist without appearing in the Experiment Plan — for example, when it is waiting for an external business decision before opening an investigation. The Experiment Plan lists only the experiments that are active at this moment.
+
+The three Magazine Siará experiments (EXP-001, EXP-002, EXP-003) would be represented in the Experiment Plan during their respective investigation windows — and removed when the CommitmentGate recorded the *Promote with restriction* outcome and the item entered the Icebox as Downstream Declared.
+
+---
+
 ## What Upstream is not responsible for doing
 
 The definition of Upstream includes an explicit list of what is outside its scope. Implementing the committed capability with blocking gates: that is the Delivery journey in Downstream mode. The distinction is one of commitment, not physical activity: Upstream can produce functional code, proof of concept, implementation in sandbox or in controlled production, without that constituting the delivery of a formally promised capability. Committing and technically implementing the observability of the capability (SLOs, Observable Events, production instrumentation): that is the responsibility of Downstream. In Upstream, ODD means documenting what needs to be observable to test the hypothesis — without that constituting a commitment of implementation. Producing OBC Committed: that is Discovery in Downstream. Producing complete BDD in `prodops/artifacts/bdd/`: that happens before the Readiness Gate. Guaranteeing the absence of uncertainty: acceptable residual uncertainty is a valid CommitmentGate criterion.

@@ -58,7 +58,7 @@ O Reliability Plan é o segundo produto relevante da dimensão prospectiva. Ele 
 
 Se a dimensão prospectiva do Assessment prepara o ambiente para a decisão, a dimensão retrospectiva extrai aprendizado do ciclo encerrado — e alimenta o próximo.
 
-O Assessment retrospectivo é ativado após a conclusão de um ciclo Downstream completo: capability entregue, em estado Operational, com Release Trail finalizado. Seu foco é o que o ciclo produziu de evidência sobre o funcionamento do framework, não sobre o funcionamento da capability em si. A capability funciona: os OBCs documentam isso. O que o Assessment retrospectivo pergunta é: como o ciclo funcionou? O que o histórico revela sobre a saúde do sistema de trabalho?
+O Assessment retrospectivo é ativado após a conclusão de um ciclo Downstream completo: capability entregue, em estado Released, com Release Trail finalizado. Seu foco é o que o ciclo produziu de evidência sobre o funcionamento do framework, não sobre o funcionamento da capability em si. A capability funciona: os OBCs documentam isso. O que o Assessment retrospectivo pergunta é: como o ciclo funcionou? O que o histórico revela sobre a saúde do sistema de trabalho?
 
 As fontes primárias do Assessment retrospectivo são os **Timelines** — os registros cronológicos de cada ciclo — e os artefatos de medição que o ciclo gerou: DORA Extended metrics, Gate Failure Rate (frequência com que os gates do Downstream foram bloqueados antes de serem satisfeitos), Decision Latency (tempo entre evidência disponível e convocação do CommitmentGate), Discovery WIP (experimentos simultâneos em andamento).
 
@@ -70,7 +70,7 @@ A partir dessas fontes, o Assessment retrospectivo produz dois outputs. O primei
 | Gate Failure Rate | Frequência de bloqueios por gates não satisfeitos; sinal de rigor inadequado |
 | Decision Latency | Tempo entre evidência e CommitmentGate; sinal de Perpetual Discovery |
 | Postmortems | Incidentes em Operation; o que o Reliability Plan não previu |
-| OBC Operational | Comportamento real vs. comportamento prometido; desvios de SLO |
+| OBC Released | Comportamento real vs. comportamento prometido; desvios de SLO |
 
 ---
 
@@ -120,7 +120,7 @@ A clareza sobre o que o Assessment não faz é tão importante quanto a clareza 
 
 O corpus da Magazine Siará contém um caso que ilustra o mecanismo de retroalimentação do Assessment de forma concreta.
 
-O Business Signal BS-001 — o Signal que originou a feature Split Payment — não surgiu do nada. Ele é rastreável a observações de Operation: clientes abandonando carrinhos, contratos com fornecedores parceiros sendo perdidos por ausência de flexibilidade de pagamento. Essas observações são exatamente o tipo de output que o Assessment retrospectivo produz quando lê o estado Operational de capabilities existentes e identifica gaps entre o comportamento prometido e as necessidades reais do mercado.
+O Business Signal BS-001 — o Signal que originou a feature Split Payment — não surgiu do nada. Ele é rastreável a observações de Operation: clientes abandonando carrinhos, contratos com fornecedores parceiros sendo perdidos por ausência de flexibilidade de pagamento. Essas observações são exatamente o tipo de output que o Assessment retrospectivo produz quando lê o estado Released de capabilities existentes e identifica gaps entre o comportamento prometido e as necessidades reais do mercado.
 
 O PI-001 documenta por que BS-001 entrou diretamente em Downstream sem Upstream prévio: "demanda confirmada por dois canais independentes, escopo delimitado, deadline inegociável". Essa justificativa é Assessment prospectivo em operação — a avaliação de que o contexto informacional era suficiente para dispensar a exploração pré-CommitmentGate. A ausência de Upstream não significa ausência de avaliação: significa que a avaliação concluiu que a incerteza residual era aceitável para o compromisso.
 

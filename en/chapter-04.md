@@ -59,7 +59,7 @@ The Reliability Plan is the second relevant output of the prospective dimension.
 
 If the prospective dimension of Assessment prepares the environment for the decision, the retrospective dimension extracts learning from the completed cycle — and feeds it into the next.
 
-Retrospective Assessment is activated after the completion of a full Downstream cycle: capability delivered, in Operational state, with Release Trail finalized. Its focus is what the cycle produced as evidence about how the framework functioned, not about how the capability itself functioned. The capability works: the OBCs document that. What retrospective Assessment asks is: how did the cycle work? What does the history reveal about the health of the work system?
+Retrospective Assessment is activated after the completion of a full Downstream cycle: capability delivered, in Released state, with Release Trail finalized. Its focus is what the cycle produced as evidence about how the framework functioned, not about how the capability itself functioned. The capability works: the OBCs document that. What retrospective Assessment asks is: how did the cycle work? What does the history reveal about the health of the work system?
 
 The primary sources for retrospective Assessment are the **Timelines** — the chronological records of each cycle — and the measurement artifacts the cycle generated: DORA Extended metrics, Gate Failure Rate (frequency with which Downstream gates were blocked before being satisfied), Decision Latency (time between available evidence and CommitmentGate convening), Discovery WIP (simultaneous experiments in progress).
 
@@ -71,7 +71,7 @@ From these sources, retrospective Assessment produces two outputs. The first is 
 | Gate Failure Rate | Frequency of gate blocks not yet satisfied; signal of inadequate rigor |
 | Decision Latency | Time between evidence and CommitmentGate; signal of Perpetual Discovery |
 | Postmortems | Operation incidents; what the Reliability Plan did not anticipate |
-| OBC Operational | Actual behavior vs. promised behavior; SLO deviations |
+| OBC Released | Actual behavior vs. promised behavior; SLO deviations |
 
 ---
 
@@ -121,7 +121,7 @@ Clarity about what Assessment does not do is as important as clarity about what 
 
 The Magazine Siará corpus contains a case that concretely illustrates Assessment's feedback mechanism.
 
-Business Signal BS-001 — the Signal that originated the Split Payment feature — did not emerge from nothing. It is traceable to observations from Operation: customers abandoning carts, contracts with partner suppliers being lost due to lack of payment flexibility. These observations are exactly the type of output that retrospective Assessment produces when it reads the Operational state of existing capabilities and identifies gaps between promised behavior and actual market needs.
+Business Signal BS-001 — the Signal that originated the Split Payment feature — did not emerge from nothing. It is traceable to observations from Operation: customers abandoning carts, contracts with partner suppliers being lost due to lack of payment flexibility. These observations are exactly the type of output that retrospective Assessment produces when it reads the Released state of existing capabilities and identifies gaps between promised behavior and actual market needs.
 
 PI-001 documents why BS-001 entered Downstream directly without prior Upstream: "demand confirmed through two independent channels, bounded scope, non-negotiable deadline." This justification is prospective Assessment in operation — the evaluation that the informational context was sufficient to dispense with pre-CommitmentGate exploration. The absence of Upstream does not mean the absence of evaluation: it means the evaluation concluded that residual uncertainty was acceptable for the commitment.
 

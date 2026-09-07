@@ -17,7 +17,9 @@ Both effects share the same cause: an implicit boundary produces either prematur
 
 ## What the CommitmentGate is
 
-The CommitmentGate is the gate that mediates the Upstream → Downstream transition. It is called by the trio (PM + Tech Lead + Author) when the experiment's Decision Package is ready. Any member of the trio may call it. The CommitmentGate does not create the commitment: it makes the trio's decision about the capability's fate verifiable and traceable.
+The CommitmentGate is the gate that mediates the Upstream → Downstream transition. It is called by the trio (PM + Tech Lead + Author) when the substrate is sufficient to make the commitment decision. Any member of the trio may call it. The CommitmentGate does not create the commitment: it makes the trio's decision about the capability's fate verifiable and traceable.
+
+The CommitmentGate is a **universal mechanism**. It can occur at the end of an Upstream experiment cycle (when the Decision Package is complete), at any moment within Upstream (when the trio judges that partial evidence is already sufficient), or **at PIB entry directly from a Business Signal** — when the business context makes prior exploration unnecessary and the trio can decide to commit with the available substrate. What varies is the substrate the trio evaluates; the decision mechanism is identical in all cases.
 
 Three characteristics distinguish it from an ordinary planning meeting.
 
