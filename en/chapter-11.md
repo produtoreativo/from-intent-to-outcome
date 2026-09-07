@@ -4,11 +4,11 @@
 
 ## The living laboratory
 
-Magazine Siará is a Brazilian multi-tenant e-commerce company — fictional, but built with the texture of a real company. Its payments team operates the Payments API: a platform that decouples internal systems (Checkout, Order Management) from the external PSP (Asaas) and serves as the System of Record for all payment events. As a product, the Payments API was built entirely under the ProdOps framework from day one. As a laboratory, it is the most documented case available of a real system operating both modes — Upstream and Downstream — with verifiable evidence at each transition.
+Magazine Siará is a Brazilian multi-tenant e-commerce company (fictional, but built with the texture of a real company). Its payments team operates the Payments API: a platform that decouples internal systems (Checkout, Order Management) from the external PSP (Asaas) and serves as the System of Record for all payment events. As a product, the Payments API was built entirely under the ProdOps framework from day one. As a laboratory, it is the most documented case available of a real system operating both modes (Upstream and Downstream) with verifiable evidence at each transition.
 
 This coincidence is not accidental. ProdOps, as a framework, needs to be tested in real conditions to generate evidence that it works. The Payments API, as a product, needed a working framework that would make the construction process explicit enough to be examined and improved. Both needed each other.
 
-What makes the Magazine Siará laboratory different from a retrospective case study is that the artifact corpus was produced *during* the work, not documented afterward. The upstream-trails record what was discovered session by session. The OBCs show the real state of commitment at each date. The Release Trails document how each phase was honored. What this chapter examines is what this corpus demonstrates about the framework — and what it has not yet demonstrated.
+What makes the Magazine Siará laboratory different from a retrospective case study is that the artifact corpus was produced *during* the work, not documented afterward. The upstream-trails record what was discovered session by session. The OBCs show the real state of commitment at each date. The Release Trails document how each phase was honored. What this chapter examines is what this corpus demonstrates about the framework, and what it has not yet demonstrated.
 
 ![Magazine Siará corpus: dependency graph between experiments, committed OBCs, and Downstream iterations](../images/cap10-experiments-corpus.svg)
 *Figure 11. The Magazine Siará corpus as a dependency graph: 17 Upstream experiments, 12+ Committed OBCs, 15+ Downstream iterations with Release Trail.*
@@ -19,13 +19,13 @@ What makes the Magazine Siará laboratory different from a retrospective case st
 
 The Payments API's exploratory work began with a high-risk question: how should the API support the complete credit card lifecycle without crossing the PCI boundary or coupling Checkout to Asaas's contract?
 
-This question had no obvious answer. Credit card is not a single flow: it is at least three distinct product options — hosted entry (lower PCI risk), saved card reuse (better UX, requires token storage decisions), and transparent new card entry (highest control, highest compliance responsibility). Each option implied decisions outside the Payments team's scope: PCI scope approved by Security, token model decided by Architecture, UX defined with the Checkout team.
+This question had no obvious answer. Credit card is not a single flow: it is at least three distinct product options: hosted entry (lower PCI risk), saved card reuse (better UX, requires token storage decisions), and transparent new card entry (highest control, highest compliance responsibility). Each option implied decisions outside the Payments team's scope: PCI scope approved by Security, token model decided by Architecture, UX defined with the Checkout team.
 
-EXP-001 was the first experiment. It produced no production code. It produced the hypothesis formulation and the observability contract: the six flows of the credit card lifecycle with mandatory BDD scenarios and Observable Events, and the dimensions that could never appear in logs. EXP-002 mapped the Asaas sandbox Product Capabilities and limitations and confirmed the Validation Workbench as the simulation environment for scenarios the sandbox cannot reproduce deterministically — full provider scenario validation remains open, pending external evidence from Asaas. EXP-003 systematically compared the three integration models — hosted, tokenized, transparent — and produced the canonical Decision Package for the sequence: only hosted entry advances to Downstream; tokenized remains in Upstream awaiting Security and Checkout decisions; Direct Capture is out of scope for the first slice.
+EXP-001 was the first experiment. It produced no production code. It produced the hypothesis formulation and the observability contract: the six flows of the credit card lifecycle with mandatory BDD scenarios and Observable Events, and the dimensions that could never appear in logs. EXP-002 mapped the Asaas sandbox Product Capabilities and limitations and confirmed the Validation Workbench as the simulation environment for scenarios the sandbox cannot reproduce deterministically; full provider scenario validation remains open, pending external evidence from Asaas. EXP-003 systematically compared the three integration models (hosted, tokenized, transparent) and produced the canonical Decision Package for the sequence: only hosted entry advances to Downstream; tokenized remains in Upstream awaiting Security and Checkout decisions; Direct Capture is out of scope for the first slice.
 
-Three sequential experiments. No production code written during any of them. The credit card feature entered Downstream only when there was sufficient evidence to commit the Product Capability safely — and only the fraction that evidence supported.
+Three sequential experiments. No production code written during any of them. The credit card feature entered Downstream only when there was sufficient evidence to commit the Product Capability safely, and only the fraction that evidence supported.
 
-This is Upstream mode operated with full engineering rigor: not a low-discipline phase before the "real" engineering. A non-blocking commitment regime that produced verifiable knowledge — and a Decision Package that made the Commitment Gate possible.
+This is Upstream mode operated with full engineering rigor: not a low-discipline phase before the "real" engineering. A non-blocking commitment regime that produced verifiable knowledge, and a Decision Package that made the Commitment Gate possible.
 
 ---
 
@@ -35,17 +35,17 @@ The Payments API corpus records a different case. Business Signal BS-001, regist
 
 PM Eugenio assessed the situation and made a decision that is documented in PI-001:
 
-> *"Execution mode: Downstream — there is sufficient clarity about what to build; the 15-day deadline does not allow for Upstream exploration. OBC and BDD must be written immediately."*
+> *"Execution mode: Downstream, there is sufficient clarity about what to build; the 15-day deadline does not allow for Upstream exploration. OBC and BDD must be written immediately."*
 
-The justification is also documented: demand confirmed through two independent channels (end customers and sales team), scope bounded (Pix + Boleto), product owner identified, non-negotiable deadline, open questions are of the refinement type — they do not block the start.
+The justification is also documented: demand confirmed through two independent channels (end customers and sales team), scope bounded (Pix + Boleto), product owner identified, non-negotiable deadline, open questions are of the refinement type: they do not block the start.
 
-The Split Payment OBC was committed on the same day. The open questions in PI-001 — minimum and maximum amount per payment method, limit of payment methods per purchase, policy for expired Boleto with Pix already paid — were treated as refinement, not as uncertainty that would block the Commitment Gate. Risk RISK-SP-001 (Boleto expiry policy) was closed by PM Eugenio on the same day with an explicit decision: maintain pending state, manual investigation by operations, no automatic cancellation or Pix reversal.
+The Split Payment OBC was committed on the same day. The open questions in PI-001 (minimum and maximum amount per payment method, limit of payment methods per purchase, policy for expired Boleto with Pix already paid) were treated as refinement, not as uncertainty that would block the Commitment Gate. Risk RISK-SP-001 (Boleto expiry policy) was closed by PM Eugenio on the same day with an explicit decision: maintain pending state, manual investigation by operations, no automatic cancellation or Pix reversal.
 
-This case demonstrates something that EXP-001/002/003 did not: the Commitment Gate is not a ritual concluding exploration. It is a decision about the destiny of the Product Capability. When demand is confirmed, the scope is bounded, and the deadline is non-negotiable, the Commitment Gate can be executed on the same day as the Business Signal — and this is not a shortcut. It is the correct calibration of rigor to the type of commitment being assumed.
+This case demonstrates something that EXP-001/002/003 did not: the Commitment Gate is not a ritual concluding exploration. It is a decision about the destiny of the Product Capability. When demand is confirmed, the scope is bounded, and the deadline is non-negotiable, the Commitment Gate can be executed on the same day as the Business Signal, and this is not a shortcut. It is the correct calibration of rigor to the type of commitment being assumed.
 
 What PI-001 names as "without Upstream" is precise: there were no pre-Commitment Gate experiments. But there was no absence of discovery. After the Commitment Gate, the Split Payment traversed the Discovery journey in Downstream mode: the OBC transitioned to Refining, the six Observable Events with mandatory dimensions were defined, the BDD Feature was written before any production code, the open questions from PI-001 were resolved with dated decisions (RISK-SP-001 closed by PM Eugenio with an explicit decision on the expired Boleto policy). The Readiness Gate verified that these conditions were met before authorizing entry into Delivery. Planning generated the Iteration Plan. Only then did Bootstrap, the first phase of Delivery, begin.
 
-"Direct Downstream" does not mean discovery absent. It means discovery under commitment — in the Discovery journey executed in Downstream mode, with blocking rigor and Readiness Gate — rather than discovery before commitment, in Upstream mode.
+"Direct Downstream" does not mean discovery absent. It means discovery under commitment (in the Discovery journey executed in Downstream mode, with blocking rigor and Readiness Gate) rather than discovery before commitment, in Upstream mode.
 
 The feature was delivered in iteration v0.14.0 (DS-61), within the deadline.
 
@@ -53,11 +53,11 @@ The feature was delivered in iteration v0.14.0 (DS-61), within the deadline.
 
 ## Upstream parallel to Downstream: the EXP-007 case
 
-The Magazine Siará corpus records a pattern that the linear Upstream → Downstream narrative does not capture. During the Downstream execution for Split Payment — post-Commitment Gate of BS-001, with DS-61 in progress — the team opened a parallel Upstream experiment: EXP-007.
+The Magazine Siará corpus records a pattern that the linear Upstream → Downstream narrative does not capture. During the Downstream execution for Split Payment (post-Commitment Gate of BS-001, with DS-61 in progress) the team opened a parallel Upstream experiment: EXP-007.
 
-EXP-007 investigated questions that the speed of the BS-001 Commitment Gate had not resolved in depth: the priority combinations of payment methods (Pix + Boleto, Pix + Card), the adequate domain model for composition, the business events needed to track each combination, and the partial failure policy — what happens when one payment method fails while the other has already been confirmed. The Draft OBC for `payment-composition` was produced during the experiment.
+EXP-007 investigated questions that the speed of the BS-001 Commitment Gate had not resolved in depth: the priority combinations of payment methods (Pix + Boleto, Pix + Card), the adequate domain model for composition, the business events needed to track each combination, and the partial failure policy: what happens when one payment method fails while the other has already been confirmed. The Draft OBC for `payment-composition` was produced during the experiment.
 
-What makes this case rich as evidence is not the exception it represents: it is the operational normality it demonstrates. Downstream and Upstream coexisting for the same product at the same time. The Downstream maintained the delivery commitment (DS-61 within the deadline). The Upstream enriched the model operating under its own form of rigor — non-blocking, evidence-oriented. When EXP-007 concluded, the learning — including code produced during exploration — was promoted and integrated into the ongoing Downstream.
+What makes this case rich as evidence is not the exception it represents: it is the operational normality it demonstrates. Downstream and Upstream coexisting for the same product at the same time. The Downstream maintained the delivery commitment (DS-61 within the deadline). The Upstream enriched the model operating under its own form of rigor, non-blocking, evidence-oriented. When EXP-007 concluded, the learning (including code produced during exploration) was promoted and integrated into the ongoing Downstream.
 
 This is what ProdOps names as mode coexistence: two commitment regimes operating in parallel for distinct work objects. Not sequence. Not alternation. Coexistence.
 
@@ -69,7 +69,7 @@ What the Magazine Siará corpus demonstrates that no purely theoretical case stu
 
 The 12 committed OBCs in the corpus cover Product Capabilities ranging from the product core (Pix invoice creation, payment confirmation via webhook, invoice cancellation) to platform Product Capabilities (Datadog observability, DynamoDB optimization, production CI/CD pipeline). Each OBC has Observable Events with mandatory dimensions, Initial SLIs with numeric targets, Reliability Rules, and explicit decisions recorded with date and responsible party.
 
-The `create-invoice` OBC documents the idempotency requirement with precise semantics: the same key returns the same result, retries do not create duplicate charges. The `payment-confirmation` OBC documents the Asaas webhook correlation strategy by `providerPaymentId` or `externalReference`, with the `payment.confirmation.unmatched` event emitted when the webhook arrives without a matching invoice — observability of the failure case, not only the happy path.
+The `create-invoice` OBC documents the idempotency requirement with precise semantics: the same key returns the same result, retries do not create duplicate charges. The `payment-confirmation` OBC documents the Asaas webhook correlation strategy by `providerPaymentId` or `externalReference`, with the `payment.confirmation.unmatched` event emitted when the webhook arrives without a matching invoice: observability of the failure case, not only the happy path.
 
 The `split-payment-pix-boleto` OBC is the richest: six Observable Events with mandatory dimensions, five Initial SLIs (three at 100%, two at 99%), six Reliability Rules including the explicit rule about expired Boleto with Pix already paid, and four decisions documented with date and responsible party. The `splitPaymentId` is traceable in all logs. Financial data never appears in public error responses.
 
@@ -79,7 +79,7 @@ These are not proposed contracts. They are contracts operating in production, wi
 
 ## Diligence in real numbers
 
-EXP-014 tested a specific hypothesis: can the ProdOps Runtime automatically track the Delivery state of each Feature via CloudEvents, with Diligence capturing and attaching operational evidence to the same Work Item in real time — keeping GitHub Project and Datadog synchronized?
+EXP-014 tested a specific hypothesis: can the ProdOps Runtime automatically track the Delivery state of each Feature via CloudEvents, with Diligence capturing and attaching operational evidence to the same Work Item in real time, keeping GitHub Project and Datadog synchronized?
 
 The result was **53/53 PASS**.
 
@@ -93,9 +93,9 @@ This result has a direct consequence for the framework: Diligence is not a perio
 
 EXP-015 tested whether Delivery Skills can act as producers of operational events via a canonical CloudEvents 1.0 contract, regardless of which AI agent is executing the skill.
 
-The conformance suite ran 22 scenarios across 3 players (claude, codex, copilot). The result: **22/22 × 3 players — 100% conformance. Zero semantic divergences.**
+The conformance suite ran 22 scenarios across 3 players (claude, codex, copilot). The result: **22/22 × 3 players: 100% conformance. Zero semantic divergences.**
 
-What this demonstrates: when an explicit contract exists (the `prodops_emit_event` tool with the event catalog and emission rules), agents from different origins produce the same output. Interchangeability is not a property of agents; it is a property of the contract. An agent without an explicit contract diverges. An agent with an explicit contract converges — regardless of which agent it is.
+What this demonstrates: when an explicit contract exists (the `prodops_emit_event` tool with the event catalog and emission rules), agents from different origins produce the same output. Interchangeability is not a property of agents; it is a property of the contract. An agent without an explicit contract diverges. An agent with an explicit contract converges, regardless of which agent it is.
 
 An honesty note recorded in the EXP-015 report: the Codex and Copilot agents were not directly invoked in this validation. Conformance was verified by running the player-neutral tool with the corresponding player IDs. The suite validates the interface contract, not the direct behavior of the external agents. This record is itself an example of what a well-conducted Upstream produces: not just conclusions, but conclusions with a declared degree of confidence.
 
@@ -115,9 +115,9 @@ This result inverts the conventional order: the framework did not precede the pr
 
 Intellectual honesty requires specifying what the current repository does not demonstrate.
 
-**The Commitment Gate with a complete human trio.** The Commitment Gates documented in the corpus have the PM as the named business decision-maker, but the explicit distinction between the Author — the conductor of the experiment and author of the Decision Package — and the Tech Lead as an independent judge does not appear recorded with distinct identities. The mechanism works; the explicit separation of the three roles (Author as conductor, PM and Tech Lead as independent judges) as three distinct physical persons still needs to be documented in a real case.
+**The Commitment Gate with a complete human trio.** The Commitment Gates documented in the corpus have the PM as the named business decision-maker, but the explicit distinction between the Author (the conductor of the experiment and author of the Decision Package) and the Tech Lead as an independent judge does not appear recorded with distinct identities. The mechanism works; the explicit separation of the three roles (Author as conductor, PM and Tech Lead as independent judges) as three distinct physical persons still needs to be documented in a real case.
 
-**The Perpetual Discovery diagnostic signals (S1-S4) applied prospectively.** The signals were defined as detectable without subjective judgment. EXP-014 demonstrated that Diligence can track the Execution Space in real time. But the instrumentation that would proactively detect Perpetual Discovery — monitoring TTE, Decision Latency, and Discovery WIP — is still a proposal, not implemented as automatic collection.
+**The Perpetual Discovery diagnostic signals (S1-S4) applied prospectively.** The signals were defined as detectable without subjective judgment. EXP-014 demonstrated that Diligence can track the Execution Space in real time. But the instrumentation that would proactively detect Perpetual Discovery (monitoring TTE, Decision Latency, and Discovery WIP) is still a proposal, not implemented as automatic collection.
 
 **The Downstream → Upstream regression protocol in a real case.** No item from the 15 documented iterations needed to regress. The protocol is defined and is in the framework; its operational validity in a real divergence case still needs empirical evidence.
 
@@ -129,13 +129,13 @@ The central thesis is that Upstream and Downstream are execution modes that conf
 
 The Magazine Siará corpus supports this thesis in four distinct ways.
 
-**First:** EXP-001/002/003 demonstrates that the same type of work — high-rigor technical analysis, contract mapping, integration model exploration — can be executed in Upstream mode without producing a delivery commitment, even when the work has technical quality that could go to production. This proves that the mode distinction is not a quality distinction. It is a commitment distinction.
+**First:** EXP-001/002/003 demonstrates that the same type of work (high-rigor technical analysis, contract mapping, integration model exploration) can be executed in Upstream mode without producing a delivery commitment, even when the work has technical quality that could go to production. This proves that the mode distinction is not a quality distinction. It is a commitment distinction.
 
-**Second:** BS-001/PI-001/Split Payment demonstrates that the Commitment Gate does not require prior exploration. When demand is confirmed and scope is bounded, the Commitment Gate is executed on the same day — and this is correct. The framework does not impose exploration where exploration is not necessary. It requires that the mode decision be explicit and justified.
+**Second:** BS-001/PI-001/Split Payment demonstrates that the Commitment Gate does not require prior exploration. When demand is confirmed and scope is bounded, the Commitment Gate is executed on the same day, and this is correct. The framework does not impose exploration where exploration is not necessary. It requires that the mode decision be explicit and justified.
 
-**Third:** the 53/53 from EXP-014 and the 22/22 × 3 players from EXP-015 demonstrate that the mode problem affects not only human teams, but any agency system operating with artifact-provided guidance. When the contract is explicit (OBC with Observable Events, tool with canonical catalog), agents converge. When the contract is absent or inconsistent, agents diverge. The solution is to make the contract verifiable in the artifacts themselves — not to enumerate it.
+**Third:** the 53/53 from EXP-014 and the 22/22 × 3 players from EXP-015 demonstrate that the mode problem affects not only human teams, but any agency system operating with artifact-provided guidance. When the contract is explicit (OBC with Observable Events, tool with canonical catalog), agents converge. When the contract is absent or inconsistent, agents diverge. The solution is to make the contract verifiable in the artifacts themselves, not to enumerate it.
 
-**Fourth:** `status: self` demonstrates that Upstream does not only produce features. When conducted with evidence rigor and declared falsification criteria, it can produce replicable infrastructure — ProdOps Framework v1.14.0 installable in any repository.
+**Fourth:** `status: self` demonstrates that Upstream does not only produce features. When conducted with evidence rigor and declared falsification criteria, it can produce replicable infrastructure: ProdOps Framework v1.14.0 installable in any repository.
 
 ---
 
@@ -143,7 +143,7 @@ The Magazine Siará corpus supports this thesis in four distinct ways.
 
 What the Magazine Siará corpus has not yet documented is the complete lifecycle of an OBC that is born with the Business Intent (from the Business Signal), traverses Upstream, crosses the Commitment Gate with a full human trio, enters Downstream with a Committed OBC and formalized BDD Feature, is delivered with a complete Release Trail, and reaches the Released state with measured SLOs and a documented postmortem.
 
-This cycle exists in parts — some OBCs are already Released; Commitment Gates have been executed but without the fully recorded trio; Release Trails exist but without the cycle traced all the way back to the original Business Signal. The complete composition in a single case traceable end-to-end is the territory that lies ahead.
+This cycle exists in parts: some OBCs are already Released; Commitment Gates have been executed but without the fully recorded trio; Release Trails exist but without the cycle traced all the way back to the original Business Signal. The complete composition in a single case traceable end-to-end is the territory that lies ahead.
 
 When that cycle is documented with the same level of rigor with which the 17 experiments documented Upstream, the framework will have taken the step that transforms a coherent theory with extensive evidence into a method with complete traceability from intent to outcome.
 

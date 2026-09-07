@@ -90,7 +90,7 @@ O que ainda falta (e é a fronteira atual da implementação) é a documentaçã
 
 O EXP-015 testou uma hipótese que este capítulo formula como teoria: quando o contrato de interface é explícito e verificável, agentes de diferentes origens produzem o mesmo output.
 
-A suite de conformidade do EXP-015 executou 22 cenários em 3 players (claude, codex, copilot). O resultado: **22/22 × 3 players — 100% de conformidade. Zero divergências semânticas entre players.**
+A suite de conformidade do EXP-015 executou 22 cenários em 3 players (claude, codex, copilot). O resultado: **22/22 × 3 players: 100% de conformidade. Zero divergências semânticas entre players.**
 
 Os 22 checks cobriram: disponibilidade da tool e descoberta do skill, emissão correta do evento Bootstrap.Started (exit code, status JSON, event-type, presença no timeline, sincronização GitHub/Datadog), emissão correta do Bootstrap.Completed, correlação entre os dois eventos, idempotência (segunda chamada com mesmo correlation-id retorna status:skipped, exit 4), rejeição de inputs inválidos (campos catalog-owned → exit 1, status:error), e sanitização de segredos (token não aparece no output nem no timeline).
 

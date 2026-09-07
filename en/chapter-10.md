@@ -21,11 +21,11 @@ This does not mean agents are incapable of operating with mode sensitivity. It m
 
 In the absence of an explicit mode interface, AI agents tend to default to one of two extremes, and both produce real problems.
 
-**Indiscriminate maximum rigor**: the agent treats all work as if it were Downstream — applying Gates where they don't belong, requiring artifacts that don't yet exist, blocking exploration for lack of formal acceptance criteria. In Upstream mode, this is destructive: the discipline of Upstream is the freedom to explore with rigor in the evidence, not in artifact bureaucracy. An agent that stops to require a Committed OBC during hypothesis exploration is applying the wrong rigor at the wrong time.
+**Indiscriminate maximum rigor**: the agent treats all work as if it were Downstream: applying Gates where they don't belong, requiring artifacts that don't yet exist, blocking exploration for lack of formal acceptance criteria. In Upstream mode, this is destructive: the discipline of Upstream is the freedom to explore with rigor in the evidence, not in artifact bureaucracy. An agent that stops to require a Committed OBC during hypothesis exploration is applying the wrong rigor at the wrong time.
 
-**Total permissiveness**: the agent treats all work as if it were Upstream — executing without verifying preconditions, advancing without Gates, implementing without checking whether the OBC is Committed or whether the BDD exists. In Downstream mode, this is risky: the commitment has been made and the Gates exist to protect it. An agent that implements without verifying the Readiness Gate is executing without the structure the commitment requires.
+**Total permissiveness**: the agent treats all work as if it were Upstream: executing without verifying preconditions, advancing without Gates, implementing without checking whether the OBC is Committed or whether the BDD exists. In Downstream mode, this is risky: the commitment has been made and the Gates exist to protect it. An agent that implements without verifying the Readiness Gate is executing without the structure the commitment requires.
 
-The two failure modes are symmetric and equally problematic. Indiscriminate maximum rigor blocks learning. Total permissiveness destroys the traceability of commitment. In both cases, the agent is causing damage — not from technical incompetence, but from absence of mode context.
+The two failure modes are symmetric and equally problematic. Indiscriminate maximum rigor blocks learning. Total permissiveness destroys the traceability of commitment. In both cases, the agent is causing damage, not from technical incompetence, but from absence of mode context.
 
 ---
 
@@ -54,7 +54,7 @@ The formal separation work between execution modes identified three types of con
 
 **Structural contamination**: the AGENTS.md and `prodops/README.md` used "Journey: Upstream" and "Journey: Discovery / Upstream," mapping Upstream as a journey instead of a mode. An agent reading these documents without also reading `execution-model/README.md` learns an incorrect definition.
 
-**Conceptual contamination**: the `upstream/SKILL.md` mentioned "committed OBCs" and "committed BDD Features" as Upstream targets — states exclusive to Downstream that Upstream is not authorized to require.
+**Conceptual contamination**: the `upstream/SKILL.md` mentioned "committed OBCs" and "committed BDD Features" as Upstream targets: states exclusive to Downstream that Upstream is not authorized to require.
 
 **Contamination by absence**: the phase skills (Bootstrap, Hack, Sync, Finish, Ship, Validate, Promote) described only Downstream behavior, without documenting how each phase behaves with advisory rigor in Upstream. An Upstream agent wanting to use the `/hack` skill in advisory mode has no guidance on how to do so.
 
@@ -90,7 +90,7 @@ What is still missing (and is the current boundary of the implementation) is the
 
 EXP-015 tested a hypothesis that this chapter formulates as theory: when the interface contract is explicit and verifiable, agents from different origins produce the same output.
 
-The EXP-015 conformance suite ran 22 scenarios across 3 players (claude, codex, copilot). The result: **22/22 × 3 players — 100% conformance. Zero semantic divergences between players.**
+The EXP-015 conformance suite ran 22 scenarios across 3 players (claude, codex, copilot). The result: **22/22 × 3 players: 100% conformance. Zero semantic divergences between players.**
 
 The 22 checks covered: tool availability and skill discovery, correct emission of Bootstrap.Started (exit code, status JSON, event-type, presence in timeline, GitHub/Datadog synchronization), correct emission of Bootstrap.Completed, correlation between both events, idempotency (second call with same correlation-id returns status:skipped, exit 4), rejection of invalid inputs (catalog-owned fields → exit 1, status:error), and secret sanitization (token does not appear in output or timeline).
 
@@ -106,7 +106,7 @@ There is a hypothesis underlying this book that the EXP-015 results address part
 
 The idea is that an agent with access to the content of this book as session context would have the mode sensitivity that is not acquired across sessions: it would know how to distinguish, from the description of the work, whether it is operating in Upstream or Downstream, and would calibrate its rigor accordingly.
 
-EXP-015 answers a subset of this hypothesis: when the event emission contract is explicit and verifiable, agents converge. What has not yet been tested is whether the conceptual distinction between modes — not just the emission protocol, but the calibration of rigor in exploration versus delivery work — transfers to better judgment by agents who have access to the framework as context. The first step is demonstrated: explicit and verifiable work reception protocol, event emission contract with 22/22 × 3 player conformance. The second step (instrumenting phase skills with mode-specific behavior) is planned. The third step (verifying whether formal knowledge about modes transfers to rigor calibration outside the structured protocol) remains to be investigated.
+EXP-015 answers a subset of this hypothesis: when the event emission contract is explicit and verifiable, agents converge. What has not yet been tested is whether the conceptual distinction between modes (not just the emission protocol, but the calibration of rigor in exploration versus delivery work) transfers to better judgment by agents who have access to the framework as context. The first step is demonstrated: explicit and verifiable work reception protocol, event emission contract with 22/22 × 3 player conformance. The second step (instrumenting phase skills with mode-specific behavior) is planned. The third step (verifying whether formal knowledge about modes transfers to rigor calibration outside the structured protocol) remains to be investigated.
 
 ---
 
