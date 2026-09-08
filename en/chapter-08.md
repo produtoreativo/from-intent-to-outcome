@@ -41,54 +41,7 @@ The Observable Business Contract is not a technical SLA: it is the declaration t
 
 The ontological starting point is relevant: commitment is the causal variable. The OBC states do not determine the mode nor produce the commitment: they make the commitment observable. What causes an OBC to transition between states is the satisfaction of criteria that reflect the maturity degree of the current commitment, not a decision to change the mode of work. The mode is the cause; the states are the verifiable record of where the commitment is in its lifecycle.
 
-The OBC progresses through six states over the lifecycle of a Product Capability:
-
-```mermaid
-stateDiagram-v2
-    direction LR
-    [*] --> Draft : Business Signal → Business Intent
-    Draft --> Refining : Commitment Gate Promote (Moment 2)
-    Refining --> Readiness : Readiness Gate approved (Moment 3)
-    Readiness --> InDelivery : Bootstrap.Started
-    InDelivery --> Released : Promote completed
-    Released --> Archived : Deprecation / replacement
-    Draft --> Archived : Commitment Gate Discard
-    Readiness --> Refining : Regression before Bootstrap
-    InDelivery --> Refining : Regression during Delivery
-
-    note right of Draft
-        VIEW Icebox
-        + Experiment Plan
-        (if active experiment)
-    end note
-    note right of Refining
-        VIEW Icebox
-        Downstream Declared
-    end note
-    note right of Readiness
-        VIEW Iteration Backlog
-    end note
-    note right of InDelivery
-        Iteration Plan
-    end note
-    note right of Released
-        Operation
-    end note
-```
-
-**Draft**: born at the transition from a Business Signal to a Business Intent. In Upstream, it is memory of learning: it can be updated continuously, it can remain incomplete, it does not block experiments. The absence of completed fields in Draft is expected, not a failure.
-
-**Refining**: the state the OBC assumes at the start of Downstream (Moment 2 of the transition, after the Commitment Gate with outcome Promote). The fields begin to be refined with real substance: `expected_outcome` ceases to be vague, `success_metrics` gains baseline and target, `acceptance_criteria` becomes verifiable by third parties.
-
-**Readiness**: certifies that Downstream Discovery produced a complete contract verifiable by third parties. Downstream mode and blocking rigor have been active since Promote (Moment 2, when the OBC transitioned from Draft to Refining); the Readiness state does not represent the change of regime, but the conclusion of the Icebox period. Every acceptance criterion is verifiable without additional verbal context. Success metrics have baseline and target. Observable Events are defined with measurable dimensions. The Reliability Plan (when required by risk triggers) is present. An OBC that has not reached Readiness does not pass through the Readiness Gate: this is the protection against Phantom BDD and Proxy Commitment.
-
-**In Delivery**: the OBC is associated with an item in execution in the Iteration Plan. Parameter changes are permitted within the declared residual uncertainty range; structural changes require regression to Upstream.
-
-**Released**: the committed behavior in the OBC can be verified at runtime. The Product Capability is in production with the Observable Events functioning and success metrics tracked. The OBC in Released state records that the committed behavior is verifiable at runtime, not that the business outcome has necessarily been achieved, but that the Product Capability is operating with its observable criteria active. It continues to be updated as new operational evidence (incidents, usage metrics, postmortems) refines the understanding of the Product Capability.
-
-**Archived**: the Product Capability was discontinued or replaced. The OBC remains as a historical record; it is not deleted.
-
-State progression is not linear by decree: it is verified. What causes an OBC to transition from Refining to Readiness is not a subjective decision by the Product Manager; it is the satisfaction of verifiable criteria that Diligence can audit.
+The complete map of the six OBC states (Draft, Refining, Readiness, In Delivery, Released, Archived) with their transitions and conditions is in Chapter 3, where the lifecycle of commitment is introduced. What matters here is the epistemic role of those states: each transition is verifiable because the OBC produces observable evidence that the criteria have been satisfied. Without that verifiability, the states would be declaratory labels, not auditable records.
 
 ---
 

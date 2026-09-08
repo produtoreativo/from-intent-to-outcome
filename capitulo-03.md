@@ -201,11 +201,11 @@ O artefato é o **OBC** (Observable Business Contract). O mecanismo é o **Commi
 
 O OBC nasce na transição de um Business Signal para um Business Intent: a partir desse momento, ele sempre existe. O modo determina sob qual regime o OBC opera, não quando ele nasce. No Upstream, o OBC está em estado **Draft**: incompleto é aceitável, pode ser alterado livremente, não bloqueia experimentos. O Upstream usa o OBC como memória do aprendizado acumulado: o que já se sabe sobre a Product Capability, quais hipóteses foram respondidas, quais questões permanecem abertas.
 
-O Commitment Gate é o Gate que avalia se a evidência acumulada justifica transitar o OBC de **Draft** para **Refining** (Momento 2). O Decision Package (artefato com hipóteses respondidas, riscos identificados e recomendação formal) é o input do Gate. Um trio executa o Commitment Gate: o **PM**, o **Tech Lead** e o **Autor** (quem conduziu o experimento e preparou o package; o PM e o Tech Lead funcionam como leitores independentes). O framework define seis outcomes canônicos: o outcome Promover transita o OBC de Draft para Refining, declara o Downstream e abre a jornada Discovery em modo bloqueante; o OBC alcança o estado Committed somente no Readiness Gate (Momento 3). Os demais outcomes mantêm o item em Upstream, descartam a Product Capability ou suspendem o trabalho até que uma condição externa seja resolvida.
+O Commitment Gate é o Gate que avalia se a evidência acumulada justifica transitar o OBC de **Draft** para **Refining** (Momento 2). O Decision Package (artefato com hipóteses respondidas, riscos identificados e recomendação formal) é o input do Gate. Um trio executa o Commitment Gate: o **PM**, o **Tech Lead** e o **Autor** (quem conduziu o experimento e preparou o package; o PM e o Tech Lead funcionam como leitores independentes). O framework define seis outcomes canônicos: o outcome Promover transita o OBC de Draft para Refining, declara o Downstream e abre a jornada Discovery em modo bloqueante; o OBC alcança o estado Readiness somente no Readiness Gate (Momento 3). Os demais outcomes mantêm o item em Upstream, descartam a Product Capability ou suspendem o trabalho até que uma condição externa seja resolvida.
 
 O Commitment Gate é um **mecanismo universal**: não está restrito ao final de um experimento Upstream. Pode ocorrer em qualquer momento: logo após a abertura de uma investigação (se o trio julgar que a hipótese é clara o suficiente para comprometer antes de explorar mais), durante um experimento (quando evidências parciais já satisfazem o Evidence Threshold), ou ao final (quando o Decision Package está completo). Pode também ocorrer **na entrada do PIB diretamente a partir de um Business Signal**, quando o contexto de negócio é suficientemente claro e nenhum experimento Upstream é necessário. Nesse caso, o Business Signal chega ao trio com substrato suficiente para o Gate: o trio avalia, o OBC transita de Draft para Refining, e o item entra no Icebox com o Downstream já declarado. O diagrama abaixo representa os dois caminhos.
 
-No Downstream, o OBC Committed é o contrato sob o qual o compromisso foi assumido. Os Gates bloqueantes que governam a jornada Delivery verificam o que está no OBC: os Observable Events esperados, os critérios de aceite mensuráveis, os Initial SLIs com targets numéricos. Sem OBC Committed, nenhuma fase de Delivery começa. Com ele, o rigor passa de advisory para bloqueante, não como uma preferência, mas como consequência operacional do compromisso assumido.
+No Downstream, o OBC Readiness certifica que o refinamento no Icebox está concluído e que o contrato está verificável por terceiros. O rigor bloqueante está ativo desde o Promover (Momento 1): é o modo Downstream que determina o regime, não o estado do OBC. O que o estado Readiness representa não é a mudança de regime, mas a certificação de que a Discovery Downstream produziu um contrato completo. Os Gates bloqueantes que governam a jornada Delivery verificam o que está no OBC: os Observable Events esperados, os critérios de aceite mensuráveis, os Initial SLIs com targets numéricos. Sem OBC Readiness, nenhuma fase de Delivery começa.
 
 ```mermaid
 graph LR
@@ -216,13 +216,62 @@ graph LR
     CG -->|"Promover"| C["OBC Refining\n(Downstream Declarado / Momento 2)"]
     CG -->|"outros outcomes"| X["Upstream / Descarte /\nAguardar"]
     C --> D["Readiness Gate\n(Momento 3)"]
-    D --> E["OBC Committed\n→ Iteration Plan"]
+    D --> E["OBC Readiness\n→ Iteration Plan"]
     E --> F["Bootstrap"]
 ```
 
-**O rigor é configurável, mas sua configuração não é uma preferência.** O Framework ProdOps prescreve o template canônico do Commitment Gate: os artefatos obrigatórios, os participantes do trio, os seis outcomes. O Runtime é o que o time instala e adapta ao seu contexto operacional: quais verificações adicionais se aplicam ao tipo de trabalho que o time faz, com qual profundidade, sob quais condições o Reliability Plan é exigido. Essa adaptação é legítima e recomendada. O que não é adaptável é o princípio: sem Commitment Gate com Decision Package avaliado, a transição do OBC de Draft para Refining (e, consequentemente, para Committed no Readiness Gate) não acontece. O que muda entre times é como o Gate é calibrado, não se ele existe.
+O ciclo de vida completo do OBC inclui as transições de regressão e a rota de descarte:
 
-Com o OBC como artefato e o Commitment Gate como mecanismo, os três capítulos seguintes têm referência concreta: o Capítulo 4 descreve o Assessment, a jornada de governança informacional que acompanha todo o ciclo, do Business Signal à retroalimentação pós-Operation; o Capítulo 5 descreve o Upstream, o regime sob o qual o OBC acumula evidência antes do Gate; e o Capítulo 6 descreve o Downstream, o regime sob o qual o OBC Committed é honrado com Gates bloqueantes até a promoção da Product Capability.
+```mermaid
+stateDiagram-v2
+    direction LR
+    [*] --> Draft : Business Signal → Business Intent
+    Draft --> Refining : Commitment Gate Promover (Momento 2)
+    Refining --> Readiness : Readiness Gate aprovado (Momento 3)
+    Readiness --> InDelivery : Bootstrap.Started
+    InDelivery --> Released : Promote concluído
+    Released --> Archived : Depreciação / substituição
+    Draft --> Archived : Commitment Gate Descartar
+    Readiness --> Refining : Regressão antes do Bootstrap
+    InDelivery --> Refining : Regressão durante Delivery
+
+    note right of Draft
+        VIEW Icebox
+        + Experiment Plan
+        (se experimento ativo)
+    end note
+    note right of Refining
+        VIEW Icebox
+        Downstream Declared
+    end note
+    note right of Readiness
+        VIEW Iteration Backlog
+    end note
+    note right of InDelivery
+        Iteration Plan
+    end note
+    note right of Released
+        Operation
+    end note
+```
+
+**Draft**: nasce na transição de um Business Signal para um Business Intent. No Upstream, é memória do aprendizado: pode ser atualizado continuamente, pode permanecer incompleto, não bloqueia experimentos. A ausência de campos completos no Draft é esperada, não uma falha.
+
+**Refining**: o estado que o OBC assume no início do Downstream (Momento 2, após o Commitment Gate com outcome Promover). Os campos começam a ser refinados com substância real: `expected_outcome` deixa de ser vago, `success_metrics` ganha baseline e target, `acceptance_criteria` torna-se verificável por terceiros.
+
+**Readiness**: certifica que a Discovery Downstream produziu um contrato completo e verificável por terceiros. O modo Downstream e o rigor bloqueante estão ativos desde o Promover (Momento 2); o estado Readiness não representa a mudança de regime, mas a conclusão do período de Icebox. Todo critério de aceite é verificável sem contexto verbal adicional. As métricas de sucesso têm baseline e target. Os Observable Events estão definidos com dimensões mensuráveis. Um OBC que não atingiu Readiness não passa pelo Readiness Gate: essa é a proteção contra o Phantom BDD e o Proxy Commitment.
+
+**In Delivery**: o OBC está associado a um item em execução no Iteration Plan. Mudanças de parâmetro são permitidas dentro da faixa de incerteza residual declarada; mudanças estruturais exigem regressão ao Upstream.
+
+**Released**: o comportamento comprometido no OBC pode ser verificado em runtime. A Product Capability está em produção com os Observable Events funcionando e as métricas de sucesso acompanhadas. O OBC em estado Released registra que o comportamento comprometido está verificável em runtime, não que o outcome de negócio foi necessariamente alcançado. Continua sendo atualizado conforme novas evidências operacionais (incidentes, métricas de uso, postmortems) refinam o entendimento sobre a Product Capability.
+
+**Archived**: a Product Capability foi descontinuada ou substituída. O OBC permanece como registro histórico, não é deletado.
+
+A progressão de estados não é linear por decreto: é verificada. O que faz um OBC transitar de Refining para Readiness não é uma decisão subjetiva do Product Manager; é a satisfação de critérios verificáveis que a Diligence pode auditar.
+
+**O rigor é configurável, mas sua configuração não é uma preferência.** O Framework ProdOps prescreve o template canônico do Commitment Gate: os artefatos obrigatórios, os participantes do trio, os seis outcomes. O Runtime é o que o time instala e adapta ao seu contexto operacional: quais verificações adicionais se aplicam ao tipo de trabalho que o time faz, com qual profundidade, sob quais condições o Reliability Plan é exigido. Essa adaptação é legítima e recomendada. O que não é adaptável é o princípio: sem Commitment Gate com Decision Package avaliado, a transição do OBC de Draft para Refining (e, consequentemente, para Readiness no Readiness Gate) não acontece. O que muda entre times é como o Gate é calibrado, não se ele existe.
+
+Com o OBC como artefato e o Commitment Gate como mecanismo, os três capítulos seguintes têm referência concreta: o Capítulo 4 descreve o Assessment, a jornada de governança informacional que acompanha todo o ciclo, do Business Signal à retroalimentação pós-Operation; o Capítulo 5 descreve o Upstream, o regime sob o qual o OBC acumula evidência antes do Gate; e o Capítulo 6 descreve o Downstream, o regime sob o qual o OBC Readiness é honrado com Gates bloqueantes até a promoção da Product Capability.
 
 ---
 

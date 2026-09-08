@@ -220,6 +220,55 @@ graph LR
     E --> F["Bootstrap"]
 ```
 
+The complete OBC lifecycle includes regression transitions and the discard route:
+
+```mermaid
+stateDiagram-v2
+    direction LR
+    [*] --> Draft : Business Signal → Business Intent
+    Draft --> Refining : Commitment Gate Promote (Moment 2)
+    Refining --> Readiness : Readiness Gate approved (Moment 3)
+    Readiness --> InDelivery : Bootstrap.Started
+    InDelivery --> Released : Promote completed
+    Released --> Archived : Deprecation / replacement
+    Draft --> Archived : Commitment Gate Discard
+    Readiness --> Refining : Regression before Bootstrap
+    InDelivery --> Refining : Regression during Delivery
+
+    note right of Draft
+        VIEW Icebox
+        + Experiment Plan
+        (if active experiment)
+    end note
+    note right of Refining
+        VIEW Icebox
+        Downstream Declared
+    end note
+    note right of Readiness
+        VIEW Iteration Backlog
+    end note
+    note right of InDelivery
+        Iteration Plan
+    end note
+    note right of Released
+        Operation
+    end note
+```
+
+**Draft**: born at the transition from a Business Signal to a Business Intent. In Upstream, it is memory of learning: it can be updated continuously, it can remain incomplete, it does not block experiments. The absence of completed fields in Draft is expected, not a failure.
+
+**Refining**: the state the OBC assumes at the start of Downstream (Moment 2, after the Commitment Gate with outcome Promote). The fields begin to be refined with real substance: `expected_outcome` ceases to be vague, `success_metrics` gains baseline and target, `acceptance_criteria` becomes verifiable by third parties.
+
+**Readiness**: certifies that Downstream Discovery produced a complete contract verifiable by third parties. Downstream mode and blocking rigor have been active since Promote (Moment 2); the Readiness state does not represent the change of regime, but the conclusion of the Icebox period. Every acceptance criterion is verifiable without additional verbal context. Success metrics have baseline and target. Observable Events are defined with measurable dimensions. An OBC that has not reached Readiness does not pass through the Readiness Gate: this is the protection against Phantom BDD and Proxy Commitment.
+
+**In Delivery**: the OBC is associated with an item in execution in the Iteration Plan. Parameter changes are permitted within the declared residual uncertainty range; structural changes require regression to Upstream.
+
+**Released**: the committed behavior in the OBC can be verified at runtime. The Product Capability is in production with the Observable Events functioning and success metrics tracked. The OBC in Released state records that the committed behavior is verifiable at runtime, not that the business outcome has necessarily been achieved. It continues to be updated as new operational evidence (incidents, usage metrics, postmortems) refines the understanding of the Product Capability.
+
+**Archived**: the Product Capability was discontinued or replaced. The OBC remains as a historical record; it is not deleted.
+
+State progression is not linear by decree: it is verified. What causes an OBC to transition from Refining to Readiness is not a subjective decision by the Product Manager; it is the satisfaction of verifiable criteria that Diligence can audit.
+
 **Rigor is configurable, but its configuration is not a preference.** The ProdOps Framework prescribes the canonical Commitment Gate template: the required artifacts, the trio participants, the six outcomes. The Runtime is what the team installs and adapts to its operational context: which additional verifications apply to the type of work the team does, with what depth, under which conditions the Reliability Plan is required. This adaptation is legitimate and recommended. What is not adaptable is the principle: without a Commitment Gate with an evaluated Decision Package, the OBC transition from Draft to Refining (and, consequently, to Readiness at the Readiness Gate) does not happen. What varies between teams is how the Gate is calibrated, not whether it exists.
 
 With the OBC as artifact and the Commitment Gate as mechanism, the three following chapters have a concrete reference: Chapter 4 describes Assessment, the informational governance journey that accompanies the full cycle, from Business Signal to post-Operation feedback; Chapter 5 describes Upstream, the regime under which the OBC accumulates evidence before the Gate; and Chapter 6 describes Downstream, the regime under which the Readiness OBC is honored with blocking Gates until the Product Capability is promoted.

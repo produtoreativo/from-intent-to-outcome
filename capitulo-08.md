@@ -41,54 +41,7 @@ O Observable Business Contract não é um SLA técnico: é a declaração de que
 
 O ponto de partida ontológico é relevante: o compromisso é a variável causal. Os estados do OBC não determinam o modo nem produzem o compromisso: eles tornam o compromisso observável. O que faz um OBC transitar entre estados é a satisfação de critérios que refletem o grau de maturidade do compromisso vigente, não uma decisão de mudar o modo de trabalho. O modo é a causa; os estados são o registro verificável de onde o compromisso está em seu ciclo de vida.
 
-O OBC percorre seis estados ao longo do ciclo de vida de uma Product Capability:
-
-```mermaid
-stateDiagram-v2
-    direction LR
-    [*] --> Draft : Business Signal → Business Intent
-    Draft --> Refining : Commitment Gate Promover (Momento 2)
-    Refining --> Readiness : Readiness Gate aprovado (Momento 3)
-    Readiness --> InDelivery : Bootstrap.Started
-    InDelivery --> Released : Promote concluído
-    Released --> Archived : Depreciação / substituição
-    Draft --> Archived : Commitment Gate Descartar
-    Readiness --> Refining : Regressão antes do Bootstrap
-    InDelivery --> Refining : Regressão durante Delivery
-
-    note right of Draft
-        VIEW Icebox
-        + Experiment Plan
-        (se experimento ativo)
-    end note
-    note right of Refining
-        VIEW Icebox
-        Downstream Declared
-    end note
-    note right of Readiness
-        VIEW Iteration Backlog
-    end note
-    note right of InDelivery
-        Iteration Plan
-    end note
-    note right of Released
-        Operation
-    end note
-```
-
-**Draft**: nasce na transição de um Business Signal para um Business Intent. No Upstream, é memória do aprendizado: pode ser atualizado continuamente, pode permanecer incompleto, não bloqueia experimentos. A ausência de campos completos no Draft é esperada, não uma falha.
-
-**Refining**: o estado que o OBC assume no início do Downstream (Momento 2 da transição, após o Commitment Gate com outcome Promover). Os campos começam a ser refinados com substância real: `expected_outcome` deixa de ser vago, `success_metrics` ganha baseline e target, `acceptance_criteria` torna-se verificável por terceiros.
-
-**Readiness**: certifica que a Discovery Downstream produziu um contrato completo e verificável por terceiros. O modo Downstream e o rigor bloqueante estão ativos desde o Promover (Momento 2, quando o OBC transitou de Draft para Refining); o estado Readiness não representa a mudança de regime, mas a conclusão do período de Icebox. Todo critério de aceite é verificável sem contexto verbal adicional. As métricas de sucesso têm baseline e target. Os Observable Events estão definidos com dimensões mensuráveis. O Reliability Plan (quando necessário pelos gatilhos de risco) está presente. Um OBC que não atingiu Readiness não passa pelo Readiness Gate: essa é a proteção contra o Phantom BDD e o Proxy Commitment.
-
-**In Delivery**: o OBC está associado a um item em execução no Iteration Plan. Mudanças de parâmetro são permitidas dentro da faixa de incerteza residual declarada; mudanças estruturais exigem regressão ao Upstream.
-
-**Released**: o comportamento comprometido no OBC pode ser verificado em runtime. A Product Capability está em produção com os Observable Events funcionando e as métricas de sucesso acompanhadas. O OBC em estado Released registra que o comportamento comprometido está verificável em runtime, não que o outcome de negócio foi necessariamente alcançado, mas que a Product Capability está operando com seus critérios observáveis ativos. Continua sendo atualizado conforme novas evidências operacionais (incidentes, métricas de uso, postmortems) refinam o entendimento sobre a Product Capability.
-
-**Archived**: a Product Capability foi descontinuada ou substituída. O OBC permanece como registro histórico, não é deletado.
-
-A progressão de estados não é linear por decreto: é verificada. O que faz um OBC transitar de Refining para Readiness não é uma decisão subjetiva do Product Manager; é a satisfação de critérios verificáveis que a Diligence pode auditar.
+O mapa completo dos seis estados do OBC (Draft, Refining, Readiness, In Delivery, Released, Archived) com suas transições e condições está no Capítulo 3, onde o ciclo de vida do compromisso é introduzido. O que importa aqui é o papel epistêmico desses estados: cada transição é verificável porque o OBC produz evidências observáveis de que os critérios foram satisfeitos. Sem essa verificabilidade, os estados seriam rótulos declaratórios, não registros auditáveis.
 
 ---
 
