@@ -68,6 +68,38 @@ O Readiness Gate (Momento 3) é o Gate de conclusão da Discovery Downstream: ve
 
 Isso tem uma implicação direta: todo Business Intent que entra no Icebox (seja vindo de um Upstream com Discovery e Commitment Gate, seja direto de um Business Signal com contexto suficiente) passa pela Discovery Downstream antes de chegar à Delivery. Não existe caminho do Commitment Gate para o Bootstrap que não passe pela Discovery em modo Downstream. O que varia é a duração e a densidade desse trabalho, conforme o quanto do Decision Package já estava pronto no Momento 1.
 
+### O trabalho de UX/UI na Discovery Downstream
+
+A Discovery Downstream não pertence apenas ao Product Manager, ao Tech Lead e ao time de engenharia. Quando o escopo inclui interfaces com o usuário, os designers de UX e UI participam ativamente desta jornada. O trabalho que realizam durante o Icebox não é exploração aberta: é refinamento com critério de conclusão verificável.
+
+A distinção importa porque, na Discovery em modo Upstream, o design pode explorar múltiplas abordagens, testar direções alternativas e produzir evidência para decidir qual caminho seguir. O Commitment Gate pode incluir protótipos de baixa fidelidade, resultados de entrevistas e hipóteses sobre a solução. Na Discovery Downstream, essa decisão foi tomada. A direção de UX está definida; o que falta é transformá-la em especificação verificável que o time de Delivery possa implementar com confiança.
+
+O que o trabalho de UX/UI produz concretamente durante a Discovery Downstream:
+
+- **Fluxo de usuário detalhado**: mapeamento completo da navegação, com estados intermediários, confirmações, erros e mensagens de sistema
+- **Wireframes ou protótipos de alta fidelidade**: representação visual suficientemente precisa para que o time de Delivery não precise adivinhar comportamento, nem para que o usuário precise imaginar o resultado
+- **Especificação de estados de UI**: loading, empty, error, success, disabled: cada estado com comportamento e cópia textual definidos
+- **Inventário de componentes**: quais componentes do design system serão usados, quais precisam ser criados ou adaptados
+- **Critérios de acessibilidade**: contraste, navegação por teclado, leitores de tela: condições verificáveis, não intenções vagas
+- **Resultados de teste de usabilidade** (quando aplicável): validação com usuários reais de que o fluxo definido pode ser executado sem atrito relevante
+
+Esses artefatos têm relação direta com os critérios do Readiness Gate.
+
+A **BDD Feature** inclui cenários que descrevem comportamento da interface: "Dado que o usuário selecionou Pix + Boleto como método de pagamento, Quando confirmar o pedido, Então o sistema exibe dois elementos de status independentes." Sem o fluxo detalhado e o wireframe, esses cenários ficam vagos ou incorretos, e o Readiness Gate não pode verificá-los.
+
+Os **Observable Events** no OBC registram interações do usuário como eventos de comportamento observável em runtime. Quais interações instrumentar depende do fluxo de UX finalizado. Se o fluxo define que o usuário pode trocar o método de pagamento até o momento de confirmação, o evento `payment_method_changed` precisa existir com as dimensões corretas antes de qualquer linha de Hack.
+
+Os **acceptance_criteria** no OBC podem incluir critérios de usabilidade mensuráveis como condições de aceitação da Product Capability: taxa de conclusão do fluxo acima de um limiar, ausência de erros de validação em determinado estado, ou tempo máximo de resposta para uma ação crítica.
+
+No contexto do Split Payment da Magazine Siará, a Discovery Downstream de UX/UI produziu:
+
+- O fluxo de seleção de método de pagamento no checkout: o usuário pode combinar Pix com Boleto, com feedback visual imediato para cada combinação válida
+- Os estados de confirmação para cada parcela: Pix com QR Code exibido e prazo, Boleto com código de barras e data de vencimento
+- O estado de erro crítico: o que o usuário vê quando o Boleto expirou mas o Pix já foi pago. Não é um estado genérico de erro: é um estado específico com cópia, instrução de próximo passo e interface de contato com suporte, porque a operação exige resolução manual pelo time de operações
+- A especificação do componente de status de pagamento duplo: um componente novo no design system que exibe o status de cada parcela de forma independente, com estados próprios para cada método
+
+Esse último ponto conecta diretamente ao Observable Event `split_payment.boleto.expired` com a dimensão `pixStatus`: o design do estado de erro estabeleceu que a interface precisaria saber o status do Pix no momento em que o Boleto expira. Essa necessidade de informação se traduziu na dimensão do evento antes de qualquer sessão de Hack. O design de UX não seguiu o evento; o evento seguiu o design. Esta é a sequência correta no modo Downstream: ODD precede a implementação.
+
 ---
 
 ## A sequência de Delivery no modo Downstream
