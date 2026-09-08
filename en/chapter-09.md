@@ -19,7 +19,7 @@ The problem is that these two spaces naturally diverge. The Knowledge Space adva
 
 In Upstream, this inconsistency is not blocking. The work is exploratory: artifacts evolve in a non-linear fashion, the hypothesis can change between sessions, the OBC remains in Draft. The temporary inconsistency between Knowledge Space and Execution Space is the price of exploratory freedom; the cost of accepting it is controllable because the commitment has not been made. There is no contract that needs to be verifiable for work to advance.
 
-In Downstream, the divergence is operational risk. The commitment has been made. An OBC that is Committed in the artifacts but still appears as Refining in the Execution Space creates confusion about what is ready for Delivery. An open Diligence Finding that has no representation in the Execution Space can go unnoticed until it causes a problem during implementation. Consistency is not organizational comfort: it is the condition for the commitment to be honored with confidence.
+In Downstream, the divergence is operational risk. The commitment has been made. An OBC that is Readiness in the artifacts but still appears as Refining in the Execution Space creates confusion about what is ready for Delivery. An open Diligence Finding that has no representation in the Execution Space can go unnoticed until it causes a problem during implementation. Consistency is not organizational comfort: it is the condition for the commitment to be honored with confidence.
 
 Diligence exists to manage this divergence.
 
@@ -43,7 +43,7 @@ Diligence operates in two cycles with distinct purposes.
 
 The **diligence-sync** is the event-driven cycle: triggered by a specific event (new OBC created, item transitioning between states, Commitment Gate convened). Its purpose is to verify, at the moment of the event, whether the current state satisfies the criteria necessary to advance. In Downstream, if an OBC is in Refining when the Readiness Gate is called, diligence-sync generates a blocking Finding, and the item does not advance until the Finding is resolved or receives a formal waiver. In Upstream, the same cycle operates, but the Findings generated have an advisory character: they alert without blocking, because the commitment has not been made.
 
-The **diligence-async** is the proactive cycle: executed periodically to sweep the state of the system and identify divergences before they cause problems. Its purpose is to detect drift: an OBC that should have transitioned state and has not, a BDD Feature in `prodops/artifacts/bdd/` without a corresponding Committed OBC, an active experiment without entries in the upstream-trail for more than two weeks (signal S1 of Perpetual Discovery). The diligence-async operates in both Upstream and Downstream: in Upstream with advisory rigor, alerting without blocking; in Downstream with blocking rigor, generating Findings that prevent advancement.
+The **diligence-async** is the proactive cycle: executed periodically to sweep the state of the system and identify divergences before they cause problems. Its purpose is to detect drift: an OBC that should have transitioned state and has not, a BDD Feature in `prodops/artifacts/bdd/` without a corresponding Readiness OBC, an active experiment without entries in the upstream-trail for more than two weeks (signal S1 of Perpetual Discovery). The diligence-async operates in both Upstream and Downstream: in Upstream with advisory rigor, alerting without blocking; in Downstream with blocking rigor, generating Findings that prevent advancement.
 
 ---
 
@@ -79,7 +79,7 @@ The waiver deserves special attention. A waiver is the explicit acknowledgment t
 
 In **Upstream**, Diligence operates in advisory mode. It can verify whether the experiment has the minimum mandatory artifacts (experiment.md and upstream-trail.md), whether the upstream-trail is being updated regularly, whether the Perpetual Discovery signals (S1-S4) are active. When it finds problems, it alerts, but does not block. In Upstream, the cost of blocking exploration due to artifact inconsistency would be greater than the cost of temporarily accepting the inconsistency: there is no formal commitment that requires consistency to be verifiable now.
 
-In **Downstream**, Diligence is blocking. It verifies whether the OBC is Committed before the Readiness Gate. Whether the BDD Feature is in `prodops/artifacts/bdd/`. Whether open Findings have a formal waiver or have been resolved. Whether the Release Trail is being filled in at each phase of the Bootstrap → Promote sequence. When it finds problems, it does not merely alert: it generates Findings that prevent advancement until resolution.
+In **Downstream**, Diligence is blocking. It verifies whether the OBC is Readiness before the Readiness Gate. Whether the BDD Feature is in `prodops/artifacts/bdd/`. Whether open Findings have a formal waiver or have been resolved. Whether the Release Trail is being filled in at each phase of the Bootstrap → Promote sequence. When it finds problems, it does not merely alert: it generates Findings that prevent advancement until resolution.
 
 This difference is not one of quantity of rigor applied: it is one of the nature of the consequence. In Upstream, inconsistency does not need to be resolved immediately because the commitment has not been made. In Downstream, consistency is necessary because the commitment must be verifiable, and verifiability requires that the state of artifacts and operational state be consistent.
 
@@ -89,7 +89,7 @@ This difference is not one of quantity of rigor applied: it is one of the nature
 
 The word "governance" frequently evokes bureaucracy: layers of approval, documentation for documentation's sake, processes that consume more time than they protect.
 
-ProdOps's Diligence is different for a structural reason: it operates in response to real divergences, not generic procedures. A Finding is created when a specific divergence exists: an OBC that should be Committed and is not, a BDD that should exist and does not. There is no checklist of forms that needs to be filled out as a matter of protocol.
+ProdOps's Diligence is different for a structural reason: it operates in response to real divergences, not generic procedures. A Finding is created when a specific divergence exists: an OBC that should be Readiness and is not, a BDD that should exist and does not. There is no checklist of forms that needs to be filled out as a matter of protocol.
 
 The health measure of Diligence is not the volume of Findings created: it is the absence of divergences between Knowledge Space and Execution Space. A healthy Diligence in a healthy product tends to have few open Findings because the team keeps artifacts synchronized in real time, as a consequence of the work process. But this relationship is not invertible: few Findings can also be a signal of insufficient instrumentation, not a healthy product. Real health is verified in the absence of detectable divergences, not just in the absence of recorded Findings.
 

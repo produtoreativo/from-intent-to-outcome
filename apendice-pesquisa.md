@@ -83,7 +83,7 @@ A revisão de literatura cobriu dezoito obras, organizadas em cinco clusters por
 
 ### Cluster 1: A metáfora
 
-As obras deste cluster fornecem o pano de fundo conceitual para o uso dos termos como orientação de trabalho. Dan Heath (2020) é o exemplo principal. Eliyahu Goldratt e Jeff Cox, em "The Goal" (1984), contribuíram com a Teoria das Restrições: o ponto de contenção upstream, o modelo pull e o conceito de buffer gerenciado. O **Experiment Plan** do ProdOps — VIEW sobre os experimentos Upstream ativos — é estruturalmente análogo a um buffer lean antes de um ponto de restrição (o Commitment Gate). O Icebox, por sua vez, é o holding pós-Commitment Gate: representa itens com Downstream já declarado e OBC em refinamento (estado ≠ Committed), aguardando o Readiness Gate.
+As obras deste cluster fornecem o pano de fundo conceitual para o uso dos termos como orientação de trabalho. Dan Heath (2020) é o exemplo principal. Eliyahu Goldratt e Jeff Cox, em "The Goal" (1984), contribuíram com a Teoria das Restrições: o ponto de contenção upstream, o modelo pull e o conceito de buffer gerenciado. O **Experiment Plan** do ProdOps — VIEW sobre os experimentos Upstream ativos — é estruturalmente análogo a um buffer lean antes de um ponto de restrição (o Commitment Gate). O Icebox, por sua vez, é o holding pós-Commitment Gate: representa itens com Downstream já declarado e OBC em refinamento (estado ≠ Readiness), aguardando o Readiness Gate.
 
 ### Cluster 2: Discovery de produto
 

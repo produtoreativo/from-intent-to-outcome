@@ -48,12 +48,13 @@ stateDiagram-v2
     direction LR
     [*] --> Draft : Business Signal → Business Intent
     Draft --> Refining : Commitment Gate Promover (Momento 2)
-    Refining --> Committed : Readiness Gate aprovado (Momento 3)
-    Committed --> InDelivery : Bootstrap.Started
+    Refining --> Readiness : Readiness Gate aprovado (Momento 3)
+    Readiness --> InDelivery : Bootstrap.Started
     InDelivery --> Released : Promote concluído
     Released --> Archived : Depreciação / substituição
-    Refining --> Archived : Commitment Gate Descartar
-    InDelivery --> Refining : Regressão Downstream → Upstream
+    Draft --> Archived : Commitment Gate Descartar
+    Readiness --> Refining : Regressão antes do Bootstrap
+    InDelivery --> Refining : Regressão durante Delivery
 
     note right of Draft
         VIEW Icebox
@@ -64,7 +65,7 @@ stateDiagram-v2
         VIEW Icebox
         Downstream Declared
     end note
-    note right of Committed
+    note right of Readiness
         VIEW Iteration Backlog
     end note
     note right of InDelivery
@@ -79,7 +80,7 @@ stateDiagram-v2
 
 **Refining**: o estado que o OBC assume no início do Downstream (Momento 2 da transição, após o Commitment Gate com outcome Promover). Os campos começam a ser refinados com substância real: `expected_outcome` deixa de ser vago, `success_metrics` ganha baseline e target, `acceptance_criteria` torna-se verificável por terceiros.
 
-**Committed**: registra que o compromisso formal foi assumido e que o contrato está completo o suficiente para que a Delivery comece. O estado Committed não cria o compromisso; é o artefato que o torna observável e auditável. Todo critério de aceite é verificável sem contexto verbal adicional. As métricas de sucesso têm baseline e target. Os Observable Events estão definidos. O Reliability Plan (quando necessário pelos gatilhos de risco) está presente. Um OBC que não atingiu Committed não passa pelo Readiness Gate: essa é a proteção contra o Phantom BDD e o Proxy Commitment.
+**Readiness**: certifica que a Discovery Downstream produziu um contrato completo e verificável por terceiros. O modo Downstream e o rigor bloqueante estão ativos desde o Promover (Momento 2, quando o OBC transitou de Draft para Refining); o estado Readiness não representa a mudança de regime, mas a conclusão do período de Icebox. Todo critério de aceite é verificável sem contexto verbal adicional. As métricas de sucesso têm baseline e target. Os Observable Events estão definidos com dimensões mensuráveis. O Reliability Plan (quando necessário pelos gatilhos de risco) está presente. Um OBC que não atingiu Readiness não passa pelo Readiness Gate: essa é a proteção contra o Phantom BDD e o Proxy Commitment.
 
 **In Delivery**: o OBC está associado a um item em execução no Iteration Plan. Mudanças de parâmetro são permitidas dentro da faixa de incerteza residual declarada; mudanças estruturais exigem regressão ao Upstream.
 
@@ -87,7 +88,7 @@ stateDiagram-v2
 
 **Archived**: a Product Capability foi descontinuada ou substituída. O OBC permanece como registro histórico, não é deletado.
 
-A progressão de estados não é linear por decreto: é verificada. O que faz um OBC transitar de Refining para Committed não é uma decisão subjetiva do Product Manager; é a satisfação de critérios verificáveis que a Diligence pode auditar.
+A progressão de estados não é linear por decreto: é verificada. O que faz um OBC transitar de Refining para Readiness não é uma decisão subjetiva do Product Manager; é a satisfação de critérios verificáveis que a Diligence pode auditar.
 
 ---
 

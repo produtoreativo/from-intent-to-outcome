@@ -5,9 +5,9 @@
 ## Por que agentes não têm sensibilidade de modo por padrão
 
 ![Protocolo de classificação de modo para agentes de IA](images/cap09-agent-mode-classification.svg)
-*Figura 10. Fluxo de decisão para classificação de modo: o estado do OBC é o sinal primário. OBC Committed (Commitment Gate registrado) = Downstream; OBC em Draft ou ausente = Upstream.*
+*Figura 10. Fluxo de decisão para classificação de modo: o estado do OBC é o sinal primário. OBC Refining ou Readiness (Commitment Gate registrado) = Downstream; OBC em Draft ou ausente = Upstream.*
 
-Um engenheiro humano que trabalha com um framework de produto por tempo suficiente desenvolve algo que poderíamos chamar de sensibilidade de modo: a capacidade de perceber, a partir de sinais contextuais (a conversa na reunião, o estado do backlog, o tom das mensagens do PM), em que tipo de compromisso o trabalho está operando. Ele não precisa verificar formalmente se o OBC está Committed; percebe pela postura da equipe que algo foi decidido e o trabalho está agora sob compromisso.
+Um engenheiro humano que trabalha com um framework de produto por tempo suficiente desenvolve algo que poderíamos chamar de sensibilidade de modo: a capacidade de perceber, a partir de sinais contextuais (a conversa na reunião, o estado do backlog, o tom das mensagens do PM), em que tipo de compromisso o trabalho está operando. Ele não precisa verificar formalmente se o OBC está Readiness; percebe pela postura da equipe que algo foi decidido e o trabalho está agora sob compromisso.
 
 Essa sensibilidade é valiosa. Ela permite que o rigor seja calibrado sem que cada decisão precise ser formalizada explicitamente. O problema é que ela é adquirida, não está presente no início, e não existe em agentes de IA.
 
@@ -21,9 +21,9 @@ Isso não significa que agentes sejam incapazes de operar com sensibilidade de m
 
 Na ausência de interface de modo explícita, agentes de IA tendem a defaultar para um de dois extremos, e ambos produzem problemas reais.
 
-**Rigor máximo indiscriminado**: o agente trata qualquer trabalho como se fosse Downstream: aplica Gates onde não cabem, exige artefatos que não existem ainda, bloqueia exploração por ausência de critérios de aceite formais. Em modo Upstream, isso é destrutivo: a disciplina do Upstream é a liberdade de explorar com rigor na evidência, não na burocracia de artefatos. Um agente que para para exigir um OBC Committed durante a exploração de uma hipótese está aplicando o rigor errado no momento errado.
+**Rigor máximo indiscriminado**: o agente trata qualquer trabalho como se fosse Downstream: aplica Gates onde não cabem, exige artefatos que não existem ainda, bloqueia exploração por ausência de critérios de aceite formais. Em modo Upstream, isso é destrutivo: a disciplina do Upstream é a liberdade de explorar com rigor na evidência, não na burocracia de artefatos. Um agente que para para exigir um OBC Readiness durante a exploração de uma hipótese está aplicando o rigor errado no momento errado.
 
-**Permissividade total**: o agente trata qualquer trabalho como se fosse Upstream: executa sem verificar pré-condições, avança sem Gates, implementa sem checar se o OBC está Committed ou se o BDD existe. Em modo Downstream, isso é arriscado: o compromisso foi assumido e os Gates existem para protegê-lo. Um agente que implementa sem verificar o Readiness Gate está executando sem a estrutura que o compromisso exige.
+**Permissividade total**: o agente trata qualquer trabalho como se fosse Upstream: executa sem verificar pré-condições, avança sem Gates, implementa sem checar se o OBC está Readiness ou se o BDD existe. Em modo Downstream, isso é arriscado: o compromisso foi assumido e os Gates existem para protegê-lo. Um agente que implementa sem verificar o Readiness Gate está executando sem a estrutura que o compromisso exige.
 
 Os dois modos de falha são simétricos e igualmente problemáticos. O rigor máximo indiscriminado bloqueia o aprendizado. A permissividade total destrói a rastreabilidade do compromisso. Em ambos os casos, o agente está causando dano, mas não por incompetência técnica. Por ausência de contexto de modo.
 
@@ -67,7 +67,7 @@ A correção parcial já realizada foi a nota no AGENTS.md que esclarece a disti
 ```mermaid
 graph TD
     REQ["Pedido recebido pelo agente"] --> CLASS["Classificação de modo\nPasso 0.1 do AGENTS.md"]
-    CLASS -->|"OBC Committed (Gate registrado)"| DS["/downstream\nRigor bloqueante\nGates obrigatórios"]
+    CLASS -->|"OBC Refining ou Readiness (Gate registrado)"| DS["/downstream\nRigor bloqueante\nGates obrigatórios"]
     CLASS -->|"OBC Draft / sem Gate registrado"| US["/upstream\nRigor advisory\nEngenheiro decide"]
     DS --> SKILLS_DS["Bootstrap / Hack / Sync\nFinish / Ship / Validate / Promote"]
     US --> SKILLS_US["Experiment / Evidence\nDecision Package / Commitment Gate"]
@@ -82,7 +82,7 @@ A arquitetura de skills do ProdOps resolve parte do problema de modo para agente
 
 `/downstream` ativa a jornada Delivery com rigor bloqueante: pré-condições verificadas, sequência obrigatória, Gates que impedem avanço quando não satisfeitos. O agente que invoca `/downstream` está em modo de compromisso.
 
-O que ainda falta (e é a fronteira atual da implementação) é a documentação explícita de como cada fase individual (Bootstrap, Hack, Sync, etc.) se comporta quando invocada em modo Upstream. Um agente Upstream pode querer usar `/hack tdd` com rigor completo (ciclo Red/Green/Refactor idêntico ao Downstream), sem que isso constitua uma obrigação de ter OBC Committed ou Release Trail. O skill não documenta essa distinção ainda.
+O que ainda falta (e é a fronteira atual da implementação) é a documentação explícita de como cada fase individual (Bootstrap, Hack, Sync, etc.) se comporta quando invocada em modo Upstream. Um agente Upstream pode querer usar `/hack tdd` com rigor completo (ciclo Red/Green/Refactor idêntico ao Downstream), sem que isso constitua uma obrigação de ter OBC Readiness ou Release Trail. O skill não documenta essa distinção ainda.
 
 ---
 

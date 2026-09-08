@@ -37,7 +37,7 @@ In summary: **the Commitment Gate decides the commitment. The Readiness Gate ver
 
 Each outcome is an operationally distinct decision with specific mandatory actions.
 
-**Promote**: the evidence justifies commitment. The OBC transitions from Draft to **Refining** (Moment 2), the BDD Feature is moved to the committed paths, and the item enters the **Icebox** with Downstream declared. Downstream begins: the Discovery journey runs in blocking mode, open questions from the Decision Package are resolved with dated decisions, and the **Readiness Gate** (Moment 3) verifies that the OBC has reached the **Committed** state before authorizing Planning and Bootstrap.
+**Promote**: the evidence justifies commitment. The OBC transitions from Draft to **Refining** (Moment 2), the BDD Feature is moved to the committed paths, and the item enters the **Icebox** with Downstream declared. Downstream begins: the Discovery journey runs in blocking mode, open questions from the Decision Package are resolved with dated decisions, and the **Readiness Gate** (Moment 3) verifies that the OBC has reached the **Readiness** state before authorizing Planning and Bootstrap.
 
 **Promote with restriction**: part of the Product Capability is ready for commitment; another part needs to continue in exploration. The formal commitment is assumed **exclusively** on the approved subset; the original Product Capability, in its entirety, is not committed. The approved subset transitions to Downstream. The restricted parts remain in Upstream for a new experiment with a more specific hypothesis. The restriction is recorded explicitly in the upstream-trail: it is not a silent gap.
 
@@ -117,7 +117,7 @@ The two problems are symmetric: Perpetual Discovery is exploration without press
 
 ## A Commitment Gate without Upstream: the BS-001 case
 
-The Magazine Siará corpus records a case that seems to contradict the protocol but in fact confirms it. Business Signal BS-001 (Split Payment, 2026-08-04) led to PI-001 with a Commitment Gate and Committed OBC on the same day, without any prior Upstream experiment.
+The Magazine Siará corpus records a case that seems to contradict the protocol but in fact confirms it. Business Signal BS-001 (Split Payment, 2026-08-04) led to PI-001 with a Commitment Gate and Readiness OBC on the same day, without any prior Upstream experiment.
 
 This is not Premature Promotion. It is the demonstration that the Commitment Gate decides the *destiny of the Product Capability*, not the conclusion of an exploration phase. When demand is confirmed through two independent channels, the scope is bounded (Pix + Boleto for a partner launch), the deadline is non-negotiable (15 days), and the open questions are of the refinement type (not the central hypothesis) the Decision Package can be assembled without prior exploration: the evidence is in the business signal and the clarity of the scope.
 

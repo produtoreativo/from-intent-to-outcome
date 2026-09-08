@@ -13,7 +13,7 @@ What defines Upstream is not the absence of commitment, but the type of commitme
 
 Work in progress carries a real commitment. The investigation has a hypothesis, responsible parties, and some stopping criterion, even if implicit. Conducting an experiment without rigor, without a formulated hypothesis, without verifiable progression, is not Upstream well executed; it is Upstream poorly conducted.
 
-There is, however, no formal commitment to a specific Product Capability: no OBC Committed, no Release Trail, no promise that that behavior will be in production for those users, with those acceptance criteria.
+There is, however, no formal commitment to a specific Product Capability: no OBC Readiness, no Release Trail, no promise that that behavior will be in production for those users, with those acceptance criteria.
 
 And there is no blocking commitment: changing direction, closing the experiment, or rejecting the hypothesis does not violate a contract that needs to be renegotiated. The cost of reversal remains controllable because the prevailing regime does not transform a change of course into a broken promise.
 
@@ -115,13 +115,13 @@ A point that deserves explicit attention: Upstream does not prohibit code in pro
 
 There are two distinct acts of deployment in Upstream, with different authorizations and consequences:
 
-**Sandbox Deploy**: code deployed in an ephemeral and isolated stack, without real client traffic. The engineer decides. The stack is destroyed at the end of the experiment. No Release Trail, no OBC Committed.
+**Sandbox Deploy**: code deployed in an ephemeral and isolated stack, without real client traffic. The engineer decides. The stack is destroyed at the end of the experiment. No Release Trail, no OBC Readiness.
 
-**Controlled Production**: Upstream code deployed to real production, without Commitment Gate. Explicit authorization from the team and leadership. Immediate rollback available. No Release Trail required (which does not mean without evidence): what was observed in Controlled Production must be recorded in the experiment's upstream-trail. This is not a violation of Upstream mode: it is an authorized act. What distinguishes it from promotion is that the *Product Capability commitment* (OBC Committed, Downstream Gates) has not been made. The code reaches production; the Product Capability remains under exploration.
+**Controlled Production**: Upstream code deployed to real production, without Commitment Gate. Explicit authorization from the team and leadership. Immediate rollback available. No Release Trail required (which does not mean without evidence): what was observed in Controlled Production must be recorded in the experiment's upstream-trail. This is not a violation of Upstream mode: it is an authorized act. What distinguishes it from promotion is that the *Product Capability commitment* (OBC Readiness, Downstream Gates) has not been made. The code reaches production; the Product Capability remains under exploration.
 
 The third act is the exit from Upstream, not a deployment within it:
 
-**Product Capability Promotion**: Commitment Gate with Promote outcome. The OBC transitions from Draft to Refining; the BDD Feature exists as a draft in the Downstream paths. The item enters the Icebox, where Downstream Discovery elaborates the scope, completes the BDD, and satisfies the Readiness Gate conditions. After the Readiness Gate, the OBC reaches Committed state; the Iteration Plan is created and Delivery begins with Bootstrap.
+**Product Capability Promotion**: Commitment Gate with Promote outcome. The OBC transitions from Draft to Refining; the BDD Feature exists as a draft in the Downstream paths. The item enters the Icebox, where Downstream Discovery elaborates the scope, completes the BDD, and satisfies the Readiness Gate conditions. After the Readiness Gate, the OBC reaches Readiness state; the Iteration Plan is created and Delivery begins with Bootstrap.
 
 The distinction between Controlled Production and Product Capability Promotion is precisely the distinction the modal model resolves: in the first case, the code is in production but the Product Capability is not committed; in the second, the commitment has been formally made with all its Gates.
 
@@ -151,15 +151,15 @@ The Experiment Plan is the Upstream equivalent of the Iteration Plan. The Iterat
 flowchart TD
     PIB["PIB — item enters with OBC: Draft"]
 
-    subgraph ICE["VIEW: Icebox  —  OBC ≠ Committed"]
+    subgraph ICE["VIEW: Icebox  —  OBC ≠ Readiness"]
         PE["VIEW: Experiment Plan\nOBC: Draft · active experiment\nDiscovery WIP controlled"]
         WAIT["Icebox without active experiment\nwaiting for external decision\nor direct Business Signal"]
         DS["Downstream Declared\nOBC: Refining\nDiscovery in blocking mode"]
     end
 
     CG{"Commitment Gate\n6 outcomes\nPM + Tech Lead + Author"}
-    RG{"Readiness Gate\nOBC Committed?\nBDD + Risks ok?"}
-    ITB["VIEW: Iteration Backlog\nOBC: Committed"]
+    RG{"Readiness Gate\nOBC Readiness?\nBDD + Risks ok?"}
+    ITB["VIEW: Iteration Backlog\nOBC: Readiness"]
     IP["Iteration Plan\nDelivery begins — Bootstrap"]
     OUT["Closed / Waiting\nDiscard · Requires new EXP\nAwait decision · External dep."]
 
@@ -172,7 +172,7 @@ flowchart TD
     CG -->|"Promote\nDraft → Refining"| DS
     CG -->|"other outcomes"| OUT
 
-    DS -->|"OBC reaches Committed"| RG
+    DS -->|"OBC reaches Readiness"| RG
     RG -->|"approved"| ITB
     RG -->|"Finding open"| DS
 
@@ -188,11 +188,11 @@ The three Magazine Siará experiments (EXP-001, EXP-002, EXP-003) would be repre
 
 ## What Upstream is not responsible for doing
 
-The definition of Upstream includes an explicit list of what is outside its scope. Implementing the committed Product Capability with blocking Gates: that is the Delivery journey in Downstream mode. The distinction is one of commitment, not physical activity: Upstream can produce functional code, proof of concept, implementation in sandbox or in controlled production, without that constituting the delivery of a formally promised Product Capability. Committing and technically implementing the observability of the Product Capability (SLOs, Observable Events, production instrumentation): that is the responsibility of Downstream. In Upstream, ODD means documenting what needs to be observable to test the hypothesis, without that constituting a commitment of implementation. Producing OBC Committed: that is Discovery in Downstream. Producing complete BDD in `prodops/artifacts/bdd/`: that happens before the Readiness Gate. Guaranteeing the absence of uncertainty: acceptable residual uncertainty is a valid Commitment Gate criterion.
+The definition of Upstream includes an explicit list of what is outside its scope. Implementing the committed Product Capability with blocking Gates: that is the Delivery journey in Downstream mode. The distinction is one of commitment, not physical activity: Upstream can produce functional code, proof of concept, implementation in sandbox or in controlled production, without that constituting the delivery of a formally promised Product Capability. Committing and technically implementing the observability of the Product Capability (SLOs, Observable Events, production instrumentation): that is the responsibility of Downstream. In Upstream, ODD means documenting what needs to be observable to test the hypothesis, without that constituting a commitment of implementation. Producing OBC Readiness: that is Discovery in Downstream. Producing complete BDD in `prodops/artifacts/bdd/`: that happens before the Readiness Gate. Guaranteeing the absence of uncertainty: acceptable residual uncertainty is a valid Commitment Gate criterion.
 
 This last statement is counterintuitive enough to deserve emphasis: Upstream does not need to eliminate all uncertainty. It needs to reduce uncertainty to the point where the residual risk is acceptable for taking on the Downstream commitment. What is "acceptable" is the collective judgment of the trio at the Commitment Gate, not a zero-uncertainty criterion that no finite experiment can satisfy.
 
-Special attention is due to the item "Producing Committed OBC: that is Discovery in Downstream." It resolves a frequent misunderstanding: a Business Signal that enters directly into Downstream without prior Upstream does not skip discovery. The discovery happens in the Discovery journey executed in Downstream mode, with blocking rigor. The OBC transitions from Draft to Refining. The BDD Feature is written and refined. The Business Intent questions are resolved with dated decisions and identified responsible parties. The Readiness Gate blocks entry into the Delivery journey until these conditions are met. Only then (with the Iteration Plan generated in Planning) does Bootstrap, the first phase of Delivery, begin. What "without Upstream" describes is the absence of pre-Commitment Gate exploration. What happens after the Commitment Gate, in the Discovery journey in Downstream mode, is real discovery: with blocking Gates that do not allow advancing until the conditions are satisfied.
+Special attention is due to the item "Producing Readiness OBC: that is Discovery in Downstream." It resolves a frequent misunderstanding: a Business Signal that enters directly into Downstream without prior Upstream does not skip discovery. The discovery happens in the Discovery journey executed in Downstream mode, with blocking rigor. The OBC transitions from Draft to Refining. The BDD Feature is written and refined. The Business Intent questions are resolved with dated decisions and identified responsible parties. The Readiness Gate blocks entry into the Delivery journey until these conditions are met. Only then (with the Iteration Plan generated in Planning) does Bootstrap, the first phase of Delivery, begin. What "without Upstream" describes is the absence of pre-Commitment Gate exploration. What happens after the Commitment Gate, in the Discovery journey in Downstream mode, is real discovery: with blocking Gates that do not allow advancing until the conditions are satisfied.
 
 ---
 

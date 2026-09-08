@@ -11,7 +11,7 @@ This coincidence is not accidental. ProdOps, as a framework, needs to be tested 
 What makes the Magazine Siará laboratory different from a retrospective case study is that the artifact corpus was produced *during* the work, not documented afterward. The upstream-trails record what was discovered session by session. The OBCs show the real state of commitment at each date. The Release Trails document how each phase was honored. What this chapter examines is what this corpus demonstrates about the framework, and what it has not yet demonstrated.
 
 ![Magazine Siará corpus: dependency graph between experiments, committed OBCs, and Downstream iterations](../images/cap10-experiments-corpus.svg)
-*Figure 11. The Magazine Siará corpus as a dependency graph: 17 Upstream experiments, 12+ Committed OBCs, 15+ Downstream iterations with Release Trail.*
+*Figure 11. The Magazine Siará corpus as a dependency graph: 17 Upstream experiments, 12+ Readiness OBCs, 15+ Downstream iterations with Release Trail.*
 
 ---
 
@@ -65,7 +65,7 @@ This is what ProdOps names as mode coexistence: two commitment regimes operating
 
 ## Downstream in operation: 15 iterations with Release Trail
 
-What the Magazine Siará corpus demonstrates that no purely theoretical case study can is the Downstream cycle in sustained operation. Not one iteration. Fifteen versioned iterations, from v0.2.0 to v0.15.0, each with a formal plan, Committed OBC, BDD Feature, and Release Trail with real entries from each phase.
+What the Magazine Siará corpus demonstrates that no purely theoretical case study can is the Downstream cycle in sustained operation. Not one iteration. Fifteen versioned iterations, from v0.2.0 to v0.15.0, each with a formal plan, Readiness OBC, BDD Feature, and Release Trail with real entries from each phase.
 
 The 12 committed OBCs in the corpus cover Product Capabilities ranging from the product core (Pix invoice creation, payment confirmation via webhook, invoice cancellation) to platform Product Capabilities (Datadog observability, DynamoDB optimization, production CI/CD pipeline). Each OBC has Observable Events with mandatory dimensions, Initial SLIs with numeric targets, Reliability Rules, and explicit decisions recorded with date and responsible party.
 
@@ -141,7 +141,7 @@ The Magazine Siará corpus supports this thesis in four distinct ways.
 
 ## The next territory
 
-What the Magazine Siará corpus has not yet documented is the complete lifecycle of an OBC that is born with the Business Intent (from the Business Signal), traverses Upstream, crosses the Commitment Gate with a full human trio, enters Downstream with a Committed OBC and formalized BDD Feature, is delivered with a complete Release Trail, and reaches the Released state with measured SLOs and a documented postmortem.
+What the Magazine Siará corpus has not yet documented is the complete lifecycle of an OBC that is born with the Business Intent (from the Business Signal), traverses Upstream, crosses the Commitment Gate with a full human trio, enters Downstream with a Readiness OBC and formalized BDD Feature, is delivered with a complete Release Trail, and reaches the Released state with measured SLOs and a documented postmortem.
 
 This cycle exists in parts: some OBCs are already Released; Commitment Gates have been executed but without the fully recorded trio; Release Trails exist but without the cycle traced all the way back to the original Business Signal. The complete composition in a single case traceable end-to-end is the territory that lies ahead.
 
