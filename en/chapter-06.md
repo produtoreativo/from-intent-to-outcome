@@ -46,6 +46,30 @@ The distinction between the three moments resolves frequent conflicts: "should B
 
 ---
 
+## The Discovery journey in Downstream: from the Icebox to the Iteration Plan
+
+There is a period in Downstream that frequently goes unnamed: the interval between the Commitment Gate (Moment 1) and the Readiness Gate (Moment 3). The item is in the Icebox. The commitment has been made. Delivery has not yet started. What is happening in this interval has a name: it is the **Discovery journey in Downstream mode**.
+
+Chapter 3 established that the same five journeys exist in both modes. Discovery in Downstream is not the same thing as Discovery in Upstream. The objective is different, the regime is different, and the output is different.
+
+In Upstream, Discovery reduces uncertainty: it produces evidence to answer hypotheses, builds the Decision Package, determines whether a commitment can be made. The output is an open set of learnings that informs the Commitment Gate.
+
+In Downstream, Discovery satisfies conditions: it transforms the artifacts from Moment 2 (OBC in Refining, BDD in draft) into the artifacts the Readiness Gate requires to release Delivery. The output is not an open set of learnings; it is a set of satisfied conditions. It is refinement work with a verifiable completion criterion.
+
+What Downstream Discovery does concretely, inside the Icebox:
+
+- Completes the BDD Feature: the BDD drafted at Moment 1 is elaborated, validated, and moved to `prodops/artifacts/bdd/`
+- Defines the Observable Events in the OBC: the events that will make behavior verifiable at runtime are specified with their mandatory dimensions
+- Resolves open questions from the Decision Package: questions marked as open at the Commitment Gate are answered with dated, recorded decisions
+- Produces the Reliability Plan (when required): the reliability conditions are defined before any production code is written
+- Transitions the OBC from Refining to Committed: all contract fields become measurable and verifiable by third parties without additional verbal context
+
+The Readiness Gate (Moment 3) is the completion Gate of Downstream Discovery: it verifies whether this journey produced the artifacts the commitment requires. Without complete Downstream Discovery, the Readiness Gate does not open. With it complete, the item leaves the Icebox, enters the Iteration Plan, and the Delivery journey begins.
+
+This has a direct implication: every Business Intent that enters the Icebox (whether coming from an Upstream with Discovery and Commitment Gate, or directly from a Business Signal with sufficient context) goes through Downstream Discovery before reaching Delivery. There is no path from the Commitment Gate to Bootstrap that does not pass through Discovery in Downstream mode. What varies is the duration and density of that work, depending on how much of the Decision Package was already ready at Moment 1.
+
+---
+
 ## The Delivery sequence in Downstream mode
 
 ![Materialization of blocking rigor: Bootstrap → Promote sequence with DoD Gates between each phase](../images/cap05-downstream-sequence.svg)

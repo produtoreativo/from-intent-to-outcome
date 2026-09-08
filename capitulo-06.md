@@ -46,6 +46,30 @@ A distinção entre os três momentos resolve conflitos frequentes: "o BDD deve 
 
 ---
 
+## A jornada Discovery no Downstream: do Icebox ao Iteration Plan
+
+Há um período no Downstream que frequentemente não recebe nome: o intervalo entre o Commitment Gate (Momento 1) e o Readiness Gate (Momento 3). O item está no Icebox. O compromisso foi assumido. A Delivery ainda não começou. O que está acontecendo nesse intervalo tem nome: é a **jornada Discovery em modo Downstream**.
+
+O Capítulo 3 estabeleceu que as mesmas cinco jornadas existem em ambos os modos. A Discovery no Downstream não é a mesma coisa que a Discovery no Upstream. O objetivo é diferente, o regime é diferente, e o output é diferente.
+
+No Upstream, a Discovery reduz incerteza: produz evidência para responder hipóteses, constrói o Decision Package, determina se um compromisso pode ser assumido. O output é um conjunto aberto de aprendizados que informa o Commitment Gate.
+
+No Downstream, a Discovery satisfaz condições: transforma os artefatos do Momento 2 (OBC em Refining, BDD em rascunho) nos artefatos que o Readiness Gate exige para liberar a Delivery. O output não é um conjunto aberto de aprendizados; é um conjunto de condições satisfeitas. É um trabalho de refinamento com critério de conclusão verificável.
+
+O que a Discovery Downstream faz concretamente, dentro do Icebox:
+
+- Completa a BDD Feature: a BDD rascunhada no Momento 1 é elaborada, validada e movida para `prodops/artifacts/bdd/`
+- Define os Observable Events no OBC: os eventos que tornarão o comportamento verificável em runtime são especificados com suas dimensões obrigatórias
+- Resolve questões abertas do Decision Package: perguntas marcadas como abertas no Commitment Gate são respondidas com decisões datadas e registradas
+- Produz o Reliability Plan (quando necessário): as condições de confiabilidade são definidas antes de qualquer linha de produção ser escrita
+- Faz o OBC transitar de Refining para Committed: todos os campos do contrato ficam mensuráveis e verificáveis por terceiros sem contexto verbal adicional
+
+O Readiness Gate (Momento 3) é o Gate de conclusão da Discovery Downstream: verifica se essa jornada produziu os artefatos que o compromisso exige. Sem Discovery Downstream completa, o Readiness Gate não abre. Com ela completa, o item sai do Icebox, entra no Iteration Plan, e a jornada Delivery começa.
+
+Isso tem uma implicação direta: todo Business Intent que entra no Icebox (seja vindo de um Upstream com Discovery e Commitment Gate, seja direto de um Business Signal com contexto suficiente) passa pela Discovery Downstream antes de chegar à Delivery. Não existe caminho do Commitment Gate para o Bootstrap que não passe pela Discovery em modo Downstream. O que varia é a duração e a densidade desse trabalho, conforme o quanto do Decision Package já estava pronto no Momento 1.
+
+---
+
 ## A sequência de Delivery no modo Downstream
 
 ![Materialização do rigor bloqueante: sequência Bootstrap → Promote com Gates DoD entre cada fase](images/cap05-downstream-sequence.svg)
