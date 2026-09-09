@@ -43,7 +43,7 @@ Os experimentos a seguir investigaram diretamente as Product Capabilities da Pay
 ---
 
 ### EXP-003 — Hosted vs Tokenized Credit Card
-**Status:** Decision Package concluído — aguarda confirmação de UX externa
+**Status:** Concluído — Commitment Gate executado, outcome Promover com restrição: hosted slice avança para Downstream; tokenizado e transparente permanecem em Upstream aguardando decisões externas (escopo PCI, modelo de token, UX do Checkout)
 
 **Pergunta:** Qual dos três modelos de integração de cartão (hosted, tokenizado, transparente) vai primeiro para Downstream?
 

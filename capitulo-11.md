@@ -11,7 +11,7 @@ Essa coincidência não é acidental. O ProdOps, como framework, precisa ser tes
 O que torna o laboratório da Magazine Siará diferente de um estudo de caso retrospectivo é que o corpus de artefatos foi produzido *durante* o trabalho, não documentado depois. Os upstream-trails registram o que foi descoberto sessão a sessão. Os OBCs mostram o estado real do compromisso em cada data. Os Release Trails documentam como cada fase foi honrada. O que este capítulo examina é o que esse corpus demonstra sobre o framework, e o que ele ainda não demonstrou.
 
 ![Corpus da Magazine Siará: grafo de dependências entre experimentos, OBCs Readiness e iterações Downstream](images/cap10-experiments-corpus.svg)
-*Figura 11. O corpus da Magazine Siará como grafo de dependências: 17 experimentos Upstream, 12+ OBCs Readiness, 15+ iterações Downstream com Release Trail.*
+*Figura 11. O corpus da Magazine Siará como grafo de dependências: 17 experimentos registrados (10 de Product Capability + 6 de Framework/Runtime executados + 1 em planejamento), 12+ OBCs Readiness, 15+ iterações Downstream com Release Trail.*
 
 ---
 
@@ -23,7 +23,7 @@ Essa questão não tinha resposta óbvia. O cartão de crédito não é um fluxo
 
 O EXP-001 foi o primeiro experimento. Ele não produziu código de produção. Produziu a formulação da hipótese e o contrato de observabilidade: os seis fluxos do ciclo de crédito com BDD scenarios e Observable Events obrigatórios, e as dimensões que nunca poderiam aparecer nos logs. O EXP-002 mapeou as capacidades e limitações do sandbox Asaas e confirmou o Validation Workbench como ambiente de simulação para cenários que o sandbox não consegue reproduzir deterministicamente; a validação completa dos cenários do provedor permanece em aberto, dependente de evidência externa do Asaas. O EXP-003 comparou sistematicamente os três modelos de integração (hosted, tokenizado, transparente) e produziu o Decision Package canônico da sequência: apenas a entrada hosted avança para Downstream; tokenizado permanece em Upstream aguardando decisões de Security e Checkout; Direct Capture fora do escopo do primeiro slice.
 
-Três experimentos sequenciais. Nenhuma linha de código de produção escrita durante os três. A feature de cartão de crédito entrou no Downstream apenas quando havia evidência suficiente para comprometer a Product Capability com segurança, e apenas a fração que a evidência suportava.
+Três experimentos sequenciais. Nenhuma linha de código de produção escrita durante os três. O Commitment Gate foi executado com o Decision Package do EXP-003: o trio registrou o outcome Promover com restrição, e o Downstream iniciou exclusivamente para a entrada hosted. A feature de cartão de crédito entrou no Downstream apenas quando havia evidência suficiente para comprometer a Product Capability com segurança, e apenas a fração que a evidência suportava.
 
 Esse é o modo Upstream operado com rigor de engenharia: não uma fase de baixa disciplina antes da "verdadeira" engenharia. Um regime de compromisso não bloqueante que produziu conhecimento verificável, e um Decision Package que tornou o Commitment Gate possível.
 
@@ -145,7 +145,7 @@ O que o corpus da Magazine Siará ainda não documentou é o ciclo de vida compl
 
 Esse ciclo existe em partes: alguns OBCs já estão Released; o Commitment Gate existe mas sem o trio completo registrado; os Release Trails existem mas sem o ciclo desde o Business Signal original. A composição completa num único caso rastreável de ponta a ponta é o território que está à frente.
 
-Quando esse ciclo for documentado com o mesmo nível de rigor com que os 17 experimentos documentaram o Upstream, o framework terá dado o passo que transforma uma teoria coerente com evidências extensas em um método com rastreabilidade completa de intenção a resultado.
+Quando esse ciclo for documentado com o mesmo nível de rigor com que os 16 experimentos executados documentaram o Upstream (10 de Product Capability, 6 de Framework/Runtime), o framework terá dado o passo que transforma uma teoria coerente com evidências extensas em um método com rastreabilidade completa de intenção a resultado.
 
 ---
 
