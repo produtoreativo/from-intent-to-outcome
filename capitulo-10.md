@@ -5,7 +5,7 @@
 ## Por que agentes não têm sensibilidade de modo por padrão
 
 ![Protocolo de classificação de modo para agentes de IA](images/cap09-agent-mode-classification.svg)
-*Figura 10. Fluxo de decisão para classificação de modo: o estado do OBC é o sinal primário. OBC Refining ou Readiness (Commitment Gate registrado) = Downstream; OBC em Draft ou ausente = Upstream.*
+*Figura 10. Fluxo de decisão para classificação de modo: o registro do Commitment Gate é o sinal primário; o estado do OBC é o indicador observável resultante. Commitment Gate registrado com outcome Promover (OBC Refining ou Readiness) = Downstream; sem Commitment Gate registrado (OBC Draft ou ausente) = Upstream.*
 
 Um engenheiro humano que trabalha com um framework de produto por tempo suficiente desenvolve algo que poderíamos chamar de sensibilidade de modo: a capacidade de perceber, a partir de sinais contextuais (a conversa na reunião, o estado do backlog, o tom das mensagens do PM), em que tipo de compromisso o trabalho está operando. Ele não precisa verificar formalmente se o OBC está Readiness; percebe pela postura da equipe que algo foi decidido e o trabalho está agora sob compromisso.
 
@@ -56,7 +56,7 @@ O trabalho de separação formal entre os modos de execução identificou três 
 
 **Contaminação conceitual**: o `upstream/SKILL.md` mencionava "committed OBCs" e "committed BDD Features" como targets do Upstream: estados exclusivos do Downstream que o Upstream não está autorizado a exigir.
 
-**Contaminação por ausência**: os skills de fase (Bootstrap, Hack, Sync, Finish, Ship, Validate, Promote) descreviam apenas o comportamento Downstream, sem documentar como cada fase se comporta com rigor advisory no Upstream. Um agente Upstream que quer usar o skill `/hack` no modo advisory não tem orientação sobre como fazê-lo.
+**Contaminação por ausência**: os skills de fase (Bootstrap, Hack, Sync, Finish, Ship, Validate, Promote) descreviam apenas o comportamento Downstream, sem documentar como cada fase se comporta com rigor não bloqueante no Upstream. Um agente Upstream que quer usar o skill `/hack` em modo não bloqueante não tem orientação sobre como fazê-lo.
 
 A correção parcial já realizada foi a nota no AGENTS.md que esclarece a distinção entre modo e jornada. A correção completa (documentar o comportamento por modo em cada skill de fase) está planejada e ainda não concluída.
 
@@ -67,8 +67,8 @@ A correção parcial já realizada foi a nota no AGENTS.md que esclarece a disti
 ```mermaid
 graph TD
     REQ["Pedido recebido pelo agente"] --> CLASS["Classificação de modo\nPasso 0.1 do AGENTS.md"]
-    CLASS -->|"OBC Refining ou Readiness (Gate registrado)"| DS["/downstream\nRigor bloqueante\nGates obrigatórios"]
-    CLASS -->|"OBC Draft / sem Gate registrado"| US["/upstream\nRigor advisory\nEngenheiro decide"]
+    CLASS -->|"Commitment Gate registrado (Promover)\nOBC Refining ou Readiness"| DS["/downstream\nRigor bloqueante\nGates obrigatórios"]
+    CLASS -->|"Sem Commitment Gate registrado\nOBC Draft ou ausente"| US["/upstream\nRigor não bloqueante\nEngenheiro decide"]
     DS --> SKILLS_DS["Bootstrap / Hack / Sync\nFinish / Ship / Validate / Promote"]
     US --> SKILLS_US["Experiment / Evidence\nDecision Package / Commitment Gate"]
 
@@ -78,7 +78,7 @@ graph TD
 
 A arquitetura de skills do ProdOps resolve parte do problema de modo para agentes de uma forma elegante: cada skill de entrada implicitamente carrega um modo.
 
-`/upstream` ativa a jornada Discovery com rigor advisory: sem Gates obrigatórios, sem sequência imposta, com liberdade para o agente usar as práticas que forem úteis para responder a hipótese. O agente que invoca `/upstream` está em modo de exploração.
+`/upstream` ativa a jornada Discovery com rigor não bloqueante: sem Gates obrigatórios, sem sequência imposta, com liberdade para o agente usar as práticas que forem úteis para responder a hipótese. O agente que invoca `/upstream` está em modo de exploração.
 
 `/downstream` ativa a jornada Delivery com rigor bloqueante: pré-condições verificadas, sequência obrigatória, Gates que impedem avanço quando não satisfeitos. O agente que invoca `/downstream` está em modo de compromisso.
 

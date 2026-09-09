@@ -5,7 +5,7 @@
 ## Why agents don't have mode sensitivity by default
 
 ![Mode classification protocol for AI agents](../images/cap09-agent-mode-classification.svg)
-*Figure 10. Decision flow for mode classification: OBC state is the primary signal. OBC Refining or Readiness (Commitment Gate registered) = Downstream; OBC in Draft or absent = Upstream.*
+*Figure 10. Decision flow for mode classification: the Commitment Gate record is the primary signal; OBC state is the resulting observable indicator. Commitment Gate registered with Promote outcome (OBC Refining or Readiness) = Downstream; no Commitment Gate registered (OBC Draft or absent) = Upstream.*
 
 A human engineer who works with a product framework long enough develops something we might call mode sensitivity: the ability to perceive, from contextual signals (the conversation in the meeting, the state of the backlog, the tone of the PM's messages), in what kind of commitment the work is operating. They don't need to formally check whether the OBC is Readiness; they perceive from the team's posture that something has been decided and the work is now about delivery.
 
@@ -56,7 +56,7 @@ The formal separation work between execution modes identified three types of con
 
 **Conceptual contamination**: the `upstream/SKILL.md` mentioned "committed OBCs" and "committed BDD Features" as Upstream targets: states exclusive to Downstream that Upstream is not authorized to require.
 
-**Contamination by absence**: the phase skills (Bootstrap, Hack, Sync, Finish, Ship, Validate, Promote) described only Downstream behavior, without documenting how each phase behaves with advisory rigor in Upstream. An Upstream agent wanting to use the `/hack` skill in advisory mode has no guidance on how to do so.
+**Contamination by absence**: the phase skills (Bootstrap, Hack, Sync, Finish, Ship, Validate, Promote) described only Downstream behavior, without documenting how each phase behaves with non-blocking rigor in Upstream. An Upstream agent wanting to use the `/hack` skill in non-blocking mode has no guidance on how to do so.
 
 The partial correction already made was the note in AGENTS.md that clarifies the distinction between mode and journey. The complete correction (documenting mode-specific behavior in each phase skill) is planned and not yet completed.
 
@@ -67,8 +67,8 @@ The partial correction already made was the note in AGENTS.md that clarifies the
 ```mermaid
 graph TD
     REQ["Request received by agent"] --> CLASS["Mode classification\nStep 0.1 of AGENTS.md"]
-    CLASS -->|"OBC Refining or Readiness (Gate registered)"| DS["/downstream\nBlocking rigor\nMandatory Gates"]
-    CLASS -->|"OBC Draft / no Gate registered"| US["/upstream\nAdvisory rigor\nEngineer decides"]
+    CLASS -->|"Commitment Gate registered (Promote)\nOBC Refining or Readiness"| DS["/downstream\nBlocking rigor\nMandatory Gates"]
+    CLASS -->|"No Commitment Gate registered\nOBC Draft or absent"| US["/upstream\nNon-blocking rigor\nEngineer decides"]
     DS --> SKILLS_DS["Bootstrap / Hack / Sync\nFinish / Ship / Validate / Promote"]
     US --> SKILLS_US["Experiment / Evidence\nDecision Package / Commitment Gate"]
 
@@ -78,7 +78,7 @@ graph TD
 
 The ProdOps skill architecture resolves part of the mode problem for agents in an elegant way: each entry skill implicitly carries a mode.
 
-`/upstream` activates the Discovery journey with advisory rigor: no mandatory Gates, no imposed sequence, with freedom for the agent to use whatever practices are useful to answer the hypothesis. The agent invoking `/upstream` is in exploration mode.
+`/upstream` activates the Discovery journey with non-blocking rigor: no mandatory Gates, no imposed sequence, with freedom for the agent to use whatever practices are useful to answer the hypothesis. The agent invoking `/upstream` is in exploration mode.
 
 `/downstream` activates the Delivery journey with blocking rigor: preconditions verified, mandatory sequence, Gates that prevent advancement when not satisfied. The agent invoking `/downstream` is in commitment mode.
 
