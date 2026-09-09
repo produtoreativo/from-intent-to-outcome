@@ -15,16 +15,16 @@ Upstream, Downstream e o Novo Modelo Operacional para Produtos Digitais
 | 2 | Por que a leitura de mercado não resolve | [capitulo-02.md](capitulo-02.md) | Final |
 | 3 | O que é um modo de execução | [capitulo-03.md](capitulo-03.md) | Final |
 | 4 | Assessment: a jornada que acompanha todas | [capitulo-04.md](capitulo-04.md) | Final |
-| 5 | Upstream: o modo da incerteza explícita | [capitulo-05.md](capitulo-05.md) | Rascunho |
-| 6 | Downstream: o modo do compromisso | [capitulo-06.md](capitulo-06.md) | Rascunho |
-| 7 | O Commitment Gate: a fronteira com nome | [capitulo-07.md](capitulo-07.md) | Rascunho |
-| 8 | Observabilidade como epistemologia, não como infraestrutura | [capitulo-08.md](capitulo-08.md) | Rascunho |
-| 9 | Diligence: guardião da consistência | [capitulo-09.md](capitulo-09.md) | Rascunho |
-| 10 | O problema de modo para agentes de IA | [capitulo-10.md](capitulo-10.md) | Rascunho |
-| 11 | A Magazine Siará como evidência | [capitulo-11.md](capitulo-11.md) | Rascunho |
-| — | Conclusão | [conclusao.md](conclusao.md) | Rascunho |
-| — | Apêndice: Corpus de experimentos | [apendice-experimentos.md](apendice-experimentos.md) | Revisão |
-| — | Apêndice: Notas de pesquisa | [apendice-pesquisa.md](apendice-pesquisa.md) | Revisão |
+| 5 | Upstream: o modo da incerteza explícita | [capitulo-05.md](capitulo-05.md) | Revisão 6 |
+| 6 | Downstream: o modo do compromisso | [capitulo-06.md](capitulo-06.md) | Revisão 6 |
+| 7 | O Commitment Gate: a fronteira com nome | [capitulo-07.md](capitulo-07.md) | Revisão 6 |
+| 8 | Observabilidade como epistemologia, não como infraestrutura | [capitulo-08.md](capitulo-08.md) | Revisão 6 |
+| 9 | Diligence: guardião da consistência | [capitulo-09.md](capitulo-09.md) | Revisão 6 |
+| 10 | O problema de modo para agentes de IA | [capitulo-10.md](capitulo-10.md) | Revisão 6 |
+| 11 | A Magazine Siará como evidência | [capitulo-11.md](capitulo-11.md) | Revisão 6 |
+| — | Conclusão | [conclusao.md](conclusao.md) | Revisão 6 |
+| — | Apêndice: Corpus de experimentos | [apendice-experimentos.md](apendice-experimentos.md) | Revisão 6 |
+| — | Apêndice: Notas de pesquisa | [apendice-pesquisa.md](apendice-pesquisa.md) | Revisão 6 |
 
 ---
 
@@ -46,3 +46,4 @@ Upstream, Downstream e o Novo Modelo Operacional para Produtos Digitais
 | 3 — Imagens e Diagramas | Concluído | 0 | 0 |
 | 4 — Remoção de Em Dashes | Concluído | 0 | 0 |
 | 5 — Universalização (remoção de EXP-NNN) | Concluído | 0 | 0 |
+| 6 — Consolidação editorial (issue #12) | Concluído | 50+ | Todas resolvidas (Ciclos A–C, E–F) |
