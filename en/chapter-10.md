@@ -116,7 +116,7 @@ The fact that the Payments API repository itself contained terminological contra
 
 The problem of rigor configuration is not a problem that affects only human teams. It affects any agency system (human or artificial) that operates with artifact-provided guidance. When artifacts are inconsistent (using "journey" where "mode" should be), the agent learns the wrong distinction. When artifacts are consistent, the agent has the basis to calibrate rigor correctly.
 
-ProdOps, by identifying and naming this contradiction, and by creating an explicit work classification protocol (AGENTS.md) and a verifiable event emission contract (EXP-015), is solving the mode problem for agents in the only way that works: making the distinction verifiable in the artifacts the agents read.
+ProdOps, by identifying and naming this contradiction, and by creating an explicit work classification protocol (AGENTS.md), is solving the mode problem for agents in the only way that works: making the distinction verifiable in the artifacts the agents read.
 
 ---
 

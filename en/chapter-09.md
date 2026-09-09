@@ -95,6 +95,8 @@ The health measure of Diligence is not the volume of Findings created: it is the
 
 When Diligence repeatedly produces many Findings about the same type of problem, this is a process signal: the team is systematically producing a divergence that must be addressed at the root cause, not merely corrected each time it appears.
 
+EXP-014 of the Payments API tested this property empirically: can the ProdOps Runtime automatically track the Delivery state of each Feature via CloudEvents, with Diligence capturing and attaching operational evidence to the same Work Item in real time? **53/53 PASS.** Synchronization between GitHub Project and Datadog was verified for every phase of the Bootstrap → Promote sequence. Diligence did not require human intervention to detect divergences: the event-driven cycle triggered verification at the moment of each phase transition. This result transforms Diligence from a periodic audit process into a continuous verification system, which is the only form of governance that does not create bureaucracy proportional to delivery volume.
+
 ---
 
 ## The relationship between Diligence and Assessment
@@ -106,8 +108,6 @@ The difference in purpose is precise: Diligence maintains the consistency of the
 The relationship between them is bidirectional. Diligence produces Findings and execution evidence that Assessment consumes to evaluate operational maturity: if the number of Findings of a specific type is growing, this is a data point for Assessment. Assessment produces recommendations that can materialize as new verification criteria in the Diligence catalog. A recommendation to improve the OBC verification process can result in new checks that Diligence then executes.
 
 This bidirectionality means that Diligence is not subordinate to Assessment, nor is Assessment subordinate to Diligence. They are journeys with distinct responsibilities that feed each other.
-
-EXP-014 of the Payments API tested this property empirically: can the ProdOps Runtime automatically track the Delivery state of each Feature via CloudEvents, with Diligence capturing and attaching operational evidence to the same Work Item in real time? **53/53 PASS.** Synchronization between GitHub Project and Datadog was verified for every phase of the Bootstrap → Promote sequence. Diligence did not require human intervention to detect divergences: the event-driven cycle triggered verification at the moment of each phase transition. This result transforms Diligence from a periodic audit process into a continuous verification system, which is the only form of governance that does not create bureaucracy proportional to delivery volume.
 
 ---
 

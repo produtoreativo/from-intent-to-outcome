@@ -135,7 +135,7 @@ Downstream has its own set of anti-patterns: behaviors that reproduce the form o
 
 **AP-D4: Phantom BDD:** BDD Feature written after the code, describing what was implemented instead of the expected behavior before implementation. Cause: BDD treated as compliance documentation rather than behavioral specification. The BDD exists as a formal artifact, but has lost its function: specifying the agreed behavior *before* any line of code is written. Diagnostic criterion: verify the creation timestamp of the feature file versus the start of the Hack phase. If the feature file was created after the first implementation commit, the BDD is phantom. In PI-001 for the Split Payment, the instruction is explicit: "OBC and BDD must be written immediately" (on the same day as the Business Signal, before any Hack session).
 
-**AP-D5: Release Trail Vazio:** Promote executed without a filled Release Trail: no record of the decisions made, artifacts produced, tests executed, and the state in which the system was left after the release. Cause: Release Trail treated as an optional formality rather than a commitment record. Consequence: the traceability that Downstream promises (from the Commitment Gate to evidence in production) is destroyed. The Release Trail is not optional documentation; it is the record that allows the commitment to be audited after the Promote has happened. EXP-014 of the Payments API demonstrated empirically (53/53 PASS) that the ProdOps Runtime automatically tracks the Delivery state of each Feature via CloudEvents, making an empty Release Trail detectable by Diligence the moment it occurs, not only retrospectively.
+**AP-D5: Empty Release Trail:** Promote executed without a filled Release Trail: no record of the decisions made, artifacts produced, tests executed, and the state in which the system was left after the release. Cause: Release Trail treated as an optional formality rather than a commitment record. Consequence: the traceability that Downstream promises (from the Commitment Gate to evidence in production) is destroyed. The Release Trail is not optional documentation; it is the record that allows the commitment to be audited after the Promote has happened. EXP-014 of the Payments API demonstrated empirically (53/53 PASS) that the ProdOps Runtime automatically tracks the Delivery state of each Feature via CloudEvents, making an empty Release Trail detectable by Diligence the moment it occurs, not only retrospectively.
 
 ```mermaid
 graph LR
@@ -146,7 +146,7 @@ graph LR
     end
     subgraph Ordem["Produce artifacts out of order"]
         AP4["AP-D4 Phantom BDD\nBDD written after the code"]
-        AP5["AP-D5 Release Trail Vazio\nPromote without evidence trail"]
+        AP5["AP-D5 Empty Release Trail\nPromote without evidence trail"]
     end
     Forma & Ordem --> RESULT["Framework exists in form\nnot in function"]
 ```

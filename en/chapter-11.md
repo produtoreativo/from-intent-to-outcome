@@ -10,7 +10,7 @@ This coincidence is not accidental. ProdOps, as a framework, needs to be tested 
 
 What makes the Magazine Siará laboratory different from a retrospective case study is that the artifact corpus was produced *during* the work, not documented afterward. The upstream-trails record what was discovered session by session. The OBCs show the real state of commitment at each date. The Release Trails document how each phase was honored. What this chapter examines is what this corpus demonstrates about the framework, and what it has not yet demonstrated.
 
-![Magazine Siará corpus: dependency graph between experiments, committed OBCs, and Downstream iterations](../images/cap10-experiments-corpus.svg)
+![Magazine Siará corpus: dependency graph between experiments, Readiness OBCs, and Downstream iterations](../images/cap10-experiments-corpus.svg)
 *Figure 11. The Magazine Siará corpus as a dependency graph: 17 registered experiments (10 Product Capability + 6 Framework/Runtime executed + 1 in planning), 12+ Readiness OBCs, 15+ Downstream iterations with Release Trail.*
 
 ---
@@ -23,7 +23,7 @@ This question had no obvious answer. Credit card is not a single flow: it is at 
 
 EXP-001 was the first experiment. It produced no production code. It produced the hypothesis formulation and the observability contract: the six flows of the credit card lifecycle with mandatory BDD scenarios and Observable Events, and the dimensions that could never appear in logs. EXP-002 mapped the Asaas sandbox Product Capabilities and limitations and confirmed the Validation Workbench as the simulation environment for scenarios the sandbox cannot reproduce deterministically; full provider scenario validation remains open, pending external evidence from Asaas. EXP-003 systematically compared the three integration models (hosted, tokenized, transparent) and produced the canonical Decision Package for the sequence: only hosted entry advances to Downstream; tokenized remains in Upstream awaiting Security and Checkout decisions; Direct Capture is out of scope for the first slice.
 
-Three sequential experiments. No production code written during any of them. The Commitment Gate was executed with the EXP-003 Decision Package: the trio registered the Promote with restriction outcome, and Downstream started exclusively for the hosted slice. The credit card feature entered Downstream only when there was sufficient evidence to commit the Product Capability safely, and only the fraction that evidence supported.
+Three sequential experiments. No production code written during any of them. The Commitment Gate was executed with the EXP-003 Decision Package: the trio registered the Promote with restriction outcome, and Downstream started exclusively for the hosted entry. The credit card feature entered Downstream only when there was sufficient evidence to commit the Product Capability safely, and only the fraction that evidence supported.
 
 This is Upstream mode operated with full engineering rigor: not a low-discipline phase before the "real" engineering. A non-blocking commitment regime that produced verifiable knowledge, and a Decision Package that made the Commitment Gate possible.
 
@@ -65,9 +65,9 @@ This is what ProdOps names as mode coexistence: two commitment regimes operating
 
 ## Downstream in operation: 15 iterations with Release Trail
 
-What the Magazine Siará corpus demonstrates that no purely theoretical case study can is the Downstream cycle in sustained operation. Not one iteration. Fifteen versioned iterations, from v0.2.0 to v0.15.0, each with a formal plan, Readiness OBC, BDD Feature, and Release Trail with real entries from each phase.
+What the Payments API corpus demonstrates that no purely theoretical case study can is the Downstream cycle in sustained operation. Not one iteration. Fifteen versioned iterations, from v0.2.0 to v0.15.0, each with a formal plan, Readiness OBC, BDD Feature, and Release Trail with real entries from each phase.
 
-The 12 committed OBCs in the corpus cover Product Capabilities ranging from the product core (Pix invoice creation, payment confirmation via webhook, invoice cancellation) to platform Product Capabilities (Datadog observability, DynamoDB optimization, production CI/CD pipeline). Each OBC has Observable Events with mandatory dimensions, Initial SLIs with numeric targets, Reliability Rules, and explicit decisions recorded with date and responsible party.
+The 12 Readiness OBCs in the corpus cover Product Capabilities ranging from the product core (Pix invoice creation, payment confirmation via webhook, invoice cancellation) to platform Product Capabilities (Datadog observability, DynamoDB optimization, production CI/CD pipeline). Each OBC has Observable Events with mandatory dimensions, Initial SLIs with numeric targets, Reliability Rules, and explicit decisions recorded with date and responsible party.
 
 The `create-invoice` OBC documents the idempotency requirement with precise semantics: the same key returns the same result, retries do not create duplicate charges. The `payment-confirmation` OBC documents the Asaas webhook correlation strategy by `providerPaymentId` or `externalReference`, with the `payment.confirmation.unmatched` event emitted when the webhook arrives without a matching invoice: observability of the failure case, not only the happy path.
 
@@ -150,5 +150,8 @@ When that cycle is documented with the same level of rigor with which the 16 exe
 ---
 
 *Chapter 11 of 11 | Part VI: The Laboratory*
+
+---
+
 [← Chapter 10 — The mode problem for AI agents](chapter-10.md)
 [→ Conclusion (Portuguese)](../conclusao.md)

@@ -43,24 +43,24 @@ What these concepts sought to address is real. What was missing was a formulatio
 ## The Cost of Being Wrong Changes Everything
 
 ![Wrong rigor configuration generates waste in both directions](../images/cap01-rigor-misconfiguration.svg)
-*Figure 1. Delivery rigor applied during exploration (line A) and exploration rigor applied during delivery (line B) produce the same result: waste*
+*Figure 1. Commitment rigor applied during exploration (line A) and exploration rigor applied during commitment (line B) produce the same result: waste*
 
 There is a distinction that is rarely articulated explicitly in product organizations: the distinction between the cost of being wrong during exploration and the cost of being wrong during delivery.
 
 When a team is exploring (investigating whether a hypothesis is valid, testing an approach, mapping a problem space), the reversal cost of an incorrect hypothesis tends to be lower. Exploration can be costly: interviews, prototypes, and experiments consume time and resources. What is controllable, before a formal commitment to deliver, is the cost of changing course when a hypothesis proves incorrect. A refuted hypothesis is valuable information. A prototype that doesn't work eliminates a bad option before it becomes a more expensive commitment to reverse. Exploration is the mechanism by which a team learns what not knowing can cost.
 
-When a team is delivering (implementing something that has been committed, for a date, with defined acceptance criteria), the cost of being wrong increases radically. An incorrect premise discovered during implementation requires rework. A poorly defined API contract can block integrations. A vague acceptance criterion results in debate about whether the item is "done." Delivery is the mechanism by which a team honors commitments, and breaking commitments has real costs.
+When a team is operating under commitment (implementing something that has been committed, for a date, with defined acceptance criteria), the cost of being wrong increases radically. An incorrect premise discovered during implementation requires rework. A poorly defined API contract can block integrations. A vague acceptance criterion results in debate about whether the item is "done." Delivery is the mechanism by which a team honors commitments, and breaking commitments has real costs.
 
 The problem with the team at the opening of this chapter is not that discovery was inadequate in a vacuum. It is that the type of rigor applied to the work was not calibrated to the type of commitment the work required at each moment.
 
-At some moments, the team applied delivery rigor during exploration: hypotheses were treated as requirements before being verified, which turned preliminary insights into premature specifications. At other moments, the team maintained an exploratory posture during delivery: decisions that should have been locked remained open, acceptance criteria remained vague, and the uncertainty that should have been eliminated before commitment was carried into implementation.
+At some moments, the team applied commitment rigor during exploration: hypotheses were treated as requirements before being verified, which turned preliminary insights into premature specifications. At other moments, the team maintained an exploratory posture during commitment: decisions that should have been locked remained open, acceptance criteria remained vague, and the uncertainty that should have been eliminated before commitment was carried into implementation.
 
 The result in both cases is the same: wasted effort. In the first case, by exploring with excessive rigor before knowing what is worth committing to. In the second, by committing without having eliminated the uncertainty that would make the commitment honorable.
 
 ```mermaid
 graph LR
-    A[Exploração livre] -->|custo de reversão menor| B[Hipótese refutada = aprendizado]
-    C[Dentro de compromisso] -->|custo de reversão alto| D[Premissa incorreta = retrabalho]
+    A[Free exploration] -->|lower reversal cost| B[Refuted hypothesis = learning]
+    C[Under commitment] -->|higher reversal cost| D[Incorrect premise = rework]
 ```
 
 ---
@@ -132,26 +132,6 @@ Chapter 4 describes Assessment in depth: what it evaluates, what it produces, an
 ---
 
 *Chapter 1 of 11 | Part I: The Problem*
-
----
-
-## Review Notes
-
-**Opening:** "The problem is not in what the team did" → "The problem is not just in what the team did." Preserves the force of the thesis without eliminating the process dimension present in the example itself.
-
-**Historical generalizations:** "For decades, the conversation…" → "Over the past few decades, much of the literature and practice…". "each generation of frameworks solves… and ignores" → "several generations of frameworks solved… and left the rest implicit." Reduces the scope of historical claims.
-
-**Upstream/Downstream as genealogy:** "Upstream and Downstream, as frameworks and as practice, attempted to address…" → "The concepts of Upstream and Downstream appear, in different product and development contexts, as attempts to organize some of these tensions…". Avoids attributing a specific historical genealogy without evidence.
-
-**Generative AI:** removed "irreversibly"; removed "For the first time." Phrasing becomes "Generative artificial intelligence began to dismantle that myth in a significant way." Avoids absolute empirical generalization.
-
-**Cost of being wrong:** reformulated to distinguish exploration cost (which can be high) from reversal cost (which tends to be lower before a formal commitment). Consistent with the formulation in Chapter 2.
-
-**Mermaid diagram:** labels "low cost" and "high cost" → "lower reversal cost" and "higher reversal cost." Aligns with the conceptual distinction adopted.
-
-**Definition of rigor:** replaced the specific operational definition ("rigor is the quality of evidence" / "rigor is the satisfaction of acceptance criteria") with the formulation: "Rigor is the degree of demands applied to reduce relevant uncertainty, sustain a decision, or verify the fulfillment of a commitment." Followed by the description of the two regimes as emerging from the type of commitment, not as closed and universal types. The "confusion" paragraph was adjusted to use "regime" instead of fixed labels with descriptive parentheses.
-
-**Closing about the literature:** "The most common answer in the literature (separating discovery from delivery sequentially)" → "A recurring interpretation in product literature and practice, by separating Discovery and delivery as distinct phases." Acknowledges the genuine merit of the sequential interpretation before identifying its limitation. Consistent with the revision already made in Chapter 2.
 
 ---
 

@@ -11,7 +11,7 @@ The previous chapters described a problem: product teams apply the wrong kind of
 
 The solution ProdOps proposes is structural: instead of distinguishing Upstream from Downstream by the point in time at which they occur, it distinguishes them by the *type of commitment* they are maintaining. This distinction is what the framework calls an *execution mode*.
 
-Introducing two terms (Upstream and Downstream) and saying that one represents exploration and the other represents delivery would merely rename a problem without solving it. The point of the modal model is not the vocabulary. It is what the vocabulary carries: a commitment distinction that can be verified at any moment, applied to any type of work, and managed with explicit mechanisms.
+Introducing two terms (Upstream and Downstream) and saying that one represents exploration and the other represents an execution commitment would merely rename a problem without solving it. The point of the modal model is not the vocabulary. It is what the vocabulary carries: a commitment distinction that can be verified at any moment, applied to any type of work, and managed with explicit mechanisms.
 
 This chapter defines what an execution mode is in the technical sense that ProdOps uses the term. Without this precise definition, the chapters on Upstream and Downstream will appear to be merely process descriptions, and the reader will miss what is genuinely different about this approach.
 

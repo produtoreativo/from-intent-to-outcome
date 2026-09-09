@@ -125,7 +125,7 @@ Discovery in the Downstream is not merely inefficient: it is structurally risky.
 
 ## The missing distinction: mode, not sequence
 
-What the most common operational interpretation of the product literature leaves implicit, ProdOps makes explicit: the difference between exploration and delivery is not a difference in moment in time, but in the type of commitment being maintained.
+What the most common operational interpretation of the product literature leaves implicit, ProdOps makes explicit: the difference between exploration and commitment is not a difference in moment in time, but in the type of commitment being maintained.
 
 Upstream and Downstream do not describe where the work is in time. They describe which commitment is governing the work.
 
@@ -156,30 +156,6 @@ In that sense, ProdOps undoes nothing. It readjusts. Those already operating wit
 ---
 
 *Chapter 2 of 11 | Part I: The Problem*
-
----
-
-## Revision Notes
-
-### Round 1: deep conceptual review
-
-**Cagan (*Inspired*):** the claim "delivery starts from scratch" was removed. The critique was reformulated to recognize that Cagan offers powerful mechanisms for risk reduction before construction, operating across the four dimensions of value, usability, viability, and feasibility.
-
-**Torres (*Continuous Discovery Habits*):** the suggestion that Torres does not perceive overlap between discovery and delivery was removed. The critique was reformulated: Torres resolves the problem of continuity, but the framework is not presented primarily as an operating model where the type of commitment in force explicitly alters the rigor regime.
-
-**Singer (*Shape Up*):** the factually incorrect claim that Shape Up "has no protocol" for late discoveries was removed. The diagram "no protocol → Late discovery" was replaced by a faithful representation of the framework.
-
-**18 works:** the specific quantity was removed from the main narrative; the reference was maintained as "a broad set of works," with documentation referred to the methodological appendix.
-
-**Diagrams:** revised to not attribute absences or limitations that the authors do not possess.
-
-### Round 3: three targeted adjustments
-
-**Cagan (commitment):** "before any engineering commitment at scale" → "before committing significant engineering resources to building a solution." Clarifies that the issue is avoiding premature commitment of construction resources, without suggesting that no commitment exists during discovery.
-
-**Discovery/delivery consensus:** "The discovery-before-delivery consensus" → "The guidance to perform discovery before committing significant construction resources." Avoids treating a temporal sequence as the uniform position of all three authors, consistent with the fact that Torres works with continuous discovery and Singer acknowledges uncertainty during execution.
-
-**LEARN → COMMIT → REALIZE:** a sentence was added explicitly stating that the arrow does not represent a temporal sequence, but a progressive transformation of the type of commitment governing the work. Aligns the synthesis with the central thesis of the chapter.
 
 ---
 
