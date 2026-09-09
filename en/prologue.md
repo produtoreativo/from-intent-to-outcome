@@ -30,6 +30,10 @@ It is the central spring of the Framework I began building that year, and which 
 
 ---
 
+**Note to the reader:** Magazine Siará is a fictitious name adopted to protect those involved; the company, the repository, and the artifacts are real. Throughout the book, experiments from the Magazine Siará corpus are cited by their identifiers (EXP-001, EXP-014, etc.). For a complete view of each experiment (what it investigated, what resulted, and how it connects to the framework), consult the [Appendix: Experiment Corpus](../apendice-experimentos.md) before starting or whenever an experiment identifier appears for the first time.
+
+---
+
 *Prologue | From Intent to Outcome: Upstream, Downstream, and the New Operating Model for Digital Products*
 
 ---

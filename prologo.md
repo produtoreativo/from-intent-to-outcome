@@ -30,7 +30,7 @@ Ela é a mola central do Framework que comecei a construir naquele ano e que dá
 
 ---
 
-**Nota ao leitor:** ao longo do livro, experimentos do corpus da Magazine Siará são citados pelos seus identificadores (EXP-001, EXP-014, etc.). Para uma visão completa de cada experimento (o que investigou, o que resultou e como se conecta ao framework), consulte o [Apêndice: Corpus de Experimentos](apendice-experimentos.md) antes de iniciar a leitura ou sempre que um número de experimento aparecer pela primeira vez.
+**Nota ao leitor:** a Magazine Siará é um nome fictício adotado para proteger os envolvidos; a empresa, o repositório e os artefatos são reais. Ao longo do livro, experimentos do corpus da Magazine Siará são citados pelos seus identificadores (EXP-001, EXP-014, etc.). Para uma visão completa de cada experimento (o que investigou, o que resultou e como se conecta ao framework), consulte o [Apêndice: Corpus de Experimentos](apendice-experimentos.md) antes de iniciar a leitura ou sempre que um número de experimento aparecer pela primeira vez.
 
 ---
 

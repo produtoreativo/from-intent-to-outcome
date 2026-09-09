@@ -4,7 +4,7 @@
 
 ## O laboratório vivo
 
-A Magazine Siará é uma empresa brasileira de e-commerce multi-tenant (fictícia, mas construída com a textura de uma empresa real). Seu time de pagamentos opera a Payments API: uma plataforma que isola os sistemas internos (Checkout, Order Management) do PSP externo (Asaas) e serve como System of Record de todos os eventos de pagamento. Como produto, a Payments API foi construída inteiramente sob o framework ProdOps desde o primeiro dia. Como laboratório, é o caso mais documentado disponível de um sistema real operando os dois modos (Upstream e Downstream) com evidência verificável em cada transição.
+A Magazine Siará é uma empresa brasileira de e-commerce multi-tenant (nome fictício adotado para proteger os envolvidos; a empresa, o repositório e os artefatos são reais). Seu time de pagamentos opera a Payments API: uma plataforma que isola os sistemas internos (Checkout, Order Management) do PSP externo (Asaas) e serve como System of Record de todos os eventos de pagamento. Como produto, a Payments API foi construída inteiramente sob o framework ProdOps desde o primeiro dia. Como laboratório, é o caso mais documentado disponível de um sistema real operando os dois modos (Upstream e Downstream) com evidência verificável em cada transição.
 
 Essa coincidência não é acidental. O ProdOps, como framework, precisa ser testado em condições reais para gerar evidência de que funciona. A Payments API, como produto, precisava de um framework de trabalho que tornasse o processo de construção explícito o suficiente para ser examinado e melhorado. Os dois precisavam um do outro.
 

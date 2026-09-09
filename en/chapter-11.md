@@ -4,7 +4,7 @@
 
 ## The living laboratory
 
-Magazine Siará is a Brazilian multi-tenant e-commerce company (fictional, but built with the texture of a real company). Its payments team operates the Payments API: a platform that decouples internal systems (Checkout, Order Management) from the external PSP (Asaas) and serves as the System of Record for all payment events. As a product, the Payments API was built entirely under the ProdOps framework from day one. As a laboratory, it is the most documented case available of a real system operating both modes (Upstream and Downstream) with verifiable evidence at each transition.
+Magazine Siará is a Brazilian multi-tenant e-commerce company (fictitious name adopted to protect those involved; the company, the repository, and the artifacts are real). Its payments team operates the Payments API: a platform that decouples internal systems (Checkout, Order Management) from the external PSP (Asaas) and serves as the System of Record for all payment events. As a product, the Payments API was built entirely under the ProdOps framework from day one. As a laboratory, it is the most documented case available of a real system operating both modes (Upstream and Downstream) with verifiable evidence at each transition.
 
 This coincidence is not accidental. ProdOps, as a framework, needs to be tested in real conditions to generate evidence that it works. The Payments API, as a product, needed a working framework that would make the construction process explicit enough to be examined and improved. Both needed each other.
 

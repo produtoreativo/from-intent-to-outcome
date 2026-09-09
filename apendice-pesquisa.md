@@ -32,7 +32,7 @@ David J. Anderson, no desenvolvimento do método Kanban para gestão de produtos
 
 Em 2020, Dan Heath publicou "Upstream: The Quest to Solve Problems Before They Happen", deslocando os termos do campo da gestão de processos para o campo da teoria causal. Upstream e downstream passaram a descrever onde numa cadeia causal uma organização intervém: upstream significa intervir na causa, antes do problema; downstream significa reagir ao sintoma, depois que o problema ocorreu. Heath foi o primeiro a romper com a ideia de que os termos descrevem quando algo acontece, propondo que descrevem onde no sistema uma ação ocorre. A sequencialidade foi preservada na cadeia causal, mas não como fase de trabalho.
 
-O ProdOps, desenvolvido no contexto do payments-api da Magazine Siará a partir de 2026, é a oitava camada. Upstream e Downstream deixam de ser posições numa cadeia, fases num processo ou orientações de intervenção causal. Passam a designar modos de execução transversais: configurações de rigor que determinam como qualquer jornada de produto é conduzida, independentemente do tipo de trabalho envolvido. A mesma jornada de Discovery, por exemplo, pode ser conduzida no modo Upstream, com rigor exploratório e compromissos mínimos, ou no modo Downstream, com rigor de entrega e compromissos formais de prazo e escopo. Essa é a primeira vez que os termos são usados dessa forma na literatura disponível.
+O ProdOps, cujo framework foi iniciado em 2019 e cujo runtime foi construído no contexto do payments-api da Magazine Siará a partir de 2026, é a oitava camada. Upstream e Downstream deixam de ser posições numa cadeia, fases num processo ou orientações de intervenção causal. Passam a designar modos de execução transversais: configurações de rigor que determinam como qualquer jornada de produto é conduzida, independentemente do tipo de trabalho envolvido. A mesma jornada de Discovery, por exemplo, pode ser conduzida no modo Upstream, com rigor exploratório e compromissos mínimos, ou no modo Downstream, com rigor de entrega e compromissos formais de prazo e escopo. Essa é a primeira vez que os termos são usados dessa forma na literatura disponível.
 
 | Camada | Domínio | Criador | Ano aprox. | Natureza da distinção | Sequencial? |
 |---|---|---|---|---|---|
@@ -43,7 +43,7 @@ O ProdOps, desenvolvido no contexto do payments-api da Magazine Siará a partir 
 | 5 | Open source | (convenção) | ~1990-2000 | Relação de origem entre projetos | Parcialmente |
 | 6 | Kanban/Produto digital | David J. Anderson | ~2010s | Dois sistemas separados por commitment point | Sim |
 | 7 | Systems Thinking | Dan Heath | 2020 | Orientação de intervenção causal | Não |
-| 8 | ProdOps | payments-api / Magazine Siará | 2026 | Modos de execução transversais com rigor como variável | Não |
+| 8 | ProdOps | payments-api / Magazine Siará | 2019 (framework) / 2026 (runtime) | Modos de execução transversais com rigor como variável | Não |
 
 O ProdOps é a primeira camada que formaliza os termos como modos de execução transversais, rompendo com a sequencialidade que todas as camadas anteriores mantêm.
 
