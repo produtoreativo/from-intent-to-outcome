@@ -68,7 +68,7 @@ graph LR
 | Dimension | Upstream | Downstream |
 |---|---|---|
 | Gates | Guiding; non-blocking | Blocking and mandatory |
-| Rigor regime | Non-blocking rigor (advisory); practitioner decides the depth | Blocking rigor; mandatory sequence and Gates |
+| Rigor regime | Non-blocking rigor; practitioner decides the depth | Blocking rigor; mandatory sequence and Gates |
 | Reversal cost | Tends to be lower; changing direction does not violate a blocking commitment | Potentially high; a change may affect a formal commitment and requires an explicit decision about it |
 | Artifacts | Make the active commitment observable; states reflect the regime | Verifiable conditions for advancement; states confirm delivery |
 | Quality criterion | Quality of the evidence to inform the commitment decision | Verifiability of the correspondence between what was promised and what was delivered |
@@ -210,7 +210,7 @@ In Downstream, the Readiness OBC certifies that the Discovery: Elaboration refin
 ```mermaid
 graph LR
     BS["Business Signal\n→ Business Intent"] --> A["OBC Draft"]
-    A --> UP["Upstream\n(advisory rigor)"]
+    A --> UP["Upstream\n(non-blocking rigor)"]
     A -->|"sufficient context"| CG{"Commitment Gate\n6 outcomes"}
     UP -->|"Decision Package"| CG
     CG -->|"Promote"| C["OBC Refining\n(Downstream Declared / Moment 2)"]

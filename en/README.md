@@ -22,8 +22,8 @@ Upstream, Downstream, and the New Operating Model for Digital Products
 | 9 | Diligence: guardian of consistency | [chapter-09.md](chapter-09.md) | Draft |
 | 10 | The mode problem for AI agents | [chapter-10.md](chapter-10.md) | Draft |
 | 11 | Magazine Siará as evidence | [chapter-11.md](chapter-11.md) | Draft |
-| — | Conclusion | [conclusao.md](conclusao.md) | Draft |
-| — | Appendix: Research Notes | [apendice-pesquisa.md](apendice-pesquisa.md) | Draft |
+| — | Conclusion | [conclusao.md](../conclusao.md) | Draft (PT only) |
+| — | Appendix: Research Notes | [apendice-pesquisa.md](../apendice-pesquisa.md) | Draft (PT only) |
 
 ---
 

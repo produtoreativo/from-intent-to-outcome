@@ -151,3 +151,4 @@ When that cycle is documented with the same level of rigor with which the 16 exe
 
 *Chapter 11 of 11 | Part VI: The Laboratory*
 [← Chapter 10 — The mode problem for AI agents](chapter-10.md)
+[→ Conclusion (Portuguese)](../conclusao.md)

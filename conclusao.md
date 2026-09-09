@@ -5,7 +5,7 @@
 ## A tese em uma frase
 
 ![Síntese do framework ProdOps](images/conclusao-framework-synthesis.svg)
-*Figura 11. Síntese do framework: o problema de configuração de rigor, os dois modos, o Commitment Gate como fronteira, as 5 jornadas universais e o substrato comum*
+*Figura 12. Síntese do framework: o problema de configuração de rigor, os dois modos, o Commitment Gate como fronteira, as 5 jornadas universais e o substrato comum*
 
 Upstream e Downstream não são fases de um processo: são modos de execução que configuram o tipo de compromisso que um time está mantendo, e portanto o tipo de rigor que deve ser aplicado a qualquer trabalho.
 
