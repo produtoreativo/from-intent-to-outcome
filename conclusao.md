@@ -27,7 +27,7 @@ Que a observabilidade é o substrato epistemológico de ambos os modos. No Upstr
 
 Que o problema de modo afeta não apenas times humanos mas qualquer agente que opera com orientação por artefatos. O EXP-015 demonstrou empiricamente o inverso simétrico: quando o contrato é explícito e verificável (a tool `prodops_emit_event` com o catálogo de eventos), agentes de origens distintas (claude, codex, copilot) produzem output idêntico: 22/22 × 3 players, zero divergências. A intercambiabilidade é uma propriedade do contrato, não dos agentes. A solução para o problema de modo em agentes é tornar o contrato verificável nos próprios artefatos que os agentes leem, não treinar cada agente individualmente.
 
-Que o Downstream em operação continuada é verificável. O corpus da Magazine Siará documenta 15 iterações versionadas com Release Trail, 12 OBCs Committed com Observable Events e SLIs numéricos, e o EXP-014 com 53/53 PASS demonstrando que a Diligence rastreia automaticamente o estado de cada Feature em tempo real. A teoria não está apenas bem articulada; está empiricamente sustentada.
+Que o Downstream em operação continuada é verificável. O corpus da Magazine Siará documenta 15 iterações versionadas com Release Trail, 12 OBCs Readiness com Observable Events e SLIs numéricos, e o EXP-014 com 53/53 PASS demonstrando que a Diligence rastreia automaticamente o estado de cada Feature em tempo real. A teoria não está apenas bem articulada; está empiricamente sustentada.
 
 ---
 

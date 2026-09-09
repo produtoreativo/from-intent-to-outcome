@@ -10,8 +10,8 @@ Essa coincidência não é acidental. O ProdOps, como framework, precisa ser tes
 
 O que torna o laboratório da Magazine Siará diferente de um estudo de caso retrospectivo é que o corpus de artefatos foi produzido *durante* o trabalho, não documentado depois. Os upstream-trails registram o que foi descoberto sessão a sessão. Os OBCs mostram o estado real do compromisso em cada data. Os Release Trails documentam como cada fase foi honrada. O que este capítulo examina é o que esse corpus demonstra sobre o framework, e o que ele ainda não demonstrou.
 
-![Corpus da Magazine Siará: grafo de dependências entre experimentos, OBCs committed e iterações Downstream](images/cap10-experiments-corpus.svg)
-*Figura 11. O corpus da Magazine Siará como grafo de dependências: 17 experimentos Upstream, 12+ OBCs Committed, 15+ iterações Downstream com Release Trail.*
+![Corpus da Magazine Siará: grafo de dependências entre experimentos, OBCs Readiness e iterações Downstream](images/cap10-experiments-corpus.svg)
+*Figura 11. O corpus da Magazine Siará como grafo de dependências: 17 experimentos Upstream, 12+ OBCs Readiness, 15+ iterações Downstream com Release Trail.*
 
 ---
 
@@ -39,7 +39,7 @@ O PM Eugenio avaliou a situação e tomou uma decisão que está documentada no 
 
 A justificativa também está documentada: demanda confirmada por dois canais independentes (clientes finais e time de vendas), escopo delimitado (Pix + Boleto), dono de produto identificado, prazo não negociável, perguntas em aberto são de refinamento: não bloqueiam o início.
 
-O OBC do Split Payment foi committed no mesmo dia. As perguntas abertas no PI-001 (valor mínimo e máximo por meio, limite de meios por compra, política para boleto vencido com Pix pago) foram tratadas como refinamento, não como incerteza que bloquearia o Commitment Gate. O risco RISK-SP-001 (política de expiração do boleto) foi fechado por decisão explícita do PM Eugenio no mesmo dia: manter estado pendente, investigação manual pela operação, sem cancelamento automático nem estorno do Pix.
+O OBC do Split Payment atingiu Readiness no mesmo dia. As perguntas abertas no PI-001 (valor mínimo e máximo por meio, limite de meios por compra, política para boleto vencido com Pix pago) foram tratadas como refinamento, não como incerteza que bloquearia o Commitment Gate. O risco RISK-SP-001 (política de expiração do boleto) foi fechado por decisão explícita do PM Eugenio no mesmo dia: manter estado pendente, investigação manual pela operação, sem cancelamento automático nem estorno do Pix.
 
 Esse caso demonstra algo que o EXP-001/002/003 não demonstrava: o Commitment Gate não é um ritual de conclusão de exploração. É uma decisão sobre o destino da Product Capability. Quando a demanda é confirmada, o escopo é delimitado e o prazo é não negociável, o Commitment Gate pode ser executado no mesmo dia do Business Signal, e isso não é atalho. É a calibração correta do rigor ao tipo de compromisso que está sendo assumido.
 
@@ -65,9 +65,9 @@ Isso é o que o ProdOps nomeia como coexistência de modos: dois regimes de comp
 
 ## O Downstream em operação: 15 iterações com Release Trail
 
-O que o corpus da Payments API demonstra que nenhum caso de estudo puramente teórico consegue é o ciclo Downstream em operação continuada. Não uma iteração. Quinze iterações versionadas, de v0.2.0 a v0.15.0, cada uma com plano formal, OBC Committed, BDD Feature, Release Trail com entradas reais de cada fase.
+O que o corpus da Payments API demonstra que nenhum caso de estudo puramente teórico consegue é o ciclo Downstream em operação continuada. Não uma iteração. Quinze iterações versionadas, de v0.2.0 a v0.15.0, cada uma com plano formal, OBC Readiness, BDD Feature, Release Trail com entradas reais de cada fase.
 
-Os 12 OBCs committed no corpus cobrem Product Capabilities que vão do núcleo do produto (criação de invoice Pix, confirmação de pagamento via webhook, cancelamento de invoice) até Product Capabilities de plataforma (observabilidade no Datadog, otimização do DynamoDB, pipeline de CI/CD para produção). Cada OBC tem Observable Events com dimensões obrigatórias, Initial SLIs com targets numéricos, Reliability Rules, e decisões explícitas registradas com data e responsável.
+Os 12 OBCs Readiness no corpus cobrem Product Capabilities que vão do núcleo do produto (criação de invoice Pix, confirmação de pagamento via webhook, cancelamento de invoice) até Product Capabilities de plataforma (observabilidade no Datadog, otimização do DynamoDB, pipeline de CI/CD para produção). Cada OBC tem Observable Events com dimensões obrigatórias, Initial SLIs com targets numéricos, Reliability Rules, e decisões explícitas registradas com data e responsável.
 
 O OBC `create-invoice` documenta o requisito de idempotência com a semântica precisa: a mesma chave retorna o mesmo resultado, retentativas não criam cobranças duplicadas. O OBC `payment-confirmation` documenta a estratégia de correlação do webhook do Asaas pelo `providerPaymentId` ou `externalReference`, com o evento `payment.confirmation.unmatched` emitido quando o webhook chega sem invoice correspondente: observabilidade do caso de falha, não apenas do caminho feliz.
 
@@ -141,7 +141,7 @@ O corpus da Magazine Siará suporta essa tese de quatro formas distintas.
 
 ## O próximo território
 
-O que o corpus da Magazine Siará ainda não documentou é o ciclo de vida completo de um OBC que nasce com o Business Intent (a partir do Business Signal), percorre o Upstream, atravessa o Commitment Gate com trio humano pleno, entra no Downstream com OBC Committed e BDD Feature formalizada, é entregue com Release Trail completo, e chega ao estado Released com SLOs medidos e postmortem documentado.
+O que o corpus da Magazine Siará ainda não documentou é o ciclo de vida completo de um OBC que nasce com o Business Intent (a partir do Business Signal), percorre o Upstream, atravessa o Commitment Gate com trio humano pleno, entra no Downstream com OBC Readiness e BDD Feature formalizada, é entregue com Release Trail completo, e chega ao estado Released com SLOs medidos e postmortem documentado.
 
 Esse ciclo existe em partes: alguns OBCs já estão Released; o Commitment Gate existe mas sem o trio completo registrado; os Release Trails existem mas sem o ciclo desde o Business Signal original. A composição completa num único caso rastreável de ponta a ponta é o território que está à frente.
 

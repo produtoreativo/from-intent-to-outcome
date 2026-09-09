@@ -10,7 +10,7 @@ O Downstream começa quando o Commitment Gate é executado com o outcome Promove
 
 Essa precisão não é protocolar. É a consequência direta do que o Downstream representa: uma mudança de regime de compromisso. E regimes de compromisso precisam ter um momento de início que seja verificável. "A equipe sentiu que estava pronta" não é verificável. Um Commitment Gate registrado no upstream-trail, com data, participantes e outcome documentado, é.
 
-O que o Commitment Gate não inicia é a Delivery. O framework ProdOps distingue três estados dentro do modo Downstream: **Downstream Declared**: o compromisso foi assumido, o item entra no Icebox para refinamento; **Downstream Ready**: os requisitos de pré-Delivery foram satisfeitos e verificados; **Delivery Started**: Bootstrap foi iniciado. O Commitment Gate corresponde ao Downstream Declared. Entre ele e o Bootstrap.Started existe um protocolo de readiness que é parte do Downstream, não uma antecâmara fora dele.
+O que o Commitment Gate não inicia é a Delivery. O framework ProdOps distingue três estados dentro do modo Downstream: **Downstream Declared**: o compromisso foi assumido, o item entra em Discovery: Elaboration; **Downstream Ready**: os requisitos de pré-Delivery foram satisfeitos e verificados; **Delivery Started**: Bootstrap foi iniciado. O Commitment Gate corresponde ao Downstream Declared. Entre ele e o Bootstrap.Started existe um protocolo de readiness que é parte do Downstream, não uma antecâmara fora dele.
 
 ---
 
@@ -31,14 +31,14 @@ graph TD
 
     ICE --> M3["Momento 3: Readiness Gate\nDiligence Sync\nCritérios verificados\n[Downstream Ready]"]
     M3 -->|"Aprovado"| DEL["DELIVERY\nBootstrap.Started\n[Delivery Started]"]
-    M3 -->|"Finding aberto"| BLOCK["Retorno ao Icebox\nou Waiver formal"]
+    M3 -->|"Finding aberto"| BLOCK["Retorno à Discovery: Elaboration\nou Waiver formal"]
 ```
 
 **Momento 1: Commitment Gate** (Downstream Declared). O trio (PM + Tech Lead + Autor) avalia se a evidência produzida justifica o comprometimento. Os critérios incluem: hipótese respondida com o Evidence Threshold satisfeito (se declarado), Decision Package com substância real, OBC Draft existindo como arquivo, e BDD rascunhada e legível. O resultado mais consequente é Promover, o que dispara o Momento 2. O Commitment Gate não cria o compromisso: ele torna verificável e rastreável a decisão que o trio toma sobre o destino da Product Capability.
 
-> **Nota:** O Commitment Gate não pressupõe Upstream prévio. Quando um Business Signal chega ao PIB com contexto de negócio suficientemente claro (sem necessidade de exploração experimental), o Commitment Gate pode ser executado imediatamente na entrada do PIB. Nesse caso, o trio avalia o substrato disponível (Business Signal, OBC Draft, BDD inicial) e, se Promover, o item entra diretamente no Icebox com Downstream Declared. O que o modo Upstream representa é a *exploração prévia opcional*, não uma antecâmara obrigatória.
+> **Nota:** O Commitment Gate não pressupõe Upstream prévio. Quando um Business Signal chega ao PIB com contexto de negócio suficientemente claro (sem necessidade de exploração experimental), o Commitment Gate pode ser executado imediatamente na entrada do PIB. Nesse caso, o trio avalia o substrato disponível (Business Signal, OBC Draft, BDD inicial) e, se Promover, o item entra diretamente em Discovery: Elaboration com Downstream Declared. O que o modo Upstream representa é a *exploração prévia opcional*, não uma antecâmara obrigatória.
 
-**Momento 2: Artifact Promotion + Icebox Entry**. Imediatamente após o Commitment Gate com outcome Promover, os artefatos do experimento transitam para o espaço do Downstream. O OBC muda de Draft para Refining. Um Work Item entra em Discovery: Elaboration referenciando o experimento e o OBC. O upstream-trail é atualizado com o outcome e a referência ao Work Item. O experimento não é fechado: permanece como registro de evidência e aprendizados. Apenas o status muda. O Downstream está ativo, mas a Delivery não começou.
+**Momento 2: Artifact Promotion**. Imediatamente após o Commitment Gate com outcome Promover, os artefatos do experimento transitam para o espaço do Downstream. O OBC muda de Draft para Refining. Um Work Item entra em Discovery: Elaboration referenciando o experimento e o OBC. O upstream-trail é atualizado com o outcome e a referência ao Work Item. O experimento não é fechado: permanece como registro de evidência e aprendizados. Apenas o status muda. O Downstream está ativo, mas a Delivery não começou.
 
 **Momento 3: Readiness Gate** (Downstream Ready). O item sai da Discovery: Elaboration e entra em Delivery: Readiness quando um conjunto de requisitos é satisfeito. O OBC precisa ter atingido o estado Readiness. A BDD Feature precisa estar em `prodops/artifacts/bdd/`. Os riscos precisam estar documentados. Para itens com movimentação financeira, integração externa, mudança de SLO ou risco alto/crítico: um Reliability Plan é exigido. O Readiness Gate não é opcional: é o ponto onde a Diligence verifica, de forma bloqueante, que o Downstream tem o substrato necessário para ser executado com integridade.
 
@@ -46,9 +46,9 @@ A distinção entre os três momentos resolve conflitos frequentes: "o BDD deve 
 
 ---
 
-## A jornada Discovery no Downstream: do Icebox ao Iteration Plan
+## A jornada Discovery no Downstream: da Discovery: Elaboration ao Iteration Plan
 
-Há um período no Downstream que frequentemente não recebe nome: o intervalo entre o Commitment Gate (Momento 1) e o Readiness Gate (Momento 3). O item está no Icebox. O compromisso foi assumido. A Delivery ainda não começou. O que está acontecendo nesse intervalo tem nome: é a **jornada Discovery em modo Downstream**.
+Há um período no Downstream que frequentemente não recebe nome: o intervalo entre o Commitment Gate (Momento 1) e o Readiness Gate (Momento 3). O item está em Discovery: Elaboration. O compromisso foi assumido. A Delivery ainda não começou. O que está acontecendo nesse intervalo tem nome: é a **jornada Discovery em modo Downstream**.
 
 O Capítulo 3 estabeleceu que as mesmas cinco jornadas existem em ambos os modos. A Discovery no Downstream não é a mesma coisa que a Discovery no Upstream. O objetivo é diferente, o regime é diferente, e o output é diferente.
 
@@ -56,7 +56,7 @@ No Upstream, a Discovery reduz incerteza: produz evidência para responder hipó
 
 No Downstream, a Discovery satisfaz condições: transforma os artefatos do Momento 2 (OBC em Refining, BDD em rascunho) nos artefatos que o Readiness Gate exige para liberar a Delivery. O output não é um conjunto aberto de aprendizados; é um conjunto de condições satisfeitas. É um trabalho de refinamento com critério de conclusão verificável.
 
-O que a Discovery Downstream faz concretamente, dentro do Icebox:
+O que a Discovery Downstream faz concretamente, na Discovery: Elaboration:
 
 - Completa a BDD Feature: a BDD rascunhada no Momento 1 é elaborada, validada e movida para `prodops/artifacts/bdd/`
 - Define os Observable Events no OBC: os eventos que tornarão o comportamento verificável em runtime são especificados com suas dimensões obrigatórias
@@ -64,13 +64,13 @@ O que a Discovery Downstream faz concretamente, dentro do Icebox:
 - Produz o Reliability Plan (quando necessário): as condições de confiabilidade são definidas antes de qualquer linha de produção ser escrita
 - Faz o OBC transitar de Refining para Readiness: todos os campos do contrato ficam mensuráveis e verificáveis por terceiros sem contexto verbal adicional
 
-O Readiness Gate (Momento 3) é o Gate de conclusão da Discovery Downstream: verifica se essa jornada produziu os artefatos que o compromisso exige. Sem Discovery Downstream completa, o Readiness Gate não abre. Com ela completa, o item sai do Icebox, entra no Iteration Plan, e a jornada Delivery começa.
+O Readiness Gate (Momento 3) é o Gate de conclusão da Discovery Downstream: verifica se essa jornada produziu os artefatos que o compromisso exige. Sem Discovery Downstream completa, o Readiness Gate não abre. Com ela completa, o item sai da Discovery: Elaboration, entra no Iteration Plan, e a jornada Delivery começa.
 
-Isso tem uma implicação direta: todo Business Intent que entra no Icebox (seja vindo de um Upstream com Discovery e Commitment Gate, seja direto de um Business Signal com contexto suficiente) passa pela Discovery Downstream antes de chegar à Delivery. Não existe caminho do Commitment Gate para o Bootstrap que não passe pela Discovery em modo Downstream. O que varia é a duração e a densidade desse trabalho, conforme o quanto do Decision Package já estava pronto no Momento 1.
+Isso tem uma implicação direta: todo Business Intent que entra em Discovery: Elaboration (seja vindo de um Upstream com Discovery e Commitment Gate, seja direto de um Business Signal com contexto suficiente) passa pela Discovery Downstream antes de chegar à Delivery. Não existe caminho do Commitment Gate para o Bootstrap que não passe pela Discovery em modo Downstream. O que varia é a duração e a densidade desse trabalho, conforme o quanto do Decision Package já estava pronto no Momento 1.
 
 ### O trabalho de UX/UI na Discovery Downstream
 
-A Discovery Downstream não pertence apenas ao Product Manager, ao Tech Lead e ao time de engenharia. Quando o escopo inclui interfaces com o usuário, os designers de UX e UI participam ativamente desta jornada. O trabalho que realizam durante o Icebox não é exploração aberta: é refinamento com critério de conclusão verificável.
+A Discovery Downstream não pertence apenas ao Product Manager, ao Tech Lead e ao time de engenharia. Quando o escopo inclui interfaces com o usuário, os designers de UX e UI participam ativamente desta jornada. O trabalho que realizam na Discovery: Elaboration não é exploração aberta: é refinamento com critério de conclusão verificável.
 
 A distinção importa porque, na Discovery em modo Upstream, o design pode explorar múltiplas abordagens, testar direções alternativas e produzir evidência para decidir qual caminho seguir. O Commitment Gate pode incluir protótipos de baixa fidelidade, resultados de entrevistas e hipóteses sobre a solução. Na Discovery Downstream, essa decisão foi tomada. A direção de UX está definida; o que falta é transformá-la em especificação verificável que o time de Delivery possa implementar com confiança.
 

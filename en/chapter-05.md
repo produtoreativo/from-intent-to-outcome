@@ -124,7 +124,7 @@ There are two distinct acts of deployment in Upstream, with different authorizat
 
 The third act is the exit from Upstream, not a deployment within it:
 
-**Product Capability Promotion**: Commitment Gate with Promote outcome. The OBC transitions from Draft to Refining; the BDD Feature exists as a draft in the Downstream paths. The item enters the Icebox, where Downstream Discovery elaborates the scope, completes the BDD, and satisfies the Readiness Gate conditions. After the Readiness Gate, the OBC reaches Readiness state; the Iteration Plan is created and Delivery begins with Bootstrap.
+**Product Capability Promotion**: Commitment Gate with Promote outcome. The OBC transitions from Draft to Refining; the BDD Feature exists as a draft in the Downstream paths. The item enters Discovery: Elaboration, where Downstream Discovery elaborates the scope, completes the BDD, and satisfies the Readiness Gate conditions. After the Readiness Gate, the OBC reaches Readiness state; the Iteration Plan is created and Delivery begins with Bootstrap.
 
 The distinction between Controlled Production and Product Capability Promotion is precisely the distinction the modal model resolves: in the first case, the code is in production but the Product Capability is not committed; in the second, the commitment has been formally made with all its Gates.
 

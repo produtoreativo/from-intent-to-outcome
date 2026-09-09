@@ -10,7 +10,7 @@ Downstream begins when the Commitment Gate is executed with the Promote outcome,
 
 This precision is not merely procedural. It is the direct consequence of what Downstream represents: a shift in the commitment regime. And commitment regimes must have a verifiable moment of inception. "The team felt ready" is not verifiable. A Commitment Gate recorded in the upstream-trail, with a date, participants, and documented outcome, is.
 
-What the Commitment Gate does not initiate is Delivery. The ProdOps framework distinguishes three states within Downstream mode: **Downstream Declared**: the commitment has been made, the item enters the Icebox for refinement; **Downstream Ready**: the pre-Delivery requirements have been satisfied and verified; **Delivery Started**: Bootstrap has been initiated. The Commitment Gate corresponds to Downstream Declared. Between it and Bootstrap.Started there is a readiness protocol that is part of Downstream, not an antechamber outside of it.
+What the Commitment Gate does not initiate is Delivery. The ProdOps framework distinguishes three states within Downstream mode: **Downstream Declared**: the commitment has been made, the item enters Discovery: Elaboration; **Downstream Ready**: the pre-Delivery requirements have been satisfied and verified; **Delivery Started**: Bootstrap has been initiated. The Commitment Gate corresponds to Downstream Declared. Between it and Bootstrap.Started there is a readiness protocol that is part of Downstream, not an antechamber outside of it.
 
 ---
 
@@ -31,14 +31,14 @@ graph TD
 
     ICE --> M3["Moment 3: Readiness Gate\nDiligence Sync\nCriteria verified\n[Downstream Ready]"]
     M3 -->|"Approved"| DEL["DELIVERY\nBootstrap.Started\n[Delivery Started]"]
-    M3 -->|"Open Finding"| BLOCK["Return to Icebox\nor formal Waiver"]
+    M3 -->|"Open Finding"| BLOCK["Return to Discovery: Elaboration\nor formal Waiver"]
 ```
 
 **Moment 1: Commitment Gate** (Downstream Declared). The trio (PM + Tech Lead + Author) evaluates whether the evidence produced justifies the commitment. The criteria include: hypothesis answered with the Evidence Threshold satisfied (if declared), Decision Package with real substance, OBC Draft existing as a file, and BDD drafted and legible. The most consequential result is Promote, which triggers Moment 2. The Commitment Gate does not create the commitment: it makes the trio's decision about the Product Capability's fate verifiable and traceable.
 
-> **Note:** The Commitment Gate does not presuppose prior Upstream exploration. When a Business Signal arrives at the PIB with sufficiently clear business context (without needing experimental exploration) the Commitment Gate can be executed immediately at PIB entry. In that case, the trio evaluates the available substrate (Business Signal, OBC Draft, initial BDD) and, if the outcome is Promote, the item enters the Icebox directly as Downstream Declared. What Upstream mode represents is *optional prior exploration*, not a mandatory antechamber.
+> **Note:** The Commitment Gate does not presuppose prior Upstream exploration. When a Business Signal arrives at the PIB with sufficiently clear business context (without needing experimental exploration) the Commitment Gate can be executed immediately at PIB entry. In that case, the trio evaluates the available substrate (Business Signal, OBC Draft, initial BDD) and, if the outcome is Promote, the item enters Discovery: Elaboration directly as Downstream Declared. What Upstream mode represents is *optional prior exploration*, not a mandatory antechamber.
 
-**Moment 2: Artifact Promotion + Icebox Entry**. Immediately after the Commitment Gate with the Promote outcome, the experiment artifacts transition into the Downstream space. The OBC changes from Draft to Refining. A Work Item enters Discovery: Elaboration referencing the experiment and the OBC. The upstream-trail is updated with the outcome and the reference to the Work Item. The experiment is not closed: it remains as a record of evidence and learnings. Only the status changes. Downstream is active, but Delivery has not started.
+**Moment 2: Artifact Promotion**. Immediately after the Commitment Gate with the Promote outcome, the experiment artifacts transition into the Downstream space. The OBC changes from Draft to Refining. A Work Item enters Discovery: Elaboration referencing the experiment and the OBC. The upstream-trail is updated with the outcome and the reference to the Work Item. The experiment is not closed: it remains as a record of evidence and learnings. Only the status changes. Downstream is active, but Delivery has not started.
 
 **Moment 3: Readiness Gate** (Downstream Ready). The item leaves Discovery: Elaboration and enters Delivery: Readiness when a set of requirements is satisfied. The OBC must have reached the Readiness state. The BDD Feature must be in `prodops/artifacts/bdd/`. Risks must be documented. For items with financial movement, external integration, SLO changes, or high/critical risk: a Reliability Plan is required. The Readiness Gate is not optional: it is the point where Diligence verifies, in a blocking manner, that Downstream has the necessary substrate to be executed with integrity.
 
@@ -46,9 +46,9 @@ The distinction between the three moments resolves frequent conflicts: "should B
 
 ---
 
-## The Discovery journey in Downstream: from the Icebox to the Iteration Plan
+## The Discovery journey in Downstream: from Discovery: Elaboration to the Iteration Plan
 
-There is a period in Downstream that frequently goes unnamed: the interval between the Commitment Gate (Moment 1) and the Readiness Gate (Moment 3). The item is in the Icebox. The commitment has been made. Delivery has not yet started. What is happening in this interval has a name: it is the **Discovery journey in Downstream mode**.
+There is a period in Downstream that frequently goes unnamed: the interval between the Commitment Gate (Moment 1) and the Readiness Gate (Moment 3). The item is in Discovery: Elaboration. The commitment has been made. Delivery has not yet started. What is happening in this interval has a name: it is the **Discovery journey in Downstream mode**.
 
 Chapter 3 established that the same five journeys exist in both modes. Discovery in Downstream is not the same thing as Discovery in Upstream. The objective is different, the regime is different, and the output is different.
 
@@ -56,7 +56,7 @@ In Upstream, Discovery reduces uncertainty: it produces evidence to answer hypot
 
 In Downstream, Discovery satisfies conditions: it transforms the artifacts from Moment 2 (OBC in Refining, BDD in draft) into the artifacts the Readiness Gate requires to release Delivery. The output is not an open set of learnings; it is a set of satisfied conditions. It is refinement work with a verifiable completion criterion.
 
-What Downstream Discovery does concretely, inside the Icebox:
+What Downstream Discovery does concretely, in Discovery: Elaboration:
 
 - Completes the BDD Feature: the BDD drafted at Moment 1 is elaborated, validated, and moved to `prodops/artifacts/bdd/`
 - Defines the Observable Events in the OBC: the events that will make behavior verifiable at runtime are specified with their mandatory dimensions
@@ -64,13 +64,13 @@ What Downstream Discovery does concretely, inside the Icebox:
 - Produces the Reliability Plan (when required): the reliability conditions are defined before any production code is written
 - Transitions the OBC from Refining to Readiness: all contract fields become measurable and verifiable by third parties without additional verbal context
 
-The Readiness Gate (Moment 3) is the completion Gate of Downstream Discovery: it verifies whether this journey produced the artifacts the commitment requires. Without complete Downstream Discovery, the Readiness Gate does not open. With it complete, the item leaves the Icebox, enters the Iteration Plan, and the Delivery journey begins.
+The Readiness Gate (Moment 3) is the completion Gate of Downstream Discovery: it verifies whether this journey produced the artifacts the commitment requires. Without complete Downstream Discovery, the Readiness Gate does not open. With it complete, the item leaves Discovery: Elaboration, enters the Iteration Plan, and the Delivery journey begins.
 
-This has a direct implication: every Business Intent that enters the Icebox (whether coming from an Upstream with Discovery and Commitment Gate, or directly from a Business Signal with sufficient context) goes through Downstream Discovery before reaching Delivery. There is no path from the Commitment Gate to Bootstrap that does not pass through Discovery in Downstream mode. What varies is the duration and density of that work, depending on how much of the Decision Package was already ready at Moment 1.
+This has a direct implication: every Business Intent that enters Discovery: Elaboration (whether coming from an Upstream with Discovery and Commitment Gate, or directly from a Business Signal with sufficient context) goes through Downstream Discovery before reaching Delivery. There is no path from the Commitment Gate to Bootstrap that does not pass through Discovery in Downstream mode. What varies is the duration and density of that work, depending on how much of the Decision Package was already ready at Moment 1.
 
 ### UX/UI work in Downstream Discovery
 
-Downstream Discovery does not belong only to the Product Manager, Tech Lead, and engineering team. When the scope includes user interfaces, UX and UI designers are active participants in this journey. The work they do during the Icebox is not open exploration: it is refinement with a verifiable completion criterion.
+Downstream Discovery does not belong only to the Product Manager, Tech Lead, and engineering team. When the scope includes user interfaces, UX and UI designers are active participants in this journey. The work they do in Discovery: Elaboration is not open exploration: it is refinement with a verifiable completion criterion.
 
 The distinction matters because, in Discovery in Upstream mode, design can explore multiple approaches, test alternative directions, and produce evidence to decide which path to follow. The Commitment Gate can include low-fidelity prototypes, interview results, and hypotheses about the solution. In Downstream Discovery, that decision has been made. The UX direction is set; what remains is transforming it into a verifiable specification that the Delivery team can implement with confidence.
 
