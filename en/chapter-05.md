@@ -80,31 +80,34 @@ Four concepts that operate in sequence in Upstream, but are not synonymous: the 
 
 ## Perpetual Discovery: the central anti-pattern
 
-Perpetual Discovery is the state of an experiment that continues accumulating evidence and sessions without the central hypothesis advancing toward a commitment decision. The experiment never reaches the Commitment Gate, not because the evidence is insufficient, but because there is no pressure or explicit criterion forcing the decision.
+Perpetual Discovery is the state of an experiment whose stop indicators are absent, ambiguous, or demonstrably unreachable. An experiment without a declared Evidence Threshold does not know when it has sufficient evidence: any amount seems insufficient. An experiment with a non-falsifiable hypothesis has no result that ends it: exploration continues because the question remains structurally open. An experiment with unreachable questions is blocked without an exit. In any of these cases, the experiment does not continue because more evidence is genuinely needed: it continues because the criterion that would end the exploration does not exist or cannot be satisfied.
 
-Three structural conditions produce Perpetual Discovery. The absence of a declared Evidence Threshold: without a stopping criterion, the experiment can always "need more evidence": the implicit threshold is infinite. The central hypothesis never formalized: without something to falsify, there is never an answer: the experiment continues because the question remains open. And the Commitment Gate seen as an approval event rather than a commitment decision: if the Gate is perceived as the moment when the ability to change course ends, there is a rational incentive to avoid it.
+Three structural conditions produce this ambiguity in stop indicators. The absence of a declared Evidence Threshold: without an explicit criterion, the implicit threshold is infinite and is never reached. The central hypothesis never formalized as falsifiable: without something to refute, any evidence seems partial and the experiment continues. The Commitment Gate seen as an approval event rather than a commitment decision: if the Gate is perceived as the moment when the ability to change course ends, there is a rational incentive not to declare stop criteria that would force the Gate to be convened.
 
-The ProdOps framework identifies four diagnostic signals that make Perpetual Discovery recognizable without relying on subjective judgment. The numerical thresholds below are guiding heuristics, not canonized criteria. What is invariant is the structure of the diagnosis; what each team calibrates is the threshold:
+The ProdOps framework identifies four diagnostic signals that make Perpetual Discovery recognizable. Each signal is individually sufficient to convene the Commitment Gate: it is not necessary for all to be active simultaneously.
 
-**S1: No progression in the upstream-trail for 3+ sessions.** If the trail has entries but the Hypothesis section of experiment.md has not changed in more than 2 weeks and the Decision Package still has no substance, the experiment is stagnant.
+**S1: Evidence Threshold not declared.** The experiment has not defined an explicit stopping criterion in `experiment.md`. When the threshold is absent, the implicit criterion is "when we have sufficient evidence" — which never satisfies itself. It is the most direct structural invitation to Perpetual Discovery.
 
-**S2: Questions to Answer with status "not answerable with available evidence".** If some question was marked as unanswerable without the central hypothesis having been answered by another route, and this state persists for more than 5 days without substitute evidence, the experiment is blocked.
+**S2: Central hypothesis not falsifiable.** The hypothesis was formulated in such a way that no possible result refutes it, or was never formalized as a question with a verifiable answer. Without something to falsify, there is no result that ends the experiment: exploration continues because the question remains structurally open.
 
-**S3: Evidence Threshold declared and not reachable without a new hypothesis.** If the threshold was declared and the accumulated evidence does not satisfy it after 3 or more collection sessions, without identification of new sources, the current route will not lead to the threshold.
+**S3: Questions to Answer demonstrably unreachable.** One or more questions were marked as "not answerable with available evidence" and the experiment has not identified a new evidence route or reformulated the central hypothesis. The experiment is blocked: it cannot satisfy its own stop indicators.
 
-**S4: Stakeholder with a decision blocked for 10+ business days by this experiment.** The cost of waiting exceeds the value of continued exploration: the decision to advance or close must be made.
+**S4: Evidence Threshold declared but unreachable via current route.** The stopping criterion exists but the accumulated evidence does not satisfy it and no new sources have been identified. Continuing to collect evidence of the same type will not change the result: the current route is a structural dead end.
 
-When multiple signals are active simultaneously, the experiment is at critical risk of Perpetual Discovery and the Commitment Gate must be convened, not to approve, but to decide what to do.
+Any active signal justifies convening the Commitment Gate immediately — not to approve, but to decide: reformulate the hypothesis, close with recorded learning, or declare that the experiment requires new formulation before proceeding.
 
 ```mermaid
 graph TD
-    S1["S1: upstream-trail with no progress for 3+ sessions"]
-    S2["S2: Questions to Answer unanswerable for 5+ days"]
-    S3["S3: Evidence Threshold declared but not reachable"]
-    S4["S4: Stakeholder blocked for 10+ business days"]
-    S1 & S2 & S3 & S4 --> PD["Perpetual Discovery diagnosed"]
-    PD --> |"correct outcome"| CG["Immediate Commitment Gate"]
-    CG --> D["Discard with learning\nor Requires another experiment"]
+    S1["S1: Evidence Threshold not declared"]
+    S2["S2: Central hypothesis not falsifiable"]
+    S3["S3: Questions to Answer unreachable"]
+    S4["S4: Evidence Threshold unreachable via current route"]
+    S1 --> PD["Perpetual Discovery diagnosed"]
+    S2 --> PD
+    S3 --> PD
+    S4 --> PD
+    PD --> CG["Immediate Commitment Gate"]
+    CG --> D["Discard with learning\nor Requires another experiment\nor Reformulate hypothesis"]
 ```
 
 ---
