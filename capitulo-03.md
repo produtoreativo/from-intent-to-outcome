@@ -236,28 +236,32 @@ stateDiagram-v2
     InDelivery --> Refining : Regressão durante Delivery
 
     note right of Draft
-        VIEW Icebox
-        + Experiment Plan
-        (se experimento ativo)
+        Icebox (pré-modo)
+        Upstream: In Hypothesis
+        Upstream: Experiment Plan
+        Upstream: Evidence Running
     end note
     note right of Refining
-        VIEW Icebox
-        Downstream Declared
+        Discovery: Elaboration
+        (pós-CG, pré-Readiness Gate)
+        — ou —
+        Delivery: Refining
+        (regressão)
     end note
     note right of Readiness
-        VIEW Iteration Backlog
+        Delivery: Readiness
     end note
     note right of InDelivery
-        Iteration Plan
+        Delivery: Iteration Plan
     end note
     note right of Released
-        Operation
+        Operation: Released
     end note
 ```
 
 **Draft**: nasce na transição de um Business Signal para um Business Intent. No Upstream, é memória do aprendizado: pode ser atualizado continuamente, pode permanecer incompleto, não bloqueia experimentos. A ausência de campos completos no Draft é esperada, não uma falha.
 
-**Refining**: o estado que o OBC assume no início do Downstream (Momento 2, após o Commitment Gate com outcome Promover). Os campos começam a ser refinados com substância real: `expected_outcome` deixa de ser vago, `success_metrics` ganha baseline e target, `acceptance_criteria` torna-se verificável por terceiros.
+**Refining**: o OBC entra neste estado em dois contextos distintos. O contexto primário é o início do Downstream (Momento 2, após o Commitment Gate com outcome Promover): os campos começam a ser refinados com substância real, a BDD Feature é elaborada, e o item entra em **Discovery: Elaboration**. O contexto de regressão ocorre quando um item que estava em Delivery: Readiness ou Delivery: Iteration Plan retorna ao Refining por mudança de escopo ou descoberta que invalida o contrato; nesse caso o item entra em **Delivery: Refining** e precisa satisfazer novamente o Readiness Gate antes de avançar.
 
 **Readiness**: certifica que a Discovery Downstream produziu um contrato completo e verificável por terceiros. O modo Downstream e o rigor bloqueante estão ativos desde o Promover (Momento 2); o estado Readiness não representa a mudança de regime, mas a conclusão do período de Icebox. Todo critério de aceite é verificável sem contexto verbal adicional. As métricas de sucesso têm baseline e target. Os Observable Events estão definidos com dimensões mensuráveis. Um OBC que não atingiu Readiness não passa pelo Readiness Gate: essa é a proteção contra o Phantom BDD e o Proxy Commitment.
 

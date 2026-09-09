@@ -152,40 +152,49 @@ The Experiment Plan is the Upstream equivalent of the Iteration Plan. The Iterat
 
 ```mermaid
 flowchart TD
-    PIB["PIB — item enters with OBC: Draft"]
+    PIB["PIB — Product Intent Backlog\nOBC: Draft"]
+    ICE["ICEBOX\nOBC: Draft · pre-mode declared\nregime decision node"]
 
-    subgraph ICE["VIEW: Icebox  —  OBC ≠ Readiness"]
-        PE["VIEW: Experiment Plan\nOBC: Draft · active experiment\nDiscovery WIP controlled"]
-        WAIT["Icebox without active experiment\nwaiting for external decision\nor direct Business Signal"]
-        DS["Downstream Declared\nOBC: Refining\nDiscovery in blocking mode"]
+    subgraph UP["UPSTREAM"]
+        UH["In Hypothesis\nhypothesis being formed"]
+        EP["Experiment Plan\nactive experiment · Discovery WIP"]
+        ER["Evidence Running\ncode running without commitment\nSandbox or Controlled Production"]
+    end
+    UA["Upstream: Archived\nexperiment closed"]
+
+    CG{"Commitment Gate\nPM + Tech Lead + Author\n6 outcomes"}
+
+    subgraph DS["DOWNSTREAM"]
+        DE["Discovery: Elaboration\nOBC: Refining\nblocking Discovery"]
+        RG{"Readiness Gate\nOBC Readiness?\nBDD + Risks ok?"}
+        DRD["Delivery: Readiness\nOBC: Readiness"]
+        DI["Delivery: Iteration Plan\nOBC: In Delivery"]
     end
 
-    CG{"Commitment Gate\n6 outcomes\nPM + Tech Lead + Author"}
-    RG{"Readiness Gate\nOBC Readiness?\nBDD + Risks ok?"}
-    ITB["VIEW: Iteration Backlog\nOBC: Readiness"]
-    IP["Iteration Plan\nDelivery begins — Bootstrap"]
-    OUT["Closed / Waiting\nDiscard · Requires new EXP\nAwait decision · External dep."]
+    PIB --> ICE
+    ICE -->|"decide to explore"| UH
+    ICE -->|"sufficient context\nno prior Upstream"| CG
 
-    PIB -->|"experiment opened"| PE
-    PIB -->|"no experiment\nor direct Business Signal"| WAIT
+    UH -->|"hypothesis formalized\nexperiment.md opened"| EP
+    EP -.->|"code in execution"| ER
+    EP -->|"Decision Package ready"| CG
+    ER -->|"Decision Package ready"| CG
+    EP -->|"other outcomes"| UA
+    ER -->|"other outcomes"| UA
 
-    PE -->|"Decision Package ready"| CG
-    WAIT -->|"context matured"| CG
+    CG -->|"Promote\nDraft → Refining"| DE
+    CG -->|"other outcomes"| UA
 
-    CG -->|"Promote\nDraft → Refining"| DS
-    CG -->|"other outcomes"| OUT
-
-    DS -->|"OBC reaches Readiness"| RG
-    RG -->|"approved"| ITB
-    RG -->|"Finding open"| DS
-
-    ITB -->|"PO selects"| IP
+    DE -->|"OBC reaches Readiness"| RG
+    RG -->|"approved"| DRD
+    RG -->|"Finding open"| DE
+    DRD -->|"PM selects"| DI
 ```
-*Figure 5a. Journey of an item within the PIB: the Experiment Plan as a VIEW of active Upstream experiments inside the Icebox, the Commitment Gate as the modal boundary, and the Iteration Plan as the final destination after the Readiness Gate.*
+*Figure 5a. PIB structure: the Icebox as the pre-mode triage node, Upstream VIEWs, the Commitment Gate as the modal boundary, and Downstream VIEWs through to Delivery.*
 
-An item in the Icebox can exist without appearing in the Experiment Plan, for example, when it is waiting for an external business decision before opening an investigation. The Experiment Plan lists only the experiments that are active at this moment.
+An item stays in the Icebox while there is no regime decision: it can go directly to the Commitment Gate (sufficient business context, no exploration needed), or activate the Upstream path by opening a hypothesis. The Experiment Plan lists only the experiments that are active at this moment; an item in the Icebox that has not yet opened an experiment does not appear in the Experiment Plan.
 
-The three Magazine Siará experiments (EXP-001, EXP-002, EXP-003) would be represented in the Experiment Plan during their respective investigation windows, and removed when the Commitment Gate recorded the *Promote with restriction* outcome and the item entered the Icebox as Downstream Declared.
+The three Magazine Siará experiments (EXP-001, EXP-002, EXP-003) would be represented in the Experiment Plan during their respective investigation windows, and removed when the Commitment Gate recorded the *Promote with restriction* outcome and the item entered Discovery: Elaboration as Downstream Declared.
 
 ---
 

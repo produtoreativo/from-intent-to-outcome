@@ -26,8 +26,8 @@ graph TD
     M1 -->|"Promover"| M2
     M1 -->|"Outros outcomes"| UP2["Permanece em Upstream\nou é encerrado"]
 
-    M2["Momento 2: Artifact Promotion\nOBC: Draft → Refining\nWork Item → Icebox\nBDD registrada"]
-    M2 --> ICE["ICEBOX: Refinamento\nOBC → Readiness\nBDD → artifacts/bdd/"]
+    M2["Momento 2: Artifact Promotion\nOBC: Draft → Refining\nWork Item → Discovery: Elaboration\nBDD registrada"]
+    M2 --> ICE["DOWNSTREAM: Discovery: Elaboration\nOBC: Refining → Readiness\nBDD → artifacts/bdd/"]
 
     ICE --> M3["Momento 3: Readiness Gate\nDiligence Sync\nCritérios verificados\n[Downstream Ready]"]
     M3 -->|"Aprovado"| DEL["DELIVERY\nBootstrap.Started\n[Delivery Started]"]
@@ -38,9 +38,9 @@ graph TD
 
 > **Nota:** O Commitment Gate não pressupõe Upstream prévio. Quando um Business Signal chega ao PIB com contexto de negócio suficientemente claro (sem necessidade de exploração experimental), o Commitment Gate pode ser executado imediatamente na entrada do PIB. Nesse caso, o trio avalia o substrato disponível (Business Signal, OBC Draft, BDD inicial) e, se Promover, o item entra diretamente no Icebox com Downstream Declared. O que o modo Upstream representa é a *exploração prévia opcional*, não uma antecâmara obrigatória.
 
-**Momento 2: Artifact Promotion + Icebox Entry**. Imediatamente após o Commitment Gate com outcome Promover, os artefatos do experimento transitam para o espaço do Downstream. O OBC muda de Draft para Refining. Um Work Item é criado no Icebox referenciando o experimento e o OBC. O upstream-trail é atualizado com o outcome e a referência ao Work Item. O experimento não é fechado: permanece como registro de evidência e aprendizados. Apenas o status muda. O Downstream está ativo, mas a Delivery não começou.
+**Momento 2: Artifact Promotion + Icebox Entry**. Imediatamente após o Commitment Gate com outcome Promover, os artefatos do experimento transitam para o espaço do Downstream. O OBC muda de Draft para Refining. Um Work Item entra em Discovery: Elaboration referenciando o experimento e o OBC. O upstream-trail é atualizado com o outcome e a referência ao Work Item. O experimento não é fechado: permanece como registro de evidência e aprendizados. Apenas o status muda. O Downstream está ativo, mas a Delivery não começou.
 
-**Momento 3: Readiness Gate** (Downstream Ready). O item sai do Icebox e entra no Iteration Backlog quando um conjunto de requisitos é satisfeito. O OBC precisa ter atingido o estado Readiness. A BDD Feature precisa estar em `prodops/artifacts/bdd/`. Os riscos precisam estar documentados. Para itens com movimentação financeira, integração externa, mudança de SLO ou risco alto/crítico: um Reliability Plan é exigido. O Readiness Gate não é opcional: é o ponto onde a Diligence verifica, de forma bloqueante, que o Downstream tem o substrato necessário para ser executado com integridade.
+**Momento 3: Readiness Gate** (Downstream Ready). O item sai da Discovery: Elaboration e entra em Delivery: Readiness quando um conjunto de requisitos é satisfeito. O OBC precisa ter atingido o estado Readiness. A BDD Feature precisa estar em `prodops/artifacts/bdd/`. Os riscos precisam estar documentados. Para itens com movimentação financeira, integração externa, mudança de SLO ou risco alto/crítico: um Reliability Plan é exigido. O Readiness Gate não é opcional: é o ponto onde a Diligence verifica, de forma bloqueante, que o Downstream tem o substrato necessário para ser executado com integridade.
 
 A distinção entre os três momentos resolve conflitos frequentes: "o BDD deve estar em `artifacts/bdd/` no Commitment Gate?" Não: draft legível é suficiente no Momento 1; muda para o path comprometido durante o Momento 2 e antes do Momento 3. "O OBC deve estar Readiness no Commitment Gate?" Não: apenas existir como Draft é suficiente no Momento 1; Readiness é obrigatório no Momento 3.
 

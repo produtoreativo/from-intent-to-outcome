@@ -152,40 +152,49 @@ O Experiment Plan é o equivalente Upstream do Iteration Plan. O Iteration Plan 
 
 ```mermaid
 flowchart TD
-    PIB["PIB — item entra com OBC: Draft"]
+    PIB["PIB — Product Intent Backlog\nOBC: Draft"]
+    ICE["ICEBOX\nOBC: Draft · pré-modo declarado\nnó de decisão de regime"]
 
-    subgraph ICE["VIEW: Icebox  —  OBC ≠ Readiness"]
-        PE["VIEW: Experiment Plan\nOBC: Draft · experimento ativo\nDiscovery WIP controlado"]
-        WAIT["Icebox sem experimento ativo\naguardando decisão externa\nou Business Signal direto"]
-        DS["Downstream Declared\nOBC: Refining\nDiscovery em modo bloqueante"]
+    subgraph UP["UPSTREAM"]
+        UH["In Hypothesis\nhipótese em formação"]
+        EP["Experiment Plan\nexperimento ativo · Discovery WIP"]
+        ER["Evidence Running\ncódigo rodando sem compromisso\nSandbox ou Controlled Production"]
+    end
+    UA["Upstream: Archived\nexperimento encerrado"]
+
+    CG{"Commitment Gate\nPM + Tech Lead + Autor\n6 outcomes"}
+
+    subgraph DS["DOWNSTREAM"]
+        DE["Discovery: Elaboration\nOBC: Refining\nDiscovery bloqueante"]
+        RG{"Readiness Gate\nOBC Readiness?\nBDD + Riscos ok?"}
+        DRD["Delivery: Readiness\nOBC: Readiness"]
+        DI["Delivery: Iteration Plan\nOBC: In Delivery"]
     end
 
-    CG{"Commitment Gate\n6 outcomes\nPM + Tech Lead + Autor"}
-    RG{"Readiness Gate\nOBC Readiness?\nBDD + Riscos ok?"}
-    ITB["VIEW: Iteration Backlog\nOBC: Readiness"]
-    IP["Iteration Plan\nDelivery inicia — Bootstrap"]
-    OUT["Encerrado / Aguardando\nDescartar · Requer outro EXP\nAguardar decisão · Dep. externa"]
+    PIB --> ICE
+    ICE -->|"decidir explorar"| UH
+    ICE -->|"contexto suficiente\nsem Upstream prévio"| CG
 
-    PIB -->|"experimento aberto"| PE
-    PIB -->|"sem experimento\nou Business Signal direto"| WAIT
+    UH -->|"hipótese formalizada\nexperiment.md aberto"| EP
+    EP -.->|"código em execução"| ER
+    EP -->|"Decision Package pronto"| CG
+    ER -->|"Decision Package pronto"| CG
+    EP -->|"outros outcomes"| UA
+    ER -->|"outros outcomes"| UA
 
-    PE -->|"Decision Package pronto"| CG
-    WAIT -->|"contexto amadureceu"| CG
+    CG -->|"Promover\nDraft → Refining"| DE
+    CG -->|"outros outcomes"| UA
 
-    CG -->|"Promover\nDraft → Refining"| DS
-    CG -->|"outros outcomes"| OUT
-
-    DS -->|"OBC atinge Readiness"| RG
-    RG -->|"aprovado"| ITB
-    RG -->|"Finding aberto"| DS
-
-    ITB -->|"PO seleciona"| IP
+    DE -->|"OBC atinge Readiness"| RG
+    RG -->|"aprovado"| DRD
+    RG -->|"Finding aberto"| DE
+    DRD -->|"PM seleciona"| DI
 ```
-*Figura 5a. Jornada de um item dentro do PIB: o Experiment Plan como VIEW dos experimentos Upstream ativos dentro do Icebox, o Commitment Gate como fronteira modal, e o Iteration Plan como destino final após o Readiness Gate.*
+*Figura 5a. Estrutura do PIB: o Icebox como nó de triagem pré-modo, as VIEWs Upstream, o Commitment Gate como fronteira modal, e as VIEWs Downstream até a Delivery.*
 
-Um item do Icebox pode existir sem aparecer no Experiment Plan, por exemplo, quando aguarda uma decisão de negócio externa antes de abrir a investigação. O Experiment Plan lista apenas os experimentos que estão ativos neste momento.
+Um item fica no Icebox enquanto não há decisão de regime: pode ir diretamente ao Commitment Gate (contexto de negócio suficiente, sem necessidade de exploração), ou ativar o caminho Upstream abrindo uma hipótese. O Experiment Plan lista apenas os experimentos que estão ativos neste momento; um item no Icebox que ainda não abriu experimento não aparece no Experiment Plan.
 
-Os três experimentos da Magazine Siará (EXP-001, EXP-002, EXP-003) seriam representados no Experiment Plan durante suas respectivas janelas de investigação , e removidos quando o Commitment Gate registrou o outcome *Promover com restrição* e o item entrou no Icebox como Downstream Declared.
+Os três experimentos da Magazine Siará (EXP-001, EXP-002, EXP-003) seriam representados no Experiment Plan durante suas respectivas janelas de investigação, e removidos quando o Commitment Gate registrou o outcome *Promover com restrição* e o item entrou em Discovery: Elaboration com Downstream Declared.
 
 ---
 
