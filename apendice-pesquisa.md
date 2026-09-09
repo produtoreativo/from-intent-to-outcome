@@ -97,7 +97,7 @@ Womack e Jones, em "Lean Thinking" (1996), formalizaram o conceito de value stre
 
 ### Cluster 4: Entrega de software
 
-Forsgren, Humble e Kim, em "Accelerate" (2018), publicaram as quatro métricas DORA como preditoras de performance organizacional. O framework ProdOps incorpora essas métricas como parte do Operational Trail do Downstream. Kim, Behr e Spafford, em "The Phoenix Project" (2013), diagnosticaram que WIP excessivo no Downstream sem controle upstream é o principal fator de degradação de fluxo. Eric Ries, em "The Lean Startup" (2011), formalizou o ciclo Build-Measure-Learn: o experimento Upstream do ProdOps é uma instância formal desse ciclo, com outcomes explícitos (incluindo pivot e descarte). Jeff Patton, em "User Story Mapping" (2014), propôs que entendimento compartilhado supera documentação: o BDD Feature do ProdOps é a versão executável desse entendimento compartilhado.
+Forsgren, Humble e Kim, em "Accelerate" (2018), publicaram as quatro métricas DORA como preditoras de performance organizacional. O framework ProdOps incorpora essas métricas como parte do Release Trail do Downstream. Kim, Behr e Spafford, em "The Phoenix Project" (2013), diagnosticaram que WIP excessivo no Downstream sem controle upstream é o principal fator de degradação de fluxo. Eric Ries, em "The Lean Startup" (2011), formalizou o ciclo Build-Measure-Learn: o experimento Upstream do ProdOps é uma instância formal desse ciclo, com outcomes explícitos (incluindo pivot e descarte). Jeff Patton, em "User Story Mapping" (2014), propôs que entendimento compartilhado supera documentação: o BDD Feature do ProdOps é a versão executável desse entendimento compartilhado.
 
 ### Cluster 5: Arquitetura e DDD
 
@@ -112,7 +112,7 @@ Eric Evans, em "Domain-Driven Design" (2003), foi o primeiro a formalizar upstre
 | Evidence Threshold | Assumption testing (Torres) |
 | Experiment Plan como buffer lean (pré-Commitment Gate) | Theory of Constraints (Goldratt) / Lean Thinking (Womack) |
 | Decision Package | 4 riscos antes do compromisso (Cagan) |
-| Métricas TTE, TTC, TTD | Value Stream Mapping (Rother e Shook) |
+| TTE (Time to Evidence) | Value Stream Mapping (Rother e Shook) — somente TTE foi adotado pelo ProdOps; TTC e TTD são termos VSM não incorporados |
 | Experimento Upstream | Build-Measure-Learn (Ries) / Pitch com expiração (Singer) |
 | Bias organizacional para downstream | Diagnóstico de Heath (2020) / 4 tipos de trabalho (Kim et al.) |
 | OBC como contrato vivo | Team API (Skelton e Pais) / Shared understanding (Patton) |
