@@ -102,6 +102,29 @@ Esse último ponto conecta diretamente ao Observable Event `split_payment.boleto
 
 ---
 
+## Planning: do OBC Readiness ao Iteration Plan
+
+O Readiness Gate verifica que o OBC está pronto para a Delivery. Mas verificar que o OBC está pronto não é o mesmo que montar o trabalho que vai executá-lo. Esse é o papel do Planning: transformar o OBC Readiness em um Iteration Plan executável.
+
+O input do Planning é o OBC em estado Readiness: todos os campos completos e verificáveis por terceiros, a BDD Feature finalizada, os Observable Events definidos com dimensões obrigatórias, os Initial SLIs com targets numéricos, o Reliability Plan ativo. O output é o Iteration Plan: o conjunto de tasks ou espikes que a equipe de Delivery vai executar na sequência Bootstrap → Promote.
+
+O Planning não cria compromisso novo. O compromisso foi feito no Commitment Gate e verificado pelo Readiness Gate. O que o Planning faz é tornar esse compromisso executável: decompõe o OBC em unidades de trabalho concretas, distribui responsabilidades, estima esforço por fase da sequência de Delivery, e registra as dependências que precisam ser resolvidas antes de cada fase começar.
+
+O que o Planning produz concretamente:
+
+- **Tasks por fase da sequência de Delivery**: para cada fase (Bootstrap, Hack, Sync, Finish, Ship, Validate, Promote), quais ações são necessárias, quem as executa e qual é a Definition of Done
+- **Decomposição dos cenários BDD em comportamentos implementáveis**: cada cenário da BDD Feature se torna um conjunto de comportamentos com critério de verificação; nenhum comportamento entra na fase Hack sem critério de aceitação declarado
+- **Identificação de spikes de risco**: se existir incerteza técnica residual declarada no OBC (como permitido pelo Commitment Gate), o Planning nomeia o spike correspondente e o posiciona na sequência antes da implementação principal
+- **Mapeamento de dependências externas**: integrações, serviços de terceiros, acesso a dados: tudo que bloqueia o Bootstrap precisa ter resolução prevista antes do início da fase
+
+O Planning é conduzido pelo trio (PM, Tech Lead, Autor) com participação do time de implementação. O PM valida que as tasks cobrem os acceptance criteria do OBC. O Tech Lead valida que a decomposição técnica é executável na sequência proposta. O time estima e sinaliza impedimentos não visíveis nos artefatos. O resultado fica registrado como Work Item associado ao OBC no PIB, com status Downstream: Delivery: Iteration Plan.
+
+Uma distinção importante: o Planning do ProdOps não é refinamento de backlog genérico. Ele opera sobre um OBC já verificado pelo Readiness Gate, com critérios de aceite mensuráveis e Observable Events definidos. Não existe "definir o que significa pronto" no Planning: isso já está no OBC. O Planning existe para responder "como executamos o que já está definido", não "o que precisa ser feito".
+
+A duração do Planning é proporcional à complexidade da decomposição, não ao tamanho do time. Um OBC com cinco Initial SLIs, seis Observable Events e uma BDD Feature com quatro cenários pode ter um Planning de duas horas com o trio completo. O critério de encerramento do Planning é simples: o Iteration Plan cobre todos os acceptance criteria do OBC de forma rastreável e todos os impedimentos conhecidos têm resolução prevista.
+
+---
+
 ## A sequência de Delivery no modo Downstream
 
 ![Materialização do rigor bloqueante: sequência Bootstrap → Promote com Gates DoD entre cada fase](images/cap05-downstream-sequence.svg)
