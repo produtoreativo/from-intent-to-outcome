@@ -82,7 +82,7 @@ graph TD
 
 ## A dimensão prospectiva: preparando o ambiente para a decisão
 
-A dimensão prospectiva do Assessment começa no próprio Business Signal, durante a fase de **Concepção**: o período entre o registro do Signal e sua entrada no Business Intent Backlog (fluxo global) ou no Product Backlog (fluxo local). Nenhuma jornada de execução foi ativada ainda. Nenhum compromisso foi assumido. O Assessment já tem trabalho a fazer.
+A dimensão prospectiva do Assessment começa no próprio Business Signal, durante a fase de **Concepção**: o período entre o registro do Signal e sua entrada no Business Intent Backlog (fluxo global) ou no PIB — Product Intent Backlog (fluxo local). Nenhuma jornada de execução foi ativada ainda. Nenhum compromisso foi assumido. O Assessment já tem trabalho a fazer.
 
 A pergunta central não é "o que vamos construir?" nem "como vamos construir?". É: **o ambiente informacional tem entropia suficientemente controlada para que a decisão de seguir adiante seja tomada com clareza sobre o que se sabe e o que não se sabe?**
 
@@ -107,13 +107,13 @@ Se a dimensão prospectiva do Assessment prepara o ambiente para a decisão, a d
 
 O Assessment retrospectivo é ativado ao final de qualquer ciclo com registro formal: ao término de um experimento Upstream (independentemente do outcome do Commitment Gate), ou após a conclusão de um ciclo Downstream completo, com Product Capability em estado Released e Release Trail finalizado. Em ambos os casos, seu foco é o que o ciclo produziu de evidência sobre o funcionamento do sistema de trabalho. A pergunta que o Assessment retrospectivo faz é sempre a mesma: o que foi aprendido? Como o ciclo funcionou? O que o histórico revela sobre a saúde do processo?
 
-As fontes variam conforme o tipo de ciclo encerrado. Em ciclos **Upstream**: o experiment trail (o registro cronológico da investigação), o Decision Package produzido, o outcome do Commitment Gate e o estado das hipóteses respondidas ou refutadas. Em ciclos **Downstream**: os Timelines e os artefatos de medição gerados, entre eles DORA Extended metrics, Gate Failure Rate (frequência com que os Gates foram bloqueados antes de serem satisfeitos), Decision Latency (tempo entre evidência disponível e convocação do Commitment Gate), Discovery WIP (experimentos simultâneos em andamento), Postmortems e OBCs em estado Released.
+As fontes variam conforme o tipo de ciclo encerrado. Em ciclos **Upstream**: o upstream-trail (o registro cronológico da investigação), o Decision Package produzido, o outcome do Commitment Gate, o estado das hipóteses respondidas ou refutadas e o Discovery WIP (experimentos simultâneos em andamento). Em ciclos **Downstream**: os Timelines e os artefatos de medição gerados, entre eles DORA Extended metrics, Gate Failure Rate (frequência com que os Gates foram bloqueados antes de serem satisfeitos), Decision Latency (tempo entre evidência disponível e convocação do Commitment Gate), Postmortems e OBCs em estado Released.
 
 A partir dessas fontes, o Assessment retrospectivo produz dois outputs. O primeiro é o **relatório de ciclo**: uma síntese do que o ciclo revelou sobre a saúde do processo: anti-padrões detectados, signals diagnósticos ativados, recomendações para o próximo ciclo. O segundo, mais importante, é o conjunto de **novos Business Signals**: observações derivadas da Operation ou dos resultados de experimentos Upstream que indicam oportunidades ou problemas a investigar no próximo ciclo. É por esse mecanismo que a retroalimentação do ProdOps opera, não como um ritual de retrospectiva desconectado do fluxo de trabalho, mas como a produção estruturada de inputs para o início do próximo ciclo.
 
 | Fonte de dados | O que o Assessment retrospectivo lê |
 |---|---|
-| Experiment Trails | Como o experimento Upstream foi conduzido; hipóteses respondidas ou refutadas |
+| Upstream Trails | Como o experimento Upstream foi conduzido; hipóteses respondidas ou refutadas |
 | Decision Packages | Qualidade da evidência produzida; recomendação e outcome do Commitment Gate |
 | Release Trails | Como cada fase do Delivery foi executada; onde o fluxo travou |
 | Gate Failure Rate | Frequência de bloqueios por Gates não satisfeitos; sinal de rigor inadequado |
@@ -173,7 +173,7 @@ O Business Signal BS-001 (o Signal que originou a feature Split Payment) não su
 
 O PI-001 documenta por que BS-001 entrou diretamente em Downstream sem Upstream prévio: "demanda confirmada por dois canais independentes, escopo delimitado, deadline inegociável". Essa justificativa é Assessment prospectivo em operação: a avaliação de que o contexto informacional era suficiente para dispensar a exploração pré-Commitment Gate. A ausência de Upstream não significa ausência de avaliação: significa que a avaliação concluiu que a incerteza residual era aceitável para o compromisso.
 
-O EXP-007, aberto em paralelo ao Downstream do Split Payment, é um experimento Upstream, não a jornada Assessment em si, mas o resultado do Assessment funcionando: a avaliação retrospectiva das lacunas do ciclo em andamento gerou o Signal que motivou abrir o experimento. Enquanto DS-61 honrava o compromisso do Split Payment Pix+Boleto, o EXP-007 explorava as combinações prioritárias de métodos, o modelo de domínio adequado para a composição e a política de falha parcial. O aprendizado do EXP-007 (incluindo o código exploratório produzido e o OBC Draft de `payment-composition`) foi promovido e integrado ao Downstream em andamento antes de DS-61 concluir. Esse é o mecanismo de retroalimentação funcionando: o Assessment leu o ciclo em curso e produziu o Signal; o experimento Upstream respondeu à hipótese.
+O EXP-007, aberto em paralelo ao Downstream do Split Payment, é um experimento Upstream, não a jornada Assessment em si, mas o resultado do Assessment funcionando: a avaliação retrospectiva das lacunas do ciclo em andamento gerou o Signal que motivou abrir o experimento. Enquanto DS-61 honrava o compromisso do Split Payment Pix+Boleto, o EXP-007 explorava as combinações prioritárias de métodos, o modelo de domínio adequado para a composição e a política de falha parcial — operando sobre o OBC Draft de `payment-composition`, que nasceu com a promoção do Business Signal a Business Intent antes do experimento ser aberto. O código exploratório produzido e o aprendizado acumulado foram integrados ao Decision Package; o Commitment Gate promoveu o OBC de Draft para Refining e o Downstream de `payment-composition` foi iniciado antes de DS-61 concluir. Esse é o mecanismo de retroalimentação funcionando: o Assessment leu o ciclo em curso e produziu o Signal; o experimento Upstream respondeu à hipótese.
 
 O que torna esse caso valioso não é sua excepcionalidade. É que ele representa o funcionamento normal do Assessment: acompanhar o ciclo corrente, extrair aprendizado do que está em Operation, e preparar o ambiente informacional para o próximo.
 
@@ -192,21 +192,20 @@ graph TD
     subgraph ASSESSMENT["Assessment — governança informacional transversal"]
 
         subgraph PROSP["Dimensão Prospectiva"]
-            C1["Lê corpus existente\nOBCs Released · Experiment Trails anteriores"]
+            C1["Lê corpus existente\nOBCs Released · Upstream Trails anteriores"]
             C2["Mapeia lacunas informacionais\no que ainda precisa ser levantado"]
             C3{{"Compromisso\nverificável?"}}
             DPEVAL["Avalia Decision Package\nlegibilidade · falsificação declarada\nriscos · incerteza residual"]
-            RP["Produz Reliability Plan\nSLIs · Reliability Rules · critérios de alerta"]
         end
 
         subgraph EXEC["Jornadas clássicas de execução"]
-            UP["Discovery — modo Upstream\nartefatos: experiment trail · Decision Package"]
+            UP["Discovery — modo Upstream\nartefatos: upstream-trail · Decision Package"]
             CG(["Commitment Gate\ntrio: PM · Tech Lead · Autor\n6 outcomes canônicos"])
             DWN["Discovery → Delivery → Operation\nmodo Downstream\nartefatos: OBCs · Release Trails · Timelines · Postmortems"]
         end
 
         subgraph RETRO["Dimensão Retrospectiva"]
-            R1["Lê ciclo encerrado\nUpstream: experiment trail · Decision Package · outcome do CG\nDownstream: DORA · Gate Failure Rate · OBC Released · Postmortems"]
+            R1["Lê ciclo encerrado\nUpstream: upstream-trail · Decision Package · outcome do CG\nDownstream: DORA · Gate Failure Rate · OBC Released · Postmortems"]
             R2["Relatório de ciclo\nanti-padrões · sinais diagnósticos · recomendações"]
             R3(["Novos Business Signals\nretroalimentação estruturada"])
         end
@@ -220,8 +219,7 @@ graph TD
     C3 -->|"amadurecer compromisso"| UP
     UP -->|"Decision Package"| DPEVAL
     DPEVAL --> CG
-    CG -->|"Promover"| RP
-    RP --> DWN
+    CG -->|"Promover"| DWN
     CG -.->|"qualquer outro outcome\n(encerra ciclo Upstream)"| R1
     DWN --> R1
     R1 --> R2

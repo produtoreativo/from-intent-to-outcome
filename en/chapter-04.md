@@ -82,7 +82,7 @@ graph TD
 
 ## The prospective dimension: preparing the environment for the decision
 
-The prospective dimension of Assessment begins at the Business Signal itself, during the **Conception** phase: the period between the Signal being registered and its entry into the Business Intent Backlog (global flow) or the Product Backlog (local flow). No execution journey has been activated yet. No commitment has been made. Assessment already has work to do.
+The prospective dimension of Assessment begins at the Business Signal itself, during the **Conception** phase: the period between the Signal being registered and its entry into the Business Intent Backlog (global flow) or the PIB — Product Intent Backlog (local flow). No execution journey has been activated yet. No commitment has been made. Assessment already has work to do.
 
 The central question is not "what will we build?" or "how will we build it?". It is: **does the informational environment have sufficiently controlled entropy for the decision to move forward to be made with clarity about what is known and what is not?**
 
@@ -107,13 +107,13 @@ If the prospective dimension of Assessment prepares the environment for the deci
 
 Retrospective Assessment is activated at the end of any cycle with a formal record: at the conclusion of an Upstream experiment (regardless of the Commitment Gate outcome), or after the completion of a full Downstream cycle, with the Product Capability in Released state and the Release Trail finalized. In both cases, its focus is what the cycle produced as evidence about how the work system functioned. The question retrospective Assessment always asks is the same: what was learned? How did the cycle work? What does the history reveal about the health of the process?
 
-The sources vary according to the type of concluded cycle. For **Upstream** cycles: the experiment trail (the chronological record of the investigation), the Decision Package produced, the Commitment Gate outcome, and the state of answered or refuted hypotheses. For **Downstream** cycles: the Timelines and the measurement artifacts generated, including DORA Extended metrics, Gate Failure Rate (frequency with which Gates were blocked before being satisfied), Decision Latency (time between available evidence and Commitment Gate convening), Discovery WIP (simultaneous experiments in progress), Postmortems, and OBCs in Released state.
+The sources vary according to the type of concluded cycle. For **Upstream** cycles: the upstream-trail (the chronological record of the investigation), the Decision Package produced, the Commitment Gate outcome, the state of answered or refuted hypotheses, and Discovery WIP (simultaneous experiments in progress). For **Downstream** cycles: the Timelines and the measurement artifacts generated, including DORA Extended metrics, Gate Failure Rate (frequency with which Gates were blocked before being satisfied), Decision Latency (time between available evidence and Commitment Gate convening), Postmortems, and OBCs in Released state.
 
 From these sources, retrospective Assessment produces two outputs. The first is the **cycle report**: a synthesis of what the cycle revealed about process health: detected anti-patterns, activated diagnostic signals, recommendations for the next cycle. The second, more important, is the set of **new Business Signals**: observations derived from Operation or from Upstream experiment results that indicate opportunities or problems to investigate in the next cycle. This is the mechanism through which ProdOps feedback operates, not as a disconnected retrospective ritual, but as the structured production of inputs for the start of the next cycle.
 
 | Data source | What retrospective Assessment reads |
 |---|---|
-| Experiment Trails | How the Upstream experiment was conducted; hypotheses answered or refuted |
+| Upstream Trails | How the Upstream experiment was conducted; hypotheses answered or refuted |
 | Decision Packages | Quality of the evidence produced; recommendation and Commitment Gate outcome |
 | Release Trails | How each Delivery phase was executed; where flow stalled |
 | Gate Failure Rate | Frequency of Gate blocks not yet satisfied; signal of inadequate rigor |
@@ -173,7 +173,7 @@ Business Signal BS-001 (the Signal that originated the Split Payment feature) di
 
 PI-001 documents why BS-001 entered Downstream directly without prior Upstream: "demand confirmed through two independent channels, bounded scope, non-negotiable deadline." This justification is prospective Assessment in operation: the evaluation that the informational context was sufficient to dispense with pre-Commitment Gate exploration. The absence of Upstream does not mean the absence of evaluation: it means the evaluation concluded that residual uncertainty was acceptable for the commitment.
 
-EXP-007, opened in parallel to the Split Payment Downstream, is an Upstream experiment, not the Assessment journey itself, but the result of Assessment functioning: the retrospective evaluation of the ongoing cycle's gaps generated the Signal that motivated opening the experiment. While DS-61 honored the Split Payment Pix+Boleto commitment, EXP-007 explored priority payment method combinations, the appropriate domain model for composition, and the partial failure policy. The learning from EXP-007 (including the exploratory code produced and the `payment-composition` OBC Draft) was promoted and integrated into the ongoing Downstream before DS-61 concluded. That is the feedback mechanism at work: Assessment read the ongoing cycle and produced the Signal; the Upstream experiment answered the hypothesis.
+EXP-007, opened in parallel to the Split Payment Downstream, is an Upstream experiment, not the Assessment journey itself, but the result of Assessment functioning: the retrospective evaluation of the ongoing cycle's gaps generated the Signal that motivated opening the experiment. While DS-61 honored the Split Payment Pix+Boleto commitment, EXP-007 explored priority payment method combinations, the appropriate domain model for composition, and the partial failure policy — operating on the `payment-composition` OBC Draft, which was born when the Business Signal was promoted to Business Intent before the experiment was opened. The exploratory code produced and the accumulated learning were integrated into the Decision Package; the Commitment Gate promoted the OBC from Draft to Refining, and the `payment-composition` Downstream was initiated before DS-61 concluded. That is the feedback mechanism at work: Assessment read the ongoing cycle and produced the Signal; the Upstream experiment answered the hypothesis.
 
 What makes this case valuable is not its exceptionality. It is that it represents the normal functioning of Assessment: accompanying the current cycle, extracting learning from what is in Operation, and preparing the informational environment for the next.
 
@@ -192,21 +192,20 @@ graph TD
     subgraph ASSESSMENT["Assessment — transversal informational governance"]
 
         subgraph PROSP["Prospective Dimension"]
-            C1["Reads existing corpus\nOBCs Released · prior Experiment Trails"]
+            C1["Reads existing corpus\nOBCs Released · prior Upstream Trails"]
             C2["Maps informational gaps\nwhat still needs to be gathered"]
             C3{{"Verifiable\ncommitment?"}}
             DPEVAL["Evaluates Decision Package\nreadability · declared falsification\nrisks · residual uncertainty"]
-            RP["Produces Reliability Plan\nSLIs · Reliability Rules · alert criteria"]
         end
 
         subgraph EXEC["Classic execution journeys"]
-            UP["Discovery — Upstream mode\nartifacts: experiment trail · Decision Package"]
+            UP["Discovery — Upstream mode\nartifacts: upstream-trail · Decision Package"]
             CG(["Commitment Gate\ntrio: PM · Tech Lead · Author\n6 canonical outcomes"])
             DWN["Discovery → Delivery → Operation\nDownstream mode\nartifacts: OBCs · Release Trails · Timelines · Postmortems"]
         end
 
         subgraph RETRO["Retrospective Dimension"]
-            R1["Reads concluded cycle\nUpstream: experiment trail · Decision Package · CG outcome\nDownstream: DORA · Gate Failure Rate · OBC Released · Postmortems"]
+            R1["Reads concluded cycle\nUpstream: upstream-trail · Decision Package · CG outcome\nDownstream: DORA · Gate Failure Rate · OBC Released · Postmortems"]
             R2["Cycle report\nanti-patterns · diagnostic signals · recommendations"]
             R3(["New Business Signals\nstructured feedback"])
         end
@@ -220,8 +219,7 @@ graph TD
     C3 -->|"mature commitment"| UP
     UP -->|"Decision Package"| DPEVAL
     DPEVAL --> CG
-    CG -->|"Promote"| RP
-    RP --> DWN
+    CG -->|"Promote"| DWN
     CG -.->|"any other outcome\n(closes Upstream cycle)"| R1
     DWN --> R1
     R1 --> R2
