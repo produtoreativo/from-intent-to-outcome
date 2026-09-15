@@ -7,7 +7,7 @@
 ![Upstream experiment lifecycle](../images/cap05-experiment-lifecycle.svg)
 *Figure 5. Upstream experiment lifecycle: from In Hypothesis to Commitment Gate with its 6 outcomes. The TTE (Time-to-Evidence) and Decision Latency metrics shown in the diagram are defined in Chapter 8.*
 
-Upstream is not the mode where rigor is discarded. It is the mode where rigor takes a distinct form: oriented toward the quality of evidence, not toward verifying a delivery commitment.
+Upstream is not the mode where rigor is discarded. It is the mode where rigor takes a distinct form: oriented toward the quality of evidence, not toward verifying a Downstream commitment.
 
 What defines Upstream is not the absence of commitment, but the type of commitment that is in effect. There are three layers in this distinction that must be kept separate.
 

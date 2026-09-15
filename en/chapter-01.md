@@ -45,7 +45,7 @@ What these concepts sought to address is real. What was missing was a formulatio
 ![Wrong rigor configuration generates waste in both directions](../images/cap01-rigor-misconfiguration.svg)
 *Figure 1. Commitment rigor applied during exploration (line A) and exploration rigor applied during commitment (line B) produce the same result: waste*
 
-There is a distinction that is rarely articulated explicitly in product organizations: the distinction between the cost of being wrong during exploration and the cost of being wrong during delivery.
+There is a distinction that is rarely articulated explicitly in product organizations: the distinction between the cost of being wrong during exploration and the cost of being wrong during commitment.
 
 When a team is exploring (investigating whether a hypothesis is valid, testing an approach, mapping a problem space), the reversal cost of an incorrect hypothesis tends to be lower. Exploration can be costly: interviews, prototypes, and experiments consume time and resources. What is controllable, before a formal commitment to deliver, is the cost of changing course when a hypothesis proves incorrect. A refuted hypothesis is valuable information. A prototype that doesn't work eliminates a bad option before it becomes a more expensive commitment to reverse. Exploration is the mechanism by which a team learns what not knowing can cost.
 

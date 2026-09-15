@@ -111,7 +111,7 @@ The blind spot has an operational name in the ProdOps context: Discovery in the 
 
 Discovery in the Downstream is the exploration carried out after a decision has come to carry an operational, economic, or temporal commitment, causing the same uncertainty that would be acceptable in the Upstream to now carry a cost of reversal, renegotiation, or rework. The problem is not discovering after commitment. The problem is carrying uncertainty into a commitment without recognizing that the cost of being wrong has changed.
 
-When a team assumes a formal commitment (with acceptance criteria, with a deadline, with stakeholder expectations) and still carries unresolved exploration into that commitment, what is happening is not discovery followed by delivery. It is delivery with embedded discovery, without recognition that the two things are coexisting under different cost regimes.
+When a team assumes a formal commitment (with acceptance criteria, with a deadline, with stakeholder expectations) and still carries unresolved exploration into that commitment, what is happening is not exploration followed by commitment. It is a commitment with embedded exploration, without recognition that the two things are coexisting under different cost regimes.
 
 This matters for a precise reason: the cost of changing course is radically different in the two cases.
 
@@ -129,11 +129,11 @@ What the most common operational interpretation of the product literature leaves
 
 Upstream and Downstream do not describe where the work is in time. They describe which commitment is governing the work.
 
-Discovery is not necessarily Upstream, and delivery is not necessarily Downstream. An investigation can occur in the Downstream when a formal delivery commitment exists. Experimental construction can occur in the Upstream when no production commitment yet exists. What determines the mode of execution is the commitment in force, not the nature of the activity.
+Discovery is not necessarily Upstream, and delivery is not necessarily Downstream. An investigation can occur in the Downstream when a formal commitment exists. Experimental construction can occur in the Upstream when no such commitment yet exists. What determines the mode of execution is the commitment in force, not the nature of the activity.
 
 Exploration without formal commitment can happen at any time: before, during, or in parallel with what other teams call "delivery." What characterizes it is not its position on the timeline, but the fact that the cost of being wrong is still controllable: the hypothesis can be refuted without breaking a promise.
 
-Delivery with formal commitment can also involve exploration, but that exploration happens under radically different conditions. The cost of being wrong is higher. The Gates that protect the commitment need to be more rigorous. The uncertainty that can be tolerated during free exploration cannot be carried indefinitely within a commitment.
+Work under formal commitment can also involve exploration, but that exploration happens under radically different conditions. The cost of being wrong is higher. The Gates that protect the commitment need to be more rigorous. The uncertainty that can be tolerated during free exploration cannot be carried indefinitely within a commitment.
 
 In the Upstream, rigor is predominantly oriented toward learning, experimentation, and uncertainty reduction. Upstream does not mean the absence of rigor: it means that rigor is in service of evidence quality, not the honoring of a commitment. In the Downstream, rigor is related to the preservation of commitment, execution verification, change control, and the realization of the expected outcome. Downstream does not mean the absence of discovery: it means that any discovery that occurs there carries a different cost and requires a different control regime.
 

@@ -59,7 +59,7 @@ graph LR
         D1[Gates: mandatory before advancing]
         D2[Commitment: formal, verifiable, and blocking]
         D3[Reversal cost: may affect the active commitment]
-        D4[Quality: evidence to verify delivery]
+        D4[Quality: evidence to verify fulfillment]
     end
     MODO[Execution Mode] --> Upstream
     MODO --> Downstream
@@ -70,7 +70,7 @@ graph LR
 | Gates | Guiding; non-blocking | Blocking and mandatory |
 | Rigor regime | Non-blocking rigor; practitioner decides the depth | Blocking rigor; mandatory sequence and Gates |
 | Reversal cost | Tends to be lower; changing direction does not violate a blocking commitment | Potentially high; a change may affect a formal commitment and requires an explicit decision about it |
-| Artifacts | Make the active commitment observable; states reflect the regime | Verifiable conditions for advancement; states confirm delivery |
+| Artifacts | Make the active commitment observable; states reflect the regime | Verifiable conditions for advancement; states confirm fulfillment |
 | Quality criterion | Quality of the evidence to inform the commitment decision | Verifiability of the correspondence between what was promised and what was delivered |
 
 Commitment is what determines which column an item belongs to. The state of artifacts is evidence of the commitment, not its definition: a more advanced artifact does not automatically make the work Downstream, just as an artifact in an initial state does not guarantee that the work is in Upstream.

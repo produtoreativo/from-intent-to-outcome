@@ -7,7 +7,7 @@
 ![Mode classification protocol for AI agents](../images/cap09-agent-mode-classification.svg)
 *Figure 10. Decision flow for mode classification: the Commitment Gate record is the primary signal; OBC state is the resulting observable indicator. Commitment Gate registered with Promote outcome (OBC Refining or Readiness) = Downstream; no Commitment Gate registered (OBC Draft or absent) = Upstream.*
 
-A human engineer who works with a product framework long enough develops something we might call mode sensitivity: the ability to perceive, from contextual signals (the conversation in the meeting, the state of the backlog, the tone of the PM's messages), in what kind of commitment the work is operating. They don't need to formally check whether the OBC is Readiness; they perceive from the team's posture that something has been decided and the work is now about delivery.
+A human engineer who works with a product framework long enough develops something we might call mode sensitivity: the ability to perceive, from contextual signals (the conversation in the meeting, the state of the backlog, the tone of the PM's messages), in what kind of commitment the work is operating. They don't need to formally check whether the OBC is Readiness; they perceive from the team's posture that something has been decided and the work is now under commitment.
 
 This sensitivity is valuable. It allows rigor to be calibrated without every decision needing to be formally explicit. The problem is that it is acquired, not present from the start, and it does not exist in AI agents.
 
