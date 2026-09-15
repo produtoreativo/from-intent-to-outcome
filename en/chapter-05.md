@@ -5,7 +5,7 @@
 ## The discipline of what is not a promise
 
 ![Upstream experiment lifecycle](../images/cap04-experiment-lifecycle.svg)
-*Figure 5. Upstream experiment lifecycle: from Hypothesis Formed to Commitment Gate with its 6 outcomes*
+*Figure 5. Upstream experiment lifecycle: from In Hypothesis to Commitment Gate with its 6 outcomes*
 
 Upstream is not the mode where rigor is discarded. It is the mode where rigor takes a distinct form: oriented toward the quality of evidence, not toward verifying a delivery commitment.
 
@@ -41,7 +41,7 @@ EXP-001 of the Magazine Siará Payments API is a concrete example. The central h
 
 Every Upstream experiment has two mandatory artifacts: `experiment.md` and `upstream-trail.md`.
 
-The `experiment.md` documents the permanent structure of the experiment: Business Goal, Questions to Answer, Hypothesis, Repository Scope Gate, Findings, and Decision Package.
+The `experiment.md` documents the permanent structure of the experiment: Business Goal, Hypothesis (with Evidence Threshold when declared), Questions to Answer, Scope, Decision Package, and Exit Criteria.
 
 ```mermaid
 graph TD
@@ -86,7 +86,7 @@ Three structural conditions produce this ambiguity in stop indicators. The absen
 
 The ProdOps framework identifies four diagnostic signals that make Perpetual Discovery recognizable. Each signal is individually sufficient to convene the Commitment Gate: it is not necessary for all to be active simultaneously.
 
-**S1: Evidence Threshold not declared.** The experiment has not defined an explicit stopping criterion in `experiment.md`. When the threshold is absent, the implicit criterion is "when we have sufficient evidence" — which never satisfies itself. It is the most direct structural invitation to Perpetual Discovery.
+**S1: Absence of declared stopping criterion.** The experiment has not defined an Evidence Threshold in `experiment.md` and has also not recorded, in `experiment.md` or in the `upstream-trail`, an explicit substitute stopping criterion (such as the investigation questions that, once answered, end the experiment). When no criterion is declared, the implicit threshold is "when we have sufficient evidence" — which never satisfies itself. It is the most direct structural invitation to Perpetual Discovery.
 
 **S2: Central hypothesis not falsifiable.** The hypothesis was formulated in such a way that no possible result refutes it, or was never formalized as a question with a verifiable answer. Without something to falsify, there is no result that ends the experiment: exploration continues because the question remains structurally open.
 
@@ -98,7 +98,7 @@ Any active signal justifies convening the Commitment Gate immediately — not to
 
 ```mermaid
 graph TD
-    S1["S1: Evidence Threshold not declared"]
+    S1["S1: Absence of declared stopping criterion"]
     S2["S2: Central hypothesis not falsifiable"]
     S3["S3: Questions to Answer unreachable"]
     S4["S4: Evidence Threshold unreachable via current route"]
@@ -112,7 +112,7 @@ graph TD
 
 ---
 
-## The three acts of deployment
+## The two acts of deployment
 
 A point that deserves explicit attention: Upstream does not prohibit code in production. The mode describes the type of commitment, not where code can be deployed.
 
@@ -124,7 +124,7 @@ There are two distinct acts of deployment in Upstream, with different authorizat
 
 The third act is the exit from Upstream, not a deployment within it:
 
-**Product Capability Promotion**: Commitment Gate with Promote outcome. The OBC transitions from Draft to Refining; the BDD Feature exists as a draft in the Downstream paths. The item enters Discovery: Elaboration, where Downstream Discovery elaborates the scope, completes the BDD, and satisfies the Readiness Gate conditions. After the Readiness Gate, the OBC reaches Readiness state; the Iteration Plan is created and Delivery begins with Bootstrap.
+**Product Capability Promotion**: Commitment Gate with Promote outcome. The OBC transitions from Draft to Refining; the BDD Feature exists as a draft in the Downstream paths. The item enters Discovery: Elaboration, where Downstream Discovery elaborates the scope, completes the BDD, and satisfies the Readiness Gate conditions. The OBC reaches Readiness state in Discovery: Elaboration; the Readiness Gate validates that state and opens the entry into Delivery. The Iteration Plan is created in Planning and Delivery begins with Bootstrap.
 
 The distinction between Controlled Production and Product Capability Promotion is precisely the distinction the modal model resolves: in the first case, the code is in production but the Product Capability is not committed; in the second, the commitment has been formally made with all its Gates.
 
@@ -136,7 +136,7 @@ The first three experiments of the Magazine Siará Payments API (EXP-001, EXP-00
 
 EXP-001 opened with a high-risk question: how to support the complete credit card lifecycle without crossing the PCI boundary or coupling Checkout to the Asaas contract? Before writing a single line of production code, the experiment specified the mandatory BDD scenarios, the Observable Events expected for each flow (authorization, confirmation, risk analysis, refusal, cancellation, chargeback), and the dimensions that could never appear in logs (card number, CVV, provider token). EXP-002 mapped the Asaas sandbox Product Capabilities and limitations for reproducing the credit card cycle, and confirmed the Validation Workbench as the simulation environment for scenarios the sandbox cannot reproduce deterministically; full provider scenario validation remains open, pending external evidence from Asaas. EXP-003 systematically compared the three possible integration models (hosted, tokenized, transparent) and produced the recommendation with justification: only hosted entry advances to Downstream, because it is the only option that does not require decisions external to the Payments team.
 
-The EXP-003 Decision Package recommends Promote with restriction (outcome ②): the hosted slice advances; the remaining options remain in Upstream awaiting third-party decisions (PCI scope, token model, Checkout UX). The Commitment Gate was executed with this Decision Package: the trio recorded the outcome, and Downstream began exclusively for hosted entry.
+The EXP-003 Decision Package recommends Promote with restriction: the hosted slice advances; the remaining options remain in Upstream awaiting third-party decisions (PCI scope, token model, Checkout UX). The Commitment Gate was executed with this Decision Package: the trio recorded the outcome, and Downstream began exclusively for hosted entry.
 
 Three sequential experiments. No production code during any of them. A recommendation verifiable by third parties. A Commitment Gate that decided the Product Capability's fate with sufficient evidence, and with an explicit restriction on what the evidence did not support. This is Upstream mode operated with full engineering rigor: not a low-discipline phase before the "real" engineering. A non-blocking commitment regime that produced verifiable knowledge, and a Decision Package that made the Commitment Gate possible.
 
@@ -144,7 +144,7 @@ Three sequential experiments. No production code during any of them. A recommend
 
 ## Coordinating Upstream: the Experiment Plan
 
-When a team runs multiple Upstream experiments in parallel, a coordination artifact becomes necessary. That is the **Experiment Plan**: a VIEW over the Icebox items that have an active experiment: a formulated hypothesis, an open `experiment.md`, an investigation in progress.
+When a team runs multiple Upstream experiments in parallel, a coordination artifact becomes necessary. That is the **Experiment Plan**: a VIEW over the items that have activated the Upstream path and have an active experiment: a formulated hypothesis, an open `experiment.md`, an investigation in progress.
 
 The Experiment Plan is not a sprint. It has no deadline or mandatory sequence. It is a visibility instrument: it answers the question *"which hypotheses are we investigating right now?"* and makes **Discovery WIP** visible: the number of simultaneously active Upstream experiments.
 
@@ -188,7 +188,7 @@ flowchart TD
     DE -->|"OBC reaches Readiness"| RG
     RG -->|"approved"| DRD
     RG -->|"Finding open"| DE
-    DRD -->|"PM selects"| DI
+    DRD -->|"Planning (trio)"| DI
 ```
 *Figure 5a. PIB structure: the Icebox as the pre-mode triage node, Upstream VIEWs, the Commitment Gate as the modal boundary, and Downstream VIEWs through to Delivery.*
 
