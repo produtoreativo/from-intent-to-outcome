@@ -4,8 +4,8 @@
 
 ## The discipline of what is not a promise
 
-![Upstream experiment lifecycle](../images/cap04-experiment-lifecycle.svg)
-*Figure 5. Upstream experiment lifecycle: from In Hypothesis to Commitment Gate with its 6 outcomes*
+![Upstream experiment lifecycle](../images/cap05-experiment-lifecycle.svg)
+*Figure 5. Upstream experiment lifecycle: from In Hypothesis to Commitment Gate with its 6 outcomes. The TTE (Time-to-Evidence) and Decision Latency metrics shown in the diagram are defined in Chapter 8.*
 
 Upstream is not the mode where rigor is discarded. It is the mode where rigor takes a distinct form: oriented toward the quality of evidence, not toward verifying a delivery commitment.
 
@@ -51,6 +51,7 @@ graph TD
     EXP --> SC["Scope"]
     EXP --> DP["Decision Package"]
     EXP --> EC["Exit Criteria"]
+    DP --> H["Hypothesis answered\nEvidence Threshold satisfied, when declared"]
     DP --> ES["Executive Summary"]
     DP --> REC["Recommended Decision"]
     DP --> RISK["Risks"]
@@ -138,7 +139,7 @@ EXP-001 opened with a high-risk question: how to support the complete credit car
 
 The EXP-003 Decision Package recommends Promote with restriction: the hosted slice advances; the remaining options remain in Upstream awaiting third-party decisions (PCI scope, token model, Checkout UX). The Commitment Gate was executed with this Decision Package: the trio recorded the outcome, and Downstream began exclusively for hosted entry.
 
-Three sequential experiments. No production code during any of them. A recommendation verifiable by third parties. A Commitment Gate that decided the Product Capability's fate with sufficient evidence, and with an explicit restriction on what the evidence did not support. This is Upstream mode operated with full engineering rigor: not a low-discipline phase before the "real" engineering. A non-blocking commitment regime that produced verifiable knowledge, and a Decision Package that made the Commitment Gate possible.
+Three sequential experiments. No production code during any of them. A recommendation verifiable by third parties. A Commitment Gate that decided the Product Capability's fate with sufficient evidence, and with an explicit restriction on what the evidence did not support. This is Upstream mode operated with full engineering rigor: not a low-discipline phase before the "real" engineering. A non-blocking commitment regime that produced verifiable knowledge, and a Decision Package that made the Commitment Gate possible. The three experiments operated entirely in investigative mode, without activating either deployment option: what Upstream permits is not what every experiment needs to use.
 
 ---
 
@@ -194,13 +195,13 @@ flowchart TD
 
 An item stays in the Icebox while there is no regime decision: it can go directly to the Commitment Gate (sufficient business context, no exploration needed), or activate the Upstream path by opening a hypothesis. The Experiment Plan lists only the experiments that are active at this moment; an item in the Icebox that has not yet opened an experiment does not appear in the Experiment Plan.
 
-The three Magazine Siará experiments (EXP-001, EXP-002, EXP-003) would be represented in the Experiment Plan during their respective investigation windows, and removed when the Commitment Gate recorded the *Promote with restriction* outcome and the item entered Discovery: Elaboration as Downstream Declared.
+The three Magazine Siará experiments (EXP-001, EXP-002, EXP-003) would be represented in the Experiment Plan during their respective investigation windows, and exited it when the Commitment Gate recorded the *Promote with restriction* outcome. EXP-002's incompleteness — blocked on an external dependency from Asaas — did not prevent the Gate: it was absorbed as an explicit restriction in the Decision Package and reflected in the outcome itself. The Commitment Gate decides the Product Capability's fate; it does not require all experiments to be concluded, only that the Decision Package declares what the evidence supports and what remains open. The item entered Discovery: Elaboration exclusively for the hosted slice, with EXP-002's open questions recorded as a restriction.
 
 ---
 
 ## What Upstream is not responsible for doing
 
-The definition of Upstream includes an explicit list of what is outside its scope. Implementing the committed Product Capability with blocking Gates: that is the Delivery journey in Downstream mode. The distinction is one of commitment, not physical activity: Upstream can produce functional code, proof of concept, implementation in sandbox or in controlled production, without that constituting the delivery of a formally promised Product Capability. Committing and technically implementing the observability of the Product Capability (SLOs, Observable Events, production instrumentation): that is the responsibility of Downstream. In Upstream, ODD means documenting what needs to be observable to test the hypothesis, without that constituting a commitment of implementation. Producing OBC Readiness: that is Discovery in Downstream. Producing complete BDD in `prodops/artifacts/bdd/`: that happens before the Readiness Gate. Guaranteeing the absence of uncertainty: acceptable residual uncertainty is a valid Commitment Gate criterion.
+The definition of Upstream includes an explicit list of what is outside its scope. Implementing the committed Product Capability with blocking Gates: that is the Delivery journey in Downstream mode. The distinction is one of commitment, not physical activity: Upstream can produce functional code, proof of concept, implementation in sandbox or in controlled production, without that constituting the delivery of a formally promised Product Capability. Committing and technically implementing the observability of the Product Capability (SLOs, Observable Events, production instrumentation): that is the responsibility of Downstream. In Upstream, ODD means documenting what needs to be observable to test the hypothesis, without that constituting a commitment of implementation. Producing OBC Readiness: that is Discovery in Downstream. Producing complete BDD in `prodops/artifacts/bdd/`: that happens before the Readiness Gate. Conducting Assessment: Assessment accompanies Upstream without being part of it. It is prospective Assessment that evaluates the epistemic quality of the Decision Package before the Commitment Gate; it is retrospective Assessment that reads the upstream-trail after the experiment closes and feeds the next cycle with new Business Signals. Guaranteeing the absence of uncertainty: acceptable residual uncertainty is a valid Commitment Gate criterion.
 
 This last statement is counterintuitive enough to deserve emphasis: Upstream does not need to eliminate all uncertainty. It needs to reduce uncertainty to the point where the residual risk is acceptable for taking on the Downstream commitment. What is "acceptable" is the collective judgment of the trio at the Commitment Gate, not a zero-uncertainty criterion that no finite experiment can satisfy.
 
