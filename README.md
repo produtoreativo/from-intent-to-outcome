@@ -14,8 +14,8 @@ Upstream, Downstream e o Novo Modelo Operacional para Produtos Digitais
 | 1 | A confusão não é de processo; é de compromisso | [capitulo-01.md](capitulo-01.md) | Final |
 | 2 | Por que a leitura de mercado não resolve | [capitulo-02.md](capitulo-02.md) | Final |
 | 3 | O que é um modo de execução | [capitulo-03.md](capitulo-03.md) | Final |
-| 4 | Assessment: a jornada que acompanha todas | [capitulo-04.md](capitulo-04.md) | Final |
-| 5 | Upstream: o modo da incerteza explícita | [capitulo-05.md](capitulo-05.md) | Revisão 7 |
+| 4 | Assessment: a jornada que acompanha todas | [capitulo-04.md](capitulo-04.md) | Revisão 8 |
+| 5 | Upstream: o modo da incerteza explícita | [capitulo-05.md](capitulo-05.md) | Revisão 8 |
 | 6 | Downstream: o modo do compromisso | [capitulo-06.md](capitulo-06.md) | Revisão 6 |
 | 7 | O Commitment Gate: a fronteira com nome | [capitulo-07.md](capitulo-07.md) | Revisão 6 |
 | 8 | Observabilidade como epistemologia, não como infraestrutura | [capitulo-08.md](capitulo-08.md) | Revisão 6 |
@@ -48,3 +48,4 @@ Upstream, Downstream e o Novo Modelo Operacional para Produtos Digitais
 | 5 — Universalização (remoção de EXP-NNN) | Concluído | 0 | 0 |
 | 6 — Consolidação editorial (issue #12) | Concluído | 50+ | Todas resolvidas (Ciclos A–C, E–F) |
 | 7 — Ciclo Cap. 5 (issue #13) | Concluído | 20 | 9 resolvidas (itens 1–4, 10, 12, 13, 15, 17); 11 adiadas para Ciclo 8 |
+| 8 — Ciclo Cap. 4 + Cap. 5 (issue #13) | Concluído | 11 | Todas resolvidas (Bloco 1: caps. 4 e 5; Bloco 2: cap. 5 editorial) |
