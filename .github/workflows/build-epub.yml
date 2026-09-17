@@ -1,0 +1,27 @@
+name: Build and release EPUB
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-epub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc
+
+      - name: Build EPUB
+        run: ./scripts/build-epub.sh
+
+      - name: Create release with EPUB asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ebook/from-intent-to-outcome.epub
