@@ -28,6 +28,20 @@ Upstream, Downstream e o Novo Modelo Operacional para Produtos Digitais
 
 ---
 
+## Versão EPUB
+
+O livro completo (Prólogo, Capítulos 1-11, Conclusão e Apêndices, em português) está disponível em EPUB na [última release](https://github.com/produtoreativo/from-intent-to-outcome/releases/latest/download/from-intent-to-outcome.epub).
+
+Uma nova release (tag `vX.Y.Z`) gera e publica automaticamente o `.epub` atualizado via GitHub Actions ([`.github/workflows/build-epub.yml`](.github/workflows/build-epub.yml)).
+
+Para gerar o arquivo localmente (requer [pandoc](https://pandoc.org)):
+
+```bash
+./scripts/build-epub.sh
+```
+
+---
+
 ## Status possíveis
 
 - **Não iniciado** — capítulo ainda não foi escrito
