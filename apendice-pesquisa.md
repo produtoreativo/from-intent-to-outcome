@@ -8,7 +8,7 @@ Este livro parte de uma investigação conduzida durante o desenvolvimento do fr
 
 O propósito não é argumentar. O leitor que chegou até aqui já leu os argumentos dos capítulos anteriores. O propósito é transparência metodológica. Quando este livro afirma que o ProdOps é a primeira formalização dos termos upstream e downstream como modos de execução transversais, essa afirmação tem uma base investigativa. Este apêndice torna essa base visível.
 
-A investigação cobriu oito domínios históricos nos quais os termos upstream e downstream foram usados, quatro predecessores intelectuais com influência direta sobre o framework, e dezoito obras organizadas em cinco clusters temáticos. Para cada fonte, foram mapeadas convergências com o ProdOps e divergências explícitas. O resultado é um mapa de origem intelectual, não uma lista de créditos.
+A investigação cobriu oito domínios históricos nos quais os termos upstream e downstream foram usados, quatro predecessores intelectuais com influência direta sobre o framework, e dezessete obras organizadas em cinco clusters temáticos. Para cada fonte, foram mapeadas convergências com o ProdOps e divergências explícitas. O resultado é um mapa de origem intelectual, não uma lista de créditos.
 
 Uma nota sobre o que não está aqui: fontes periféricas, menções passageiras e artigos que usam os termos de forma incidental foram consultados mas não incluídos. As referências desta seção refletem as fontes com impacto substantivo sobre o framework ou sobre a cadeia genealógica do conceito.
 
@@ -79,7 +79,7 @@ A pesquisa de Wnuk, Regnell e Karlsson (Universidade de Lund, 2009) analisou 3.0
 
 ## 4. A biblioteca que sustenta o livro
 
-A revisão de literatura cobriu dezoito obras, organizadas em cinco clusters por área temática. Cada cluster corresponde a uma dimensão do framework sobre a qual a literatura fornece antecedentes ou evidências.
+A revisão de literatura cobriu dezessete obras, organizadas em cinco clusters por área temática. Cada cluster corresponde a uma dimensão do framework sobre a qual a literatura fornece antecedentes ou evidências.
 
 ### Cluster 1: A metáfora
 
@@ -93,7 +93,7 @@ Teresa Torres, em "Continuous Discovery Habits" (2021), contribuiu com a Opportu
 
 ### Cluster 3: Lean e Value Streams
 
-Womack e Jones, em "Lean Thinking" (1996), formalizaram o conceito de value stream e a distinção entre pull e push. O Experiment Plan como buffer lean (pré-Gate) e o Commitment Gate como puxada para o Downstream derivam diretamente dessa tradição. Rother e Shook, em "Learning to See" (1998), desenvolveram o Value Stream Mapping: as métricas TTE (Time to Evidence), TTC (Time to Commitment Gate) e TTD (Time to Deploy) do ProdOps são aplicações do VSM ao contexto de produto digital. Kim, DeBois, Willis e Humble, em "The DevOps Handbook" (2016), articularam as três dimensões do DevOps e o princípio de shift left, que o ProdOps incorpora como princípio de anteposição de validação no Upstream.
+Womack e Jones, em "Lean Thinking" (1996), formalizaram o conceito de value stream e a distinção entre pull e push. O Experiment Plan como buffer lean (pré-Gate) e o Commitment Gate como puxada para o Downstream derivam diretamente dessa tradição. Rother e Shook, em "Learning to See" (1998), desenvolveram o Value Stream Mapping: a métrica TTE (Time to Evidence) do ProdOps é uma aplicação do VSM ao contexto de produto digital; os demais termos VSM não foram incorporados diretamente ao framework. Kim, DeBois, Willis e Humble, em "The DevOps Handbook" (2016), articularam as três dimensões do DevOps e o princípio de shift left, que o ProdOps incorpora como princípio de anteposição de validação no Upstream.
 
 ### Cluster 4: Entrega de software
 
@@ -122,7 +122,7 @@ Eric Evans, em "Domain-Driven Design" (2003), foi o primeiro a formalizar upstre
 
 ## 5. O que a pesquisa não encontrou
 
-A investigação foi conduzida com a intenção explícita de identificar precedentes para cada conceito central do ProdOps. Onde precedentes foram encontrados, eles estão documentados nas seções anteriores. O que segue são as afirmações para as quais nenhum precedente foi localizado nas dezoito obras revisadas, nos quatro predecessores diretos nem em nenhuma das fontes periféricas consultadas.
+A investigação foi conduzida com a intenção explícita de identificar precedentes para cada conceito central do ProdOps. Onde precedentes foram encontrados, eles estão documentados nas seções anteriores. O que segue são as afirmações para as quais nenhum precedente foi localizado nas dezessete obras revisadas, nos quatro predecessores diretos nem em nenhuma das fontes periféricas consultadas.
 
 Primeiro: Upstream e Downstream como modos transversais, aplicáveis a qualquer jornada de produto com configurações de rigor distintas. Todas as fontes encontradas tratam os termos como fases (sequenciais) ou como orientações de intervenção causal (Heath), nunca como configurações de rigor que atravessam qualquer tipo de jornada.
 

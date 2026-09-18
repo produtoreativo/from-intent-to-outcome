@@ -4,7 +4,7 @@
 
 ## Por que agentes não têm sensibilidade de modo por padrão
 
-![Protocolo de classificação de modo para agentes de IA](images/cap09-agent-mode-classification.svg)
+![Protocolo de classificação de modo para agentes de IA](images/cap10-agent-mode-classification.svg)
 *Figura 10. Fluxo de decisão para classificação de modo: o registro do Commitment Gate é o sinal primário; o estado do OBC é o indicador observável resultante. Commitment Gate registrado com outcome Promover (OBC Refining ou Readiness) = Downstream; sem Commitment Gate registrado (OBC Draft ou ausente) = Upstream.*
 
 Um engenheiro humano que trabalha com um framework de produto por tempo suficiente desenvolve algo que poderíamos chamar de sensibilidade de modo: a capacidade de perceber, a partir de sinais contextuais (a conversa na reunião, o estado do backlog, o tom das mensagens do PM), em que tipo de compromisso o trabalho está operando. Ele não precisa verificar formalmente se o OBC está Readiness; percebe pela postura da equipe que algo foi decidido e o trabalho está agora sob compromisso.

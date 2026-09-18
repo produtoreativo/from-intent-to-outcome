@@ -2,7 +2,7 @@
 
 ---
 
-## Antes das três jornadas clássicas
+## A jornada transversal
 
 ![Assessment: governança informacional transversal sobre todo o ciclo de vida](images/cap04-assessment-transversal.svg)
 *Figura 4. Assessment como camada transversal: ativo desde o Business Signal, acompanhando cada jornada clássica, retroalimentando o próximo ciclo com novos Business Signals*

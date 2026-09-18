@@ -106,7 +106,7 @@ Esse último ponto conecta diretamente ao Observable Event `split_payment.boleto
 
 O Readiness Gate verifica que o OBC está pronto para a Delivery. Mas verificar que o OBC está pronto não é o mesmo que montar o trabalho que vai executá-lo. Esse é o papel do Planning: transformar o OBC Readiness em um Iteration Plan executável.
 
-O input do Planning é o OBC em estado Readiness: todos os campos completos e verificáveis por terceiros, a BDD Feature finalizada, os Observable Events definidos com dimensões obrigatórias, os Initial SLIs com targets numéricos, o Reliability Plan ativo. O output é o Iteration Plan: o conjunto de tasks ou espikes que a equipe de Delivery vai executar na sequência Bootstrap → Promote.
+O input do Planning é o OBC em estado Readiness: todos os campos completos e verificáveis por terceiros, a BDD Feature finalizada, os Observable Events definidos com dimensões obrigatórias, os Initial SLIs com targets numéricos, o Reliability Plan ativo. O output é o Iteration Plan: o conjunto de tasks ou spikes que a equipe de Delivery vai executar na sequência Bootstrap → Promote.
 
 O Planning não cria compromisso novo. O compromisso foi feito no Commitment Gate e verificado pelo Readiness Gate. O que o Planning faz é tornar esse compromisso executável: decompõe o OBC em unidades de trabalho concretas, distribui responsabilidades, estima esforço por fase da sequência de Delivery, e registra as dependências que precisam ser resolvidas antes de cada fase começar.
 
@@ -127,7 +127,7 @@ A duração do Planning é proporcional à complexidade da decomposição, não 
 
 ## A sequência de Delivery no modo Downstream
 
-![Materialização do rigor bloqueante: sequência Bootstrap → Promote com Gates DoD entre cada fase](images/cap05-downstream-sequence.svg)
+![Materialização do rigor bloqueante: sequência Bootstrap → Promote com Gates de Definition of Done (DoD) entre cada fase](images/cap06-downstream-sequence.svg)
 *Figura 6. Sequência Bootstrap → Promote: materialização do rigor bloqueante na jornada Delivery, com Release Trail como evidência append-only*
 
 Uma vez que o item passa pelo Readiness Gate e entra no Iteration Plan, a jornada Delivery em modo Downstream executa uma sequência formal:
@@ -186,7 +186,7 @@ Nesse caso, existe um protocolo de regressão Downstream → Upstream.
 
 A regressão é a suspensão formal do compromisso, não o retorno a uma etapa anterior do trabalho. Ela é convocada pelo trio, não é uma decisão individual. O trigger típico é uma hipótese central invalidada durante a Delivery: um spike técnico falha, um usuário rejeita a abordagem, uma premissa de negócio desaparece, ou uma dependência bloqueante que não existia no Commitment Gate.
 
-Quando a regressão é decidida, dois registros são feitos: no Release Trail do item em Delivery (com contexto, o que foi descoberto, e a decisão de suspender o compromisso), e em um novo experimento Upstream referenciando o experimento original. O OBC transita de Readiness para Refining: o compromisso formal é suspenso, não abandonado. O item aguarda um novo ciclo de investigação Upstream antes que qualquer novo comprometimento possa ser assumido.
+Quando a regressão é decidida, dois registros são feitos: no Release Trail do item em Delivery (com contexto, o que foi descoberto, e a decisão de suspender o compromisso), e em um novo experimento Upstream referenciando o experimento original. O OBC transita de Readiness para Refining: o compromisso formal é suspenso, não abandonado. Para que um novo Commitment Gate seja convocado no futuro, o OBC precisa retornar ao estado Draft: o estado Refining representa um compromisso suspenso, não elegível para novo Gate sem redraft formal. O item aguarda um novo ciclo de investigação Upstream antes que qualquer novo comprometimento possa ser assumido.
 
 A regressão não é um fracasso do Commitment Gate. É o reconhecimento de que o contexto mudou de forma relevante após o comprometimento, ou que a incerteza residual que o Gate considerou aceitável revelou-se inaceitável durante a implementação. O protocolo existe para que essa situação seja gerenciada com honestidade, não ocultada até que o problema seja grave demais.
 

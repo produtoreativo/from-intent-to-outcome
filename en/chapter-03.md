@@ -165,7 +165,7 @@ flowchart TD
     OBC_P --> PIB
     OWN --> PIB
 ```
-*Figure 3a. The two paths into the PIB: the global flow (platform → BIB → Partitioning → PIB) and the local flow (product → Owner Approval → PIB). After entering the PIB, the item's origin no longer matters: all items follow the same journey.*
+*Figure 3a (sub-figure of Chapter 3). The two paths into the PIB: the global flow (platform → BIB → Partitioning → PIB) and the local flow (product → Owner Approval → PIB). After entering the PIB, the item's origin no longer matters: all items follow the same journey.*
 
 After entering the PIB, the distinction between the two paths disappears. The item evolves through the same Local OBC state cycle (from Draft to Released), regardless of whether it came from the Portfolio or the local flow.
 
@@ -205,7 +205,7 @@ The Commitment Gate is the Gate that evaluates whether the accumulated evidence 
 
 The Commitment Gate is a **universal mechanism**: it is not restricted to the end of an Upstream experiment. It can occur at any moment: shortly after opening an investigation (if the trio judges the hypothesis is clear enough to commit before exploring further), during an experiment (when partial evidence already satisfies the Evidence Threshold), or at the end (when the Decision Package is complete). It can also occur **at PIB entry directly from a Business Signal**, when the business context is sufficiently clear and no Upstream experiment is required. In that case, the Business Signal reaches the trio with enough substance for the Gate: the trio evaluates, the OBC transitions from Draft to Refining, and the item enters Discovery: Elaboration with Downstream already declared. The diagram below represents both paths.
 
-In Downstream, the Readiness OBC certifies that the Discovery: Elaboration refinement is complete and the contract is verifiable by third parties. Blocking rigor has been active since Promote (Moment 1 outcome): it is the Downstream mode that determines the regime, not the OBC state. What the Readiness state represents is not the change of regime, but the certification that Downstream Discovery produced a complete contract. The blocking Gates that govern the Delivery journey verify what is in the OBC: the expected Observable Events, the measurable acceptance criteria, the Initial SLIs with numeric targets. Without a Readiness OBC, no Delivery phase begins.
+In Downstream, the Readiness OBC certifies that the Discovery: Elaboration refinement is complete and the contract is verifiable by third parties. Blocking rigor has been active since Promote (Moment 2 outcome): it is the Downstream mode that determines the regime, not the OBC state. What the Readiness state represents is not the change of regime, but the certification that Downstream Discovery produced a complete contract. The blocking Gates that govern the Delivery journey verify what is in the OBC: the expected Observable Events, the measurable acceptance criteria, the Initial SLIs with numeric targets. Without a Readiness OBC, no Delivery phase begins.
 
 ```mermaid
 graph LR
@@ -259,11 +259,13 @@ stateDiagram-v2
     end note
 ```
 
+The **Icebox** is the PIB's pre-mode state: it represents items with an OBC Draft that have not yet had a mode declared, awaiting the decision of whether to go directly to the Commitment Gate or open an Upstream experiment. The concept is detailed in Chapter 5.
+
 **Draft**: born at the transition from a Business Signal to a Business Intent. In Upstream, it is memory of learning: it can be updated continuously, it can remain incomplete, it does not block experiments. The absence of completed fields in Draft is expected, not a failure.
 
 **Refining**: the OBC enters this state in two distinct contexts. The primary context is the start of Downstream (Moment 2, after the Commitment Gate with outcome Promote): the fields begin to be refined with real substance, the BDD Feature is elaborated, and the item enters **Discovery: Elaboration**. The regression context occurs when an item that was in Delivery: Readiness or Delivery: Iteration Plan returns to Refining due to a scope change or discovery that invalidates the contract; in that case the item enters **Delivery: Refining** and must satisfy the Readiness Gate again before advancing.
 
-**Readiness**: certifies that Downstream Discovery produced a complete contract verifiable by third parties. Downstream mode and blocking rigor have been active since Promote (Moment 1 outcome); the Readiness state does not represent the change of regime, but the conclusion of the Discovery: Elaboration period. Every acceptance criterion is verifiable without additional verbal context. Success metrics have baseline and target. Observable Events are defined with measurable dimensions. An OBC that has not reached Readiness does not pass through the Readiness Gate: this is the protection against Phantom BDD and Proxy Commitment.
+**Readiness**: certifies that Downstream Discovery produced a complete contract verifiable by third parties. Downstream mode and blocking rigor have been active since Promote (Moment 2 outcome); the Readiness state does not represent the change of regime, but the conclusion of the Discovery: Elaboration period. Every acceptance criterion is verifiable without additional verbal context. Success metrics have baseline and target. Observable Events are defined with measurable dimensions. An OBC that has not reached Readiness does not pass through the Readiness Gate: this is the protection against Phantom BDD and Proxy Commitment.
 
 **In Delivery**: the OBC is associated with an item in execution in the Iteration Plan. Parameter changes are permitted within the declared residual uncertainty range; structural changes require regression to Upstream.
 
@@ -284,4 +286,4 @@ With the OBC as artifact and the Commitment Gate as mechanism, the three followi
 ---
 
 [← Chapter 2 — Why the market interpretation does not solve it](chapter-02.md)
-[→ Chapter 4 — Assessment: the journey that accompanies all others](chapter-04.md)
+[→ Chapter 4 — Assessment, the journey that accompanies all others](chapter-04.md)

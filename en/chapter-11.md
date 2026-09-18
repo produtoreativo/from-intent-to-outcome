@@ -10,8 +10,8 @@ This coincidence is not accidental. ProdOps, as a framework, needs to be tested 
 
 What makes the Magazine Siará laboratory different from a retrospective case study is that the artifact corpus was produced *during* the work, not documented afterward. The upstream-trails record what was discovered session by session. The OBCs show the real state of commitment at each date. The Release Trails document how each phase was honored. What this chapter examines is what this corpus demonstrates about the framework, and what it has not yet demonstrated.
 
-![Magazine Siará corpus: dependency graph between experiments, Readiness OBCs, and Downstream iterations](../images/cap10-experiments-corpus.svg)
-*Figure 11. The Magazine Siará corpus as a dependency graph: 17 registered experiments (10 Product Capability + 6 Framework/Runtime executed + 1 in planning), 12+ Readiness OBCs, 15+ Downstream iterations with Release Trail.*
+![Magazine Siará corpus: dependency graph between experiments, Readiness OBCs, and Downstream iterations](../images/cap11-experiments-corpus.svg)
+*Figure 11. The Magazine Siará corpus as a dependency graph: 17 registered experiments (10 Product Capability + 6 Framework/Runtime executed + 1 in planning), 12+ Readiness OBCs, 14 Downstream iterations with Release Trail.*
 
 ---
 
@@ -63,9 +63,9 @@ This is what ProdOps names as mode coexistence: two commitment regimes operating
 
 ---
 
-## Downstream in operation: 15 iterations with Release Trail
+## Downstream in operation: 14 iterations with Release Trail
 
-What the Payments API corpus demonstrates that no purely theoretical case study can is the Downstream cycle in sustained operation. Not one iteration. Fifteen versioned iterations, from v0.2.0 to v0.15.0, each with a formal plan, Readiness OBC, BDD Feature, and Release Trail with real entries from each phase.
+What the Payments API corpus demonstrates that no purely theoretical case study can is the Downstream cycle in sustained operation. Not one iteration. Fourteen versioned iterations, from v0.2.0 to v0.15.0, each with a formal plan, Readiness OBC, BDD Feature, and Release Trail with real entries from each phase.
 
 The 12 Readiness OBCs in the corpus cover Product Capabilities ranging from the product core (Pix invoice creation, payment confirmation via webhook, invoice cancellation) to platform Product Capabilities (Datadog observability, DynamoDB optimization, production CI/CD pipeline). Each OBC has Observable Events with mandatory dimensions, Initial SLIs with numeric targets, Reliability Rules, and explicit decisions recorded with date and responsible party.
 
@@ -154,4 +154,4 @@ When that cycle is documented with the same level of rigor with which the 16 exe
 ---
 
 [← Chapter 10 — The mode problem for AI agents](chapter-10.md)
-[→ Conclusion (Portuguese)](../conclusao.md)
+[→ Conclusion](conclusion.md)

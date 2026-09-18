@@ -4,7 +4,7 @@
 
 ## O problema das fronteiras implícitas
 
-![Commitment Gate: a fronteira com nome e os 6 outcomes canônicos](images/cap06-commitmentgate-outcomes.svg)
+![Commitment Gate: a fronteira com nome e os 6 outcomes canônicos](images/cap07-commitmentgate-outcomes.svg)
 *Figura 7. Os 6 outcomes canônicos do Commitment Gate: não é uma reunião de aprovação, é uma decisão coletiva com critérios verificáveis*
 
 Na ausência de uma fronteira explícita, a transição de exploração para entrega acontece de qualquer maneira. O item "passa" quando alguém decide que está pronto, geralmente o Product Manager, em uma sessão de planejamento de sprint, baseado em uma avaliação que ninguém formalizou com critérios verificáveis. O item "passa" porque o time quer começar a construir, ou porque o prazo está se aproximando, ou porque o item já está na fila há tempo suficiente para parecer maduro.
@@ -107,7 +107,7 @@ O Commitment Gate está calibrado para um equilíbrio específico: formal o sufi
 
 O Commitment Gate é projetado especificamente para tornar dois problemas opostos observáveis e tratáveis.
 
-O Perpetual Discovery: sem um Gate formal com critério de parada e participantes definidos, um experimento pode continuar indefinidamente porque ninguém convoca a decisão. O Commitment Gate não apenas cria a pressão para decidir: ele nomeia o problema. Quando um experimento exibe os sinais diagnósticos do Perpetual Discovery (tratados no capítulo anterior), a convocação do Commitment Gate é a resposta operacional específica: não para aprovar, mas para decidir o que fazer. O Gate torna o estado "em exploração sem critério de parada" visível e tratável com um conjunto conhecido de outcomes.
+O Perpetual Discovery: sem um Gate formal com critério de parada e participantes definidos, um experimento pode continuar indefinidamente porque ninguém convoca a decisão. O Commitment Gate não apenas cria a pressão para decidir: ele nomeia o problema. Quando um experimento exibe os sinais diagnósticos do Perpetual Discovery (tratados no Capítulo 5), a convocação do Commitment Gate é a resposta operacional específica: não para aprovar, mas para decidir o que fazer. O Gate torna o estado "em exploração sem critério de parada" visível e tratável com um conjunto conhecido de outcomes.
 
 A Promoção Prematura: comprometer uma Product Capability antes de ter evidência suficiente, seja por pressão de prazo, seja por otimismo não verificado. O Decision Package como contrato de entrada, com a regra de que o membro do trio que não participou do experimento deve poder ler os artefatos e chegar às mesmas conclusões, é o mecanismo de proteção. Mas o que o Gate adiciona além do Decision Package é o registro: o outcome é documentado, os participantes são identificados, as condições em que a decisão foi tomada ficam no upstream-trail. Nenhum processo impede comportamento adversarial intencional, mas esse comportamento deixa de ser invisível, e comportamentos registrados são tratáveis de formas que comportamentos invisíveis não são.
 

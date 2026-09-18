@@ -4,7 +4,7 @@
 
 ## The problem Diligence solves
 
-![Knowledge Space vs Execution Space: the divergence Diligence prevents](../images/cap08-knowledge-execution-spaces.svg)
+![Knowledge Space vs Execution Space: the divergence Diligence prevents](../images/cap09-knowledge-execution-spaces.svg)
 *Figure 9. Knowledge Space (Markdown artifacts) and Execution Space (Issues, Projects) naturally diverge. In Upstream, inconsistency is not blocking because the commitment has not been made; in Downstream it is operational risk because the commitment must be verifiable.*
 
 In any work system that operates in two modes with different characteristics, there is a structural problem that is neither process nor technology: the divergence between what the system *knows* and what the system *does*.
@@ -95,7 +95,7 @@ The health measure of Diligence is not the volume of Findings created: it is the
 
 When Diligence repeatedly produces many Findings about the same type of problem, this is a process signal: the team is systematically producing a divergence that must be addressed at the root cause, not merely corrected each time it appears.
 
-EXP-014 of the Payments API tested this property empirically: can the ProdOps Runtime automatically track the Delivery state of each Feature via CloudEvents, with Diligence capturing and attaching operational evidence to the same Work Item in real time? **53/53 PASS.** Synchronization between GitHub Project and Datadog was verified for every phase of the Bootstrap → Promote sequence. Diligence did not require human intervention to detect divergences: the event-driven cycle triggered verification at the moment of each phase transition. This result transforms Diligence from a periodic audit process into a continuous verification system, which is the only form of governance that does not create bureaucracy proportional to delivery volume.
+EXP-014 of the Payments API tested this property empirically: can the ProdOps Runtime automatically track the Delivery state of each Feature via CloudEvents, with Diligence capturing and attaching operational evidence to the same Work Item in real time? **53/53 PASS.** The 53 checks covered CloudEvent emission for each phase of the Bootstrap → Promote sequence, synchronization between GitHub Project and Datadog, Diligence behavior when detecting divergences between Knowledge Space and Execution Space, and the formal waiver protocol for pending Findings; the full breakdown is in Chapter 11. Diligence did not require human intervention to detect divergences: the event-driven cycle triggered verification at the moment of each phase transition. This result transforms Diligence from a periodic audit process into a continuous verification system, which is the only form of governance that does not create bureaucracy proportional to delivery volume.
 
 ---
 

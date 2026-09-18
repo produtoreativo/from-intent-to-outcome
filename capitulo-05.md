@@ -147,7 +147,7 @@ Três experimentos sequenciais. Nenhuma linha de código de produção durante o
 
 Quando um time opera múltiplos experimentos Upstream em paralelo, surge a necessidade de um artefato de coordenação. Esse é o **Experiment Plan**: uma VIEW sobre os itens que ativaram o caminho Upstream e possuem um experimento ativo: hipótese formulada, `experiment.md` aberto, investigação em andamento.
 
-O Experiment Plan não é um sprint. Não tem data de término nem sequência obrigatória. É um instrumento de visibilidade: responde à pergunta *"quais hipóteses estamos investigando agora?"* e torna visível o **Discovery WIP**: o número de experimentos Upstream ativos simultaneamente.
+O Experiment Plan não é um sprint. Não tem data de término nem sequência obrigatória. É um instrumento de visibilidade: responde à pergunta *"quais hipóteses estamos investigando agora?"* e torna visível o **Discovery WIP**: o número de experimentos Upstream ativos simultaneamente (o nome é por analogia e refere-se ao modo Upstream como um todo, não exclusivamente à jornada Discovery; a definição completa está no Capítulo 8).
 
 O Experiment Plan é o equivalente Upstream do Iteration Plan. O Iteration Plan governa o Downstream em execução (Product Capabilities comprometidas, em Delivery). O Experiment Plan governa o Upstream em exploração (hipóteses ativas, sem compromisso). Os dois são simétricos: um não substitui o outro; coexistem quando o time opera nos dois modos.
 
@@ -168,7 +168,7 @@ flowchart TD
     subgraph DS["DOWNSTREAM"]
         DE["Discovery: Elaboration\nOBC: Refining\nDiscovery bloqueante"]
         RG{"Readiness Gate\nOBC Readiness?\nBDD + Riscos ok?"}
-        DRD["Delivery: Readiness\nOBC: Readiness"]
+        DRD["Downstream Ready\nOBC: Readiness"]
         DI["Delivery: Iteration Plan\nOBC: In Delivery"]
     end
 

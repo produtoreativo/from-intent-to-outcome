@@ -165,7 +165,7 @@ flowchart TD
     OBC_P --> PIB
     OWN --> PIB
 ```
-*Figura 3a. Os dois caminhos de entrada no PIB: o fluxo global (plataforma → BIB → Partitioning → PIB) e o fluxo local (produto → Owner Approval → PIB). Após a entrada no PIB, a origem deixa de importar: todos os itens seguem a mesma jornada.*
+*Figura 3a (sub-figura do Capítulo 3). Os dois caminhos de entrada no PIB: o fluxo global (plataforma → BIB → Partitioning → PIB) e o fluxo local (produto → Owner Approval → PIB). Após a entrada no PIB, a origem deixa de importar: todos os itens seguem a mesma jornada.*
 
 Após a entrada no PIB, a distinção entre os dois caminhos se apaga. O item evolui pelo mesmo ciclo de estados do Local OBC (do Draft ao Released), independentemente de ter vindo do Portfolio ou do fluxo local.
 
@@ -205,7 +205,7 @@ O Commitment Gate é o Gate que avalia se a evidência acumulada justifica trans
 
 O Commitment Gate é um **mecanismo universal**: não está restrito ao final de um experimento Upstream. Pode ocorrer em qualquer momento: logo após a abertura de uma investigação (se o trio julgar que a hipótese é clara o suficiente para comprometer antes de explorar mais), durante um experimento (quando evidências parciais já satisfazem o Evidence Threshold), ou ao final (quando o Decision Package está completo). Pode também ocorrer **na entrada do PIB diretamente a partir de um Business Signal**, quando o contexto de negócio é suficientemente claro e nenhum experimento Upstream é necessário. Nesse caso, o Business Signal chega ao trio com substrato suficiente para o Gate: o trio avalia, o OBC transita de Draft para Refining, e o item entra em Discovery: Elaboration com o Downstream já declarado. O diagrama abaixo representa os dois caminhos.
 
-No Downstream, o OBC Readiness certifica que o refinamento na Discovery: Elaboration está concluído e que o contrato está verificável por terceiros. O rigor bloqueante está ativo desde o Promover (outcome do Momento 1): é o modo Downstream que determina o regime, não o estado do OBC. O que o estado Readiness representa não é a mudança de regime, mas a certificação de que a Discovery Downstream produziu um contrato completo. Os Gates bloqueantes que governam a jornada Delivery verificam o que está no OBC: os Observable Events esperados, os critérios de aceite mensuráveis, os Initial SLIs com targets numéricos. Sem OBC Readiness, nenhuma fase de Delivery começa.
+No Downstream, o OBC Readiness certifica que o refinamento na Discovery: Elaboration está concluído e que o contrato está verificável por terceiros. O rigor bloqueante está ativo desde o Promover (outcome do Momento 2): é o modo Downstream que determina o regime, não o estado do OBC. O que o estado Readiness representa não é a mudança de regime, mas a certificação de que a Discovery Downstream produziu um contrato completo. Os Gates bloqueantes que governam a jornada Delivery verificam o que está no OBC: os Observable Events esperados, os critérios de aceite mensuráveis, os Initial SLIs com targets numéricos. Sem OBC Readiness, nenhuma fase de Delivery começa.
 
 ```mermaid
 graph LR
@@ -259,11 +259,13 @@ stateDiagram-v2
     end note
 ```
 
+O **Icebox** é o estado pré-modo do PIB: representa itens com OBC Draft que ainda não tiveram modo declarado, aguardando a decisão de ir diretamente ao Commitment Gate ou abrir um experimento Upstream. O conceito é detalhado no Capítulo 5.
+
 **Draft**: nasce na transição de um Business Signal para um Business Intent. No Upstream, é memória do aprendizado: pode ser atualizado continuamente, pode permanecer incompleto, não bloqueia experimentos. A ausência de campos completos no Draft é esperada, não uma falha.
 
 **Refining**: o OBC entra neste estado em dois contextos distintos. O contexto primário é o início do Downstream (Momento 2, após o Commitment Gate com outcome Promover): os campos começam a ser refinados com substância real, a BDD Feature é elaborada, e o item entra em **Discovery: Elaboration**. O contexto de regressão ocorre quando um item que estava em Delivery: Readiness ou Delivery: Iteration Plan retorna ao Refining por mudança de escopo ou descoberta que invalida o contrato; nesse caso o item entra em **Delivery: Refining** e precisa satisfazer novamente o Readiness Gate antes de avançar.
 
-**Readiness**: certifica que a Discovery Downstream produziu um contrato completo e verificável por terceiros. O modo Downstream e o rigor bloqueante estão ativos desde o Promover (outcome do Momento 1); o estado Readiness não representa a mudança de regime, mas a conclusão do período de Discovery: Elaboration. Todo critério de aceite é verificável sem contexto verbal adicional. As métricas de sucesso têm baseline e target. Os Observable Events estão definidos com dimensões mensuráveis. Um OBC que não atingiu Readiness não passa pelo Readiness Gate: essa é a proteção contra o Phantom BDD e o Proxy Commitment.
+**Readiness**: certifica que a Discovery Downstream produziu um contrato completo e verificável por terceiros. O modo Downstream e o rigor bloqueante estão ativos desde o Promover (outcome do Momento 2); o estado Readiness não representa a mudança de regime, mas a conclusão do período de Discovery: Elaboration. Todo critério de aceite é verificável sem contexto verbal adicional. As métricas de sucesso têm baseline e target. Os Observable Events estão definidos com dimensões mensuráveis. Um OBC que não atingiu Readiness não passa pelo Readiness Gate: essa é a proteção contra o Phantom BDD e o Proxy Commitment.
 
 **In Delivery**: o OBC está associado a um item em execução no Iteration Plan. Mudanças de parâmetro são permitidas dentro da faixa de incerteza residual declarada; mudanças estruturais exigem regressão ao Upstream.
 
@@ -284,4 +286,4 @@ Com o OBC como artefato e o Commitment Gate como mecanismo, os três capítulos 
 ---
 
 [← Capítulo 2 — Por que a leitura de mercado não resolve](capitulo-02.md)
-[→ Capítulo 4 — Assessment: a jornada que acompanha todas](capitulo-04.md)
+[→ Capítulo 4 — Assessment, a jornada que acompanha todas](capitulo-04.md)

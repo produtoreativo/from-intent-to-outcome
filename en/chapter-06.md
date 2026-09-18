@@ -127,7 +127,7 @@ The duration of Planning is proportional to the complexity of the decomposition,
 
 ## The Delivery sequence in Downstream mode
 
-![Materialization of blocking rigor: Bootstrap → Promote sequence with DoD Gates between each phase](../images/cap05-downstream-sequence.svg)
+![Materialization of blocking rigor: Bootstrap → Promote sequence with Definition of Done (DoD) Gates between each phase](../images/cap06-downstream-sequence.svg)
 *Figure 6. Bootstrap → Promote sequence: materialization of blocking rigor in the Delivery journey, with Release Trail as append-only evidence*
 
 Once the item passes through the Readiness Gate and enters the Iteration Plan, the Delivery journey in Downstream mode executes a formal sequence:
@@ -186,7 +186,7 @@ In that case, there is a Downstream → Upstream regression protocol.
 
 Regression is the formal suspension of the commitment, not the return to a previous step in the work. It is convened by the trio, not an individual decision. The typical trigger is a central hypothesis invalidated during Delivery: a technical spike fails, a user rejects the approach, a business premise disappears, or a blocking dependency that did not exist at the Commitment Gate.
 
-When regression is decided, two records are made: in the Release Trail of the item in Delivery (with context, what was discovered, and the decision to suspend the commitment), and in a new Upstream experiment referencing the original experiment. The OBC transitions from Readiness to Refining: the formal commitment is suspended, not abandoned. The item awaits a new Upstream investigation cycle before any new commitment can be assumed.
+When regression is decided, two records are made: in the Release Trail of the item in Delivery (with context, what was discovered, and the decision to suspend the commitment), and in a new Upstream experiment referencing the original experiment. The OBC transitions from Readiness to Refining: the formal commitment is suspended, not abandoned. For a new Commitment Gate to be called in the future, the OBC must return to the Draft state: the Refining state represents a suspended commitment, not eligible for a new Gate without a formal redraft. The item awaits a new Upstream investigation cycle before any new commitment can be assumed.
 
 Regression is not a failure of the Commitment Gate. It is the recognition that the context changed in a relevant way after the commitment, or that the residual uncertainty the Gate considered acceptable proved unacceptable during implementation. The protocol exists so that this situation is managed with honesty, not concealed until the problem becomes too serious.
 

@@ -4,7 +4,7 @@
 
 ## The problem of implicit boundaries
 
-![Commitment Gate: the boundary with a name and the 6 canonical outcomes](../images/cap06-commitmentgate-outcomes.svg)
+![Commitment Gate: the boundary with a name and the 6 canonical outcomes](../images/cap07-commitmentgate-outcomes.svg)
 *Figure 7. The 6 canonical outcomes of the Commitment Gate: it is not an approval meeting; it is a collective decision with verifiable criteria*
 
 In the absence of an explicit boundary, the transition from exploration to delivery happens regardless. An item "passes" when someone decides it is ready, usually the Product Manager, in a sprint planning session, based on an assessment that no one has formalized with verifiable criteria. An item "passes" because the team wants to start building, or because a deadline is approaching, or because the item has been in the queue long enough to seem mature.

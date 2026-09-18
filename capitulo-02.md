@@ -29,7 +29,7 @@ O primeiro pressuposto: todo o trabalho de discovery é do mesmo tipo. Uma equip
 
 O segundo pressuposto: uma vez que o discovery termina, o que resta é delivery. Isso implica que toda a exploração relevante precisa acontecer antes do comprometimento, e que o trabalho pós-comprometimento é pura implementação de algo já bem entendido. Na prática, isso raramente se sustenta. Decisões de arquitetura durante a implementação revelam premissas que o discovery não testou. Integrações técnicas descobrem restrições que a fase de exploração não antecipou. O comprometimento formal não elimina a necessidade de exploração; apenas muda o custo de estar errado durante ela.
 
-A consequência do primeiro pressuposto é o que o Capítulo 1 chamou de "rigor de entrega aplicado durante exploração": quando uma equipe trata todo o discovery como preparação para um compromisso iminente, ela aplica Gates prematuros que bloqueiam aprendizados que poderiam mudar o curso antes do compromisso ser feito.
+A consequência do primeiro pressuposto é o que o Capítulo 1 chamou de "rigor de compromisso aplicado durante exploração": quando uma equipe trata todo o discovery como preparação para um compromisso iminente, ela aplica Gates prematuros que bloqueiam aprendizados que poderiam mudar o curso antes do compromisso ser feito.
 
 A consequência do segundo pressuposto é o que pode ser chamado de "discovery no Downstream": exploração que ocorre dentro de um compromisso formal sem o reconhecimento de que o custo de estar errado agora é radicalmente diferente. As premissas abertas que uma equipe carrega para a fase de delivery não desaparecem; elas apenas passam a ser mais caras quando se revelam incorretas.
 

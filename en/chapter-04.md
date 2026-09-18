@@ -2,7 +2,7 @@
 
 ---
 
-## Before the three classic journeys
+## The transversal journey
 
 ![Assessment: informational governance layer spanning the full lifecycle](../images/cap04-assessment-transversal.svg)
 *Figure 4. Assessment as a transversal layer: active from the Business Signal, accompanying each classic journey, feeding back into the next cycle with new Business Signals*

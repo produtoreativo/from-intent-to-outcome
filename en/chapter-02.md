@@ -1,4 +1,4 @@
-# Chapter 2: Why market reading doesn't solve it
+# Chapter 2: Why the market interpretation does not solve it
 
 ---
 
@@ -29,7 +29,7 @@ The first assumption: all discovery work is of the same type. A team investigati
 
 The second assumption: once discovery ends, what remains is delivery. This implies that all relevant exploration must happen before commitment, and that post-commitment work is pure implementation of something already well understood. In practice, this rarely holds. Architecture decisions during implementation reveal assumptions that discovery did not test. Technical integrations uncover constraints that the exploration phase did not anticipate. Formal commitment does not eliminate the need for exploration; it merely changes the cost of being wrong during it.
 
-The consequence of the first assumption is what Chapter 1 called "delivery rigor applied during exploration": when a team treats all discovery as preparation for an imminent commitment, it applies premature Gates that block learnings that could change the course before the commitment is made.
+The consequence of the first assumption is what Chapter 1 called "commitment rigor applied during exploration": when a team treats all discovery as preparation for an imminent commitment, it applies premature Gates that block learnings that could change the course before the commitment is made.
 
 The consequence of the second assumption is what can be called "discovery in the Downstream": exploration that occurs within a formal commitment without recognition that the cost of being wrong has now changed radically. The open assumptions a team carries into the delivery phase do not disappear; they simply become more expensive when they turn out to be incorrect.
 

@@ -10,8 +10,8 @@ Essa coincidência não é acidental. O ProdOps, como framework, precisa ser tes
 
 O que torna o laboratório da Magazine Siará diferente de um estudo de caso retrospectivo é que o corpus de artefatos foi produzido *durante* o trabalho, não documentado depois. Os upstream-trails registram o que foi descoberto sessão a sessão. Os OBCs mostram o estado real do compromisso em cada data. Os Release Trails documentam como cada fase foi honrada. O que este capítulo examina é o que esse corpus demonstra sobre o framework, e o que ele ainda não demonstrou.
 
-![Corpus da Magazine Siará: grafo de dependências entre experimentos, OBCs Readiness e iterações Downstream](images/cap10-experiments-corpus.svg)
-*Figura 11. O corpus da Magazine Siará como grafo de dependências: 17 experimentos registrados (10 de Product Capability + 6 de Framework/Runtime executados + 1 em planejamento), 12+ OBCs Readiness, 15+ iterações Downstream com Release Trail.*
+![Corpus da Magazine Siará: grafo de dependências entre experimentos, OBCs Readiness e iterações Downstream](images/cap11-experiments-corpus.svg)
+*Figura 11. O corpus da Magazine Siará como grafo de dependências: 17 experimentos registrados (10 de Product Capability + 6 de Framework/Runtime executados + 1 em planejamento), 12+ OBCs Readiness, 14 iterações Downstream com Release Trail.*
 
 ---
 
@@ -63,9 +63,9 @@ Isso é o que o ProdOps nomeia como coexistência de modos: dois regimes de comp
 
 ---
 
-## O Downstream em operação: 15 iterações com Release Trail
+## O Downstream em operação: 14 iterações com Release Trail
 
-O que o corpus da Payments API demonstra que nenhum caso de estudo puramente teórico consegue é o ciclo Downstream em operação continuada. Não uma iteração. Quinze iterações versionadas, de v0.2.0 a v0.15.0, cada uma com plano formal, OBC Readiness, BDD Feature, Release Trail com entradas reais de cada fase.
+O que o corpus da Payments API demonstra que nenhum caso de estudo puramente teórico consegue é o ciclo Downstream em operação continuada. Não uma iteração. Catorze iterações versionadas, de v0.2.0 a v0.15.0, cada uma com plano formal, OBC Readiness, BDD Feature, Release Trail com entradas reais de cada fase.
 
 Os 12 OBCs Readiness no corpus cobrem Product Capabilities que vão do núcleo do produto (criação de invoice Pix, confirmação de pagamento via webhook, cancelamento de invoice) até Product Capabilities de plataforma (observabilidade no Datadog, otimização do DynamoDB, pipeline de CI/CD para produção). Cada OBC tem Observable Events com dimensões obrigatórias, Initial SLIs com targets numéricos, Reliability Rules, e decisões explícitas registradas com data e responsável.
 

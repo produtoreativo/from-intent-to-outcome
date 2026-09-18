@@ -147,7 +147,7 @@ Three sequential experiments. No production code during any of them. A recommend
 
 When a team runs multiple Upstream experiments in parallel, a coordination artifact becomes necessary. That is the **Experiment Plan**: a VIEW over the items that have activated the Upstream path and have an active experiment: a formulated hypothesis, an open `experiment.md`, an investigation in progress.
 
-The Experiment Plan is not a sprint. It has no deadline or mandatory sequence. It is a visibility instrument: it answers the question *"which hypotheses are we investigating right now?"* and makes **Discovery WIP** visible: the number of simultaneously active Upstream experiments.
+The Experiment Plan is not a sprint. It has no deadline or mandatory sequence. It is a visibility instrument: it answers the question *"which hypotheses are we investigating right now?"* and makes **Discovery WIP** visible: the number of simultaneously active Upstream experiments (the name is by analogy and refers to the Upstream mode as a whole, not exclusively to the Discovery journey; the full definition is in Chapter 8).
 
 The Experiment Plan is the Upstream equivalent of the Iteration Plan. The Iteration Plan governs the Downstream in execution (committed Product Capabilities, in Delivery). The Experiment Plan governs the Upstream in exploration (active hypotheses, no commitment). The two are symmetrical: one does not replace the other; they coexist when the team operates in both modes simultaneously.
 
@@ -168,7 +168,7 @@ flowchart TD
     subgraph DS["DOWNSTREAM"]
         DE["Discovery: Elaboration\nOBC: Refining\nblocking Discovery"]
         RG{"Readiness Gate\nOBC Readiness?\nBDD + Risks ok?"}
-        DRD["Delivery: Readiness\nOBC: Readiness"]
+        DRD["Downstream Ready\nOBC: Readiness"]
         DI["Delivery: Iteration Plan\nOBC: In Delivery"]
     end
 
