@@ -42,6 +42,12 @@ Para gerar o arquivo localmente (requer [pandoc](https://pandoc.org)):
 
 ---
 
+## Terminologia
+
+Os termos canônicos do framework ProdOps estão documentados em [TERMINOLOGY.md](TERMINOLOGY.md).
+
+---
+
 ## Status possíveis
 
 - **Não iniciado** — capítulo ainda não foi escrito

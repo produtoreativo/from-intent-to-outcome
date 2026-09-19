@@ -14,7 +14,7 @@ Manuscrito do livro *From Intent To Outcome — Upstream, Downstream e o Novo Mo
 # Saída: ebook/from-intent-to-outcome.epub
 ```
 
-O CI gera e publica o EPUB automaticamente em cada release via `.github/workflows/build-epub.yml`.
+O CI está configurado em `.github/workflows/build-epub.yml`, mas sem créditos ativos no GitHub Actions o EPUB deve ser gerado localmente e publicado manualmente com `gh release create`.
 
 **Criar release** (dispara CI do EPUB):
 ```bash
@@ -41,20 +41,7 @@ scripts/build-epub.sh + scripts/epub-metadata.yaml
 
 ## Terminologia canônica do framework ProdOps
 
-Os termos abaixo têm definição precisa no livro. Usar exatamente como estão — variações são inconsistências editoriais:
-
-| Termo canônico | Variações a evitar |
-|---|---|
-| Upstream / Downstream | "fase de discovery" / "fase de delivery" |
-| modo de execução | "fase", "etapa", "estágio" |
-| rigor de compromisso | "rigor de entrega", "regime orientado à entrega" |
-| Commitment Gate | gate de comprometimento, portão |
-| OBC (Outcome-Based Commitment) | OKR, épico, item |
-| estados do OBC: Draft → Refining → Readiness → In Delivery → Released → Archived | qualquer outra sequência |
-| outcomes do Gate: Promover / Promover com restrição / Requer outro experimento / Aguardar decisão de negócio / Aguardar dependência externa / Descartar | grafias alternativas ("Requerer", etc.) |
-| jornadas: Discovery, Delivery, Operation, Assessment, Diligence | grafias em português |
-| Origin Streams: Business, Enterprise, Team, Technology | |
-| sequência Delivery: Bootstrap → Hack → Sync → Finish → Ship → Validate → Promote | |
+Ver [TERMINOLOGY.md](TERMINOLOGY.md).
 
 ## Ciclos de revisão e issues
 
