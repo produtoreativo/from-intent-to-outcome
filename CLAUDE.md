@@ -16,9 +16,9 @@ Manuscrito do livro *From Intent To Outcome — Upstream, Downstream e o Novo Mo
 
 O CI está configurado em `.github/workflows/build-epub.yml`, mas sem créditos ativos no GitHub Actions o EPUB deve ser gerado localmente e publicado manualmente com `gh release create`.
 
-**Criar release** (dispara CI do EPUB):
+**Criar release manual** (sem CI ativo, publicar o EPUB gerado localmente):
 ```bash
-gh release create vX.Y.Z --title "vX.Y.Z" --notes "..."
+gh release create vX.Y.Z --title "vX.Y.Z" --notes "..." ebook/from-intent-to-outcome.epub
 ```
 
 ## Estrutura do manuscrito

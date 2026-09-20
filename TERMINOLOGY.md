@@ -269,7 +269,7 @@ Os termos abaixo têm definição precisa no livro. Variações são inconsistê
 
 ### Jornada Assessment
 **Categoria:** Jornada  
-**Definição:** Jornada transversal de governança informacional do framework. Atua desde o Business Signal e retroalimenta o ciclo com novos Business Intents após a Operation. Não tem ponto de entrada fixo. Opera em duas dimensões: prospectiva (prepara o ambiente informacional para a decisão) e retrospectiva (extrai aprendizado de ciclos encerrados). Não decide sobre o destino de uma Product Capability; não define o que será construído; não é auditoria de conformidade.  
+**Definição:** Jornada transversal de governança informacional do framework. Atua desde o Business Signal e retroalimenta o ciclo com novos Business Signals após a Operation. Não tem ponto de entrada fixo. Opera em duas dimensões: prospectiva (prepara o ambiente informacional para a decisão) e retrospectiva (extrai aprendizado de ciclos encerrados). Não decide sobre o destino de uma Product Capability; não define o que será construído; não é auditoria de conformidade.  
 **Capítulo:** Cap 4 (definição canônica)
 
 ---
@@ -313,7 +313,7 @@ Os termos abaixo têm definição precisa no livro. Variações são inconsistê
 
 ### Refining
 **Categoria:** Estado do OBC  
-**Definição:** Estado do OBC em dois contextos distintos. Contexto primário: início do Downstream (Momento 2, após Commitment Gate com outcome Promover), quando os campos começam a ser refinados com substância real, a BDD Feature é elaborada e o item entra em Discovery: Elaboration. Contexto de regressão: quando um item que estava em Delivery: Readiness ou Delivery: Iteration Plan retorna ao Refining por mudança de escopo ou descoberta que invalida o contrato; nesse caso precisa satisfazer novamente o Readiness Gate antes de avançar.  
+**Definição:** Estado do OBC em dois contextos distintos. Contexto primário: início do Downstream (Momento 2, após Commitment Gate com outcome Promover), quando os campos começam a ser refinados com substância real, a BDD Feature é elaborada e o item entra em Discovery: Elaboration. Contexto de regressão: quando um item que estava em Downstream Ready ou Delivery: Iteration Plan retorna ao Refining por mudança de escopo ou descoberta que invalida o contrato; nesse caso precisa satisfazer novamente o Readiness Gate antes de avançar.  
 **Capítulo:** Cap 3
 
 ---
@@ -420,7 +420,7 @@ Os termos abaixo têm definição precisa no livro. Variações são inconsistê
 
 ### Momento 3 (Readiness Gate)
 **Categoria:** Mecanismo  
-**Definição:** Terceiro dos três momentos do protocolo de transição. O item sai da Discovery: Elaboration e entra em Delivery: Readiness quando o conjunto de requisitos é satisfeito: OBC em estado Readiness, BDD Feature em `prodops/artifacts/bdd/`, riscos documentados, Reliability Plan ativo (quando exigido). A Diligence verifica de forma bloqueante.  
+**Definição:** Terceiro dos três momentos do protocolo de transição. O item sai da Discovery: Elaboration e entra em Downstream Ready quando o conjunto de requisitos é satisfeito: OBC em estado Readiness, BDD Feature em `prodops/artifacts/bdd/`, riscos documentados, Reliability Plan ativo (quando exigido). A Diligence verifica de forma bloqueante.  
 **Capítulo:** Cap 6
 
 ---
@@ -534,7 +534,7 @@ Os termos abaixo têm definição precisa no livro. Variações são inconsistê
 
 ### Outcome: Promover com restrição
 **Categoria:** Outcome do Gate  
-**Definição:** Redução formal do escopo comprometido em relação ao Business Intent original. Parte da Product Capability avança para o compromisso; outra parte continua em exploração. O compromisso formal é assumido exclusivamente sobre o subconjunto aprovado. A restrição é registrada explicitamente no upstream-trail.  
+**Definição:** Redução formal do escopo comprometido em relação ao Business Intent original. Parte da Product Capability avança para o compromisso; outra parte continua em exploração. O compromisso formal é assumido exclusivamente sobre o subconjunto aprovado, que transita para Downstream (OBC Draft → Refining, item entra em Discovery: Elaboration). A restrição é registrada explicitamente no upstream-trail.  
 **Capítulo:** Cap 7
 
 ---

@@ -87,7 +87,7 @@ Três condições estruturais produzem essa ambiguidade nos indicadores de parad
 
 O framework ProdOps identifica quatro sinais diagnósticos que tornam o Perpetual Discovery reconhecível. Cada sinal é suficiente, individualmente, para convocar o Commitment Gate: não é necessário que todos estejam ativos simultaneamente.
 
-**S1: Ausência de critério de parada declarado.** O experimento não definiu Evidence Threshold no `experiment.md` e também não registrou, no `experiment.md` ou no `upstream-trail`, um critério de parada substituto explícito (como as perguntas de investigação que, uma vez respondidas, encerram o experimento). Quando nenhum critério está declarado, o threshold implícito é "quando tivermos evidência suficiente" — que nunca se satisfaz sozinho. É o convite estrutural mais direto ao Perpetual Discovery.
+**S1: Ausência de critério de parada declarado.** O experimento não definiu Evidence Threshold no `experiment.md` e também não registrou, no `experiment.md` ou no `upstream-trail`, um critério de parada substituto explícito (como as perguntas de investigação que, uma vez respondidas, encerram o experimento). Quando nenhum critério está declarado, o threshold implícito é "quando tivermos evidência suficiente", que nunca se satisfaz sozinho. É o convite estrutural mais direto ao Perpetual Discovery.
 
 **S2: Hipótese central não falsificável.** A hipótese foi formulada de forma que nenhum resultado possível a refuta, ou nunca foi formalizada como pergunta com resposta verificável. Sem o que falsificar, não existe resultado que encerre o experimento: a exploração continua porque a pergunta permanece estruturalmente aberta.
 
@@ -95,7 +95,7 @@ O framework ProdOps identifica quatro sinais diagnósticos que tornam o Perpetua
 
 **S4: Evidence Threshold declarado mas inalcançável pela rota atual.** O critério de parada existe mas a evidência acumulada não o satisfaz e novas fontes não foram identificadas. Continuar coletando evidência do mesmo tipo não alterará o resultado: a rota atual é um beco sem saída estrutural.
 
-Qualquer sinal ativo justifica convocar o Commitment Gate imediatamente — não para aprovar, mas para decidir: reformular a hipótese, encerrar com aprendizado registrado, ou declarar que o experimento requer nova formulação antes de prosseguir.
+Qualquer sinal ativo justifica convocar o Commitment Gate imediatamente: não para aprovar, mas para decidir: reformular a hipótese, encerrar com aprendizado registrado, ou declarar que o experimento requer nova formulação antes de prosseguir.
 
 ```mermaid
 graph TD
@@ -125,7 +125,7 @@ Existem dois atos distintos de implantação no Upstream, com autorizações e c
 
 O terceiro ato é a saída do Upstream, não uma implantação dentro dele:
 
-**Promoção de Product Capability**: Commitment Gate com outcome Promover. O OBC transita de Draft para Refining; a BDD Feature existe como rascunho nos paths do Downstream. O item entra em Discovery: Elaboration, onde a Discovery Downstream elabora o escopo, completa a BDD e satisfaz as condições do Readiness Gate. O OBC permanece em estado Refining durante a Discovery: Elaboration e transita para Readiness apenas quando o Readiness Gate aprova — é o Gate que produz a transição de estado, não a conclusão da elaboração em si. O Iteration Plan é criado no Planning e a Delivery começa com o Bootstrap.
+**Promoção de Product Capability**: Commitment Gate com outcome Promover. O OBC transita de Draft para Refining; a BDD Feature existe como rascunho nos paths do Downstream. O item entra em Discovery: Elaboration, onde a Discovery Downstream elabora o escopo, completa a BDD e satisfaz as condições do Readiness Gate. O OBC permanece em estado Refining durante a Discovery: Elaboration e transita para Readiness apenas quando o Readiness Gate aprova: é o Gate que produz a transição de estado, não a conclusão da elaboração em si. O Iteration Plan é criado no Planning e a Delivery começa com o Bootstrap.
 
 A distinção entre Produção Controlada e Promoção de Product Capability é precisamente a distinção que o modelo modal resolve: no primeiro caso, o código está em produção mas a Product Capability não está comprometida; no segundo, o compromisso foi formalmente assumido com todos os seus Gates.
 
@@ -195,7 +195,7 @@ flowchart TD
 
 Um item fica no Icebox enquanto não há decisão de regime: pode ir diretamente ao Commitment Gate (contexto de negócio suficiente, sem necessidade de exploração), ou ativar o caminho Upstream abrindo uma hipótese. O Experiment Plan lista apenas os experimentos que estão ativos neste momento; um item no Icebox que ainda não abriu experimento não aparece no Experiment Plan.
 
-Os três experimentos da Magazine Siará (EXP-001, EXP-002, EXP-003) seriam representados no Experiment Plan durante suas respectivas janelas de investigação, e saíram dele quando o Commitment Gate registrou o outcome *Promover com restrição*. A incompletude do EXP-002 — bloqueado em dependência externa do Asaas — não impediu o Gate: foi absorvida como restrição explícita no Decision Package e refletida no próprio outcome. O Commitment Gate decide o destino da Product Capability; não exige que todos os experimentos estejam concluídos, exige que o Decision Package declare o que a evidência suporta e o que permanece em aberto. O item entrou em Discovery: Elaboration exclusivamente para o slice hosted, com as questões em aberto do EXP-002 registradas como restrição.
+Os três experimentos da Magazine Siará (EXP-001, EXP-002, EXP-003) seriam representados no Experiment Plan durante suas respectivas janelas de investigação, e saíram dele quando o Commitment Gate registrou o outcome *Promover com restrição*. A incompletude do EXP-002 (bloqueado em dependência externa do Asaas) não impediu o Gate: foi absorvida como restrição explícita no Decision Package e refletida no próprio outcome. O Commitment Gate decide o destino da Product Capability; não exige que todos os experimentos estejam concluídos, exige que o Decision Package declare o que a evidência suporta e o que permanece em aberto. O item entrou em Discovery: Elaboration exclusivamente para o slice hosted, com as questões em aberto do EXP-002 registradas como restrição.
 
 ---
 

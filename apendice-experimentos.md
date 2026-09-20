@@ -1,4 +1,4 @@
-# Apêndice: Corpus de Experimentos — a Magazine Siará como laboratório vivo
+# Apêndice: Corpus de Experimentos: a Magazine Siará como laboratório vivo
 
 ---
 
@@ -6,7 +6,7 @@
 
 No ProdOps, um experimento é a unidade estruturada de trabalho da jornada Discovery em modo Upstream. Ele não é uma reunião de brainstorming nem uma prova de conceito informal: é um artefato com hipótese falsificável, critério de parada, upstream-trail cronológico e Decision Package ao final.
 
-Cada experimento responde a uma pergunta específica antes que qualquer compromisso Downstream seja assumido. O resultado pode ser um Decision Package que recomenda Promover (avançar para Downstream), Descartar, Aguardar decisão, ou Requer outro experimento. O que não existe é um experimento que "passa para produção" sem Commitment Gate: o Gate é a fronteira entre a exploração e o compromisso.
+Cada experimento responde a uma pergunta específica antes que qualquer compromisso Downstream seja assumido. O resultado pode ser um Decision Package com um dos seis outcomes canônicos: Promover, Promover com restrição, Requer outro experimento, Aguardar decisão de negócio, Aguardar dependência externa, ou Descartar. O que não existe é um experimento que "passa para produção" sem Commitment Gate: o Gate é a fronteira entre a exploração e o compromisso.
 
 A Payments API da Magazine Siará acumulou 17 experimentos desde o início do desenvolvimento. Este apêndice documenta cada um deles em linguagem acessível ao leitor que não tem acesso ao repositório.
 
@@ -14,7 +14,7 @@ A Payments API da Magazine Siará acumulou 17 experimentos desde o início do de
 
 ## Experimentos de produto
 
-Os experimentos a seguir investigaram diretamente as Product Capabilities da Payments API — o produto que serve os clientes da Magazine Siará.
+Os experimentos a seguir investigaram diretamente as Product Capabilities da Payments API (o produto que serve os clientes da Magazine Siará).
 
 ### EXP-001 — Credit Card Lifecycle
 **Status:** Concluído
@@ -25,7 +25,7 @@ Os experimentos a seguir investigaram diretamente as Product Capabilities da Pay
 
 **Resultado:** Hipótese formulada e contrato de observabilidade definido: seis fluxos do ciclo de crédito com BDD scenarios e Observable Events obrigatórios; dimensões proibidas nos logs (número do cartão, CVV, token do provedor). Insumo para EXP-002 (validação do sandbox) e EXP-003 (comparação dos modelos de integração).
 
-**Conexão com o framework:** Demonstra ODD (Observability Driven Design) no modo Upstream — o que precisa ser observável é decidido antes do código.
+**Conexão com o framework:** Demonstra ODD (Observability Driven Design) no modo Upstream: o que precisa ser observável é decidido antes do código.
 
 ---
 
@@ -36,7 +36,7 @@ Os experimentos a seguir investigaram diretamente as Product Capabilities da Pay
 
 **O que fez:** Mapeou as capacidades e limitações declaradas do sandbox Asaas para cada cenário do ciclo de crédito (pagamento aprovado, recusado, análise de fraude, reembolso, chargeback, retry de webhook). Confirmou o Validation Workbench como ambiente de simulação local para cenários que o sandbox não consegue reproduzir deterministicamente.
 
-**Resultado:** Parcial. A abordagem do Validation Workbench está confirmada. A validação completa dos cenários no sandbox real do Asaas permanece em aberto — depende de execução com credenciais de sandbox e comportamento real do provedor.
+**Resultado:** Parcial. A abordagem do Validation Workbench está confirmada. A validação completa dos cenários no sandbox real do Asaas permanece em aberto: depende de execução com credenciais de sandbox e comportamento real do provedor.
 
 **Nota de honestidade:** O experimento está formalmente em andamento porque a hipótese central (sandbox reproduz o ciclo completo?) ainda não foi respondida com evidência executável do provedor. O que está confirmado é a estratégia de simulação local.
 
@@ -49,7 +49,7 @@ Os experimentos a seguir investigaram diretamente as Product Capabilities da Pay
 
 **O que fez:** Comparou os três modelos em oito dimensões: complexidade de API, PCI scope, segurança, idempotência, observabilidade, retry, experiência do usuário e complexidade operacional.
 
-**Resultado:** Decision Package canônico da sequência EXP-001/002/003. Hosted checkout é o primeiro slice — menor PCI, menor risco operacional, menor mudança na arquitetura existente. Tokenizado é a segunda evolução futura. Direct Capture (raw) fora do escopo até aprovação explícita de Security.
+**Resultado:** Decision Package canônico da sequência EXP-001/002/003. Hosted checkout é o primeiro slice (menor PCI, menor risco operacional, menor mudança na arquitetura existente). Tokenizado é a segunda evolução futura. Direct Capture (raw) fora do escopo até aprovação explícita de Security.
 
 **Conexão com o framework:** Demonstra Commitment Gate com restrição (outcome ②): apenas o slice confirmado avança; o restante permanece em Upstream.
 
@@ -60,7 +60,7 @@ Os experimentos a seguir investigaram diretamente as Product Capabilities da Pay
 
 **Pergunta:** O Feature Flag do Checkout Gateway para a nova Payments API está pronto para ativação controlada, pausa e rollback?
 
-**O que fez:** Verificou o estado do flag no Checkout e mapeou os riscos de ativação. O registro foi recuperado de referências em outros artefatos — o arquivo original foi perdido durante uma migração de estrutura.
+**O que fez:** Verificou o estado do flag no Checkout e mapeou os riscos de ativação. O registro foi recuperado de referências em outros artefatos; o arquivo original foi perdido durante uma migração de estrutura.
 
 **Resultado:** Flag bloqueada por bug identificado no Checkout. Risco documentado. Ativação dependente de correção externa.
 
@@ -82,11 +82,11 @@ Os experimentos a seguir investigaram diretamente as Product Capabilities da Pay
 
 **Pergunta:** Qual é o modelo viável para suportar múltiplos meios de pagamento em um único pedido?
 
-**O que fez:** Com BS-001 já em Downstream (DS-61 em execução com prazo de 15 dias), o time abriu este experimento em Upstream simultaneamente para aprofundar o modelo de composição. Investigou as combinações prioritárias (Pix + Boleto, Pix + Cartão), o modelo de domínio para composição de pagamento, os eventos de negócio necessários para rastrear cada combinação e a política de falha parcial — o que acontece quando um meio falha enquanto o outro já foi confirmado.
+**O que fez:** Com BS-001 já em Downstream (DS-61 em execução com prazo de 15 dias), o time abriu este experimento em Upstream simultaneamente para aprofundar o modelo de composição. Investigou as combinações prioritárias (Pix + Boleto, Pix + Cartão), o modelo de domínio para composição de pagamento, os eventos de negócio necessários para rastrear cada combinação e a política de falha parcial (o que acontece quando um meio falha enquanto o outro já foi confirmado).
 
 **Resultado:** Modelo de composição definido; política de falha parcial estabelecida; OBC Draft de `payment-composition` produzido. O aprendizado, incluindo código da exploração, foi promovido e integrado ao Downstream em andamento.
 
-**Por que este caso importa:** É o exemplo mais claro de coexistência de modos no corpus. Downstream e Upstream operando em paralelo para o mesmo produto ao mesmo tempo — não em sequência, não em alternância. O Downstream manteve o compromisso assumido no Commitment Gate; o Upstream enriqueceu o modelo sem bloqueá-lo.
+**Por que este caso importa:** É o exemplo mais claro de coexistência de modos no corpus. Downstream e Upstream operando em paralelo para o mesmo produto ao mesmo tempo: não em sequência, não em alternância. O Downstream manteve o compromisso assumido no Commitment Gate; o Upstream enriqueceu o modelo sem bloqueá-lo.
 
 ---
 
@@ -99,7 +99,7 @@ Os experimentos a seguir investigaram diretamente as Product Capabilities da Pay
 
 **Resultado:** Duas lacunas críticas identificadas, cada uma gerando um experimento derivado: DynamoDB em modo PROVISIONED sem Auto Scaling (risco de throttling imediato) → EXP-011. Deploy manual sem aprovação humana obrigatória → EXP-012.
 
-**Conexão com o framework:** Demonstra o Assessment como jornada de detecção proativa — o experimento existe porque o time queria aumentar a confiança na infraestrutura *antes* de escalar, não depois de um incidente.
+**Conexão com o framework:** Demonstra o Assessment como jornada de detecção proativa: o experimento existe porque o time queria aumentar a confiança na infraestrutura *antes* de escalar, não depois de um incidente.
 
 ---
 
@@ -138,9 +138,9 @@ Os experimentos a seguir investigaram diretamente as Product Capabilities da Pay
 
 ## Adaptações do Framework e do Runtime
 
-Sete experimentos do corpus não foram sobre Product Capabilities da Payments API para os clientes da Magazine Siará. Foram sobre o próprio framework ProdOps — ajustes, validações e evoluções do modelo operacional adotado por este time.
+Sete experimentos do corpus não foram sobre Product Capabilities da Payments API para os clientes da Magazine Siará. Foram sobre o próprio framework ProdOps: ajustes, validações e evoluções do modelo operacional adotado por este time.
 
-Isso é possível e recomendado. Um time que adota o ProdOps em condições reais vai inevitavelmente encontrar lacunas, ambiguidades e oportunidades de melhoria no framework. A forma correta de tratá-las é como experimentos Upstream — com hipótese, evidência e Decision Package — não como mudanças informais.
+Isso é possível e recomendado. Um time que adota o ProdOps em condições reais vai inevitavelmente encontrar lacunas, ambiguidades e oportunidades de melhoria no framework. A forma correta de tratá-las é como experimentos Upstream (com hipótese, evidência e Decision Package), não como mudanças informais.
 
 | EXP | Nome | O que ajustou |
 |---|---|---|

@@ -1,4 +1,4 @@
-# Apêndice: Notas de pesquisa — a genealogia do conceito e suas influências
+# Apêndice: Notas de pesquisa: a genealogia do conceito e suas influências
 
 ---
 
@@ -32,7 +32,7 @@ David J. Anderson, no desenvolvimento do método Kanban para gestão de produtos
 
 Em 2020, Dan Heath publicou "Upstream: The Quest to Solve Problems Before They Happen", deslocando os termos do campo da gestão de processos para o campo da teoria causal. Upstream e downstream passaram a descrever onde numa cadeia causal uma organização intervém: upstream significa intervir na causa, antes do problema; downstream significa reagir ao sintoma, depois que o problema ocorreu. Heath foi o primeiro a romper com a ideia de que os termos descrevem quando algo acontece, propondo que descrevem onde no sistema uma ação ocorre. A sequencialidade foi preservada na cadeia causal, mas não como fase de trabalho.
 
-O ProdOps, cujo framework foi iniciado em 2019 e cujo runtime foi construído no contexto do payments-api da Magazine Siará a partir de 2026, é a oitava camada. Upstream e Downstream deixam de ser posições numa cadeia, fases num processo ou orientações de intervenção causal. Passam a designar modos de execução transversais: configurações de rigor que determinam como qualquer jornada de produto é conduzida, independentemente do tipo de trabalho envolvido. A mesma jornada de Discovery, por exemplo, pode ser conduzida no modo Upstream, com rigor exploratório e compromissos mínimos, ou no modo Downstream, com rigor de entrega e compromissos formais de prazo e escopo. Essa é a primeira vez que os termos são usados dessa forma na literatura disponível.
+O ProdOps, cujo framework foi iniciado em 2019 e cujo runtime foi construído no contexto do payments-api da Magazine Siará a partir de 2026, é a oitava camada. Upstream e Downstream deixam de ser posições numa cadeia, fases num processo ou orientações de intervenção causal. Passam a designar modos de execução transversais: configurações de rigor que determinam como qualquer jornada de produto é conduzida, independentemente do tipo de trabalho envolvido. A mesma jornada de Discovery, por exemplo, pode ser conduzida no modo Upstream, com rigor exploratório e compromissos mínimos, ou no modo Downstream, com rigor de compromisso e compromissos formais de prazo e escopo. Essa é a primeira vez que os termos são usados dessa forma na literatura disponível.
 
 | Camada | Domínio | Criador | Ano aprox. | Natureza da distinção | Sequencial? |
 |---|---|---|---|---|---|
@@ -83,7 +83,7 @@ A revisão de literatura cobriu dezessete obras, organizadas em cinco clusters p
 
 ### Cluster 1: A metáfora
 
-As obras deste cluster fornecem o pano de fundo conceitual para o uso dos termos como orientação de trabalho. Dan Heath (2020) é o exemplo principal. Eliyahu Goldratt e Jeff Cox, em "The Goal" (1984), contribuíram com a Teoria das Restrições: o ponto de contenção upstream, o modelo pull e o conceito de buffer gerenciado. O **Experiment Plan** do ProdOps — VIEW sobre os experimentos Upstream ativos — é estruturalmente análogo a um buffer lean antes de um ponto de restrição (o Commitment Gate). O Icebox é o nó de triagem pré-modo do PIB: representa itens com OBC Draft que ainda não tiveram modo declarado, aguardando a decisão de ir ao Commitment Gate diretamente ou abrir um experimento Upstream. Itens que saem do Icebox via Commitment Gate (outcome Promover) entram em Discovery: Elaboration com OBC Refining; itens que ativam o Upstream passam pelas VIEWs In Hypothesis e Experiment Plan antes de chegar ao Commitment Gate.
+As obras deste cluster fornecem o pano de fundo conceitual para o uso dos termos como orientação de trabalho. Dan Heath (2020) é o exemplo principal. Eliyahu Goldratt e Jeff Cox, em "The Goal" (1984), contribuíram com a Teoria das Restrições: o ponto de contenção upstream, o modelo pull e o conceito de buffer gerenciado. O **Experiment Plan** do ProdOps (VIEW sobre os experimentos Upstream ativos) é estruturalmente análogo a um buffer lean antes de um ponto de restrição (o Commitment Gate). O Icebox é o nó de triagem pré-modo do PIB: representa itens com OBC Draft que ainda não tiveram modo declarado, aguardando a decisão de ir ao Commitment Gate diretamente ou abrir um experimento Upstream. Itens que saem do Icebox via Commitment Gate (outcome Promover) entram em Discovery: Elaboration com OBC Refining; itens que ativam o Upstream passam pelas VIEWs In Hypothesis e Experiment Plan antes de chegar ao Commitment Gate.
 
 ### Cluster 2: Discovery de produto
 
@@ -112,7 +112,7 @@ Eric Evans, em "Domain-Driven Design" (2003), foi o primeiro a formalizar upstre
 | Evidence Threshold | Assumption testing (Torres) |
 | Experiment Plan como buffer lean (pré-Commitment Gate) | Theory of Constraints (Goldratt) / Lean Thinking (Womack) |
 | Decision Package | 4 riscos antes do compromisso (Cagan) |
-| TTE (Time to Evidence) | Value Stream Mapping (Rother e Shook) — somente TTE foi adotado pelo ProdOps; TTC e TTD são termos VSM não incorporados |
+| TTE (Time to Evidence) | Value Stream Mapping (Rother e Shook); somente TTE foi adotado pelo ProdOps; TTC e TTD são termos VSM não incorporados |
 | Experimento Upstream | Build-Measure-Learn (Ries) / Pitch com expiração (Singer) |
 | Bias organizacional para downstream | Diagnóstico de Heath (2020) / 4 tipos de trabalho (Kim et al.) |
 | OBC como contrato vivo | Team API (Skelton e Pais) / Shared understanding (Patton) |

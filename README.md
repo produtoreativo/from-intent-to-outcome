@@ -25,7 +25,7 @@ Upstream, Downstream e o Novo Modelo Operacional para Produtos Digitais
 | — | Conclusão | [conclusao.md](conclusao.md) | Revisão 9 |
 | — | Apêndice: Corpus de experimentos | [apendice-experimentos.md](apendice-experimentos.md) | Revisão 9 |
 | — | Apêndice: Notas de pesquisa | [apendice-pesquisa.md](apendice-pesquisa.md) | Revisão 9 |
-| — | Apêndice: Cagan, Torres e o pensamento recente de produto | [apendice-pesquisa-cagan-torres.md](apendice-pesquisa-cagan-torres.md) | Revisão 9 |
+| — | Apêndice: Cagan, Torres e a evolução recente do pensamento de produto | [apendice-pesquisa-cagan-torres.md](apendice-pesquisa-cagan-torres.md) | Revisão 9 |
 
 ---
 
@@ -71,4 +71,5 @@ Os termos canônicos do framework ProdOps estão documentados em [TERMINOLOGY.md
 | 7 — Ciclo Cap. 5 (issue #13) | Concluído | 20 | 9 resolvidas (itens 1–4, 10, 12, 13, 15, 17); 11 adiadas para Ciclo 8 |
 | 8 — Ciclo Cap. 4 + Cap. 5 (issue #13) | Concluído | 11 | Todas resolvidas (Bloco 1: caps. 4 e 5; Bloco 2: cap. 5 editorial) |
 | 9 — Auditoria transversal (issue #15) | Concluído | 20 | 18 resolvidas |
-| 10 — Auditoria transversal (issue #17) | Em andamento | 21 | Em correção |
+| 10 — Auditoria transversal (issue #17) | Concluído | 21 | Todas resolvidas |
+| 11 — Auditoria transversal (issue #18 e #19) | Em andamento | 30 | Em correção |

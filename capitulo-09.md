@@ -67,7 +67,7 @@ graph LR
 
 **Attach**: o Finding é associado ao item ou artefato afetado. No Execution Space, isso se traduz em um Work Item que referencia o Finding. O item afetado não avança em seu ciclo de vida enquanto o Finding estiver aberto e sem waiver; no Downstream, isso é bloqueante.
 
-**Promote**: o Finding está sendo endereçado. (Este estado do ciclo de vida de Findings não se relaciona com o outcome Promover do Commitment Gate — aqui, Promote indica que o Finding avançou do estado Attach para resolução ativa.) A equipe responsável está tomando a ação necessária: completando o OBC, atualizando o BDD, documentando o risco. Findings que não estiverem sendo endereçados dentro de prazo adequado podem ser escalados para o trio. Quando a resolução imediata não for viável, o processo de waiver pode ser iniciado durante esta fase; a decisão formal é registrada no Close.
+**Promote**: o Finding está sendo endereçado. (Este estado do ciclo de vida de Findings não se relaciona com o outcome Promover do Commitment Gate: aqui, Promote indica que o Finding avançou do estado Attach para resolução ativa.) A equipe responsável está tomando a ação necessária: completando o OBC, atualizando o BDD, documentando o risco. Findings que não estiverem sendo endereçados dentro de prazo adequado podem ser escalados para o trio. Quando a resolução imediata não for viável, o processo de waiver pode ser iniciado durante esta fase; a decisão formal é registrada no Close.
 
 **Close**: o Finding foi resolvido (o artefato satisfaz o critério, com evidência) ou o waiver foi aprovado pelo trio com data de expiração. O Finding é fechado com registro do que foi feito.
 
