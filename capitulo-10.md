@@ -5,7 +5,7 @@
 ## Por que agentes não têm sensibilidade de modo por padrão
 
 ![Protocolo de classificação de modo para agentes de IA](images/cap10-agent-mode-classification.svg)
-*Figura 10. Fluxo de decisão para classificação de modo: o registro do Commitment Gate é o sinal primário; o estado do OBC é o indicador observável resultante. Commitment Gate registrado com outcome Promover (OBC Refining ou Readiness) = Downstream; sem Commitment Gate registrado (OBC Draft) = Upstream. OBC ausente indica item pré-Business Intent ou Finding de Diligence — não é classificação de modo válida.*
+*Figura 10. Fluxo de decisão para classificação de modo: o registro do Commitment Gate é o sinal primário; o estado do OBC é o indicador observável resultante. Commitment Gate registrado com outcome Promover ou Promover com restrição (OBC Refining ou Readiness) = Downstream; sem Commitment Gate registrado (OBC Draft) = Upstream. OBC ausente indica item pré-Business Intent ou Finding de Diligence: não é classificação de modo válida.*
 
 Um engenheiro humano que trabalha com um framework de produto por tempo suficiente desenvolve algo que poderíamos chamar de sensibilidade de modo: a capacidade de perceber, a partir de sinais contextuais (a conversa na reunião, o estado do backlog, o tom das mensagens do PM), em que tipo de compromisso o trabalho está operando. Ele não precisa verificar formalmente se o OBC está Readiness; percebe pela postura da equipe que algo foi decidido e o trabalho está agora sob compromisso.
 
@@ -67,7 +67,7 @@ A correção parcial já realizada foi a nota no AGENTS.md que esclarece a disti
 ```mermaid
 graph TD
     REQ["Pedido recebido pelo agente"] --> CLASS["Classificação de modo\nPasso 0.1 do AGENTS.md"]
-    CLASS -->|"Commitment Gate registrado (Promover)\nOBC Refining ou Readiness"| DS["/downstream\nRigor bloqueante\nGates obrigatórios"]
+    CLASS -->|"Commitment Gate registrado\n(Promover ou Promover com restrição)\nOBC Refining ou Readiness"| DS["/downstream\nRigor bloqueante\nGates obrigatórios"]
     CLASS -->|"Sem Commitment Gate registrado\nOBC Draft"| US["/upstream\nRigor não bloqueante\nEngenheiro decide"]
     DS --> SKILLS_DS["Bootstrap / Hack / Sync\nFinish / Ship / Validate / Promote"]
     US --> SKILLS_US["Experiment / Evidence\nDecision Package / Commitment Gate"]

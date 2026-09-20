@@ -39,7 +39,7 @@ Os termos abaixo têm definição precisa no livro. Variações são inconsistê
 
 ### Downstream
 **Categoria:** Modo de execução  
-**Definição:** Modo de execução em que o rigor é bloqueante: Gates são verificáveis e precisam ser satisfeitos antes de avançar, artefatos precisam estar em estados definidos e a sequência de etapas é imposta. Um item em modo Downstream não prossegue com lacunas a resolver depois: o trabalho para até que as condições obrigatórias sejam atendidas. Começa quando o Commitment Gate é executado com o outcome Promover. Não é sinônimo de jornada Delivery. Downstream não implica ausência de discovery.  
+**Definição:** Modo de execução em que o rigor é bloqueante: Gates são verificáveis e precisam ser satisfeitos antes de avançar, artefatos precisam estar em estados definidos e a sequência de etapas é imposta. Um item em modo Downstream não prossegue com lacunas a resolver depois: o trabalho para até que as condições obrigatórias sejam atendidas. Começa quando o Commitment Gate é executado com o outcome Promover, ou com Promover com restrição para o subconjunto aprovado. Não é sinônimo de jornada Delivery. Downstream não implica ausência de discovery.  
 **Capítulo:** Cap 3 (definição canônica); Cap 6 (operacionalização)
 
 ---

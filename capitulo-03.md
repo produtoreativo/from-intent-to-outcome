@@ -214,6 +214,7 @@ graph LR
     A -->|"contexto suficiente"| CG{"Commitment Gate\n6 outcomes"}
     UP -->|"Decision Package"| CG
     CG -->|"Promover"| C["OBC Refining\n(Downstream Declarado / Momento 2)"]
+    CG -->|"Promover com restrição\n(subconjunto aprovado)"| C
     CG -->|"outros outcomes"| X["Upstream / Descarte /\nAguardar"]
     C --> D["Readiness Gate\n(Momento 3)"]
     D --> E["OBC Readiness\n→ Iteration Plan"]
@@ -226,7 +227,7 @@ O ciclo de vida completo do OBC inclui as transições de regressão e a rota de
 stateDiagram-v2
     direction LR
     [*] --> Draft : Business Signal → Business Intent
-    Draft --> Refining : Commitment Gate Promover (Momento 1)
+    Draft --> Refining : Commitment Gate Promover ou Promover com restrição (Momento 1)
     Refining --> Readiness : Readiness Gate aprovado (Momento 3)
     Readiness --> InDelivery : Bootstrap.Started
     InDelivery --> Released : Promote concluído

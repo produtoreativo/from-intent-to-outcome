@@ -6,7 +6,7 @@
 
 Existe um equívoco comum sobre o ponto de partida do Downstream. Ele não começa quando o time "termina o discovery". Não começa quando "a equipe sente que está pronta". Não começa quando o Product Manager decide priorizar um item.
 
-O Downstream começa quando o Commitment Gate é executado com o outcome Promover, e não antes. Esse é o momento em que o modo é declarado: o regime de rigor muda de não bloqueante para bloqueante, e o item passa a carregar um compromisso formal.
+O Downstream começa quando o Commitment Gate é executado com o outcome Promover, ou com Promover com restrição para o subconjunto aprovado, e não antes. Esse é o momento em que o modo é declarado: o regime de rigor muda de não bloqueante para bloqueante, e o item passa a carregar um compromisso formal.
 
 Essa precisão não é protocolar. É a consequência direta do que o Downstream representa: uma mudança de regime de compromisso. E regimes de compromisso precisam ter um momento de início que seja verificável. "A equipe sentiu que estava pronta" não é verificável. Um Commitment Gate registrado no upstream-trail, com data, participantes e outcome documentado, é.
 
