@@ -197,4 +197,4 @@ WNUK, Krzysztof; REGNELL, Björn; KARLSSON, Lena. "Investigating Upstream versus
 - Singer, Ryan. "Shape Up" (edição online completa). Disponível em: basecamp.com/shapeup
 - Torres, Teresa. "Continuous Discovery Habits" (blog de referência). Disponível em: producttalk.org
 [← Apêndice: Corpus de Experimentos](apendice-experimentos.md)
-[→ Apêndice: Cagan, Torres e o pensamento recente de produto](apendice-pesquisa-cagan-torres.md)
+[→ Apêndice: Cagan, Torres e a evolução recente do pensamento de produto](apendice-pesquisa-cagan-torres.md)

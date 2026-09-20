@@ -72,4 +72,4 @@ Os termos canônicos do framework ProdOps estão documentados em [TERMINOLOGY.md
 | 8 — Ciclo Cap. 4 + Cap. 5 (issue #13) | Concluído | 11 | Todas resolvidas (Bloco 1: caps. 4 e 5; Bloco 2: cap. 5 editorial) |
 | 9 — Auditoria transversal (issue #15) | Concluído | 20 | 18 resolvidas |
 | 10 — Auditoria transversal (issue #17) | Concluído | 21 | Todas resolvidas |
-| 11 — Auditoria transversal (issue #18 e #19) | Em andamento | 30 | Em correção |
+| 11 — Auditoria transversal (issue #18 e #19) | Concluído | 30 | Todas resolvidas |
