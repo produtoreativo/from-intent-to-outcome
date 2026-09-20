@@ -745,7 +745,7 @@ Os termos abaixo têm definição precisa no livro. Variações são inconsistê
 
 ### AP-D2: Proxy Commitment
 **Categoria:** Anti-padrão  
-**Definição:** OBC marcado como Readiness sem que os critérios de sucesso sejam mensuráveis. Exemplos: `expected_outcome` vago; `acceptance_criteria` descrevendo o que o sistema faz, não quando é aceitável; `success_metrics` com targets relativos sem baseline. Critério diagnóstico: "como saberei que este item foi entregue com sucesso 30 dias após o Promote?" — se a resposta requer interpretação subjetiva, o OBC não está Readiness de verdade.  
+**Definição:** OBC marcado como Readiness sem que os critérios de sucesso sejam mensuráveis. Exemplos: `expected_outcome` vago; `acceptance_criteria` descrevendo o que o sistema faz, não quando é aceitável; `success_metrics` com targets relativos sem baseline. Critério diagnóstico: "como saberei que este item foi entregue com sucesso 30 dias após o Promote?". Se a resposta requer interpretação subjetiva, o OBC não está Readiness de verdade.  
 **Capítulo:** Cap 6
 
 ---

@@ -30,7 +30,7 @@ Os experimentos a seguir investigaram diretamente as Product Capabilities da Pay
 ---
 
 ### EXP-002 — Asaas Sandbox Funding and Functional Validation
-**Status:** Em andamento — bloqueado em dependência externa
+**Status:** Em andamento (bloqueado em dependência externa)
 
 **Pergunta:** O sandbox do Asaas consegue reproduzir o ciclo completo de cartão de crédito da Magazine Siará sem credenciais de produção?
 
@@ -43,7 +43,7 @@ Os experimentos a seguir investigaram diretamente as Product Capabilities da Pay
 ---
 
 ### EXP-003 — Hosted vs Tokenized Credit Card
-**Status:** Concluído — Commitment Gate executado, outcome Promover com restrição: hosted slice avança para Downstream; tokenizado e transparente permanecem em Upstream aguardando decisões externas (escopo PCI, modelo de token, UX do Checkout)
+**Status:** Concluído. Commitment Gate executado, outcome Promover com restrição: hosted slice avança para Downstream; tokenizado e transparente permanecem em Upstream aguardando decisões externas (escopo PCI, modelo de token, UX do Checkout)
 
 **Pergunta:** Qual dos três modelos de integração de cartão (hosted, tokenizado, transparente) vai primeiro para Downstream?
 
@@ -147,8 +147,8 @@ Isso é possível e recomendado. Um time que adota o ProdOps em condições reai
 | 006 | Upstream Trail per Experiment | Estrutura de rastreabilidade: trail por experimento em vez de trail global único |
 | 008 | DORA Extended Documentation | Plano de documentação das métricas DORA estendidas no contexto do produto |
 | 013 | ProdOps Runtime Validation | Validação de que o modelo arquitetural do Framework suporta Iteration real com Runtime + Diligence + GitHub + Datadog sincronizados |
-| 014 | Diligence Tracks Delivery | Demonstração de Diligence event-driven em tempo real — **53/53 PASS** |
-| 015 | Delivery Skills as Event Producers | Contrato canônico de emissão de eventos por skills de qualquer player — **22/22 × 3 players PASS** |
+| 014 | Diligence Tracks Delivery | Demonstração de Diligence event-driven em tempo real: **53/53 PASS** |
+| 015 | Delivery Skills as Event Producers | Contrato canônico de emissão de eventos por skills de qualquer player: **22/22 × 3 players PASS** |
 | 016 | Operational Flow Validation | Jornada Delivery completa end-to-end com Feature Restart Protocol |
 | 017 | ProdOps Addon Model | Em planejamento |
 

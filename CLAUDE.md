@@ -35,7 +35,7 @@ scripts/build-epub.sh + scripts/epub-metadata.yaml
 
 ## Convenções editoriais obrigatórias
 
-- **Sem em-dash em prosa.** Nunca gerar `—` como separador. Substituir por vírgula, dois-pontos, ponto-e-vírgula ou parênteses conforme o contexto.
+- **Sem em-dash em prosa narrativa.** Nunca gerar `—` como separador em texto corrido. Substituir por vírgula, dois-pontos, ponto-e-vírgula ou parênteses conforme o contexto. Exceções aceitas: nós de diagrama Mermaid, links de navegação entre capítulos (`[← Capítulo N — Título]`), e identificadores estruturados de heading (`### EXP-NNN — Nome`).
 - **Bilinguismo sincronizado.** Toda alteração substantiva na versão PT deve ser refletida na versão EN correspondente na mesma sessão. Números, nomes de artefatos, listas e diagramas devem ser idênticos nas duas versões.
 - **Commit e push ao fim de cada sessão.** Encerrar sempre com `git commit` + `git push` para master.
 

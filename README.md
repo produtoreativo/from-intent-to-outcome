@@ -47,6 +47,8 @@ Para gerar o arquivo localmente (requer [pandoc](https://pandoc.org)):
 
 Os termos canônicos do framework ProdOps estão documentados em [TERMINOLOGY.md](TERMINOLOGY.md).
 
+> **Nota editorial:** `TERMINOLOGY.md` é um documento de referência do repositório, usado para consistência durante a revisão do manuscrito. Ele não faz parte do livro publicado e não é incluído no EPUB.
+
 ---
 
 ## Status possíveis
