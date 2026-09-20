@@ -6,7 +6,7 @@
 
 No ProdOps, um experimento é a unidade estruturada de trabalho da jornada Discovery em modo Upstream. Ele não é uma reunião de brainstorming nem uma prova de conceito informal: é um artefato com hipótese falsificável, critério de parada, upstream-trail cronológico e Decision Package ao final.
 
-Cada experimento responde a uma pergunta específica antes que qualquer compromisso Downstream seja assumido. O resultado pode ser um Decision Package que recomenda Promover (avançar para Downstream), Descartar, Aguardar decisão, ou Rodar outro experimento. O que não existe é um experimento que "passa para produção" sem Commitment Gate: o Gate é a fronteira entre a exploração e o compromisso.
+Cada experimento responde a uma pergunta específica antes que qualquer compromisso Downstream seja assumido. O resultado pode ser um Decision Package que recomenda Promover (avançar para Downstream), Descartar, Aguardar decisão, ou Requer outro experimento. O que não existe é um experimento que "passa para produção" sem Commitment Gate: o Gate é a fronteira entre a exploração e o compromisso.
 
 A Payments API da Magazine Siará acumulou 17 experimentos desde o início do desenvolvimento. Este apêndice documenta cada um deles em linguagem acessível ao leitor que não tem acesso ao repositório.
 
@@ -136,18 +136,6 @@ Os experimentos a seguir investigaram diretamente as Product Capabilities da Pay
 
 ---
 
-## Upstream paralelo ao Downstream: nota sobre o EXP-007
-
-O EXP-007 merece atenção especial porque demonstra algo que a maioria dos frameworks não modela: dois regimes de compromisso diferentes operando para o mesmo produto ao mesmo tempo.
-
-Quando BS-001 entrou em Downstream com prazo de 15 dias, o time tinha um compromisso Downstream claro e uma implementação em andamento. Mas havia questões sobre o modelo de composição de pagamento que a velocidade do Commitment Gate não havia resolvido em profundidade. Em vez de travar o Downstream ou ignorar as questões, o time abriu o EXP-007 em Upstream — com liberdade de exploração, sem Gate bloqueante, sem compromisso Downstream bloqueante.
-
-Quando o EXP-007 concluiu, o aprendizado não foi descartado: foi integrado ao Downstream. O código exploratório que havia sido produzido foi promovido e incorporado à implementação em andamento.
-
-Isso é coexistência de modos. Não é uma exceção ao framework: é um dos seus resultados mais desejáveis.
-
----
-
 ## Adaptações do Framework e do Runtime
 
 Sete experimentos do corpus não foram sobre Product Capabilities da Payments API para os clientes da Magazine Siará. Foram sobre o próprio framework ProdOps — ajustes, validações e evoluções do modelo operacional adotado por este time.
@@ -164,7 +152,7 @@ Isso é possível e recomendado. Um time que adota o ProdOps em condições reai
 | 016 | Operational Flow Validation | Jornada Delivery completa end-to-end com Feature Restart Protocol |
 | 017 | ProdOps Addon Model | Em planejamento |
 
-Os resultados de EXP-014 (53/53 PASS) e EXP-015 (22/22 × 3 players) são detalhados nos Capítulos 9 e 10, respectivamente, por serem as evidências empíricas mais robustas do corpus sobre Diligence contínua e o problema de modo para agentes.
+Os resultados de EXP-014 (53/53 PASS) e EXP-015 (22/22 × 3 players) são detalhados nos Capítulos 9, 10 e 11, por serem as evidências empíricas mais robustas do corpus sobre Diligence contínua e o problema de modo para agentes.
 
 ---
 

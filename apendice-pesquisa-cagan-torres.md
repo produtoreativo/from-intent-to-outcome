@@ -116,7 +116,7 @@ A diferença pode ser resumida assim:
 
 > **High-Integrity Commitment explica por que determinados compromissos exigem confiança especial. Commitment Gate define como a decisão de assumir esse compromisso se torna observável e operacional.**
 
-O Commitment Gate também não é uma simples aprovação. Seus outcomes canônicos incluem Promover, Promover com restrição, Requerer outro experimento, Aguardar decisão de negócio, Aguardar dependência externa e Descartar. O objetivo é registrar o destino da Product Capability, inclusive quando esse destino não é a promoção.
+O Commitment Gate também não é uma simples aprovação. Seus outcomes canônicos incluem Promover, Promover com restrição, Requer outro experimento, Aguardar decisão de negócio, Aguardar dependência externa e Descartar. O objetivo é registrar o destino da Product Capability, inclusive quando esse destino não é a promoção.
 
 A convergência é forte. A estrutura operacional é diferente.
 

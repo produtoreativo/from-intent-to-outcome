@@ -176,8 +176,6 @@ SINGER, Ryan. *Shape Up: Stop Running in Circles and Ship Work That Matters*. Ba
 
 SKELTON, Matthew; PAIS, Manuel. *Team Topologies: Organizing Business and Technology Teams for Fast Flow*. IT Revolution Press, 2019.
 
-SNOWDEN, David J.; BOONE, Mary E. "A Leader's Framework for Decision Making". *Harvard Business Review*, novembro de 2007.
-
 TORRES, Teresa. *Continuous Discovery Habits: Discover Products That Create Customer Value and Business Value*. Product Talk LLC, 2021.
 
 VERNON, Vaughn. *Implementing Domain-Driven Design*. Addison-Wesley, 2013.
@@ -185,6 +183,8 @@ VERNON, Vaughn. *Implementing Domain-Driven Design*. Addison-Wesley, 2013.
 WOMACK, James P.; JONES, Daniel T. *Lean Thinking: Banish Waste and Create Wealth in Your Corporation*. Simon & Schuster, 1996.
 
 ### Artigos e papers
+
+SNOWDEN, David J.; BOONE, Mary E. "A Leader's Framework for Decision Making". *Harvard Business Review*, novembro de 2007.
 
 WNUK, Krzysztof; REGNELL, Björn; KARLSSON, Lena. "Investigating Upstream versus Downstream Decision-Making in Software Product Management". *IWSPM 2009*, IEEE, 2009.
 
@@ -197,3 +197,4 @@ WNUK, Krzysztof; REGNELL, Björn; KARLSSON, Lena. "Investigating Upstream versus
 - Singer, Ryan. "Shape Up" (edição online completa). Disponível em: basecamp.com/shapeup
 - Torres, Teresa. "Continuous Discovery Habits" (blog de referência). Disponível em: producttalk.org
 [← Apêndice: Corpus de Experimentos](apendice-experimentos.md)
+[→ Apêndice: Cagan, Torres e o pensamento recente de produto](apendice-pesquisa-cagan-torres.md)

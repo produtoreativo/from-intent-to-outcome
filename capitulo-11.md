@@ -11,7 +11,7 @@ Essa coincidência não é acidental. O ProdOps, como framework, precisa ser tes
 O que torna o laboratório da Magazine Siará diferente de um estudo de caso retrospectivo é que o corpus de artefatos foi produzido *durante* o trabalho, não documentado depois. Os upstream-trails registram o que foi descoberto sessão a sessão. Os OBCs mostram o estado real do compromisso em cada data. Os Release Trails documentam como cada fase foi honrada. O que este capítulo examina é o que esse corpus demonstra sobre o framework, e o que ele ainda não demonstrou.
 
 ![Corpus da Magazine Siará: grafo de dependências entre experimentos, OBCs Readiness e iterações Downstream](images/cap11-experiments-corpus.svg)
-*Figura 11. O corpus da Magazine Siará como grafo de dependências: 17 experimentos registrados (10 de Product Capability + 6 de Framework/Runtime executados + 1 em planejamento), 12+ OBCs Readiness, 14 iterações Downstream com Release Trail.*
+*Figura 11. O corpus da Magazine Siará como grafo de dependências: 17 experimentos registrados (10 de Product Capability + 6 de Framework/Runtime executados + 1 em planejamento), 12 OBCs Readiness, 14 iterações Downstream com Release Trail.*
 
 ---
 
@@ -119,7 +119,7 @@ A honestidade intelectual exige especificar o que o repositório atual não demo
 
 **Os sinais diagnósticos de Perpetual Discovery (S1-S4) aplicados prospectivamente.** Os sinais foram definidos como detectáveis sem julgamento subjetivo. O EXP-014 demonstrou que a Diligence pode rastrear o Execution Space em tempo real. Mas a instrumentação que detectaria Perpetual Discovery proativamente (monitorando TTE, Decision Latency e Discovery WIP) ainda é proposta, não implementada como coleta automática.
 
-**O protocolo de regressão Downstream → Upstream em um caso real.** Nenhum item das 15 iterações documentadas precisou regredir. O protocolo foi definido e está no framework; sua validade operacional em um caso de divergência real ainda precisa de evidência empírica.
+**O protocolo de regressão Downstream → Upstream em um caso real.** Nenhum item das catorze iterações documentadas precisou regredir. O protocolo foi definido e está no framework; sua validade operacional em um caso de divergência real ainda precisa de evidência empírica.
 
 ---
 
@@ -145,7 +145,7 @@ O que o corpus da Magazine Siará ainda não documentou é o ciclo de vida compl
 
 Esse ciclo existe em partes: alguns OBCs já estão Released; o Commitment Gate existe mas sem o trio completo registrado; os Release Trails existem mas sem o ciclo desde o Business Signal original. A composição completa num único caso rastreável de ponta a ponta é o território que está à frente.
 
-Quando esse ciclo for documentado com o mesmo nível de rigor com que os 16 experimentos executados documentaram o Upstream (10 de Product Capability, 6 de Framework/Runtime), o framework terá dado o passo que transforma uma teoria coerente com evidências extensas em um método com rastreabilidade completa de intenção a resultado.
+Quando esse ciclo for documentado com o mesmo nível de rigor com que os 16 experimentos executados documentaram o framework (10 de Product Capability, 6 de Framework/Runtime), o framework terá dado o passo que transforma uma teoria coerente com evidências extensas em um método com rastreabilidade completa de intenção a resultado.
 
 ---
 

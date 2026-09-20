@@ -54,7 +54,7 @@ O trabalho de separação formal entre os modos de execução identificou três 
 
 **Contaminação estrutural**: o AGENTS.md e o `prodops/README.md` usavam "Jornada: Upstream" e "Jornada: Discovery / Upstream", mapeando Upstream como jornada em vez de modo. Um agente que lê esses documentos sem também ler `execution-model/README.md` aprende uma definição incorreta.
 
-**Contaminação conceitual**: o `upstream/SKILL.md` mencionava "committed OBCs" e "committed BDD Features" como targets do Upstream: estados exclusivos do Downstream que o Upstream não está autorizado a exigir.
+**Contaminação de estado**: o `upstream/SKILL.md` mencionava "committed OBCs" e "committed BDD Features" como targets do Upstream: estados exclusivos do Downstream que o Upstream não está autorizado a exigir.
 
 **Contaminação por ausência**: os skills de fase (Bootstrap, Hack, Sync, Finish, Ship, Validate, Promote) descreviam apenas o comportamento Downstream, sem documentar como cada fase se comporta com rigor não bloqueante no Upstream. Um agente Upstream que quer usar o skill `/hack` em modo não bloqueante não tem orientação sobre como fazê-lo.
 

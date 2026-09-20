@@ -125,7 +125,7 @@ Existem dois atos distintos de implantação no Upstream, com autorizações e c
 
 O terceiro ato é a saída do Upstream, não uma implantação dentro dele:
 
-**Promoção de Product Capability**: Commitment Gate com outcome Promover. O OBC transita de Draft para Refining; a BDD Feature existe como rascunho nos paths do Downstream. O item entra em Discovery: Elaboration, onde a Discovery Downstream elabora o escopo, completa a BDD e satisfaz as condições do Readiness Gate. O OBC atinge o estado Readiness na Discovery: Elaboration; o Readiness Gate valida esse estado e abre a entrada na Delivery. O Iteration Plan é criado no Planning e a Delivery começa com o Bootstrap.
+**Promoção de Product Capability**: Commitment Gate com outcome Promover. O OBC transita de Draft para Refining; a BDD Feature existe como rascunho nos paths do Downstream. O item entra em Discovery: Elaboration, onde a Discovery Downstream elabora o escopo, completa a BDD e satisfaz as condições do Readiness Gate. O OBC permanece em estado Refining durante a Discovery: Elaboration e transita para Readiness apenas quando o Readiness Gate aprova — é o Gate que produz a transição de estado, não a conclusão da elaboração em si. O Iteration Plan é criado no Planning e a Delivery começa com o Bootstrap.
 
 A distinção entre Produção Controlada e Promoção de Product Capability é precisamente a distinção que o modelo modal resolve: no primeiro caso, o código está em produção mas a Product Capability não está comprometida; no segundo, o compromisso foi formalmente assumido com todos os seus Gates.
 
@@ -213,5 +213,5 @@ Vale atenção especial ao item "Produzir OBC Readiness: isso é Discovery no Do
 
 ---
 
-[← Capítulo 4 — Assessment: a jornada que acompanha todas](capitulo-04.md)
+[← Capítulo 4 — Assessment, a jornada que acompanha todas](capitulo-04.md)
 [→ Capítulo 6 — Downstream: o modo do compromisso](capitulo-06.md)

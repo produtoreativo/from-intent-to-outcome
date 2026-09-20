@@ -29,12 +29,12 @@ graph TD
     M2["Momento 2: Artifact Promotion\nOBC: Draft → Refining\nWork Item → Discovery: Elaboration\nBDD registrada"]
     M2 --> ICE["DOWNSTREAM: Discovery: Elaboration\nOBC: Refining → Readiness\nBDD → artifacts/bdd/"]
 
-    ICE --> M3["Momento 3: Readiness Gate\nDiligence Sync\nCritérios verificados\n[Downstream Ready]"]
+    ICE --> M3["Momento 3: Readiness Gate\ndiligence-sync\nCritérios verificados\n[Downstream Ready]"]
     M3 -->|"Aprovado"| DEL["DELIVERY\nBootstrap.Started\n[Delivery Started]"]
     M3 -->|"Finding aberto"| BLOCK["Retorno à Discovery: Elaboration\nou Waiver formal"]
 ```
 
-**Momento 1: Commitment Gate** (Downstream Declared). O trio (PM + Tech Lead + Autor) avalia se a evidência produzida justifica o comprometimento. Os critérios incluem: hipótese respondida com o Evidence Threshold satisfeito (se declarado), Decision Package com substância real, OBC Draft existindo como arquivo, e BDD rascunhada e legível. O resultado mais consequente é Promover, o que dispara o Momento 2. O Commitment Gate não cria o compromisso: ele torna verificável e rastreável a decisão que o trio toma sobre o destino da Product Capability.
+**Momento 1: Commitment Gate** (Downstream Declared). O trio (PM + Tech Lead + Autor) avalia se a evidência produzida justifica o comprometimento. Os critérios incluem: hipótese respondida com o Evidence Threshold satisfeito (se declarado), Decision Package com substância real, OBC Draft existindo como arquivo, e BDD rascunhada e legível. O resultado mais consequente é Promover, o que dispara o Momento 2. O Commitment Gate não cria o compromisso: ele torna verificável e rastreável a decisão que o trio toma sobre o destino da Product Capability. (A definição completa do Commitment Gate e seus seis outcomes canônicos está no Capítulo 7.)
 
 > **Nota:** O Commitment Gate não pressupõe Upstream prévio. Quando um Business Signal chega ao PIB com contexto de negócio suficientemente claro (sem necessidade de exploração experimental), o Commitment Gate pode ser executado imediatamente na entrada do PIB. Nesse caso, o trio avalia o substrato disponível (Business Signal, OBC Draft, BDD inicial) e, se Promover, o item entra diretamente em Discovery: Elaboration com Downstream Declared. O que o modo Upstream representa é a *exploração prévia opcional*, não uma antecâmara obrigatória.
 
@@ -186,7 +186,7 @@ Nesse caso, existe um protocolo de regressão Downstream → Upstream.
 
 A regressão é a suspensão formal do compromisso, não o retorno a uma etapa anterior do trabalho. Ela é convocada pelo trio, não é uma decisão individual. O trigger típico é uma hipótese central invalidada durante a Delivery: um spike técnico falha, um usuário rejeita a abordagem, uma premissa de negócio desaparece, ou uma dependência bloqueante que não existia no Commitment Gate.
 
-Quando a regressão é decidida, dois registros são feitos: no Release Trail do item em Delivery (com contexto, o que foi descoberto, e a decisão de suspender o compromisso), e em um novo experimento Upstream referenciando o experimento original. O OBC transita de Readiness para Refining: o compromisso formal é suspenso, não abandonado. Para que um novo Commitment Gate seja convocado no futuro, o OBC precisa retornar ao estado Draft: o estado Refining representa um compromisso suspenso, não elegível para novo Gate sem redraft formal. O item aguarda um novo ciclo de investigação Upstream antes que qualquer novo comprometimento possa ser assumido.
+Quando a regressão é decidida, dois registros são feitos: no Release Trail do item em Delivery (com contexto, o que foi descoberto, e a decisão de suspender o compromisso), e em um novo experimento Upstream referenciando o experimento original. O OBC transita de In Delivery para Refining: o compromisso formal é suspenso, não abandonado. Para que um novo Commitment Gate seja convocado no futuro, o OBC precisa retornar ao estado Draft: o estado Refining representa um compromisso suspenso, não elegível para novo Gate sem redraft formal. O item aguarda um novo ciclo de investigação Upstream antes que qualquer novo comprometimento possa ser assumido.
 
 A regressão não é um fracasso do Commitment Gate. É o reconhecimento de que o contexto mudou de forma relevante após o comprometimento, ou que a incerteza residual que o Gate considerou aceitável revelou-se inaceitável durante a implementação. O protocolo existe para que essa situação seja gerenciada com honestidade, não ocultada até que o problema seja grave demais.
 

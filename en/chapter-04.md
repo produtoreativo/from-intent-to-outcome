@@ -9,7 +9,7 @@
 
 When the ProdOps framework lists five journeys, the natural reading is to treat them as equivalent: Discovery, Delivery, Operation, Assessment, and Diligence as five responsibilities of the same level, each with its own entry point. That reading is incorrect, and the error matters.
 
-Assessment is not a journey that begins after Discovery and before Delivery. It is not a periodic evaluation phase that happens in parallel to the three classic product journeys. It is the framework's informational governance layer, the journey with transversal reach across the full cycle: it acts from the Business Signal onward, accompanies each journey throughout its full duration, and feeds back into the cycle with new Business Intents after Operation.
+Assessment is not a journey that begins after Discovery and before Delivery. It is not a periodic evaluation phase that happens in parallel to the three classic product journeys. It is the framework's informational governance layer, the journey with transversal reach across the full cycle: it acts from the Business Signal onward, accompanies each journey throughout its full duration, and feeds back into the cycle with new Business Signals after Operation.
 
 The distinction is more than positional. A journey that begins after Discovery is subordinate to the three classics: it depends on work having already started to have something to evaluate. Assessment, as defined by ProdOps, has reach that extends to the moment a Business Signal appears on the product horizon, before any decision to initiate Discovery has been made.
 

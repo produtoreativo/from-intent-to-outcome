@@ -31,7 +31,7 @@ ODD applies to both modes, in different forms. In Upstream, ODD means documentin
 
 The `split-payment-pix-boleto` OBC from Magazine Siará demonstrates ODD in operation: six Observable Events with mandatory dimensions were defined before any production code was written. Among them, `split_payment.boleto.expired` with a `pixStatus` dimension: a failure event with enough context for operations to immediately identify that the Pix payment was made but the Boleto expired, without querying the database. The event design was a product decision, not a consequence of the implementation.
 
-In Upstream, EXP-001 demonstrates the same principle applied to exploratory mode: before any production line about credit card was written, the experiment specified the required BDD scenarios, the expected Observable Events for each flow (authorization, confirmation, risk analysis, refusal, cancellation, refund), and the observability dimensions that must never appear in logs (card number, CVV, provider token). ODD in Upstream defines what must be observable to validate the hypothesis; ODD in Downstream defines what must be observable to verify the commitment.
+In Upstream, EXP-001 demonstrates the same principle applied to exploratory mode: before any production line about credit card was written, the experiment specified the required BDD scenarios, the expected Observable Events for each flow (authorization, confirmation, risk analysis, refusal, cancellation, chargeback), and the observability dimensions that must never appear in logs (card number, CVV, provider token). ODD in Upstream defines what must be observable to validate the hypothesis; ODD in Downstream defines what must be observable to verify the commitment.
 
 ---
 

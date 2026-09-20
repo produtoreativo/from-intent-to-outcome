@@ -9,7 +9,7 @@
 
 Quando o framework ProdOps lista cinco jornadas, a tendência natural é lê-las como equivalentes: Discovery, Delivery, Operation, Assessment e Diligence como cinco responsabilidades do mesmo nível, cada uma com seu momento de entrada. Essa leitura é incorreta, e o erro importa.
 
-Assessment não é uma jornada que começa depois de Discovery e antes de Delivery. Não é uma fase de avaliação periódica que acontece em paralelo às três jornadas clássicas de produto. É a camada de governança informacional do framework, a jornada com alcance transversal sobre todo o ciclo: atua desde o Business Signal, acompanha cada jornada durante toda sua duração, e retroalimenta o ciclo com novos Business Intents após a Operation.
+Assessment não é uma jornada que começa depois de Discovery e antes de Delivery. Não é uma fase de avaliação periódica que acontece em paralelo às três jornadas clássicas de produto. É a camada de governança informacional do framework, a jornada com alcance transversal sobre todo o ciclo: atua desde o Business Signal, acompanha cada jornada durante toda sua duração, e retroalimenta o ciclo com novos Business Signals após a Operation.
 
 A distinção é mais do que posicional. Uma jornada que começa depois de Discovery está subordinada às três clássicas: ela depende de que o trabalho já tenha começado para ter o que avaliar. O Assessment, como definido pelo ProdOps, tem alcance que se estende ao momento em que um Business Signal aparece no horizonte do produto, antes que qualquer decisão de iniciar Discovery tenha sido tomada.
 
